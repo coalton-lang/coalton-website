@@ -3,7 +3,7 @@ title: "Introducing Coalton: How to Have Our (Typed) Cake and (Safely) Eat It To
 date: 2021-09-10
 ---
 
-By [Robert Smith](https://twitter.com/stylewarning), Elias Lawson-Fox, Cole Scott
+By [Robert Smith](https://twitter.com/stylewarning), [Elias Lawson-Fox](https://github.com/eliaslfox), [Cole Scott](https://github.com/colescott)
 
 ***
 
