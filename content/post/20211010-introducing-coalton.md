@@ -5,12 +5,6 @@ date: 2021-09-10
 
 By [Robert Smith](https://twitter.com/stylewarning), [Elias Lawson-Fox](https://github.com/eliaslfox), [Cole Scott](https://github.com/colescott)
 
-***
-
-*If you're interested in developing quantum software in [HRL's Quantum Computing group](https://quantum.hrl.com/) using cool languages and tools, like Coalton and Common Lisp, [send me a DM](https://twitter.com/stylewarning)! HRL Quantum accepts internships year-round, too!*
-
-***
-
 ## Introduction
 
 Coalton is a statically typed functional programming language built with Common Lisp. This is Coalton computing Fibonacci numbers by exponentiating *functions* (not numbers!).
@@ -247,7 +241,7 @@ The Coalton-calls-Lisp bridge is pretty simple. Coalton has a special operator c
       (cl:concatenate 'cl:string str1 str2))))
 ```
 
-Coalton can also stuff Lisp objects into its data structures in opaque ways, using the `Lisp-Object` type. From within a `lisp` form, one can unpack a `Lisp-Object` with `unveil`, and one can pack a Lisp object with `veil`. There is no way for Coalton itself to "see" the guts of the `Lisp-Object` without using the `lisp` operator. Here's an example creating a simple `String-Map` piggy-backing off of Lisp hash tables:
+Coalton can also stuff Lisp objects into its data structures in opaque ways, using the `Lisp-Object` type. From within a `lisp` form, one can simply use a `Lisp-Object` directly. There is no way for Coalton itself to "see" the guts of the `Lisp-Object` without using the `lisp` operator. Here's an example creating a simple `String-Map` piggy-backing off of Lisp hash tables:
 
 ```lisp
 (coalton-toplevel
@@ -257,16 +251,16 @@ Coalton can also stuff Lisp objects into its data structures in opaque ways, usi
   (declare make-table (Integer -> String-Map))
   (define (make-table size)
     (lisp String-Map (size)
-      (Hash-Table (veil
-                   (cl:make-hash-table :test 'cl:equal
-                                       :size size)))))
+      (Hash-Table
+        (cl:make-hash-table :test 'cl:equal
+                            :size size))))
   
   (declare table-set (String-Map -> String -> String -> String-Map))
   (define (table-set tbl k v)
     (match tbl
       ((Hash-Table obj)
        (lisp String-Map (k v obj tbl)
-         (cl:let ((table (unveil obj)))
+         (cl:let ((table obj))
            (cl:setf (cl:gethash k table) v)
            tbl)))))
   
@@ -275,7 +269,7 @@ Coalton can also stuff Lisp objects into its data structures in opaque ways, usi
     (match tbl
       ((Hash-Table obj)
        (lisp (Optional String) (obj k)
-         (cl:let* ((table (unveil obj))
+         (cl:let* ((table obj)
                    (val   (cl:gethash k table)))
            (cl:if (cl:null val)
                   None
