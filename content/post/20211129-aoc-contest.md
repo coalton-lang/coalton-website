@@ -87,6 +87,8 @@ There are a few facts and disclaimers:
 
 - In ambiguous or extenuating circumstances, we reserve the right to change, add, or remove terms from this blog post.
 
+- The Phoenix Prize is sponsored by [phoe](https://phoe.github.io). (Thanks!)
+
 ## How Do I Get Started?
 
 We recommend to get in touch on [Discord](https://discord.gg/cPb6Bc4xAH) so we can help you with your journey. Then we recommend following the [Getting Started](https://github.com/coalton-lang/coalton#getting-started) steps in the readme. Looking at some [example code](https://github.com/coalton-lang/coalton#whats-here) can also be helpful.
@@ -136,7 +138,3 @@ If it's truly the case that a problem is unrealistic to solve with Coalton alone
 
 We know Coalton still needs work. That's why we are here to help, suggest directions, give tips, and answer questions. Please visit us on [Discord](https://discord.gg/cPb6Bc4xAH) to chat about Coalton!
 
-
-## Fine Print
-
-The Phoenix Prize is sponsored by @phoe. (Thanks!)
