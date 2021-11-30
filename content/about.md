@@ -9,3 +9,5 @@ Coalton developers can be reached on GitHub or via email at:
 ```
 <this-project>@protonmail.com
 ```
+
+where `<this-project>` starts with a `c` and ends with an `n`.
