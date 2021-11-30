@@ -61,6 +61,8 @@ There are 600 USD worth of prizes. The prizes are as follows:
 
 - **Feather Prize**: A prize of 50 USD for the best exposition, tutorial, explanation, or written experience report on Coalton. At the author's option, the report will be featured on this blog.
 
+- **Phoenix Prize**: A prize of 50 USD for the best online talk demonstrating Coalton in a live-coding environment; the talk must be at least thirty minutes long and should be submitted to the current [organizer](mailto:phoe@disroot.org) of [Online Lisp Meetings](https://www.youtube.com/playlist?list=PLgq_B39Y_kKD9_sdCeE5SufaeAtbYPv80) to be played on the OLM Twitch.
+
 - **Magician Prizes**: The top 5 significant contributions that make Coalton noticeably nicer or easier to use each win 50 USD.
 
 - **Curator Prizes**: The top 5 bug reports (based on their significance and report quality) to Coalton each win 10 USD.
@@ -133,3 +135,8 @@ If it's truly the case that a problem is unrealistic to solve with Coalton alone
 ## We're Here to Help
 
 We know Coalton still needs work. That's why we are here to help, suggest directions, give tips, and answer questions. Please visit us on [Discord](https://discord.gg/cPb6Bc4xAH) to chat about Coalton!
+
+
+## Fine Print
+
+The Phoenix Prize is sponsored by @phoe. (Thanks!)
