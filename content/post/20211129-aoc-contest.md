@@ -137,4 +137,3 @@ If it's truly the case that a problem is unrealistic to solve with Coalton alone
 ## We're Here to Help
 
 We know Coalton still needs work. That's why we are here to help, suggest directions, give tips, and answer questions. Please visit us on [Discord](https://discord.gg/cPb6Bc4xAH) to chat about Coalton!
-
