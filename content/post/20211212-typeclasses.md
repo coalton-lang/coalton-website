@@ -328,7 +328,6 @@ Another way to see this pain is if we revisit implementing our `conjugation` cla
 (defclass conjugation (transformation)
   ((frame-transformation :initform generic-identity)
    (action-transformation :initform generic-identity)))
-
 ```
 
 The situation is even worse than `compress`: we can't do this with our generic-getter approach above *and* there's no way to "thread" a prototype object in without specializing `initialize-instance` with extra keyword arguments. Something like `generic-identity` doesn't exist[^gid]; either of the `get-identity` functions have to be called *on something* to produce an identity transformation, and that something isn't available to us when writing initforms.
