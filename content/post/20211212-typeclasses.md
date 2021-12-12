@@ -220,7 +220,7 @@ Another protocol function that seens obvious to implement is a way to combine tw
                                      (rotation-angle b))))
 ```
 
-One nice aspect of the methods above is that they're relativel efficient; we are eagerly combining transformations into new objects instead of somehow "queueing up" the transformations in a list. If we took a closure-based approach of combining, under the hood, all sorts of pointers would be stored. With enough calls to `combine`, in a closure-based implementation, we would be generating large, inefficient trees of closures that consume lots of time to execute and memory to store.
+One nice aspect of the methods above is that they're relatively efficient; we are eagerly combining transformations into new objects instead of somehow "queueing up" the transformations in a list. If we took a closure-based approach of combining, under the hood, all sorts of pointers would be stored. With enough calls to `combine`, in a closure-based implementation, we would be generating large, inefficient trees of closures that consume lots of time to execute and memory to store.
 
 As discussed in the last section, if we had some sort of `composite-transformation`, then we could easily handle `combine` receiving different classes. But, it won't be necessary for our discussion.
 
@@ -297,7 +297,7 @@ Neither of these options are particularly satisfying. The function `identity1` r
 
 This code is starting to smell. Before we had a protocol based off of generic functions to define the behavior of our transformations. But now, we are assigning distinguished ones to global variables and providing inelegant access to them by prototype objects or class names.
 
-In this case, as a professional programmer, I would just say $n$ must be positive, and be done with it. But it's not satisfying conclusion to just ignore the elephant in the room: We can't write generic code that uses identity transformations unless we make explicit mention of the indentity object we want, which goes against the tenets of generic, polymorphic code.
+In this case, as a professional programmer, I would just say $n$ must be positive, and be done with it. But it's not satisfying conclusion to just ignore the elephant in the room: We can't write generic code that uses identity transformations unless we make explicit mention of the identity object we want, which goes against the tenets of generic, polymorphic code.
 
 ## Setting the Stage for Typeclasses
 
