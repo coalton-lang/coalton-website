@@ -308,7 +308,7 @@ Another way to see this pain is if we revisit implementing our `conjugation` cla
 
 ```
 
-But we can't do this with our approach above. Something like `generic-identity` doesn't exist[^gid]; `identity1` has to be called *on sometbing* to produce an identity transformation, and that something isn't available to us when writing initforms.
+But we can't do this with our approach above. Something like `generic-identity` doesn't exist[^gid]; `identity1` has to be called *on something* to produce an identity transformation, and that something isn't available to us when writing initforms.
 
 [^gid]: Another approach is to make another class entirely called `identity-transformation` whose sole purpose is to express a singleton value that acts as a generic identity. If we did this, we would need to implement relationships between our concrete transformation classes and this bespoke `identity-transformation` class. At the end of the day, such a construct gets us no closer to being able to work with identity values of given transformation classes in a generic way. 
 
