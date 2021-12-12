@@ -297,7 +297,20 @@ Neither of these options are particularly satisfying. The function `identity1` r
 
 This code is starting to smell. Before we had a protocol based off of generic functions to define the behavior of our transformations. But now, we are assigning distinguished ones to global variables and providing inelegant access to them by prototype objects or class names.
 
-In this case, as a professional programmer, I would just say $n$ must be positive, and be done with it. But it's not satisfying conclusion to just ignore the elephant in the room: We can't write generic code that uses identity transformations unless we make explicit mention of the identity object we want, which goes against the tenets of generic, polymorphic code.
+Moreover, as we've written it here in Lisp, `identity` ought to be a value, but now it must always be accessed as a function. We must be sure to *always* call this function any time we want to perform computation with an identity transformation. Since `#'identity{1,2}` return concrete values, there is no way to operate on identity *values* generically.
+
+Another way to see this pain is if we revisit implementing our `conjugation` class. It would be nice if we could default the transformations to be identity.
+
+```lisp
+(defclass conjugation (transformation)
+  ((frame-transformation :initform identity )
+   (action-transformation :initform identity)))
+
+```
+
+But we can't do this with our approach above. `identity1` has to be called *on sometbing*, and that something isn't available to us when writing initforms.
+
+Briefly summarized, Common Lisp only permits generic functions, not generic values. There are lots of workarounds Lispers employ to get by, but each compromises the design of the program in some way.
 
 ## Setting the Stage for Typeclasses
 
