@@ -263,41 +263,41 @@ It seems silly that we had to implement that for a specific class, and it seems 
 
 This procedure[^tail] doesn't account for the base case `???` which we need to fill in. What are our options here?
 
-One option is to just not support the case of $n=0$, but that seems silly and error prone. Another is to hard-code a `typecase` of some sort, but that defeats the point of having a grand object-oriented system. Our last resort option is to define one of two kinds of generic functions.
+One option is to just not support the case of $n=0$, but that seems especially error prone because most idiomatic Common Lisp operators (e.g., `expt`, `+`, `and`) allow for zero or empty arguments. Another is to hard-code a `typecase` of some sort, but that defeats the point of having a grand object-oriented system. Our last resort option is to define one of two kinds of generic functions that act as getters.
 
 ```lisp
 ;; Option #1
-(defgeneric identity1 (proto-object))
+(defgeneric get-identity1 (proto-object))
 
-(defmethod identity1 ((proto-object translation))
+(defmethod get-identity1 ((proto-object translation))
   *identity-translation*)
 
 ;; Option #2
-(defgeneric identity2 (class-name))
+(defgeneric get-identity2 (class-name))
 
-(defmethod identity2 ((class-name (eql 'translation)))
+(defmethod get-identity2 ((class-name (eql 'translation)))
   *identity-translation*)
 ```
 
 Of course, imagine we've written these for all of our transformation classes.
 
-Neither of these options are particularly satisfying. The function `identity1` requires a manifested object of our desired type to be present (what if it's not?); and `identity2` requires run-time introspection of class names. So, `n-fold` would be implemented as follows:
+Neither of these options are particularly satisfying. The function `get-identity1` requires a manifested object of our desired type to be present (what if it's not?); and `get-identity2` requires a concrete class name at run-time. (Here, we'll use run-time introspection to find the class name.) So, `n-fold` would be implemented as follows:
 
 ```lisp
 (defun n-fold1 (n tran)
   (if (zerop n)
-      (identity1 tran)
+      (get-identity1 tran)
       (combine tran (n-fold (1- n) tran))))
 
 (defun n-fold2 (n tran)
   (if (zerop n)
-      (identity2 (class-name (class-of tran)))
+      (get-identity2 (class-name (class-of tran)))
       (combine tran (n-fold (1- n) tran))))
 ```
 
 This code is starting to smell. Before we had a protocol based off of generic functions to define the behavior of our transformations. But now, we are assigning distinguished ones to global variables and providing inelegant access to them by prototype objects or class names.
 
-Moreover, as we've written it here in Lisp, `identity` ought to be a value, but now it must always be accessed as a function. We must be sure to *always* call this function any time we want to perform computation with an identity transformation. Since `identity{1,2}` are *generic functions* return *concrete values*, there is no way to operate on identity *values* generically.
+Moreover, as we've written it here in Lisp, `identity` ought to be a value, but now it must always be accessed as a function. We must be sure to *always* call this function any time we want to perform computation with an identity transformation. Since both `get-identity` functions are *generic functions* return *concrete values*, there is no way to operate on identity *values* generically.
 
 Another way to see this pain is if we revisit implementing our `conjugation` class. It would be nice if we could default the transformations to be identity.
 
@@ -308,11 +308,11 @@ Another way to see this pain is if we revisit implementing our `conjugation` cla
 
 ```
 
-But we can't do this with our approach above. Something like `generic-identity` doesn't exist[^gid]; `identity1` has to be called *on something* to produce an identity transformation, and that something isn't available to us when writing initforms.
+But we can't do this with our generic-getter approach above. Something like `generic-identity` doesn't exist[^gid]; either `get-identity` have to be called *on something* to produce an identity transformation, and that something isn't available to us when writing initforms.
 
 [^gid]: Another approach is to make another class entirely called `identity-transformation` whose sole purpose is to express a singleton value that acts as a generic identity. If we did this, we would need to implement relationships between our concrete transformation classes and this bespoke `identity-transformation` class. At the end of the day, such a construct gets us no closer to being able to work with identity values of given transformation classes in a generic way. 
 
-Briefly summarized, Common Lisp only permits generic functions, not generic values. There are lots of workarounds Lispers employ to get by, but each compromises the design of the program in some way.
+Briefly summarized, Common Lisp only permits generic functions, not generic values. This doesn't mean Lisp is doomed; it just means Lisp is a little less effective at dealing with a certain concept. There are lots of workarounds Lispers employ to get by, but each compromises the design of the program in some way.
 
 ## Setting the Stage for Typeclasses
 
