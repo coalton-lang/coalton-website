@@ -312,7 +312,7 @@ Like `n-fold`, we need to choose an initial value for the base case. But unlike 
   (reduce #'combine list :initial-value (get-identity1 proto)))
 ```
 
-but now `compress` is made inconvenient to use by the callers. Ideally we could just write
+but now `compress` is made inconvenient to use by the callers. We've passed the buck from callee to caller. Ideally we could just write
 
 
 ```lisp
