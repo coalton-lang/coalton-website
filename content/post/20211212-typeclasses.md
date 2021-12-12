@@ -14,7 +14,7 @@ By [Robert Smith](https://twitter.com/stylewarning)
 
 ## A Graphics Library
 
-Let's write a graphics library. Or, a tad less ambitiously, let's write some routines for performing transformations on 2D points. We'll be interested in:
+Let's write a graphics library. Or, a tad less ambitiously, let's write some routines for performing transformations on 2D points, which might serve as the foundation of a graphics library. We'll be interested in:
 
 1. translations,
 2. dilations, and
