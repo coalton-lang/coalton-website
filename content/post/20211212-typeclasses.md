@@ -297,7 +297,30 @@ Neither of these options are particularly satisfying. The function `get-identity
 
 This code is starting to smell. Before we had a protocol based off of generic functions to define the behavior of our transformations. But now, we are assigning distinguished ones to global variables and providing inelegant access to them by prototype objects or class names.
 
-Moreover, as we've written it here in Lisp, `identity` ought to be a value, but now it must always be accessed as a function. We must be sure to *always* call this function any time we want to perform computation with an identity transformation. Since both `get-identity` functions are *generic functions* return *concrete values*, there is no way to operate on identity *values* generically.
+Astute Lispers might argue that for `n-fold`, the situation isn't so bleak. I agree, but it's a first example that shows cracks. A slight generalization would be a function that takes a list of like-typed transformations and combines them.
+
+```lisp
+(defun compress (list)
+  (reduce #'combine list :initial-value '???))
+```
+
+Like `n-fold`, we need to choose an initial value for the base case. But unlike `n-fold`, we have no guarantees a prototype object will exist, because empty lists can be passed in. Again, we can skirt the issue by just disallowing empty lists, but it limits the utility of the function. We can alternatively opt to thread a prototype object through:
+
+
+```lisp
+(defun compress (proto list)
+  (reduce #'combine list :initial-value (get-identity1 proto)))
+```
+
+but now `compress` is made inconvenient to use by the callers. Ideally we could just write
+
+
+```lisp
+(defun compress (list)
+  (reduce #'combine list :initial-value generic-identity))
+```
+
+that allows Lisp to (somehow) determine what specific identity the variable `generic-identity` should be interpreted as.
 
 Another way to see this pain is if we revisit implementing our `conjugation` class. It would be nice if we could default the transformations to be identity.
 
@@ -308,7 +331,7 @@ Another way to see this pain is if we revisit implementing our `conjugation` cla
 
 ```
 
-But we can't do this with our generic-getter approach above. Something like `generic-identity` doesn't exist[^gid]; either `get-identity` have to be called *on something* to produce an identity transformation, and that something isn't available to us when writing initforms.
+The situation is even worse than `compress`: we can't do this with our generic-getter approach above *and* there's no way to "thread" a prototype object in without specializing `initialize-instance` with extra keyword arguments. Something like `generic-identity` doesn't exist[^gid]; either of the `get-identity` functions have to be called *on something* to produce an identity transformation, and that something isn't available to us when writing initforms.
 
 [^gid]: Another approach is to make another class entirely called `identity-transformation` whose sole purpose is to express a singleton value that acts as a generic identity. If we did this, we would need to implement relationships between our concrete transformation classes and this bespoke `identity-transformation` class. At the end of the day, such a construct gets us no closer to being able to work with identity values of given transformation classes in a generic way. 
 
