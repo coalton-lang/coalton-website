@@ -297,7 +297,7 @@ Neither of these options are particularly satisfying. The function `identity1` r
 
 This code is starting to smell. Before we had a protocol based off of generic functions to define the behavior of our transformations. But now, we are assigning distinguished ones to global variables and providing inelegant access to them by prototype objects or class names.
 
-Moreover, as we've written it here in Lisp, `identity` ought to be a value, but now it must always be accessed as a function. We must be sure to *always* call this function any time we want to perform computation with an identity transformation. Since `#'identity{1,2}` return concrete values, there is no way to operate on identity *values* generically.
+Moreover, as we've written it here in Lisp, `identity` ought to be a value, but now it must always be accessed as a function. We must be sure to *always* call this function any time we want to perform computation with an identity transformation. Since `identity{1,2}` are *generic functions* return *concrete values*, there is no way to operate on identity *values* generically.
 
 Another way to see this pain is if we revisit implementing our `conjugation` class. It would be nice if we could default the transformations to be identity.
 
