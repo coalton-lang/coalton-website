@@ -297,7 +297,7 @@ Neither of these options are particularly satisfying. The function `get-identity
 
 This code is starting to smell. Before we had a protocol based off of generic functions to define the behavior of our transformations. But now, we are assigning distinguished ones to global variables and providing inelegant access to them by prototype objects or class names.
 
-Astute Lispers might argue that for `n-fold`, the situation isn't so bleak. I agree, but it's a first example that shows cracks. A slight generalization would be a function that takes a list of like-typed transformations and combines them.
+Astute Lispers might argue that for `n-fold`, the situation isn't so bleak, because one of the input arguments can *always* be repurposed as a prototype object. I agree, but it's a first example that shows cracks. A slight generalization would be a function that takes a list of like-typed transformations and combines them.
 
 ```lisp
 (defun compress (list)
