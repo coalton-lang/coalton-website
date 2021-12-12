@@ -200,7 +200,7 @@ Or perhaps we generalize even more and create a class `composite-transformation`
 
 ## Combining Transformations
 
-Another protocol function that seens obvious to implement is a way to combine two transformations. It's pretty easy; the compound effect of two of the same classes of transformation is not too mysterious. Rotation angles add. Translation distances add. Dilation factors multiply.
+Another protocol function that seems obvious to implement is a way to combine two transformations. It's pretty easy; the compound effect of two of the same classes of transformation is not too mysterious. Rotation angles add. Translation distances add. Dilation factors multiply.
 
 ```lisp
 (defgeneric combine (a b))
@@ -364,7 +364,7 @@ A typeclass is like a protocol where we have to specify our protocol functions u
 
 How do we read this?
 
-> "The generic type `:t` is a `Transformation` if it has defined methods `transform`, `inverse`, and `combine`; as well as a distinguished value called `inverse`."
+> "The generic type `:t` is a `Transformation` if it has defined methods `transform`, `inverse`, and `combine`; as well as a distinguished value called `identity`."
 
 In addition, as can be seen, the precise types of each of these is known. The syntax
 
