@@ -47,7 +47,7 @@ params:
   homeText: The Coalton Language
   footerText: Copyright © 2018–2021 Coalton Developers. [source](https://github.com/coalton-lang/coalton-website) · [rss](/index.xml)
   hideFooter: false
-  katex: true
+#  katex: true
 
 markup:
   defaultMarkdownHandler: goldmark
