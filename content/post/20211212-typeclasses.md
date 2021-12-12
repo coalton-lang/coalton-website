@@ -381,7 +381,7 @@ How do we read this?
 
 > "The generic type `:t` is a `Transformation` if it has defined methods `transform`, `inverse`, and `combine`; as well as a distinguished value called `identity`."
 
-In addition, as can be seen, the precise types of each of these is known. The syntax
+In addition, as can be seen, the precise types of each of these are spelled out. The syntax
 
 ```lisp
 (:t -> :t -> :t)
