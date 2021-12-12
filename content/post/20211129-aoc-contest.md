@@ -5,6 +5,12 @@ date: 2021-11-29
 
 By [Robert Smith](https://twitter.com/stylewarning)
 
+***
+
+*Update: The prizes have been matched 1:1 by a donor who wishes to remain anonymous!*
+
+***
+
 ## Introduction
 
 Last [September](https://coalton-lang.github.io/20211010-introducing-coalton/) we announced Coalton, a statically typed language that is "just" another Common Lisp DSL. To our great surprise, there was a lot of excitement and fanfare, which made the development team feel quite honored and proud. It even made [the top of Hacker News](https://news.ycombinator.com/item?id=28484850)!
@@ -49,23 +55,23 @@ Submissions of AoC 2021 solutions must be made in the form of a publicly visible
         116 111 110 109 97 105 108 46 99 111 109))
 ```
 
-or [DM'd on Twitter](https://twitter.com/stylewarning), or sent [via Discord](https://discord.gg/cPb6Bc4xAH). Bug reports and/or PRs *must* be made on [GitHub](https://github.com/coalton-lang/coalton).
+or sent [via Discord](https://discord.gg/cPb6Bc4xAH). Bug reports and/or PRs *must* be made on [GitHub](https://github.com/coalton-lang/coalton).
 
 ### Prizes
 
-There are 600 USD worth of prizes. The prizes are as follows:
+There are ~~600 USD~~ ~~650 USD~~ **1,300 USD** worth of prizes. The prizes are as follows:
 
-- **Grand Prize**: A prize of 150 USD for the best overall solutions to AoC 2021 judged by code quality and innovation.
+- **Grand Prize**: A prize of ~~150 USD~~ **300 USD** for the best overall solutions to AoC 2021 judged by code quality and innovation.
 
-- **Parchment Prize**: A prize of 100 USD for the extending SLIME and SWANK to understand Coalton, at least recognizing Coalton functions in Coalton contexts and showing type hints in the mini-buffer.
+- **Parchment Prize**: A prize of ~~100 USD~~ **200 USD** for the extending SLIME and SWANK to understand Coalton, at least recognizing Coalton functions in Coalton contexts and showing type hints in the mini-buffer.
 
-- **Feather Prize**: A prize of 50 USD for the best exposition, tutorial, explanation, or written experience report on Coalton. At the author's option, the report will be featured on this blog.
+- **Feather Prize**: A prize of ~~50 USD~~ **100 USD** for the best exposition, tutorial, explanation, or written experience report on Coalton. At the author's option, the report will be featured on this blog.
 
-- **Phoenix Prize**: A prize of 50 USD for the best online talk demonstrating Coalton in a live-coding environment; the talk must be at least thirty minutes long and should be submitted to the current [organizer](mailto:phoe@disroot.org) of [Online Lisp Meetings](https://www.youtube.com/playlist?list=PLgq_B39Y_kKD9_sdCeE5SufaeAtbYPv80) to be played on the OLM Twitch.
+- **Phoenix Prize**: A prize of ~~50 USD~~ **100 USD** for the best online talk demonstrating Coalton in a live-coding environment; the talk must be at least thirty minutes long and should be submitted to the current [organizer](mailto:phoe@disroot.org) of [Online Lisp Meetings](https://www.youtube.com/playlist?list=PLgq_B39Y_kKD9_sdCeE5SufaeAtbYPv80) to be played on the OLM Twitch.
 
-- **Magician Prizes**: The top 5 significant contributions that make Coalton noticeably nicer or easier to use each win 50 USD.
+- **Magician Prizes**: The top 5 significant contributions that make Coalton noticeably nicer or easier to use each win ~~50 USD~~ **100 USD**.
 
-- **Curator Prizes**: The top 5 bug reports (based on their significance and report quality) to Coalton each win 10 USD.
+- **Curator Prizes**: The top 5 bug reports (based on their significance and report quality) to Coalton each win ~~10 USD~~ **20 USD**.
 
 Prize winners will be announced in a blog post.
 
@@ -87,7 +93,11 @@ There are a few facts and disclaimers:
 
 - In ambiguous or extenuating circumstances, we reserve the right to change, add, or remove terms from this blog post.
 
-- The Phoenix Prize is sponsored by [phoe](https://phoe.github.io). (Thanks!)
+### Acknowledgements
+
+- Thanks to [phoe](https://phoe.github.io) for creating and sponsoring the Phoenix Prize!
+
+- Thanks to a donor who wishes to remain anonymous for 1:1 matching *all* of the prizes!
 
 ## How Do I Get Started?
 
@@ -115,6 +125,14 @@ For the other prizes, you must solve at least 5 of the problems.
 
 Yes, you can win multiple awards from different categories. You can also win multiple awards within the same category.
 
+**Can prizes be split?**
+
+There are two ways a prize may be split:
+
+1. At your request, we are happy to split a prize in at most two parts for single submissions with shared authorship.
+
+2. In the event that there are several submissions in a category whose prize is at least 100 USD, for which the judges see work of equal exceptional quality, we reserve the right to split the prize at most two ways.
+
 **When is the submission deadline?**
 
 Sunday, January 2, 2022 at 23:59 anywhere on Earth.
@@ -127,7 +145,7 @@ Yes, you'll probably *need* to. But the solutions should use Coalton as much as 
 
 Yes, of course.
 
-**One of the problems literally cannot be solved with what Coalton provides. What do I do?**
+**One of the problems literally cannot be solved with Coalton. What do I do?**
 
 If Coalton just lacks some functions and data structures, we recommend implementing and contributing them! You could win a prize for it!
 
