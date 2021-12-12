@@ -33,7 +33,7 @@ Translations represent "sliding" a point along a straight line. They indicate a 
 
 ### Dilations
 
-*Dilation* is a general term that typically refers to enlarging something. But points to get bigger or smaller: they're points. So dilation, in the context of a point, means moving closer or farther away from a fixed origin point. We move the point by scaling its distance from the origin by a certain factor. We could use dilations to implement features like pinch-to-zoom.
+*Dilation* is a general term that typically refers to enlarging (or shrinking) something. But points can't get bigger or smaller: they're points. So dilation, in the context of a point, means moving closer or farther away from a fixed origin point. We move the point by scaling its distance from the origin by a certain factor. We could use dilations to implement features like pinch-to-zoom.
 
 If we have a dilation factor of $z$ (for *zoom*), then our $x' = zx$ and our $y' = zy$.
 
