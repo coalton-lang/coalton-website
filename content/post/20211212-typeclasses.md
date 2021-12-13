@@ -125,7 +125,10 @@ In this style of functional programming, we can't. Closures don't ordinarily[^cl
 
 ## Objects to the Rescue!
 
-Every enterprising Lisp programmer knows the next step is to get everything represented as objects. We can make an abstract base class. Sometimes that's useful, but it's not required, so we won't here.
+Every enterprising Lisp programmer knows the next step is to get everything represented as objects[^base].
+
+[^base]: While it's sometimes useful to
+make an abstract base class, it's not required for our illustration, so we don't.
 
 ```lisp
 (defclass translation ()
@@ -191,7 +194,7 @@ And just like that, our pseudocode has become *real*, *working* code.
 At this point, we can go down the rabbit hole deep. For example, why not have a `conjugation` transformation? It could be a class like
 
 ```lisp
-(defclass conjugation (transformation)
+(defclass conjugation ()
   ((frame-transformation ...)
    (action-transformation ...)))
 ```
