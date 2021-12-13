@@ -281,7 +281,7 @@ One option is to just not support the case of $n=0$, but that seems especially e
 
 Of course, imagine we've written these for all of our transformation classes.
 
-Neither of these options are particularly satisfying. The function `get-identity1` requires a manifested object of our desired type to be present (what if it's not?); and `get-identity2` requires a concrete class name at run-time. (Here, we'll use run-time introspection to find the class name.) So, `n-fold` would be implemented as follows:
+Neither of these options is particularly satisfying. The function `get-identity1` requires a manifested object of our desired type to be present (what if it's not?); and `get-identity2` requires a concrete class name at run-time. (Here, we'll use run-time introspection to find the class name.) So, `n-fold` would be implemented as follows:
 
 ```lisp
 (defun n-fold1 (n xform)
