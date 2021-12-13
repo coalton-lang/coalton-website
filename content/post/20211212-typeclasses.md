@@ -61,7 +61,7 @@ Next, we'll see how to rotate about an arbitrary point. We actually have all the
 
 ## Assembling Transformations
 
-So are we done? Have we implemented a complete, if a bit spartan, library for 2D graphics? Well, sort of. _Spartan_ is the operative word. We could assemble complicated animations and graphical transformations by stringing these functions together in various ways. For instance, let's suppose we want to rotate a point $(x,y)$ about some center point $(C\_x, C\_y)$. Easy enough.
+So are we done? Have we implemented a complete, if a bit spartan, library for 2D graphics? Well, sort of. _Spartan_ is the operative word. We could assemble complicated animations and graphical transformations by stringing these functions together in various ways. For instance, let's suppose we want to rotate a point $(x,y)$ about some center point $(C\_x, C\_y)$. We can accomplish this as follows.
 
 ```lisp
 (defun rotate-around-point (theta cx cy x y)
