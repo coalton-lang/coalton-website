@@ -503,7 +503,7 @@ Typeclasses are like formalized protocols, but in some ways they're more flexibl
 (defgeneric draw (object medium))
 ```
 
-We can specialize `draw` to work with *any* object and *any* medium combination. Similarly in Coalton, we can make a typeclass:
+We can specialize `draw` to work with *any* combination of object and medium classes, thanks to multiple dispatch. Similarly in Coalton, we can make a typeclass:
 
 ```lisp
 (define-class (Drawable :obj-type :med-type)
