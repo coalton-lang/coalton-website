@@ -231,7 +231,7 @@ As discussed in the last section, if we had some sort of `composite-transformati
 
 I'm not joking when I say this: One of the most important transformations is one that doesn't do anything. Everyone agrees `0` is a useful number, which does nothing when you add; and `1` is a useful number, which does nothing when you multiply. A transformation that keeps a point put is also useful.
 
-There are both practical and mathematical reasons for this. One super practical reason for a do-nothing transformation is that it's a sensible default. Maybe somebody is using your graphics app to implement electrical circuit design software. This design software has settings for the view port, like where we are centered and how zoomed in we are. "Where are we centered?" is answered by a `translation` transformation. Nominally we are centered at the origin, which would be a translation of nothing:
+There are both practical and mathematical reasons for this. One super practical reason for a do-nothing transformation is that it's a sensible default. Maybe somebody is using your graphics library to implement electrical circuit design software. This design software has settings for the view port, like where we are centered and how zoomed in we are. "Where are we centered?" is answered by a `translation` transformation. Nominally we are centered at the origin, which would be a translation of nothing:
 
 ```lisp
 (defvar *identity-translation* (make-instance 'translation :dx 0 :dy 0))
