@@ -83,9 +83,9 @@ So, in a sort of Lisp pseudocode, we'd want something like:
 
 ```lisp
 (defun conjugate (F A x y)
-  (multiple-value-setq (x y) (transform F x y))
-  (multiple-value-setq (x y) (transform A x y))
-  (multiple-value-setq (x y) (inverse-transform F x y))
+  (setf (values x y) (transform F x y))
+  (setf (values x y) (transform A x y))
+  (setf (values x y) (inverse-transform F x y))
   (values x y))
 ```
 
@@ -130,7 +130,7 @@ Every enterprising Lisp programmer knows the next step is to get everything repr
 ```lisp
 (defclass translation ()
   ((dx :initarg :dx :reader translation-dx)
-   (dx :initarg :dy :reader translation-dy)))
+   (dy :initarg :dy :reader translation-dy)))
 
 (defclass dilation ()
   ((factor :initarg :factor :reader dilation-factor)))
@@ -142,47 +142,47 @@ Every enterprising Lisp programmer knows the next step is to get everything repr
 Now that we have objects, we can implement a generic function for handling the actual act of transforming points. We can even re-use all of our `easy-` functions.
 
 ```lisp
-(defgeneric transform (transformation x y))
+(defgeneric transform (xform x y))
 
-(defmethod transform ((tran translation) x y)
-  (easy-translate (translation-dx tran)
-                  (translation-dy tran)
+(defmethod transform ((xform translation) x y)
+  (easy-translate (translation-dx xform)
+                  (translation-dy xform)
                   x
                   y))
 
-(defmethod transform ((tran dilation) x y)
-  (easy-dilate (dilation-factor tran) x y))
+(defmethod transform ((xform dilation) x y)
+  (easy-dilate (dilation-factor xform) x y))
 
-(defmethod transform ((tran rotation) x y)
-  (easy-rotate (rotaton-angle tran) x y))
+(defmethod transform ((xform rotation) x y)
+  (easy-rotate (rotaton-angle xform) x y))
 ```
 
 We've created some objects and have implemented a simple protocol for applying those translations to points. We can add to that protocol, like making a generic function to invert a transformation. This was critical functionality we couldn't do with closures.
 
 ```lisp
-(defgeneric inverse (transformation))
+(defgeneric inverse (xform))
 
-(defmethod inverse ((tran translation))
-  (make-instance 'translation :dx (- (translation-dx tran))
-                              :dy (- (translation-dy tran))))
+(defmethod inverse ((xform translation))
+  (make-instance 'translation :dx (- (translation-dx xform))
+                              :dy (- (translation-dy xform))))
 
-(defmethod inverse ((tran dilation))
-  (make-instance 'dilation :factor (/ (dilation-factor tran))))
+(defmethod inverse ((xform dilation))
+  (make-instance 'dilation :factor (/ (dilation-factor xform))))
 
-(defmethod inverse ((tran rotation))
-  (make-instance 'rotation :angle (- (rotation-angle tran))))
+(defmethod inverse ((xform rotation))
+  (make-instance 'rotation :angle (- (rotation-angle xform))))
 ```
 
 Now we can confidently write our `conjugate` function!
 
 ```lisp
-(defun inverse-transform (tran x y)
-  (transform (inverse tran) x y))
+(defun inverse-transform (xform x y)
+  (transform (inverse xform) x y))
 
 (defun conjugate (F A x y)
-  (multiple-value-setq (x y) (transform F x y))
-  (multiple-value-setq (x y) (transform A x y))
-  (multiple-value-setq (x y) (inverse-transform F x y))
+  (setf (values x y) (transform F x y))
+  (setf (values x y) (transform A x y))
+  (setf (values x y) (inverse-transform F x y))
   (values x y))
 ```
 
@@ -255,10 +255,10 @@ Mathematically, we are interested in identity transformations because they're ve
 It seems silly that we had to implement that for a specific class, and it seems silly that we ought to implement `n-fold` as a protocol function. Don't we have the tools to do it generically? Isn't that what our *generic* function `combine` is for? Yes... at least in principle.
 
 ```lisp
-(defun n-fold (n tran)
+(defun n-fold (n xform)
   (if (zerop n)
       '???
-      (combine tran (n-fold (1- n) tran))))
+      (combine xform (n-fold (1- n) xform))))
 ```
 
 This procedure[^tail] doesn't account for the base case `???` which we need to fill in. What are our options here?
@@ -284,15 +284,15 @@ Of course, imagine we've written these for all of our transformation classes.
 Neither of these options are particularly satisfying. The function `get-identity1` requires a manifested object of our desired type to be present (what if it's not?); and `get-identity2` requires a concrete class name at run-time. (Here, we'll use run-time introspection to find the class name.) So, `n-fold` would be implemented as follows:
 
 ```lisp
-(defun n-fold1 (n tran)
+(defun n-fold1 (n xform)
   (if (zerop n)
-      (get-identity1 tran)
-      (combine tran (n-fold (1- n) tran))))
+      (get-identity1 xform)
+      (combine xform (n-fold (1- n) xform))))
 
-(defun n-fold2 (n tran)
+(defun n-fold2 (n xform)
   (if (zerop n)
-      (get-identity2 (class-name (class-of tran)))
-      (combine tran (n-fold (1- n) tran))))
+      (get-identity2 (class-name (class-of xform)))
+      (combine xform (n-fold (1- n) xform))))
 ```
 
 This code is starting to smell. Before we had a protocol based off of generic functions to define the behavior of our transformations. But now, we are assigning distinguished ones to global variables and providing inelegant access to them by prototype objects or class names.
@@ -325,12 +325,12 @@ that allows Lisp to (somehow) determine what specific identity the variable `gen
 Another way to see this pain is if we revisit implementing our `conjugation` class. It would be nice if we could default the transformations to be identity.
 
 ```lisp
-(defclass conjugation (transformation)
+(defclass conjugation ()
   ((frame-transformation :initform generic-identity)
    (action-transformation :initform generic-identity)))
 ```
 
-The situation is even worse than `compress`: we can't do this with our generic-getter approach above *and* there's no way to "thread" a prototype object in without specializing `initialize-instance` with extra keyword arguments. Something like `generic-identity` doesn't exist[^gid]; either of the `get-identity` functions have to be called *on something* to produce an identity transformation, and that something isn't available to us when writing initforms.
+The situation is even worse than `compress`: we can't do this with our generic-getter approach above *and* there's no way to "thread" a prototype object in without specializing `initialize-instance` with extra keyword arguments. Something like `generic-identity` doesn't exist[^gid]; either of the `get-identity` functions has to be called *on something* to produce an identity transformation, and that something isn't available to us when writing initforms.
 
 [^gid]: Another approach is to make another class entirely called `identity-transformation` whose sole purpose is to express a singleton value that acts as a generic identity. If we did this, we would need to implement relationships between our concrete transformation classes and this bespoke `identity-transformation` class. At the end of the day, such a construct gets us no closer to being able to work with identity values of given transformation classes in a generic way. 
 
@@ -479,10 +479,10 @@ It reads similarly. What are the implementations then?
           (transform A)
           (transform (inverse F))))
 
-(define (n-fold n t)
+(define (n-fold n xform)
   (if (== n 0)
       identity
-      (combine t (n-fold (- n 1) t))))
+      (combine xform (n-fold (- n 1) xform))))
 ```
 
 That's it. Notice how we could simply write `identity` there as a bare variable. The Coalton compiler will figure out _what_ identity you want, and _guarantee_ an identity exists for your type `:t`.
