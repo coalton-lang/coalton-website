@@ -300,24 +300,24 @@ This code is starting to smell. Before we had a protocol based off of generic fu
 Astute Lispers might argue that for `n-fold`, the situation isn't so bleak, because one of the input arguments can *always* be repurposed as a prototype object. I agree, but it's a first example that shows cracks. A slight generalization would be a function that takes a list of like-typed transformations and combines them.
 
 ```lisp
-(defun compress (list)
-  (reduce #'combine list :initial-value '???))
+(defun compress (xforms)
+  (reduce #'combine xforms :initial-value '???))
 ```
 
 Like `n-fold`, we need to choose an initial value for the base case. But unlike `n-fold`, we have no guarantees a prototype object will exist, because empty lists can be passed in. Again, we can skirt the issue by just disallowing empty lists, but it limits the utility of the function. We can alternatively opt to thread a prototype object through:
 
 
 ```lisp
-(defun compress (proto list)
-  (reduce #'combine list :initial-value (get-identity1 proto)))
+(defun compress (proto xforms)
+  (reduce #'combine xforms :initial-value (get-identity1 proto)))
 ```
 
 but now `compress` is made inconvenient to use by the callers. We've passed the buck from callee to caller. Ideally we could just write
 
 
 ```lisp
-(defun compress (list)
-  (reduce #'combine list :initial-value generic-identity))
+(defun compress (xforms)
+  (reduce #'combine xforms :initial-value generic-identity))
 ```
 
 that allows Lisp to (somehow) determine what specific identity the variable `generic-identity` should be interpreted as.
@@ -483,6 +483,14 @@ It reads similarly. What are the implementations then?
   (if (== n 0)
       identity
       (combine xform (n-fold (- n 1) xform))))
+```
+
+Our `compress` function is equally succinct.
+
+```lisp
+(declare compress ((Transformation :t) => (List :t) -> :t))
+(define (compress xforms)
+  (fold combine identity xforms))
 ```
 
 That's it. Notice how we could simply write `identity` there as a bare variable. The Coalton compiler will figure out _what_ identity you want, and _guarantee_ an identity exists for your type `:t`.
