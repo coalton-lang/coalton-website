@@ -65,9 +65,9 @@ So are we done? Have we implemented a complete, if a bit spartan, library for 2D
 
 ```lisp
 (defun rotate-around-point (theta cx cy x y)
-  (multiple-value-setq (x y) (easy-translate (- cx) (- cy) x y))
-  (multiple-value-setq (x y) (easy-rotate theta x y))
-  (multiple-value-setq (x y) (easy-translate cx cy x y))
+  (setf (values x y) (easy-translate (- cx) (- cy) x y))
+  (setf (values x y) (easy-rotate theta x y))
+  (setf (values x y) (easy-translate cx cy x y))
   (values x y))
 ```
 
