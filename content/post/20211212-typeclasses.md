@@ -538,7 +538,7 @@ Here, we give a concrete example of converting `Boolean` to `Integer`. The funct
                  (convert (even len))))))
 ```
 
-Here, it is deduced that `convert` _must_ return an `Integer`, and also that `even` returns a `Boolean`, so it selects the right instance of `Convertible` to convert the Boolean value into an integer one. At no point did we or do we or will we need to be explicit about that, as it's sometbing that can be inferred.
+Here, it is deduced that `convert` _must_ return an `Integer`, and also that `even` returns a `Boolean`, so it selects the right instance of `Convertible` to convert the Boolean value into an integer one. At no point did we or do we or will we need to be explicit about that, as it's something that can be inferred.
 
 There is no equivalent concept in Common Lisp, because all types are dynamic. The closest we have in Common Lisp is using `eql` specializers or similar:
 
