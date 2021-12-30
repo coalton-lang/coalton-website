@@ -34,6 +34,12 @@ menu:
     pre: smile
     url: /about/
     weight: 4
+  - name: Reference
+    identifier: Reference
+    pre: file-text
+    url: /reference/
+    weight: 5
+
 #  - name: RSS
 #    pre: rss
 #    url: /index.xml
