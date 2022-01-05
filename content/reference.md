@@ -20,7 +20,6 @@ identifier: Reference
   - <a href="#coalton-library-types-lisp-file"><code>types.lisp</code></a>
   - <a href="#coalton-library-builtin-lisp-file"><code>builtin.lisp</code></a>
   - <a href="#coalton-library-classes-lisp-file"><code>classes.lisp</code></a>
-  - <a href="#coalton-library-fraction-lisp-file"><code>fraction.lisp</code></a>
   - <a href="#coalton-library-arith-lisp-file"><code>arith.lisp</code></a>
   - <a href="#coalton-library-string-lisp-file"><code>string.lisp</code></a>
   - <a href="#coalton-library-optional-lisp-file"><code>optional.lisp</code></a>
@@ -28,7 +27,6 @@ identifier: Reference
   - <a href="#coalton-library-tuple-lisp-file"><code>tuple.lisp</code></a>
   - <a href="#coalton-library-result-lisp-file"><code>result.lisp</code></a>
   - <a href="#coalton-library-functions-lisp-file"><code>functions.lisp</code></a>
-  - <a href="#coalton-library-quantize-lisp-file"><code>quantize.lisp</code></a>
   - <a href="#coalton-library-cell-lisp-file"><code>cell.lisp</code></a>
   - <a href="#coalton-library-vector-lisp-file"><code>vector.lisp</code></a>
   - <a href="#coalton-library-slice-lisp-file"><code>slice.lisp</code></a>
@@ -733,7 +731,7 @@ Are X or Y True, but not both?
 #### <code>ID</code> <sup><sub>[FUNCTION]</sub></sup><a name="id-value"></a>
 <code>&forall; :A. (:A &rarr; :A)</code>
 
-A function that always returns its argument
+A function that always returns its argument.
 
 
 ***
@@ -741,7 +739,12 @@ A function that always returns its argument
 #### <code>FIX</code> <sup><sub>[FUNCTION]</sub></sup><a name="fix-value"></a>
 <code>&forall; :A :B. (((:A &rarr; :B) &rarr; :A &rarr; :B) &rarr; :A &rarr; :B)</code>
 
-The factorial function can be written
+Compute the fixed point of a unary function. This is equivalent to the Y-combinator of the lambda calculus. 
+
+
+    This combinator allows recursion without specific assignment of names. For example, the factorial function can be written
+
+
     ```
     (define fact
       (fix
@@ -757,7 +760,7 @@ The factorial function can be written
 #### <code>FLIP</code> <sup><sub>[FUNCTION]</sub></sup><a name="flip-value"></a>
 <code>&forall; :A :B :C. ((:A &rarr; :B &rarr; :C) &rarr; :B &rarr; :A &rarr; :C)</code>
 
-FLIP reverses the arguments to F
+Returns a function that takes its arguments in reverse order.
 
 
 ***
@@ -765,7 +768,7 @@ FLIP reverses the arguments to F
 #### <code>CONST</code> <sup><sub>[FUNCTION]</sub></sup><a name="const-value"></a>
 <code>&forall; :A :B. (:A &rarr; :B &rarr; :A)</code>
 
-A function that always returns its first argument
+A function that always returns its first argument.
 
 
 ***
@@ -773,7 +776,7 @@ A function that always returns its first argument
 #### <code>ERROR</code> <sup><sub>[FUNCTION]</sub></sup><a name="error-value"></a>
 <code>&forall; :A. (<a href="#string-type">STRING</a> &rarr; :A)</code>
 
-Signal an error by calling CL:ERROR
+Signal an error by calling `CL:ERROR`.
 
 
 ***
@@ -804,6 +807,7 @@ Constructors:
 <summary>Instances</summary>
 
 - <code><a href="#eq-class">EQ</a> <a href="#ord-type">ORD</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#ord-type">ORD</a></code>
 
 </details>
 
@@ -813,19 +817,19 @@ Constructors:
 #### <code>QUANTIZATION :A</code> <sup><sub>[TYPE]</sub></sup><a name="quantization-type"></a>
 - <code>(QUANTIZATION :A <a href="#integer-type">INTEGER</a> :A <a href="#integer-type">INTEGER</a> :A)</code>
 
-Represents an integer quantization of `:t`. See the `Quantizable` typeclass.
+Represents an integer quantization of `:a`. See the `Quantizable` typeclass.
 
 The fields are defined as follows:
 
-1. A value of type `:t`.
+1. A value of type `:a`.
 
 2. The greatest integer less than or equal to a particular value.
 
-3. The remainder of this as a value of type `:t`.
+3. The remainder of this as a value of type `:a`.
 
 4. The least integer greater than or equal to a particular value.
 
-5. The remainder of this as a value of type `:t`.
+5. The remainder of this as a value of type `:a`.
 
 
 Constructors:
@@ -929,6 +933,7 @@ Methods:
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#ord-class">ORD</a> <a href="#ord-type">ORD</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#boolean-type">BOOLEAN</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#u8-type">U8</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#u16-type">U16</a></code>
@@ -1026,7 +1031,7 @@ Methods:
 #### <code>INTO</code> <sup><sub>[CLASS]</sub></sup><a name="into-class"></a>
 <code><a href="#into-class">INTO</a> :A :B</code>
 
-INTO imples *every* element of :FROM can be represented by an element of :TO. This conversion might not be injective (i.e., there may be elements in :TO that don't correspond to any in :FROM).
+INTO imples *every* element of :a can be represented by an element of :b. This conversion might not be injective (i.e., there may be elements in :a that don't correspond to any in :b).
 
 Methods:
 - <code>INTO :: (:A &rarr; :B)</code>
@@ -1153,7 +1158,7 @@ Methods:
 #### <code>TRYINTO</code> <sup><sub>[CLASS]</sub></sup><a name="tryinto-class"></a>
 <code><a href="#tryinto-class">TRYINTO</a> :A :B</code>
 
-TRY-INTO implies *most* elements of :FROM can be represented exactly by an element of :TO, but sometimes not. If not, an error string is returned.
+TRY-INTO implies *most* elements of :a can be represented exactly by an element of :b, but sometimes not. If not, an error string is returned.
 
 Methods:
 - <code>TRYINTO :: (:A &rarr; (<a href="#result-type">RESULT</a> <a href="#string-type">STRING</a> :B))</code>
@@ -1402,34 +1407,6 @@ Returns the lesser element of X and Y.
 
 ***
 
-## [fraction.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/fraction.lisp) <a name="coalton-library-fraction-lisp-file"></a>
-
-### Values
-
-#### <code>NUMERATOR</code> <sup><sub>[FUNCTION]</sub></sup><a name="numerator-value"></a>
-<code>(<a href="#fraction-type">FRACTION</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
-
-The numerator of a fraction.
-
-
-***
-
-#### <code>RECIPROCAL</code> <sup><sub>[FUNCTION]</sub></sup><a name="reciprocal-value"></a>
-<code>(<a href="#fraction-type">FRACTION</a> &rarr; <a href="#fraction-type">FRACTION</a>)</code>
-
-The reciprocal of a fraction.
-
-
-***
-
-#### <code>DENOMINATOR</code> <sup><sub>[FUNCTION]</sub></sup><a name="denominator-value"></a>
-<code>(<a href="#fraction-type">FRACTION</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
-
-The denominator of a fraction.
-
-
-***
-
 ## [arith.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/arith.lisp) <a name="coalton-library-arith-lisp-file"></a>
 
 ### Values
@@ -1506,8 +1483,122 @@ The sign of X.
 
 ***
 
+#### <code>FLOOR</code> <sup><sub>[FUNCTION]</sub></sup><a name="floor-value"></a>
+<code>&forall; :A. <a href="#quantizable-class">QUANTIZABLE</a> :A &rArr; (:A &rarr; <a href="#integer-type">INTEGER</a>)</code>
+
+Return the greatest integer less than or equal to X.
+
+
+***
+
+#### <code>ROUND</code> <sup><sub>[FUNCTION]</sub></sup><a name="round-value"></a>
+<code>&forall; :A. <a href="#quantizable-class">QUANTIZABLE</a> :A &rArr; (:A &rarr; <a href="#integer-type">INTEGER</a>)</code>
+
+Return the nearest integer to X, with ties breaking toward positive infinity.
+
+
+***
+
+#### <code>SAFE/</code> <sup><sub>[FUNCTION]</sub></sup><a name="safe/-value"></a>
+<code>&forall; :A :B. <a href="#dividable-class">DIVIDABLE</a> :A :B &rArr; (:A &rarr; :A &rarr; (<a href="#optional-type">OPTIONAL</a> :B))</code>
+
+Safely divide X by Y, returning None if Y is zero.
+
+
+***
+
+#### <code>EXACT/</code> <sup><sub>[FUNCTION]</sub></sup><a name="exact/-value"></a>
+<code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#fraction-type">FRACTION</a>)</code>
+
+Exactly divide two integers and produce a fraction.
+
+
+***
+
+#### <code>FLOOR/</code> <sup><sub>[FUNCTION]</sub></sup><a name="floor/-value"></a>
+<code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
+
+Divide two integers and compute the floor of the quotient.
+
+
+***
+
 #### <code>NEGATE</code> <sup><sub>[FUNCTION]</sub></sup><a name="negate-value"></a>
 <code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; (:A &rarr; :A)</code>
+
+***
+
+#### <code>ROUND/</code> <sup><sub>[FUNCTION]</sub></sup><a name="round/-value"></a>
+<code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
+
+Divide two integers and round the quotient.
+
+
+***
+
+#### <code>CEILING</code> <sup><sub>[FUNCTION]</sub></sup><a name="ceiling-value"></a>
+<code>&forall; :A. <a href="#quantizable-class">QUANTIZABLE</a> :A &rArr; (:A &rarr; <a href="#integer-type">INTEGER</a>)</code>
+
+Return the least integer greater than or equal to X.
+
+
+***
+
+#### <code>DOUBLE/</code> <sup><sub>[FUNCTION]</sub></sup><a name="double/-value"></a>
+<code>(<a href="#double-float-type">DOUBLE-FLOAT</a> &rarr; <a href="#double-float-type">DOUBLE-FLOAT</a> &rarr; <a href="#double-float-type">DOUBLE-FLOAT</a>)</code>
+
+Compute the quotient of single-precision floats as a single-precision float.
+
+
+***
+
+#### <code>SINGLE/</code> <sup><sub>[FUNCTION]</sub></sup><a name="single/-value"></a>
+<code>(<a href="#single-float-type">SINGLE-FLOAT</a> &rarr; <a href="#single-float-type">SINGLE-FLOAT</a> &rarr; <a href="#single-float-type">SINGLE-FLOAT</a>)</code>
+
+Compute the quotient of single-precision floats as a single-precision float.
+
+
+***
+
+#### <code>CEILING/</code> <sup><sub>[FUNCTION]</sub></sup><a name="ceiling/-value"></a>
+<code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
+
+Divide two integers and compute the ceiling of the quotient.
+
+
+***
+
+#### <code>INEXACT/</code> <sup><sub>[FUNCTION]</sub></sup><a name="inexact/-value"></a>
+<code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#double-float-type">DOUBLE-FLOAT</a>)</code>
+
+Compute the quotient of integers as a double-precision float.
+
+Note: This does *not* divide double-float arguments.
+
+
+***
+
+#### <code>NUMERATOR</code> <sup><sub>[FUNCTION]</sub></sup><a name="numerator-value"></a>
+<code>(<a href="#fraction-type">FRACTION</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
+
+The numerator of a fraction.
+
+
+***
+
+#### <code>RECIPROCAL</code> <sup><sub>[FUNCTION]</sub></sup><a name="reciprocal-value"></a>
+<code>(<a href="#fraction-type">FRACTION</a> &rarr; <a href="#fraction-type">FRACTION</a>)</code>
+
+The reciprocal of a fraction.
+
+
+***
+
+#### <code>DENOMINATOR</code> <sup><sub>[FUNCTION]</sub></sup><a name="denominator-value"></a>
+<code>(<a href="#fraction-type">FRACTION</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
+
+The denominator of a fraction.
+
 
 ***
 
@@ -1632,7 +1723,7 @@ Returns TRUE if at least one element in XS matches F.
 #### <code>CAR</code> <sup><sub>[FUNCTION]</sub></sup><a name="car-value"></a>
 <code>&forall; :A. ((<a href="#list-type">LIST</a> :A) &rarr; :A)</code>
 
-Return the traditional car of a list XS. (Error when there is no car.)
+Return the traditional car of a list. This function is partial
 
 
 ***
@@ -1640,7 +1731,7 @@ Return the traditional car of a list XS. (Error when there is no car.)
 #### <code>CDR</code> <sup><sub>[FUNCTION]</sub></sup><a name="cdr-value"></a>
 <code>&forall; :A. ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
-Return the traditional cdr of a list XS.
+Return the traditional cdr of a list. This function is partial
 
 
 ***
@@ -1672,7 +1763,7 @@ Builds a list of tuples with the elements of XS and YS.
 #### <code>DROP</code> <sup><sub>[FUNCTION]</sub></sup><a name="drop-value"></a>
 <code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
-Returns a list with the first N elements of XS removed
+Returns a list with the first N elements removed.
 
 
 ***
@@ -1744,7 +1835,7 @@ Returns every element except the first in a list.
 #### <code>TAKE</code> <sup><sub>[FUNCTION]</sub></sup><a name="take-value"></a>
 <code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
-Returns the first N elements of XS
+Returns the first N elements of a list.
 
 
 ***
@@ -1760,7 +1851,7 @@ Right fold on lists. Is not tail recursive.
 #### <code>INDEX</code> <sup><sub>[FUNCTION]</sub></sup><a name="index-value"></a>
 <code>&forall; :A. ((<a href="#list-type">LIST</a> :A) &rarr; <a href="#integer-type">INTEGER</a> &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
-Returns the Ith element of XS.
+Returns the Ith element of a list.
 
 
 ***
@@ -1769,6 +1860,15 @@ Returns the Ith element of XS.
 <code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; (<a href="#list-type">LIST</a> <a href="#integer-type">INTEGER</a>))</code>
 
 Returns a list containing the numbers from START to END inclusive.
+
+
+    ```
+    &gt; COALTON-USER&gt; (coalton (range 1 5))
+    (1 2 3 4 5)
+
+    &gt; COALTON-USER&gt; (coalton (range 5 2))
+    (5 4 3 2)
+    ```
 
 
 ***
@@ -1853,7 +1953,7 @@ Returns true if any element of XS is equal to E.
 #### <code>REPEAT</code> <sup><sub>[FUNCTION]</sub></sup><a name="repeat-value"></a>
 <code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; :A &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
-Returns a list with X repeated N times.
+Returns a list with the same value repeated multiple times.
 
 
 ***
@@ -1962,6 +2062,9 @@ Apply F to each element in XS and concatenate the results.
 #### <code>FINDINDEX</code> <sup><sub>[FUNCTION]</sub></sup><a name="findindex-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#integer-type">INTEGER</a>))</code>
 
+Returns the index of the first element matching the predicate function F.
+
+
 ***
 
 #### <code>OPTIMUMBY</code> <sup><sub>[FUNCTION]</sub></sup><a name="optimumby-value"></a>
@@ -1983,7 +2086,7 @@ Splits a list into two new lists. The first list contains elements matching pred
 #### <code>SINGLETON</code> <sup><sub>[FUNCTION]</sub></sup><a name="singleton-value"></a>
 <code>&forall; :A. (:A &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
-Returns a single element list containg only X.
+Returns a list containting one element.
 
 
 ***
@@ -2163,100 +2266,6 @@ Compute the complement of a unary Boolean function.
 <code>&forall; :A. (<a href="#string-type">STRING</a> &rarr; :A &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Print a line to *STANDARD-OUTPUT* in the form "{STR}: {ITEM}"
-
-
-***
-
-## [quantize.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/quantize.lisp) <a name="coalton-library-quantize-lisp-file"></a>
-
-### Values
-
-#### <code>FLOOR</code> <sup><sub>[FUNCTION]</sub></sup><a name="floor-value"></a>
-<code>&forall; :A. <a href="#quantizable-class">QUANTIZABLE</a> :A &rArr; (:A &rarr; <a href="#integer-type">INTEGER</a>)</code>
-
-Return the greatest integer less than or equal to X.
-
-
-***
-
-#### <code>ROUND</code> <sup><sub>[FUNCTION]</sub></sup><a name="round-value"></a>
-<code>&forall; :A. <a href="#quantizable-class">QUANTIZABLE</a> :A &rArr; (:A &rarr; <a href="#integer-type">INTEGER</a>)</code>
-
-Return the nearest integer to X, with ties breaking toward positive infinity.
-
-
-***
-
-#### <code>SAFE/</code> <sup><sub>[FUNCTION]</sub></sup><a name="safe/-value"></a>
-<code>&forall; :A :B. <a href="#dividable-class">DIVIDABLE</a> :A :B &rArr; (:A &rarr; :A &rarr; (<a href="#optional-type">OPTIONAL</a> :B))</code>
-
-Safely divide X by Y, returning None if Y is zero.
-
-
-***
-
-#### <code>EXACT/</code> <sup><sub>[FUNCTION]</sub></sup><a name="exact/-value"></a>
-<code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#fraction-type">FRACTION</a>)</code>
-
-Exactly divide two integers and produce a fraction.
-
-
-***
-
-#### <code>FLOOR/</code> <sup><sub>[FUNCTION]</sub></sup><a name="floor/-value"></a>
-<code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
-
-Divide two integers and compute the floor of the quotient.
-
-
-***
-
-#### <code>ROUND/</code> <sup><sub>[FUNCTION]</sub></sup><a name="round/-value"></a>
-<code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
-
-Divide two integers and round the quotient.
-
-
-***
-
-#### <code>CEILING</code> <sup><sub>[FUNCTION]</sub></sup><a name="ceiling-value"></a>
-<code>&forall; :A. <a href="#quantizable-class">QUANTIZABLE</a> :A &rArr; (:A &rarr; <a href="#integer-type">INTEGER</a>)</code>
-
-Return the least integer greater than or equal to X.
-
-
-***
-
-#### <code>DOUBLE/</code> <sup><sub>[FUNCTION]</sub></sup><a name="double/-value"></a>
-<code>(<a href="#double-float-type">DOUBLE-FLOAT</a> &rarr; <a href="#double-float-type">DOUBLE-FLOAT</a> &rarr; <a href="#double-float-type">DOUBLE-FLOAT</a>)</code>
-
-Compute the quotient of single-precision floats A and B as a single-precision float.
-
-
-***
-
-#### <code>SINGLE/</code> <sup><sub>[FUNCTION]</sub></sup><a name="single/-value"></a>
-<code>(<a href="#single-float-type">SINGLE-FLOAT</a> &rarr; <a href="#single-float-type">SINGLE-FLOAT</a> &rarr; <a href="#single-float-type">SINGLE-FLOAT</a>)</code>
-
-Compute the quotient of single-precision floats A and B as a single-precision float.
-
-
-***
-
-#### <code>CEILING/</code> <sup><sub>[FUNCTION]</sub></sup><a name="ceiling/-value"></a>
-<code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
-
-Divide two integers and compute the ceiling of the quotient.
-
-
-***
-
-#### <code>INEXACT/</code> <sup><sub>[FUNCTION]</sub></sup><a name="inexact/-value"></a>
-<code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#double-float-type">DOUBLE-FLOAT</a>)</code>
-
-Compute the quotient of integers A and B as a double-precision float.
-
-Note: This does *not* divide double-float arguments.
 
 
 ***
