@@ -287,7 +287,7 @@ Non-allocating tagged non-negative integer; range is platform-dependent. Uses `(
 
 #### <code>ARROW :A :B</code> <sup><sub>[TYPE]</sub></sup><a name="arrow-type"></a>
 
-Type constructor for function types. `(Arrow :a :b)` is equivalent to `(:a -&gt; :b)`.
+Type constructor for function types. `(Arrow :a :b)` is equivalent to &lt;code&gt;(:a -&gt; :b)&lt;/code&gt;.
 
 
 
