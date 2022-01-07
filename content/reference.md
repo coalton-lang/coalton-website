@@ -429,13 +429,13 @@ Single precision floating point numer. Uses `single-float`.
 ### Types
 
 #### <code>LIST :A</code> <sup><sub>[TYPE]</sub></sup><a name="list-type"></a>
-- <code>CONS</code>
+- <code>(CONS :B (<a href="#list-type">LIST</a> :B))</code>
 - <code>NIL</code>
 
 Homogeneous list of objects represented as a Common Lisp `list`.
 
 Constructors:
-- <code>CONS :: (<a href="#list-type">LIST</a> :B)</code>
+- <code>CONS :: (:B &rarr; (<a href="#list-type">LIST</a> :B) &rarr; (<a href="#list-type">LIST</a> :B))</code>
 - <code>NIL :: (<a href="#list-type">LIST</a> :B)</code>
 
 <details>
