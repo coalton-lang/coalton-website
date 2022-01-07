@@ -492,28 +492,6 @@ Constructors:
 
 ***
 
-### Values
-
-#### <code>NIL</code> <sup><sub>[VALUE]</sub></sup><a name="nil-value"></a>
-<code>&forall; :A. (<a href="#list-type">LIST</a> :A)</code>
-
-***
-
-#### <code>CONS</code> <sup><sub>[FUNCTION]</sub></sup><a name="cons-value"></a>
-<code>&forall; :A. (:A &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
-
-***
-
-#### <code>TRUE</code> <sup><sub>[VALUE]</sub></sup><a name="true-value"></a>
-<code><a href="#boolean-type">BOOLEAN</a></code>
-
-***
-
-#### <code>FALSE</code> <sup><sub>[VALUE]</sub></sup><a name="false-value"></a>
-<code><a href="#boolean-type">BOOLEAN</a></code>
-
-***
-
 # Package `coalton-library`<a name="coalton-library-package"></a>
 
 ## [types.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/types.lisp) <a name="coalton-library-types-lisp-file"></a>
