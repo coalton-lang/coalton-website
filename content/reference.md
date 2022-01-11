@@ -601,6 +601,27 @@ Constructors:
 
 ***
 
+#### <code>COMPLEX :A</code> <sup><sub>[TYPE]</sub></sup><a name="complex-type"></a>
+- <code>(COMPLEX :A :A)</code>
+
+Represents a complex algebra of a given type.
+
+Constructors:
+- <code>COMPLEX :: (:A &rarr; :A &rarr; (<a href="#complex-type">COMPLEX</a> :A))</code>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
+- <code><a href="#num-class">NUM</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
+- <code><a href="#num-class">NUM</a> :A &rArr; <a href="#into-class">INTO</a> :A (<a href="#complex-type">COMPLEX</a> :A)</code>
+- <code>(<a href="#num-class">NUM</a> :A) (<a href="#dividable-class">DIVIDABLE</a> :A :A) &rArr; <a href="#dividable-class">DIVIDABLE</a> (<a href="#complex-type">COMPLEX</a> :A) (<a href="#complex-type">COMPLEX</a> :A)</code>
+
+</details>
+
+
+***
+
 #### <code>FRACTION</code> <sup><sub>[TYPE]</sub></sup><a name="fraction-type"></a>
 - <code>(%FRACTION <a href="#integer-type">INTEGER</a> <a href="#integer-type">INTEGER</a>)</code>
 
@@ -849,6 +870,7 @@ Methods:
 - <code><a href="#eq-class">EQ</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
@@ -897,6 +919,7 @@ Methods:
 - <code><a href="#num-class">NUM</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#num-class">NUM</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
 - <code><a href="#num-class">NUM</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#cell-type">CELL</a> :A)</code>
 
 </details>
@@ -1057,6 +1080,7 @@ Methods:
 - <code><a href="#into-class">INTO</a> <a href="#ufix-type">UFIX</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ufix-type">UFIX</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#num-class">NUM</a> :A &rArr; <a href="#into-class">INTO</a> :A (<a href="#complex-type">COMPLEX</a> :A)</code>
 - <code><a href="#into-class">INTO</a> <a href="#string-type">STRING</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> (<a href="#tuple-type">TUPLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :B :A)</code>
@@ -1193,6 +1217,7 @@ Methods:
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code>(<a href="#num-class">NUM</a> :A) (<a href="#dividable-class">DIVIDABLE</a> :A :A) &rArr; <a href="#dividable-class">DIVIDABLE</a> (<a href="#complex-type">COMPLEX</a> :A) (<a href="#complex-type">COMPLEX</a> :A)</code>
 
 </details>
 
@@ -1397,6 +1422,14 @@ Returns the lesser element of X and Y.
 
 ### Values
 
+#### <code>II</code> <sup><sub>[VALUE]</sub></sup><a name="ii-value"></a>
+<code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; (<a href="#complex-type">COMPLEX</a> :A)</code>
+
+The complex unit i. (The double ii represents a blackboard-bold i.)
+
+
+***
+
 #### <code>ABS</code> <sup><sub>[FUNCTION]</sub></sup><a name="abs-value"></a>
 <code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; :A)</code>
 
@@ -1564,10 +1597,31 @@ Note: This does *not* divide double-float arguments.
 
 ***
 
+#### <code>CONJUGATE</code> <sup><sub>[FUNCTION]</sub></sup><a name="conjugate-value"></a>
+<code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; ((<a href="#complex-type">COMPLEX</a> :A) &rarr; (<a href="#complex-type">COMPLEX</a> :A))</code>
+
+***
+
+#### <code>IMAG-PART</code> <sup><sub>[FUNCTION]</sub></sup><a name="imag-part-value"></a>
+<code>&forall; :A. ((<a href="#complex-type">COMPLEX</a> :A) &rarr; :A)</code>
+
+The imaginary part of a complex number.
+
+
+***
+
 #### <code>NUMERATOR</code> <sup><sub>[FUNCTION]</sub></sup><a name="numerator-value"></a>
 <code>(<a href="#fraction-type">FRACTION</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
 
 The numerator of a fraction.
+
+
+***
+
+#### <code>REAL-PART</code> <sup><sub>[FUNCTION]</sub></sup><a name="real-part-value"></a>
+<code>&forall; :A. ((<a href="#complex-type">COMPLEX</a> :A) &rarr; :A)</code>
+
+The real part of a complex number.
 
 
 ***
