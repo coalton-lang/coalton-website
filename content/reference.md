@@ -22,9 +22,9 @@ identifier: Reference
   - <a href="#coalton-library-classes-lisp-file"><code>classes.lisp</code></a>
   - <a href="#coalton-library-arith-lisp-file"><code>arith.lisp</code></a>
   - <a href="#coalton-library-string-lisp-file"><code>string.lisp</code></a>
+  - <a href="#coalton-library-tuple-lisp-file"><code>tuple.lisp</code></a>
   - <a href="#coalton-library-optional-lisp-file"><code>optional.lisp</code></a>
   - <a href="#coalton-library-list-lisp-file"><code>list.lisp</code></a>
-  - <a href="#coalton-library-tuple-lisp-file"><code>tuple.lisp</code></a>
   - <a href="#coalton-library-result-lisp-file"><code>result.lisp</code></a>
   - <a href="#coalton-library-functions-lisp-file"><code>functions.lisp</code></a>
   - <a href="#coalton-library-cell-lisp-file"><code>cell.lisp</code></a>
@@ -550,78 +550,6 @@ Constructors:
 
 ***
 
-#### <code>TUPLE3 :A :B :C</code> <sup><sub>[TYPE]</sub></sup><a name="tuple3-type"></a>
-- <code>(TUPLE3 :A :B :C)</code>
-
-Constructors:
-- <code>TUPLE3 :: (:A &rarr; :B &rarr; :C &rarr; (<a href="#tuple3-type">TUPLE3</a> :A :B :C))</code>
-
-<details>
-<summary>Instances</summary>
-
-- <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) (<a href="#eq-class">EQ</a> :C) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple3-type">TUPLE3</a> :A :B :C)</code>
-- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple3-type">TUPLE3</a> :A :B :C)</code>
-
-</details>
-
-
-***
-
-#### <code>TUPLE4 :A :B :C :D</code> <sup><sub>[TYPE]</sub></sup><a name="tuple4-type"></a>
-- <code>(TUPLE4 :A :B :C :D)</code>
-
-Constructors:
-- <code>TUPLE4 :: (:A &rarr; :B &rarr; :C &rarr; :D &rarr; (<a href="#tuple4-type">TUPLE4</a> :A :B :C :D))</code>
-
-<details>
-<summary>Instances</summary>
-
-- <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) (<a href="#eq-class">EQ</a> :C) (<a href="#eq-class">EQ</a> :D) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple4-type">TUPLE4</a> :A :B :C :D)</code>
-- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) (<a href="#hash-class">HASH</a> :D) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple4-type">TUPLE4</a> :A :B :C :D)</code>
-
-</details>
-
-
-***
-
-#### <code>TUPLE5 :A :B :C :D :E</code> <sup><sub>[TYPE]</sub></sup><a name="tuple5-type"></a>
-- <code>(TUPLE5 :A :B :C :D :E)</code>
-
-Constructors:
-- <code>TUPLE5 :: (:A &rarr; :B &rarr; :C &rarr; :D &rarr; :E &rarr; (<a href="#tuple5-type">TUPLE5</a> :A :B :C :D :E))</code>
-
-<details>
-<summary>Instances</summary>
-
-- <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) (<a href="#eq-class">EQ</a> :C) (<a href="#eq-class">EQ</a> :D) (<a href="#eq-class">EQ</a> :E) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple5-type">TUPLE5</a> :A :B :C :D :E)</code>
-- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) (<a href="#hash-class">HASH</a> :D) (<a href="#hash-class">HASH</a> :E) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple5-type">TUPLE5</a> :A :B :C :D :E)</code>
-
-</details>
-
-
-***
-
-#### <code>COMPLEX :A</code> <sup><sub>[TYPE]</sub></sup><a name="complex-type"></a>
-- <code>(COMPLEX :A :A)</code>
-
-Represents a complex algebra of a given type.
-
-Constructors:
-- <code>COMPLEX :: (:A &rarr; :A &rarr; (<a href="#complex-type">COMPLEX</a> :A))</code>
-
-<details>
-<summary>Instances</summary>
-
-- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
-- <code><a href="#num-class">NUM</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
-- <code><a href="#num-class">NUM</a> :A &rArr; <a href="#into-class">INTO</a> :A (<a href="#complex-type">COMPLEX</a> :A)</code>
-- <code>(<a href="#num-class">NUM</a> :A) (<a href="#dividable-class">DIVIDABLE</a> :A :A) &rArr; <a href="#dividable-class">DIVIDABLE</a> (<a href="#complex-type">COMPLEX</a> :A) (<a href="#complex-type">COMPLEX</a> :A)</code>
-
-</details>
-
-
-***
-
 #### <code>FRACTION</code> <sup><sub>[TYPE]</sub></sup><a name="fraction-type"></a>
 - <code>(%FRACTION <a href="#integer-type">INTEGER</a> <a href="#integer-type">INTEGER</a>)</code>
 
@@ -677,56 +605,6 @@ Constructors:
 
 ***
 
-### Values
-
-#### <code>NOT</code> <sup><sub>[FUNCTION]</sub></sup><a name="not-value"></a>
-<code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
-
-Synonym for BOOLEAN-NOT.
-
-
-***
-
-#### <code>XOR</code> <sup><sub>[FUNCTION]</sub></sup><a name="xor-value"></a>
-<code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
-
-Synonym for BOOLEAN-XOR.
-
-
-***
-
-#### <code>BOOLEAN-OR</code> <sup><sub>[FUNCTION]</sub></sup><a name="boolean-or-value"></a>
-<code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
-
-Is X or Y True? Note that this is a *function* which means both X and Y will be evaluated. Use the OR macro for short-circuiting behavior.
-
-
-***
-
-#### <code>BOOLEAN-AND</code> <sup><sub>[FUNCTION]</sub></sup><a name="boolean-and-value"></a>
-<code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
-
-Are X and Y True? Note that this is a *function* which means both X and Y will be evaluated. Use the AND macro for short-circuiting behavior.
-
-
-***
-
-#### <code>BOOLEAN-NOT</code> <sup><sub>[FUNCTION]</sub></sup><a name="boolean-not-value"></a>
-<code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
-
-Is X False?
-
-
-***
-
-#### <code>BOOLEAN-XOR</code> <sup><sub>[FUNCTION]</sub></sup><a name="boolean-xor-value"></a>
-<code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
-
-Are X or Y True, but not both?
-
-
-***
-
 ## [builtin.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/builtin.lisp) <a name="coalton-library-builtin-lisp-file"></a>
 
 ### Values
@@ -760,6 +638,22 @@ Compute the fixed point of a unary function. This is equivalent to the Y-combina
 
 ***
 
+#### <code>NOT</code> <sup><sub>[FUNCTION]</sub></sup><a name="not-value"></a>
+<code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Synonym for BOOLEAN-NOT.
+
+
+***
+
+#### <code>XOR</code> <sup><sub>[FUNCTION]</sub></sup><a name="xor-value"></a>
+<code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Synonym for BOOLEAN-XOR.
+
+
+***
+
 #### <code>FLIP</code> <sup><sub>[FUNCTION]</sub></sup><a name="flip-value"></a>
 <code>&forall; :A :B :C. ((:A &rarr; :B &rarr; :C) &rarr; :B &rarr; :A &rarr; :C)</code>
 
@@ -788,6 +682,38 @@ Signal an error by calling `CL:ERROR`.
 <code>&forall; :A :B. (:A &rarr; :B)</code>
 
 A function which can be used in place of any value, throwing an error at runtime.
+
+
+***
+
+#### <code>BOOLEAN-OR</code> <sup><sub>[FUNCTION]</sub></sup><a name="boolean-or-value"></a>
+<code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Is X or Y True? Note that this is a *function* which means both X and Y will be evaluated. Use the OR macro for short-circuiting behavior.
+
+
+***
+
+#### <code>BOOLEAN-AND</code> <sup><sub>[FUNCTION]</sub></sup><a name="boolean-and-value"></a>
+<code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Are X and Y True? Note that this is a *function* which means both X and Y will be evaluated. Use the AND macro for short-circuiting behavior.
+
+
+***
+
+#### <code>BOOLEAN-NOT</code> <sup><sub>[FUNCTION]</sub></sup><a name="boolean-not-value"></a>
+<code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Is X False?
+
+
+***
+
+#### <code>BOOLEAN-XOR</code> <sup><sub>[FUNCTION]</sub></sup><a name="boolean-xor-value"></a>
+<code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Are X or Y True, but not both?
 
 
 ***
@@ -873,12 +799,12 @@ Methods:
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#string-type">STRING</a></code>
-- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
-- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#list-type">LIST</a> :A)</code>
 - <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) (<a href="#eq-class">EQ</a> :C) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple3-type">TUPLE3</a> :A :B :C)</code>
 - <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) (<a href="#eq-class">EQ</a> :C) (<a href="#eq-class">EQ</a> :D) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple4-type">TUPLE4</a> :A :B :C :D)</code>
 - <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) (<a href="#eq-class">EQ</a> :C) (<a href="#eq-class">EQ</a> :D) (<a href="#eq-class">EQ</a> :E) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple5-type">TUPLE5</a> :A :B :C :D :E)</code>
+- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
+- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#list-type">LIST</a> :A)</code>
 - <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) &rArr; <a href="#eq-class">EQ</a> (<a href="#result-type">RESULT</a> :A :B)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#cell-type">CELL</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#vector-type">VECTOR</a> :A)</code>
@@ -956,8 +882,8 @@ Methods:
 - <code><a href="#ord-class">ORD</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#string-type">STRING</a></code>
-- <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#ord-class">ORD</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
 - <code>(<a href="#ord-class">ORD</a> :A) (<a href="#ord-class">ORD</a> :B) &rArr; <a href="#ord-class">ORD</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
+- <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#ord-class">ORD</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
 - <code>(<a href="#ord-class">ORD</a> :A) (<a href="#ord-class">ORD</a> :B) &rArr; <a href="#ord-class">ORD</a> (<a href="#result-type">RESULT</a> :A :B)</code>
 
 </details>
@@ -1026,11 +952,11 @@ Methods:
 - <code><a href="#hash-class">HASH</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#string-type">STRING</a></code>
-- <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#hash-class">HASH</a> (<a href="#list-type">LIST</a> :A)</code>
 - <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple3-type">TUPLE3</a> :A :B :C)</code>
 - <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) (<a href="#hash-class">HASH</a> :D) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple4-type">TUPLE4</a> :A :B :C :D)</code>
 - <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) (<a href="#hash-class">HASH</a> :D) (<a href="#hash-class">HASH</a> :E) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple5-type">TUPLE5</a> :A :B :C :D :E)</code>
+- <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#hash-class">HASH</a> (<a href="#list-type">LIST</a> :A)</code>
 
 </details>
 
@@ -1420,6 +1346,29 @@ Returns the lesser element of X and Y.
 
 ## [arith.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/arith.lisp) <a name="coalton-library-arith-lisp-file"></a>
 
+### Types
+
+#### <code>COMPLEX :A</code> <sup><sub>[TYPE]</sub></sup><a name="complex-type"></a>
+- <code>(COMPLEX :A :A)</code>
+
+Represents a complex algebra of a given type.
+
+Constructors:
+- <code>COMPLEX :: (:A &rarr; :A &rarr; (<a href="#complex-type">COMPLEX</a> :A))</code>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
+- <code><a href="#num-class">NUM</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
+- <code><a href="#num-class">NUM</a> :A &rArr; <a href="#into-class">INTO</a> :A (<a href="#complex-type">COMPLEX</a> :A)</code>
+- <code>(<a href="#num-class">NUM</a> :A) (<a href="#dividable-class">DIVIDABLE</a> :A :A) &rArr; <a href="#dividable-class">DIVIDABLE</a> (<a href="#complex-type">COMPLEX</a> :A) (<a href="#complex-type">COMPLEX</a> :A)</code>
+
+</details>
+
+
+***
+
 ### Values
 
 #### <code>II</code> <sup><sub>[VALUE]</sub></sup><a name="ii-value"></a>
@@ -1708,6 +1657,79 @@ The length of a string STR.
 <code>(<a href="#string-type">STRING</a> &rarr; <a href="#string-type">STRING</a>)</code>
 
 Reverse a string.
+
+
+***
+
+## [tuple.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/tuple.lisp) <a name="coalton-library-tuple-lisp-file"></a>
+
+### Types
+
+#### <code>TUPLE3 :A :B :C</code> <sup><sub>[TYPE]</sub></sup><a name="tuple3-type"></a>
+- <code>(TUPLE3 :A :B :C)</code>
+
+Constructors:
+- <code>TUPLE3 :: (:A &rarr; :B &rarr; :C &rarr; (<a href="#tuple3-type">TUPLE3</a> :A :B :C))</code>
+
+<details>
+<summary>Instances</summary>
+
+- <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) (<a href="#eq-class">EQ</a> :C) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple3-type">TUPLE3</a> :A :B :C)</code>
+- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple3-type">TUPLE3</a> :A :B :C)</code>
+
+</details>
+
+
+***
+
+#### <code>TUPLE4 :A :B :C :D</code> <sup><sub>[TYPE]</sub></sup><a name="tuple4-type"></a>
+- <code>(TUPLE4 :A :B :C :D)</code>
+
+Constructors:
+- <code>TUPLE4 :: (:A &rarr; :B &rarr; :C &rarr; :D &rarr; (<a href="#tuple4-type">TUPLE4</a> :A :B :C :D))</code>
+
+<details>
+<summary>Instances</summary>
+
+- <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) (<a href="#eq-class">EQ</a> :C) (<a href="#eq-class">EQ</a> :D) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple4-type">TUPLE4</a> :A :B :C :D)</code>
+- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) (<a href="#hash-class">HASH</a> :D) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple4-type">TUPLE4</a> :A :B :C :D)</code>
+
+</details>
+
+
+***
+
+#### <code>TUPLE5 :A :B :C :D :E</code> <sup><sub>[TYPE]</sub></sup><a name="tuple5-type"></a>
+- <code>(TUPLE5 :A :B :C :D :E)</code>
+
+Constructors:
+- <code>TUPLE5 :: (:A &rarr; :B &rarr; :C &rarr; :D &rarr; :E &rarr; (<a href="#tuple5-type">TUPLE5</a> :A :B :C :D :E))</code>
+
+<details>
+<summary>Instances</summary>
+
+- <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) (<a href="#eq-class">EQ</a> :C) (<a href="#eq-class">EQ</a> :D) (<a href="#eq-class">EQ</a> :E) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple5-type">TUPLE5</a> :A :B :C :D :E)</code>
+- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) (<a href="#hash-class">HASH</a> :D) (<a href="#hash-class">HASH</a> :E) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple5-type">TUPLE5</a> :A :B :C :D :E)</code>
+
+</details>
+
+
+***
+
+### Values
+
+#### <code>FST</code> <sup><sub>[FUNCTION]</sub></sup><a name="fst-value"></a>
+<code>&forall; :A :B. ((<a href="#tuple-type">TUPLE</a> :A :B) &rarr; :A)</code>
+
+Get the first element of a tuple.
+
+
+***
+
+#### <code>SND</code> <sup><sub>[FUNCTION]</sub></sup><a name="snd-value"></a>
+<code>&forall; :A :B. ((<a href="#tuple-type">TUPLE</a> :A :B) &rarr; :B)</code>
+
+Get the second element of a tuple.
 
 
 ***
@@ -2188,26 +2210,6 @@ Returns a new list without duplicate elements.
 <code>&forall; :A. ((:A &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> (<a href="#list-type">LIST</a> :A)))</code>
 
 Break a list into a list of equivalence classes according to an equivalence relation.
-
-
-***
-
-## [tuple.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/tuple.lisp) <a name="coalton-library-tuple-lisp-file"></a>
-
-### Values
-
-#### <code>FST</code> <sup><sub>[FUNCTION]</sub></sup><a name="fst-value"></a>
-<code>&forall; :A :B. ((<a href="#tuple-type">TUPLE</a> :A :B) &rarr; :A)</code>
-
-Get the first element of a tuple.
-
-
-***
-
-#### <code>SND</code> <sup><sub>[FUNCTION]</sub></sup><a name="snd-value"></a>
-<code>&forall; :A :B. ((<a href="#tuple-type">TUPLE</a> :A :B) &rarr; :B)</code>
-
-Get the second element of a tuple.
 
 
 ***
