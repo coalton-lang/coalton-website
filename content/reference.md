@@ -2317,12 +2317,12 @@ Print a line to *STANDARD-OUTPUT* in the form "{STR}: {ITEM}"
 ### Types
 
 #### <code>CELL :A</code> <sup><sub>[TYPE]</sub></sup><a name="cell-type"></a>
-- <code>(CELL <a href="#lisp-object-type">LISP-OBJECT</a>)</code>
+- <code>(%CELL <a href="#lisp-object-type">LISP-OBJECT</a>)</code>
 
 Internally mutable cell
 
 Constructors:
-- <code>CELL :: (<a href="#lisp-object-type">LISP-OBJECT</a> &rarr; (<a href="#cell-type">CELL</a> :A))</code>
+- <code>%CELL :: (<a href="#lisp-object-type">LISP-OBJECT</a> &rarr; (<a href="#cell-type">CELL</a> :A))</code>
 
 <details>
 <summary>Instances</summary>
@@ -2342,18 +2342,15 @@ Constructors:
 
 ### Values
 
+#### <code>CELL-POP!</code> <sup><sub>[FUNCTION]</sub></sup><a name="cell-pop!-value"></a>
+<code>&forall; :A. ((<a href="#cell-type">CELL</a> (<a href="#list-type">LIST</a> :A)) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
+
+***
+
 #### <code>CELL-READ</code> <sup><sub>[FUNCTION]</sub></sup><a name="cell-read-value"></a>
 <code>&forall; :A. ((<a href="#cell-type">CELL</a> :A) &rarr; :A)</code>
 
 Read the value of a mutable cell
-
-
-***
-
-#### <code>CELL-SWAP</code> <sup><sub>[FUNCTION]</sub></sup><a name="cell-swap-value"></a>
-<code>&forall; :A. (:A &rarr; (<a href="#cell-type">CELL</a> :A) &rarr; :A)</code>
-
-Replace the value of a mutable cell with a new value, then return the old value
 
 
 ***
@@ -2367,20 +2364,55 @@ Create a new mutable cell
 ***
 
 #### <code>CELL-PUSH!</code> <sup><sub>[FUNCTION]</sub></sup><a name="cell-push!-value"></a>
-<code>&forall; :A. ((<a href="#cell-type">CELL</a> (<a href="#list-type">LIST</a> :A)) &rarr; :A &rarr; <a href="#unit-type">UNIT</a>)</code>
+<code>&forall; :A. ((<a href="#cell-type">CELL</a> (<a href="#list-type">LIST</a> :A)) &rarr; :A &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 ***
 
-#### <code>CELL-WRITE</code> <sup><sub>[FUNCTION]</sub></sup><a name="cell-write-value"></a>
-<code>&forall; :A. (:A &rarr; (<a href="#cell-type">CELL</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
+#### <code>CELL-SWAP!</code> <sup><sub>[FUNCTION]</sub></sup><a name="cell-swap!-value"></a>
+<code>&forall; :A. ((<a href="#cell-type">CELL</a> :A) &rarr; :A &rarr; :A)</code>
 
-Set the value of a mutable cell
+Replace the value of a mutable cell with a new value, then return the old value
 
 
 ***
 
-#### <code>CELL-UPDATE</code> <sup><sub>[FUNCTION]</sub></sup><a name="cell-update-value"></a>
-<code>&forall; :A. ((:A &rarr; :A) &rarr; (<a href="#cell-type">CELL</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
+#### <code>CELL-WRITE!</code> <sup><sub>[FUNCTION]</sub></sup><a name="cell-write!-value"></a>
+<code>&forall; :A. ((<a href="#cell-type">CELL</a> :A) &rarr; :A &rarr; :A)</code>
+
+Set the value of a mutable cell, returning the new value
+
+
+***
+
+#### <code>CELL-UPDATE!</code> <sup><sub>[FUNCTION]</sub></sup><a name="cell-update!-value"></a>
+<code>&forall; :A. ((:A &rarr; :A) &rarr; (<a href="#cell-type">CELL</a> :A) &rarr; :A)</code>
+
+Apply F to the contents of CEL, storing and returning the result
+
+
+***
+
+#### <code>CELL-DECREMENT!</code> <sup><sub>[FUNCTION]</sub></sup><a name="cell-decrement!-value"></a>
+<code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; ((<a href="#cell-type">CELL</a> :A) &rarr; :A)</code>
+
+Add one to the contents of CEL, storing and returning the new value
+
+
+***
+
+#### <code>CELL-INCREMENT!</code> <sup><sub>[FUNCTION]</sub></sup><a name="cell-increment!-value"></a>
+<code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; ((<a href="#cell-type">CELL</a> :A) &rarr; :A)</code>
+
+Add one to the contents of CEL, storing and returning the new value
+
+
+***
+
+#### <code>CELL-UPDATE-SWAP!</code> <sup><sub>[FUNCTION]</sub></sup><a name="cell-update-swap!-value"></a>
+<code>&forall; :A. ((:A &rarr; :A) &rarr; (<a href="#cell-type">CELL</a> :A) &rarr; :A)</code>
+
+Apply F to the contents of CEL, swapping the result for the old value
+
 
 ***
 
