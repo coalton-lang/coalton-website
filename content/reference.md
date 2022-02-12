@@ -2779,6 +2779,14 @@ Returns the keys in TABLE as a list
 
 ***
 
+#### <code>HASHTABLE-SET!</code> <sup><sub>[FUNCTION]</sub></sup><a name="hashtable-set!-value"></a>
+<code>&forall; :A :B. <a href="#hash-class">HASH</a> :A &rArr; ((<a href="#hashtable-type">HASHTABLE</a> :A :B) &rarr; :A &rarr; :B &rarr; <a href="#unit-type">UNIT</a>)</code>
+
+Set KEY to VALUE in TABLE
+
+
+***
+
 #### <code>MAKE-HASHTABLE</code> <sup><sub>[FUNCTION]</sub></sup><a name="make-hashtable-value"></a>
 <code>&forall; :A :B. <a href="#hash-class">HASH</a> :A &rArr; (<a href="#unit-type">UNIT</a> &rarr; (<a href="#hashtable-type">HASHTABLE</a> :A :B))</code>
 
@@ -2812,6 +2820,14 @@ Returns the values in TABLE as a list
 <code>&forall; :A :B :C. ((:A &rarr; :B &rarr; :C) &rarr; (<a href="#hashtable-type">HASHTABLE</a> :A :B) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Call F once for each key value pair in TABLE
+
+
+***
+
+#### <code>HASHTABLE-REMOVE!</code> <sup><sub>[FUNCTION]</sub></sup><a name="hashtable-remove!-value"></a>
+<code>&forall; :A :B. <a href="#hash-class">HASH</a> :A &rArr; ((<a href="#hashtable-type">HASHTABLE</a> :A :B) &rarr; :A &rarr; <a href="#unit-type">UNIT</a>)</code>
+
+Remove the entry at KEY from TABLE
 
 
 ***
