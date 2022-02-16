@@ -426,14 +426,14 @@ Single precision floating point numer. Uses `single-float`.
 ### Types
 
 #### <code>LIST :A</code> <sup><sub>[TYPE]</sub></sup><a name="list-type"></a>
-- <code>(CONS :B (<a href="#list-type">LIST</a> :B))</code>
+- <code>(CONS :A (<a href="#list-type">LIST</a> :A))</code>
 - <code>NIL</code>
 
 Homogeneous list of objects represented as a Common Lisp `list`.
 
 Constructors:
-- <code>CONS :: (:B &rarr; (<a href="#list-type">LIST</a> :B) &rarr; (<a href="#list-type">LIST</a> :B))</code>
-- <code>NIL :: (<a href="#list-type">LIST</a> :B)</code>
+- <code>CONS :: (:A &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
+- <code>NIL :: (<a href="#list-type">LIST</a> :A)</code>
 
 <details>
 <summary>Instances</summary>
