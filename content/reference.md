@@ -286,7 +286,7 @@ Non-allocating tagged non-negative integer; range is platform-dependent. Uses `(
 
 #### <code>ARROW :A :B</code> <sup><sub>[TYPE]</sub></sup><a name="arrow-type"></a>
 
-Type constructor for function types. `(Arrow :a :b)` is equivalent to &lt;code&gt;(:a -&gt; :b)&lt;/code&gt;.
+Type constructor for function types.
 
 
 
@@ -363,7 +363,7 @@ Unbound integer. Uses `integer`.
 
 #### <code>LISP-OBJECT</code> <sup><sub>[TYPE]</sub></sup><a name="lisp-object-type"></a>
 
-Opaque container for arbitrary lisp objects. At runtime this is equivalent to the type `t`.
+Opaque container for arbitrary lisp objects. At runtime this is equivalent to type `t`.
 
 
 
@@ -617,10 +617,7 @@ A function that always returns its argument.
 #### <code>FIX</code> <sup><sub>[FUNCTION]</sub></sup><a name="fix-value"></a>
 <code>&forall; :A :B. (((:A &rarr; :B) &rarr; :A &rarr; :B) &rarr; :A &rarr; :B)</code>
 
-Compute the fixed point of a unary function. This is equivalent to the Y-combinator of the lambda calculus. 
-
-
-    This combinator allows recursion without specific assignment of names. For example, the factorial function can be written
+Compute the fixed point of a unary function. This is equivalent to the Y-combinator of the lambda calculus. This combinator allows recursion without specific assignment of names. For example, the factorial function can be written
 
 
     ```
