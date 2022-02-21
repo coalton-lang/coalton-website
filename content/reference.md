@@ -15,23 +15,38 @@ identifier: Reference
 
 ### Reference
 - <a href="#coalton-package"><code>coalton</code></a>
-  - <a href="#coalton-types-lisp-file"><code>types.lisp</code></a>
-- <a href="#coalton-library-package"><code>coalton-library</code></a>
-  - <a href="#coalton-library-types-lisp-file"><code>types.lisp</code></a>
-  - <a href="#coalton-library-builtin-lisp-file"><code>builtin.lisp</code></a>
-  - <a href="#coalton-library-classes-lisp-file"><code>classes.lisp</code></a>
-  - <a href="#coalton-library-arith-lisp-file"><code>arith.lisp</code></a>
-  - <a href="#coalton-library-string-lisp-file"><code>string.lisp</code></a>
-  - <a href="#coalton-library-tuple-lisp-file"><code>tuple.lisp</code></a>
-  - <a href="#coalton-library-optional-lisp-file"><code>optional.lisp</code></a>
-  - <a href="#coalton-library-list-lisp-file"><code>list.lisp</code></a>
-  - <a href="#coalton-library-result-lisp-file"><code>result.lisp</code></a>
-  - <a href="#coalton-library-functions-lisp-file"><code>functions.lisp</code></a>
-  - <a href="#coalton-library-cell-lisp-file"><code>cell.lisp</code></a>
-  - <a href="#coalton-library-vector-lisp-file"><code>vector.lisp</code></a>
-  - <a href="#coalton-library-slice-lisp-file"><code>slice.lisp</code></a>
-  - <a href="#coalton-library-hashtable-lisp-file"><code>hashtable.lisp</code></a>
-  - <a href="#coalton-library-stateful-computation-lisp-file"><code>stateful-computation.lisp</code></a>
+  - <a href="#coalton-classes-lisp-file"><code>classes.lisp</code></a>
+- <a href="#coalton-library/classes-package"><code>coalton-library/classes</code></a>
+  - <a href="#coalton-library/classes-classes-lisp-file"><code>classes.lisp</code></a>
+- <a href="#coalton-library/builtin-package"><code>coalton-library/builtin</code></a>
+  - <a href="#coalton-library/builtin-builtin-lisp-file"><code>builtin.lisp</code></a>
+- <a href="#coalton-library/boolean-package"><code>coalton-library/boolean</code></a>
+- <a href="#coalton-library/bits-package"><code>coalton-library/bits</code></a>
+  - <a href="#coalton-library/bits-bits-lisp-file"><code>bits.lisp</code></a>
+- <a href="#coalton-library/arith-package"><code>coalton-library/arith</code></a>
+  - <a href="#coalton-library/arith-arith-lisp-file"><code>arith.lisp</code></a>
+- <a href="#coalton-library/char-package"><code>coalton-library/char</code></a>
+- <a href="#coalton-library/string-package"><code>coalton-library/string</code></a>
+  - <a href="#coalton-library/string-string-lisp-file"><code>string.lisp</code></a>
+- <a href="#coalton-library/tuple-package"><code>coalton-library/tuple</code></a>
+  - <a href="#coalton-library/tuple-tuple-lisp-file"><code>tuple.lisp</code></a>
+- <a href="#coalton-library/optional-package"><code>coalton-library/optional</code></a>
+  - <a href="#coalton-library/optional-optional-lisp-file"><code>optional.lisp</code></a>
+- <a href="#coalton-library/list-package"><code>coalton-library/list</code></a>
+  - <a href="#coalton-library/list-list-lisp-file"><code>list.lisp</code></a>
+- <a href="#coalton-library/result-package"><code>coalton-library/result</code></a>
+  - <a href="#coalton-library/result-result-lisp-file"><code>result.lisp</code></a>
+- <a href="#coalton-library/functions-package"><code>coalton-library/functions</code></a>
+  - <a href="#coalton-library/functions-functions-lisp-file"><code>functions.lisp</code></a>
+- <a href="#coalton-library/cell-package"><code>coalton-library/cell</code></a>
+  - <a href="#coalton-library/cell-cell-lisp-file"><code>cell.lisp</code></a>
+- <a href="#coalton-library/vector-package"><code>coalton-library/vector</code></a>
+  - <a href="#coalton-library/vector-vector-lisp-file"><code>vector.lisp</code></a>
+- <a href="#coalton-library/slice-package"><code>coalton-library/slice</code></a>
+  - <a href="#coalton-library/slice-slice-lisp-file"><code>slice.lisp</code></a>
+- <a href="#coalton-library/hashtable-package"><code>coalton-library/hashtable</code></a>
+  - <a href="#coalton-library/hashtable-hashtable-lisp-file"><code>hashtable.lisp</code></a>
+- <a href="#coalton-library/monad/state-package"><code>coalton-library/monad/state</code></a>
 
 
 </div>
@@ -50,10 +65,10 @@ Signed 8-bit integer capable of storing values in `[-128, 127]`. Uses `(signed-b
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#bits-class">BITS</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#i8-type">I8</a></code>
-- <code><a href="#bits-class">BITS</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#i8-type">I8</a></code>
@@ -71,16 +86,16 @@ Unsigned 8-bit integer capable of storing values in `[0, 255]`. Uses `(unsigned-
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#bits-class">BITS</a> <a href="#u8-type">U8</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#u8-type">U8</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#u8-type">U8</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#u8-type">U8</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#u8-type">U8</a></code>
-- <code><a href="#bits-class">BITS</a> <a href="#u8-type">U8</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#u8-type">U8</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#u8-type">U8</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#u8-type">U8</a></code>
 
 </details>
 
@@ -95,10 +110,10 @@ Signed 16-bit integer capable of storing values in `[-32768, 32767]`. Uses `(sig
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#bits-class">BITS</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#i16-type">I16</a></code>
-- <code><a href="#bits-class">BITS</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i16-type">I16</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#i16-type">I16</a></code>
@@ -116,14 +131,14 @@ Signed 32-bit integer capable of storing values in `[-2147483648, 2147483647]`. 
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#bits-class">BITS</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#i32-type">I32</a></code>
-- <code><a href="#bits-class">BITS</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i32-type">I32</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#i32-type">I32</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#i32-type">I32</a></code>
 
 </details>
 
@@ -138,14 +153,14 @@ Signed 64-bit integer capable of storing values in `[-9223372036854775808, 92233
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#bits-class">BITS</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#i64-type">I64</a></code>
-- <code><a href="#bits-class">BITS</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i64-type">I64</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#i64-type">I64</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#i64-type">I64</a></code>
 
 </details>
 
@@ -160,10 +175,10 @@ Unsigned 16-bit integer capable of storing values in `[0, 65535]`. Uses `(unsign
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#bits-class">BITS</a> <a href="#u16-type">U16</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#u16-type">U16</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#u16-type">U16</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#u16-type">U16</a></code>
-- <code><a href="#bits-class">BITS</a> <a href="#u16-type">U16</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#u16-type">U16</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
@@ -183,16 +198,16 @@ Unsigned 32-bit integer capable of storing values in `[0, 4294967295]`. Uses `(u
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#bits-class">BITS</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#u32-type">U32</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#u32-type">U32</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#u32-type">U32</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#u32-type">U32</a></code>
-- <code><a href="#bits-class">BITS</a> <a href="#u32-type">U32</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#u32-type">U32</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#u32-type">U32</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#u32-type">U32</a></code>
 
 </details>
 
@@ -207,16 +222,16 @@ Unsigned 64-bit integer capable of storing values in `[0, 18446744073709551615]`
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#bits-class">BITS</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#u64-type">U64</a></code>
-- <code><a href="#bits-class">BITS</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u64-type">U64</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u64-type">U64</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u64-type">U64</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#u64-type">U64</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#u64-type">U64</a></code>
 
 </details>
 
@@ -248,10 +263,10 @@ Non-allocating tagged integer; range is platform-dependent. Uses `fixnum`.
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#bits-class">BITS</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#ifix-type">IFIX</a></code>
-- <code><a href="#bits-class">BITS</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ifix-type">IFIX</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#ifix-type">IFIX</a></code>
@@ -269,10 +284,10 @@ Non-allocating tagged non-negative integer; range is platform-dependent. Uses `(
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#bits-class">BITS</a> <a href="#ufix-type">UFIX</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#ufix-type">UFIX</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#ufix-type">UFIX</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#ufix-type">UFIX</a></code>
-- <code><a href="#bits-class">BITS</a> <a href="#ufix-type">UFIX</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#ufix-type">UFIX</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ufix-type">UFIX</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ufix-type">UFIX</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
@@ -324,10 +339,14 @@ Unbound integer. Uses `integer`.
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#bits-class">BITS</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#integer-type">INTEGER</a></code>
-- <code><a href="#bits-class">BITS</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ufix-type">UFIX</a> <a href="#integer-type">INTEGER</a></code>
@@ -351,10 +370,6 @@ Unbound integer. Uses `integer`.
 - <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#string-type">STRING</a> <a href="#integer-type">INTEGER</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#fraction-type">FRACTION</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#integer-type">INTEGER</a></code>
 
 </details>
 
@@ -377,6 +392,9 @@ Double precision floating point numer. Uses `double-float`.
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#double-float-type">DOUBLE-FLOAT</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
@@ -386,9 +404,6 @@ Double precision floating point numer. Uses `double-float`.
 - <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#double-float-type">DOUBLE-FLOAT</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 
 </details>
 
@@ -403,6 +418,9 @@ Single precision floating point numer. Uses `single-float`.
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
@@ -412,16 +430,13 @@ Single precision floating point numer. Uses `single-float`.
 - <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 
 </details>
 
 
 ***
 
-## [types.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/types.lisp) <a name="coalton-types-lisp-file"></a>
+## [classes.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/classes.lisp) <a name="coalton-classes-lisp-file"></a>
 
 ### Types
 
@@ -489,11 +504,32 @@ Constructors:
 
 ***
 
-# Package `coalton-library`<a name="coalton-library-package"></a>
+# Package `coalton-library/classes`<a name="coalton-library/classes-package"></a>
 
-## [types.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/types.lisp) <a name="coalton-library-types-lisp-file"></a>
+## [classes.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/classes.lisp) <a name="coalton-library/classes-classes-lisp-file"></a>
 
 ### Types
+
+#### <code>ORD</code> <sup><sub>[TYPE]</sub></sup><a name="ord-type"></a>
+- <code>LT</code>
+- <code>GT</code>
+- <code>EQ</code>
+
+Constructors:
+- <code>LT :: <a href="#ord-type">ORD</a></code>
+- <code>GT :: <a href="#ord-type">ORD</a></code>
+- <code>EQ :: <a href="#ord-type">ORD</a></code>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#eq-class">EQ</a> <a href="#ord-type">ORD</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#ord-type">ORD</a></code>
+
+</details>
+
+
+***
 
 #### <code>TUPLE :A :B</code> <sup><sub>[TYPE]</sub></sup><a name="tuple-type"></a>
 - <code>(TUPLE :A :B)</code>
@@ -547,29 +583,6 @@ Constructors:
 
 ***
 
-#### <code>FRACTION</code> <sup><sub>[TYPE]</sub></sup><a name="fraction-type"></a>
-- <code>(%FRACTION <a href="#integer-type">INTEGER</a> <a href="#integer-type">INTEGER</a>)</code>
-
-A ratio of integers always in reduced form.
-
-Constructors:
-- <code>%FRACTION :: (<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#fraction-type">FRACTION</a>)</code>
-
-<details>
-<summary>Instances</summary>
-
-- <code><a href="#eq-class">EQ</a> <a href="#fraction-type">FRACTION</a></code>
-- <code><a href="#num-class">NUM</a> <a href="#fraction-type">FRACTION</a></code>
-- <code><a href="#ord-class">ORD</a> <a href="#fraction-type">FRACTION</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#fraction-type">FRACTION</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#fraction-type">FRACTION</a> <a href="#fraction-type">FRACTION</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#fraction-type">FRACTION</a></code>
-
-</details>
-
-
-***
-
 #### <code>OPTIONAL :A</code> <sup><sub>[TYPE]</sub></sup><a name="optional-type"></a>
 - <code>(SOME :A)</code>
 - <code>NONE</code>
@@ -598,165 +611,6 @@ Constructors:
 - <code><a href="#unwrappable-class">UNWRAPPABLE</a> <a href="#optional-type">OPTIONAL</a></code>
 
 </details>
-
-
-***
-
-## [builtin.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/builtin.lisp) <a name="coalton-library-builtin-lisp-file"></a>
-
-### Values
-
-#### <code>ID</code> <sup><sub>[FUNCTION]</sub></sup><a name="id-value"></a>
-<code>&forall; :A. (:A &rarr; :A)</code>
-
-A function that always returns its argument.
-
-
-***
-
-#### <code>FIX</code> <sup><sub>[FUNCTION]</sub></sup><a name="fix-value"></a>
-<code>&forall; :A :B. (((:A &rarr; :B) &rarr; :A &rarr; :B) &rarr; :A &rarr; :B)</code>
-
-Compute the fixed point of a unary function. This is equivalent to the Y-combinator of the lambda calculus. This combinator allows recursion without specific assignment of names. For example, the factorial function can be written
-
-
-    ```
-    (define fact
-      (fix
-        (fn (f n)
-          (if (== n 0)
-            1
-            (* n (f (- n 1)))))))
-    ```
-
-
-***
-
-#### <code>NOT</code> <sup><sub>[FUNCTION]</sub></sup><a name="not-value"></a>
-<code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
-
-Synonym for BOOLEAN-NOT.
-
-
-***
-
-#### <code>XOR</code> <sup><sub>[FUNCTION]</sub></sup><a name="xor-value"></a>
-<code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
-
-Synonym for BOOLEAN-XOR.
-
-
-***
-
-#### <code>FLIP</code> <sup><sub>[FUNCTION]</sub></sup><a name="flip-value"></a>
-<code>&forall; :A :B :C. ((:A &rarr; :B &rarr; :C) &rarr; :B &rarr; :A &rarr; :C)</code>
-
-Returns a function that takes its arguments in reverse order.
-
-
-***
-
-#### <code>CONST</code> <sup><sub>[FUNCTION]</sub></sup><a name="const-value"></a>
-<code>&forall; :A :B. (:A &rarr; :B &rarr; :A)</code>
-
-A function that always returns its first argument.
-
-
-***
-
-#### <code>ERROR</code> <sup><sub>[FUNCTION]</sub></sup><a name="error-value"></a>
-<code>&forall; :A. (<a href="#string-type">STRING</a> &rarr; :A)</code>
-
-Signal an error by calling `CL:ERROR`.
-
-
-***
-
-#### <code>UNDEFINED</code> <sup><sub>[FUNCTION]</sub></sup><a name="undefined-value"></a>
-<code>&forall; :A :B. (:A &rarr; :B)</code>
-
-A function which can be used in place of any value, throwing an error at runtime.
-
-
-***
-
-#### <code>BOOLEAN-OR</code> <sup><sub>[FUNCTION]</sub></sup><a name="boolean-or-value"></a>
-<code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
-
-Is X or Y True? Note that this is a *function* which means both X and Y will be evaluated. Use the OR macro for short-circuiting behavior.
-
-
-***
-
-#### <code>BOOLEAN-AND</code> <sup><sub>[FUNCTION]</sub></sup><a name="boolean-and-value"></a>
-<code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
-
-Are X and Y True? Note that this is a *function* which means both X and Y will be evaluated. Use the AND macro for short-circuiting behavior.
-
-
-***
-
-#### <code>BOOLEAN-NOT</code> <sup><sub>[FUNCTION]</sub></sup><a name="boolean-not-value"></a>
-<code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
-
-Is X False?
-
-
-***
-
-#### <code>BOOLEAN-XOR</code> <sup><sub>[FUNCTION]</sub></sup><a name="boolean-xor-value"></a>
-<code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
-
-Are X or Y True, but not both?
-
-
-***
-
-## [classes.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/classes.lisp) <a name="coalton-library-classes-lisp-file"></a>
-
-### Types
-
-#### <code>ORD</code> <sup><sub>[TYPE]</sub></sup><a name="ord-type"></a>
-- <code>LT</code>
-- <code>GT</code>
-- <code>EQ</code>
-
-Constructors:
-- <code>LT :: <a href="#ord-type">ORD</a></code>
-- <code>GT :: <a href="#ord-type">ORD</a></code>
-- <code>EQ :: <a href="#ord-type">ORD</a></code>
-
-<details>
-<summary>Instances</summary>
-
-- <code><a href="#eq-class">EQ</a> <a href="#ord-type">ORD</a></code>
-- <code><a href="#ord-class">ORD</a> <a href="#ord-type">ORD</a></code>
-
-</details>
-
-
-***
-
-#### <code>QUANTIZATION :A</code> <sup><sub>[TYPE]</sub></sup><a name="quantization-type"></a>
-- <code>(QUANTIZATION :A <a href="#integer-type">INTEGER</a> :A <a href="#integer-type">INTEGER</a> :A)</code>
-
-Represents an integer quantization of `:a`. See the `Quantizable` typeclass.
-
-The fields are defined as follows:
-
-1. A value of type `:a`.
-
-2. The greatest integer less than or equal to a particular value.
-
-3. The remainder of this as a value of type `:a`.
-
-4. The least integer greater than or equal to a particular value.
-
-5. The remainder of this as a value of type `:a`.
-
-
-Constructors:
-- <code>QUANTIZATION :: (:A &rarr; <a href="#integer-type">INTEGER</a> &rarr; :A &rarr; <a href="#integer-type">INTEGER</a> &rarr; :A &rarr; (<a href="#quantization-type">QUANTIZATION</a> :A))</code>
 
 
 ***
@@ -803,6 +657,28 @@ Methods:
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#cell-type">CELL</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#slice-type">SLICE</a> :A)</code>
+
+</details>
+
+
+***
+
+#### <code>ISO</code> <sup><sub>[CLASS]</sub></sup><a name="iso-class"></a>
+<code>(<a href="#into-class">INTO</a> :A :B) (<a href="#into-class">INTO</a> :B :A) &rArr; <a href="#iso-class">ISO</a> :A :B</code>
+
+Opting into this marker typeclass imples that the instances for (Into :a :b) and (Into :b :a) form a bijection.
+
+Methods:
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#iso-class">ISO</a> :A :A</code>
+- <code><a href="#iso-class">ISO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
+- <code><a href="#iso-class">ISO</a> (<a href="#tuple-type">TUPLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :B :A)</code>
+- <code><a href="#iso-class">ISO</a> (<a href="#result-type">RESULT</a> <a href="#unit-type">UNIT</a> :A) (<a href="#optional-type">OPTIONAL</a> :A)</code>
+- <code><a href="#iso-class">ISO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
+- <code><a href="#iso-class">ISO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
 
 </details>
 
@@ -877,38 +753,6 @@ Methods:
 - <code>(<a href="#ord-class">ORD</a> :A) (<a href="#ord-class">ORD</a> :B) &rArr; <a href="#ord-class">ORD</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#ord-class">ORD</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
 - <code>(<a href="#ord-class">ORD</a> :A) (<a href="#ord-class">ORD</a> :B) &rArr; <a href="#ord-class">ORD</a> (<a href="#result-type">RESULT</a> :A :B)</code>
-
-</details>
-
-
-***
-
-#### <code>BITS</code> <sup><sub>[CLASS]</sub></sup><a name="bits-class"></a>
-<code><a href="#num-class">NUM</a> :A &rArr; <a href="#bits-class">BITS</a> :A</code>
-
-Operations on the bits of twos-complement integers
-
-Methods:
-- <code>BIT-AND :: (:A &rarr; :A &rarr; :A)</code>
-- <code>BIT-OR :: (:A &rarr; :A &rarr; :A)</code>
-- <code>BIT-XOR :: (:A &rarr; :A &rarr; :A)</code>
-- <code>BIT-NOT :: (:A &rarr; :A)</code>
-- <code>BIT-SHIFT :: (<a href="#integer-type">INTEGER</a> &rarr; :A &rarr; :A)</code>
-
-<details>
-<summary>Instances</summary>
-
-- <code><a href="#bits-class">BITS</a> <a href="#i8-type">I8</a></code>
-- <code><a href="#bits-class">BITS</a> <a href="#i16-type">I16</a></code>
-- <code><a href="#bits-class">BITS</a> <a href="#i32-type">I32</a></code>
-- <code><a href="#bits-class">BITS</a> <a href="#i64-type">I64</a></code>
-- <code><a href="#bits-class">BITS</a> <a href="#ifix-type">IFIX</a></code>
-- <code><a href="#bits-class">BITS</a> <a href="#integer-type">INTEGER</a></code>
-- <code><a href="#bits-class">BITS</a> <a href="#u8-type">U8</a></code>
-- <code><a href="#bits-class">BITS</a> <a href="#u16-type">U16</a></code>
-- <code><a href="#bits-class">BITS</a> <a href="#u32-type">U32</a></code>
-- <code><a href="#bits-class">BITS</a> <a href="#u64-type">U64</a></code>
-- <code><a href="#bits-class">BITS</a> <a href="#ufix-type">UFIX</a></code>
 
 </details>
 
@@ -1030,7 +874,7 @@ Methods:
 - <code><a href="#monad-class">MONAD</a> <a href="#optional-type">OPTIONAL</a></code>
 - <code><a href="#monad-class">MONAD</a> <a href="#list-type">LIST</a></code>
 - <code><a href="#monad-class">MONAD</a> (<a href="#result-type">RESULT</a> :A)</code>
-- <code><a href="#monad-class">MONAD</a> (<a href="#statefulcomputation-type">STATEFULCOMPUTATION</a> :A)</code>
+- <code><a href="#monad-class">MONAD</a> (<a href="#st-type">ST</a> :A)</code>
 
 </details>
 
@@ -1074,7 +918,7 @@ Methods:
 - <code><a href="#functor-class">FUNCTOR</a> (<a href="#result-type">RESULT</a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#cell-type">CELL</a></code>
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#vector-type">VECTOR</a></code>
-- <code><a href="#functor-class">FUNCTOR</a> (<a href="#statefulcomputation-type">STATEFULCOMPUTATION</a> :A)</code>
+- <code><a href="#functor-class">FUNCTOR</a> (<a href="#st-type">ST</a> :A)</code>
 
 </details>
 
@@ -1093,47 +937,6 @@ Methods:
 <summary>Instances</summary>
 
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#string-type">STRING</a> <a href="#integer-type">INTEGER</a></code>
-
-</details>
-
-
-***
-
-#### <code>DIVIDABLE</code> <sup><sub>[CLASS]</sub></sup><a name="dividable-class"></a>
-<code>(<a href="#num-class">NUM</a> :A) (<a href="#num-class">NUM</a> :B) &rArr; <a href="#dividable-class">DIVIDABLE</a> :A :B</code>
-
-The representation of a type such that division within that type possibly results in another type. For instance,
-
-
-    (Dividable Integer Fraction)
-
-
-establishes that division of two `Integer`s can result in a `Fraction`, whereas
-
-
-    (Dividable Single-Float Single-Float)
-
-
-establishes that division of two `Single-Float`s can result in a `Single-Float`.
-
-Note that `Dividable` does *not* establish a default result type; you must constrain the result type yourself.
-
-The function / is partial, and will error produce a run-time error if the divisor is zero.
-
-
-Methods:
-- <code>/ :: (:A &rarr; :A &rarr; :B)</code>
-
-<details>
-<summary>Instances</summary>
-
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#fraction-type">FRACTION</a> <a href="#fraction-type">FRACTION</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#double-float-type">DOUBLE-FLOAT</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#fraction-type">FRACTION</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
-- <code>(<a href="#num-class">NUM</a> :A) (<a href="#dividable-class">DIVIDABLE</a> :A :A) &rArr; <a href="#dividable-class">DIVIDABLE</a> (<a href="#complex-type">COMPLEX</a> :A) (<a href="#complex-type">COMPLEX</a> :A)</code>
 
 </details>
 
@@ -1215,34 +1018,7 @@ Methods:
 - <code><a href="#applicative-class">APPLICATIVE</a> <a href="#list-type">LIST</a></code>
 - <code><a href="#applicative-class">APPLICATIVE</a> (<a href="#result-type">RESULT</a> :A)</code>
 - <code><a href="#applicative-class">APPLICATIVE</a> <a href="#cell-type">CELL</a></code>
-- <code><a href="#applicative-class">APPLICATIVE</a> (<a href="#statefulcomputation-type">STATEFULCOMPUTATION</a> :A)</code>
-
-</details>
-
-
-***
-
-#### <code>QUANTIZABLE</code> <sup><sub>[CLASS]</sub></sup><a name="quantizable-class"></a>
-<code>(<a href="#ord-class">ORD</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; <a href="#quantizable-class">QUANTIZABLE</a> :A</code>
-
-The representation of a type that allows "quantizing", "snapping to integers", or "rounding." (All of these concepts are roughly equivalent.)
-
-
-Methods:
-- <code>QUANTIZE :: (:A &rarr; (<a href="#quantization-type">QUANTIZATION</a> :A))</code>
-
-<details>
-<summary>Instances</summary>
-
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#integer-type">INTEGER</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#i32-type">I32</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#i64-type">I64</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#u8-type">U8</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#u32-type">U32</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#u64-type">U64</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#applicative-class">APPLICATIVE</a> (<a href="#st-type">ST</a> :A)</code>
 
 </details>
 
@@ -1284,11 +1060,6 @@ Is X less than Y?
 
 Is X greater than Y?
 
-
-***
-
-#### <code>/=</code> <sup><sub>[FUNCTION]</sub></sup><a name="/=-value"></a>
-<code>&forall; :A. <a href="#eq-class">EQ</a> :A &rArr; (:A &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 ***
 
@@ -1334,25 +1105,233 @@ Returns the lesser element of X and Y.
 
 ***
 
-## [arith.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/arith.lisp) <a name="coalton-library-arith-lisp-file"></a>
+# Package `coalton-library/builtin`<a name="coalton-library/builtin-package"></a>
 
-### Types
+## [builtin.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/builtin.lisp) <a name="coalton-library/builtin-builtin-lisp-file"></a>
 
-#### <code>COMPLEX :A</code> <sup><sub>[TYPE]</sub></sup><a name="complex-type"></a>
-- <code>(COMPLEX :A :A)</code>
+### Values
 
-Represents a complex algebra of a given type.
+#### <code>NOT</code> <sup><sub>[FUNCTION]</sub></sup><a name="not-value"></a>
+<code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
-Constructors:
-- <code>COMPLEX :: (:A &rarr; :A &rarr; (<a href="#complex-type">COMPLEX</a> :A))</code>
+Synonym for BOOLEAN-NOT.
+
+
+***
+
+#### <code>XOR</code> <sup><sub>[FUNCTION]</sub></sup><a name="xor-value"></a>
+<code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Synonym for BOOLEAN-XOR.
+
+
+***
+
+#### <code>ERROR</code> <sup><sub>[FUNCTION]</sub></sup><a name="error-value"></a>
+<code>&forall; :A. (<a href="#string-type">STRING</a> &rarr; :A)</code>
+
+Signal an error by calling `CL:ERROR`.
+
+
+***
+
+#### <code>UNDEFINED</code> <sup><sub>[FUNCTION]</sub></sup><a name="undefined-value"></a>
+<code>&forall; :A :B. (:A &rarr; :B)</code>
+
+A function which can be used in place of any value, throwing an error at runtime.
+
+
+***
+
+#### <code>BOOLEAN-OR</code> <sup><sub>[FUNCTION]</sub></sup><a name="boolean-or-value"></a>
+<code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Is X or Y True? Note that this is a *function* which means both X and Y will be evaluated. Use the OR macro for short-circuiting behavior.
+
+
+***
+
+#### <code>BOOLEAN-AND</code> <sup><sub>[FUNCTION]</sub></sup><a name="boolean-and-value"></a>
+<code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Are X and Y True? Note that this is a *function* which means both X and Y will be evaluated. Use the AND macro for short-circuiting behavior.
+
+
+***
+
+#### <code>BOOLEAN-NOT</code> <sup><sub>[FUNCTION]</sub></sup><a name="boolean-not-value"></a>
+<code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Is X False?
+
+
+***
+
+#### <code>BOOLEAN-XOR</code> <sup><sub>[FUNCTION]</sub></sup><a name="boolean-xor-value"></a>
+<code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Are X or Y True, but not both?
+
+
+***
+
+# Package `coalton-library/boolean`<a name="coalton-library/boolean-package"></a>
+
+# Package `coalton-library/bits`<a name="coalton-library/bits-package"></a>
+
+## [bits.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/bits.lisp) <a name="coalton-library/bits-bits-lisp-file"></a>
+
+### Classes
+
+#### <code>BITS</code> <sup><sub>[CLASS]</sub></sup><a name="bits-class"></a>
+<code><a href="#num-class">NUM</a> :A &rArr; <a href="#bits-class">BITS</a> :A</code>
+
+Operations on the bits of twos-complement integers
+
+Methods:
+- <code>AND :: (:A &rarr; :A &rarr; :A)</code>
+- <code>OR :: (:A &rarr; :A &rarr; :A)</code>
+- <code>XOR :: (:A &rarr; :A &rarr; :A)</code>
+- <code>NOT :: (:A &rarr; :A)</code>
+- <code>SHIFT :: (<a href="#integer-type">INTEGER</a> &rarr; :A &rarr; :A)</code>
 
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
-- <code><a href="#num-class">NUM</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
-- <code><a href="#num-class">NUM</a> :A &rArr; <a href="#into-class">INTO</a> :A (<a href="#complex-type">COMPLEX</a> :A)</code>
+- <code><a href="#bits-class">BITS</a> <a href="#i8-type">I8</a></code>
+- <code><a href="#bits-class">BITS</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#bits-class">BITS</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#bits-class">BITS</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#bits-class">BITS</a> <a href="#ifix-type">IFIX</a></code>
+- <code><a href="#bits-class">BITS</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#bits-class">BITS</a> <a href="#u8-type">U8</a></code>
+- <code><a href="#bits-class">BITS</a> <a href="#u16-type">U16</a></code>
+- <code><a href="#bits-class">BITS</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#bits-class">BITS</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#bits-class">BITS</a> <a href="#ufix-type">UFIX</a></code>
+
+</details>
+
+
+***
+
+# Package `coalton-library/arith`<a name="coalton-library/arith-package"></a>
+
+## [arith.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/arith.lisp) <a name="coalton-library/arith-arith-lisp-file"></a>
+
+### Types
+
+#### <code>FRACTION</code> <sup><sub>[TYPE]</sub></sup><a name="fraction-type"></a>
+- <code>(%FRACTION <a href="#integer-type">INTEGER</a> <a href="#integer-type">INTEGER</a>)</code>
+
+A ratio of integers always in reduced form.
+
+Constructors:
+- <code>%FRACTION :: (<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#fraction-type">FRACTION</a>)</code>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#fraction-type">FRACTION</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#num-class">NUM</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#fraction-type">FRACTION</a></code>
+
+</details>
+
+
+***
+
+#### <code>QUANTIZATION :A</code> <sup><sub>[TYPE]</sub></sup><a name="quantization-type"></a>
+- <code>(QUANTIZATION :A <a href="#integer-type">INTEGER</a> :A <a href="#integer-type">INTEGER</a> :A)</code>
+
+Represents an integer quantization of `:a`. See the `Quantizable` typeclass.
+
+The fields are defined as follows:
+
+1. A value of type `:a`.
+
+2. The greatest integer less than or equal to a particular value.
+
+3. The remainder of this as a value of type `:a`.
+
+4. The least integer greater than or equal to a particular value.
+
+5. The remainder of this as a value of type `:a`.
+
+
+Constructors:
+- <code>QUANTIZATION :: (:A &rarr; <a href="#integer-type">INTEGER</a> &rarr; :A &rarr; <a href="#integer-type">INTEGER</a> &rarr; :A &rarr; (<a href="#quantization-type">QUANTIZATION</a> :A))</code>
+
+
+***
+
+### Classes
+
+#### <code>DIVIDABLE</code> <sup><sub>[CLASS]</sub></sup><a name="dividable-class"></a>
+<code>(<a href="#num-class">NUM</a> :A) (<a href="#num-class">NUM</a> :B) &rArr; <a href="#dividable-class">DIVIDABLE</a> :A :B</code>
+
+The representation of a type such that division within that type possibly results in another type. For instance,
+
+
+    (Dividable Integer Fraction)
+
+
+establishes that division of two `Integer`s can result in a `Fraction`, whereas
+
+
+    (Dividable Single-Float Single-Float)
+
+
+establishes that division of two `Single-Float`s can result in a `Single-Float`.
+
+Note that `Dividable` does *not* establish a default result type; you must constrain the result type yourself.
+
+The function / is partial, and will error produce a run-time error if the divisor is zero.
+
+
+Methods:
+- <code>/ :: (:A &rarr; :A &rarr; :B)</code>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#fraction-type">FRACTION</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#double-float-type">DOUBLE-FLOAT</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code>(<a href="#num-class">NUM</a> :A) (<a href="#dividable-class">DIVIDABLE</a> :A :A) &rArr; <a href="#dividable-class">DIVIDABLE</a> (<a href="#complex-type">COMPLEX</a> :A) (<a href="#complex-type">COMPLEX</a> :A)</code>
+
+</details>
+
+
+***
+
+#### <code>QUANTIZABLE</code> <sup><sub>[CLASS]</sub></sup><a name="quantizable-class"></a>
+<code>(<a href="#ord-class">ORD</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; <a href="#quantizable-class">QUANTIZABLE</a> :A</code>
+
+The representation of a type that allows "quantizing", "snapping to integers", or "rounding." (All of these concepts are roughly equivalent.)
+
+
+Methods:
+- <code>QUANTIZE :: (:A &rarr; (<a href="#quantization-type">QUANTIZATION</a> :A))</code>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#u8-type">U8</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#fraction-type">FRACTION</a></code>
 
 </details>
 
@@ -1409,22 +1388,6 @@ Compute NUM modulo BASE.
 
 ***
 
-#### <code>ODD</code> <sup><sub>[FUNCTION]</sub></sup><a name="odd-value"></a>
-<code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
-
-Is N odd?
-
-
-***
-
-#### <code>EVEN</code> <sup><sub>[FUNCTION]</sub></sup><a name="even-value"></a>
-<code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
-
-Is N even?
-
-
-***
-
 #### <code>EXPT</code> <sup><sub>[FUNCTION]</sub></sup><a name="expt-value"></a>
 <code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
 
@@ -1433,10 +1396,26 @@ Exponentiate BASE to a non-negative POWER.
 
 ***
 
+#### <code>ODD?</code> <sup><sub>[FUNCTION]</sub></sup><a name="odd?-value"></a>
+<code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Is N odd?
+
+
+***
+
 #### <code>SIGN</code> <sup><sub>[FUNCTION]</sub></sup><a name="sign-value"></a>
 <code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; <a href="#integer-type">INTEGER</a>)</code>
 
 The sign of X.
+
+
+***
+
+#### <code>EVEN?</code> <sup><sub>[FUNCTION]</sub></sup><a name="even?-value"></a>
+<code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Is N even?
 
 
 ***
@@ -1453,14 +1432,6 @@ Return the greatest integer less than or equal to X.
 <code>&forall; :A. <a href="#quantizable-class">QUANTIZABLE</a> :A &rArr; (:A &rarr; <a href="#integer-type">INTEGER</a>)</code>
 
 Return the nearest integer to X, with ties breaking toward positive infinity.
-
-
-***
-
-#### <code>SAFE/</code> <sup><sub>[FUNCTION]</sub></sup><a name="safe/-value"></a>
-<code>&forall; :A :B. <a href="#dividable-class">DIVIDABLE</a> :A :B &rArr; (:A &rarr; :A &rarr; (<a href="#optional-type">OPTIONAL</a> :B))</code>
-
-Safely divide X by Y, returning None if Y is zero.
 
 
 ***
@@ -1607,9 +1578,37 @@ Round a Single-Float to the nearest Integer.
 
 ***
 
-## [string.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/string.lisp) <a name="coalton-library-string-lisp-file"></a>
+# Package `coalton-library/char`<a name="coalton-library/char-package"></a>
+
+# Package `coalton-library/string`<a name="coalton-library/string-package"></a>
+
+## [string.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/string.lisp) <a name="coalton-library/string-string-lisp-file"></a>
 
 ### Values
+
+#### <code>CONCAT</code> <sup><sub>[FUNCTION]</sub></sup><a name="concat-value"></a>
+<code>(<a href="#string-type">STRING</a> &rarr; <a href="#string-type">STRING</a> &rarr; <a href="#string-type">STRING</a>)</code>
+
+Concatenate STR1 and STR2 together, returning a new string.
+
+
+***
+
+#### <code>LENGTH</code> <sup><sub>[FUNCTION]</sub></sup><a name="length-value"></a>
+<code>(<a href="#string-type">STRING</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
+
+The length of a string STR.
+
+
+***
+
+#### <code>REVERSE</code> <sup><sub>[FUNCTION]</sub></sup><a name="reverse-value"></a>
+<code>(<a href="#string-type">STRING</a> &rarr; <a href="#string-type">STRING</a>)</code>
+
+Reverse a string.
+
+
+***
 
 #### <code>PARSE-INT</code> <sup><sub>[FUNCTION]</sub></sup><a name="parse-int-value"></a>
 <code>(<a href="#string-type">STRING</a> &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#integer-type">INTEGER</a>))</code>
@@ -1627,31 +1626,9 @@ Compute a substring of a string bounded by given indices.
 
 ***
 
-#### <code>CONCAT-STRING</code> <sup><sub>[FUNCTION]</sub></sup><a name="concat-string-value"></a>
-<code>(<a href="#string-type">STRING</a> &rarr; <a href="#string-type">STRING</a> &rarr; <a href="#string-type">STRING</a>)</code>
+# Package `coalton-library/tuple`<a name="coalton-library/tuple-package"></a>
 
-Concatenate STR1 and STR2 together, returning a new string.
-
-
-***
-
-#### <code>STRING-LENGTH</code> <sup><sub>[FUNCTION]</sub></sup><a name="string-length-value"></a>
-<code>(<a href="#string-type">STRING</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
-
-The length of a string STR.
-
-
-***
-
-#### <code>REVERSE-STRING</code> <sup><sub>[FUNCTION]</sub></sup><a name="reverse-string-value"></a>
-<code>(<a href="#string-type">STRING</a> &rarr; <a href="#string-type">STRING</a>)</code>
-
-Reverse a string.
-
-
-***
-
-## [tuple.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/tuple.lisp) <a name="coalton-library-tuple-lisp-file"></a>
+## [tuple.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/tuple.lisp) <a name="coalton-library/tuple-tuple-lisp-file"></a>
 
 ### Types
 
@@ -1724,7 +1701,9 @@ Get the second element of a tuple.
 
 ***
 
-## [optional.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/optional.lisp) <a name="coalton-library-optional-lisp-file"></a>
+# Package `coalton-library/optional`<a name="coalton-library/optional-package"></a>
+
+## [optional.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/optional.lisp) <a name="coalton-library/optional-optional-lisp-file"></a>
 
 ### Values
 
@@ -1752,7 +1731,9 @@ Get the value of OPT, erroring with the provided string if it is None.
 
 ***
 
-## [list.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/list.lisp) <a name="coalton-library-list-lisp-file"></a>
+# Package `coalton-library/list`<a name="coalton-library/list-package"></a>
+
+## [list.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/list.lisp) <a name="coalton-library/list-list-lisp-file"></a>
 
 ### Values
 
@@ -1860,14 +1841,6 @@ Returns the last element of a list.
 
 ***
 
-#### <code>NULL</code> <sup><sub>[FUNCTION]</sub></sup><a name="null-value"></a>
-<code>&forall; :A. ((<a href="#list-type">LIST</a> :A) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
-
-Returns TRUE if XS is an empty list.
-
-
-***
-
 #### <code>SORT</code> <sup><sub>[FUNCTION]</sub></sup><a name="sort-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
@@ -1904,6 +1877,14 @@ Right fold on lists. Is not tail recursive.
 <code>&forall; :A. ((<a href="#list-type">LIST</a> :A) &rarr; <a href="#integer-type">INTEGER</a> &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
 Returns the Ith element of a list.
+
+
+***
+
+#### <code>NULL?</code> <sup><sub>[FUNCTION]</sub></sup><a name="null?-value"></a>
+<code>&forall; :A. ((<a href="#list-type">LIST</a> :A) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Returns TRUE if XS is an empty list.
 
 
 ***
@@ -2006,14 +1987,6 @@ Returns true if any element of XS is equal to E.
 <code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; :A &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 Returns a list with the same value repeated multiple times.
-
-
-***
-
-#### <code>SORTBY</code> <sup><sub>[FUNCTION]</sub></sup><a name="sortby-value"></a>
-<code>&forall; :A. ((:A &rarr; :A &rarr; <a href="#ord-type">ORD</a>) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
-
-Generic version of sort
 
 
 ***
@@ -2151,6 +2124,14 @@ Transposes a matrix represented by a list of lists.
 
 ***
 
+#### <code>DIFFERENCE</code> <sup><sub>[FUNCTION]</sub></sup><a name="difference-value"></a>
+<code>&forall; :A. <a href="#eq-class">EQ</a> :A &rArr; ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
+
+Returns a new list with the first occurence of each element in YS deleted from XS.
+
+
+***
+
 #### <code>INTERCALATE</code> <sup><sub>[FUNCTION]</sub></sup><a name="intercalate-value"></a>
 <code>&forall; :A. ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> (<a href="#list-type">LIST</a> :A)) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
@@ -2171,14 +2152,6 @@ Returns a new list where every other element is E.
 <code>&forall; :A. <a href="#eq-class">EQ</a> :A &rArr; ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 Returns elements which occur in both lists. Does not return duplicates and does not guarantee order.
-
-
-***
-
-#### <code>LIST-DIFFERENCE</code> <sup><sub>[FUNCTION]</sub></sup><a name="list-difference-value"></a>
-<code>&forall; :A. <a href="#eq-class">EQ</a> :A &rArr; ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
-
-Returns a new list with the first occurence of each element in YS deleted from XS.
 
 
 ***
@@ -2204,7 +2177,9 @@ Break a list into a list of equivalence classes according to an equivalence rela
 
 ***
 
-## [result.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/result.lisp) <a name="coalton-library-result-lisp-file"></a>
+# Package `coalton-library/result`<a name="coalton-library/result-package"></a>
+
+## [result.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/result.lisp) <a name="coalton-library/result-result-lisp-file"></a>
 
 ### Values
 
@@ -2224,22 +2199,76 @@ Returns TRUE if X is ERR
 
 ***
 
-#### <code>MAPERR</code> <sup><sub>[FUNCTION]</sub></sup><a name="maperr-value"></a>
-<code>&forall; :A :B :C. ((:A &rarr; :B) &rarr; (<a href="#result-type">RESULT</a> :A :C) &rarr; (<a href="#result-type">RESULT</a> :B :C))</code>
+#### <code>FLATTEN</code> <sup><sub>[FUNCTION]</sub></sup><a name="flatten-value"></a>
+<code>&forall; :A. ((<a href="#result-type">RESULT</a> :A :A) &rarr; :A)</code>
 
-Map over the ERR case
+***
+
+# Package `coalton-library/functions`<a name="coalton-library/functions-package"></a>
+
+## [functions.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/functions.lisp) <a name="coalton-library/functions-functions-lisp-file"></a>
+
+### Values
+
+#### <code>/=</code> <sup><sub>[FUNCTION]</sub></sup><a name="/=-value"></a>
+<code>&forall; :A. <a href="#eq-class">EQ</a> :A &rArr; (:A &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+***
+
+#### <code>ID</code> <sup><sub>[FUNCTION]</sub></sup><a name="id-value"></a>
+<code>&forall; :A. (:A &rarr; :A)</code>
+
+A function that always returns its argument.
 
 
 ***
 
-## [functions.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/functions.lisp) <a name="coalton-library-functions-lisp-file"></a>
+#### <code>FIX</code> <sup><sub>[FUNCTION]</sub></sup><a name="fix-value"></a>
+<code>&forall; :A :B. (((:A &rarr; :B) &rarr; :A &rarr; :B) &rarr; :A &rarr; :B)</code>
 
-### Values
+Compute the fixed point of a unary function. This is equivalent to the Y-combinator of the lambda calculus. This combinator allows recursion without specific assignment of names. For example, the factorial function can be written
+
+
+    ```
+    (define fact
+      (fix
+        (fn (f n)
+          (if (== n 0)
+            1
+            (* n (f (- n 1)))))))
+    ```
+
+
+***
 
 #### <code>ASUM</code> <sup><sub>[FUNCTION]</sub></sup><a name="asum-value"></a>
 <code>&forall; :A :B. <a href="#alternative-class">ALTERNATIVE</a> :A &rArr; ((<a href="#list-type">LIST</a> (:A :B)) &rarr; (:A :B))</code>
 
 Fold over a list using alt
+
+
+***
+
+#### <code>FLIP</code> <sup><sub>[FUNCTION]</sub></sup><a name="flip-value"></a>
+<code>&forall; :A :B :C. ((:A &rarr; :B &rarr; :C) &rarr; :B &rarr; :A &rarr; :C)</code>
+
+Returns a function that takes its arguments in reverse order.
+
+
+***
+
+#### <code>MSUM</code> <sup><sub>[FUNCTION]</sub></sup><a name="msum-value"></a>
+<code>&forall; :A. <a href="#monoid-class">MONOID</a> :A &rArr; ((<a href="#list-type">LIST</a> :A) &rarr; :A)</code>
+
+Fold over a list using &lt;&gt;
+
+
+***
+
+#### <code>CONST</code> <sup><sub>[FUNCTION]</sub></sup><a name="const-value"></a>
+<code>&forall; :A :B. (:A &rarr; :B &rarr; :A)</code>
+
+A function that always returns its first argument.
 
 
 ***
@@ -2302,7 +2331,9 @@ Print a line to *STANDARD-OUTPUT* in the form "{STR}: {ITEM}"
 
 ***
 
-## [cell.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/cell.lisp) <a name="coalton-library-cell-lisp-file"></a>
+# Package `coalton-library/cell`<a name="coalton-library/cell-package"></a>
+
+## [cell.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/cell.lisp) <a name="coalton-library/cell-cell-lisp-file"></a>
 
 ### Types
 
@@ -2332,20 +2363,7 @@ Constructors:
 
 ### Values
 
-#### <code>CELL-POP!</code> <sup><sub>[FUNCTION]</sub></sup><a name="cell-pop!-value"></a>
-<code>&forall; :A. ((<a href="#cell-type">CELL</a> (<a href="#list-type">LIST</a> :A)) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
-
-***
-
-#### <code>CELL-READ</code> <sup><sub>[FUNCTION]</sub></sup><a name="cell-read-value"></a>
-<code>&forall; :A. ((<a href="#cell-type">CELL</a> :A) &rarr; :A)</code>
-
-Read the value of a mutable cell
-
-
-***
-
-#### <code>MAKE-CELL</code> <sup><sub>[FUNCTION]</sub></sup><a name="make-cell-value"></a>
+#### <code>NEW</code> <sup><sub>[FUNCTION]</sub></sup><a name="new-value"></a>
 <code>&forall; :A. (:A &rarr; (<a href="#cell-type">CELL</a> :A))</code>
 
 Create a new mutable cell
@@ -2353,12 +2371,25 @@ Create a new mutable cell
 
 ***
 
-#### <code>CELL-PUSH!</code> <sup><sub>[FUNCTION]</sub></sup><a name="cell-push!-value"></a>
+#### <code>POP!</code> <sup><sub>[FUNCTION]</sub></sup><a name="pop!-value"></a>
+<code>&forall; :A. ((<a href="#cell-type">CELL</a> (<a href="#list-type">LIST</a> :A)) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
+
+***
+
+#### <code>READ</code> <sup><sub>[FUNCTION]</sub></sup><a name="read-value"></a>
+<code>&forall; :A. ((<a href="#cell-type">CELL</a> :A) &rarr; :A)</code>
+
+Read the value of a mutable cell
+
+
+***
+
+#### <code>PUSH!</code> <sup><sub>[FUNCTION]</sub></sup><a name="push!-value"></a>
 <code>&forall; :A. ((<a href="#cell-type">CELL</a> (<a href="#list-type">LIST</a> :A)) &rarr; :A &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 ***
 
-#### <code>CELL-SWAP!</code> <sup><sub>[FUNCTION]</sub></sup><a name="cell-swap!-value"></a>
+#### <code>SWAP!</code> <sup><sub>[FUNCTION]</sub></sup><a name="swap!-value"></a>
 <code>&forall; :A. ((<a href="#cell-type">CELL</a> :A) &rarr; :A &rarr; :A)</code>
 
 Replace the value of a mutable cell with a new value, then return the old value
@@ -2366,7 +2397,7 @@ Replace the value of a mutable cell with a new value, then return the old value
 
 ***
 
-#### <code>CELL-WRITE!</code> <sup><sub>[FUNCTION]</sub></sup><a name="cell-write!-value"></a>
+#### <code>WRITE!</code> <sup><sub>[FUNCTION]</sub></sup><a name="write!-value"></a>
 <code>&forall; :A. ((<a href="#cell-type">CELL</a> :A) &rarr; :A &rarr; :A)</code>
 
 Set the value of a mutable cell, returning the new value
@@ -2374,7 +2405,7 @@ Set the value of a mutable cell, returning the new value
 
 ***
 
-#### <code>CELL-UPDATE!</code> <sup><sub>[FUNCTION]</sub></sup><a name="cell-update!-value"></a>
+#### <code>UPDATE!</code> <sup><sub>[FUNCTION]</sub></sup><a name="update!-value"></a>
 <code>&forall; :A. ((:A &rarr; :A) &rarr; (<a href="#cell-type">CELL</a> :A) &rarr; :A)</code>
 
 Apply F to the contents of CEL, storing and returning the result
@@ -2382,7 +2413,7 @@ Apply F to the contents of CEL, storing and returning the result
 
 ***
 
-#### <code>CELL-DECREMENT!</code> <sup><sub>[FUNCTION]</sub></sup><a name="cell-decrement!-value"></a>
+#### <code>DECREMENT!</code> <sup><sub>[FUNCTION]</sub></sup><a name="decrement!-value"></a>
 <code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; ((<a href="#cell-type">CELL</a> :A) &rarr; :A)</code>
 
 Add one to the contents of CEL, storing and returning the new value
@@ -2390,7 +2421,7 @@ Add one to the contents of CEL, storing and returning the new value
 
 ***
 
-#### <code>CELL-INCREMENT!</code> <sup><sub>[FUNCTION]</sub></sup><a name="cell-increment!-value"></a>
+#### <code>INCREMENT!</code> <sup><sub>[FUNCTION]</sub></sup><a name="increment!-value"></a>
 <code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; ((<a href="#cell-type">CELL</a> :A) &rarr; :A)</code>
 
 Add one to the contents of CEL, storing and returning the new value
@@ -2398,7 +2429,7 @@ Add one to the contents of CEL, storing and returning the new value
 
 ***
 
-#### <code>CELL-UPDATE-SWAP!</code> <sup><sub>[FUNCTION]</sub></sup><a name="cell-update-swap!-value"></a>
+#### <code>UPDATE-SWAP!</code> <sup><sub>[FUNCTION]</sub></sup><a name="update-swap!-value"></a>
 <code>&forall; :A. ((:A &rarr; :A) &rarr; (<a href="#cell-type">CELL</a> :A) &rarr; :A)</code>
 
 Apply F to the contents of CEL, swapping the result for the old value
@@ -2406,15 +2437,17 @@ Apply F to the contents of CEL, swapping the result for the old value
 
 ***
 
-## [vector.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/vector.lisp) <a name="coalton-library-vector-lisp-file"></a>
+# Package `coalton-library/vector`<a name="coalton-library/vector-package"></a>
+
+## [vector.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/vector.lisp) <a name="coalton-library/vector-vector-lisp-file"></a>
 
 ### Types
 
 #### <code>VECTOR :A</code> <sup><sub>[TYPE]</sub></sup><a name="vector-type"></a>
-- <code>(VECTOR <a href="#lisp-object-type">LISP-OBJECT</a>)</code>
+- <code>(%VECTOR <a href="#lisp-object-type">LISP-OBJECT</a>)</code>
 
 Constructors:
-- <code>VECTOR :: (<a href="#lisp-object-type">LISP-OBJECT</a> &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
+- <code>%VECTOR :: (<a href="#lisp-object-type">LISP-OBJECT</a> &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
 
 <details>
 <summary>Instances</summary>
@@ -2436,23 +2469,7 @@ Constructors:
 
 ### Values
 
-#### <code>VECTOR-POP</code> <sup><sub>[FUNCTION]</sub></sup><a name="vector-pop-value"></a>
-<code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
-
-Remove and return the first item of V
-
-
-***
-
-#### <code>VECTOR-SET</code> <sup><sub>[FUNCTION]</sub></sup><a name="vector-set-value"></a>
-<code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; :A &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
-
-Set the INDEXth element of V to ITEM. This function left intentionally unsafe because it does not have a return value to check.
-
-
-***
-
-#### <code>MAKE-VECTOR</code> <sup><sub>[FUNCTION]</sub></sup><a name="make-vector-value"></a>
+#### <code>NEW</code> <sup><sub>[FUNCTION]</sub></sup><a name="new-value"></a>
 <code>&forall; :A. (<a href="#unit-type">UNIT</a> &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
 
 Create a new empty vector
@@ -2460,7 +2477,7 @@ Create a new empty vector
 
 ***
 
-#### <code>VECTOR-COPY</code> <sup><sub>[FUNCTION]</sub></sup><a name="vector-copy-value"></a>
+#### <code>COPY</code> <sup><sub>[FUNCTION]</sub></sup><a name="copy-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
 
 Return a new vector containing the same elements as V
@@ -2468,7 +2485,7 @@ Return a new vector containing the same elements as V
 
 ***
 
-#### <code>VECTOR-HEAD</code> <sup><sub>[FUNCTION]</sub></sup><a name="vector-head-value"></a>
+#### <code>HEAD</code> <sup><sub>[FUNCTION]</sub></sup><a name="head-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
 Return the first item of V
@@ -2476,7 +2493,7 @@ Return the first item of V
 
 ***
 
-#### <code>VECTOR-LAST</code> <sup><sub>[FUNCTION]</sub></sup><a name="vector-last-value"></a>
+#### <code>LAST</code> <sup><sub>[FUNCTION]</sub></sup><a name="last-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
 Return the last element of V
@@ -2484,31 +2501,23 @@ Return the last element of V
 
 ***
 
-#### <code>VECTOR-PUSH</code> <sup><sub>[FUNCTION]</sub></sup><a name="vector-push-value"></a>
-<code>&forall; :A. (:A &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#integer-type">INTEGER</a>)</code>
+#### <code>POP!</code> <sup><sub>[FUNCTION]</sub></sup><a name="pop!-value"></a>
+<code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
-Append ITEM to V and resize V if necessary
-
-
-***
-
-#### <code>VECTOR-SORT</code> <sup><sub>[FUNCTION]</sub></sup><a name="vector-sort-value"></a>
-<code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
-
-Sort a vector inplace
+Remove and return the first item of V
 
 
 ***
 
-#### <code>VECTOR-EMPTY</code> <sup><sub>[FUNCTION]</sub></sup><a name="vector-empty-value"></a>
-<code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+#### <code>SET!</code> <sup><sub>[FUNCTION]</sub></sup><a name="set!-value"></a>
+<code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; :A &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
-Returns TRUE if V is empty
+Set the INDEXth element of V to ITEM. This function left intentionally unsafe because it does not have a return value to check.
 
 
 ***
 
-#### <code>VECTOR-INDEX</code> <sup><sub>[FUNCTION]</sub></sup><a name="vector-index-value"></a>
+#### <code>INDEX</code> <sup><sub>[FUNCTION]</sub></sup><a name="index-value"></a>
 <code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
 Return the INDEXth element of V
@@ -2516,7 +2525,23 @@ Return the INDEXth element of V
 
 ***
 
-#### <code>VECTOR-APPEND</code> <sup><sub>[FUNCTION]</sub></sup><a name="vector-append-value"></a>
+#### <code>PUSH!</code> <sup><sub>[FUNCTION]</sub></sup><a name="push!-value"></a>
+<code>&forall; :A. (:A &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#integer-type">INTEGER</a>)</code>
+
+Append ITEM to V and resize V if necessary
+
+
+***
+
+#### <code>SORT!</code> <sup><sub>[FUNCTION]</sub></sup><a name="sort!-value"></a>
+<code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
+
+Sort a vector inplace
+
+
+***
+
+#### <code>APPEND</code> <sup><sub>[FUNCTION]</sub></sup><a name="append-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
 
 Create a new VECTOR containing the elements of v1 followed by the elements of v2
@@ -2524,7 +2549,15 @@ Create a new VECTOR containing the elements of v1 followed by the elements of v2
 
 ***
 
-#### <code>VECTOR-LENGTH</code> <sup><sub>[FUNCTION]</sub></sup><a name="vector-length-value"></a>
+#### <code>EMPTY?</code> <sup><sub>[FUNCTION]</sub></sup><a name="empty?-value"></a>
+<code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Returns TRUE if V is empty
+
+
+***
+
+#### <code>LENGTH</code> <sup><sub>[FUNCTION]</sub></sup><a name="length-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#integer-type">INTEGER</a>)</code>
 
 Returns the length of V
@@ -2532,7 +2565,7 @@ Returns the length of V
 
 ***
 
-#### <code>VECTOR-FOREACH</code> <sup><sub>[FUNCTION]</sub></sup><a name="vector-foreach-value"></a>
+#### <code>FOREACH</code> <sup><sub>[FUNCTION]</sub></sup><a name="foreach-value"></a>
 <code>&forall; :A :B. ((:A &rarr; :B) &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Call the function F once for each item in V
@@ -2540,15 +2573,7 @@ Call the function F once for each item in V
 
 ***
 
-#### <code>VECTOR-SORT-BY</code> <sup><sub>[FUNCTION]</sub></sup><a name="vector-sort-by-value"></a>
-<code>&forall; :A. ((:A &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
-
-Sort a vector with predicate function F
-
-
-***
-
-#### <code>VECTOR-CAPACITY</code> <sup><sub>[FUNCTION]</sub></sup><a name="vector-capacity-value"></a>
+#### <code>CAPACITY</code> <sup><sub>[FUNCTION]</sub></sup><a name="capacity-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#integer-type">INTEGER</a>)</code>
 
 Returns the number of elements that V can store without resizing
@@ -2556,7 +2581,7 @@ Returns the number of elements that V can store without resizing
 
 ***
 
-#### <code>VECTOR-FOREACH2</code> <sup><sub>[FUNCTION]</sub></sup><a name="vector-foreach2-value"></a>
+#### <code>FOREACH2</code> <sup><sub>[FUNCTION]</sub></sup><a name="foreach2-value"></a>
 <code>&forall; :A :B :C. ((:A &rarr; :B &rarr; :C) &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#vector-type">VECTOR</a> :B) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Like vector-foreach but twice as good
@@ -2564,15 +2589,23 @@ Like vector-foreach but twice as good
 
 ***
 
-#### <code>VECTOR-POP-UNSAFE</code> <sup><sub>[FUNCTION]</sub></sup><a name="vector-pop-unsafe-value"></a>
-<code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; :A)</code>
+#### <code>SORT-BY!</code> <sup><sub>[FUNCTION]</sub></sup><a name="sort-by!-value"></a>
+<code>&forall; :A. ((:A &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
-Remove and return the first item of V without checking if the vector is empty
+Sort a vector inplace with predicate function F
 
 
 ***
 
-#### <code>VECTOR-HEAD-UNSAFE</code> <sup><sub>[FUNCTION]</sub></sup><a name="vector-head-unsafe-value"></a>
+#### <code>FIND-ELEM</code> <sup><sub>[FUNCTION]</sub></sup><a name="find-elem-value"></a>
+<code>&forall; :A. <a href="#eq-class">EQ</a> :A &rArr; (:A &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#integer-type">INTEGER</a>))</code>
+
+Find the index of element E in V
+
+
+***
+
+#### <code>HEAD-UNSAFE</code> <sup><sub>[FUNCTION]</sub></sup><a name="head-unsafe-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; :A)</code>
 
 Return the first item of V without first checking if V is empty
@@ -2580,7 +2613,7 @@ Return the first item of V without first checking if V is empty
 
 ***
 
-#### <code>VECTOR-LAST-UNSAFE</code> <sup><sub>[FUNCTION]</sub></sup><a name="vector-last-unsafe-value"></a>
+#### <code>LAST-UNSAFE</code> <sup><sub>[FUNCTION]</sub></sup><a name="last-unsafe-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; :A)</code>
 
 Return the last element of V without first checking if V is empty
@@ -2588,15 +2621,15 @@ Return the last element of V without first checking if V is empty
 
 ***
 
-#### <code>VECTOR-SWAP-REMOVE</code> <sup><sub>[FUNCTION]</sub></sup><a name="vector-swap-remove-value"></a>
-<code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
+#### <code>POP-UNSAFE!</code> <sup><sub>[FUNCTION]</sub></sup><a name="pop-unsafe!-value"></a>
+<code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; :A)</code>
 
-Remove the element IDX from VEC and replace it with the last element in VEC. Then return the removed element.
+Remove and return the first item of V without checking if the vector is empty
 
 
 ***
 
-#### <code>VECTOR-INDEX-UNSAFE</code> <sup><sub>[FUNCTION]</sub></sup><a name="vector-index-unsafe-value"></a>
+#### <code>INDEX-UNSAFE</code> <sup><sub>[FUNCTION]</sub></sup><a name="index-unsafe-value"></a>
 <code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; :A)</code>
 
 Return the INDEXth element of V without checking if the element exists
@@ -2604,15 +2637,15 @@ Return the INDEXth element of V without checking if the element exists
 
 ***
 
-#### <code>MAKE-VECTOR-CAPACITY</code> <sup><sub>[FUNCTION]</sub></sup><a name="make-vector-capacity-value"></a>
-<code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
+#### <code>SWAP-REMOVE!</code> <sup><sub>[FUNCTION]</sub></sup><a name="swap-remove!-value"></a>
+<code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
-Create a new vector with N elements preallocated
+Remove the element IDX from VEC and replace it with the last element in VEC. Then return the removed element.
 
 
 ***
 
-#### <code>VECTOR-FOREACH-INDEX</code> <sup><sub>[FUNCTION]</sub></sup><a name="vector-foreach-index-value"></a>
+#### <code>FOREACH-INDEX</code> <sup><sub>[FUNCTION]</sub></sup><a name="foreach-index-value"></a>
 <code>&forall; :A :B. ((<a href="#integer-type">INTEGER</a> &rarr; :A &rarr; :B) &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Call the function F once for each item in V with its index
@@ -2620,7 +2653,15 @@ Call the function F once for each item in V with its index
 
 ***
 
-#### <code>VECTOR-SWAP-REMOVE-UNSAFE</code> <sup><sub>[FUNCTION]</sub></sup><a name="vector-swap-remove-unsafe-value"></a>
+#### <code>WITH-CAPACITY</code> <sup><sub>[FUNCTION]</sub></sup><a name="with-capacity-value"></a>
+<code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
+
+Create a new vector with N elements preallocated
+
+
+***
+
+#### <code>SWAP-REMOVE-UNSAFE!</code> <sup><sub>[FUNCTION]</sub></sup><a name="swap-remove-unsafe!-value"></a>
 <code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; :A)</code>
 
 Remove the element IDX from VEC and replace it with the last element in VEC without bounds checking. Then return the removed element.
@@ -2628,15 +2669,17 @@ Remove the element IDX from VEC and replace it with the last element in VEC with
 
 ***
 
-## [slice.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/slice.lisp) <a name="coalton-library-slice-lisp-file"></a>
+# Package `coalton-library/slice`<a name="coalton-library/slice-package"></a>
+
+## [slice.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/slice.lisp) <a name="coalton-library/slice-slice-lisp-file"></a>
 
 ### Types
 
 #### <code>SLICE :A</code> <sup><sub>[TYPE]</sub></sup><a name="slice-type"></a>
-- <code>(SLICE <a href="#lisp-object-type">LISP-OBJECT</a>)</code>
+- <code>(%SLICE <a href="#lisp-object-type">LISP-OBJECT</a>)</code>
 
 Constructors:
-- <code>SLICE :: (<a href="#lisp-object-type">LISP-OBJECT</a> &rarr; (<a href="#slice-type">SLICE</a> :A))</code>
+- <code>%SLICE :: (<a href="#lisp-object-type">LISP-OBJECT</a> &rarr; (<a href="#slice-type">SLICE</a> :A))</code>
 
 <details>
 <summary>Instances</summary>
@@ -2653,20 +2696,12 @@ Constructors:
 
 ### Values
 
-#### <code>SLICE-SET</code> <sup><sub>[FUNCTION]</sub></sup><a name="slice-set-value"></a>
-<code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; :A &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
-
-Set the element at INDEX in S to ITEM
-
-
-***
-
-#### <code>MAKE-SLICE</code> <sup><sub>[FUNCTION]</sub></sup><a name="make-slice-value"></a>
+#### <code>NEW</code> <sup><sub>[FUNCTION]</sub></sup><a name="new-value"></a>
 <code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#slice-type">SLICE</a> :A))</code>
 
 ***
 
-#### <code>SLICE-COPY</code> <sup><sub>[FUNCTION]</sub></sup><a name="slice-copy-value"></a>
+#### <code>COPY</code> <sup><sub>[FUNCTION]</sub></sup><a name="copy-value"></a>
 <code>&forall; :A. ((<a href="#slice-type">SLICE</a> :A) &rarr; (<a href="#slice-type">SLICE</a> :A))</code>
 
 Returns a new slice containg the same elements as S
@@ -2674,7 +2709,15 @@ Returns a new slice containg the same elements as S
 
 ***
 
-#### <code>SLICE-INDEX</code> <sup><sub>[FUNCTION]</sub></sup><a name="slice-index-value"></a>
+#### <code>SET!</code> <sup><sub>[FUNCTION]</sub></sup><a name="set!-value"></a>
+<code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; :A &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
+
+Set the element at INDEX in S to ITEM
+
+
+***
+
+#### <code>INDEX</code> <sup><sub>[FUNCTION]</sub></sup><a name="index-value"></a>
 <code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
 Lookup the element at INDEX in S
@@ -2682,7 +2725,7 @@ Lookup the element at INDEX in S
 
 ***
 
-#### <code>SLICE-LENGTH</code> <sup><sub>[FUNCTION]</sub></sup><a name="slice-length-value"></a>
+#### <code>LENGTH</code> <sup><sub>[FUNCTION]</sub></sup><a name="length-value"></a>
 <code>&forall; :A. ((<a href="#slice-type">SLICE</a> :A) &rarr; <a href="#integer-type">INTEGER</a>)</code>
 
 Returns the length of S
@@ -2690,7 +2733,7 @@ Returns the length of S
 
 ***
 
-#### <code>SLICE-FOREACH</code> <sup><sub>[FUNCTION]</sub></sup><a name="slice-foreach-value"></a>
+#### <code>FOREACH</code> <sup><sub>[FUNCTION]</sub></sup><a name="foreach-value"></a>
 <code>&forall; :A :B. ((:A &rarr; :B) &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Call the function F once for each item in S
@@ -2698,7 +2741,7 @@ Call the function F once for each item in S
 
 ***
 
-#### <code>SLICE-FOREACH2</code> <sup><sub>[FUNCTION]</sub></sup><a name="slice-foreach2-value"></a>
+#### <code>FOREACH2</code> <sup><sub>[FUNCTION]</sub></sup><a name="foreach2-value"></a>
 <code>&forall; :A :B :C. ((:A &rarr; :B &rarr; :C) &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; (<a href="#slice-type">SLICE</a> :B) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Iterate over S1 and S2 calling F once on each iteration
@@ -2706,23 +2749,7 @@ Iterate over S1 and S2 calling F once on each iteration
 
 ***
 
-#### <code>VECTOR-CHUNKED</code> <sup><sub>[FUNCTION]</sub></sup><a name="vector-chunked-value"></a>
-<code>&forall; :A :B. (((<a href="#slice-type">SLICE</a> :A) &rarr; :B) &rarr; <a href="#integer-type">INTEGER</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
-
-Chunked iteration over a vector. Ignores elements at the end if the vector does not evenly divide by the chunk size.
-
-
-***
-
-#### <code>VECTOR-SLIDING</code> <sup><sub>[FUNCTION]</sub></sup><a name="vector-sliding-value"></a>
-<code>&forall; :A :B. (((<a href="#slice-type">SLICE</a> :A) &rarr; :B) &rarr; <a href="#integer-type">INTEGER</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
-
-Sliding iteration over a vector
-
-
-***
-
-#### <code>SLICE-INDEX-UNSAFE</code> <sup><sub>[FUNCTION]</sub></sup><a name="slice-index-unsafe-value"></a>
+#### <code>INDEX-UNSAFE</code> <sup><sub>[FUNCTION]</sub></sup><a name="index-unsafe-value"></a>
 <code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; :A)</code>
 
 Lookup the element at INDEX in S without bounds checking
@@ -2730,7 +2757,23 @@ Lookup the element at INDEX in S without bounds checking
 
 ***
 
-#### <code>SLICE-FOREACH-INDEX</code> <sup><sub>[FUNCTION]</sub></sup><a name="slice-foreach-index-value"></a>
+#### <code>ITER-CHUNKED</code> <sup><sub>[FUNCTION]</sub></sup><a name="iter-chunked-value"></a>
+<code>&forall; :A :B. (((<a href="#slice-type">SLICE</a> :A) &rarr; :B) &rarr; <a href="#integer-type">INTEGER</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
+
+Chunked iteration over a vector. Ignores elements at the end if the vector does not evenly divide by the chunk size.
+
+
+***
+
+#### <code>ITER-SLIDING</code> <sup><sub>[FUNCTION]</sub></sup><a name="iter-sliding-value"></a>
+<code>&forall; :A :B. (((<a href="#slice-type">SLICE</a> :A) &rarr; :B) &rarr; <a href="#integer-type">INTEGER</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
+
+Sliding iteration over a vector
+
+
+***
+
+#### <code>FOREACH-INDEX</code> <sup><sub>[FUNCTION]</sub></sup><a name="foreach-index-value"></a>
 <code>&forall; :A :B. ((<a href="#integer-type">INTEGER</a> &rarr; :A &rarr; :B) &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Call the function F once for each item in S with its index
@@ -2738,7 +2781,9 @@ Call the function F once for each item in S with its index
 
 ***
 
-## [hashtable.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/hashtable.lisp) <a name="coalton-library-hashtable-lisp-file"></a>
+# Package `coalton-library/hashtable`<a name="coalton-library/hashtable-package"></a>
+
+## [hashtable.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/hashtable.lisp) <a name="coalton-library/hashtable-hashtable-lisp-file"></a>
 
 ### Types
 
@@ -2753,7 +2798,7 @@ Constructors:
 
 ### Values
 
-#### <code>HASHTABLE-GET</code> <sup><sub>[FUNCTION]</sub></sup><a name="hashtable-get-value"></a>
+#### <code>GET</code> <sup><sub>[FUNCTION]</sub></sup><a name="get-value"></a>
 <code>&forall; :A :B. <a href="#hash-class">HASH</a> :A &rArr; ((<a href="#hashtable-type">HASHTABLE</a> :A :B) &rarr; :A &rarr; (<a href="#optional-type">OPTIONAL</a> :B))</code>
 
 Lookup KEY in TABLE
@@ -2761,23 +2806,7 @@ Lookup KEY in TABLE
 
 ***
 
-#### <code>HASHTABLE-KEYS</code> <sup><sub>[FUNCTION]</sub></sup><a name="hashtable-keys-value"></a>
-<code>&forall; :A :B. ((<a href="#hashtable-type">HASHTABLE</a> :A :B) &rarr; (<a href="#list-type">LIST</a> :A))</code>
-
-Returns the keys in TABLE as a list
-
-
-***
-
-#### <code>HASHTABLE-SET!</code> <sup><sub>[FUNCTION]</sub></sup><a name="hashtable-set!-value"></a>
-<code>&forall; :A :B. <a href="#hash-class">HASH</a> :A &rArr; ((<a href="#hashtable-type">HASHTABLE</a> :A :B) &rarr; :A &rarr; :B &rarr; <a href="#unit-type">UNIT</a>)</code>
-
-Set KEY to VALUE in TABLE
-
-
-***
-
-#### <code>MAKE-HASHTABLE</code> <sup><sub>[FUNCTION]</sub></sup><a name="make-hashtable-value"></a>
+#### <code>NEW</code> <sup><sub>[FUNCTION]</sub></sup><a name="new-value"></a>
 <code>&forall; :A :B. <a href="#hash-class">HASH</a> :A &rArr; (<a href="#unit-type">UNIT</a> &rarr; (<a href="#hashtable-type">HASHTABLE</a> :A :B))</code>
 
 Create a new empty hashtable
@@ -2785,7 +2814,23 @@ Create a new empty hashtable
 
 ***
 
-#### <code>HASHTABLE-COUNT</code> <sup><sub>[FUNCTION]</sub></sup><a name="hashtable-count-value"></a>
+#### <code>KEYS</code> <sup><sub>[FUNCTION]</sub></sup><a name="keys-value"></a>
+<code>&forall; :A :B. ((<a href="#hashtable-type">HASHTABLE</a> :A :B) &rarr; (<a href="#list-type">LIST</a> :A))</code>
+
+Returns the keys in TABLE as a list
+
+
+***
+
+#### <code>SET!</code> <sup><sub>[FUNCTION]</sub></sup><a name="set!-value"></a>
+<code>&forall; :A :B. <a href="#hash-class">HASH</a> :A &rArr; ((<a href="#hashtable-type">HASHTABLE</a> :A :B) &rarr; :A &rarr; :B &rarr; <a href="#unit-type">UNIT</a>)</code>
+
+Set KEY to VALUE in TABLE
+
+
+***
+
+#### <code>COUNT</code> <sup><sub>[FUNCTION]</sub></sup><a name="count-value"></a>
 <code>&forall; :A :B. ((<a href="#hashtable-type">HASHTABLE</a> :A :B) &rarr; <a href="#integer-type">INTEGER</a>)</code>
 
 Returns the number of entries in TABLE
@@ -2793,7 +2838,7 @@ Returns the number of entries in TABLE
 
 ***
 
-#### <code>HASHTABLE-VALUES</code> <sup><sub>[FUNCTION]</sub></sup><a name="hashtable-values-value"></a>
+#### <code>VALUES</code> <sup><sub>[FUNCTION]</sub></sup><a name="values-value"></a>
 <code>&forall; :A :B. ((<a href="#hashtable-type">HASHTABLE</a> :A :B) &rarr; (<a href="#list-type">LIST</a> :B))</code>
 
 Returns the values in TABLE as a list
@@ -2801,12 +2846,12 @@ Returns the values in TABLE as a list
 
 ***
 
-#### <code>HASHTABLE-ENTRIES</code> <sup><sub>[FUNCTION]</sub></sup><a name="hashtable-entries-value"></a>
+#### <code>ENTRIES</code> <sup><sub>[FUNCTION]</sub></sup><a name="entries-value"></a>
 <code>&forall; :A :B. ((<a href="#hashtable-type">HASHTABLE</a> :A :B) &rarr; (<a href="#list-type">LIST</a> (<a href="#tuple-type">TUPLE</a> :A :B)))</code>
 
 ***
 
-#### <code>HASHTABLE-FOREACH</code> <sup><sub>[FUNCTION]</sub></sup><a name="hashtable-foreach-value"></a>
+#### <code>FOREACH</code> <sup><sub>[FUNCTION]</sub></sup><a name="foreach-value"></a>
 <code>&forall; :A :B :C. ((:A &rarr; :B &rarr; :C) &rarr; (<a href="#hashtable-type">HASHTABLE</a> :A :B) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Call F once for each key value pair in TABLE
@@ -2814,7 +2859,7 @@ Call F once for each key value pair in TABLE
 
 ***
 
-#### <code>HASHTABLE-REMOVE!</code> <sup><sub>[FUNCTION]</sub></sup><a name="hashtable-remove!-value"></a>
+#### <code>REMOVE!</code> <sup><sub>[FUNCTION]</sub></sup><a name="remove!-value"></a>
 <code>&forall; :A :B. <a href="#hash-class">HASH</a> :A &rArr; ((<a href="#hashtable-type">HASHTABLE</a> :A :B) &rarr; :A &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Remove the entry at KEY from TABLE
@@ -2822,7 +2867,7 @@ Remove the entry at KEY from TABLE
 
 ***
 
-#### <code>MAKE-HASHTABLE-CAPACITY</code> <sup><sub>[FUNCTION]</sub></sup><a name="make-hashtable-capacity-value"></a>
+#### <code>WITH-CAPACITY</code> <sup><sub>[FUNCTION]</sub></sup><a name="with-capacity-value"></a>
 <code>&forall; :A :B. <a href="#hash-class">HASH</a> :A &rArr; (<a href="#integer-type">INTEGER</a> &rarr; (<a href="#hashtable-type">HASHTABLE</a> :A :B))</code>
 
 Crate a new empty hashtable with a given capacity
@@ -2830,56 +2875,7 @@ Crate a new empty hashtable with a given capacity
 
 ***
 
-## [stateful-computation.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/stateful-computation.lisp) <a name="coalton-library-stateful-computation-lisp-file"></a>
-
-### Types
-
-#### <code>STATEFULCOMPUTATION :A :B</code> <sup><sub>[TYPE]</sub></sup><a name="statefulcomputation-type"></a>
-- <code>(STATEFULCOMPUTATION (:A &rarr; (<a href="#tuple-type">TUPLE</a> :A :B)))</code>
-
-A computation of a value which may affect the state.
-Represented as a closure from initial state to updated state and value.
-
-Constructors:
-- <code>STATEFULCOMPUTATION :: ((:A &rarr; (<a href="#tuple-type">TUPLE</a> :A :B)) &rarr; (<a href="#statefulcomputation-type">STATEFULCOMPUTATION</a> :A :B))</code>
-
-<details>
-<summary>Instances</summary>
-
-- <code><a href="#monad-class">MONAD</a> (<a href="#statefulcomputation-type">STATEFULCOMPUTATION</a> :A)</code>
-- <code><a href="#functor-class">FUNCTOR</a> (<a href="#statefulcomputation-type">STATEFULCOMPUTATION</a> :A)</code>
-- <code><a href="#applicative-class">APPLICATIVE</a> (<a href="#statefulcomputation-type">STATEFULCOMPUTATION</a> :A)</code>
-
-</details>
-
-
-***
-
-### Values
-
-#### <code>STATEFUL-COMPUTATION-GET</code> <sup><sub>[VALUE]</sub></sup><a name="stateful-computation-get-value"></a>
-<code>&forall; :A. (<a href="#statefulcomputation-type">STATEFULCOMPUTATION</a> :A :A)</code>
-
-A StatefulComputation which returns the current state as the value.
-
-
-***
-
-#### <code>STATEFUL-COMPUTATION-PUT</code> <sup><sub>[FUNCTION]</sub></sup><a name="stateful-computation-put-value"></a>
-<code>&forall; :A. (:A &rarr; (<a href="#statefulcomputation-type">STATEFULCOMPUTATION</a> :A <a href="#unit-type">UNIT</a>))</code>
-
-A StatefulComputation with state set to be given state. The returned value is Unit.
-
-
-***
-
-#### <code>STATEFUL-COMPUTATION-RUN</code> <sup><sub>[FUNCTION]</sub></sup><a name="stateful-computation-run-value"></a>
-<code>&forall; :A :B. ((<a href="#statefulcomputation-type">STATEFULCOMPUTATION</a> :A :B) &rarr; :A &rarr; (<a href="#tuple-type">TUPLE</a> :A :B))</code>
-
-Runs a StatefulComputation to produce a final updated state and value given an initial state
-
-
-***
+# Package `coalton-library/monad/state`<a name="coalton-library/monad/state-package"></a>
 
 </div>
     </div>
