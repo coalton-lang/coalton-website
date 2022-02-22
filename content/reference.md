@@ -26,6 +26,7 @@ identifier: Reference
 - <a href="#coalton-library/arith-package"><code>coalton-library/arith</code></a>
   - <a href="#coalton-library/arith-arith-lisp-file"><code>arith.lisp</code></a>
 - <a href="#coalton-library/char-package"><code>coalton-library/char</code></a>
+  - <a href="#coalton-library/char-char-lisp-file"><code>char.lisp</code></a>
 - <a href="#coalton-library/string-package"><code>coalton-library/string</code></a>
   - <a href="#coalton-library/string-string-lisp-file"><code>string.lisp</code></a>
 - <a href="#coalton-library/tuple-package"><code>coalton-library/tuple</code></a>
@@ -919,6 +920,7 @@ Methods:
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#cell-type">CELL</a></code>
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#vector-type">VECTOR</a></code>
 - <code><a href="#functor-class">FUNCTOR</a> (<a href="#st-type">ST</a> :A)</code>
+- <code><a href="#functor-class">FUNCTOR</a> <a href="#iterator-type">ITERATOR</a></code>
 
 </details>
 
@@ -1340,6 +1342,16 @@ Methods:
 
 ### Values
 
+#### <code>1+</code> <sup><sub>[FUNCTION]</sub></sup><a name="1+-value"></a>
+<code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; (:A &rarr; :A)</code>
+
+***
+
+#### <code>1-</code> <sup><sub>[FUNCTION]</sub></sup><a name="1--value"></a>
+<code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; (:A &rarr; :A)</code>
+
+***
+
 #### <code>II</code> <sup><sub>[VALUE]</sub></sup><a name="ii-value"></a>
 <code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; (<a href="#complex-type">COMPLEX</a> :A)</code>
 
@@ -1580,11 +1592,30 @@ Round a Single-Float to the nearest Integer.
 
 # Package `coalton-library/char`<a name="coalton-library/char-package"></a>
 
+## [char.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/char.lisp) <a name="coalton-library/char-char-lisp-file"></a>
+
+### Values
+
+#### <code>CHAR-CODE</code> <sup><sub>[FUNCTION]</sub></sup><a name="char-code-value"></a>
+<code>(<a href="#char-type">CHAR</a> &rarr; <a href="#ufix-type">UFIX</a>)</code>
+
+***
+
+#### <code>CODE-CHAR</code> <sup><sub>[FUNCTION]</sub></sup><a name="code-char-value"></a>
+<code>(<a href="#ufix-type">UFIX</a> &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#char-type">CHAR</a>))</code>
+
+***
+
 # Package `coalton-library/string`<a name="coalton-library/string-package"></a>
 
 ## [string.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/string.lisp) <a name="coalton-library/string-string-lisp-file"></a>
 
 ### Values
+
+#### <code>REF</code> <sup><sub>[FUNCTION]</sub></sup><a name="ref-value"></a>
+<code>(<a href="#string-type">STRING</a> &rarr; <a href="#ufix-type">UFIX</a> &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#char-type">CHAR</a>))</code>
+
+***
 
 #### <code>CONCAT</code> <sup><sub>[FUNCTION]</sub></sup><a name="concat-value"></a>
 <code>(<a href="#string-type">STRING</a> &rarr; <a href="#string-type">STRING</a> &rarr; <a href="#string-type">STRING</a>)</code>
@@ -1623,6 +1654,11 @@ Parse the integer in string STR.
 
 Compute a substring of a string bounded by given indices.
 
+
+***
+
+#### <code>REF-UNCHECKED</code> <sup><sub>[FUNCTION]</sub></sup><a name="ref-unchecked-value"></a>
+<code>(<a href="#string-type">STRING</a> &rarr; <a href="#ufix-type">UFIX</a> &rarr; <a href="#char-type">CHAR</a>)</code>
 
 ***
 
@@ -2299,6 +2335,11 @@ Compute the conjunction of two unary Boolean functions.
 
 Compute the disjunction of two unary Boolean functions.
 
+
+***
+
+#### <code>UNCURRY</code> <sup><sub>[FUNCTION]</sub></sup><a name="uncurry-value"></a>
+<code>&forall; :A :B :C. ((:A &rarr; :B &rarr; :C) &rarr; (<a href="#tuple-type">TUPLE</a> :A :B) &rarr; :C)</code>
 
 ***
 
