@@ -15,41 +15,24 @@ identifier: Reference
 
 ### Reference
 - <a href="#coalton-package"><code>coalton</code></a>
-  - <a href="#coalton-classes-lisp-file"><code>classes.lisp</code></a>
 - <a href="#coalton-library/classes-package"><code>coalton-library/classes</code></a>
-  - <a href="#coalton-library/classes-classes-lisp-file"><code>classes.lisp</code></a>
 - <a href="#coalton-library/builtin-package"><code>coalton-library/builtin</code></a>
-  - <a href="#coalton-library/builtin-builtin-lisp-file"><code>builtin.lisp</code></a>
 - <a href="#coalton-library/boolean-package"><code>coalton-library/boolean</code></a>
 - <a href="#coalton-library/bits-package"><code>coalton-library/bits</code></a>
-  - <a href="#coalton-library/bits-bits-lisp-file"><code>bits.lisp</code></a>
 - <a href="#coalton-library/arith-package"><code>coalton-library/arith</code></a>
-  - <a href="#coalton-library/arith-arith-lisp-file"><code>arith.lisp</code></a>
 - <a href="#coalton-library/char-package"><code>coalton-library/char</code></a>
-  - <a href="#coalton-library/char-char-lisp-file"><code>char.lisp</code></a>
 - <a href="#coalton-library/string-package"><code>coalton-library/string</code></a>
-  - <a href="#coalton-library/string-string-lisp-file"><code>string.lisp</code></a>
 - <a href="#coalton-library/tuple-package"><code>coalton-library/tuple</code></a>
-  - <a href="#coalton-library/tuple-tuple-lisp-file"><code>tuple.lisp</code></a>
 - <a href="#coalton-library/optional-package"><code>coalton-library/optional</code></a>
-  - <a href="#coalton-library/optional-optional-lisp-file"><code>optional.lisp</code></a>
 - <a href="#coalton-library/list-package"><code>coalton-library/list</code></a>
-  - <a href="#coalton-library/list-list-lisp-file"><code>list.lisp</code></a>
 - <a href="#coalton-library/result-package"><code>coalton-library/result</code></a>
-  - <a href="#coalton-library/result-result-lisp-file"><code>result.lisp</code></a>
 - <a href="#coalton-library/functions-package"><code>coalton-library/functions</code></a>
-  - <a href="#coalton-library/functions-functions-lisp-file"><code>functions.lisp</code></a>
 - <a href="#coalton-library/cell-package"><code>coalton-library/cell</code></a>
-  - <a href="#coalton-library/cell-cell-lisp-file"><code>cell.lisp</code></a>
 - <a href="#coalton-library/vector-package"><code>coalton-library/vector</code></a>
-  - <a href="#coalton-library/vector-vector-lisp-file"><code>vector.lisp</code></a>
 - <a href="#coalton-library/slice-package"><code>coalton-library/slice</code></a>
-  - <a href="#coalton-library/slice-slice-lisp-file"><code>slice.lisp</code></a>
 - <a href="#coalton-library/hashtable-package"><code>coalton-library/hashtable</code></a>
-  - <a href="#coalton-library/hashtable-hashtable-lisp-file"><code>hashtable.lisp</code></a>
 - <a href="#coalton-library/monad/state-package"><code>coalton-library/monad/state</code></a>
 - <a href="#coalton-library/iterator-package"><code>coalton-library/iterator</code></a>
-  - <a href="#coalton-library/iterator-iterator-lisp-file"><code>iterator.lisp</code></a>
 
 
 </div>
@@ -2954,9 +2937,9 @@ Constructors:
 #### <code>ANY!</code> <sup><sub>[FUNCTION]</sub></sup><a name="any!-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
-Return `True' as soon as any element of ITER is GOOD?, or `False' if none of them are.
+Return `True` as soon as any element of ITER is GOOD?, or `False` if none of them are.
 
-Returns `False' if ITER is empty.
+Returns `False` if ITER is empty.
 
 
 ***
@@ -2964,7 +2947,7 @@ Returns `False' if ITER is empty.
 #### <code>MAX!</code> <sup><sub>[FUNCTION]</sub></sup><a name="max!-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
-Return the most-positive element of ITER, or `None' if ITER is empty.
+Return the most-positive element of ITER, or `None` if ITER is empty.
 
 
 ***
@@ -2972,7 +2955,7 @@ Return the most-positive element of ITER, or `None' if ITER is empty.
 #### <code>MIN!</code> <sup><sub>[FUNCTION]</sub></sup><a name="min!-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
-Return the most-negative element of ITER, or `None' if ITER is empty.
+Return the most-negative element of ITER, or `None` if ITER is empty.
 
 
 ***
@@ -2990,7 +2973,7 @@ Add together all the elements of ITER.
 
 Return an iterator of tuples of elements from LEFT and RIGHT which terminates as soon as either LEFT or RIGHT does.
 
-Often useful combined with `uncurry' to allow mapping a multi-argument function across multiple iterators.
+Often useful combined with `uncurry` to allow mapping a multi-argument function across multiple iterators.
 
 
 ***
@@ -3006,7 +2989,7 @@ Yields nothing; stops immediately
 #### <code>FIND!</code> <sup><sub>[FUNCTION]</sub></sup><a name="find!-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
-Return the first element of ITER for which THIS? returns `True', or `None' if no element matches.
+Return the first element of ITER for which THIS? returns `True`, or `None` if no element matches.
 
 
 ***
@@ -3014,7 +2997,7 @@ Return the first element of ITER for which THIS? returns `True', or `None' if no
 #### <code>FOLD!</code> <sup><sub>[FUNCTION]</sub></sup><a name="fold!-value"></a>
 <code>&forall; :A :B. ((:A &rarr; :B &rarr; :A) &rarr; :A &rarr; (<a href="#iterator-type">ITERATOR</a> :B) &rarr; :A)</code>
 
-Tail recursive in-order fold. Common Lisp calls this operation `reduce'.
+Tail recursive in-order fold. Common Lisp calls this operation `reduce`.
 
 If ITER is empty, returns INIT. Otherwise, calls (FUNC STATE ITEM) for each ITEM of ITER to produce a new
 STATE, using INIT as the first STATE.
@@ -3025,10 +3008,10 @@ STATE, using INIT as the first STATE.
 #### <code>NEXT!</code> <sup><sub>[FUNCTION]</sub></sup><a name="next!-value"></a>
 <code>&forall; :A. ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
-Advance ITER, returning its next yielded value, or `None' if the iterator is exhausted.
-Behavior is undefined if two threads concurrently call `next!' on the same iterator without a lock. Note that
-most of the operators defined on iterators call `next!' internally, or create new iterators which will call
-`next!' on their inputs.
+Advance ITER, returning its next yielded value, or `None` if the iterator is exhausted.
+Behavior is undefined if two threads concurrently call `next!` on the same iterator without a lock. Note that
+most of the operators defined on iterators call `next!` internally, or create new iterators which will call
+`next!` on their inputs.
 
 
 ***
@@ -3036,7 +3019,7 @@ most of the operators defined on iterators call `next!' internally, or create ne
 #### <code>TAKE!</code> <sup><sub>[FUNCTION]</sub></sup><a name="take!-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
-An `Iterator' which yields at most COUNT elements from ITER.
+An `Iterator` which yields at most COUNT elements from ITER.
 
 
 ***
@@ -3053,7 +3036,7 @@ An iterator which begins at zero and counts up to, but not including, LIMIT.
 <code>&forall; :A. ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; <a href="#integer-type">INTEGER</a>)</code>
 
 Return the number of elements in ITER.
-This operation could be called `length!', but `count!' emphasizes the fact that it consumes ITER, and
+This operation could be called `length!`, but `count!` emphasizes the fact that it consumes ITER, and
 afterwards, ITER will be exhausted.
 
 
@@ -3062,9 +3045,9 @@ afterwards, ITER will be exhausted.
 #### <code>EVERY!</code> <sup><sub>[FUNCTION]</sub></sup><a name="every!-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
-Return `True' if every element of ITER is GOOD?, or `False' as soon as any element is not GOOD?.
+Return `True` if every element of ITER is GOOD?, or `False` as soon as any element is not GOOD?.
 
-Returns `True' if ITER is empty.
+Returns `True` if ITER is empty.
 
 
 ***
@@ -3113,7 +3096,7 @@ Discard values returned by THUNK.
 #### <code>INDEX-OF!</code> <sup><sub>[FUNCTION]</sub></sup><a name="index-of!-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#ufix-type">UFIX</a>))</code>
 
-Return the zero-based index of the first element of ITER for which THIS? is `True', or `None' if no element matches.
+Return the zero-based index of the first element of ITER for which THIS? is `True`, or `None` if no element matches.
 
 
 ***
@@ -3130,9 +3113,9 @@ Behavior is undefined if the iterator is advanced after a destructive modificati
 #### <code>OPTIMIZE!</code> <sup><sub>[FUNCTION]</sub></sup><a name="optimize!-value"></a>
 <code>&forall; :A. ((:A &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
-For an order BETTER? which returns `True' if its first argument is better than its second argument, return the best element of ITER.
+For an order BETTER? which returns `True` if its first argument is better than its second argument, return the best element of ITER.
 
-Return `None' if ITER is empty.
+Return `None` if ITER is empty.
 
 
 ***
@@ -3189,7 +3172,7 @@ Behavior is undefined if the iterator is advanced after a destructive modificati
 #### <code>STRING-CHARS</code> <sup><sub>[FUNCTION]</sub></sup><a name="string-chars-value"></a>
 <code>(<a href="#string-type">STRING</a> &rarr; (<a href="#iterator-type">ITERATOR</a> <a href="#char-type">CHAR</a>))</code>
 
-Yield successive `Char's from STR.
+Yield successive `Char`s from STR.
 Behavior is undefined if the iterator is advanced after a destructive modification of STR.
 
 
@@ -3198,7 +3181,7 @@ Behavior is undefined if the iterator is advanced after a destructive modificati
 #### <code>COLLECT-LIST!</code> <sup><sub>[FUNCTION]</sub></sup><a name="collect-list!-value"></a>
 <code>&forall; :A. ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
-Construct a `List' containing all the elements from ITER in order.
+Construct a `List` containing all the elements from ITER in order.
 
 
 ***
@@ -3214,9 +3197,9 @@ An infinite iterator which starts at 0 and counts upwards by 1.
 #### <code>RECURSIVE-ITER</code> <sup><sub>[FUNCTION]</sub></sup><a name="recursive-iter-value"></a>
 <code>&forall; :A. ((:A &rarr; :A) &rarr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; :A &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
-An iterator which yields first START, then (SUCC START), then (SUCC (SUCC START)), and so on, stopping as soon as such a value is `done?'.
+An iterator which yields first START, then (SUCC START), then (SUCC (SUCC START)), and so on, stopping as soon as such a value is `done?`.
 
-Beware off-by-one errors: the first value which is `done?' is not yielded. If `(done?  start)' is true, the
+Beware off-by-one errors: the first value which is `done?` is not yielded. If `(done?  start)' is true, the
 iterator is empty.
 
 
@@ -3233,7 +3216,7 @@ Yield ITEM over and over, infinitely.
 #### <code>COLLECT-VECTOR!</code> <sup><sub>[FUNCTION]</sub></sup><a name="collect-vector!-value"></a>
 <code>&forall; :A. ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
 
-Construct a `Vector' containing all the elements from ITER in order.
+Construct a `Vector` containing all the elements from ITER in order.
 
 
 ***
@@ -3243,7 +3226,7 @@ Construct a `Vector' containing all the elements from ITER in order.
 
 A range which begins below START and counts down through and including END by STEP.
 
-Equivalent to reversing `range-increasing'
+Equivalent to reversing `range-increasing`
 
 
 ***
@@ -3259,7 +3242,7 @@ An iterator which begins at START and yields successive elements spaced by STEP,
 #### <code>COLLECT-HASHTABLE!</code> <sup><sub>[FUNCTION]</sub></sup><a name="collect-hashtable!-value"></a>
 <code>&forall; :A :B. <a href="#hash-class">HASH</a> :A &rArr; ((<a href="#iterator-type">ITERATOR</a> (<a href="#tuple-type">TUPLE</a> :A :B)) &rarr; (<a href="#hashtable-type">HASHTABLE</a> :A :B))</code>
 
-Construct a `HashTable' containing all the key/value pairs from ITER.
+Construct a `HashTable` containing all the key/value pairs from ITER.
 
 If a key appears in ITER multiple times, the resulting table will contain its last corresponding value.
 
@@ -3277,7 +3260,7 @@ Yield unique elements from ITER in order of first appearance.
 #### <code>COLLECT-VECTOR-SIZE-HINT!</code> <sup><sub>[FUNCTION]</sub></sup><a name="collect-vector-size-hint!-value"></a>
 <code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
 
-Construct a `Vector' with initial allocation for SIZE elements, and fill it with all the elements from ITER in order.
+Construct a `Vector` with initial allocation for SIZE elements, and fill it with all the elements from ITER in order.
 
 The vector will be resized if ITER contains more than SIZE elements.
 
