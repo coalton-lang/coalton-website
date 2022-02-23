@@ -15,41 +15,24 @@ identifier: Reference
 
 ### Reference
 - <a href="#coalton-package"><code>coalton</code></a>
-  - <a href="#coalton-classes-lisp-file"><code>classes.lisp</code></a>
 - <a href="#coalton-library/classes-package"><code>coalton-library/classes</code></a>
-  - <a href="#coalton-library/classes-classes-lisp-file"><code>classes.lisp</code></a>
 - <a href="#coalton-library/builtin-package"><code>coalton-library/builtin</code></a>
-  - <a href="#coalton-library/builtin-builtin-lisp-file"><code>builtin.lisp</code></a>
 - <a href="#coalton-library/boolean-package"><code>coalton-library/boolean</code></a>
 - <a href="#coalton-library/bits-package"><code>coalton-library/bits</code></a>
-  - <a href="#coalton-library/bits-bits-lisp-file"><code>bits.lisp</code></a>
 - <a href="#coalton-library/arith-package"><code>coalton-library/arith</code></a>
-  - <a href="#coalton-library/arith-arith-lisp-file"><code>arith.lisp</code></a>
 - <a href="#coalton-library/char-package"><code>coalton-library/char</code></a>
-  - <a href="#coalton-library/char-char-lisp-file"><code>char.lisp</code></a>
 - <a href="#coalton-library/string-package"><code>coalton-library/string</code></a>
-  - <a href="#coalton-library/string-string-lisp-file"><code>string.lisp</code></a>
 - <a href="#coalton-library/tuple-package"><code>coalton-library/tuple</code></a>
-  - <a href="#coalton-library/tuple-tuple-lisp-file"><code>tuple.lisp</code></a>
 - <a href="#coalton-library/optional-package"><code>coalton-library/optional</code></a>
-  - <a href="#coalton-library/optional-optional-lisp-file"><code>optional.lisp</code></a>
 - <a href="#coalton-library/list-package"><code>coalton-library/list</code></a>
-  - <a href="#coalton-library/list-list-lisp-file"><code>list.lisp</code></a>
 - <a href="#coalton-library/result-package"><code>coalton-library/result</code></a>
-  - <a href="#coalton-library/result-result-lisp-file"><code>result.lisp</code></a>
 - <a href="#coalton-library/functions-package"><code>coalton-library/functions</code></a>
-  - <a href="#coalton-library/functions-functions-lisp-file"><code>functions.lisp</code></a>
 - <a href="#coalton-library/cell-package"><code>coalton-library/cell</code></a>
-  - <a href="#coalton-library/cell-cell-lisp-file"><code>cell.lisp</code></a>
 - <a href="#coalton-library/vector-package"><code>coalton-library/vector</code></a>
-  - <a href="#coalton-library/vector-vector-lisp-file"><code>vector.lisp</code></a>
 - <a href="#coalton-library/slice-package"><code>coalton-library/slice</code></a>
-  - <a href="#coalton-library/slice-slice-lisp-file"><code>slice.lisp</code></a>
 - <a href="#coalton-library/hashtable-package"><code>coalton-library/hashtable</code></a>
-  - <a href="#coalton-library/hashtable-hashtable-lisp-file"><code>hashtable.lisp</code></a>
 - <a href="#coalton-library/monad/state-package"><code>coalton-library/monad/state</code></a>
 - <a href="#coalton-library/iterator-package"><code>coalton-library/iterator</code></a>
-  - <a href="#coalton-library/iterator-iterator-lisp-file"><code>iterator.lisp</code></a>
 
 
 </div>
