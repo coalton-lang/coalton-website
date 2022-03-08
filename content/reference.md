@@ -285,6 +285,12 @@ Non-allocating tagged non-negative integer; range is platform-dependent. Uses `(
 
 ***
 
+#### <code>VOID</code> <sup><sub>[TYPE]</sub></sup><a name="void-type"></a>
+
+
+
+***
+
 #### <code>ARROW :A :B</code> <sup><sub>[TYPE]</sub></sup><a name="arrow-type"></a>
 
 Type constructor for function types.
