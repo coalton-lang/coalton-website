@@ -1233,10 +1233,7 @@ Methods:
 ### Types
 
 #### <code>COMPLEX :A</code> <sup><sub>[TYPE]</sub></sup><a name="complex-type"></a>
-- <code>(%COMPLEX :A :A)</code>
 
-Constructors:
-- <code>%COMPLEX :: (:A &rarr; :A &rarr; (<a href="#complex-type">COMPLEX</a> :A))</code>
 
 <details>
 <summary>Instances</summary>
@@ -1266,12 +1263,9 @@ Constructors:
 ***
 
 #### <code>FRACTION</code> <sup><sub>[TYPE]</sub></sup><a name="fraction-type"></a>
-- <code>(%FRACTION <a href="#integer-type">INTEGER</a> <a href="#integer-type">INTEGER</a>)</code>
 
 A ratio of integers always in reduced form.
 
-Constructors:
-- <code>%FRACTION :: (<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#fraction-type">FRACTION</a>)</code>
 
 <details>
 <summary>Instances</summary>
@@ -2438,12 +2432,9 @@ Print a line to *STANDARD-OUTPUT* in the form "{STR}: {ITEM}"
 ### Types
 
 #### <code>CELL :A</code> <sup><sub>[TYPE]</sub></sup><a name="cell-type"></a>
-- <code>(%CELL <a href="#lisp-object-type">LISP-OBJECT</a>)</code>
 
 Internally mutable cell
 
-Constructors:
-- <code>%CELL :: (<a href="#lisp-object-type">LISP-OBJECT</a> &rarr; (<a href="#cell-type">CELL</a> :A))</code>
 
 <details>
 <summary>Instances</summary>
@@ -2544,10 +2535,7 @@ Apply F to the contents of CEL, swapping the result for the old value
 ### Types
 
 #### <code>VECTOR :A</code> <sup><sub>[TYPE]</sub></sup><a name="vector-type"></a>
-- <code>(%VECTOR <a href="#lisp-object-type">LISP-OBJECT</a>)</code>
 
-Constructors:
-- <code>%VECTOR :: (<a href="#lisp-object-type">LISP-OBJECT</a> &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
 
 <details>
 <summary>Instances</summary>
@@ -2776,10 +2764,7 @@ Remove the element IDX from VEC and replace it with the last element in VEC with
 ### Types
 
 #### <code>SLICE :A</code> <sup><sub>[TYPE]</sub></sup><a name="slice-type"></a>
-- <code>(%SLICE <a href="#lisp-object-type">LISP-OBJECT</a>)</code>
 
-Constructors:
-- <code>%SLICE :: (<a href="#lisp-object-type">LISP-OBJECT</a> &rarr; (<a href="#slice-type">SLICE</a> :A))</code>
 
 <details>
 <summary>Instances</summary>
@@ -2888,10 +2873,7 @@ Call the function F once for each item in S with its index
 ### Types
 
 #### <code>HASHTABLE :A :B</code> <sup><sub>[TYPE]</sub></sup><a name="hashtable-type"></a>
-- <code>(%HASHTABLE <a href="#lisp-object-type">LISP-OBJECT</a>)</code>
 
-Constructors:
-- <code>%HASHTABLE :: (<a href="#lisp-object-type">LISP-OBJECT</a> &rarr; (<a href="#hashtable-type">HASHTABLE</a> :A :B))</code>
 
 
 ***
@@ -2984,12 +2966,9 @@ Crate a new empty hashtable with a given capacity
 ### Types
 
 #### <code>ITERATOR :A</code> <sup><sub>[TYPE]</sub></sup><a name="iterator-type"></a>
-- <code>(%ITERATOR (<a href="#unit-type">UNIT</a> &rarr; (<a href="#optional-type">OPTIONAL</a> :A)))</code>
 
 A forward-moving pointer into an ordered sequence of :ELTs
 
-Constructors:
-- <code>%ITERATOR :: ((<a href="#unit-type">UNIT</a> &rarr; (<a href="#optional-type">OPTIONAL</a> :A)) &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
 <details>
 <summary>Instances</summary>
