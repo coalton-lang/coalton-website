@@ -1710,6 +1710,24 @@ Compute a substring of a string bounded by given indices.
 
 ***
 
+#### <code>STRIP-PREFIX</code> <sup><sub>[FUNCTION]</sub></sup><a name="strip-prefix-value"></a>
+<code>(<a href="#string-type">STRING</a> &rarr; <a href="#string-type">STRING</a> &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#string-type">STRING</a>))</code>
+
+Returns a string without a give prefix, or None if the string
+does not have that suffix.
+
+
+***
+
+#### <code>STRIP-SUFFIX</code> <sup><sub>[FUNCTION]</sub></sup><a name="strip-suffix-value"></a>
+<code>(<a href="#string-type">STRING</a> &rarr; <a href="#string-type">STRING</a> &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#string-type">STRING</a>))</code>
+
+Returns a string without a give suffix, or None if the string
+does not have that suffix.
+
+
+***
+
 #### <code>REF-UNCHECKED</code> <sup><sub>[FUNCTION]</sub></sup><a name="ref-unchecked-value"></a>
 <code>(<a href="#string-type">STRING</a> &rarr; <a href="#ufix-type">UFIX</a> &rarr; <a href="#char-type">CHAR</a>)</code>
 
@@ -2987,6 +3005,16 @@ A forward-moving pointer into an ordered sequence of :ELTs
 
 ***
 
+#### <code>OR!</code> <sup><sub>[FUNCTION]</sub></sup><a name="or!-value"></a>
+<code>((<a href="#iterator-type">ITERATOR</a> <a href="#boolean-type">BOOLEAN</a>) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+***
+
+#### <code>AND!</code> <sup><sub>[FUNCTION]</sub></sup><a name="and!-value"></a>
+<code>((<a href="#iterator-type">ITERATOR</a> <a href="#boolean-type">BOOLEAN</a>) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+***
+
 #### <code>ANY!</code> <sup><sub>[FUNCTION]</sub></sup><a name="any!-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
@@ -3024,9 +3052,7 @@ Add together all the elements of ITER.
 #### <code>ZIP!</code> <sup><sub>[FUNCTION]</sub></sup><a name="zip!-value"></a>
 <code>&forall; :A :B. ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :B) &rarr; (<a href="#iterator-type">ITERATOR</a> (<a href="#tuple-type">TUPLE</a> :A :B)))</code>
 
-Return an iterator of tuples of elements from LEFT and RIGHT which terminates as soon as either LEFT or RIGHT does.
-
-Often useful combined with `uncurry` to allow mapping a multi-argument function across multiple iterators.
+Return an iterator of tuples contining elements from two iterators.
 
 
 ***
@@ -3125,6 +3151,14 @@ Return an iterator over the elements from ITER for which KEEP? returns true.
 <code>&forall; :A. ((<a href="#iterator-type">ITERATOR</a> (<a href="#iterator-type">ITERATOR</a> :A)) &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
 Yield all the elements from each of the ITERS in order.
+
+
+***
+
+#### <code>ZIPWITH!</code> <sup><sub>[FUNCTION]</sub></sup><a name="zipwith!-value"></a>
+<code>&forall; :A :B :C. ((:A &rarr; :B &rarr; :C) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :B) &rarr; (<a href="#iterator-type">ITERATOR</a> :C))</code>
+
+Return an iterator of elements from LEFT and RIGHT which terminates as soon as either LEFT or RIGHT does.
 
 
 ***
