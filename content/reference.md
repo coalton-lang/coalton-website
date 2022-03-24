@@ -463,9 +463,11 @@ Constructors:
 - <code><a href="#monad-class">MONAD</a> <a href="#list-type">LIST</a></code>
 - <code><a href="#monoid-class">MONOID</a> (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#list-type">LIST</a></code>
+- <code><a href="#foldable-class">FOLDABLE</a> <a href="#list-type">LIST</a></code>
 - <code><a href="#semigroup-class">SEMIGROUP</a> (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#alternative-class">ALTERNATIVE</a> <a href="#list-type">LIST</a></code>
 - <code><a href="#applicative-class">APPLICATIVE</a> <a href="#list-type">LIST</a></code>
+- <code><a href="#traversable-class">TRAVERSABLE</a> <a href="#list-type">LIST</a></code>
 
 </details>
 
@@ -948,6 +950,29 @@ Methods:
 
 ***
 
+#### <code>FOLDABLE</code> <sup><sub>[CLASS]</sub></sup><a name="foldable-class"></a>
+<code><a href="#foldable-class">FOLDABLE</a> :A</code>
+
+Types which can be folded into a single element.
+
+`fold` is a left tail recursive fold
+
+`foldr` is a right non tail recursive fold
+
+Methods:
+- <code>FOLD :: ((:B &rarr; :C &rarr; :B) &rarr; :B &rarr; (:A :C) &rarr; :B)</code>
+- <code>FOLDR :: ((:D &rarr; :E &rarr; :E) &rarr; :E &rarr; (:A :D) &rarr; :E)</code>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#foldable-class">FOLDABLE</a> <a href="#list-type">LIST</a></code>
+
+</details>
+
+
+***
+
 #### <code>MONADFAIL</code> <sup><sub>[CLASS]</sub></sup><a name="monadfail-class"></a>
 <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monadfail-class">MONADFAIL</a> :A</code>
 
@@ -1030,6 +1055,22 @@ Methods:
 
 ***
 
+#### <code>TRAVERSABLE</code> <sup><sub>[CLASS]</sub></sup><a name="traversable-class"></a>
+<code><a href="#traversable-class">TRAVERSABLE</a> :A</code>
+
+Methods:
+- <code>TRAVERSE :: <a href="#applicative-class">APPLICATIVE</a> :B &rArr; ((:C &rarr; (:B :D)) &rarr; (:A :C) &rarr; (:B (:A :D)))</code>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#traversable-class">TRAVERSABLE</a> <a href="#list-type">LIST</a></code>
+
+</details>
+
+
+***
+
 #### <code>UNWRAPPABLE</code> <sup><sub>[CLASS]</sub></sup><a name="unwrappable-class"></a>
 <code><a href="#unwrappable-class">UNWRAPPABLE</a> :A</code>
 
@@ -1102,6 +1143,11 @@ Returns the greater element of X and Y.
 
 Returns the lesser element of X and Y.
 
+
+***
+
+#### <code>SEQUENCE</code> <sup><sub>[FUNCTION]</sub></sup><a name="sequence-value"></a>
+<code>&forall; :A :B :C. (<a href="#traversable-class">TRAVERSABLE</a> :A) (<a href="#applicative-class">APPLICATIVE</a> :B) &rArr; ((:A (:B :C)) &rarr; (:B (:A :C)))</code>
 
 ***
 
@@ -1893,14 +1939,6 @@ Returns the first element in a list matching the predicate function F.
 
 ***
 
-#### <code>FOLD</code> <sup><sub>[FUNCTION]</sub></sup><a name="fold-value"></a>
-<code>&forall; :A :B. ((:A &rarr; :B &rarr; :B) &rarr; :B &rarr; (<a href="#list-type">LIST</a> :A) &rarr; :B)</code>
-
-Tail recursive left fold on lists.
-
-
-***
-
 #### <code>HEAD</code> <sup><sub>[FUNCTION]</sub></sup><a name="head-value"></a>
 <code>&forall; :A. ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
@@ -1945,14 +1983,6 @@ Returns every element except the first in a list.
 <code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 Returns the first N elements of a list.
-
-
-***
-
-#### <code>FOLDR</code> <sup><sub>[FUNCTION]</sub></sup><a name="foldr-value"></a>
-<code>&forall; :A :B. ((:A &rarr; :B &rarr; :B) &rarr; :B &rarr; (<a href="#list-type">LIST</a> :A) &rarr; :B)</code>
-
-Right fold on lists. Is not tail recursive.
 
 
 ***
@@ -2388,19 +2418,6 @@ Compute the disjunction of two unary Boolean functions.
 
 #### <code>UNCURRY</code> <sup><sub>[FUNCTION]</sub></sup><a name="uncurry-value"></a>
 <code>&forall; :A :B :C. ((:A &rarr; :B &rarr; :C) &rarr; (<a href="#tuple-type">TUPLE</a> :A :B) &rarr; :C)</code>
-
-***
-
-#### <code>SEQUENCE</code> <sup><sub>[FUNCTION]</sub></sup><a name="sequence-value"></a>
-<code>&forall; :A :B. <a href="#applicative-class">APPLICATIVE</a> :A &rArr; ((<a href="#list-type">LIST</a> (:A :B)) &rarr; (:A (<a href="#list-type">LIST</a> :B)))</code>
-
-***
-
-#### <code>TRAVERSE</code> <sup><sub>[FUNCTION]</sub></sup><a name="traverse-value"></a>
-<code>&forall; :A :B :C. <a href="#applicative-class">APPLICATIVE</a> :B &rArr; ((:A &rarr; (:B :C)) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (:B (<a href="#list-type">LIST</a> :C)))</code>
-
-Map the elements of XS with F from left to right, collecting the results.
-
 
 ***
 
