@@ -2403,6 +2403,14 @@ Print a line to *STANDARD-OUTPUT*
 
 ***
 
+#### <code>REDUCE</code> <sup><sub>[FUNCTION]</sub></sup><a name="reduce-value"></a>
+<code>&forall; :A :B :C. <a href="#foldable-class">FOLDABLE</a> :C &rArr; ((:A &rarr; :B &rarr; :B) &rarr; :B &rarr; (:C :A) &rarr; :B)</code>
+
+The same as `fold` but with the argument order swapped to match `cl:reduce`
+
+
+***
+
 #### <code>COMPOSE</code> <sup><sub>[FUNCTION]</sub></sup><a name="compose-value"></a>
 <code>&forall; :A :B :C. ((:A &rarr; :B) &rarr; (:C &rarr; :A) &rarr; :C &rarr; :B)</code>
 
