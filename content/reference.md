@@ -1966,7 +1966,7 @@ Returns the last element of a list.
 #### <code>SORT</code> <sup><sub>[FUNCTION]</sub></sup><a name="sort-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
-Performs a stable sort of XS.
+Performs a sort of XS.
 
 
 ***
@@ -2101,6 +2101,14 @@ Returns true if any element of XS is equal to E.
 <code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; :A &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 Returns a list with the same value repeated multiple times.
+
+
+***
+
+#### <code>SORTBY</code> <sup><sub>[FUNCTION]</sub></sup><a name="sortby-value"></a>
+<code>&forall; :A. ((:A &rarr; :A &rarr; <a href="#ord-type">ORD</a>) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
+
+Generic version of sort
 
 
 ***
