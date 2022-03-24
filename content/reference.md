@@ -533,8 +533,6 @@ Constructors:
 #### <code>TUPLE :A :B</code> <sup><sub>[TYPE]</sub></sup><a name="tuple-type"></a>
 - <code>(TUPLE :A :B)</code>
 
-A heterogeneous collection of items.
-
 Constructors:
 - <code>TUPLE :: (:A &rarr; :B &rarr; (<a href="#tuple-type">TUPLE</a> :A :B))</code>
 
@@ -555,8 +553,6 @@ Constructors:
 #### <code>RESULT :A :B</code> <sup><sub>[TYPE]</sub></sup><a name="result-type"></a>
 - <code>(ERR :A)</code>
 - <code>(OK :B)</code>
-
-Represents something that may have failed.
 
 Constructors:
 - <code>ERR :: (:A &rarr; (<a href="#result-type">RESULT</a> :A :B))</code>
@@ -585,8 +581,6 @@ Constructors:
 #### <code>OPTIONAL :A</code> <sup><sub>[TYPE]</sub></sup><a name="optional-type"></a>
 - <code>(SOME :A)</code>
 - <code>NONE</code>
-
-Represents something that may not have a value.
 
 Constructors:
 - <code>SOME :: (:A &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
@@ -876,7 +870,7 @@ Methods:
 Types which are monads as defined in Haskell. See https://wiki.haskell.org/Monad for more information.
 
 Methods:
-- <code>&gt;&gt;= :: &forall; :B :C. ((:A :B) &rarr; (:B &rarr; (:A :C)) &rarr; (:A :C))</code>
+- <code>&gt;&gt;= :: ((:A :B) &rarr; (:B &rarr; (:A :C)) &rarr; (:A :C))</code>
 
 <details>
 <summary>Instances</summary>
@@ -918,7 +912,7 @@ Methods:
 Types which can map an inner type where the mapping adheres to the identity and composition laws.
 
 Methods:
-- <code>MAP :: &forall; :B :C. ((:B &rarr; :C) &rarr; (:A :B) &rarr; (:A :C))</code>
+- <code>MAP :: ((:B &rarr; :C) &rarr; (:A :B) &rarr; (:A :C))</code>
 
 <details>
 <summary>Instances</summary>
@@ -958,7 +952,7 @@ Methods:
 <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monadfail-class">MONADFAIL</a> :A</code>
 
 Methods:
-- <code>FAIL :: &forall; :B. (<a href="#string-type">STRING</a> &rarr; (:A :B))</code>
+- <code>FAIL :: (<a href="#string-type">STRING</a> &rarr; (:A :B))</code>
 
 <details>
 <summary>Instances</summary>
@@ -999,8 +993,8 @@ Methods:
 Types which are monoids on applicative functors.
 
 Methods:
-- <code>ALT :: &forall; :B. ((:A :B) &rarr; (:A :B) &rarr; (:A :B))</code>
-- <code>EMPTY :: &forall; :B. (:A :B)</code>
+- <code>ALT :: ((:A :B) &rarr; (:A :B) &rarr; (:A :B))</code>
+- <code>EMPTY :: (:A :C)</code>
 
 <details>
 <summary>Instances</summary>
@@ -1019,8 +1013,8 @@ Methods:
 Types which are a functor which can embed pure expressions and sequence operations.
 
 Methods:
-- <code>PURE :: &forall; :B. (:B &rarr; (:A :B))</code>
-- <code>LIFTA2 :: &forall; :B :C :D. ((:B &rarr; :C &rarr; :D) &rarr; (:A :B) &rarr; (:A :C) &rarr; (:A :D))</code>
+- <code>PURE :: (:B &rarr; (:A :B))</code>
+- <code>LIFTA2 :: ((:C &rarr; :D &rarr; :E) &rarr; (:A :C) &rarr; (:A :D) &rarr; (:A :E))</code>
 
 <details>
 <summary>Instances</summary>
@@ -1042,8 +1036,8 @@ Methods:
 Types which might be able to be unwrapped, otherwise returning a default value.
 
 Methods:
-- <code>WITHDEFAULT :: &forall; :B. (:B &rarr; (:A :B) &rarr; :B)</code>
-- <code>UNWRAP :: &forall; :B. ((:A :B) &rarr; :B)</code>
+- <code>WITHDEFAULT :: (:B &rarr; (:A :B) &rarr; :B)</code>
+- <code>UNWRAP :: ((:A :C) &rarr; :C)</code>
 
 <details>
 <summary>Instances</summary>
@@ -1264,8 +1258,6 @@ Methods:
 
 #### <code>FRACTION</code> <sup><sub>[TYPE]</sub></sup><a name="fraction-type"></a>
 
-A ratio of integers always in reduced form.
-
 
 <details>
 <summary>Instances</summary>
@@ -1285,21 +1277,6 @@ A ratio of integers always in reduced form.
 
 #### <code>QUANTIZATION :A</code> <sup><sub>[TYPE]</sub></sup><a name="quantization-type"></a>
 - <code>(QUANTIZATION :A <a href="#integer-type">INTEGER</a> :A <a href="#integer-type">INTEGER</a> :A)</code>
-
-Represents an integer quantization of `:a`. See the `Quantizable` typeclass.
-
-The fields are defined as follows:
-
-1. A value of type `:a`.
-
-2. The greatest integer less than or equal to a particular value.
-
-3. The remainder of this as a value of type `:a`.
-
-4. The least integer greater than or equal to a particular value.
-
-5. The remainder of this as a value of type `:a`.
-
 
 Constructors:
 - <code>QUANTIZATION :: (:A &rarr; <a href="#integer-type">INTEGER</a> &rarr; :A &rarr; <a href="#integer-type">INTEGER</a> &rarr; :A &rarr; (<a href="#quantization-type">QUANTIZATION</a> :A))</code>
@@ -1412,7 +1389,7 @@ Methods:
 ***
 
 #### <code>II</code> <sup><sub>[VALUE]</sub></sup><a name="ii-value"></a>
-<code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#complex-class">COMPLEX</a> :A) &rArr; (<a href="#complex-type">COMPLEX</a> :A)</code>
+<code>&forall; :A. (<a href="#complex-class">COMPLEX</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; (<a href="#complex-type">COMPLEX</a> :A)</code>
 
 The complex unit i. (The double ii represents a blackboard-bold i.)
 
@@ -1420,7 +1397,7 @@ The complex unit i. (The double ii represents a blackboard-bold i.)
 ***
 
 #### <code>ABS</code> <sup><sub>[FUNCTION]</sub></sup><a name="abs-value"></a>
-<code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; :A)</code>
+<code>&forall; :A. (<a href="#ord-class">ORD</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; (:A &rarr; :A)</code>
 
 Absolute value of X.
 
@@ -1476,7 +1453,7 @@ Is N odd?
 ***
 
 #### <code>SIGN</code> <sup><sub>[FUNCTION]</sub></sup><a name="sign-value"></a>
-<code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; <a href="#integer-type">INTEGER</a>)</code>
+<code>&forall; :A. (<a href="#ord-class">ORD</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; (:A &rarr; <a href="#integer-type">INTEGER</a>)</code>
 
 The sign of X.
 
@@ -1579,7 +1556,7 @@ Note: This does *not* divide double-float arguments.
 ***
 
 #### <code>CONJUGATE</code> <sup><sub>[FUNCTION]</sub></sup><a name="conjugate-value"></a>
-<code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#complex-class">COMPLEX</a> :A) &rArr; ((<a href="#complex-type">COMPLEX</a> :A) &rarr; (<a href="#complex-type">COMPLEX</a> :A))</code>
+<code>&forall; :A. (<a href="#complex-class">COMPLEX</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; ((<a href="#complex-type">COMPLEX</a> :A) &rarr; (<a href="#complex-type">COMPLEX</a> :A))</code>
 
 ***
 
@@ -2451,8 +2428,6 @@ Print a line to *STANDARD-OUTPUT* in the form "{STR}: {ITEM}"
 
 #### <code>CELL :A</code> <sup><sub>[TYPE]</sub></sup><a name="cell-type"></a>
 
-Internally mutable cell
-
 
 <details>
 <summary>Instances</summary>
@@ -2985,8 +2960,6 @@ Crate a new empty hashtable with a given capacity
 
 #### <code>ITERATOR :A</code> <sup><sub>[TYPE]</sub></sup><a name="iterator-type"></a>
 
-A forward-moving pointer into an ordered sequence of :ELTs
-
 
 <details>
 <summary>Instances</summary>
@@ -3104,7 +3077,7 @@ An `Iterator` which yields at most COUNT elements from ITER.
 ***
 
 #### <code>UP-TO</code> <sup><sub>[FUNCTION]</sub></sup><a name="up-to-value"></a>
-<code>&forall; :A. (<a href="#ord-class">ORD</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; (:A &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
+<code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
 An iterator which begins at zero and counts up to, but not including, LIMIT.
 
@@ -3164,7 +3137,7 @@ Return an iterator of elements from LEFT and RIGHT which terminates as soon as e
 ***
 
 #### <code>DOWN-FROM</code> <sup><sub>[FUNCTION]</sub></sup><a name="down-from-value"></a>
-<code>&forall; :A. (<a href="#ord-class">ORD</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; (:A &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
+<code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
 An iterator which begins below the provided limit and counts down through and including zero.
 
@@ -3232,7 +3205,7 @@ Returns an iterator over tuples whose FSTs are elements from KEYS, and whose SND
 ***
 
 #### <code>UP-THROUGH</code> <sup><sub>[FUNCTION]</sub></sup><a name="up-through-value"></a>
-<code>&forall; :A. (<a href="#ord-class">ORD</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; (:A &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
+<code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
 An iterator which begins at zero and counts up through and including LIMIT.
 
@@ -3274,7 +3247,7 @@ Construct a `List` containing all the elements from ITER in order.
 ***
 
 #### <code>COUNT-FOREVER</code> <sup><sub>[FUNCTION]</sub></sup><a name="count-forever-value"></a>
-<code>&forall; :A. (<a href="#ord-class">ORD</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; (<a href="#unit-type">UNIT</a> &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
+<code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (<a href="#unit-type">UNIT</a> &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
 An infinite iterator which starts at 0 and counts upwards by 1.
 
@@ -3309,7 +3282,7 @@ Construct a `Vector` containing all the elements from ITER in order.
 ***
 
 #### <code>RANGE-DECREASING</code> <sup><sub>[FUNCTION]</sub></sup><a name="range-decreasing-value"></a>
-<code>&forall; :A. (<a href="#ord-class">ORD</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; (:A &rarr; :A &rarr; :A &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
+<code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; :A &rarr; :A &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
 A range which begins below START and counts down through and including END by STEP.
 
@@ -3319,7 +3292,7 @@ Equivalent to reversing `range-increasing`
 ***
 
 #### <code>RANGE-INCREASING</code> <sup><sub>[FUNCTION]</sub></sup><a name="range-increasing-value"></a>
-<code>&forall; :A. (<a href="#ord-class">ORD</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; (:A &rarr; :A &rarr; :A &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
+<code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; :A &rarr; :A &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
 An iterator which begins at START and yields successive elements spaced by STEP, stopping before END.
 
