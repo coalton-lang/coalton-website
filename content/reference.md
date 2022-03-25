@@ -17,7 +17,6 @@ identifier: Reference
 - <a href="#coalton-package"><code>coalton</code></a>
 - <a href="#coalton-library/classes-package"><code>coalton-library/classes</code></a>
 - <a href="#coalton-library/builtin-package"><code>coalton-library/builtin</code></a>
-- <a href="#coalton-library/boolean-package"><code>coalton-library/boolean</code></a>
 - <a href="#coalton-library/bits-package"><code>coalton-library/bits</code></a>
 - <a href="#coalton-library/arith-package"><code>coalton-library/arith</code></a>
 - <a href="#coalton-library/char-package"><code>coalton-library/char</code></a>
@@ -47,7 +46,6 @@ identifier: Reference
 
 Signed 8-bit integer capable of storing values in `[-128, 127]`. Uses `(signed-byte 8)`.
 
-
 <details>
 <summary>Instances</summary>
 
@@ -67,7 +65,6 @@ Signed 8-bit integer capable of storing values in `[-128, 127]`. Uses `(signed-b
 #### <code>U8</code> <sup><sub>[TYPE]</sub></sup><a name="u8-type"></a>
 
 Unsigned 8-bit integer capable of storing values in `[0, 255]`. Uses `(unsigned-byte 8)`.
-
 
 <details>
 <summary>Instances</summary>
@@ -92,7 +89,6 @@ Unsigned 8-bit integer capable of storing values in `[0, 255]`. Uses `(unsigned-
 
 Signed 16-bit integer capable of storing values in `[-32768, 32767]`. Uses `(signed-byte 16)`.
 
-
 <details>
 <summary>Instances</summary>
 
@@ -112,7 +108,6 @@ Signed 16-bit integer capable of storing values in `[-32768, 32767]`. Uses `(sig
 #### <code>I32</code> <sup><sub>[TYPE]</sub></sup><a name="i32-type"></a>
 
 Signed 32-bit integer capable of storing values in `[-2147483648, 2147483647]`. Uses `(signed-byte 32)`.
-
 
 <details>
 <summary>Instances</summary>
@@ -135,7 +130,6 @@ Signed 32-bit integer capable of storing values in `[-2147483648, 2147483647]`. 
 
 Signed 64-bit integer capable of storing values in `[-9223372036854775808, 9223372036854775807]`. Uses `(signed-byte 64)`.
 
-
 <details>
 <summary>Instances</summary>
 
@@ -156,7 +150,6 @@ Signed 64-bit integer capable of storing values in `[-9223372036854775808, 92233
 #### <code>U16</code> <sup><sub>[TYPE]</sub></sup><a name="u16-type"></a>
 
 Unsigned 16-bit integer capable of storing values in `[0, 65535]`. Uses `(unsigned-byte 16)`.
-
 
 <details>
 <summary>Instances</summary>
@@ -179,7 +172,6 @@ Unsigned 16-bit integer capable of storing values in `[0, 65535]`. Uses `(unsign
 #### <code>U32</code> <sup><sub>[TYPE]</sub></sup><a name="u32-type"></a>
 
 Unsigned 32-bit integer capable of storing values in `[0, 4294967295]`. Uses `(unsigned-byte 32)`.
-
 
 <details>
 <summary>Instances</summary>
@@ -204,7 +196,6 @@ Unsigned 32-bit integer capable of storing values in `[0, 4294967295]`. Uses `(u
 
 Unsigned 64-bit integer capable of storing values in `[0, 18446744073709551615]`. Uses `(unsigned-byte 64)`.
 
-
 <details>
 <summary>Instances</summary>
 
@@ -228,7 +219,6 @@ Unsigned 64-bit integer capable of storing values in `[0, 18446744073709551615]`
 
 A single character represented as a `character` type.
 
-
 <details>
 <summary>Instances</summary>
 
@@ -244,7 +234,6 @@ A single character represented as a `character` type.
 #### <code>IFIX</code> <sup><sub>[TYPE]</sub></sup><a name="ifix-type"></a>
 
 Non-allocating tagged integer; range is platform-dependent. Uses `fixnum`.
-
 
 <details>
 <summary>Instances</summary>
@@ -265,7 +254,6 @@ Non-allocating tagged integer; range is platform-dependent. Uses `fixnum`.
 #### <code>UFIX</code> <sup><sub>[TYPE]</sub></sup><a name="ufix-type"></a>
 
 Non-allocating tagged non-negative integer; range is platform-dependent. Uses `(and fixnum unsigned-byte)`.
-
 
 <details>
 <summary>Instances</summary>
@@ -288,7 +276,6 @@ Non-allocating tagged non-negative integer; range is platform-dependent. Uses `(
 #### <code>VOID</code> <sup><sub>[TYPE]</sub></sup><a name="void-type"></a>
 
 
-
 ***
 
 #### <code>ARROW :A :B</code> <sup><sub>[TYPE]</sub></sup><a name="arrow-type"></a>
@@ -296,13 +283,11 @@ Non-allocating tagged non-negative integer; range is platform-dependent. Uses `(
 Type constructor for function types.
 
 
-
 ***
 
 #### <code>STRING</code> <sup><sub>[TYPE]</sub></sup><a name="string-type"></a>
 
 String of characters represented by Common Lisp `string`.
-
 
 <details>
 <summary>Instances</summary>
@@ -326,7 +311,6 @@ String of characters represented by Common Lisp `string`.
 #### <code>INTEGER</code> <sup><sub>[TYPE]</sub></sup><a name="integer-type"></a>
 
 Unbound integer. Uses `integer`.
-
 
 <details>
 <summary>Instances</summary>
@@ -378,13 +362,11 @@ Unbound integer. Uses `integer`.
 Opaque container for arbitrary lisp objects. At runtime this is equivalent to type `t`.
 
 
-
 ***
 
 #### <code>DOUBLE-FLOAT</code> <sup><sub>[TYPE]</sub></sup><a name="double-float-type"></a>
 
 Double precision floating point numer. Uses `double-float`.
-
 
 <details>
 <summary>Instances</summary>
@@ -411,7 +393,6 @@ Double precision floating point numer. Uses `double-float`.
 #### <code>SINGLE-FLOAT</code> <sup><sub>[TYPE]</sub></sup><a name="single-float-type"></a>
 
 Single precision floating point numer. Uses `single-float`.
-
 
 <details>
 <summary>Instances</summary>
@@ -445,10 +426,6 @@ Single precision floating point numer. Uses `single-float`.
 
 Homogeneous list of objects represented as a Common Lisp `list`.
 
-Constructors:
-- <code>CONS :: (:A &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
-- <code>NIL :: (<a href="#list-type">LIST</a> :A)</code>
-
 <details>
 <summary>Instances</summary>
 
@@ -477,9 +454,6 @@ Constructors:
 #### <code>UNIT</code> <sup><sub>[TYPE]</sub></sup><a name="unit-type"></a>
 - <code>UNIT</code>
 
-Constructors:
-- <code>UNIT :: <a href="#unit-type">UNIT</a></code>
-
 
 ***
 
@@ -488,10 +462,6 @@ Constructors:
 - <code>TRUE</code>
 
 Either true or false represented by `t` and `nil` respectively.
-
-Constructors:
-- <code>FALSE :: <a href="#boolean-type">BOOLEAN</a></code>
-- <code>TRUE :: <a href="#boolean-type">BOOLEAN</a></code>
 
 <details>
 <summary>Instances</summary>
@@ -516,11 +486,6 @@ Constructors:
 - <code>GT</code>
 - <code>EQ</code>
 
-Constructors:
-- <code>LT :: <a href="#ord-type">ORD</a></code>
-- <code>GT :: <a href="#ord-type">ORD</a></code>
-- <code>EQ :: <a href="#ord-type">ORD</a></code>
-
 <details>
 <summary>Instances</summary>
 
@@ -534,9 +499,6 @@ Constructors:
 
 #### <code>TUPLE :A :B</code> <sup><sub>[TYPE]</sub></sup><a name="tuple-type"></a>
 - <code>(TUPLE :A :B)</code>
-
-Constructors:
-- <code>TUPLE :: (:A &rarr; :B &rarr; (<a href="#tuple-type">TUPLE</a> :A :B))</code>
 
 <details>
 <summary>Instances</summary>
@@ -555,10 +517,6 @@ Constructors:
 #### <code>RESULT :A :B</code> <sup><sub>[TYPE]</sub></sup><a name="result-type"></a>
 - <code>(ERR :A)</code>
 - <code>(OK :B)</code>
-
-Constructors:
-- <code>ERR :: (:A &rarr; (<a href="#result-type">RESULT</a> :A :B))</code>
-- <code>OK :: (:B &rarr; (<a href="#result-type">RESULT</a> :A :B))</code>
 
 <details>
 <summary>Instances</summary>
@@ -583,10 +541,6 @@ Constructors:
 #### <code>OPTIONAL :A</code> <sup><sub>[TYPE]</sub></sup><a name="optional-type"></a>
 - <code>(SOME :A)</code>
 - <code>NONE</code>
-
-Constructors:
-- <code>SOME :: (:A &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
-- <code>NONE :: (<a href="#optional-type">OPTIONAL</a> :A)</code>
 
 <details>
 <summary>Instances</summary>
@@ -1226,8 +1180,6 @@ Are X or Y True, but not both?
 
 ***
 
-# Package `coalton-library/boolean`<a name="coalton-library/boolean-package"></a>
-
 # Package `coalton-library/bits`<a name="coalton-library/bits-package"></a>
 
 ## [bits.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/bits.lisp) <a name="coalton-library/bits-bits-lisp-file"></a>
@@ -1274,7 +1226,6 @@ Methods:
 
 #### <code>COMPLEX :A</code> <sup><sub>[TYPE]</sub></sup><a name="complex-type"></a>
 
-
 <details>
 <summary>Instances</summary>
 
@@ -1304,7 +1255,6 @@ Methods:
 
 #### <code>FRACTION</code> <sup><sub>[TYPE]</sub></sup><a name="fraction-type"></a>
 
-
 <details>
 <summary>Instances</summary>
 
@@ -1323,9 +1273,6 @@ Methods:
 
 #### <code>QUANTIZATION :A</code> <sup><sub>[TYPE]</sub></sup><a name="quantization-type"></a>
 - <code>(QUANTIZATION :A <a href="#integer-type">INTEGER</a> :A <a href="#integer-type">INTEGER</a> :A)</code>
-
-Constructors:
-- <code>QUANTIZATION :: (:A &rarr; <a href="#integer-type">INTEGER</a> &rarr; :A &rarr; <a href="#integer-type">INTEGER</a> &rarr; :A &rarr; (<a href="#quantization-type">QUANTIZATION</a> :A))</code>
 
 
 ***
@@ -1765,9 +1712,6 @@ does not have that suffix.
 #### <code>TUPLE3 :A :B :C</code> <sup><sub>[TYPE]</sub></sup><a name="tuple3-type"></a>
 - <code>(TUPLE3 :A :B :C)</code>
 
-Constructors:
-- <code>TUPLE3 :: (:A &rarr; :B &rarr; :C &rarr; (<a href="#tuple3-type">TUPLE3</a> :A :B :C))</code>
-
 <details>
 <summary>Instances</summary>
 
@@ -1782,9 +1726,6 @@ Constructors:
 #### <code>TUPLE4 :A :B :C :D</code> <sup><sub>[TYPE]</sub></sup><a name="tuple4-type"></a>
 - <code>(TUPLE4 :A :B :C :D)</code>
 
-Constructors:
-- <code>TUPLE4 :: (:A &rarr; :B &rarr; :C &rarr; :D &rarr; (<a href="#tuple4-type">TUPLE4</a> :A :B :C :D))</code>
-
 <details>
 <summary>Instances</summary>
 
@@ -1798,9 +1739,6 @@ Constructors:
 
 #### <code>TUPLE5 :A :B :C :D :E</code> <sup><sub>[TYPE]</sub></sup><a name="tuple5-type"></a>
 - <code>(TUPLE5 :A :B :C :D :E)</code>
-
-Constructors:
-- <code>TUPLE5 :: (:A &rarr; :B &rarr; :C &rarr; :D &rarr; :E &rarr; (<a href="#tuple5-type">TUPLE5</a> :A :B :C :D :E))</code>
 
 <details>
 <summary>Instances</summary>
@@ -2461,7 +2399,6 @@ Print a line to *STANDARD-OUTPUT* in the form "{STR}: {ITEM}"
 
 #### <code>CELL :A</code> <sup><sub>[TYPE]</sub></sup><a name="cell-type"></a>
 
-
 <details>
 <summary>Instances</summary>
 
@@ -2561,7 +2498,6 @@ Apply F to the contents of CEL, swapping the result for the old value
 ### Types
 
 #### <code>VECTOR :A</code> <sup><sub>[TYPE]</sub></sup><a name="vector-type"></a>
-
 
 <details>
 <summary>Instances</summary>
@@ -2791,7 +2727,6 @@ Remove the element IDX from VEC and replace it with the last element in VEC with
 
 #### <code>SLICE :A</code> <sup><sub>[TYPE]</sub></sup><a name="slice-type"></a>
 
-
 <details>
 <summary>Instances</summary>
 
@@ -2901,7 +2836,6 @@ Call the function F once for each item in S with its index
 #### <code>HASHTABLE :A :B</code> <sup><sub>[TYPE]</sub></sup><a name="hashtable-type"></a>
 
 
-
 ***
 
 ### Values
@@ -2992,7 +2926,6 @@ Crate a new empty hashtable with a given capacity
 ### Types
 
 #### <code>ITERATOR :A</code> <sup><sub>[TYPE]</sub></sup><a name="iterator-type"></a>
-
 
 <details>
 <summary>Instances</summary>
