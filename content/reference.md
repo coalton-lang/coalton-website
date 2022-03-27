@@ -454,6 +454,13 @@ Homogeneous list of objects represented as a Common Lisp `list`.
 #### <code>UNIT</code> <sup><sub>[TYPE]</sub></sup><a name="unit-type"></a>
 - <code>UNIT</code>
 
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#eq-class">EQ</a> <a href="#unit-type">UNIT</a></code>
+
+</details>
+
 
 ***
 
@@ -577,6 +584,7 @@ Methods:
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#eq-class">EQ</a> <a href="#unit-type">UNIT</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#ord-type">ORD</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#boolean-type">BOOLEAN</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#u8-type">U8</a></code>
