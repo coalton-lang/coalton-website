@@ -416,7 +416,7 @@ Single precision floating point numer. Uses `single-float`.
 
 ***
 
-## [classes.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/classes.lisp) <a name="coalton-classes-lisp-file"></a>
+## [classes.lisp](https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp) <a name="coalton-classes-lisp-file"></a>
 
 ### Types
 
@@ -484,7 +484,7 @@ Either true or false represented by `t` and `nil` respectively.
 
 # Package `coalton-library/classes`<a name="coalton-library/classes-package"></a>
 
-## [classes.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/classes.lisp) <a name="coalton-library/classes-classes-lisp-file"></a>
+## [classes.lisp](https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp) <a name="coalton-library/classes-classes-lisp-file"></a>
 
 ### Types
 
@@ -1120,7 +1120,7 @@ Returns the lesser element of X and Y.
 
 # Package `coalton-library/builtin`<a name="coalton-library/builtin-package"></a>
 
-## [builtin.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/builtin.lisp) <a name="coalton-library/builtin-builtin-lisp-file"></a>
+## [builtin.lisp](https://github.com/coalton-lang/coalton/tree/main/library/builtin.lisp) <a name="coalton-library/builtin-builtin-lisp-file"></a>
 
 ### Values
 
@@ -1190,7 +1190,7 @@ Are X or Y True, but not both?
 
 # Package `coalton-library/bits`<a name="coalton-library/bits-package"></a>
 
-## [bits.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/bits.lisp) <a name="coalton-library/bits-bits-lisp-file"></a>
+## [bits.lisp](https://github.com/coalton-lang/coalton/tree/main/library/bits.lisp) <a name="coalton-library/bits-bits-lisp-file"></a>
 
 ### Classes
 
@@ -1228,7 +1228,7 @@ Methods:
 
 # Package `coalton-library/arith`<a name="coalton-library/arith-package"></a>
 
-## [arith.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/arith.lisp) <a name="coalton-library/arith-arith-lisp-file"></a>
+## [arith.lisp](https://github.com/coalton-lang/coalton/tree/main/library/arith.lisp) <a name="coalton-library/arith-arith-lisp-file"></a>
 
 ### Types
 
@@ -1623,7 +1623,7 @@ Round a Single-Float to the nearest Integer.
 
 # Package `coalton-library/char`<a name="coalton-library/char-package"></a>
 
-## [char.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/char.lisp) <a name="coalton-library/char-char-lisp-file"></a>
+## [char.lisp](https://github.com/coalton-lang/coalton/tree/main/library/char.lisp) <a name="coalton-library/char-char-lisp-file"></a>
 
 ### Values
 
@@ -1639,7 +1639,7 @@ Round a Single-Float to the nearest Integer.
 
 # Package `coalton-library/string`<a name="coalton-library/string-package"></a>
 
-## [string.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/string.lisp) <a name="coalton-library/string-string-lisp-file"></a>
+## [string.lisp](https://github.com/coalton-lang/coalton/tree/main/library/string.lisp) <a name="coalton-library/string-string-lisp-file"></a>
 
 ### Values
 
@@ -1713,7 +1713,7 @@ does not have that suffix.
 
 # Package `coalton-library/tuple`<a name="coalton-library/tuple-package"></a>
 
-## [tuple.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/tuple.lisp) <a name="coalton-library/tuple-tuple-lisp-file"></a>
+## [tuple.lisp](https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp) <a name="coalton-library/tuple-tuple-lisp-file"></a>
 
 ### Types
 
@@ -1779,7 +1779,7 @@ Get the second element of a tuple.
 
 # Package `coalton-library/optional`<a name="coalton-library/optional-package"></a>
 
-## [optional.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/optional.lisp) <a name="coalton-library/optional-optional-lisp-file"></a>
+## [optional.lisp](https://github.com/coalton-lang/coalton/tree/main/library/optional.lisp) <a name="coalton-library/optional-optional-lisp-file"></a>
 
 ### Values
 
@@ -1809,7 +1809,7 @@ Get the value of OPT, erroring with the provided string if it is None.
 
 # Package `coalton-library/list`<a name="coalton-library/list-package"></a>
 
-## [list.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/list.lisp) <a name="coalton-library/list-list-lisp-file"></a>
+## [list.lisp](https://github.com/coalton-lang/coalton/tree/main/library/list.lisp) <a name="coalton-library/list-list-lisp-file"></a>
 
 ### Values
 
@@ -2247,7 +2247,7 @@ Break a list into a list of equivalence classes according to an equivalence rela
 
 # Package `coalton-library/result`<a name="coalton-library/result-package"></a>
 
-## [result.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/result.lisp) <a name="coalton-library/result-result-lisp-file"></a>
+## [result.lisp](https://github.com/coalton-lang/coalton/tree/main/library/result.lisp) <a name="coalton-library/result-result-lisp-file"></a>
 
 ### Values
 
@@ -2274,7 +2274,7 @@ Returns TRUE if X is ERR
 
 # Package `coalton-library/functions`<a name="coalton-library/functions-package"></a>
 
-## [functions.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/functions.lisp) <a name="coalton-library/functions-functions-lisp-file"></a>
+## [functions.lisp](https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp) <a name="coalton-library/functions-functions-lisp-file"></a>
 
 ### Values
 
@@ -2310,7 +2310,7 @@ Compute the fixed point of a unary function. This is equivalent to the Y-combina
 ***
 
 #### <code>ASUM</code> <sup><sub>[FUNCTION]</sub></sup><a name="asum-value"></a>
-<code>&forall; :A :B. <a href="#alternative-class">ALTERNATIVE</a> :A &rArr; ((<a href="#list-type">LIST</a> (:A :B)) &rarr; (:A :B))</code>
+<code>&forall; :A :B :C. (<a href="#alternative-class">ALTERNATIVE</a> :B) (<a href="#foldable-class">FOLDABLE</a> :A) &rArr; ((:A (:B :C)) &rarr; (:B :C))</code>
 
 Fold over a list using alt
 
@@ -2326,7 +2326,7 @@ Returns a function that takes its arguments in reverse order.
 ***
 
 #### <code>MSUM</code> <sup><sub>[FUNCTION]</sub></sup><a name="msum-value"></a>
-<code>&forall; :A. <a href="#monoid-class">MONOID</a> :A &rArr; ((<a href="#list-type">LIST</a> :A) &rarr; :A)</code>
+<code>&forall; :A :B. (<a href="#monoid-class">MONOID</a> :B) (<a href="#foldable-class">FOLDABLE</a> :A) &rArr; ((:A :B) &rarr; :B)</code>
 
 Fold over a list using &lt;&gt;
 
@@ -2401,7 +2401,7 @@ Print a line to *STANDARD-OUTPUT* in the form "{STR}: {ITEM}"
 
 # Package `coalton-library/cell`<a name="coalton-library/cell-package"></a>
 
-## [cell.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/cell.lisp) <a name="coalton-library/cell-cell-lisp-file"></a>
+## [cell.lisp](https://github.com/coalton-lang/coalton/tree/main/library/cell.lisp) <a name="coalton-library/cell-cell-lisp-file"></a>
 
 ### Types
 
@@ -2501,7 +2501,7 @@ Apply F to the contents of CEL, swapping the result for the old value
 
 # Package `coalton-library/vector`<a name="coalton-library/vector-package"></a>
 
-## [vector.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/vector.lisp) <a name="coalton-library/vector-vector-lisp-file"></a>
+## [vector.lisp](https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp) <a name="coalton-library/vector-vector-lisp-file"></a>
 
 ### Types
 
@@ -2729,7 +2729,7 @@ Remove the element IDX from VEC and replace it with the last element in VEC with
 
 # Package `coalton-library/slice`<a name="coalton-library/slice-package"></a>
 
-## [slice.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/slice.lisp) <a name="coalton-library/slice-slice-lisp-file"></a>
+## [slice.lisp](https://github.com/coalton-lang/coalton/tree/main/library/slice.lisp) <a name="coalton-library/slice-slice-lisp-file"></a>
 
 ### Types
 
@@ -2837,7 +2837,7 @@ Call the function F once for each item in S with its index
 
 # Package `coalton-library/hashtable`<a name="coalton-library/hashtable-package"></a>
 
-## [hashtable.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/hashtable.lisp) <a name="coalton-library/hashtable-hashtable-lisp-file"></a>
+## [hashtable.lisp](https://github.com/coalton-lang/coalton/tree/main/library/hashtable.lisp) <a name="coalton-library/hashtable-hashtable-lisp-file"></a>
 
 ### Types
 
@@ -2929,7 +2929,7 @@ Crate a new empty hashtable with a given capacity
 
 # Package `coalton-library/iterator`<a name="coalton-library/iterator-package"></a>
 
-## [iterator.lisp](https://github.com/coalton-lang/coalton/tree/main/src/library/iterator.lisp) <a name="coalton-library/iterator-iterator-lisp-file"></a>
+## [iterator.lisp](https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp) <a name="coalton-library/iterator-iterator-lisp-file"></a>
 
 ### Types
 
