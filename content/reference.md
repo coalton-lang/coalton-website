@@ -1036,11 +1036,17 @@ Methods:
 #### <code>UNWRAPPABLE</code> <sup><sub>[CLASS]</sub></sup><a name="unwrappable-class"></a>
 <code><a href="#unwrappable-class">UNWRAPPABLE</a> :A</code>
 
-Types which might be able to be unwrapped, otherwise returning a default value.
+Containers which can be unwrapped to get access to their contents.
+
+The first argument to `unwrap-or-else' is a continuation, usually named `fail'. Methods should call `fail' and
+return its value if they are unable to unwrap a value.
+
+Typical `fail' continuations are:
+- Return a default value, or
+- Signal an error.
 
 Methods:
-- <code>WITHDEFAULT :: (:B &rarr; (:A :B) &rarr; :B)</code>
-- <code>UNWRAP :: ((:A :C) &rarr; :C)</code>
+- <code>UNWRAP-OR-ELSE :: ((<a href="#unit-type">UNIT</a> &rarr; :B) &rarr; (:A :B) &rarr; :B)</code>
 
 <details>
 <summary>Instances</summary>
@@ -1108,8 +1114,40 @@ Returns the lesser element of X and Y.
 
 ***
 
+#### <code>ERROR</code> <sup><sub>[FUNCTION]</sub></sup><a name="error-value"></a>
+<code>&forall; :A. (<a href="#string-type">STRING</a> &rarr; :A)</code>
+
+Signal an error by calling `CL:ERROR`.
+
+
+***
+
+#### <code>EXPECT</code> <sup><sub>[FUNCTION]</sub></sup><a name="expect-value"></a>
+<code>&forall; :A :B. <a href="#unwrappable-class">UNWRAPPABLE</a> :A &rArr; (<a href="#string-type">STRING</a> &rarr; (:A :B) &rarr; :B)</code>
+
+Unwrap CONTAINER, signaling an error with the description REASON on failure.
+
+
+***
+
+#### <code>UNWRAP</code> <sup><sub>[FUNCTION]</sub></sup><a name="unwrap-value"></a>
+<code>&forall; :A :B. <a href="#unwrappable-class">UNWRAPPABLE</a> :A &rArr; ((:A :B) &rarr; :B)</code>
+
+Unwrap CONTAINER, signaling an error on failure.
+
+
+***
+
 #### <code>SEQUENCE</code> <sup><sub>[FUNCTION]</sub></sup><a name="sequence-value"></a>
 <code>&forall; :A :B :C. (<a href="#traversable-class">TRAVERSABLE</a> :A) (<a href="#applicative-class">APPLICATIVE</a> :B) &rArr; ((:A (:B :C)) &rarr; (:B (:A :C)))</code>
+
+***
+
+#### <code>WITH-DEFAULT</code> <sup><sub>[FUNCTION]</sub></sup><a name="with-default-value"></a>
+<code>&forall; :A :B. <a href="#unwrappable-class">UNWRAPPABLE</a> :B &rArr; (:A &rarr; (:B :A) &rarr; :A)</code>
+
+Unwrap CONTAINER, returning DEFAULT on failure.
+
 
 ***
 
@@ -1136,14 +1174,6 @@ Synonym for BOOLEAN-NOT.
 <code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 Synonym for BOOLEAN-XOR.
-
-
-***
-
-#### <code>ERROR</code> <sup><sub>[FUNCTION]</sub></sup><a name="error-value"></a>
-<code>&forall; :A. (<a href="#string-type">STRING</a> &rarr; :A)</code>
-
-Signal an error by calling `CL:ERROR`.
 
 
 ***
