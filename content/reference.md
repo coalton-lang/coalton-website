@@ -357,6 +357,26 @@ Unbound integer. Uses `integer`.
 
 ***
 
+#### <code>FRACTION</code> <sup><sub>[TYPE]</sub></sup><a name="fraction-type"></a>
+
+A ratio of integers always in reduced form.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#complex-class">COMPLEX</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#fraction-type">FRACTION</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#num-class">NUM</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#fraction-type">FRACTION</a></code>
+
+</details>
+
+
+***
+
 #### <code>LISP-OBJECT</code> <sup><sub>[TYPE]</sub></sup><a name="lisp-object-type"></a>
 
 Opaque container for arbitrary lisp objects. At runtime this is equivalent to type `t`.
@@ -1291,24 +1311,6 @@ Methods:
 
 ***
 
-#### <code>FRACTION</code> <sup><sub>[TYPE]</sub></sup><a name="fraction-type"></a>
-
-<details>
-<summary>Instances</summary>
-
-- <code><a href="#complex-class">COMPLEX</a> <a href="#fraction-type">FRACTION</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#fraction-type">FRACTION</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#fraction-type">FRACTION</a> <a href="#fraction-type">FRACTION</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#fraction-type">FRACTION</a></code>
-- <code><a href="#eq-class">EQ</a> <a href="#fraction-type">FRACTION</a></code>
-- <code><a href="#num-class">NUM</a> <a href="#fraction-type">FRACTION</a></code>
-- <code><a href="#ord-class">ORD</a> <a href="#fraction-type">FRACTION</a></code>
-
-</details>
-
-
-***
-
 #### <code>QUANTIZATION :A</code> <sup><sub>[TYPE]</sub></sup><a name="quantization-type"></a>
 - <code>(QUANTIZATION :A <a href="#integer-type">INTEGER</a> :A <a href="#integer-type">INTEGER</a> :A)</code>
 
@@ -1606,6 +1608,11 @@ The numerator of a fraction.
 
 #### <code>REAL-PART</code> <sup><sub>[FUNCTION]</sub></sup><a name="real-part-value"></a>
 <code>&forall; :A. ((<a href="#complex-type">COMPLEX</a> :A) &rarr; :A)</code>
+
+***
+
+#### <code>MKFRACTION</code> <sup><sub>[FUNCTION]</sub></sup><a name="mkfraction-value"></a>
+<code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#fraction-type">FRACTION</a>)</code>
 
 ***
 
