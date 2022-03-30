@@ -616,11 +616,11 @@ Methods:
 - <code><a href="#eq-class">EQ</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#ufix-type">UFIX</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
-- <code><a href="#eq-class">EQ</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#eq-class">EQ</a> (<a href="#complex-type">COMPLEX</a> :A) &rArr; <a href="#eq-class">EQ</a> (<a href="#complex-type">COMPLEX</a> (<a href="#complex-type">COMPLEX</a> :A))</code>
 - <code><a href="#eq-class">EQ</a> (<a href="#complex-type">COMPLEX</a> <a href="#integer-type">INTEGER</a>)</code>
 - <code><a href="#eq-class">EQ</a> (<a href="#complex-type">COMPLEX</a> <a href="#single-float-type">SINGLE-FLOAT</a>)</code>
@@ -728,11 +728,11 @@ Methods:
 - <code><a href="#ord-class">ORD</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#ufix-type">UFIX</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
-- <code><a href="#ord-class">ORD</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#string-type">STRING</a></code>
 - <code>(<a href="#ord-class">ORD</a> :A) (<a href="#ord-class">ORD</a> :B) &rArr; <a href="#ord-class">ORD</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
