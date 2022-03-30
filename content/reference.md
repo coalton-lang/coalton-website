@@ -1970,6 +1970,16 @@ Returns the first N elements of a list.
 
 ***
 
+#### <code>COMBS</code> <sup><sub>[FUNCTION]</sub></sup><a name="combs-value"></a>
+<code>&forall; :A. ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> (<a href="#list-type">LIST</a> :A)))</code>
+
+Compute a list of all combinations of elements of L. This function is sometimes goes by the name "power set" or "subsets".
+
+The ordering of elements of L is preserved in the ordering of elements in each list produced by `(COMBS L)`.
+
+
+***
+
 #### <code>INDEX</code> <sup><sub>[FUNCTION]</sub></sup><a name="index-value"></a>
 <code>&forall; :A. ((<a href="#list-type">LIST</a> :A) &rarr; <a href="#integer-type">INTEGER</a> &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
@@ -1982,6 +1992,14 @@ Returns the Ith element of a list.
 <code>&forall; :A. ((<a href="#list-type">LIST</a> :A) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 Returns TRUE if XS is an empty list.
+
+
+***
+
+#### <code>PERMS</code> <sup><sub>[FUNCTION]</sub></sup><a name="perms-value"></a>
+<code>&forall; :A. ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> (<a href="#list-type">LIST</a> :A)))</code>
+
+Produce all permutations of the list L.
 
 
 ***
@@ -2092,6 +2110,18 @@ Returns a list with the same value repeated multiple times.
 <code>&forall; :A. ((:A &rarr; :A &rarr; <a href="#ord-type">ORD</a>) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 Generic version of sort
+
+
+***
+
+#### <code>COMBSOF</code> <sup><sub>[FUNCTION]</sub></sup><a name="combsof-value"></a>
+<code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> (<a href="#list-type">LIST</a> :A)))</code>
+
+Produce a list of size-N subsets of L.
+
+The ordering of elements of L is preserved in the ordering of elements in each list produced by `(COMBSOF N L)`.
+
+This function is equivalent to all size-N elements of `(COMBS L)`.
 
 
 ***
@@ -2233,6 +2263,18 @@ Transposes a matrix represented by a list of lists.
 <code>&forall; :A. <a href="#eq-class">EQ</a> :A &rArr; ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 Returns a new list with the first occurence of each element in YS deleted from XS.
+
+
+***
+
+#### <code>INSERTIONS</code> <sup><sub>[FUNCTION]</sub></sup><a name="insertions-value"></a>
+<code>&forall; :A. (:A &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> (<a href="#list-type">LIST</a> :A)))</code>
+
+Produce a list of copies of L, each with A inserted at a possible position.
+
+    (insertions 0 (make-list 1 2))
+    =&gt; ((0 1 2) (1 0 2) (1 2 0))
+
 
 
 ***
