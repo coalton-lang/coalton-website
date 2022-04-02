@@ -1364,7 +1364,7 @@ The function / is partial, and will error produce a run-time error if the diviso
 
 
 Methods:
-- <code>/ :: (:A &rarr; :A &rarr; :B)</code>
+- <code>GENERAL/ :: (:A &rarr; :A &rarr; :B)</code>
 
 <details>
 <summary>Instances</summary>
@@ -1412,6 +1412,11 @@ Methods:
 ***
 
 ### Values
+
+#### <code>/</code> <sup><sub>[FUNCTION]</sub></sup><a name="/-value"></a>
+<code>&forall; :A. <a href="#dividable-class">DIVIDABLE</a> :A :A &rArr; (:A &rarr; :A &rarr; :A)</code>
+
+***
 
 #### <code>1+</code> <sup><sub>[FUNCTION]</sub></sup><a name="1+-value"></a>
 <code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; (:A &rarr; :A)</code>
@@ -1552,22 +1557,6 @@ Divide two integers and round the quotient.
 <code>&forall; :A. <a href="#quantizable-class">QUANTIZABLE</a> :A &rArr; (:A &rarr; <a href="#integer-type">INTEGER</a>)</code>
 
 Return the least integer greater than or equal to X.
-
-
-***
-
-#### <code>DOUBLE/</code> <sup><sub>[FUNCTION]</sub></sup><a name="double/-value"></a>
-<code>(<a href="#double-float-type">DOUBLE-FLOAT</a> &rarr; <a href="#double-float-type">DOUBLE-FLOAT</a> &rarr; <a href="#double-float-type">DOUBLE-FLOAT</a>)</code>
-
-Compute the quotient of single-precision floats as a single-precision float.
-
-
-***
-
-#### <code>SINGLE/</code> <sup><sub>[FUNCTION]</sub></sup><a name="single/-value"></a>
-<code>(<a href="#single-float-type">SINGLE-FLOAT</a> &rarr; <a href="#single-float-type">SINGLE-FLOAT</a> &rarr; <a href="#single-float-type">SINGLE-FLOAT</a>)</code>
-
-Compute the quotient of single-precision floats as a single-precision float.
 
 
 ***
