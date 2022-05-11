@@ -946,6 +946,8 @@ Methods:
 <summary>Instances</summary>
 
 - <code><a href="#foldable-class">FOLDABLE</a> <a href="#list-type">LIST</a></code>
+- <code><a href="#foldable-class">FOLDABLE</a> <a href="#vector-type">VECTOR</a></code>
+- <code><a href="#foldable-class">FOLDABLE</a> <a href="#slice-type">SLICE</a></code>
 
 </details>
 
@@ -1529,9 +1531,9 @@ The numerator of a fraction.
 ***
 
 #### <code>RECIPROCAL</code> <sup><sub>[FUNCTION]</sub></sup><a name="reciprocal-value"></a>
-<code>(<a href="#fraction-type">FRACTION</a> &rarr; <a href="#fraction-type">FRACTION</a>)</code>
+<code>&forall; A. (<a href="#dividable-class">DIVIDABLE</a> :A :A) (<a href="#num-class">NUM</a> :A) &rArr; (:A &rarr; :A)</code>
 
-The reciprocal of a fraction.
+The multiplicative inverse of a number.
 
 
 ***
@@ -1893,7 +1895,7 @@ The ordering of elements of L is preserved in the ordering of elements in each l
 ***
 
 #### <code>INDEX</code> <sup><sub>[FUNCTION]</sub></sup><a name="index-value"></a>
-<code>&forall; A. ((<a href="#list-type">LIST</a> :A) &rarr; <a href="#integer-type">INTEGER</a> &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
+<code>&forall; A. (<a href="#integer-type">INTEGER</a> &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
 Returns the Ith element of a list.
 
@@ -2492,8 +2494,6 @@ Apply F to the contents of CEL, swapping the result for the old value
 
 # Package `coalton-library/vector`<a name="coalton-library/vector-package"></a>
 
-## [vector.lisp](https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp) <a name="coalton-library/vector-vector-lisp-file"></a>
-
 ### Types
 
 #### <code>VECTOR A</code> <sup><sub>[TYPE]</sub></sup><a name="vector-type"></a>
@@ -2509,12 +2509,15 @@ Apply F to the contents of CEL, swapping the result for the old value
 - <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> A) (<a href="#list-type">LIST</a> A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> A) (<a href="#vector-type">VECTOR</a> A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#vector-type">VECTOR</a></code>
+- <code><a href="#foldable-class">FOLDABLE</a> <a href="#vector-type">VECTOR</a></code>
 - <code><a href="#semigroup-class">SEMIGROUP</a> (<a href="#vector-type">VECTOR</a> A)</code>
 
 </details>
 
 
 ***
+
+## [vector.lisp](https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp) <a name="coalton-library/vector-vector-lisp-file"></a>
 
 ### Values
 
@@ -2720,8 +2723,6 @@ Remove the element IDX from VEC and replace it with the last element in VEC with
 
 # Package `coalton-library/slice`<a name="coalton-library/slice-package"></a>
 
-## [slice.lisp](https://github.com/coalton-lang/coalton/tree/main/library/slice.lisp) <a name="coalton-library/slice-slice-lisp-file"></a>
-
 ### Types
 
 #### <code>SLICE A</code> <sup><sub>[TYPE]</sub></sup><a name="slice-type"></a>
@@ -2733,11 +2734,14 @@ Remove the element IDX from VEC and replace it with the last element in VEC with
 - <code><a href="#iso-class">ISO</a> (<a href="#slice-type">SLICE</a> A) (<a href="#vector-type">VECTOR</a> A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> A) (<a href="#slice-type">SLICE</a> A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#slice-type">SLICE</a> A) (<a href="#vector-type">VECTOR</a> A)</code>
+- <code><a href="#foldable-class">FOLDABLE</a> <a href="#slice-type">SLICE</a></code>
 
 </details>
 
 
 ***
+
+## [slice.lisp](https://github.com/coalton-lang/coalton/tree/main/library/slice.lisp) <a name="coalton-library/slice-slice-lisp-file"></a>
 
 ### Values
 
