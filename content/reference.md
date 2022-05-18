@@ -54,6 +54,9 @@ Signed 8-bit integer capable of storing values in `[-128, 127]`. Uses `(signed-b
 - <code><a href="#num-class">NUM</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#i8-type">I8</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#i8-type">I8</a></code>
@@ -80,6 +83,12 @@ Unsigned 8-bit integer capable of storing values in `[0, 255]`. Uses `(unsigned-
 - <code><a href="#hash-class">HASH</a> <a href="#u8-type">U8</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#u16-type">U16</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#u8-type">U8</a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#u8-type">U8</a></code>
@@ -103,8 +112,12 @@ Signed 16-bit integer capable of storing values in `[-32768, 32767]`. Uses `(sig
 - <code><a href="#num-class">NUM</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i16-type">I16</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i16-type">I16</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i16-type">I16</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#i16-type">I16</a></code>
@@ -127,8 +140,13 @@ Signed 32-bit integer capable of storing values in `[-2147483648, 2147483647]`. 
 - <code><a href="#num-class">NUM</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i32-type">I32</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i32-type">I32</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i16-type">I16</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#i32-type">I32</a></code>
@@ -151,8 +169,14 @@ Signed 64-bit integer capable of storing values in `[-9223372036854775808, 92233
 - <code><a href="#num-class">NUM</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i64-type">I64</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i32-type">I32</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i16-type">I16</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#i64-type">I64</a></code>
@@ -176,8 +200,13 @@ Unsigned 16-bit integer capable of storing values in `[0, 65535]`. Uses `(unsign
 - <code><a href="#hash-class">HASH</a> <a href="#u16-type">U16</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#u16-type">U16</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#u16-type">U16</a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#u16-type">U16</a></code>
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#u16-type">U16</a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#u16-type">U16</a></code>
@@ -202,8 +231,12 @@ Unsigned 32-bit integer capable of storing values in `[0, 4294967295]`. Uses `(u
 - <code><a href="#hash-class">HASH</a> <a href="#u32-type">U32</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#u32-type">U32</a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#u32-type">U32</a></code>
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#u32-type">U32</a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#u32-type">U32</a></code>
@@ -230,6 +263,9 @@ Unsigned 64-bit integer capable of storing values in `[0, 18446744073709551615]`
 - <code><a href="#into-class">INTO</a> <a href="#u64-type">U64</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u64-type">U64</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#u64-type">U64</a></code>
@@ -820,24 +856,42 @@ Methods:
 - <code><a href="#into-class">INTO</a> A A</code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i16-type">I16</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i16-type">I16</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i16-type">I16</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i32-type">I32</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i32-type">I32</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i64-type">I64</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ifix-type">IFIX</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#u8-type">U8</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#u16-type">U16</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#u16-type">U16</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#u32-type">U32</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#u64-type">U64</a></code>
