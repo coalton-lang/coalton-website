@@ -3089,6 +3089,11 @@ An iterator which begins at zero and counts up to, but not including, LIMIT.
 
 ***
 
+#### <code>CHAIN!</code> <sup><sub>[FUNCTION]</sub></sup><a name="chain!-value"></a>
+<code>&forall; A. ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
+
+***
+
 #### <code>COUNT!</code> <sup><sub>[FUNCTION]</sub></sup><a name="count!-value"></a>
 <code>&forall; A. ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; <a href="#integer-type">INTEGER</a>)</code>
 
