@@ -2430,8 +2430,6 @@ Print a line to *STANDARD-OUTPUT* in the form "{STR}: {ITEM}"
 
 # Package `coalton-library/cell`<a name="coalton-library/cell-package"></a>
 
-## [cell.lisp](https://github.com/coalton-lang/coalton/tree/main/library/cell.lisp) <a name="coalton-library/cell-cell-lisp-file"></a>
-
 ### Types
 
 #### <code>CELL A</code> <sup><sub>[TYPE]</sub></sup><a name="cell-type"></a>
@@ -2451,6 +2449,8 @@ Print a line to *STANDARD-OUTPUT* in the form "{STR}: {ITEM}"
 
 
 ***
+
+## [cell.lisp](https://github.com/coalton-lang/coalton/tree/main/library/cell.lisp) <a name="coalton-library/cell-cell-lisp-file"></a>
 
 ### Values
 
