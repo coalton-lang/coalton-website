@@ -7,9 +7,9 @@ By [Elias Lawson-Fox](https://github.com/eliaslfox), [Aidan Nyquist](https://git
 
 ## Common Lisp and the quilc compiler
 
-One of the best optimizing compilers for quantum computing is called [quilc](https://github.com/quil-lang/quilc). It is written in Common Lisp and is capable of taking arbitrary quantum programs written in [Quil](https://quil-lang.github.io/), and compiling and optimizing them into code that conforms to just about any extant gate-based quantum computing architecture that exists today. Common Lisp has been a great choice, if even only for its interactive debugging facilities, for building a compiler for quantum computers.
+[Quilc](https://github.com/quil-lang/quilc) is one of the best optimizing compilers for quantum computers. It is written in Common Lisp and is capable of taking arbitrary quantum programs written in [Quil](https://quil-lang.github.io/), and compiling and optimizing them into code that conforms to just about any extant gate-based quantum computing architecture that exists today. Common Lisp has been a great choice, if even only for its interactive debugging facilities, for building a compiler for quantum computers.
 
-But it hasn't been without trouble. Quilc is a large and complex program. While engineering quilc, we often lack confidence that the compiler is operating correctly. Confidence would wax and wane with the coming and going of different kinds of bugs, like
+But it hasn't been without trouble. Quilc is a large and complex program. While developing quilc, we often lack confidence in the correctness of larger changes being made. Confidence would wax and wane with the coming and going of different kinds of bugs, like
 
 - classic type errors, "got X but expected Y",
 - data structure inconsistency errors,
@@ -20,70 +20,13 @@ In addition to bugs, from time to time, quilc developers would feel that Common 
 
 Programming language theorists around the world have been and continue to work to help programmers avoid these mistakes by making compilers smarter and programming languages more expressive. There are *vast* efforts in domains like formal verification, advanced type theory, proof assistants, and so on whose primary goal is to make writing safer, bug-free programs easier. One such research project that has been around since the 1990s is [ACL2](https://www.cs.utexas.edu/users/moore/acl2/), which is effectively a subset of Common Lisp that permits code to be _mechanically_ proven to be correct. Famously, after the Intel `FDIV` bug was discovered, ACL2 was used in 1995 to prove that floating point division of the AMD K5 processor was correct.
 
-The suite of tools for working with Quil is currently around 50,000 lines of Common Lisp. Very little of it is fluff or boilerplate. At that size, it's not economical to rewrite wholesale, and it's not feasible to use existing theorem-proving tools to an extent that would address our concerns.
+The suite of tools for working with Quil is currently around 50,000 lines of Common Lisp, and much of it is dense and mathematical. As such, it's not economical to rewrite wholesale, and it's not feasible to use existing theorem-proving tools to an extent that would address our concerns.
 
 ## Coalton to the rescue, maybe?
 
-Coalton is a programming language that has been under development for years. It sought to improve things in a different way: Offer an extension to Common Lisp that allows many of the fruits of programming language theory and type theory to be used gradually. Coalton's approach is to introduce an ML-like language, that can be written within and totally interoperate with Common Lisp, that doesn't give up on the guarantees afforded by a strong, static, and strict type system.
+For years, we have been working on a programming language called Coalton. The language sought to improve things in a different way: Offer an extension to Common Lisp that allows many of the fruits of programming language theory and type theory to be used without requiring wholesale adoption. Coalton's approach is to introduce an embedded ML-like language, that can be written within and totally interoperate with Common Lisp, that doesn't give up on an expressiveness and and safety afforded by a modern compile-time type system.
 
-Fast-forward some time, and Coalton made its debut. One could write code with the virtues and benefits of Standard ML, OCaml, or Haskell, straight inside of Common Lisp: single-namespace, currying, algebraic data types, type inference, etc. Here is a classic—albeit [inefficient](https://www.cs.hmc.edu/~oneill/papers/Sieve-JFP.pdf)—program to calculate a lazy, infinite sequence of primes, written in Coalton.
-
-```lisp
-(define-type (Lazy-Stream :t)
-  (LCons :t (Unit -> Lazy-Stream :t)))
-
-(define (extract n l)
-  (if (<= n 0)
-      Nil
-      (match l
-        ((LCons x xs) (Cons x (extract (- n 1) (xs)))))))
-
-(define (numbers-from n)
-  (LCons n (fn () (numbers-from (+ n 1)))))
-
-(define (drop-if f l)
-  (match l
-    ((LCons x xs) (if (f x)
-                      (drop-if f (xs))
-                      (LCons x (fn () (drop-if f (xs))))))))
-
-(define (multiple? m x)
-  (== 0 (mod x m)))
-  
-(define primes
-  (let ((drop-multiples
-          (compose drop-if multiple?))
-        (sieve
-          (fn (l)
-            (match l
-              ((LCons p xs)
-               (LCons p (fn () (sieve (drop-multiples p (xs))))))))))
-    (sieve (numbers-from 2))))
-```
-
-We can convince ourselves that it's actually doing type inference by interactively inspecting some of the inferred types directly from the Common Lisp REPL.
-
-```lisp
-> (type-of 'multiple?)
-(INTEGER → INTEGER → BOOLEAN)
-> (type-of 'primes)
-(LAZY-STREAM INTEGER)
-> (type-of 'extract)
-∀ :A. (INTEGER → (LAZY-STREAM :A) → (LIST :A))
-> (type-of 'drop-if)
-∀ :A. ((:A → BOOLEAN) → (LAZY-STREAM :A) → (LAZY-STREAM :A))
-```
-
-And, of course, we can convince ourselves that `primes` actually contains prime numbers.
-
-```lisp
-> (coalton (extract 10 primes))
-(2 3 5 7 11 13 17 19 23 29)
-```
-
-As can be seen, the result of this Coalton computation is actually just a Lisp list. We could use this Coalton code anywhere in our Lisp program where we'd expect a Lisp list. While Coalton _code_ is cordoned off so that it can be fully and rigorously type checked, the Coalton runtime _is_ the Lisp runtime, so they cohabitate perfectly.
-
-So, we have an expressive and relatively safe language which we can use in Lisp, but this doesn't magically make 50,000 lines of code safer. So, where do we start?
+Fast-forward some time, and Coalton made its [debut](https://coalton-lang.github.io/20211010-introducing-coalton/). One could now write code with many of the virtues and benefits of Standard ML, OCaml, or Haskell, straight inside of Common Lisp: single-namespace, currying, algebraic data types, type inference, ad hoc and parametric polymorphism, etc. We now have an expressive and relatively safe language which we can use in Lisp, but this doesn't magically make 50,000 lines of code safer. So, where do we start?
 
 Our first approach was to take a small, relatively inconsequential module of quilc and slowly Coalton-ify it. The module has to do with a concept called "gate fusion", which takes quantum instructions and fuses them into a (hopefully) more efficient form. This module happens to do a lot of arrays-of-doubly-linked list manipulations. We wrote an array-of-double-linked-lists data structure in Coalton, ported the code, and ultimately, we weren't happy with the results. The code didn't shine. The virtues of mostly pure, statically typed functional programming didn't actually make the code any clearer. We were left with a mess of hacks, subcutaneous mutation, pointer-faking, and so on just to make this code work in Coalton.
 
@@ -99,19 +42,18 @@ It was a valuable case study, and we learned a lot from it, but gaining knowledg
 
 ## Towards a Discrete Instruction Set for Quantum Computation
 
-Most of the meat of a typical quantum program is comprised of operations that are often written as square matrices of complex numbers, and these square matrices have convenient mathematical properties. They're called "unitary matrices": they can be inverted, and they never stretch or shrink the vector they operate on. Quantum computers are theoretically able to execute quantum code that is equivalent to any sequence of any unitary matrices of arbitrary size (so long as it is a power-of-two). It doesn't matter if the matrix is $2\times 2$ or $256\times 256$, in principle, it's possible for a quantum computer to run a sequence of instructions that has the same operational effect as that matrix.
+A typical quantum program is comprised of operations that are mathematically expressed as square matrices of complex numbers. The matrices are *unitary*—which means the matrices can never stretch or shrink a vector they multiply onto—and they have to be a power-of-two size. Just like classical computers, quantum computers have a set of operations they can natively perform. Quantum computers typically have only a small handful of them. For example, the set of native operations of an IBM quantum computer is:
 
-But just like ordinary computers, a quantum computer comes with only a few native operations built-in. Quantum computers typically have only a handful of them. For example, one set of four native operators used by an IBM quantum computer is:
 $$
 \begin{align*}
-\mathrm{RX}_{\pm\pi/2} &:= \frac{1}{\sqrt 2}\begin{pmatrix}1 & \pm i \\ \pm i & 1\end{pmatrix}\\
-\mathrm{RZ}_{\theta} &:= \begin{pmatrix}e^{-i\theta/2} & 0 \\0 & e^{i\theta/2}\end{pmatrix}\\
+\mathrm{RX}_{\pi/2} &:= \begin{pmatrix}\tfrac{1}{\sqrt{2}} & i\tfrac{1}{\sqrt{2}} \\ i\tfrac{1}{\sqrt{2}} & \tfrac{1}{\sqrt{2}}\end{pmatrix}\\
+\mathrm{RX}_{-\pi/2} &:= \begin{pmatrix}\tfrac{1}{\sqrt{2}} & -i\tfrac{1}{\sqrt{2}} \\ -i\tfrac{1}{\sqrt{2}} & \tfrac{1}{\sqrt{2}}\end{pmatrix}\\\mathrm{RZ}_{\theta} &:= \begin{pmatrix}\cos\tfrac{\theta}{2}-i\sin\tfrac{\theta}{2} & 0 \\0 & \cos\tfrac{\theta}{2}+i\sin\tfrac{\theta}{2}\end{pmatrix}\\
 \mathrm{CNOT} &:= \begin{pmatrix}1 & 0 & 0 & 0\\0 & 1 & 0 & 0\\0 & 0 & 0 & 1\\0 & 0 & 1 & 0\end{pmatrix}
 \end{align*}
 $$
 In this case, $\theta$ is actually parametric and can be any value between $0$ and $2\pi$.
 
-It is a surprising and non-trivial fact that you can build *any* $2^n\times 2^n$ complex unitary matrix out of the above matrices by way of matrix multiplications and tensor products. For example, the relatively innocent-looking matrix
+It is a surprising fact that you can build *any* $2^n\times 2^n$-size complex unitary matrix out of the above matrices by way of matrix multiplications and Kronecker products. For example, the relatively innocent-looking matrix
 $$
 \mathrm{CZ} := \begin{pmatrix}1 & 0 & 0 & 0\\0 & 1 & 0 & 0\\0 & 0 & 1 & 0\\0 & 0 & 0 & -1\end{pmatrix}
 $$
@@ -119,13 +61,11 @@ can be written
 $$
 \mathrm{CZ} = \left[\mathrm{RZ}_{\pi}\otimes(\mathrm{RZ}_{\pi/2}\cdot\mathrm{RX}_{\pi/2}\cdot\mathrm{RZ}_{\pi/2})\right]
 \cdot\mathrm{CNOT}\cdot
-\left[\mathrm{RZ}_{\pi}\otimes(\mathrm{RZ}_{\pi/2}\cdot\mathrm{RX}_{\pi/2}\cdot\mathrm{RZ}_{\pi/2})\right]
+\left[\mathrm{RZ}_{\pi}\otimes(\mathrm{RZ}_{\pi/2}\cdot\mathrm{RX}_{\pi/2}\cdot\mathrm{RZ}_{\pi/2})\right].
 $$
-Notice how _only_ the aforementioned list of native operators, and how we _only_ used multiplication and tensor products.
+Notice how _only_ the aforementioned list of native operators, and how we _only_ used multiplication (syntactically: $A\cdot B$) and Kronecker products (syntactically: $A\otimes B$). While it would be appealing to describe Kronecker products in more detail in this blog post, for the sake of brevity, we'll just consider them a separate kind of matrix multiplication.
 
-(While it would be appealing to describe tensor products in more detail in this blog post, for the sake of brevity, we'll just consider them a separate kind of matrix multiplication.)
-
-Finding decompositions of a given matrix into a collection of native operations is one of the big jobs of a quantum compiler. In fact, we computed the above using quilc:
+One of the primary tasks of a quantum compiler is to find how we break a matrix (usually given by the quantum programmer) into a collection of native ones. The above decomposition of `CZ` can be calculated by quilc like so:
 
 ```
 $ echo 'CZ 1 0' | ./quilc --isa ibmqx5
@@ -140,33 +80,40 @@ RZ(pi/2) 0
 RZ(pi) 1
 ```
 
-Here, the numbers `0` and `1` tell us the qubits that each native operation acts on.
+Here, the numbers `0` and `1` tell us the qubits that each native operation acts on, which in turn tells us when to do the Kronecker products. For example, the syntax
 
-Different quantum computers have a different set of native operators, so the compiler must be flexible and adaptive to that. This mathematical puzzle is already interesting and difficult, but lurking is also an engineering problem of great concern.
+```
+A 1
+B 0
+```
 
-Almost every quantum computer today has some sort of _continuous_ operation—possibly many—like the $\mathrm{RZ}_\theta$ above. These continuous operations represent the analog nature of today's computers. Analog devices have their merits, but one thing analog hardware typically isn't good at is precision. While I might request the computer performs an $\mathrm{RZ}_{0.12345}$, due to the computer's physical nature, it might—for example—only accomplish something between an $\mathrm{RZ}_{0.11}$ and an $\mathrm{RZ}_{0.13}$. Quantum hardware engineers around the world, every day, are putting effort into improving the accuracy and precision of the native operations one does on a quantum computer, but it's well known that it'll never be possible to have _infinite_ precision, due simply to physical limitations.
+represents the Kronecker product $A\otimes B$.
 
-This behooves us to ponder whether there can be some _discrete_ version of quantum computation by allowing only discrete operations to be run, where we do away with the free-wheeling continuous nature of some of the native operations, while managing to still perform _any_ quantum computation we'd like, even those from the world of continuous operations.
+Different quantum computers have a different set of native operators, so quilc must be adaptive to that. This mathematical puzzle is interesting and already quite difficult, but lurking is also an engineering problem of great concern.
 
-Fortunately, the answer to this is a resounding _yes_, with a small but reasonable caveat. Robert Solovay and Alexei Kitaev both independently and constructly proved this was possible in the mid-90s. Not only was it possible, it was efficient to calculate, at least as far as big-O is concerned. The one small hitch is this: It is not possible to find an _exact_ sequence of native operations to reconstruct an arbitrary one. Instead, we can only get _arbitrarily close_, at the expense of running more native operations.
+Almost every quantum computer today has some sort of _continuous_ operation—possibly many—like the $\mathrm{RZ}_\theta$ above. These continuous operations represent the analog nature of today's computers. Analog devices have their merits, but one thing analog hardware usually isn't good at is extreme precision. While I might request the quantum computer perform an $\mathrm{RZ}_{0.12345}$, due to the computer's physical nature, it might only accomplish something between an $\mathrm{RZ}_{0.11}$ and an $\mathrm{RZ}_{0.13}$. Quantum hardware engineers around the world, every day, are putting effort into improving the precision of the available native operations, but it'll never be possible to have _infinite_ precision, due simply to physical limitations.
 
-This is perfectly sensible. If we want to do arbitrary precision arithmetic on an ordinary computer (like calculating billions of digits of $\pi$), we must use more CPU instructions. CPU instructions only let us do a relatively small collection of operations: basic arithmetic on "small" integers (integers less than $2^{64}$) and floating-point numbers. If we want to go beyond 64 bits of integer, or go beyond 16ish digits of floating-point mantissa, we need to spend more memory and more CPU instructions.
+Can there instead be some set of _discrete_ native operations while still being able perform _any_ quantum computation we'd like? And if we have such a set, will it be *easy and efficient* to compile a given matrix? These two questions represent the problem of **discrete compilation** of quantum programs.
 
-The Solovay-Kitaev algorithm is famously difficult to implement precisely, and relies on a great deal of pre-processing to accomplish, but it's useful both for its mathematical utility and its generality.
+Fortunately, the answer to both questions is a resounding _yes_, with a small but reasonable caveat. Robert Solovay and Alexei Kitaev both proved this was possible in the mid-90s. Their algorithm is flexible in allowing a large family of discrete operation sets, and decompositions of arbitrary matrices into any of those discrete operations were efficient to calculate, at least as far as big-O is concerned. The one small hitch is this: It is not possible to find an _exact_ sequence of native operations to reconstruct a given matrix. Instead, we can only get _arbitrarily close_, at the expense of running more native operations.
 
-About 20 years after Solovay and Kitaev's work, Peter Selinger came up with another idea. Using a specific native operation set (called the Clifford+T set), and making careful use of algebraic number theory, not only can we have merely "good" big-O performance, but in fact, we could have nearly _optimal_ decompositions, off only by a constant number of operations. That is to say, not only does the algorithm run efficiently, it will also essentially produce the _shortest_ possible decomposition of an operator into the given native set. (Peter Selinger and Neil Ross were later able to modify the algorithm so that it produces *actually* optimal sequences... but you need a machine that can factorize integers to do that.)
+This is perfectly sensible. If we want to do arbitrary precision arithmetic on a classical computer (like calculating billions of digits of $\pi$), we must use more CPU instructions. CPU instructions only let us do a relatively small collection of operations: basic arithmetic on "small" integers (integers less than $2^{64}$) and floating-point numbers. If we want to go beyond 64 bits of integer, or go beyond 16ish digits of floating-point mantissa, we need to spend more memory and more CPU instructions.
 
-## The Selinger Approach to Discretization
+The Solovay-Kitaev algorithm is famously difficult to implement, and relies on a great deal of pre-processing to accomplish, but it's useful both for its mathematical utility and its generality.
+
+About 20 years after Solovay and Kitaev's work, Peter Selinger came up with another idea. Using a specific native operation set (called the Clifford+T set), and making careful use of algebraic number theory, not only can we have merely "good" big-O performance, we could also have nearly _optimal-length_ decompositions, off only by a constant number of operations. (Peter Selinger and Neil Ross were later able to modify the algorithm so that it produces *actually* optimal sequences... but you need a machine that can factorize integers to do that.)
+
+## The Selinger Approach to Discrete Compilation
 
 Selinger considers the following native operators:
 $$
 \begin{align*}
-\mathrm{H} &:= \frac{1}{\sqrt 2}\begin{pmatrix}1 & 1 \\ 1 & -1\end{pmatrix}\\
+\mathrm{H} &:= \frac{1}{\sqrt 2}\begin{pmatrix}\tfrac{1}{\sqrt{2}} & \tfrac{1}{\sqrt{2}} \\ \tfrac{1}{\sqrt{2}} & -\tfrac{1}{\sqrt{2}}\end{pmatrix}\\
 \mathrm{S} &:= \begin{pmatrix}1 & 0 \\0 & i\end{pmatrix}\\
-\mathrm{T} &:= \begin{pmatrix}1 & 0 \\0 & \sqrt{i}\end{pmatrix}
+\mathrm{T} &:= \begin{pmatrix}1 & 0 \\0 & \tfrac{1}{\sqrt{2}}+i\tfrac{1}{\sqrt{2}}\end{pmatrix}
 \end{align*}
 $$
-This is called the _Clifford+T set_. These operators have mathematical significance because (1) the $\mathrm{H}$ and $\mathrm{S}$ form a special algebraic space called the one-qubit Clifford group, and (2) $\mathrm{T}$ happens to equal $\sqrt{\mathrm{S}}$, and (3) arbitrary products of these operators form a _dense_ set of the unitary matrices. All the third point means to say is that theoretically, this is a suitable set of operators that can be used to approximate any $2\times 2$ unitary matrix to any degree of precision.
+This is called the _Clifford+T set_. These operators have mathematical significance because (1) the $\mathrm{H}$ and $\mathrm{S}$ form a special algebraic space called the one-qubit Clifford group, and (2) $\mathrm{T}$ happens to equal $\sqrt{\mathrm{S}}$, and (3) arbitrary products of these operators form a _dense_ set of the unitary matrices. The third point means to say is that this set of operators can be used to approximate any $2\times 2$ unitary matrix to an arbitrary precision.
 
 Next, Selinger turns to a result by Kliuchnikov, Maslov, and Mosca which says a given $2\times2$ matrix can be written precisely as a product of Clifford+T elements if and only if the matrix elements are all members of the number ring $R := \mathbb{Z}[\tfrac{1}{\sqrt 2}, i]$. So Selinger sets up the following goal: Try to write the problematic parametric gate $\mathrm{RZ}_\theta$  as a matrix
 $$
@@ -180,9 +127,7 @@ Selinger succeeds at solving this problem, by turning that matrix problem into a
 
 Since the two-qubit operators of usual interest are already discrete (like `CNOT`, `CZ`, etc.), this would make a fully discretized native gate set, so long as quantum computer implementers could supply the Clifford+T set as native operations.
 
-## Coalton to the rescue, take two
-
-Already, even without the gory details of _how_ to find the approximating matrix, we see we're in for quite a ride. There's a lot of machinery we'll need, but one piece that sticks out is the need to do arithmetic over the ring $\mathbb{Z}[\tfrac{1}{\sqrt{2}},i]$. If we let $\omega:=e^{i\pi/4}$ and observe that $\omega=(1+i)/\sqrt{2}$, then with a bit of exercise, we can see that elements of $\mathbb{Z}[\tfrac{1}{\sqrt{2}},i]$ all take the following form:
+Already, even without the gory details of _how_ to find the approximating matrix, we see we're in for quite a ride. There's a lot of machinery we'll need, but one piece that sticks out is the need to do arithmetic over the ring $\mathbb{Z}[\tfrac{1}{\sqrt{2}},i]$. If we let $\omega:=(1+i)/\sqrt{2}$, then with a bit of exercise, we can see that elements of $\mathbb{Z}[\tfrac{1}{\sqrt{2}},i]$ all take the following form:
 $$
 \frac{a_0}{2^{n_0}}+\frac{a_1}{2^{n_1}}\omega+\frac{a_2}{2^{n_2}}\omega^2+\frac{a_3}{2^{n_3}}\omega^3,
 $$
@@ -192,51 +137,67 @@ It turns out we also need to work in other rings, like the cyclomatic integers o
 
 The trouble is that it's cumbersome. In Lisp, first, there's no way to integrate with the existing numerical operators; there is no way to "overload" the standard operator `cl:+` to work with different rings. Second, as explained in a previous blog post, there's no way to uniformly treat additive and multiplicative identity in a convenient fashion. Third, it gets very messy, with lots of casts, upconversions, downconversions, etc. It's very difficult to build a _new_ numerical tower atop of or aside Common Lisp's existing one.
 
-Coalton, on the other hand, is based around a system of organized polymorphism that is _designed_ for this kind of extension, all in a type-safe context. For example, this ring of quadratic integers
+These difficulties presented a second opportunity for Coalton. Coalton's builds its fundamental abstractions from a different starting point, making this kind of mathematics easier and safer to express. As such, we used this as a new testing ground to implement quilc in Coalton.
+
+## Coalton to the rescue, take two
+
+Coalton is based around a system of organized polymorphism (called *type classes*) that allows for extensibility and composability in a statically typed manner. For example, this ring of algebraic numbers
 $$
-\mathbb{Z}[\sqrt{2}] = \left\{a + b\sqrt{2} : a,b\in \mathbb{Z}\right\}
+\mathbb{Z}[\sqrt{2}] = \left\{a_1 + a_2\sqrt{2} : a_1,a_2\in \mathbb{Z}\right\}
 $$
-could be written in Coalton as
+can be modeled as pairs of integers $[a_1;\;a_2]$ that obey certain laws. For instance, with a little bit of algebra, we can derive a multiplication law like so:
+$$
+\begin{align*}
+[a_1;\; a_2]\cdot [b_1;\; b_2]
+                         &= (a_1 + a_2\sqrt{2})(b_1 + b_2\sqrt{2})\\
+                         &= a_1b_1 + a_1(b_2\sqrt{2})+ (a_2\sqrt{2})b_1+(a_2\sqrt{2})(b_2\sqrt{2}) \\
+                         &= (a_1b_1 + 2a_2b_2) + (a_1b_2+a_2b_1)\sqrt{2}\\
+                         &= [a_1b_1+2a_2b_2;\; a_1b_2+a_2b_1].
+\end{align*}
+$$
+These algebraic numbers could be written as a new type called `AlgNum` in Coalton that implements the `Eq` type class (which demands we implement equality) and the `Num` type class (which demands we implement addition, subtraction, multiplication, and some way to convert an integer into our new type):
 
 ```lisp
-  (define-type AlgInt (AlgInt Integer Integer))
+  (define-type AlgNum
+    "Represents the algebraic number a1 + a2 * sqrt(2)."
+    (AlgNum Integer Integer))
 
-  (define-instance (Eq AlgInt)
+  (define-instance (Eq AlgNum)
     (define (== a b)
       (match (Tuple a b)
-        ((Tuple (AlgInt a1 a2) (AlgInt b1 b2))
+        ((Tuple (AlgNum a1 a2) (AlgNum b1 b2))
          (and (== a1 b1) (== a2 b2))))))
   
-  (define-instance (Num AlgInt)
+  (define-instance (Num AlgNum)
     (define (+ a b)
       (match (Tuple a b)
-        ((Tuple (AlgInt a1 a2) (AlgInt b1 b2))
+        ((Tuple (AlgNum a1 a2) (AlgNum b1 b2))
          (AlgInt (+ a1 b1) (+ a2 b2)))))
     (define (- a b)
       (match (Tuple a b)
-        ((Tuple (AlgInt a1 a2) (AlgInt b1 b2))
+        ((Tuple (AlgNum a1 a2) (AlgNum b1 b2))
          (AlgInt (- a1 b1) (- a2 b2)))))
     (define (* a b)
       (match (Tuple a b)
-        ((Tuple (AlgInt a1 a2) (AlgInt b1 b2))
+        ((Tuple (AlgNum a1 a2) (AlgNum b1 b2))
          (AlgInt (+ (* a1 b1) (* 2 (* a2 b2)))
                  (+ (* a1 b2) (* a2 b1))))))
     (define (fromInt n)
-      (AlgInt n 0)))
+      (AlgNum n 0)))
 ```
 
 We can verify it works by seeing that $(1-2\sqrt{2})^2 = 9-4\sqrt{2}$:
 
 ```lisp
-> (coalton (* (AlgInt 1 -2) (AlgInt 1 -2)))
-#.(ALGINT 9 -4)
+> (coalton (* (AlgNum 1 -2) (AlgNum 1 -2)))
+#.(ALGNUM 9 -4)
 ```
 
-Since `Num` requires `fromInt` to be defined, any `Num` type, including our own `AlgInt`, permits overloading integer syntax. We don't have to laboriously write `(fromInt 2)` every time we want to use integer syntax as a shorthand for our `AlgInt` type.
+Since `Num` requires `fromInt` to be defined, any `Num` type, including our own `AlgNum`, permits overloading integer syntax. We don't have to laboriously write `(fromInt 2)` every time we want to use integer syntax as a shorthand for our `AlgNum` type.
 
 ```lisp
-> (coalton (* 2 (AlgInt 0 -1)))
-#.(ALGINT 0 -2)
+> (coalton (* 2 (AlgNum 0 -1)))
+#.(ALGNUM 0 -2)
 ```
 
 As is to be expected at this point, functions on `AlgInt` are inferred appropriately.
@@ -244,14 +205,14 @@ As is to be expected at this point, functions on `AlgInt` are inferred appropria
 ```lisp
 (define (algebraic-conjugate x)
   (match x
-    ((AlgInt a b) (AlgInt a (negate b)))))
+    ((AlgNum a b) (AlgNum a (negate b)))))
 ```
 
 We can see that
 
 ```lisp
 > (type-of 'algebraic-conjugate)
-(ALGINT → ALGINT)
+(ALGNUM → ALGNUM)
 ```
 
 Modeling these algebras works out quite well, especially when we have more of them, matrices of them, vectors of them, polynomials of them, and so on.
@@ -295,46 +256,69 @@ One particularly nice thing going on is that the whole machinery quilc uses top 
 
 ## Efficiency concerns of abstraction + indirection + polymorphism
 
-The correctness of a compiler, and the ease with which one obtains it, are only part of the story of practical compiler development. Anybody who has worked on big C++ codebases knows that _compilation speed_ is an enormous practical factor, as well. The speed of quilc is no exception, despite the quality and optimality of its output.
+The correctness of a compiler, and the ease with which one obtains correctness, are only part of the story of practical compiler development. Anybody who has worked on big C++ codebases knows that _compilation speed_ is an enormous practical factor, as well. The speed of quilc is no exception, despite the quality and optimality of its output.
 
-Coalton is a language that effectively compiles to Common Lisp. A statically typed language being compiled to a dynamically typed language seems like a raw deal. We went through the effort of ascertaining the type of every term in our program, and we'll just throw it away?
+Coalton compiles to Common Lisp. A statically typed language being compiled to a dynamically typed language seems like a raw deal. We went through the effort of ascertaining the type of every term in our program, and we'll just throw it away?
 
-Of course not. Fortunately, Common Lisp allows the programmer to specify type annotations to quantities. The subset of Common Lisp's type system that permits optimizations for speedy code is, for the most part, limited to monomorphic machine types. Compound types, or polymorphic types, are handled either very little or not at all.
+Of course not. Fortunately, Common Lisp allows the programmer to annotate types. The subset of Common Lisp's type system that permits optimizations for speedy code is, for the most part, limited to monomorphic machine, record, and array types. Polymorphism is not expressed in Common Lisp's type system in a way that is practically useful.
 
-So, the first piece of good news is that since Coalton knows the type of everything, and in principle, can annotate these types in the resulting Common Lisp code.
+Since Coalton knows the type of everything, it can annotate these types in the resulting Common Lisp code. When the code is monomorphic, the Common Lisp compiler will be able to produce fast code.
 
-But the bad news is that, despite knowing types, Coalton is helpless in the presence of polymorphism. Even simple arithmetic is polymorphic:
+The story is a little more nuanced with polymorphic code. Coalton supports functions that have either *parametric polymorphism* (one function implementation that supports many types), *ad hoc polymorphism* (a single function name that has many implementations depending on the argument and result types), or both.
+
+A function like `flip` is parametrically polymorphic:
+
+```lisp
+> (type-of 'flip)
+∀ :A :B :C. ((:A → :B → :C) → :B → :A → :C)
+```
+
+Flip can take _any_ two-argument function (taking types `:A` and `:B`), and produce a new function with the arguments flipped (thus taking `:B` and `:A`). It's not too much of a problem compiling this kind of parametric polymorphism in efficient Common Lisp.
+
+Similarly, a function like `+` is ad-hoc-polymorphic:
 
 ```lisp
 > (type-of '+)
 ∀ :A. NUM :A ⇒ (:A → :A → :A)
 ```
 
-Coalton implements polymorphism with something that roughly looks like a "vtable"-approach: it passes around tables—known to functional compiler engineers as *dictionaries*—of concrete method implementations to the callees, which they can draw from and call. So, for example, a function that uses the `+` operator will, at run-time, be suppled a table saying "this is how you implement `+` for an `integer`" when `+` is happens to actually get called on an `integer`. Since this is a dynamic thing, we pay the relatively steep penalties of constructing these dictionaries and making indirect calls into them.
+This is because how `+` works depends on the type of `:A`. The implementation of `Integer` addition is certainly different from the implementation of `AlgNum` addition. Since we need to be able to work with different implementations of `+` corresponding to different data types at run-time, optimization is more difficult.
+
+Coalton implements ad hoc polymorphism with something that roughly looks like a "vtable"-approach: it passes around tables—known to functional compiler engineers as *dictionaries*—of concrete method implementations to the callees, which they can draw from and call. So, for example, a function that uses the `+` operator will, at run-time, be suppled a table saying "this is how you implement `+` for an `integer`" when `+` is happens to actually get called on an `integer`. Since this is a dynamic thing, we pay the relatively steep penalties of constructing these dictionaries and making indirect calls into them.
 
 As such, we've implemented optimizations for a few common sources of inefficiency. We'll describe two of them: _monomorphization_ and _specialization_.
 
-### Monomorphization: Opportunistically eliminating polymorphisms when it's not needed
+### Monomorphization: Opportunistically eliminating polymorphism when it's not needed
 
-First, the dictionaries are constructed as early as possible so that they're not re-constructed on-the-spot every time they're needed. This is a process known as "hoisting" and "deduplication".
+One way to eliminate polymorphism altogether is to _monomorphize_ the code. Coalton has special handling for code that's written monomorphically—code that is not polymorphic—even if it makes use of either parametric or ad hoc polymorphic code.
 
-Second, when it's statically detected that a function is monomorphic, it eliminates the need for dictionaries altogether. Consider the "fused multiply-add" function:
+First, the dictionaries that may be present in ad hoc polymorphic code are constructed as early as possible so that they're not re-constructed on-the-spot every time they're needed. This is a process is implemented with techniques called *hoisting* and *deduplication*.
+
+Second, when it's statically detected that a method call is monomorphic, it eliminates the need for dictionaries altogether. Consider a function that evaluates a quadratic polynomial:
 $$
-\mathrm{fma}(a,b,c):=ab+c
+\mathrm{quad}(a,b,c,x):=ax^2+bx+c
 $$
 If we implement this in Coalton in a generic way, it looks like this:
 
 ```lisp
-(declare fma-poly (Num :t => :t -> :t -> :t -> :t))
-(define (fma-poly a b c)
-  (+ c (* a b)))))
+(declare square (Num :t => :t -> :t))
+(define (square x)
+  (* x x))
+
+(declare quad-poly (Num :t => :t -> :t -> :t -> :t -> :t))
+(define (quad-poly a b c x)
+  (+ (* a (square x))
+     (+ (* b x)
+        c)))
 ```
 
-This allows one to do a fused multiply-add on any numerical type. However, if we were to `(cl:disassemble #'fma-poly)`, we would see a 200ish-byte function, with lots of indirect function calls. This is because the roughly equivalent Lisp looks like this:
+This allows one to do a fused multiply-add on any numerical type. However, if we were to `(cl:disassemble #'quad-poly)`, we would see a 400ish-byte function, with lots of indirect function calls. This is because the roughly equivalent Lisp looks like this:
 
 ```lisp
- (DEFUN FMA-POLY (TABLE A B C)
-   (POLY-+ TABLE C (POLY-* TABLE A B)))
+(DEFUN QUAD-POLY (TABLE A B C X)
+  (POLY-+ TABLE (POLY-* TABLE A (SQUARE TABLE X))
+                (POLY-+ TABLE (POLY-* TABLE B X)
+                              C)))
 ```
 
 The `POLY-+` here is a function that _looks up the specific `+` implementation in `TABLE`_ and then calls it. Something like:
@@ -349,35 +333,46 @@ Likewise for `POLY-*`.
 Now let's see what happens if we have the same function but it's monomorphic on `single-float`s.
 
 ```lisp
-(declare fma-mono (single-float -> single-float -> single-float -> single-float))
-(define (fma-mono a b c)
-  (+ c (* a b)))
+(declare quad-mono (single-float -> single-float -> single-float -> single-float
+                                 -> single-float))
+(define (quad-mono a b c x)
+  (+ (* a (square x))
+     (+ (* b x)
+        c)))
 ```
 
-Now the disassembly is so short and efficient, I can just show it:
+Now the disassembly is shorter and more efficient with just around 130 bytes.
 
 ```lisp
-> (cl:disassemble #'fma-mono)
-; disassembly for FMA-MONO
-; Size: 25 bytes. Origin: #x53AE61F1                          ; FMA-MONO
-; 1F1:       F30F59D1         MULSS XMM2, XMM1
-; 1F5:       F30F58D3         ADDSS XMM2, XMM3
-; [ ... snip ... ]
+> (cl:disassemble #'quad-mono)
+; disassembly for QUAD-MONO
+; Size: 129 bytes. Origin: #x53B6E339                         ; QUAD-MONO
+; [...snip...]
+; 41:       488B0560FFFFFF   MOV RAX, [RIP-160]               ; load single-float dictionary
+; [...snip...]
+; 5F:       B882C24650       MOV EAX, #x5046C282              ; #<FDEFN SQUARE>
+; 64:       FFD0             CALL RAX
+; [...snip...]
+; 87:       0FC6D2FD         SHUFPS XMM2, XMM2, #4r3331
+; 8B:       F30F59D5         MULSS XMM2, XMM5
+; 8F:       66490F6EC8       MOVQ XMM1, R8
+; 94:       0FC6C9FD         SHUFPS XMM1, XMM1, #4r3331
+; 98:       F30F59CC         MULSS XMM1, XMM4
+; 9C:       F30F58CB         ADDSS XMM1, XMM3
+; A0:       F30F58CA         ADDSS XMM1, XMM2
+; [...snip...]
 ```
 
-Literally, it's just two floating point instructions, `MULSS` and `ADDSS`, plus a function epilog to return the value.
-
-It's still quite cumbersome, however, to have to define two identical functions, with one that has a monomorphic type annotation, just to get this functionality. So to make this easier, we introduced the `monomorphize` directive. Now one can write:
+We see we have efficient floating point instructions `ADDSS` and `MULSS`, but we also see we still have to load a dictionary. We still have to load a dictionary because Coalton can only optimize monomorphic code of _just_ the function you've written (`quad-mono`), and not any of the functions deeper (`square`) in the call stack. This is due to the fact that those functions have already been compiled. So to make this easier, we introduced the `monomorphize` directive. Now one can write:
 
 ```lisp
 (monomorphize)
-(declare fma-mono (single-float -> single-float -> single-float -> single-float))
-(define fma-mono fma-poly)
+(declare quad-mono (single-float -> single-float -> single-float -> single-float
+                                 -> single-float))
+(define quad-mono quad-poly)
 ```
 
-to get precisely the same effect.
-
-The `monomorphize` directive actually has a greater superpower: Not only does it produce a monomorphic variant for the function at hand, but it also monomorphizes _the entire call-tree_. So in most cases, `monomorphize` can take an arbitrarily generic function and completely eliminate amy of the genericity for specific types of interest. This is one approach to producing _extremely_ fast code. 
+Not only does `monomorphize` produce a monomorphic variant for the function at hand, but it also monomorphizes _the entire call-tree_. So in most cases, `monomorphize` can take an arbitrarily generic function and completely eliminate the run-time cost of polymorphism. This is one approach to producing _extremely_ fast code. 
 
 ### Specialization: Allowing custom implementations of polymorphic functions for monomorphic cases
 
@@ -469,7 +464,7 @@ These features turn out to be critical in making the discrete compilation facili
 
 ## Onward
 
-It's remarkable that Coalton has come to a point that 4,000 lines of complicated mathematical code can not only run, but run correctly *and* run efficiently. Coalton is still evolving in order to make programs like these and others faster to write and faster to execute, without compromising on correctness.
+It's remarkable that Coalton has come to a point that 4,000 lines of complicated mathematical code to implement discrete compilation can not only run, but run correctly *and* run efficiently. Coalton is still evolving in order to make programs like these and others faster to write and faster to execute, without compromising on correctness.
 
 Discrete compilation in quilc has been in the works for a while, starting during investigations of the Solovay-Kitaev algorithm during a summer internship at Rigetti Computing many years ago. The development of Coalton and catalyzing the implementation of discrete compilation was supported by [HRL Laboratories quantum computing group](https://quantum.hrl.com/). We especially acknowledge Erik Davis and Brendan Pawlowski.
 
