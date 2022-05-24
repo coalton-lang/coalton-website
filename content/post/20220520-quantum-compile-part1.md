@@ -59,33 +59,46 @@ $$
 $$
 In this case, $\theta$ is actually parametric and can be any value between $0$ and $2\pi$.
 
-It is a surprising fact that you can build *any* $2^n\times 2^n$-size complex unitary matrix out of the above matrices by way of matrix multiplications and Kronecker products. For example, consider the relatively innocent-looking matrix
+It is a surprising fact that you can build *any* $2^n\times 2^n$-size complex unitary matrix out of the above matrices by way of matrix multiplications and Kronecker products. For example, consider the following unitary matrix which we'll call $M$:
+$$
+M := \begin{pmatrix}
+1 & 0 & 0 & 0\\
+0 & \tfrac{\sqrt{3}}{2} & \tfrac{i}{2} & 0\\
+0 & \tfrac{i}{2} & \tfrac{\sqrt{3}}{2} & 0\\
+0 & 0 & 0 & 1
+\end{pmatrix}.
+$$
+With extremely laborious math, one can determine that $M$ can be written as follows:
+$$
+\begin{align*}
+m'   &:=  (\mathrm{RZ}_{\pi/2}\cdot\mathrm{RX}_{\pi/2}\cdot\mathrm{RZ}_{-5\pi/4})\otimes \mathrm{RZ}_{-\pi/4} \\
+m''  &:= (\mathrm{RX}_{-\pi/2}\cdot\mathrm{RZ}_{\pi/6}\cdot\mathrm{RX}_{\pi/2})\otimes(\mathrm{RX}_{-\pi/2}\cdot\mathrm{RZ}_{\pi/6}\cdot\mathrm{RX}_{\pi/2})\\
+m''' &:= (\mathrm{RZ}_{\pi/4}\cdot\mathrm{RX}_{\pi/2}\cdot\mathrm{RZ}_{\pi/2})\otimes\mathrm{RZ}_{\pi/4}\\
+M &\hphantom{:}= m'''\cdot \mathrm{CNOT} \cdot m'' \cdot \mathrm{CNOT} \cdot m'
+\end{align*}
+$$
+The intermediate $m$'s are just there for abbreviation. Notice how _only_ the aforementioned list of native operations are used, and how they're combined using multiplication (syntactically: $A\cdot B$) and Kronecker products (syntactically: $A\otimes B$). While it would be appealing to describe Kronecker products in more detail in this blog post, for the sake of brevity, we'll just consider them a separate kind of matrix multiplication.
 
-<TODO: CHANGE MATRIX>
-$$
-\begin{pmatrix}1 & 0 & 0 & 0\\0 & 1 & 0 & 0\\0 & 0 & 1 & 0\\0 & 0 & 0 & -1\end{pmatrix}.
-$$
-This matrix is known as `CZ` in the quantum computing field. With some laborious math, one can determine that the `CZ` matrix can be written as follows:
-$$
-\left[\mathrm{RZ}_{\pi}\otimes(\mathrm{RZ}_{\pi/2}\cdot\mathrm{RX}_{\pi/2}\cdot\mathrm{RZ}_{\pi/2})\right]
-\cdot\mathrm{CNOT}\cdot
-\left[\mathrm{RZ}_{\pi}\otimes(\mathrm{RZ}_{\pi/2}\cdot\mathrm{RX}_{\pi/2}\cdot\mathrm{RZ}_{\pi/2})\right].
-$$
-Notice how _only_ the aforementioned list of native operations are used, and how they're combined using multiplication (syntactically: $A\cdot B$) and Kronecker products (syntactically: $A\otimes B$). While it would be appealing to describe Kronecker products in more detail in this blog post, for the sake of brevity, we'll just consider them a separate kind of matrix multiplication.
-
-One of the primary tasks of a quantum compiler is to break down arbitrary unitary matrices, usually given by the quantum programmer, into a sequence of native ones. Quilc can recover the above result like so:
+One of the primary tasks of a quantum compiler is to break down arbitrary unitary matrices, usually given by the quantum programmer, into a sequence of native ones. Using a fact from teh quantum computing field that the above matrix is usually specified as $\mathrm{XY}(\pi/3)$, Quilc can recover the above result like so:
 
 ```
-$ echo 'CZ 1 0' | ./quilc --isa ibmqx5
-RZ(pi) 1
-RZ(pi/2) 0
-RX(pi/2) 0
-RZ(pi/2) 0
+$ echo 'XY(pi/3) 1 0' | ./quilc --isa ibmqx5
+RZ(-5*pi/4) 1
+RX(pi/2) 1
+RZ(pi/2) 1
+RZ(-pi/4) 0
 CNOT 1 0
-RZ(pi/2) 0
+RX(pi/2) 1
+RZ(pi/6) 1
+RX(-pi/2) 1
 RX(pi/2) 0
-RZ(pi/2) 0
-RZ(pi) 1
+RZ(pi/6) 0
+RX(-pi/2) 0
+CNOT 1 0
+RZ(pi/4) 0
+RZ(pi/2) 1
+RX(pi/2) 1
+RZ(pi/4) 1
 ```
 
 Using software engineering terminology, we say we've _compiled_ the `CZ` matrix into the native operations of an IBM quantum computer. In quilc's output, the numbers `0` and `1` denote how to do the Kronecker products. For example, the syntax
@@ -113,6 +126,8 @@ About 20 years after Solovay and Kitaev's work, Peter Selinger came up with anot
 
 ## The Selinger Approach to Discrete Compilation
 
+In order to have a set of discrete operations, we must be able to discretize the parametric operation $\mathrm{RZ}_\theta$, which is a $2\times2$ matrix with entried depending on $\theta$.
+
 Selinger considers the following native operators:
 $$
 \begin{align*}
@@ -121,7 +136,7 @@ $$
 \mathrm{T} &:= \begin{pmatrix}1 & 0 \\0 & \tfrac{1}{\sqrt{2}}+i\tfrac{1}{\sqrt{2}}\end{pmatrix}
 \end{align*}
 $$
-This is called the _Clifford+T set_. These operators have mathematical significance because (1) the $\mathrm{H}$ and $\mathrm{S}$ form a special algebraic space called the one-qubit Clifford group, and (2) $\mathrm{T}$ happens to equal $\sqrt{\mathrm{S}}$, and (3) arbitrary products of these operators form a _dense_ set of the unitary matrices. The third point means to say is that this set of operators can be used to approximate any $2\times 2$ unitary matrix to an arbitrary precision.
+This is called the _Clifford+T set_. These operators have mathematical significance because (1) the $\mathrm{H}$ and $\mathrm{S}$ form a special algebraic space called the one-qubit Clifford group, and (2) $\mathrm{T}$ happens to equal $\sqrt{\mathrm{S}}$, and (3) arbitrary products of these operators form a _dense_ set of the unitary matrices. The third point means to say is that this set of operators could be used to approximate any $2\times 2$ unitary matrix to an arbitrary precision, though Selinger will need to find an algorithm to do it.
 
 Next, Selinger turns to a result by Kliuchnikov, Maslov, and Mosca which says a given $2\times2$ matrix can be written precisely as a product of Clifford+T elements if and only if the matrix elements are all members of the number ring $R := \mathbb{Z}[\tfrac{1}{\sqrt 2}, i]$. So Selinger sets up the following goal: Try to write the problematic parametric gate $\mathrm{RZ}_\theta$  as a matrix
 $$
@@ -135,15 +150,17 @@ Selinger succeeds at solving this problem, by turning that matrix problem into a
 
 Since the two-qubit operators of usual interest are already discrete (like `CNOT`, `CZ`, etc.), this would make a fully discretized native gate set, so long as quantum computer implementers could supply the Clifford+T set as native operations.
 
-Already, even without the gory details of _how_ to find the approximating matrix, we see we're in for quite a ride. There's a lot of machinery we'll need, but one piece that sticks out is the need to do arithmetic over the ring $\mathbb{Z}[\tfrac{1}{\sqrt{2}},i]$. If we let $\omega:=(1+i)/\sqrt{2}$, then with a bit of exercise, we can see that elements of $\mathbb{Z}[\tfrac{1}{\sqrt{2}},i]$ all take the following form:
+Already, even without the gory details of _how_ to find the approximating matrix, we see we're in for quite a ride. There's a lot of machinery we'll need, but one piece that sticks out is the need to do arithmetic over the ring $\mathbb{Z}[\tfrac{1}{\sqrt{2}},i]$. If we let $\omega:=(1+i)/\sqrt{2}$, then with a bit of exercise, we can see that elements of $\mathbb{Z}[\tfrac{1}{\sqrt{2}},i]$ all take the following canonical form:
 $$
 \frac{a_0}{2^{n_0}}+\frac{a_1}{2^{n_1}}\omega+\frac{a_2}{2^{n_2}}\omega^2+\frac{a_3}{2^{n_3}}\omega^3,
 $$
 where $a_\bullet$ are integers and $n_\bullet$ are non-negative integers. If we take two elements of this form and add or multiply them, we'll always end back up in the same ring.
 
-It turns out we also need to work in other rings, like the cyclomatic integers of degree 8 and the quadratic integers of $\sqrt{2}$. At least in principle, Common Lisp would have no trouble representing elements of any of these rings; just define some new classes, perhaps some new methods like `ring+` and `ring*`, and you're off to the races.
+For Selinger's algorithm, it turns out we also need to work in other rings, like the cyclomatic integers of degree 8, the quadratic integers of $\sqrt{2}$, and about a half-dozen others.
 
-The trouble is that it's cumbersome. In Lisp, first, there's no way to integrate with the existing numerical operators; there is no way to "overload" the standard operator `cl:+` to work with different rings. Second, as explained in a previous blog post, there's no way to uniformly treat additive and multiplicative identity in a convenient fashion. Third, it gets very messy, with lots of casts, upconversions, downconversions, etc. It's very difficult to build a _new_ numerical tower atop of or aside Common Lisp's existing one.
+How do we implement these mathematical objects in a program? At least in principle, Common Lisp would have no trouble representing elements of any of these rings; just define some new classes, perhaps some new methods like `ring+` and `ring*`, and you're off to the races.
+
+The trouble is that it's cumbersome. In Lisp, first, there's no way to integrate with the existing numerical operators; there is no way to "overload" the standard operator `cl:+` to work with different rings. Second, as explained in a previous blog post, there's no way to uniformly treat additive and multiplicative identity in a convenient fashion. Third, it gets very messy, with lots of casts, upconversions, downconversions, etc. It's very difficult to build a _new_ numerical tower atop of or aside Common Lisp's existing one. Common Lisp's multiple-dispatch mechanism at least eases the pain a bit.
 
 These difficulties presented a second opportunity for Coalton. Coalton's builds its fundamental abstractions from a different starting point, making this kind of mathematics easier and safer to express. As such, we used this as a testing ground to implement new functionality of quilc in Coalton.
 
@@ -223,54 +240,112 @@ We can see that
 (ALGNUM → ALGNUM)
 ```
 
-Modeling these algebras works out quite well, especially when we have more of them, matrices of them, vectors of them, polynomials of them, and so on.
+Modeling these algebras works out quite well, especially when we have more of them, matrices of them, vectors of them, polynomials of them, and so on. They _compose_ well. We can even make our own `Ring` class so that we can write code that is generic on _any_ ring.
 
-Though perhaps not as effective as mathematics itself, Coalton's facilities handle the Selinger  Clifford+T decomposition algorithm handsomely. This lead to the introduction of a first-of-its-kind feature to a general-purpose quantum compiler: the ability to do discrete compilation of arbitrary quantum programs. This is now implemented as a part of the [`cl-quil/discrete` contrib module](https://github.com/quil-lang/quilc/tree/master/src/discrete) to quilc.
-
-<TODO: CHANGE MATRIX>
-
-We can repeat the compilation of the `CZ` gate that we did before for the IBM chip instead for a made-up chip of two qubits that only supports the Clifford+T set.
-
-```
-$ echo 'PRAGMA TOLERANCE "0.001"; CZ 0 1' | ./quilc --isa discrete2
-S 0
-S 0
-H 1
-CNOT 0 1
-H 0
-T 0
-S 0
-H 0
-S 0
-S 0
-H 0
-T 0
-S 0
-H 0
-H 1
+```lisp
+(define-class (Ring :t)
+  (add-id (:t))              ; additive identity
+  (mul-id (:t))              ; multiplicative identity
+  (ring-+ (:t -> :t -> :t))
+  (ring-* (:t -> :t -> :t)))
 ```
 
-Notice how every operation in the output is either `H`, `S`, `T`, or `CNOT`. There are only two differences in how we run the compiler between this and the previous IBM-chip compilation:
+We can even make every existing `Num`-like object be a `Ring`:
 
-1. We had to specify the chip `discrete2`. (Quilc will be happy to construct a chip of any requested topology; this is just a convenient built-in.)
-2. We had to specify a tolerance, here a discrete compilation accuracy within 0.1% _for each discrete compiler invocation_. (This means multiple calls to the discrete compiler will accumulate error.)
-
-We can do some interesting calculations, such as "how many gates does it take to approximate $\mathrm{XY}(\pi/6)\cdot(\mathrm{H}\otimes\mathrm{H})$ to $10^{-6}$ accuracy?"
-
-```
-$ echo 'PRAGMA TOLERANCE "0.000001"; XY(pi/6) 1 0' | ./quilc --isa discrete2 | wc -l
-     473
+```lisp
+(define-instance (Num :t => Ring :t)
+  (define add-id (fromInt 0))
+  (define mul-id (fromInt 1))
+  (define ring-+ +)
+  (define ring-* *))
 ```
 
-One particularly nice thing going on is that the whole machinery quilc uses top optimize programs automatically gets applied.
+One can imagine how we could do the same for vector spaces, inner product spaces, and so on. These concepts aren't just theoretical benefits, they're actually routinely used in practice.
 
-Using a Quil simulator called the QVM, we can compare these 
+## Discrete compilation in quilc
+
+Though perhaps not as effective as mathematics itself, Coalton's facilities handle the Selinger  Clifford+T decomposition algorithm handsomely. This lead to the introduction of a first-of-its-kind feature to a general-purpose quantum compiler: the ability to do discrete compilation of arbitrary quantum programs. We are happy to introduce full-featured discrete compilation into quilc. With quilc, it is now possible to target backends that support the Clifford+T set. There is nothing special the programmer has to do to enable this feature; just build a quilc ISA that only has Clifford+T, and it'll just work.
+
+Discrete compilation is implemented as a part of the [`cl-quil/discrete` contrib module](https://github.com/quil-lang/quilc/tree/master/src/discrete) to quilc.
+
+We can repeat the compilation of the $M$ gate that we did before for the IBM chip instead for a made-up chip of two qubits that only supports the Clifford+T set. (The output is reformatted into columns to fit the page.)
 
 ```
-
+$ echo 'PRAGMA TOLERANCE "0.001"; XY(pi/3) 1 0' | ./quilc --isa discrete2
+T 0       H 0       T 0       H 0       H 1       H 1       H 1       S 1       
+S 0       T 0       S 0       T 0       T 1       T 1       T 1       H 1       
+S 0       H 0       H 0       H 0       H 1       H 1       H 1       T 1       
+S 0       T 0       T 0       T 0       T 1       T 1       T 1       H 1       
+H 0       S 0       S 0       S 0       S 1       S 1       S 1       T 1       
+T 1       H 0       H 0       H 0       H 1       H 1       H 1       H 1       
+CNOT 0 1  T 0       T 0       T 0       T 1       T 1       T 1       T 1       
+S 0       H 0       S 0       S 0       S 1       S 1       H 1       S 1       
+H 0       T 0       H 0       H 0       H 1       H 1       T 1       H 1       
+S 0       S 0       T 0       T 0       T 1       T 1       H 1       T 1       
+H 0       H 0       H 0       S 0       S 1       S 1       T 1       S 1       
+T 0       T 0       T 0       H 0       H 1       H 1       S 1       H 1       
+H 0       H 0       H 0       T 0       T 1       T 1       H 1       T 1       
+T 0       T 0       T 0       H 0       S 1       S 1       T 1       S 1       
+S 0       S 0       S 0       T 0       H 1       H 1       S 1       H 1       
+H 0       H 0       H 0       H 0       T 1       T 1       H 1       T 1       
+T 0       T 0       T 0       T 0       S 1       S 1       T 1       H 1       
+S 0       S 0       H 0       S 0       H 1       H 1       H 1       S 1       
+H 0       H 0       T 0       H 0       T 1       T 1       T 1       S 1       
+T 0       T 0       H 0       T 0       H 1       S 1       S 1       S 1       
+S 0       S 0       T 0       S 0       T 1       H 1       H 1       H 1       
+H 0       H 0       S 0       H 0       S 1       T 1       T 1       S 1       
+T 0       T 0       H 0       T 0       H 1       S 1       S 1       S 1       
+S 0       S 0       T 0       S 0       T 1       H 1       H 1       S 1       
+H 0       H 0       S 0       H 0       S 1       T 1       T 1       CNOT 0 1  
+T 0       T 0       H 0       T 0       H 1       S 1       H 1       H 0       
+S 0       S 0       T 0       H 0       T 1       H 1       T 1       T 0       
+H 0       H 0       H 0       S 0       H 1       T 1       H 1       T 1       
+T 0       T 0       T 0       S 0       T 1       S 1       T 1       S 1       
+H 0       S 0       S 0       S 0       H 1       H 1       H 1       S 1       
+T 0       H 0       H 0       H 0       T 1       T 1       T 1       S 1       
+S 0       T 0       T 0       S 0       S 1       S 1       S 1                 
+H 0       S 0       S 0       S 0       H 1       H 1       H 1                 
+T 0       H 0       H 0       S 0       T 1       T 1       T 1                 
+S 0       T 0       T 0       S 1       H 1       S 1       S 1                 
+H 0       S 0       H 0       H 1       T 1       H 1       H 1                 
+T 0       H 0       T 0       S 1       S 1       T 1       T 1              
 ```
 
+Notice how every operation in the output is either `H`, `S`, `T`, or `CNOT`. But also notice how there are a _lot_ of operations—290 of them to be exact. There are only two differences in how we run the compiler between this and the previous IBM-chip compilation:
 
+1. We had to specify the chip `discrete2`. (Quilc will be happy to construct a chip of any requested shape, size, and native operations; `discrete2` is just a convenient built-in for testing.)
+2. We had to specify a tolerance, here a discrete compilation accuracy within 0.1% for each approximation made.
+
+If we request more precision, we notice an increase in operation count.
+
+```
+$ echo 'PRAGMA TOLERANCE "0.0000001d0"; XY(pi/3) 1 0' | ./quilc --isa discrete2 | wc -l
+     540
+```
+
+Despite being 1.8x the number of operations more, we've also increased precision by 10,000x. This is in line with the efficiency of the Selinger algorithm: an exponential increase in precision does _not_ mean an exponential increase in compiled output. Here, we can see the trend in compilation efficiency for different precisions
+
+***
+
+| Precision | Operation Count |
+| --------- | --------------- |
+| 0.1       | 152             |
+| 0.01      | 232             |
+| 0.001     | 290             |
+| 0.0001    | 354             |
+| 0.00001   | 404             |
+| 0.000001  | 502             |
+| 0.0000001 | 540             |
+
+***
+
+One particularly nice thing going on is that the whole machinery quilc uses top optimize programs automatically gets applied. It's not _just_ a discrete compiler, it's an optimizing compiler with support for discrete operation sets.
+
+## Errors and validation
+
+<TODO: talk about accumulation of error>
+
+<TODO: use QVM>
 
 ## Intermission
 
