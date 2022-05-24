@@ -3222,6 +3222,15 @@ An iterator which begins at zero and counts up through and including LIMIT.
 
 ***
 
+#### <code>INTERLEAVE!</code> <sup><sub>[FUNCTION]</sub></sup><a name="interleave!-value"></a>
+<code>&forall; A. ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
+
+Return an interator of interleaved elements from LEFT and RIGHT which terminates as soon as both LEFT and RIGHT do.
+In the case one iterator terminates before the other, the other is exhausted before terminating.
+
+
+***
+
 #### <code>REPEAT-ITEM</code> <sup><sub>[FUNCTION]</sub></sup><a name="repeat-item-value"></a>
 <code>&forall; A. (:A &rarr; <a href="#ufix-type">UFIX</a> &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
