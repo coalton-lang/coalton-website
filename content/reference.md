@@ -456,13 +456,6 @@ A ratio of integers always in reduced form.
 
 ***
 
-#### <code>LISP-OBJECT</code> <sup><sub>[TYPE]</sub></sup><a name="lisp-object-type"></a>
-
-Opaque container for arbitrary lisp objects. At runtime this is equivalent to type `t`.
-
-
-***
-
 #### <code>DOUBLE-FLOAT</code> <sup><sub>[TYPE]</sub></sup><a name="double-float-type"></a>
 
 Double precision floating point numer. Uses `double-float`.
@@ -3052,14 +3045,14 @@ Call the function F once for each item in S with its index
 
 # Package `coalton-library/hashtable`<a name="coalton-library/hashtable-package"></a>
 
-## [hashtable.lisp](https://github.com/coalton-lang/coalton/tree/main/library/hashtable.lisp) <a name="coalton-library/hashtable-hashtable-lisp-file"></a>
-
 ### Types
 
 #### <code>HASHTABLE A B</code> <sup><sub>[TYPE]</sub></sup><a name="hashtable-type"></a>
 
 
 ***
+
+## [hashtable.lisp](https://github.com/coalton-lang/coalton/tree/main/library/hashtable.lisp) <a name="coalton-library/hashtable-hashtable-lisp-file"></a>
 
 ### Values
 
