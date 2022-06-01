@@ -1,15 +1,9 @@
 ---
-title: "Using Coalton to Implement a Quantum Compiler: Part 1 of 2"
+title: "Using Coalton to Implement a Quantum Compiler"
 date: 2022-05-20
 ---
 
 By [Elias Lawson-Fox](https://github.com/eliaslfox), [Aidan Nyquist](https://github.com/aijony), and [Robert Smith](https://twitter.com/stylewarning)
-
-***
-
-_This is the first part of a two-part series on using Coalton to build a quantum compiler called quilc. The second part is [here](???)._
-
-***
 
 ## Common Lisp and the quilc compiler
 
@@ -341,14 +335,18 @@ Despite being 1.8x the number of operations more, we've also increased precision
 
 One particularly nice thing going on is that the whole machinery quilc uses top optimize programs automatically gets applied. It's not _just_ a discrete compiler, it's an optimizing compiler with support for discrete operation sets.
 
-## Errors and validation
+## Inaccuracy and validation
+
+<TODO: characterize accuracy>
 
 <TODO: talk about accumulation of error>
 
 <TODO: use QVM>
 
-## Intermission
+## Onward
 
-We've seen how some of Coalton's features were used to implement discrete compilation in quilc. Of particular note are type classes and their role in allowing us to define new number types.
+It's remarkable that Coalton has come to a point that 4,000 lines of complicated mathematical code to implement discrete compilation can not only run, but run correctly *and* run efficiently. Coalton is still evolving in order to make programs like these and others faster to write and faster to execute, without compromising on correctness.
 
-However, the tower of abstractions does cause one significant issue: degraded performance. The faster a compiler gets its job done, the better it is for the programmer. In order to make quilc's discrete compilation feature more useful, we had to upgrade Coalton's strategies for optimizing highly polymorphic programs, which we delve into in [Part 2](???).
+Discrete compilation in quilc has been in the works for a while, starting during investigations of the Solovay-Kitaev algorithm during a summer internship at Rigetti Computing many years ago. The development of Coalton and catalyzing the implementation of discrete compilation was supported by [HRL Laboratories quantum computing group](https://quantum.hrl.com/). We especially acknowledge Erik Davis, Cole Scott, and Brendan Pawlowski.
+
+The Coalton developement team is always looking for and excited by improvements to the language, especially in the standard library. If you're interesting in helping out with Coalton, please join the [Discord]()!

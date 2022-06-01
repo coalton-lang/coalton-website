@@ -1,15 +1,16 @@
 ---
-title: "Using Coalton to Implement a Quantum Compiler: Part 2 of 2"
+title: "Efficient, General Arithmetic in Coalton"
 date: 2022-05-20
+draft: true
 ---
 
 By [Elias Lawson-Fox](https://github.com/eliaslfox), [Aidan Nyquist](https://github.com/aijony), and [Robert Smith](https://twitter.com/stylewarning)
 
-***
+## Intermission
 
-_This is the second part of a two-part series on using Coalton to build a quantum compiler called quilc. If you missed it, the first part is [here](???)._
+We've seen how some of Coalton's features were used to implement discrete compilation in quilc. Of particular note are type classes and their role in allowing us to define new number types.
 
-***
+However, the tower of abstractions does cause one significant issue: degraded performance. The faster a compiler gets its job done, the better it is for the programmer. In order to make quilc's discrete compilation feature more useful, we had to upgrade Coalton's strategies for optimizing highly polymorphic programs, which we delve into here.
 
 ## Efficiency concerns of abstraction + indirection + polymorphism
 
