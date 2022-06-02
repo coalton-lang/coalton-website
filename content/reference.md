@@ -1747,11 +1747,26 @@ Note: This does *not* divide double-float arguments.
 
 ***
 
+#### <code>NONZERO?</code> <sup><sub>[FUNCTION]</sub></sup><a name="nonzero?-value"></a>
+<code>&forall; A. <a href="#num-class">NUM</a> :A &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+***
+
+#### <code>NEGATIVE?</code> <sup><sub>[FUNCTION]</sub></sup><a name="negative?-value"></a>
+<code>&forall; A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+***
+
 #### <code>NUMERATOR</code> <sup><sub>[FUNCTION]</sub></sup><a name="numerator-value"></a>
 <code>(<a href="#fraction-type">FRACTION</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
 
 The numerator of a fraction.
 
+
+***
+
+#### <code>POSITIVE?</code> <sup><sub>[FUNCTION]</sub></sup><a name="positive?-value"></a>
+<code>&forall; A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 ***
 
@@ -1773,6 +1788,16 @@ The multiplicative inverse of a number.
 
 The denominator of a fraction.
 
+
+***
+
+#### <code>NONNEGATIVE?</code> <sup><sub>[FUNCTION]</sub></sup><a name="nonnegative?-value"></a>
+<code>&forall; A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+***
+
+#### <code>NONPOSITIVE?</code> <sup><sub>[FUNCTION]</sub></sup><a name="nonpositive?-value"></a>
+<code>&forall; A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 ***
 
