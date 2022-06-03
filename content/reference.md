@@ -709,7 +709,6 @@ Methods:
 - <code><a href="#eq-class">EQ</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#complex-class">COMPLEX</a> A &rArr; <a href="#eq-class">EQ</a> (<a href="#complex-type">COMPLEX</a> A)</code>
-- <code><a href="#eq-class">EQ</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#string-type">STRING</a></code>
 - <code>(<a href="#eq-class">EQ</a> A) (<a href="#eq-class">EQ</a> B) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple-type">TUPLE</a> A B)</code>
@@ -722,6 +721,7 @@ Methods:
 - <code><a href="#eq-class">EQ</a> A &rArr; <a href="#eq-class">EQ</a> (<a href="#cell-type">CELL</a> A)</code>
 - <code><a href="#eq-class">EQ</a> A &rArr; <a href="#eq-class">EQ</a> (<a href="#vector-type">VECTOR</a> A)</code>
 - <code><a href="#eq-class">EQ</a> A &rArr; <a href="#eq-class">EQ</a> (<a href="#slice-type">SLICE</a> A)</code>
+- <code><a href="#eq-class">EQ</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 
 </details>
 
@@ -779,9 +779,9 @@ Methods:
 - <code><a href="#num-class">NUM</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#complex-class">COMPLEX</a> A &rArr; <a href="#num-class">NUM</a> (<a href="#complex-type">COMPLEX</a> A)</code>
-- <code><a href="#num-class">NUM</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 - <code><a href="#num-class">NUM</a> A &rArr; <a href="#num-class">NUM</a> (<a href="#optional-type">OPTIONAL</a> A)</code>
 - <code><a href="#num-class">NUM</a> A &rArr; <a href="#num-class">NUM</a> (<a href="#cell-type">CELL</a> A)</code>
+- <code><a href="#num-class">NUM</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 
 </details>
 
@@ -815,12 +815,12 @@ Methods:
 - <code><a href="#ord-class">ORD</a> <a href="#ufix-type">UFIX</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
-- <code><a href="#ord-class">ORD</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#string-type">STRING</a></code>
 - <code>(<a href="#ord-class">ORD</a> A) (<a href="#ord-class">ORD</a> B) &rArr; <a href="#ord-class">ORD</a> (<a href="#tuple-type">TUPLE</a> A B)</code>
 - <code><a href="#ord-class">ORD</a> A &rArr; <a href="#ord-class">ORD</a> (<a href="#optional-type">OPTIONAL</a> A)</code>
 - <code>(<a href="#ord-class">ORD</a> A) (<a href="#ord-class">ORD</a> B) &rArr; <a href="#ord-class">ORD</a> (<a href="#result-type">RESULT</a> A B)</code>
+- <code><a href="#ord-class">ORD</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 
 </details>
 
@@ -933,10 +933,6 @@ Methods:
 - <code><a href="#complex-class">COMPLEX</a> A &rArr; <a href="#into-class">INTO</a> A (<a href="#complex-type">COMPLEX</a> A)</code>
 - <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> (<a href="#complex-type">COMPLEX</a> <a href="#single-float-type">SINGLE-FLOAT</a>)</code>
 - <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> (<a href="#complex-type">COMPLEX</a> <a href="#double-float-type">DOUBLE-FLOAT</a>)</code>
-- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#big-float-type">BIG-FLOAT</a></code>
-- <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> <a href="#big-float-type">BIG-FLOAT</a></code>
-- <code><a href="#into-class">INTO</a> <a href="#single-float-type">SINGLE-FLOAT</a> <a href="#big-float-type">BIG-FLOAT</a></code>
-- <code><a href="#into-class">INTO</a> <a href="#double-float-type">DOUBLE-FLOAT</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#string-type">STRING</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> (<a href="#tuple-type">TUPLE</a> A B) (<a href="#tuple-type">TUPLE</a> B A)</code>
@@ -948,6 +944,10 @@ Methods:
 - <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> A) (<a href="#list-type">LIST</a> A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#slice-type">SLICE</a> A) (<a href="#vector-type">VECTOR</a> A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> A) (<a href="#slice-type">SLICE</a> A)</code>
+- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#big-float-type">BIG-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> <a href="#big-float-type">BIG-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#single-float-type">SINGLE-FLOAT</a> <a href="#big-float-type">BIG-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#double-float-type">DOUBLE-FLOAT</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 
 </details>
 
