@@ -18,7 +18,6 @@ identifier: Reference
 - <a href="#coalton-library/classes-package"><code>coalton-library/classes</code></a>
 - <a href="#coalton-library/builtin-package"><code>coalton-library/builtin</code></a>
 - <a href="#coalton-library/bits-package"><code>coalton-library/bits</code></a>
-- <a href="#coalton-library/arith-package"><code>coalton-library/arith</code></a>
 - <a href="#coalton-library/char-package"><code>coalton-library/char</code></a>
 - <a href="#coalton-library/string-package"><code>coalton-library/string</code></a>
 - <a href="#coalton-library/tuple-package"><code>coalton-library/tuple</code></a>
@@ -50,7 +49,6 @@ Signed 8-bit integer capable of storing values in `[-128, 127]`. Uses `(signed-b
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#i8-type">I8</a></code>
-- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#i8-type">I8</a></code>
@@ -60,6 +58,7 @@ Signed 8-bit integer capable of storing values in `[-128, 127]`. Uses `(signed-b
 - <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#i8-type">I8</a></code>
+- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#i8-type">I8</a></code>
@@ -77,8 +76,6 @@ Unsigned 8-bit integer capable of storing values in `[0, 255]`. Uses `(unsigned-
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#u8-type">U8</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#u8-type">U8</a></code>
-- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#u8-type">U8</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#u8-type">U8</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#u8-type">U8</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#u8-type">U8</a></code>
@@ -93,6 +90,8 @@ Unsigned 8-bit integer capable of storing values in `[0, 255]`. Uses `(unsigned-
 - <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#u8-type">U8</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#u8-type">U8</a></code>
+- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#u8-type">U8</a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#u8-type">U8</a></code>
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#u8-type">U8</a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#u8-type">U8</a></code>
@@ -110,7 +109,6 @@ Signed 16-bit integer capable of storing values in `[-32768, 32767]`. Uses `(sig
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#i16-type">I16</a></code>
-- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#i16-type">I16</a></code>
@@ -121,6 +119,7 @@ Signed 16-bit integer capable of storing values in `[-32768, 32767]`. Uses `(sig
 - <code><a href="#into-class">INTO</a> <a href="#i16-type">I16</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#i16-type">I16</a></code>
@@ -138,8 +137,6 @@ Signed 32-bit integer capable of storing values in `[-2147483648, 2147483647]`. 
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#i32-type">I32</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#i32-type">I32</a></code>
-- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#i32-type">I32</a></code>
@@ -151,6 +148,8 @@ Signed 32-bit integer capable of storing values in `[-2147483648, 2147483647]`. 
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i16-type">I16</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#i32-type">I32</a></code>
@@ -168,8 +167,6 @@ Signed 64-bit integer capable of storing values in `[-9223372036854775808, 92233
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#i64-type">I64</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#i64-type">I64</a></code>
-- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#i64-type">I64</a></code>
@@ -182,6 +179,8 @@ Signed 64-bit integer capable of storing values in `[-9223372036854775808, 92233
 - <code><a href="#into-class">INTO</a> <a href="#i32-type">I32</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i16-type">I16</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#i64-type">I64</a></code>
@@ -199,7 +198,6 @@ Unsigned 16-bit integer capable of storing values in `[0, 65535]`. Uses `(unsign
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#u16-type">U16</a></code>
-- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#u16-type">U16</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#u16-type">U16</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#u16-type">U16</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#u16-type">U16</a></code>
@@ -213,6 +211,7 @@ Unsigned 16-bit integer capable of storing values in `[0, 65535]`. Uses `(unsign
 - <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#u16-type">U16</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#u16-type">U16</a></code>
+- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#u16-type">U16</a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#u16-type">U16</a></code>
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#u16-type">U16</a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#u16-type">U16</a></code>
@@ -230,8 +229,6 @@ Unsigned 32-bit integer capable of storing values in `[0, 4294967295]`. Uses `(u
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#u32-type">U32</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#u32-type">U32</a></code>
-- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#u32-type">U32</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#u32-type">U32</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#u32-type">U32</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#u32-type">U32</a></code>
@@ -244,6 +241,8 @@ Unsigned 32-bit integer capable of storing values in `[0, 4294967295]`. Uses `(u
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#u32-type">U32</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#u32-type">U32</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#u32-type">U32</a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#u32-type">U32</a></code>
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#u32-type">U32</a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#u32-type">U32</a></code>
@@ -261,8 +260,6 @@ Unsigned 64-bit integer capable of storing values in `[0, 18446744073709551615]`
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#u64-type">U64</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#u64-type">U64</a></code>
-- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#u64-type">U64</a></code>
@@ -274,6 +271,8 @@ Unsigned 64-bit integer capable of storing values in `[0, 18446744073709551615]`
 - <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#u64-type">U64</a></code>
@@ -307,13 +306,13 @@ Non-allocating tagged integer; range is platform-dependent. Uses `fixnum`.
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#ifix-type">IFIX</a></code>
-- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ifix-type">IFIX</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#ifix-type">IFIX</a></code>
+- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#ifix-type">IFIX</a></code>
@@ -331,7 +330,6 @@ Non-allocating tagged non-negative integer; range is platform-dependent. Uses `(
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#ufix-type">UFIX</a></code>
-- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#ufix-type">UFIX</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#ufix-type">UFIX</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#ufix-type">UFIX</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#ufix-type">UFIX</a></code>
@@ -340,6 +338,7 @@ Non-allocating tagged non-negative integer; range is platform-dependent. Uses `(
 - <code><a href="#into-class">INTO</a> <a href="#ufix-type">UFIX</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ufix-type">UFIX</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#ufix-type">UFIX</a></code>
+- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#ufix-type">UFIX</a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#ufix-type">UFIX</a></code>
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#ufix-type">UFIX</a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#ufix-type">UFIX</a></code>
@@ -372,9 +371,9 @@ String of characters represented by Common Lisp `string`.
 - <code><a href="#iso-class">ISO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#string-type">STRING</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>)</code>
-- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#monoid-class">MONOID</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#string-type">STRING</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#semigroup-class">SEMIGROUP</a> <a href="#string-type">STRING</a></code>
@@ -392,11 +391,6 @@ Unbound integer. Uses `integer`.
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#integer-type">INTEGER</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#fraction-type">FRACTION</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#integer-type">INTEGER</a></code>
-- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#integer-type">INTEGER</a></code>
@@ -424,6 +418,11 @@ Unbound integer. Uses `integer`.
 - <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#string-type">STRING</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#integer-type">INTEGER</a></code>
@@ -440,9 +439,6 @@ A ratio of integers always in reduced form.
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#fraction-type">FRACTION</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#fraction-type">FRACTION</a> <a href="#fraction-type">FRACTION</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#fraction-type">FRACTION</a></code>
@@ -451,6 +447,9 @@ A ratio of integers always in reduced form.
 - <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> (<a href="#complex-type">COMPLEX</a> <a href="#single-float-type">SINGLE-FLOAT</a>)</code>
 - <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#fraction-type">FRACTION</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#fraction-type">FRACTION</a></code>
 
 </details>
@@ -465,13 +464,6 @@ Double precision floating point numer. Uses `double-float`.
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#float-class">FLOAT</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#double-float-type">DOUBLE-FLOAT</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
-- <code><a href="#realfloat-class">REALFLOAT</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
-- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
-- <code><a href="#trigonometric-class">TRIGONOMETRIC</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
@@ -483,6 +475,13 @@ Double precision floating point numer. Uses `double-float`.
 - <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#float-class">FLOAT</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#double-float-type">DOUBLE-FLOAT</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#realfloat-class">REALFLOAT</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#trigonometric-class">TRIGONOMETRIC</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 
 </details>
@@ -497,13 +496,6 @@ Single precision floating point numer. Uses `single-float`.
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#float-class">FLOAT</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
-- <code><a href="#realfloat-class">REALFLOAT</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
-- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
-- <code><a href="#trigonometric-class">TRIGONOMETRIC</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
@@ -515,6 +507,13 @@ Single precision floating point numer. Uses `single-float`.
 - <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#float-class">FLOAT</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#realfloat-class">REALFLOAT</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#trigonometric-class">TRIGONOMETRIC</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 
 </details>
@@ -582,6 +581,488 @@ Either true or false represented by `t` and `nil` respectively.
 - <code><a href="#eq-class">EQ</a> <a href="#boolean-type">BOOLEAN</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#boolean-type">BOOLEAN</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#boolean-type">BOOLEAN</a></code>
+
+</details>
+
+
+***
+
+### Types
+
+#### <code>I8</code> <sup><sub>[TYPE]</sub></sup><a name="i8-type"></a>
+
+Signed 8-bit integer capable of storing values in `[-128, 127]`. Uses `(signed-byte 8)`.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#bits-class">BITS</a> <a href="#i8-type">I8</a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#i8-type">I8</a></code>
+- <code><a href="#num-class">NUM</a> <a href="#i8-type">I8</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#i8-type">I8</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#i8-type">I8</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#i8-type">I8</a></code>
+- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#i8-type">I8</a></code>
+- <code><a href="#complex-class">COMPLEX</a> <a href="#i8-type">I8</a></code>
+- <code><a href="#integral-class">INTEGRAL</a> <a href="#i8-type">I8</a></code>
+- <code><a href="#remainder-class">REMAINDER</a> <a href="#i8-type">I8</a></code>
+
+</details>
+
+
+***
+
+#### <code>U8</code> <sup><sub>[TYPE]</sub></sup><a name="u8-type"></a>
+
+Unsigned 8-bit integer capable of storing values in `[0, 255]`. Uses `(unsigned-byte 8)`.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#bits-class">BITS</a> <a href="#u8-type">U8</a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#u8-type">U8</a></code>
+- <code><a href="#num-class">NUM</a> <a href="#u8-type">U8</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#u8-type">U8</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#u8-type">U8</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#u16-type">U16</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#u8-type">U8</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#u8-type">U8</a></code>
+- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#u8-type">U8</a></code>
+- <code><a href="#complex-class">COMPLEX</a> <a href="#u8-type">U8</a></code>
+- <code><a href="#integral-class">INTEGRAL</a> <a href="#u8-type">U8</a></code>
+- <code><a href="#remainder-class">REMAINDER</a> <a href="#u8-type">U8</a></code>
+
+</details>
+
+
+***
+
+#### <code>I16</code> <sup><sub>[TYPE]</sub></sup><a name="i16-type"></a>
+
+Signed 16-bit integer capable of storing values in `[-32768, 32767]`. Uses `(signed-byte 16)`.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#bits-class">BITS</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#num-class">NUM</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i16-type">I16</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i16-type">I16</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i16-type">I16</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#complex-class">COMPLEX</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#integral-class">INTEGRAL</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#remainder-class">REMAINDER</a> <a href="#i16-type">I16</a></code>
+
+</details>
+
+
+***
+
+#### <code>I32</code> <sup><sub>[TYPE]</sub></sup><a name="i32-type"></a>
+
+Signed 32-bit integer capable of storing values in `[-2147483648, 2147483647]`. Uses `(signed-byte 32)`.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#bits-class">BITS</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#num-class">NUM</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i32-type">I32</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i32-type">I32</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i16-type">I16</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#complex-class">COMPLEX</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#integral-class">INTEGRAL</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#remainder-class">REMAINDER</a> <a href="#i32-type">I32</a></code>
+
+</details>
+
+
+***
+
+#### <code>I64</code> <sup><sub>[TYPE]</sub></sup><a name="i64-type"></a>
+
+Signed 64-bit integer capable of storing values in `[-9223372036854775808, 9223372036854775807]`. Uses `(signed-byte 64)`.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#bits-class">BITS</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#num-class">NUM</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i64-type">I64</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i32-type">I32</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i16-type">I16</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#complex-class">COMPLEX</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#integral-class">INTEGRAL</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#remainder-class">REMAINDER</a> <a href="#i64-type">I64</a></code>
+
+</details>
+
+
+***
+
+#### <code>U16</code> <sup><sub>[TYPE]</sub></sup><a name="u16-type"></a>
+
+Unsigned 16-bit integer capable of storing values in `[0, 65535]`. Uses `(unsigned-byte 16)`.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#bits-class">BITS</a> <a href="#u16-type">U16</a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#u16-type">U16</a></code>
+- <code><a href="#num-class">NUM</a> <a href="#u16-type">U16</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#u16-type">U16</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#u16-type">U16</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#u16-type">U16</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#u16-type">U16</a></code>
+- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#u16-type">U16</a></code>
+- <code><a href="#complex-class">COMPLEX</a> <a href="#u16-type">U16</a></code>
+- <code><a href="#integral-class">INTEGRAL</a> <a href="#u16-type">U16</a></code>
+- <code><a href="#remainder-class">REMAINDER</a> <a href="#u16-type">U16</a></code>
+
+</details>
+
+
+***
+
+#### <code>U32</code> <sup><sub>[TYPE]</sub></sup><a name="u32-type"></a>
+
+Unsigned 32-bit integer capable of storing values in `[0, 4294967295]`. Uses `(unsigned-byte 32)`.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#bits-class">BITS</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#num-class">NUM</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#complex-class">COMPLEX</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#integral-class">INTEGRAL</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#remainder-class">REMAINDER</a> <a href="#u32-type">U32</a></code>
+
+</details>
+
+
+***
+
+#### <code>U64</code> <sup><sub>[TYPE]</sub></sup><a name="u64-type"></a>
+
+Unsigned 64-bit integer capable of storing values in `[0, 18446744073709551615]`. Uses `(unsigned-byte 64)`.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#bits-class">BITS</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#num-class">NUM</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u64-type">U64</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u64-type">U64</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u64-type">U64</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#complex-class">COMPLEX</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#integral-class">INTEGRAL</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#remainder-class">REMAINDER</a> <a href="#u64-type">U64</a></code>
+
+</details>
+
+
+***
+
+#### <code>CHAR</code> <sup><sub>[TYPE]</sub></sup><a name="char-type"></a>
+
+A single character represented as a `character` type.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#eq-class">EQ</a> <a href="#char-type">CHAR</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#char-type">CHAR</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#char-type">CHAR</a></code>
+
+</details>
+
+
+***
+
+#### <code>IFIX</code> <sup><sub>[TYPE]</sub></sup><a name="ifix-type"></a>
+
+Non-allocating tagged integer; range is platform-dependent. Uses `fixnum`.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#bits-class">BITS</a> <a href="#ifix-type">IFIX</a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#ifix-type">IFIX</a></code>
+- <code><a href="#num-class">NUM</a> <a href="#ifix-type">IFIX</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#ifix-type">IFIX</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#ifix-type">IFIX</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#ifix-type">IFIX</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#ifix-type">IFIX</a></code>
+- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#ifix-type">IFIX</a></code>
+- <code><a href="#complex-class">COMPLEX</a> <a href="#ifix-type">IFIX</a></code>
+- <code><a href="#integral-class">INTEGRAL</a> <a href="#ifix-type">IFIX</a></code>
+- <code><a href="#remainder-class">REMAINDER</a> <a href="#ifix-type">IFIX</a></code>
+
+</details>
+
+
+***
+
+#### <code>UFIX</code> <sup><sub>[TYPE]</sub></sup><a name="ufix-type"></a>
+
+Non-allocating tagged non-negative integer; range is platform-dependent. Uses `(and fixnum unsigned-byte)`.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#bits-class">BITS</a> <a href="#ufix-type">UFIX</a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#ufix-type">UFIX</a></code>
+- <code><a href="#num-class">NUM</a> <a href="#ufix-type">UFIX</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#ufix-type">UFIX</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#ufix-type">UFIX</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#ufix-type">UFIX</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#ufix-type">UFIX</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#ufix-type">UFIX</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#ufix-type">UFIX</a></code>
+- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#ufix-type">UFIX</a></code>
+- <code><a href="#complex-class">COMPLEX</a> <a href="#ufix-type">UFIX</a></code>
+- <code><a href="#integral-class">INTEGRAL</a> <a href="#ufix-type">UFIX</a></code>
+- <code><a href="#remainder-class">REMAINDER</a> <a href="#ufix-type">UFIX</a></code>
+
+</details>
+
+
+***
+
+#### <code>VOID</code> <sup><sub>[TYPE]</sub></sup><a name="void-type"></a>
+
+
+***
+
+#### <code>ARROW A B</code> <sup><sub>[TYPE]</sub></sup><a name="arrow-type"></a>
+
+Type constructor for function types.
+
+
+***
+
+#### <code>STRING</code> <sup><sub>[TYPE]</sub></sup><a name="string-type"></a>
+
+String of characters represented by Common Lisp `string`.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#eq-class">EQ</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#iso-class">ISO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#string-type">STRING</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>)</code>
+- <code><a href="#monoid-class">MONOID</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#string-type">STRING</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#semigroup-class">SEMIGROUP</a> <a href="#string-type">STRING</a></code>
+
+</details>
+
+
+***
+
+#### <code>INTEGER</code> <sup><sub>[TYPE]</sub></sup><a name="integer-type"></a>
+
+Unbound integer. Uses `integer`.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#bits-class">BITS</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#num-class">NUM</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#big-float-type">BIG-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#ufix-type">UFIX</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#ufix-type">UFIX</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u64-type">U64</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#u16-type">U16</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#u8-type">U8</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#ifix-type">IFIX</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#ifix-type">IFIX</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i64-type">I64</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i32-type">I32</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i16-type">I16</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#i8-type">I8</a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#string-type">STRING</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#complex-class">COMPLEX</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#integral-class">INTEGRAL</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#remainder-class">REMAINDER</a> <a href="#integer-type">INTEGER</a></code>
+
+</details>
+
+
+***
+
+#### <code>FRACTION</code> <sup><sub>[TYPE]</sub></sup><a name="fraction-type"></a>
+
+A ratio of integers always in reduced form.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#eq-class">EQ</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#num-class">NUM</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> <a href="#big-float-type">BIG-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> (<a href="#complex-type">COMPLEX</a> <a href="#double-float-type">DOUBLE-FLOAT</a>)</code>
+- <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> (<a href="#complex-type">COMPLEX</a> <a href="#single-float-type">SINGLE-FLOAT</a>)</code>
+- <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#fraction-type">FRACTION</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#complex-class">COMPLEX</a> <a href="#fraction-type">FRACTION</a></code>
+
+</details>
+
+
+***
+
+#### <code>DOUBLE-FLOAT</code> <sup><sub>[TYPE]</sub></sup><a name="double-float-type"></a>
+
+Double precision floating point numer. Uses `double-float`.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#eq-class">EQ</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#num-class">NUM</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#double-float-type">DOUBLE-FLOAT</a> <a href="#big-float-type">BIG-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#ufix-type">UFIX</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u64-type">U64</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#float-class">FLOAT</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#double-float-type">DOUBLE-FLOAT</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#realfloat-class">REALFLOAT</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#trigonometric-class">TRIGONOMETRIC</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#complex-class">COMPLEX</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+
+</details>
+
+
+***
+
+#### <code>SINGLE-FLOAT</code> <sup><sub>[TYPE]</sub></sup><a name="single-float-type"></a>
+
+Single precision floating point numer. Uses `single-float`.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#eq-class">EQ</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#num-class">NUM</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#single-float-type">SINGLE-FLOAT</a> <a href="#big-float-type">BIG-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#ufix-type">UFIX</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u64-type">U64</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#float-class">FLOAT</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#realfloat-class">REALFLOAT</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#trigonometric-class">TRIGONOMETRIC</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#complex-class">COMPLEX</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 
 </details>
 
@@ -929,12 +1410,12 @@ Methods:
 - <code><a href="#into-class">INTO</a> <a href="#ufix-type">UFIX</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
-- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#complex-class">COMPLEX</a> A &rArr; <a href="#into-class">INTO</a> A (<a href="#complex-type">COMPLEX</a> A)</code>
 - <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> (<a href="#complex-type">COMPLEX</a> <a href="#single-float-type">SINGLE-FLOAT</a>)</code>
 - <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> (<a href="#complex-type">COMPLEX</a> <a href="#double-float-type">DOUBLE-FLOAT</a>)</code>
 - <code><a href="#into-class">INTO</a> <a href="#string-type">STRING</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> (<a href="#tuple-type">TUPLE</a> A B) (<a href="#tuple-type">TUPLE</a> B A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#result-type">RESULT</a> A B) (<a href="#optional-type">OPTIONAL</a> B)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#optional-type">OPTIONAL</a> A) (<a href="#result-type">RESULT</a> <a href="#unit-type">UNIT</a> A)</code>
@@ -1380,449 +1861,6 @@ Methods:
 - <code><a href="#bits-class">BITS</a> <a href="#ufix-type">UFIX</a></code>
 
 </details>
-
-
-***
-
-# Package `coalton-library/arith`<a name="coalton-library/arith-package"></a>
-
-## [arith.lisp](https://github.com/coalton-lang/coalton/tree/main/library/arith.lisp) <a name="coalton-library/arith-arith-lisp-file"></a>
-
-### Types
-
-#### <code>QUANTIZATION A</code> <sup><sub>[TYPE]</sub></sup><a name="quantization-type"></a>
-- <code>(QUANTIZATION A <a href="#integer-type">INTEGER</a> A <a href="#integer-type">INTEGER</a> A)</code>
-
-
-***
-
-### Classes
-
-#### <code>FLOAT</code> <sup><sub>[CLASS]</sub></sup><a name="float-class"></a>
-<code>(<a href="#num-class">NUM</a> A) (<a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> A) (<a href="#dividable-class">DIVIDABLE</a> A A) (<a href="#trigonometric-class">TRIGONOMETRIC</a> A) (<a href="#exponentiable-class">EXPONENTIABLE</a> A) &rArr; <a href="#float-class">FLOAT</a> A</code>
-
-A finite, floating-point approximation of a real or imaginary number
-
-Methods:
-- <code>EE :: A</code>
-- <code>PI :: A</code>
-
-<details>
-<summary>Instances</summary>
-
-- <code><a href="#float-class">FLOAT</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
-- <code><a href="#float-class">FLOAT</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
-- <code><a href="#float-class">FLOAT</a> (<a href="#complex-type">COMPLEX</a> <a href="#single-float-type">SINGLE-FLOAT</a>)</code>
-- <code><a href="#float-class">FLOAT</a> (<a href="#complex-type">COMPLEX</a> <a href="#double-float-type">DOUBLE-FLOAT</a>)</code>
-- <code><a href="#float-class">FLOAT</a> <a href="#big-float-type">BIG-FLOAT</a></code>
-
-</details>
-
-
-***
-
-#### <code>DIVIDABLE</code> <sup><sub>[CLASS]</sub></sup><a name="dividable-class"></a>
-<code><a href="#dividable-class">DIVIDABLE</a> A B</code>
-
-The representation of a type such that division within that type possibly results in another type. For instance,
-
-
-    (Dividable Integer Fraction)
-
-
-establishes that division of two `Integer`s can result in a `Fraction`, whereas
-
-
-    (Dividable Single-Float Single-Float)
-
-
-establishes that division of two `Single-Float`s can result in a `Single-Float`.
-
-Note that `Dividable` does *not* establish a default result type; you must constrain the result type yourself.
-
-The function / is partial, and will error produce a run-time error if the divisor is zero.
-
-
-Methods:
-- <code>GENERAL/ :: (A &rarr; A &rarr; B)</code>
-
-<details>
-<summary>Instances</summary>
-
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#fraction-type">FRACTION</a> <a href="#fraction-type">FRACTION</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#double-float-type">DOUBLE-FLOAT</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#fraction-type">FRACTION</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
-- <code>(<a href="#complex-class">COMPLEX</a> A) (<a href="#complex-class">COMPLEX</a> B) (<a href="#dividable-class">DIVIDABLE</a> A B) &rArr; <a href="#dividable-class">DIVIDABLE</a> (<a href="#complex-type">COMPLEX</a> A) (<a href="#complex-type">COMPLEX</a> B)</code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#big-float-type">BIG-FLOAT</a> <a href="#big-float-type">BIG-FLOAT</a></code>
-
-</details>
-
-
-***
-
-#### <code>REALFLOAT</code> <sup><sub>[CLASS]</sub></sup><a name="realfloat-class"></a>
-<code>(<a href="#float-class">FLOAT</a> A) (<a href="#ord-class">ORD</a> A) &rArr; <a href="#realfloat-class">REALFLOAT</a> A</code>
-
-Finite, floating-point approximations of real numbers
-
-Methods:
-- <code>RATIONALIZE :: (A &rarr; <a href="#fraction-type">FRACTION</a>)</code>
-
-<details>
-<summary>Instances</summary>
-
-- <code><a href="#realfloat-class">REALFLOAT</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
-- <code><a href="#realfloat-class">REALFLOAT</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
-- <code><a href="#realfloat-class">REALFLOAT</a> <a href="#big-float-type">BIG-FLOAT</a></code>
-
-</details>
-
-
-***
-
-#### <code>QUANTIZABLE</code> <sup><sub>[CLASS]</sub></sup><a name="quantizable-class"></a>
-<code>(<a href="#ord-class">ORD</a> A) (<a href="#num-class">NUM</a> A) &rArr; <a href="#quantizable-class">QUANTIZABLE</a> A</code>
-
-The representation of a type that allows "quantizing", "snapping to integers", or "rounding." (All of these concepts are roughly equivalent.)
-
-
-Methods:
-- <code>QUANTIZE :: (A &rarr; (<a href="#quantization-type">QUANTIZATION</a> A))</code>
-
-<details>
-<summary>Instances</summary>
-
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#integer-type">INTEGER</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#i32-type">I32</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#i64-type">I64</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#u8-type">U8</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#u32-type">U32</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#u64-type">U64</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#fraction-type">FRACTION</a></code>
-- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#big-float-type">BIG-FLOAT</a></code>
-
-</details>
-
-
-***
-
-#### <code>EXPONENTIABLE</code> <sup><sub>[CLASS]</sub></sup><a name="exponentiable-class"></a>
-<code><a href="#exponentiable-class">EXPONENTIABLE</a> A</code>
-
-Methods:
-- <code>EXPT :: (A &rarr; A &rarr; A)</code>
-- <code>LOG :: (A &rarr; A &rarr; A)</code>
-
-<details>
-<summary>Instances</summary>
-
-- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
-- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
-- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#integer-type">INTEGER</a></code>
-- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#u8-type">U8</a></code>
-- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#i8-type">I8</a></code>
-- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#u16-type">U16</a></code>
-- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#i16-type">I16</a></code>
-- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#u32-type">U32</a></code>
-- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#i32-type">I32</a></code>
-- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#u64-type">U64</a></code>
-- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#i64-type">I64</a></code>
-- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#ifix-type">IFIX</a></code>
-- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#ufix-type">UFIX</a></code>
-- <code><a href="#exponentiable-class">EXPONENTIABLE</a> (<a href="#complex-type">COMPLEX</a> <a href="#single-float-type">SINGLE-FLOAT</a>)</code>
-- <code><a href="#exponentiable-class">EXPONENTIABLE</a> (<a href="#complex-type">COMPLEX</a> <a href="#double-float-type">DOUBLE-FLOAT</a>)</code>
-- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#big-float-type">BIG-FLOAT</a></code>
-
-</details>
-
-
-***
-
-#### <code>TRIGONOMETRIC</code> <sup><sub>[CLASS]</sub></sup><a name="trigonometric-class"></a>
-<code><a href="#trigonometric-class">TRIGONOMETRIC</a> A</code>
-
-Methods:
-- <code>SIN :: (A &rarr; A)</code>
-- <code>COS :: (A &rarr; A)</code>
-- <code>TAN :: (A &rarr; A)</code>
-- <code>ASIN :: (A &rarr; A)</code>
-- <code>ACOS :: (A &rarr; A)</code>
-- <code>ATAN :: (A &rarr; A)</code>
-
-<details>
-<summary>Instances</summary>
-
-- <code><a href="#trigonometric-class">TRIGONOMETRIC</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
-- <code><a href="#trigonometric-class">TRIGONOMETRIC</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
-- <code><a href="#trigonometric-class">TRIGONOMETRIC</a> (<a href="#complex-type">COMPLEX</a> <a href="#single-float-type">SINGLE-FLOAT</a>)</code>
-- <code><a href="#trigonometric-class">TRIGONOMETRIC</a> (<a href="#complex-type">COMPLEX</a> <a href="#double-float-type">DOUBLE-FLOAT</a>)</code>
-- <code><a href="#trigonometric-class">TRIGONOMETRIC</a> <a href="#big-float-type">BIG-FLOAT</a></code>
-
-</details>
-
-
-***
-
-### Values
-
-#### <code>/</code> <sup><sub>[FUNCTION]</sub></sup><a name="/-value"></a>
-<code>&forall; A. <a href="#dividable-class">DIVIDABLE</a> :A :A &rArr; (:A &rarr; :A &rarr; :A)</code>
-
-***
-
-#### <code>1+</code> <sup><sub>[FUNCTION]</sub></sup><a name="1+-value"></a>
-<code>&forall; A. <a href="#num-class">NUM</a> :A &rArr; (:A &rarr; :A)</code>
-
-***
-
-#### <code>1-</code> <sup><sub>[FUNCTION]</sub></sup><a name="1--value"></a>
-<code>&forall; A. <a href="#num-class">NUM</a> :A &rArr; (:A &rarr; :A)</code>
-
-***
-
-#### <code>LN</code> <sup><sub>[FUNCTION]</sub></sup><a name="ln-value"></a>
-<code>&forall; A. <a href="#float-class">FLOAT</a> :A &rArr; (:A &rarr; :A)</code>
-
-The natural logarithm of a given value
-
-
-***
-
-#### <code>ABS</code> <sup><sub>[FUNCTION]</sub></sup><a name="abs-value"></a>
-<code>&forall; A. (<a href="#ord-class">ORD</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; (:A &rarr; :A)</code>
-
-Absolute value of X.
-
-
-***
-
-#### <code>ASH</code> <sup><sub>[FUNCTION]</sub></sup><a name="ash-value"></a>
-<code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
-
-Compute the "arithmetic shift" of X by N. 
-
-
-***
-
-#### <code>EXP</code> <sup><sub>[FUNCTION]</sub></sup><a name="exp-value"></a>
-<code>&forall; A. <a href="#float-class">FLOAT</a> :A &rArr; (:A &rarr; :A)</code>
-
-Raise ee to the power of X
-
-
-***
-
-#### <code>COSH</code> <sup><sub>[FUNCTION]</sub></sup><a name="cosh-value"></a>
-<code>&forall; A. <a href="#float-class">FLOAT</a> :A &rArr; (:A &rarr; :A)</code>
-
-***
-
-#### <code>SIGN</code> <sup><sub>[FUNCTION]</sub></sup><a name="sign-value"></a>
-<code>&forall; A. (<a href="#ord-class">ORD</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; (:A &rarr; <a href="#integer-type">INTEGER</a>)</code>
-
-The sign of X.
-
-
-***
-
-#### <code>SINH</code> <sup><sub>[FUNCTION]</sub></sup><a name="sinh-value"></a>
-<code>&forall; A. <a href="#float-class">FLOAT</a> :A &rArr; (:A &rarr; :A)</code>
-
-***
-
-#### <code>SQRT</code> <sup><sub>[FUNCTION]</sub></sup><a name="sqrt-value"></a>
-<code>&forall; A. (<a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> :A) (<a href="#exponentiable-class">EXPONENTIABLE</a> :A) &rArr; (:A &rarr; :A)</code>
-
-Returns the square root of the input
-
-
-***
-
-#### <code>TANH</code> <sup><sub>[FUNCTION]</sub></sup><a name="tanh-value"></a>
-<code>&forall; A. <a href="#float-class">FLOAT</a> :A &rArr; (:A &rarr; :A)</code>
-
-***
-
-#### <code>ACOSH</code> <sup><sub>[FUNCTION]</sub></sup><a name="acosh-value"></a>
-<code>&forall; A. <a href="#float-class">FLOAT</a> :A &rArr; (:A &rarr; :A)</code>
-
-***
-
-#### <code>ASINH</code> <sup><sub>[FUNCTION]</sub></sup><a name="asinh-value"></a>
-<code>&forall; A. <a href="#float-class">FLOAT</a> :A &rArr; (:A &rarr; :A)</code>
-
-***
-
-#### <code>ATAN2</code> <sup><sub>[FUNCTION]</sub></sup><a name="atan2-value"></a>
-<code>&forall; A. <a href="#realfloat-class">REALFLOAT</a> :A &rArr; (:A &rarr; :A &rarr; :A)</code>
-
-Computes the two-argument arctangent of y and x, which is roughly the same as (atan (/ y x)) when defined and accounting for the quadrant of the point (x, y).
-
-
-***
-
-#### <code>ATANH</code> <sup><sub>[FUNCTION]</sub></sup><a name="atanh-value"></a>
-<code>&forall; A. <a href="#float-class">FLOAT</a> :A &rArr; (:A &rarr; :A)</code>
-
-***
-
-#### <code>FLOOR</code> <sup><sub>[FUNCTION]</sub></sup><a name="floor-value"></a>
-<code>&forall; A. <a href="#quantizable-class">QUANTIZABLE</a> :A &rArr; (:A &rarr; <a href="#integer-type">INTEGER</a>)</code>
-
-Return the greatest integer less than or equal to X.
-
-
-***
-
-#### <code>ROUND</code> <sup><sub>[FUNCTION]</sub></sup><a name="round-value"></a>
-<code>&forall; A. <a href="#quantizable-class">QUANTIZABLE</a> :A &rArr; (:A &rarr; <a href="#integer-type">INTEGER</a>)</code>
-
-Return the nearest integer to X, with ties breaking toward positive infinity.
-
-
-***
-
-#### <code>EXACT/</code> <sup><sub>[FUNCTION]</sub></sup><a name="exact/-value"></a>
-<code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#fraction-type">FRACTION</a>)</code>
-
-Exactly divide two integers and produce a fraction.
-
-
-***
-
-#### <code>FLOOR/</code> <sup><sub>[FUNCTION]</sub></sup><a name="floor/-value"></a>
-<code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
-
-Divide two integers and compute the floor of the quotient.
-
-
-***
-
-#### <code>NEGATE</code> <sup><sub>[FUNCTION]</sub></sup><a name="negate-value"></a>
-<code>&forall; A. <a href="#num-class">NUM</a> :A &rArr; (:A &rarr; :A)</code>
-
-***
-
-#### <code>ROUND/</code> <sup><sub>[FUNCTION]</sub></sup><a name="round/-value"></a>
-<code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
-
-Divide two integers and round the quotient.
-
-
-***
-
-#### <code>SINCOS</code> <sup><sub>[FUNCTION]</sub></sup><a name="sincos-value"></a>
-<code>&forall; A. <a href="#trigonometric-class">TRIGONOMETRIC</a> :A &rArr; (:A &rarr; (<a href="#tuple-type">TUPLE</a> :A :A))</code>
-
-***
-
-#### <code>CEILING</code> <sup><sub>[FUNCTION]</sub></sup><a name="ceiling-value"></a>
-<code>&forall; A. <a href="#quantizable-class">QUANTIZABLE</a> :A &rArr; (:A &rarr; <a href="#integer-type">INTEGER</a>)</code>
-
-Return the least integer greater than or equal to X.
-
-
-***
-
-#### <code>CEILING/</code> <sup><sub>[FUNCTION]</sub></sup><a name="ceiling/-value"></a>
-<code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
-
-Divide two integers and compute the ceiling of the quotient.
-
-
-***
-
-#### <code>INEXACT/</code> <sup><sub>[FUNCTION]</sub></sup><a name="inexact/-value"></a>
-<code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#double-float-type">DOUBLE-FLOAT</a>)</code>
-
-Compute the quotient of integers as a double-precision float.
-
-Note: This does *not* divide double-float arguments.
-
-
-***
-
-#### <code>NONZERO?</code> <sup><sub>[FUNCTION]</sub></sup><a name="nonzero?-value"></a>
-<code>&forall; A. <a href="#num-class">NUM</a> :A &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
-
-***
-
-#### <code>NEGATIVE?</code> <sup><sub>[FUNCTION]</sub></sup><a name="negative?-value"></a>
-<code>&forall; A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
-
-***
-
-#### <code>NUMERATOR</code> <sup><sub>[FUNCTION]</sub></sup><a name="numerator-value"></a>
-<code>(<a href="#fraction-type">FRACTION</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
-
-The numerator of a fraction.
-
-
-***
-
-#### <code>POSITIVE?</code> <sup><sub>[FUNCTION]</sub></sup><a name="positive?-value"></a>
-<code>&forall; A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
-
-***
-
-#### <code>MKFRACTION</code> <sup><sub>[FUNCTION]</sub></sup><a name="mkfraction-value"></a>
-<code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#fraction-type">FRACTION</a>)</code>
-
-***
-
-#### <code>RECIPROCAL</code> <sup><sub>[FUNCTION]</sub></sup><a name="reciprocal-value"></a>
-<code>&forall; A. (<a href="#dividable-class">DIVIDABLE</a> :A :A) (<a href="#num-class">NUM</a> :A) &rArr; (:A &rarr; :A)</code>
-
-The multiplicative inverse of a number.
-
-
-***
-
-#### <code>DENOMINATOR</code> <sup><sub>[FUNCTION]</sub></sup><a name="denominator-value"></a>
-<code>(<a href="#fraction-type">FRACTION</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
-
-The denominator of a fraction.
-
-
-***
-
-#### <code>NONNEGATIVE?</code> <sup><sub>[FUNCTION]</sub></sup><a name="nonnegative?-value"></a>
-<code>&forall; A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
-
-***
-
-#### <code>NONPOSITIVE?</code> <sup><sub>[FUNCTION]</sub></sup><a name="nonpositive?-value"></a>
-<code>&forall; A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
-
-***
-
-#### <code>DOUBLE-FLOAT-&gt;INTEGER</code> <sup><sub>[FUNCTION]</sub></sup><a name="double-float-&gt;integer-value"></a>
-<code>(<a href="#double-float-type">DOUBLE-FLOAT</a> &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#integer-type">INTEGER</a>))</code>
-
-Round a Double-Float to the nearest Integer.
-
-
-***
-
-#### <code>INTEGER-&gt;DOUBLE-FLOAT</code> <sup><sub>[FUNCTION]</sub></sup><a name="integer-&gt;double-float-value"></a>
-<code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#double-float-type">DOUBLE-FLOAT</a>)</code>
-
-***
-
-#### <code>INTEGER-&gt;SINGLE-FLOAT</code> <sup><sub>[FUNCTION]</sub></sup><a name="integer-&gt;single-float-value"></a>
-<code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#single-float-type">SINGLE-FLOAT</a>)</code>
-
-***
-
-#### <code>SINGLE-FLOAT-&gt;INTEGER</code> <sup><sub>[FUNCTION]</sub></sup><a name="single-float-&gt;integer-value"></a>
-<code>(<a href="#single-float-type">SINGLE-FLOAT</a> &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#integer-type">INTEGER</a>))</code>
-
-Round a Single-Float to the nearest Integer.
 
 
 ***
@@ -2669,6 +2707,26 @@ Print a line to *STANDARD-OUTPUT* in the form "{STR}: {ITEM}"
 
 ***
 
+### Types
+
+#### <code>CELL A</code> <sup><sub>[TYPE]</sub></sup><a name="cell-type"></a>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#eq-class">EQ</a> A &rArr; <a href="#eq-class">EQ</a> (<a href="#cell-type">CELL</a> A)</code>
+- <code><a href="#num-class">NUM</a> A &rArr; <a href="#num-class">NUM</a> (<a href="#cell-type">CELL</a> A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#cell-type">CELL</a> A) A</code>
+- <code><a href="#into-class">INTO</a> A (<a href="#cell-type">CELL</a> A)</code>
+- <code><a href="#functor-class">FUNCTOR</a> <a href="#cell-type">CELL</a></code>
+- <code><a href="#semigroup-class">SEMIGROUP</a> A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#cell-type">CELL</a> A)</code>
+- <code><a href="#applicative-class">APPLICATIVE</a> <a href="#cell-type">CELL</a></code>
+
+</details>
+
+
+***
+
 ## [cell.lisp](https://github.com/coalton-lang/coalton/tree/main/library/cell.lisp) <a name="coalton-library/cell-cell-lisp-file"></a>
 
 ### Values
@@ -2748,6 +2806,29 @@ Apply F to the contents of CEL, swapping the result for the old value
 ***
 
 # Package `coalton-library/vector`<a name="coalton-library/vector-package"></a>
+
+### Types
+
+#### <code>VECTOR A</code> <sup><sub>[TYPE]</sub></sup><a name="vector-type"></a>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#eq-class">EQ</a> A &rArr; <a href="#eq-class">EQ</a> (<a href="#vector-type">VECTOR</a> A)</code>
+- <code><a href="#iso-class">ISO</a> (<a href="#slice-type">SLICE</a> A) (<a href="#vector-type">VECTOR</a> A)</code>
+- <code><a href="#iso-class">ISO</a> (<a href="#vector-type">VECTOR</a> A) (<a href="#list-type">LIST</a> A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> A) (<a href="#slice-type">SLICE</a> A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#slice-type">SLICE</a> A) (<a href="#vector-type">VECTOR</a> A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> A) (<a href="#list-type">LIST</a> A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> A) (<a href="#vector-type">VECTOR</a> A)</code>
+- <code><a href="#functor-class">FUNCTOR</a> <a href="#vector-type">VECTOR</a></code>
+- <code><a href="#foldable-class">FOLDABLE</a> <a href="#vector-type">VECTOR</a></code>
+- <code><a href="#semigroup-class">SEMIGROUP</a> (<a href="#vector-type">VECTOR</a> A)</code>
+
+</details>
+
+
+***
 
 ### Types
 
@@ -2996,6 +3077,24 @@ Remove the element IDX from VEC and replace it with the last element in VEC with
 
 ***
 
+### Types
+
+#### <code>SLICE A</code> <sup><sub>[TYPE]</sub></sup><a name="slice-type"></a>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#eq-class">EQ</a> A &rArr; <a href="#eq-class">EQ</a> (<a href="#slice-type">SLICE</a> A)</code>
+- <code><a href="#iso-class">ISO</a> (<a href="#slice-type">SLICE</a> A) (<a href="#vector-type">VECTOR</a> A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> A) (<a href="#slice-type">SLICE</a> A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#slice-type">SLICE</a> A) (<a href="#vector-type">VECTOR</a> A)</code>
+- <code><a href="#foldable-class">FOLDABLE</a> <a href="#slice-type">SLICE</a></code>
+
+</details>
+
+
+***
+
 ## [slice.lisp](https://github.com/coalton-lang/coalton/tree/main/library/slice.lisp) <a name="coalton-library/slice-slice-lisp-file"></a>
 
 ### Values
@@ -3086,6 +3185,13 @@ Call the function F once for each item in S with its index
 ***
 
 # Package `coalton-library/hashtable`<a name="coalton-library/hashtable-package"></a>
+
+### Types
+
+#### <code>HASHTABLE A B</code> <sup><sub>[TYPE]</sub></sup><a name="hashtable-type"></a>
+
+
+***
 
 ### Types
 
