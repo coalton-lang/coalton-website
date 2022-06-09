@@ -448,8 +448,8 @@ A ratio of integers always in reduced form.
 - <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#fraction-type">FRACTION</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#fraction-type">FRACTION</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#reciprocable-class">RECIPROCABLE</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#fraction-type">FRACTION</a></code>
 
 </details>
@@ -477,9 +477,9 @@ Double precision floating point numer. Uses `double-float`.
 - <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#float-class">FLOAT</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#double-float-type">DOUBLE-FLOAT</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#realfloat-class">REALFLOAT</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#reciprocable-class">RECIPROCABLE</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#trigonometric-class">TRIGONOMETRIC</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
@@ -509,9 +509,9 @@ Single precision floating point numer. Uses `single-float`.
 - <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#float-class">FLOAT</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#realfloat-class">REALFLOAT</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#reciprocable-class">RECIPROCABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#trigonometric-class">TRIGONOMETRIC</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
@@ -996,8 +996,8 @@ A ratio of integers always in reduced form.
 - <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#fraction-type">FRACTION</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#fraction-type">FRACTION</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#reciprocable-class">RECIPROCABLE</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#fraction-type">FRACTION</a></code>
 
 </details>
@@ -1025,9 +1025,9 @@ Double precision floating point numer. Uses `double-float`.
 - <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#float-class">FLOAT</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#double-float-type">DOUBLE-FLOAT</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#realfloat-class">REALFLOAT</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#reciprocable-class">RECIPROCABLE</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#trigonometric-class">TRIGONOMETRIC</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
@@ -1057,9 +1057,9 @@ Single precision floating point numer. Uses `single-float`.
 - <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#float-class">FLOAT</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#realfloat-class">REALFLOAT</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#reciprocable-class">RECIPROCABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#trigonometric-class">TRIGONOMETRIC</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
