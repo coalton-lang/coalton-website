@@ -2834,7 +2834,7 @@ Apply F to the contents of CEL, storing and returning the result
 #### <code>DECREMENT!</code> <sup><sub>[FUNCTION]</sub></sup><a name="decrement!-value"></a>
 <code>&forall; A. <a href="#num-class">NUM</a> :A &rArr; ((<a href="#cell-type">CELL</a> :A) &rarr; :A)</code>
 
-Add one to the contents of CEL, storing and returning the new value
+Subtract one from the contents of CEL, storing and returning the new value
 
 
 ***
@@ -3433,6 +3433,14 @@ Tail recursive in-order fold. Common Lisp calls this operation `reduce`.
 
 If ITER is empty, returns INIT. Otherwise, calls (FUNC STATE ITEM) for each ITEM of ITER to produce a new
 STATE, using INIT as the first STATE.
+
+
+***
+
+#### <code>LAST!</code> <sup><sub>[FUNCTION]</sub></sup><a name="last!-value"></a>
+<code>&forall; A. ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
+
+Yields the last element of ITER, completely consuming it.
 
 
 ***
