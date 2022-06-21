@@ -554,7 +554,7 @@ Single precision floating point numer. Uses `single-float`.
 ### Types
 
 #### <code>LIST A</code> <sup><sub>[TYPE]</sub></sup><a name="list-type"></a>
-- <code>(CONS A (<a href="#list-type">LIST</a> A))</code>
+- <code>(CONS :A (<a href="#list-type">LIST</a> :A))</code>
 - <code>NIL</code>
 
 Homogeneous list of objects represented as a Common Lisp `list`.
@@ -562,23 +562,23 @@ Homogeneous list of objects represented as a Common Lisp `list`.
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#iso-class">ISO</a> (<a href="#vector-type">VECTOR</a> A) (<a href="#list-type">LIST</a> A)</code>
+- <code><a href="#iso-class">ISO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#iso-class">ISO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
-- <code><a href="#hash-class">HASH</a> A &rArr; <a href="#hash-class">HASH</a> (<a href="#list-type">LIST</a> A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> A) (<a href="#list-type">LIST</a> A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> A) (<a href="#vector-type">VECTOR</a> A)</code>
+- <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#hash-class">HASH</a> (<a href="#list-type">LIST</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#string-type">STRING</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>)</code>
 - <code><a href="#monad-class">MONAD</a> <a href="#list-type">LIST</a></code>
-- <code><a href="#monoid-class">MONOID</a> (<a href="#list-type">LIST</a> A)</code>
+- <code><a href="#monoid-class">MONOID</a> (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#list-type">LIST</a></code>
 - <code><a href="#foldable-class">FOLDABLE</a> <a href="#list-type">LIST</a></code>
-- <code><a href="#semigroup-class">SEMIGROUP</a> (<a href="#list-type">LIST</a> A)</code>
+- <code><a href="#semigroup-class">SEMIGROUP</a> (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#alternative-class">ALTERNATIVE</a> <a href="#list-type">LIST</a></code>
 - <code><a href="#applicative-class">APPLICATIVE</a> <a href="#list-type">LIST</a></code>
 - <code><a href="#traversable-class">TRAVERSABLE</a> <a href="#list-type">LIST</a></code>
-- <code><a href="#eq-class">EQ</a> A &rArr; <a href="#eq-class">EQ</a> (<a href="#list-type">LIST</a> A)</code>
-- <code><a href="#addressable-class">ADDRESSABLE</a> (<a href="#list-type">LIST</a> A)</code>
+- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#list-type">LIST</a> :A)</code>
+- <code><a href="#addressable-class">ADDRESSABLE</a> (<a href="#list-type">LIST</a> :A)</code>
 
 </details>
 
@@ -1150,16 +1150,16 @@ Single precision floating point numer. Uses `single-float`.
 ***
 
 #### <code>TUPLE A B</code> <sup><sub>[TYPE]</sub></sup><a name="tuple-type"></a>
-- <code>(TUPLE A B)</code>
+- <code>(TUPLE :A :B)</code>
 
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#iso-class">ISO</a> (<a href="#tuple-type">TUPLE</a> A B) (<a href="#tuple-type">TUPLE</a> B A)</code>
-- <code>(<a href="#ord-class">ORD</a> A) (<a href="#ord-class">ORD</a> B) &rArr; <a href="#ord-class">ORD</a> (<a href="#tuple-type">TUPLE</a> A B)</code>
-- <code>(<a href="#hash-class">HASH</a> A) (<a href="#hash-class">HASH</a> B) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple-type">TUPLE</a> A B)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#tuple-type">TUPLE</a> A B) (<a href="#tuple-type">TUPLE</a> B A)</code>
-- <code>(<a href="#eq-class">EQ</a> A) (<a href="#eq-class">EQ</a> B) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple-type">TUPLE</a> A B)</code>
+- <code><a href="#iso-class">ISO</a> (<a href="#tuple-type">TUPLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :B :A)</code>
+- <code>(<a href="#ord-class">ORD</a> :A) (<a href="#ord-class">ORD</a> :B) &rArr; <a href="#ord-class">ORD</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
+- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#tuple-type">TUPLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :B :A)</code>
+- <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 
 </details>
 
@@ -1167,23 +1167,23 @@ Single precision floating point numer. Uses `single-float`.
 ***
 
 #### <code>RESULT A B</code> <sup><sub>[TYPE]</sub></sup><a name="result-type"></a>
-- <code>(ERR A)</code>
-- <code>(OK B)</code>
+- <code>(ERR :A)</code>
+- <code>(OK :B)</code>
 
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#iso-class">ISO</a> (<a href="#result-type">RESULT</a> <a href="#unit-type">UNIT</a> A) (<a href="#optional-type">OPTIONAL</a> A)</code>
-- <code>(<a href="#ord-class">ORD</a> A) (<a href="#ord-class">ORD</a> B) &rArr; <a href="#ord-class">ORD</a> (<a href="#result-type">RESULT</a> A B)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#optional-type">OPTIONAL</a> A) (<a href="#result-type">RESULT</a> <a href="#unit-type">UNIT</a> A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#result-type">RESULT</a> A B) (<a href="#optional-type">OPTIONAL</a> B)</code>
-- <code><a href="#monad-class">MONAD</a> (<a href="#result-type">RESULT</a> A)</code>
-- <code><a href="#monoid-class">MONOID</a> A &rArr; <a href="#monoid-class">MONOID</a> (<a href="#result-type">RESULT</a> B A)</code>
-- <code><a href="#functor-class">FUNCTOR</a> (<a href="#result-type">RESULT</a> A)</code>
-- <code><a href="#semigroup-class">SEMIGROUP</a> A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#result-type">RESULT</a> B A)</code>
-- <code><a href="#applicative-class">APPLICATIVE</a> (<a href="#result-type">RESULT</a> A)</code>
-- <code><a href="#unwrappable-class">UNWRAPPABLE</a> (<a href="#result-type">RESULT</a> A)</code>
-- <code>(<a href="#eq-class">EQ</a> A) (<a href="#eq-class">EQ</a> B) &rArr; <a href="#eq-class">EQ</a> (<a href="#result-type">RESULT</a> A B)</code>
+- <code><a href="#iso-class">ISO</a> (<a href="#result-type">RESULT</a> <a href="#unit-type">UNIT</a> :A) (<a href="#optional-type">OPTIONAL</a> :A)</code>
+- <code>(<a href="#ord-class">ORD</a> :A) (<a href="#ord-class">ORD</a> :B) &rArr; <a href="#ord-class">ORD</a> (<a href="#result-type">RESULT</a> :A :B)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#optional-type">OPTIONAL</a> :A) (<a href="#result-type">RESULT</a> <a href="#unit-type">UNIT</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#result-type">RESULT</a> :A :B) (<a href="#optional-type">OPTIONAL</a> :B)</code>
+- <code><a href="#monad-class">MONAD</a> (<a href="#result-type">RESULT</a> :A)</code>
+- <code><a href="#monoid-class">MONOID</a> :A &rArr; <a href="#monoid-class">MONOID</a> (<a href="#result-type">RESULT</a> :B :A)</code>
+- <code><a href="#functor-class">FUNCTOR</a> (<a href="#result-type">RESULT</a> :A)</code>
+- <code><a href="#semigroup-class">SEMIGROUP</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#result-type">RESULT</a> :B :A)</code>
+- <code><a href="#applicative-class">APPLICATIVE</a> (<a href="#result-type">RESULT</a> :A)</code>
+- <code><a href="#unwrappable-class">UNWRAPPABLE</a> (<a href="#result-type">RESULT</a> :A)</code>
+- <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) &rArr; <a href="#eq-class">EQ</a> (<a href="#result-type">RESULT</a> :A :B)</code>
 
 </details>
 
@@ -1191,26 +1191,26 @@ Single precision floating point numer. Uses `single-float`.
 ***
 
 #### <code>OPTIONAL A</code> <sup><sub>[TYPE]</sub></sup><a name="optional-type"></a>
-- <code>(SOME A)</code>
+- <code>(SOME :A)</code>
 - <code>NONE</code>
 
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#iso-class">ISO</a> (<a href="#result-type">RESULT</a> <a href="#unit-type">UNIT</a> A) (<a href="#optional-type">OPTIONAL</a> A)</code>
-- <code><a href="#ord-class">ORD</a> A &rArr; <a href="#ord-class">ORD</a> (<a href="#optional-type">OPTIONAL</a> A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#optional-type">OPTIONAL</a> A) (<a href="#result-type">RESULT</a> <a href="#unit-type">UNIT</a> A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#result-type">RESULT</a> A B) (<a href="#optional-type">OPTIONAL</a> B)</code>
+- <code><a href="#iso-class">ISO</a> (<a href="#result-type">RESULT</a> <a href="#unit-type">UNIT</a> :A) (<a href="#optional-type">OPTIONAL</a> :A)</code>
+- <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#ord-class">ORD</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#optional-type">OPTIONAL</a> :A) (<a href="#result-type">RESULT</a> <a href="#unit-type">UNIT</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#result-type">RESULT</a> :A :B) (<a href="#optional-type">OPTIONAL</a> :B)</code>
 - <code><a href="#monad-class">MONAD</a> <a href="#optional-type">OPTIONAL</a></code>
-- <code><a href="#monoid-class">MONOID</a> A &rArr; <a href="#monoid-class">MONOID</a> (<a href="#optional-type">OPTIONAL</a> A)</code>
+- <code><a href="#monoid-class">MONOID</a> :A &rArr; <a href="#monoid-class">MONOID</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#optional-type">OPTIONAL</a></code>
 - <code><a href="#monadfail-class">MONADFAIL</a> <a href="#optional-type">OPTIONAL</a></code>
-- <code><a href="#semigroup-class">SEMIGROUP</a> A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#optional-type">OPTIONAL</a> A)</code>
+- <code><a href="#semigroup-class">SEMIGROUP</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
 - <code><a href="#alternative-class">ALTERNATIVE</a> <a href="#optional-type">OPTIONAL</a></code>
 - <code><a href="#applicative-class">APPLICATIVE</a> <a href="#optional-type">OPTIONAL</a></code>
 - <code><a href="#unwrappable-class">UNWRAPPABLE</a> <a href="#optional-type">OPTIONAL</a></code>
-- <code><a href="#eq-class">EQ</a> A &rArr; <a href="#eq-class">EQ</a> (<a href="#optional-type">OPTIONAL</a> A)</code>
-- <code><a href="#num-class">NUM</a> A &rArr; <a href="#num-class">NUM</a> (<a href="#optional-type">OPTIONAL</a> A)</code>
+- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
+- <code><a href="#num-class">NUM</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
 
 </details>
 
@@ -1220,7 +1220,7 @@ Single precision floating point numer. Uses `single-float`.
 ### Classes
 
 #### <code>ISO</code> <sup><sub>[CLASS]</sub></sup><a name="iso-class"></a>
-<code>(<a href="#into-class">INTO</a> A B) (<a href="#into-class">INTO</a> B A) &rArr; <a href="#iso-class">ISO</a> A B</code>
+<code>(<a href="#into-class">INTO</a> :A :B) (<a href="#into-class">INTO</a> :B :A) &rArr; <a href="#iso-class">ISO</a> :A :B</code>
 
 Opting into this marker typeclass imples that the instances for (Into :a :b) and (Into :b :a) form a bijection.
 
@@ -1229,12 +1229,12 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#iso-class">ISO</a> A A</code>
+- <code><a href="#iso-class">ISO</a> :A :A</code>
 - <code><a href="#iso-class">ISO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
-- <code><a href="#iso-class">ISO</a> (<a href="#tuple-type">TUPLE</a> A B) (<a href="#tuple-type">TUPLE</a> B A)</code>
-- <code><a href="#iso-class">ISO</a> (<a href="#result-type">RESULT</a> <a href="#unit-type">UNIT</a> A) (<a href="#optional-type">OPTIONAL</a> A)</code>
-- <code><a href="#iso-class">ISO</a> (<a href="#vector-type">VECTOR</a> A) (<a href="#list-type">LIST</a> A)</code>
-- <code><a href="#iso-class">ISO</a> (<a href="#slice-type">SLICE</a> A) (<a href="#vector-type">VECTOR</a> A)</code>
+- <code><a href="#iso-class">ISO</a> (<a href="#tuple-type">TUPLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :B :A)</code>
+- <code><a href="#iso-class">ISO</a> (<a href="#result-type">RESULT</a> <a href="#unit-type">UNIT</a> :A) (<a href="#optional-type">OPTIONAL</a> :A)</code>
+- <code><a href="#iso-class">ISO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
+- <code><a href="#iso-class">ISO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
 
 </details>
 
@@ -1242,12 +1242,12 @@ Methods:
 ***
 
 #### <code>ORD</code> <sup><sub>[CLASS]</sub></sup><a name="ord-class"></a>
-<code><a href="#eq-class">EQ</a> A &rArr; <a href="#ord-class">ORD</a> A</code>
+<code><a href="#eq-class">EQ</a> :A &rArr; <a href="#ord-class">ORD</a> :A</code>
 
 Types whose values can be ordered.
 
 Methods:
-- <code>&lt;=&gt; :: (A &rarr; A &rarr; <a href="#ord-type">ORD</a>)</code>
+- <code>&lt;=&gt; :: (:A &rarr; :A &rarr; <a href="#ord-type">ORD</a>)</code>
 
 <details>
 <summary>Instances</summary>
@@ -1270,9 +1270,9 @@ Methods:
 - <code><a href="#ord-class">ORD</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#string-type">STRING</a></code>
-- <code>(<a href="#ord-class">ORD</a> A) (<a href="#ord-class">ORD</a> B) &rArr; <a href="#ord-class">ORD</a> (<a href="#tuple-type">TUPLE</a> A B)</code>
-- <code><a href="#ord-class">ORD</a> A &rArr; <a href="#ord-class">ORD</a> (<a href="#optional-type">OPTIONAL</a> A)</code>
-- <code>(<a href="#ord-class">ORD</a> A) (<a href="#ord-class">ORD</a> B) &rArr; <a href="#ord-class">ORD</a> (<a href="#result-type">RESULT</a> A B)</code>
+- <code>(<a href="#ord-class">ORD</a> :A) (<a href="#ord-class">ORD</a> :B) &rArr; <a href="#ord-class">ORD</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
+- <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#ord-class">ORD</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
+- <code>(<a href="#ord-class">ORD</a> :A) (<a href="#ord-class">ORD</a> :B) &rArr; <a href="#ord-class">ORD</a> (<a href="#result-type">RESULT</a> :A :B)</code>
 - <code><a href="#ord-class">ORD</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 
 </details>
@@ -1281,14 +1281,14 @@ Methods:
 ***
 
 #### <code>HASH</code> <sup><sub>[CLASS]</sub></sup><a name="hash-class"></a>
-<code><a href="#eq-class">EQ</a> A &rArr; <a href="#hash-class">HASH</a> A</code>
+<code><a href="#eq-class">EQ</a> :A &rArr; <a href="#hash-class">HASH</a> :A</code>
 
 Types which can be hashed for storage in hash tables.
 
 Invariant (== left right) implies (== (hash left) (hash right)).
 
 Methods:
-- <code>HASH :: (A &rarr; <a href="#ufix-type">UFIX</a>)</code>
+- <code>HASH :: (:A &rarr; <a href="#ufix-type">UFIX</a>)</code>
 
 <details>
 <summary>Instances</summary>
@@ -1309,11 +1309,11 @@ Methods:
 - <code><a href="#hash-class">HASH</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#string-type">STRING</a></code>
-- <code>(<a href="#hash-class">HASH</a> A) (<a href="#hash-class">HASH</a> B) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple-type">TUPLE</a> A B)</code>
-- <code>(<a href="#hash-class">HASH</a> A) (<a href="#hash-class">HASH</a> B) (<a href="#hash-class">HASH</a> C) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple3-type">TUPLE3</a> A B C)</code>
-- <code>(<a href="#hash-class">HASH</a> A) (<a href="#hash-class">HASH</a> B) (<a href="#hash-class">HASH</a> C) (<a href="#hash-class">HASH</a> D) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple4-type">TUPLE4</a> A B C D)</code>
-- <code>(<a href="#hash-class">HASH</a> A) (<a href="#hash-class">HASH</a> B) (<a href="#hash-class">HASH</a> C) (<a href="#hash-class">HASH</a> D) (<a href="#hash-class">HASH</a> E) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple5-type">TUPLE5</a> A B C D E)</code>
-- <code><a href="#hash-class">HASH</a> A &rArr; <a href="#hash-class">HASH</a> (<a href="#list-type">LIST</a> A)</code>
+- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
+- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple3-type">TUPLE3</a> :A :B :C)</code>
+- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) (<a href="#hash-class">HASH</a> :D) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple4-type">TUPLE4</a> :A :B :C :D)</code>
+- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) (<a href="#hash-class">HASH</a> :D) (<a href="#hash-class">HASH</a> :E) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple5-type">TUPLE5</a> :A :B :C :D :E)</code>
+- <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#hash-class">HASH</a> (<a href="#list-type">LIST</a> :A)</code>
 
 </details>
 
@@ -1321,17 +1321,17 @@ Methods:
 ***
 
 #### <code>INTO</code> <sup><sub>[CLASS]</sub></sup><a name="into-class"></a>
-<code><a href="#into-class">INTO</a> A B</code>
+<code><a href="#into-class">INTO</a> :A :B</code>
 
 INTO imples *every* element of :a can be represented by an element of :b. This conversion might not be injective (i.e., there may be elements in :a that don't correspond to any in :b).
 
 Methods:
-- <code>INTO :: (A &rarr; B)</code>
+- <code>INTO :: (:A &rarr; :B)</code>
 
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#into-class">INTO</a> A A</code>
+- <code><a href="#into-class">INTO</a> :A :A</code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#i64-type">I64</a></code>
@@ -1382,21 +1382,21 @@ Methods:
 - <code><a href="#into-class">INTO</a> <a href="#ufix-type">UFIX</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
-- <code><a href="#complex-class">COMPLEX</a> A &rArr; <a href="#into-class">INTO</a> A (<a href="#complex-type">COMPLEX</a> A)</code>
+- <code><a href="#complex-class">COMPLEX</a> :A &rArr; <a href="#into-class">INTO</a> :A (<a href="#complex-type">COMPLEX</a> :A)</code>
 - <code><a href="#into-class">INTO</a> <a href="#string-type">STRING</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#single-float-type">SINGLE-FLOAT</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#double-float-type">DOUBLE-FLOAT</a> <a href="#string-type">STRING</a></code>
-- <code><a href="#into-class">INTO</a> (<a href="#tuple-type">TUPLE</a> A B) (<a href="#tuple-type">TUPLE</a> B A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#result-type">RESULT</a> A B) (<a href="#optional-type">OPTIONAL</a> B)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#optional-type">OPTIONAL</a> A) (<a href="#result-type">RESULT</a> <a href="#unit-type">UNIT</a> A)</code>
-- <code><a href="#into-class">INTO</a> A (<a href="#cell-type">CELL</a> A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#cell-type">CELL</a> A) A</code>
-- <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> A) (<a href="#vector-type">VECTOR</a> A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> A) (<a href="#list-type">LIST</a> A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#slice-type">SLICE</a> A) (<a href="#vector-type">VECTOR</a> A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> A) (<a href="#slice-type">SLICE</a> A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#tuple-type">TUPLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :B :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#result-type">RESULT</a> :A :B) (<a href="#optional-type">OPTIONAL</a> :B)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#optional-type">OPTIONAL</a> :A) (<a href="#result-type">RESULT</a> <a href="#unit-type">UNIT</a> :A)</code>
+- <code><a href="#into-class">INTO</a> :A (<a href="#cell-type">CELL</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#cell-type">CELL</a> :A) :A</code>
+- <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#slice-type">SLICE</a> :A)</code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#single-float-type">SINGLE-FLOAT</a> <a href="#big-float-type">BIG-FLOAT</a></code>
@@ -1408,20 +1408,20 @@ Methods:
 ***
 
 #### <code>MONAD</code> <sup><sub>[CLASS]</sub></sup><a name="monad-class"></a>
-<code><a href="#applicative-class">APPLICATIVE</a> A &rArr; <a href="#monad-class">MONAD</a> A</code>
+<code><a href="#applicative-class">APPLICATIVE</a> :A &rArr; <a href="#monad-class">MONAD</a> :A</code>
 
 Types which are monads as defined in Haskell. See https://wiki.haskell.org/Monad for more information.
 
 Methods:
-- <code>&gt;&gt;= :: ((A B) &rarr; (B &rarr; (A C)) &rarr; (A C))</code>
+- <code>&gt;&gt;= :: ((:A :B) &rarr; (:B &rarr; (:A :C)) &rarr; (:A :C))</code>
 
 <details>
 <summary>Instances</summary>
 
 - <code><a href="#monad-class">MONAD</a> <a href="#optional-type">OPTIONAL</a></code>
 - <code><a href="#monad-class">MONAD</a> <a href="#list-type">LIST</a></code>
-- <code><a href="#monad-class">MONAD</a> (<a href="#result-type">RESULT</a> A)</code>
-- <code><a href="#monad-class">MONAD</a> (<a href="#st-type">ST</a> A)</code>
+- <code><a href="#monad-class">MONAD</a> (<a href="#result-type">RESULT</a> :A)</code>
+- <code><a href="#monad-class">MONAD</a> (<a href="#st-type">ST</a> :A)</code>
 
 </details>
 
@@ -1429,20 +1429,20 @@ Methods:
 ***
 
 #### <code>MONOID</code> <sup><sub>[CLASS]</sub></sup><a name="monoid-class"></a>
-<code><a href="#semigroup-class">SEMIGROUP</a> A &rArr; <a href="#monoid-class">MONOID</a> A</code>
+<code><a href="#semigroup-class">SEMIGROUP</a> :A &rArr; <a href="#monoid-class">MONOID</a> :A</code>
 
 Types with an associative binary operation and identity defined.
 
 Methods:
-- <code>MEMPTY :: A</code>
+- <code>MEMPTY :: :A</code>
 
 <details>
 <summary>Instances</summary>
 
 - <code><a href="#monoid-class">MONOID</a> <a href="#string-type">STRING</a></code>
-- <code><a href="#monoid-class">MONOID</a> A &rArr; <a href="#monoid-class">MONOID</a> (<a href="#optional-type">OPTIONAL</a> A)</code>
-- <code><a href="#monoid-class">MONOID</a> (<a href="#list-type">LIST</a> A)</code>
-- <code><a href="#monoid-class">MONOID</a> A &rArr; <a href="#monoid-class">MONOID</a> (<a href="#result-type">RESULT</a> B A)</code>
+- <code><a href="#monoid-class">MONOID</a> :A &rArr; <a href="#monoid-class">MONOID</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
+- <code><a href="#monoid-class">MONOID</a> (<a href="#list-type">LIST</a> :A)</code>
+- <code><a href="#monoid-class">MONOID</a> :A &rArr; <a href="#monoid-class">MONOID</a> (<a href="#result-type">RESULT</a> :B :A)</code>
 
 </details>
 
@@ -1450,22 +1450,22 @@ Methods:
 ***
 
 #### <code>FUNCTOR</code> <sup><sub>[CLASS]</sub></sup><a name="functor-class"></a>
-<code><a href="#functor-class">FUNCTOR</a> A</code>
+<code><a href="#functor-class">FUNCTOR</a> :A</code>
 
 Types which can map an inner type where the mapping adheres to the identity and composition laws.
 
 Methods:
-- <code>MAP :: ((B &rarr; C) &rarr; (A B) &rarr; (A C))</code>
+- <code>MAP :: ((:B &rarr; :C) &rarr; (:A :B) &rarr; (:A :C))</code>
 
 <details>
 <summary>Instances</summary>
 
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#optional-type">OPTIONAL</a></code>
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#list-type">LIST</a></code>
-- <code><a href="#functor-class">FUNCTOR</a> (<a href="#result-type">RESULT</a> A)</code>
+- <code><a href="#functor-class">FUNCTOR</a> (<a href="#result-type">RESULT</a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#cell-type">CELL</a></code>
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#vector-type">VECTOR</a></code>
-- <code><a href="#functor-class">FUNCTOR</a> (<a href="#st-type">ST</a> A)</code>
+- <code><a href="#functor-class">FUNCTOR</a> (<a href="#st-type">ST</a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#iterator-type">ITERATOR</a></code>
 
 </details>
@@ -1474,12 +1474,12 @@ Methods:
 ***
 
 #### <code>TRYINTO</code> <sup><sub>[CLASS]</sub></sup><a name="tryinto-class"></a>
-<code><a href="#tryinto-class">TRYINTO</a> A B</code>
+<code><a href="#tryinto-class">TRYINTO</a> :A :B</code>
 
 TRY-INTO implies *most* elements of :a can be represented exactly by an element of :b, but sometimes not. If not, an error string is returned.
 
 Methods:
-- <code>TRYINTO :: (A &rarr; (<a href="#result-type">RESULT</a> <a href="#string-type">STRING</a> B))</code>
+- <code>TRYINTO :: (:A &rarr; (<a href="#result-type">RESULT</a> <a href="#string-type">STRING</a> :B))</code>
 
 <details>
 <summary>Instances</summary>
@@ -1494,7 +1494,7 @@ Methods:
 ***
 
 #### <code>FOLDABLE</code> <sup><sub>[CLASS]</sub></sup><a name="foldable-class"></a>
-<code><a href="#foldable-class">FOLDABLE</a> A</code>
+<code><a href="#foldable-class">FOLDABLE</a> :A</code>
 
 Types which can be folded into a single element.
 
@@ -1503,8 +1503,8 @@ Types which can be folded into a single element.
 `foldr` is a right non tail recursive fold
 
 Methods:
-- <code>FOLD :: ((B &rarr; C &rarr; B) &rarr; B &rarr; (A C) &rarr; B)</code>
-- <code>FOLDR :: ((D &rarr; E &rarr; E) &rarr; E &rarr; (A D) &rarr; E)</code>
+- <code>FOLD :: ((:B &rarr; :C &rarr; :B) &rarr; :B &rarr; (:A :C) &rarr; :B)</code>
+- <code>FOLDR :: ((:D &rarr; :E &rarr; :E) &rarr; :E &rarr; (:A :D) &rarr; :E)</code>
 
 <details>
 <summary>Instances</summary>
@@ -1519,10 +1519,10 @@ Methods:
 ***
 
 #### <code>MONADFAIL</code> <sup><sub>[CLASS]</sub></sup><a name="monadfail-class"></a>
-<code><a href="#monad-class">MONAD</a> A &rArr; <a href="#monadfail-class">MONADFAIL</a> A</code>
+<code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monadfail-class">MONADFAIL</a> :A</code>
 
 Methods:
-- <code>FAIL :: (<a href="#string-type">STRING</a> &rarr; (A B))</code>
+- <code>FAIL :: (<a href="#string-type">STRING</a> &rarr; (:A :B))</code>
 
 <details>
 <summary>Instances</summary>
@@ -1535,22 +1535,22 @@ Methods:
 ***
 
 #### <code>SEMIGROUP</code> <sup><sub>[CLASS]</sub></sup><a name="semigroup-class"></a>
-<code><a href="#semigroup-class">SEMIGROUP</a> A</code>
+<code><a href="#semigroup-class">SEMIGROUP</a> :A</code>
 
 Types with an associative binary operation defined.
 
 Methods:
-- <code>&lt;&gt; :: (A &rarr; A &rarr; A)</code>
+- <code>&lt;&gt; :: (:A &rarr; :A &rarr; :A)</code>
 
 <details>
 <summary>Instances</summary>
 
 - <code><a href="#semigroup-class">SEMIGROUP</a> <a href="#string-type">STRING</a></code>
-- <code><a href="#semigroup-class">SEMIGROUP</a> A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#optional-type">OPTIONAL</a> A)</code>
-- <code><a href="#semigroup-class">SEMIGROUP</a> (<a href="#list-type">LIST</a> A)</code>
-- <code><a href="#semigroup-class">SEMIGROUP</a> A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#result-type">RESULT</a> B A)</code>
-- <code><a href="#semigroup-class">SEMIGROUP</a> A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#cell-type">CELL</a> A)</code>
-- <code><a href="#semigroup-class">SEMIGROUP</a> (<a href="#vector-type">VECTOR</a> A)</code>
+- <code><a href="#semigroup-class">SEMIGROUP</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
+- <code><a href="#semigroup-class">SEMIGROUP</a> (<a href="#list-type">LIST</a> :A)</code>
+- <code><a href="#semigroup-class">SEMIGROUP</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#result-type">RESULT</a> :B :A)</code>
+- <code><a href="#semigroup-class">SEMIGROUP</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#cell-type">CELL</a> :A)</code>
+- <code><a href="#semigroup-class">SEMIGROUP</a> (<a href="#vector-type">VECTOR</a> :A)</code>
 
 </details>
 
@@ -1558,13 +1558,13 @@ Methods:
 ***
 
 #### <code>ALTERNATIVE</code> <sup><sub>[CLASS]</sub></sup><a name="alternative-class"></a>
-<code><a href="#applicative-class">APPLICATIVE</a> A &rArr; <a href="#alternative-class">ALTERNATIVE</a> A</code>
+<code><a href="#applicative-class">APPLICATIVE</a> :A &rArr; <a href="#alternative-class">ALTERNATIVE</a> :A</code>
 
 Types which are monoids on applicative functors.
 
 Methods:
-- <code>ALT :: ((A B) &rarr; (A B) &rarr; (A B))</code>
-- <code>EMPTY :: (A C)</code>
+- <code>ALT :: ((:A :B) &rarr; (:A :B) &rarr; (:A :B))</code>
+- <code>EMPTY :: (:A :C)</code>
 
 <details>
 <summary>Instances</summary>
@@ -1578,22 +1578,22 @@ Methods:
 ***
 
 #### <code>APPLICATIVE</code> <sup><sub>[CLASS]</sub></sup><a name="applicative-class"></a>
-<code><a href="#functor-class">FUNCTOR</a> A &rArr; <a href="#applicative-class">APPLICATIVE</a> A</code>
+<code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#applicative-class">APPLICATIVE</a> :A</code>
 
 Types which are a functor which can embed pure expressions and sequence operations.
 
 Methods:
-- <code>PURE :: (B &rarr; (A B))</code>
-- <code>LIFTA2 :: ((C &rarr; D &rarr; E) &rarr; (A C) &rarr; (A D) &rarr; (A E))</code>
+- <code>PURE :: (:B &rarr; (:A :B))</code>
+- <code>LIFTA2 :: ((:C &rarr; :D &rarr; :E) &rarr; (:A :C) &rarr; (:A :D) &rarr; (:A :E))</code>
 
 <details>
 <summary>Instances</summary>
 
 - <code><a href="#applicative-class">APPLICATIVE</a> <a href="#optional-type">OPTIONAL</a></code>
 - <code><a href="#applicative-class">APPLICATIVE</a> <a href="#list-type">LIST</a></code>
-- <code><a href="#applicative-class">APPLICATIVE</a> (<a href="#result-type">RESULT</a> A)</code>
+- <code><a href="#applicative-class">APPLICATIVE</a> (<a href="#result-type">RESULT</a> :A)</code>
 - <code><a href="#applicative-class">APPLICATIVE</a> <a href="#cell-type">CELL</a></code>
-- <code><a href="#applicative-class">APPLICATIVE</a> (<a href="#st-type">ST</a> A)</code>
+- <code><a href="#applicative-class">APPLICATIVE</a> (<a href="#st-type">ST</a> :A)</code>
 
 </details>
 
@@ -1601,10 +1601,10 @@ Methods:
 ***
 
 #### <code>TRAVERSABLE</code> <sup><sub>[CLASS]</sub></sup><a name="traversable-class"></a>
-<code><a href="#traversable-class">TRAVERSABLE</a> A</code>
+<code><a href="#traversable-class">TRAVERSABLE</a> :A</code>
 
 Methods:
-- <code>TRAVERSE :: <a href="#applicative-class">APPLICATIVE</a> B &rArr; ((C &rarr; (B D)) &rarr; (A C) &rarr; (B (A D)))</code>
+- <code>TRAVERSE :: <a href="#applicative-class">APPLICATIVE</a> :B &rArr; ((:C &rarr; (:B :D)) &rarr; (:A :C) &rarr; (:B (:A :D)))</code>
 
 <details>
 <summary>Instances</summary>
@@ -1617,7 +1617,7 @@ Methods:
 ***
 
 #### <code>UNWRAPPABLE</code> <sup><sub>[CLASS]</sub></sup><a name="unwrappable-class"></a>
-<code><a href="#unwrappable-class">UNWRAPPABLE</a> A</code>
+<code><a href="#unwrappable-class">UNWRAPPABLE</a> :A</code>
 
 Containers which can be unwrapped to get access to their contents.
 
@@ -1629,13 +1629,13 @@ Typical `fail' continuations are:
 - Signal an error.
 
 Methods:
-- <code>UNWRAP-OR-ELSE :: ((<a href="#unit-type">UNIT</a> &rarr; B) &rarr; (A B) &rarr; B)</code>
+- <code>UNWRAP-OR-ELSE :: ((<a href="#unit-type">UNIT</a> &rarr; :B) &rarr; (:A :B) &rarr; :B)</code>
 
 <details>
 <summary>Instances</summary>
 
 - <code><a href="#unwrappable-class">UNWRAPPABLE</a> <a href="#optional-type">OPTIONAL</a></code>
-- <code><a href="#unwrappable-class">UNWRAPPABLE</a> (<a href="#result-type">RESULT</a> A)</code>
+- <code><a href="#unwrappable-class">UNWRAPPABLE</a> (<a href="#result-type">RESULT</a> :A)</code>
 
 </details>
 
@@ -1808,16 +1808,16 @@ Are X or Y True, but not both?
 ### Classes
 
 #### <code>BITS</code> <sup><sub>[CLASS]</sub></sup><a name="bits-class"></a>
-<code><a href="#num-class">NUM</a> A &rArr; <a href="#bits-class">BITS</a> A</code>
+<code><a href="#num-class">NUM</a> :A &rArr; <a href="#bits-class">BITS</a> :A</code>
 
 Operations on the bits of twos-complement integers
 
 Methods:
-- <code>AND :: (A &rarr; A &rarr; A)</code>
-- <code>OR :: (A &rarr; A &rarr; A)</code>
-- <code>XOR :: (A &rarr; A &rarr; A)</code>
-- <code>NOT :: (A &rarr; A)</code>
-- <code>SHIFT :: (<a href="#integer-type">INTEGER</a> &rarr; A &rarr; A)</code>
+- <code>AND :: (:A &rarr; :A &rarr; :A)</code>
+- <code>OR :: (:A &rarr; :A &rarr; :A)</code>
+- <code>XOR :: (:A &rarr; :A &rarr; :A)</code>
+- <code>NOT :: (:A &rarr; :A)</code>
+- <code>SHIFT :: (<a href="#integer-type">INTEGER</a> &rarr; :A &rarr; :A)</code>
 
 <details>
 <summary>Instances</summary>
@@ -1936,13 +1936,13 @@ does not have that suffix.
 ### Types
 
 #### <code>TUPLE3 A B C</code> <sup><sub>[TYPE]</sub></sup><a name="tuple3-type"></a>
-- <code>(TUPLE3 A B C)</code>
+- <code>(TUPLE3 :A :B :C)</code>
 
 <details>
 <summary>Instances</summary>
 
-- <code>(<a href="#hash-class">HASH</a> A) (<a href="#hash-class">HASH</a> B) (<a href="#hash-class">HASH</a> C) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple3-type">TUPLE3</a> A B C)</code>
-- <code>(<a href="#eq-class">EQ</a> A) (<a href="#eq-class">EQ</a> B) (<a href="#eq-class">EQ</a> C) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple3-type">TUPLE3</a> A B C)</code>
+- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple3-type">TUPLE3</a> :A :B :C)</code>
+- <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) (<a href="#eq-class">EQ</a> :C) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple3-type">TUPLE3</a> :A :B :C)</code>
 
 </details>
 
@@ -1950,13 +1950,13 @@ does not have that suffix.
 ***
 
 #### <code>TUPLE4 A B C D</code> <sup><sub>[TYPE]</sub></sup><a name="tuple4-type"></a>
-- <code>(TUPLE4 A B C D)</code>
+- <code>(TUPLE4 :A :B :C :D)</code>
 
 <details>
 <summary>Instances</summary>
 
-- <code>(<a href="#hash-class">HASH</a> A) (<a href="#hash-class">HASH</a> B) (<a href="#hash-class">HASH</a> C) (<a href="#hash-class">HASH</a> D) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple4-type">TUPLE4</a> A B C D)</code>
-- <code>(<a href="#eq-class">EQ</a> A) (<a href="#eq-class">EQ</a> B) (<a href="#eq-class">EQ</a> C) (<a href="#eq-class">EQ</a> D) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple4-type">TUPLE4</a> A B C D)</code>
+- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) (<a href="#hash-class">HASH</a> :D) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple4-type">TUPLE4</a> :A :B :C :D)</code>
+- <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) (<a href="#eq-class">EQ</a> :C) (<a href="#eq-class">EQ</a> :D) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple4-type">TUPLE4</a> :A :B :C :D)</code>
 
 </details>
 
@@ -1964,13 +1964,13 @@ does not have that suffix.
 ***
 
 #### <code>TUPLE5 A B C D E</code> <sup><sub>[TYPE]</sub></sup><a name="tuple5-type"></a>
-- <code>(TUPLE5 A B C D E)</code>
+- <code>(TUPLE5 :A :B :C :D :E)</code>
 
 <details>
 <summary>Instances</summary>
 
-- <code>(<a href="#hash-class">HASH</a> A) (<a href="#hash-class">HASH</a> B) (<a href="#hash-class">HASH</a> C) (<a href="#hash-class">HASH</a> D) (<a href="#hash-class">HASH</a> E) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple5-type">TUPLE5</a> A B C D E)</code>
-- <code>(<a href="#eq-class">EQ</a> A) (<a href="#eq-class">EQ</a> B) (<a href="#eq-class">EQ</a> C) (<a href="#eq-class">EQ</a> D) (<a href="#eq-class">EQ</a> E) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple5-type">TUPLE5</a> A B C D E)</code>
+- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) (<a href="#hash-class">HASH</a> :D) (<a href="#hash-class">HASH</a> :E) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple5-type">TUPLE5</a> :A :B :C :D :E)</code>
+- <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) (<a href="#eq-class">EQ</a> :C) (<a href="#eq-class">EQ</a> :D) (<a href="#eq-class">EQ</a> :E) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple5-type">TUPLE5</a> :A :B :C :D :E)</code>
 
 </details>
 
@@ -2668,14 +2668,14 @@ Print a line to *STANDARD-OUTPUT* in the form "{STR}: {ITEM}"
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#into-class">INTO</a> (<a href="#cell-type">CELL</a> A) A</code>
-- <code><a href="#into-class">INTO</a> A (<a href="#cell-type">CELL</a> A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#cell-type">CELL</a> :A) :A</code>
+- <code><a href="#into-class">INTO</a> :A (<a href="#cell-type">CELL</a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#cell-type">CELL</a></code>
-- <code><a href="#semigroup-class">SEMIGROUP</a> A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#cell-type">CELL</a> A)</code>
+- <code><a href="#semigroup-class">SEMIGROUP</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#cell-type">CELL</a> :A)</code>
 - <code><a href="#applicative-class">APPLICATIVE</a> <a href="#cell-type">CELL</a></code>
-- <code><a href="#eq-class">EQ</a> A &rArr; <a href="#eq-class">EQ</a> (<a href="#cell-type">CELL</a> A)</code>
-- <code><a href="#num-class">NUM</a> A &rArr; <a href="#num-class">NUM</a> (<a href="#cell-type">CELL</a> A)</code>
-- <code><a href="#addressable-class">ADDRESSABLE</a> (<a href="#cell-type">CELL</a> A)</code>
+- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#cell-type">CELL</a> :A)</code>
+- <code><a href="#num-class">NUM</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#cell-type">CELL</a> :A)</code>
+- <code><a href="#addressable-class">ADDRESSABLE</a> (<a href="#cell-type">CELL</a> :A)</code>
 
 </details>
 
@@ -2689,14 +2689,14 @@ Print a line to *STANDARD-OUTPUT* in the form "{STR}: {ITEM}"
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#into-class">INTO</a> (<a href="#cell-type">CELL</a> A) A</code>
-- <code><a href="#into-class">INTO</a> A (<a href="#cell-type">CELL</a> A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#cell-type">CELL</a> :A) :A</code>
+- <code><a href="#into-class">INTO</a> :A (<a href="#cell-type">CELL</a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#cell-type">CELL</a></code>
-- <code><a href="#semigroup-class">SEMIGROUP</a> A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#cell-type">CELL</a> A)</code>
+- <code><a href="#semigroup-class">SEMIGROUP</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#cell-type">CELL</a> :A)</code>
 - <code><a href="#applicative-class">APPLICATIVE</a> <a href="#cell-type">CELL</a></code>
-- <code><a href="#eq-class">EQ</a> A &rArr; <a href="#eq-class">EQ</a> (<a href="#cell-type">CELL</a> A)</code>
-- <code><a href="#num-class">NUM</a> A &rArr; <a href="#num-class">NUM</a> (<a href="#cell-type">CELL</a> A)</code>
-- <code><a href="#addressable-class">ADDRESSABLE</a> (<a href="#cell-type">CELL</a> A)</code>
+- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#cell-type">CELL</a> :A)</code>
+- <code><a href="#num-class">NUM</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#cell-type">CELL</a> :A)</code>
+- <code><a href="#addressable-class">ADDRESSABLE</a> (<a href="#cell-type">CELL</a> :A)</code>
 
 </details>
 
@@ -2790,17 +2790,17 @@ Apply F to the contents of CEL, swapping the result for the old value
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#iso-class">ISO</a> (<a href="#slice-type">SLICE</a> A) (<a href="#vector-type">VECTOR</a> A)</code>
-- <code><a href="#iso-class">ISO</a> (<a href="#vector-type">VECTOR</a> A) (<a href="#list-type">LIST</a> A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> A) (<a href="#slice-type">SLICE</a> A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#slice-type">SLICE</a> A) (<a href="#vector-type">VECTOR</a> A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> A) (<a href="#list-type">LIST</a> A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> A) (<a href="#vector-type">VECTOR</a> A)</code>
+- <code><a href="#iso-class">ISO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#iso-class">ISO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#slice-type">SLICE</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#vector-type">VECTOR</a></code>
 - <code><a href="#foldable-class">FOLDABLE</a> <a href="#vector-type">VECTOR</a></code>
-- <code><a href="#semigroup-class">SEMIGROUP</a> (<a href="#vector-type">VECTOR</a> A)</code>
-- <code><a href="#eq-class">EQ</a> A &rArr; <a href="#eq-class">EQ</a> (<a href="#vector-type">VECTOR</a> A)</code>
-- <code><a href="#addressable-class">ADDRESSABLE</a> (<a href="#vector-type">VECTOR</a> A)</code>
+- <code><a href="#semigroup-class">SEMIGROUP</a> (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#addressable-class">ADDRESSABLE</a> (<a href="#vector-type">VECTOR</a> :A)</code>
 
 </details>
 
@@ -2814,17 +2814,17 @@ Apply F to the contents of CEL, swapping the result for the old value
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#iso-class">ISO</a> (<a href="#slice-type">SLICE</a> A) (<a href="#vector-type">VECTOR</a> A)</code>
-- <code><a href="#iso-class">ISO</a> (<a href="#vector-type">VECTOR</a> A) (<a href="#list-type">LIST</a> A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> A) (<a href="#slice-type">SLICE</a> A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#slice-type">SLICE</a> A) (<a href="#vector-type">VECTOR</a> A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> A) (<a href="#list-type">LIST</a> A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> A) (<a href="#vector-type">VECTOR</a> A)</code>
+- <code><a href="#iso-class">ISO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#iso-class">ISO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#slice-type">SLICE</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#vector-type">VECTOR</a></code>
 - <code><a href="#foldable-class">FOLDABLE</a> <a href="#vector-type">VECTOR</a></code>
-- <code><a href="#semigroup-class">SEMIGROUP</a> (<a href="#vector-type">VECTOR</a> A)</code>
-- <code><a href="#eq-class">EQ</a> A &rArr; <a href="#eq-class">EQ</a> (<a href="#vector-type">VECTOR</a> A)</code>
-- <code><a href="#addressable-class">ADDRESSABLE</a> (<a href="#vector-type">VECTOR</a> A)</code>
+- <code><a href="#semigroup-class">SEMIGROUP</a> (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#addressable-class">ADDRESSABLE</a> (<a href="#vector-type">VECTOR</a> :A)</code>
 
 </details>
 
@@ -3044,12 +3044,12 @@ Remove the element IDX from VEC and replace it with the last element in VEC with
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#iso-class">ISO</a> (<a href="#slice-type">SLICE</a> A) (<a href="#vector-type">VECTOR</a> A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> A) (<a href="#slice-type">SLICE</a> A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#slice-type">SLICE</a> A) (<a href="#vector-type">VECTOR</a> A)</code>
+- <code><a href="#iso-class">ISO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#slice-type">SLICE</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#foldable-class">FOLDABLE</a> <a href="#slice-type">SLICE</a></code>
-- <code><a href="#eq-class">EQ</a> A &rArr; <a href="#eq-class">EQ</a> (<a href="#slice-type">SLICE</a> A)</code>
-- <code><a href="#addressable-class">ADDRESSABLE</a> (<a href="#slice-type">SLICE</a> A)</code>
+- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#slice-type">SLICE</a> :A)</code>
+- <code><a href="#addressable-class">ADDRESSABLE</a> (<a href="#slice-type">SLICE</a> :A)</code>
 
 </details>
 
@@ -3063,12 +3063,12 @@ Remove the element IDX from VEC and replace it with the last element in VEC with
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#iso-class">ISO</a> (<a href="#slice-type">SLICE</a> A) (<a href="#vector-type">VECTOR</a> A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> A) (<a href="#slice-type">SLICE</a> A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#slice-type">SLICE</a> A) (<a href="#vector-type">VECTOR</a> A)</code>
+- <code><a href="#iso-class">ISO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#slice-type">SLICE</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#foldable-class">FOLDABLE</a> <a href="#slice-type">SLICE</a></code>
-- <code><a href="#eq-class">EQ</a> A &rArr; <a href="#eq-class">EQ</a> (<a href="#slice-type">SLICE</a> A)</code>
-- <code><a href="#addressable-class">ADDRESSABLE</a> (<a href="#slice-type">SLICE</a> A)</code>
+- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#slice-type">SLICE</a> :A)</code>
+- <code><a href="#addressable-class">ADDRESSABLE</a> (<a href="#slice-type">SLICE</a> :A)</code>
 
 </details>
 
@@ -3173,7 +3173,7 @@ Call the function F once for each item in S with its index
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#addressable-class">ADDRESSABLE</a> (<a href="#hashtable-type">HASHTABLE</a> A B)</code>
+- <code><a href="#addressable-class">ADDRESSABLE</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B)</code>
 
 </details>
 
@@ -3187,7 +3187,7 @@ Call the function F once for each item in S with its index
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#addressable-class">ADDRESSABLE</a> (<a href="#hashtable-type">HASHTABLE</a> A B)</code>
+- <code><a href="#addressable-class">ADDRESSABLE</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B)</code>
 
 </details>
 
