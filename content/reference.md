@@ -17,6 +17,12 @@ identifier: Reference
 - <a href="#coalton-package"><code>coalton</code></a>
 - <a href="#coalton-library/classes-package"><code>coalton-library/classes</code></a>
 - <a href="#coalton-library/builtin-package"><code>coalton-library/builtin</code></a>
+- <a href="#coalton-library/functions-package"><code>coalton-library/functions</code></a>
+- <a href="#coalton-library/math/arith-package"><code>coalton-library/math/arith</code></a>
+- <a href="#coalton-library/math/integral-package"><code>coalton-library/math/integral</code></a>
+- <a href="#coalton-library/math/real-package"><code>coalton-library/math/real</code></a>
+- <a href="#coalton-library/math/complex-package"><code>coalton-library/math/complex</code></a>
+- <a href="#coalton-library/math/elementary-package"><code>coalton-library/math/elementary</code></a>
 - <a href="#coalton-library/bits-package"><code>coalton-library/bits</code></a>
 - <a href="#coalton-library/char-package"><code>coalton-library/char</code></a>
 - <a href="#coalton-library/string-package"><code>coalton-library/string</code></a>
@@ -24,7 +30,6 @@ identifier: Reference
 - <a href="#coalton-library/optional-package"><code>coalton-library/optional</code></a>
 - <a href="#coalton-library/list-package"><code>coalton-library/list</code></a>
 - <a href="#coalton-library/result-package"><code>coalton-library/result</code></a>
-- <a href="#coalton-library/functions-package"><code>coalton-library/functions</code></a>
 - <a href="#coalton-library/cell-package"><code>coalton-library/cell</code></a>
 - <a href="#coalton-library/vector-package"><code>coalton-library/vector</code></a>
 - <a href="#coalton-library/slice-package"><code>coalton-library/slice</code></a>
@@ -1801,6 +1806,960 @@ Are X or Y True, but not both?
 
 ***
 
+# Package `coalton-library/functions`<a name="coalton-library/functions-package"></a>
+
+## [functions.lisp](https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp) <a name="coalton-library/functions-functions-lisp-file"></a>
+
+### Values
+
+#### <code>/=</code> <sup><sub>[FUNCTION]</sub></sup><a name="/=-value"></a>
+<code>&forall; A. <a href="#eq-class">EQ</a> :A &rArr; (:A &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+***
+
+#### <code>ID</code> <sup><sub>[FUNCTION]</sub></sup><a name="id-value"></a>
+<code>&forall; A. (:A &rarr; :A)</code>
+
+A function that always returns its argument.
+
+
+***
+
+#### <code>FIX</code> <sup><sub>[FUNCTION]</sub></sup><a name="fix-value"></a>
+<code>&forall; A B. (((:A &rarr; :B) &rarr; :A &rarr; :B) &rarr; :A &rarr; :B)</code>
+
+Compute the fixed point of a unary function. This is equivalent to the Y-combinator of the lambda calculus. This combinator allows recursion without specific assignment of names. For example, the factorial function can be written
+
+
+    ```
+    (define fact
+      (fix
+        (fn (f n)
+          (if (== n 0)
+            1
+            (* n (f (- n 1)))))))
+    ```
+
+
+***
+
+#### <code>ASUM</code> <sup><sub>[FUNCTION]</sub></sup><a name="asum-value"></a>
+<code>&forall; A B C. (<a href="#alternative-class">ALTERNATIVE</a> :B) (<a href="#foldable-class">FOLDABLE</a> :A) &rArr; ((:A (:B :C)) &rarr; (:B :C))</code>
+
+Fold over a list using alt
+
+
+***
+
+#### <code>FLIP</code> <sup><sub>[FUNCTION]</sub></sup><a name="flip-value"></a>
+<code>&forall; A B C. ((:A &rarr; :B &rarr; :C) &rarr; :B &rarr; :A &rarr; :C)</code>
+
+Returns a function that takes its arguments in reverse order.
+
+
+***
+
+#### <code>MSUM</code> <sup><sub>[FUNCTION]</sub></sup><a name="msum-value"></a>
+<code>&forall; A B. (<a href="#monoid-class">MONOID</a> :B) (<a href="#foldable-class">FOLDABLE</a> :A) &rArr; ((:A :B) &rarr; :B)</code>
+
+Fold over a list using &lt;&gt;
+
+
+***
+
+#### <code>CONST</code> <sup><sub>[FUNCTION]</sub></sup><a name="const-value"></a>
+<code>&forall; A B. (:A &rarr; :B &rarr; :A)</code>
+
+A function that always returns its first argument.
+
+
+***
+
+#### <code>TRACE</code> <sup><sub>[FUNCTION]</sub></sup><a name="trace-value"></a>
+<code>(<a href="#string-type">STRING</a> &rarr; <a href="#unit-type">UNIT</a>)</code>
+
+Print a line to *STANDARD-OUTPUT*
+
+
+***
+
+#### <code>REDUCE</code> <sup><sub>[FUNCTION]</sub></sup><a name="reduce-value"></a>
+<code>&forall; A B C. <a href="#foldable-class">FOLDABLE</a> :C &rArr; ((:A &rarr; :B &rarr; :B) &rarr; :B &rarr; (:C :A) &rarr; :B)</code>
+
+The same as `fold` but with the argument order swapped to match `cl:reduce`
+
+
+***
+
+#### <code>COMPOSE</code> <sup><sub>[FUNCTION]</sub></sup><a name="compose-value"></a>
+<code>&forall; A B C. ((:A &rarr; :B) &rarr; (:C &rarr; :A) &rarr; :C &rarr; :B)</code>
+
+***
+
+#### <code>CONJOIN</code> <sup><sub>[FUNCTION]</sub></sup><a name="conjoin-value"></a>
+<code>&forall; A. ((:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Compute the conjunction of two unary Boolean functions.
+
+
+***
+
+#### <code>DISJOIN</code> <sup><sub>[FUNCTION]</sub></sup><a name="disjoin-value"></a>
+<code>&forall; A. ((:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Compute the disjunction of two unary Boolean functions.
+
+
+***
+
+#### <code>UNCURRY</code> <sup><sub>[FUNCTION]</sub></sup><a name="uncurry-value"></a>
+<code>&forall; A B C. ((:A &rarr; :B &rarr; :C) &rarr; (<a href="#tuple-type">TUPLE</a> :A :B) &rarr; :C)</code>
+
+***
+
+#### <code>COMPLEMENT</code> <sup><sub>[FUNCTION]</sub></sup><a name="complement-value"></a>
+<code>&forall; A. ((:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Compute the complement of a unary Boolean function.
+
+
+***
+
+#### <code>TRACEOBJECT</code> <sup><sub>[FUNCTION]</sub></sup><a name="traceobject-value"></a>
+<code>&forall; A. (<a href="#string-type">STRING</a> &rarr; :A &rarr; <a href="#unit-type">UNIT</a>)</code>
+
+Print a line to *STANDARD-OUTPUT* in the form "{STR}: {ITEM}"
+
+
+***
+
+# Package `coalton-library/math/arith`<a name="coalton-library/math/arith-package"></a>
+
+## [math/arith.lisp](https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp) <a name="coalton-library/math/arith-math-arith-lisp-file"></a>
+
+### Classes
+
+#### <code>DIVIDABLE</code> <sup><sub>[CLASS]</sub></sup><a name="dividable-class"></a>
+<code><a href="#dividable-class">DIVIDABLE</a> :A :B</code>
+
+The representation of a type such that division within that type possibly results in another type. For instance,
+
+
+    (Dividable Integer Fraction)
+
+
+establishes that division of two `Integer`s can result in a `Fraction`, whereas
+
+
+    (Dividable Single-Float Single-Float)
+
+
+establishes that division of two `Single-Float`s can result in a `Single-Float`.
+
+Note that `Dividable` does *not* establish a default result type; you must constrain the result type yourself.
+
+The function general/ is partial, and will error produce a run-time error if the divisor is zero.
+
+
+Methods:
+- <code>GENERAL/ :: (:A &rarr; :A &rarr; :B)</code>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#reciprocable-class">RECIPROCABLE</a> :A &rArr; <a href="#dividable-class">DIVIDABLE</a> :A :A</code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#big-float-type">BIG-FLOAT</a></code>
+
+</details>
+
+
+***
+
+#### <code>TRANSFINITE</code> <sup><sub>[CLASS]</sub></sup><a name="transfinite-class"></a>
+<code><a href="#transfinite-class">TRANSFINITE</a> :A</code>
+
+Numberic type with a value for (positive) 'infinity' and/or 'NaN'
+
+Methods:
+- <code>INFINITY :: :A</code>
+- <code>INFINITE? :: (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+- <code>NAN :: :A</code>
+- <code>NAN? :: (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#transfinite-class">TRANSFINITE</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#transfinite-class">TRANSFINITE</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#transfinite-class">TRANSFINITE</a> <a href="#big-float-type">BIG-FLOAT</a></code>
+
+</details>
+
+
+***
+
+#### <code>RECIPROCABLE</code> <sup><sub>[CLASS]</sub></sup><a name="reciprocable-class"></a>
+<code><a href="#num-class">NUM</a> :A &rArr; <a href="#reciprocable-class">RECIPROCABLE</a> :A</code>
+
+Any number with a multplicative inverse (reciprocal) where:
+    1 = (* (reciprocal x) x) = (* x (reciprocal x))
+    (/ x y) = (* x (reciprocal y))
+
+If no reciprocal exists for an element, produce a run-time error (e.g. zero).
+
+
+Methods:
+- <code>/ :: (:A &rarr; :A &rarr; :A)</code>
+- <code>RECIPROCAL :: (:A &rarr; :A)</code>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#reciprocable-class">RECIPROCABLE</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#reciprocable-class">RECIPROCABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#reciprocable-class">RECIPROCABLE</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code>(<a href="#complex-class">COMPLEX</a> :A) (<a href="#reciprocable-class">RECIPROCABLE</a> :A) &rArr; <a href="#reciprocable-class">RECIPROCABLE</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
+- <code><a href="#reciprocable-class">RECIPROCABLE</a> <a href="#big-float-type">BIG-FLOAT</a></code>
+
+</details>
+
+
+***
+
+### Values
+
+#### <code>1+</code> <sup><sub>[FUNCTION]</sub></sup><a name="1+-value"></a>
+<code>&forall; A. <a href="#num-class">NUM</a> :A &rArr; (:A &rarr; :A)</code>
+
+***
+
+#### <code>1-</code> <sup><sub>[FUNCTION]</sub></sup><a name="1--value"></a>
+<code>&forall; A. <a href="#num-class">NUM</a> :A &rArr; (:A &rarr; :A)</code>
+
+***
+
+#### <code>ABS</code> <sup><sub>[FUNCTION]</sub></sup><a name="abs-value"></a>
+<code>&forall; A. (<a href="#ord-class">ORD</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; (:A &rarr; :A)</code>
+
+Absolute value of X.
+
+
+***
+
+#### <code>ASH</code> <sup><sub>[FUNCTION]</sub></sup><a name="ash-value"></a>
+<code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
+
+Compute the "arithmetic shift" of X by N. 
+
+
+***
+
+#### <code>SIGN</code> <sup><sub>[FUNCTION]</sub></sup><a name="sign-value"></a>
+<code>&forall; A. (<a href="#ord-class">ORD</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; (:A &rarr; <a href="#integer-type">INTEGER</a>)</code>
+
+The sign of X.
+
+
+***
+
+#### <code>NEGATE</code> <sup><sub>[FUNCTION]</sub></sup><a name="negate-value"></a>
+<code>&forall; A. <a href="#num-class">NUM</a> :A &rArr; (:A &rarr; :A)</code>
+
+***
+
+#### <code>FINITE?</code> <sup><sub>[FUNCTION]</sub></sup><a name="finite?-value"></a>
+<code>&forall; A. <a href="#transfinite-class">TRANSFINITE</a> :A &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Neither infinite or NaN.
+
+
+***
+
+#### <code>NONZERO?</code> <sup><sub>[FUNCTION]</sub></sup><a name="nonzero?-value"></a>
+<code>&forall; A. <a href="#num-class">NUM</a> :A &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+***
+
+#### <code>NEGATIVE?</code> <sup><sub>[FUNCTION]</sub></sup><a name="negative?-value"></a>
+<code>&forall; A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+***
+
+#### <code>NUMERATOR</code> <sup><sub>[FUNCTION]</sub></sup><a name="numerator-value"></a>
+<code>(<a href="#fraction-type">FRACTION</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
+
+The numerator of a fraction.
+
+
+***
+
+#### <code>POSITIVE?</code> <sup><sub>[FUNCTION]</sub></sup><a name="positive?-value"></a>
+<code>&forall; A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+***
+
+#### <code>MKFRACTION</code> <sup><sub>[FUNCTION]</sub></sup><a name="mkfraction-value"></a>
+<code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#fraction-type">FRACTION</a>)</code>
+
+***
+
+#### <code>DENOMINATOR</code> <sup><sub>[FUNCTION]</sub></sup><a name="denominator-value"></a>
+<code>(<a href="#fraction-type">FRACTION</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
+
+The denominator of a fraction.
+
+
+***
+
+#### <code>NONNEGATIVE?</code> <sup><sub>[FUNCTION]</sub></sup><a name="nonnegative?-value"></a>
+<code>&forall; A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+***
+
+#### <code>NONPOSITIVE?</code> <sup><sub>[FUNCTION]</sub></sup><a name="nonpositive?-value"></a>
+<code>&forall; A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+***
+
+#### <code>NEGATIVE-INFINITY</code> <sup><sub>[VALUE]</sub></sup><a name="negative-infinity-value"></a>
+<code>&forall; A. (<a href="#transfinite-class">TRANSFINITE</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; :A</code>
+
+***
+
+# Package `coalton-library/math/integral`<a name="coalton-library/math/integral-package"></a>
+
+## [math/integral.lisp](https://github.com/coalton-lang/coalton/tree/main/library/math/integral.lisp) <a name="coalton-library/math/integral-math-integral-lisp-file"></a>
+
+### Classes
+
+#### <code>INTEGRAL</code> <sup><sub>[CLASS]</sub></sup><a name="integral-class"></a>
+<code>(<a href="#remainder-class">REMAINDER</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; <a href="#integral-class">INTEGRAL</a> :A</code>
+
+Integral is a number that is either even or odd where `div' and `quot'
+are floored and truncated division, respectively.
+
+Methods:
+- <code>TOINTEGER :: (:A &rarr; <a href="#integer-type">INTEGER</a>)</code>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#integral-class">INTEGRAL</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#integral-class">INTEGRAL</a> <a href="#i8-type">I8</a></code>
+- <code><a href="#integral-class">INTEGRAL</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#integral-class">INTEGRAL</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#integral-class">INTEGRAL</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#integral-class">INTEGRAL</a> <a href="#ifix-type">IFIX</a></code>
+- <code><a href="#integral-class">INTEGRAL</a> <a href="#u8-type">U8</a></code>
+- <code><a href="#integral-class">INTEGRAL</a> <a href="#u16-type">U16</a></code>
+- <code><a href="#integral-class">INTEGRAL</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#integral-class">INTEGRAL</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#integral-class">INTEGRAL</a> <a href="#ufix-type">UFIX</a></code>
+
+</details>
+
+
+***
+
+#### <code>REMAINDER</code> <sup><sub>[CLASS]</sub></sup><a name="remainder-class"></a>
+<code><a href="#num-class">NUM</a> :A &rArr; <a href="#remainder-class">REMAINDER</a> :A</code>
+
+Remainder is typically an integral domain satisfying:
+    a = (+ (* b (quot a b)) (rem a b))
+    a = (+ (* b (div a b)) (mod a b))
+
+Methods:
+- <code>QUOT :: (:A &rarr; :A &rarr; :A)</code>
+- <code>REM :: (:A &rarr; :A &rarr; :A)</code>
+- <code>QUOTREM :: (:A &rarr; :A &rarr; (<a href="#tuple-type">TUPLE</a> :A :A))</code>
+- <code>DIV :: (:A &rarr; :A &rarr; :A)</code>
+- <code>MOD :: (:A &rarr; :A &rarr; :A)</code>
+- <code>DIVMOD :: (:A &rarr; :A &rarr; (<a href="#tuple-type">TUPLE</a> :A :A))</code>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#remainder-class">REMAINDER</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#remainder-class">REMAINDER</a> <a href="#i8-type">I8</a></code>
+- <code><a href="#remainder-class">REMAINDER</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#remainder-class">REMAINDER</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#remainder-class">REMAINDER</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#remainder-class">REMAINDER</a> <a href="#ifix-type">IFIX</a></code>
+- <code><a href="#remainder-class">REMAINDER</a> <a href="#u8-type">U8</a></code>
+- <code><a href="#remainder-class">REMAINDER</a> <a href="#u16-type">U16</a></code>
+- <code><a href="#remainder-class">REMAINDER</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#remainder-class">REMAINDER</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#remainder-class">REMAINDER</a> <a href="#ufix-type">UFIX</a></code>
+
+</details>
+
+
+***
+
+### Values
+
+#### <code>^</code> <sup><sub>[FUNCTION]</sub></sup><a name="^-value"></a>
+<code>&forall; A B. (<a href="#num-class">NUM</a> :A) (<a href="#integral-class">INTEGRAL</a> :B) &rArr; (:A &rarr; :B &rarr; :A)</code>
+
+Exponentiate BASE to a non-negative POWER.
+
+
+***
+
+#### <code>^^</code> <sup><sub>[FUNCTION]</sub></sup><a name="^^-value"></a>
+<code>&forall; A B. (<a href="#reciprocable-class">RECIPROCABLE</a> :A) (<a href="#integral-class">INTEGRAL</a> :B) &rArr; (:A &rarr; :B &rarr; :A)</code>
+
+Exponentiate BASE to a signed POWER.
+
+
+***
+
+#### <code>GCD</code> <sup><sub>[FUNCTION]</sub></sup><a name="gcd-value"></a>
+<code>&forall; A. (<a href="#remainder-class">REMAINDER</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; :A &rarr; :A)</code>
+
+The greatest common divisor of A and B.
+
+
+***
+
+#### <code>LCM</code> <sup><sub>[FUNCTION]</sub></sup><a name="lcm-value"></a>
+<code>&forall; A. (<a href="#remainder-class">REMAINDER</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; :A &rarr; :A)</code>
+
+The least common multiple of A and B.
+
+
+***
+
+#### <code>ILOG</code> <sup><sub>[FUNCTION]</sub></sup><a name="ilog-value"></a>
+<code>&forall; A. <a href="#integral-class">INTEGRAL</a> :A &rArr; (:A &rarr; :A &rarr; :A)</code>
+
+The floor of the logarithm with base B &gt; 1 of X &gt;= 1.
+
+
+***
+
+#### <code>ODD?</code> <sup><sub>[FUNCTION]</sub></sup><a name="odd?-value"></a>
+<code>&forall; A. <a href="#integral-class">INTEGRAL</a> :A &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Is N odd?
+
+
+***
+
+#### <code>EVEN?</code> <sup><sub>[FUNCTION]</sub></sup><a name="even?-value"></a>
+<code>&forall; A. <a href="#integral-class">INTEGRAL</a> :A &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Is N even?
+
+
+***
+
+#### <code>ISQRT</code> <sup><sub>[FUNCTION]</sub></sup><a name="isqrt-value"></a>
+<code>&forall; A. <a href="#integral-class">INTEGRAL</a> :A &rArr; (:A &rarr; :A)</code>
+
+The floor of the square root of N &gt; 0.
+
+
+***
+
+# Package `coalton-library/math/real`<a name="coalton-library/math/real-package"></a>
+
+## [math/real.lisp](https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp) <a name="coalton-library/math/real-math-real-lisp-file"></a>
+
+### Types
+
+#### <code>QUANTIZATION A</code> <sup><sub>[TYPE]</sub></sup><a name="quantization-type"></a>
+- <code>(QUANTIZATION :A <a href="#integer-type">INTEGER</a> :A <a href="#integer-type">INTEGER</a> :A)</code>
+
+
+***
+
+### Classes
+
+#### <code>REAL</code> <sup><sub>[CLASS]</sub></sup><a name="real-class"></a>
+<code>(<a href="#quantizable-class">QUANTIZABLE</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; <a href="#real-class">REAL</a> :A</code>
+
+A real number that can be approximated with abs(real-approx x - x) &lt; 2^-n.
+
+Methods:
+- <code>REAL-APPROX :: (<a href="#ufix-type">UFIX</a> &rarr; :A &rarr; <a href="#fraction-type">FRACTION</a>)</code>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#real-class">REAL</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#real-class">REAL</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#real-class">REAL</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#real-class">REAL</a> <a href="#u8-type">U8</a></code>
+- <code><a href="#real-class">REAL</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#real-class">REAL</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#real-class">REAL</a> <a href="#ufix-type">UFIX</a></code>
+- <code><a href="#real-class">REAL</a> <a href="#i8-type">I8</a></code>
+- <code><a href="#real-class">REAL</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#real-class">REAL</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#real-class">REAL</a> <a href="#ifix-type">IFIX</a></code>
+- <code><a href="#real-class">REAL</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#real-class">REAL</a> <a href="#big-float-type">BIG-FLOAT</a></code>
+
+</details>
+
+
+***
+
+#### <code>RATIONAL</code> <sup><sub>[CLASS]</sub></sup><a name="rational-class"></a>
+<code>(<a href="#real-class">REAL</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; <a href="#rational-class">RATIONAL</a> :A</code>
+
+Any number that can be exactly represented by a fraction, or is not finite.
+If a rational can be converted from a fraction it must satisfy:
+
+(into (to-fraction x)) = x
+(into (best-approx x)) = x
+
+Furthermore, best-approx returns the simplest fraction, and both functions may be partial.
+
+
+Methods:
+- <code>TO-FRACTION :: (:A &rarr; <a href="#fraction-type">FRACTION</a>)</code>
+- <code>BEST-APPROX :: (:A &rarr; <a href="#fraction-type">FRACTION</a>)</code>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#rational-class">RATIONAL</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#rational-class">RATIONAL</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#rational-class">RATIONAL</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#rational-class">RATIONAL</a> <a href="#u8-type">U8</a></code>
+- <code><a href="#rational-class">RATIONAL</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#rational-class">RATIONAL</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#rational-class">RATIONAL</a> <a href="#ufix-type">UFIX</a></code>
+- <code><a href="#rational-class">RATIONAL</a> <a href="#i8-type">I8</a></code>
+- <code><a href="#rational-class">RATIONAL</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#rational-class">RATIONAL</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#rational-class">RATIONAL</a> <a href="#ifix-type">IFIX</a></code>
+- <code><a href="#rational-class">RATIONAL</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#rational-class">RATIONAL</a> <a href="#big-float-type">BIG-FLOAT</a></code>
+
+</details>
+
+
+***
+
+#### <code>QUANTIZABLE</code> <sup><sub>[CLASS]</sub></sup><a name="quantizable-class"></a>
+<code><a href="#quantizable-class">QUANTIZABLE</a> :A</code>
+
+The representation of a type that allows for rounding operations
+max x such that (floor x) &lt;= x
+min x such that (ceiling x) &lt;= x
+And (proper x) = (Tuple (truncate x) (- x (truncate x)))
+where (truncate x) = (* (sign x) (floor (abs x))
+
+
+Methods:
+- <code>PROPER :: (:A &rarr; (<a href="#tuple-type">TUPLE</a> <a href="#integer-type">INTEGER</a> :A))</code>
+- <code>FLOOR :: (:A &rarr; <a href="#integer-type">INTEGER</a>)</code>
+- <code>CEILING :: (:A &rarr; <a href="#integer-type">INTEGER</a>)</code>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#u8-type">U8</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#ufix-type">UFIX</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#i8-type">I8</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#ifix-type">IFIX</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#big-float-type">BIG-FLOAT</a></code>
+
+</details>
+
+
+***
+
+### Values
+
+#### <code>ROUND</code> <sup><sub>[FUNCTION]</sub></sup><a name="round-value"></a>
+<code>&forall; A. (<a href="#quantizable-class">QUANTIZABLE</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; (:A &rarr; <a href="#integer-type">INTEGER</a>)</code>
+
+Return the nearest integer to X, with ties breaking towards even numbers.
+
+
+***
+
+#### <code>SAFE/</code> <sup><sub>[FUNCTION]</sub></sup><a name="safe/-value"></a>
+<code>&forall; A B. (<a href="#num-class">NUM</a> :A) (<a href="#dividable-class">DIVIDABLE</a> :A :B) &rArr; (:A &rarr; :A &rarr; (<a href="#optional-type">OPTIONAL</a> :B))</code>
+
+Safely divide X by Y, returning None if Y is zero.
+
+
+***
+
+#### <code>EXACT/</code> <sup><sub>[FUNCTION]</sub></sup><a name="exact/-value"></a>
+<code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#fraction-type">FRACTION</a>)</code>
+
+Exactly divide two integers and produce a fraction.
+
+
+***
+
+#### <code>FLOOR/</code> <sup><sub>[FUNCTION]</sub></sup><a name="floor/-value"></a>
+<code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
+
+Divide two integers and compute the floor of the quotient.
+
+
+***
+
+#### <code>ROUND/</code> <sup><sub>[FUNCTION]</sub></sup><a name="round/-value"></a>
+<code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
+
+Divide two integers and round the quotient.
+
+
+***
+
+#### <code>CEILING/</code> <sup><sub>[FUNCTION]</sub></sup><a name="ceiling/-value"></a>
+<code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
+
+Divide two integers and compute the ceiling of the quotient.
+
+
+***
+
+#### <code>INEXACT/</code> <sup><sub>[FUNCTION]</sub></sup><a name="inexact/-value"></a>
+<code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#double-float-type">DOUBLE-FLOAT</a>)</code>
+
+Compute the quotient of integers as a double-precision float.
+
+Note: This does *not* divide double-float arguments.
+
+
+***
+
+#### <code>QUANTIZE</code> <sup><sub>[FUNCTION]</sub></sup><a name="quantize-value"></a>
+<code>&forall; A. <a href="#real-class">REAL</a> :A &rArr; (:A &rarr; (<a href="#quantization-type">QUANTIZATION</a> :A))</code>
+
+Given X, (QUANTIZE X) will return the least integer greater or equal to X,
+and the greatest integer less than or equal to X, along with their respective
+remainders expressed as values of type of X.
+
+
+***
+
+#### <code>TRUNCATE</code> <sup><sub>[FUNCTION]</sub></sup><a name="truncate-value"></a>
+<code>&forall; A. <a href="#quantizable-class">QUANTIZABLE</a> :A &rArr; (:A &rarr; <a href="#integer-type">INTEGER</a>)</code>
+
+Returns the integer closest/equal to X that is within 0 and X.
+
+
+***
+
+#### <code>ROUND-HALF-UP</code> <sup><sub>[FUNCTION]</sub></sup><a name="round-half-up-value"></a>
+<code>&forall; A. (<a href="#quantizable-class">QUANTIZABLE</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; (:A &rarr; <a href="#integer-type">INTEGER</a>)</code>
+
+Return the nearest integer to X, with ties breaking toward positive infinity.
+
+
+***
+
+#### <code>ROUND-HALF-DOWN</code> <sup><sub>[FUNCTION]</sub></sup><a name="round-half-down-value"></a>
+<code>&forall; A. (<a href="#quantizable-class">QUANTIZABLE</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; (:A &rarr; <a href="#integer-type">INTEGER</a>)</code>
+
+Return the nearest integer to X, with ties breaking toward positive infinity.
+
+
+***
+
+# Package `coalton-library/math/complex`<a name="coalton-library/math/complex-package"></a>
+
+## [math/complex.lisp](https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp) <a name="coalton-library/math/complex-math-complex-lisp-file"></a>
+
+### Types
+
+#### <code>COMPLEX A</code> <sup><sub>[TYPE]</sub></sup><a name="complex-type"></a>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#complex-class">COMPLEX</a> :A &rArr; <a href="#into-class">INTO</a> :A (<a href="#complex-type">COMPLEX</a> :A)</code>
+- <code>(<a href="#complex-class">COMPLEX</a> :A) (<a href="#reciprocable-class">RECIPROCABLE</a> :A) &rArr; <a href="#reciprocable-class">RECIPROCABLE</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
+- <code><a href="#complex-class">COMPLEX</a> :A &rArr; <a href="#complex-class">COMPLEX</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
+- <code><a href="#complex-class">COMPLEX</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
+- <code><a href="#complex-class">COMPLEX</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
+- <code><a href="#elementary-class">ELEMENTARY</a> :A &rArr; <a href="#polar-class">POLAR</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
+- <code><a href="#elementary-class">ELEMENTARY</a> :A &rArr; <a href="#radical-class">RADICAL</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
+- <code><a href="#elementary-class">ELEMENTARY</a> :A &rArr; <a href="#elementary-class">ELEMENTARY</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
+- <code><a href="#elementary-class">ELEMENTARY</a> :A &rArr; <a href="#exponentiable-class">EXPONENTIABLE</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
+- <code><a href="#elementary-class">ELEMENTARY</a> :A &rArr; <a href="#trigonometric-class">TRIGONOMETRIC</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
+
+</details>
+
+
+***
+
+### Classes
+
+#### <code>COMPLEX</code> <sup><sub>[CLASS]</sub></sup><a name="complex-class"></a>
+<code><a href="#num-class">NUM</a> :A &rArr; <a href="#complex-class">COMPLEX</a> :A</code>
+
+Methods:
+- <code>COMPLEX :: (:A &rarr; :A &rarr; (<a href="#complex-type">COMPLEX</a> :A))</code>
+- <code>REAL-PART :: ((<a href="#complex-type">COMPLEX</a> :A) &rarr; :A)</code>
+- <code>IMAG-PART :: ((<a href="#complex-type">COMPLEX</a> :A) &rarr; :A)</code>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#complex-class">COMPLEX</a> :A &rArr; <a href="#complex-class">COMPLEX</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
+- <code><a href="#complex-class">COMPLEX</a> <a href="#u8-type">U8</a></code>
+- <code><a href="#complex-class">COMPLEX</a> <a href="#u16-type">U16</a></code>
+- <code><a href="#complex-class">COMPLEX</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#complex-class">COMPLEX</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#complex-class">COMPLEX</a> <a href="#ufix-type">UFIX</a></code>
+- <code><a href="#complex-class">COMPLEX</a> <a href="#i8-type">I8</a></code>
+- <code><a href="#complex-class">COMPLEX</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#complex-class">COMPLEX</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#complex-class">COMPLEX</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#complex-class">COMPLEX</a> <a href="#ifix-type">IFIX</a></code>
+- <code><a href="#complex-class">COMPLEX</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#complex-class">COMPLEX</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#complex-class">COMPLEX</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#complex-class">COMPLEX</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#complex-class">COMPLEX</a> <a href="#big-float-type">BIG-FLOAT</a></code>
+
+</details>
+
+
+***
+
+### Values
+
+#### <code>II</code> <sup><sub>[VALUE]</sub></sup><a name="ii-value"></a>
+<code>&forall; A. <a href="#complex-class">COMPLEX</a> :A &rArr; (<a href="#complex-type">COMPLEX</a> :A)</code>
+
+The complex unit i. (The double ii represents a blackboard-bold i.)
+
+
+***
+
+#### <code>CONJUGATE</code> <sup><sub>[FUNCTION]</sub></sup><a name="conjugate-value"></a>
+<code>&forall; A. <a href="#complex-class">COMPLEX</a> :A &rArr; ((<a href="#complex-type">COMPLEX</a> :A) &rarr; (<a href="#complex-type">COMPLEX</a> :A))</code>
+
+The complex conjugate.
+
+
+***
+
+#### <code>SQUARE-MAGNITUDE</code> <sup><sub>[FUNCTION]</sub></sup><a name="square-magnitude-value"></a>
+<code>&forall; A. <a href="#complex-class">COMPLEX</a> :A &rArr; ((<a href="#complex-type">COMPLEX</a> :A) &rarr; :A)</code>
+
+The length of a complex number.
+
+
+***
+
+# Package `coalton-library/math/elementary`<a name="coalton-library/math/elementary-package"></a>
+
+## [math/elementary.lisp](https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp) <a name="coalton-library/math/elementary-math-elementary-lisp-file"></a>
+
+### Classes
+
+#### <code>POLAR</code> <sup><sub>[CLASS]</sub></sup><a name="polar-class"></a>
+<code>(<a href="#complex-class">COMPLEX</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; <a href="#polar-class">POLAR</a> :A</code>
+
+For a complex number z = (complex x y)
+    z = (* (magnitude z) (exp (* ii (phase z))))
+    (polar z) = (Tuple (magnitude z) (phase z))
+    (phase z) = (atan2 y x)
+
+
+Methods:
+- <code>PHASE :: ((<a href="#complex-type">COMPLEX</a> :A) &rarr; :A)</code>
+- <code>POLAR :: ((<a href="#complex-type">COMPLEX</a> :A) &rarr; (<a href="#tuple-type">TUPLE</a> :A :A))</code>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#polar-class">POLAR</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#polar-class">POLAR</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#elementary-class">ELEMENTARY</a> :A &rArr; <a href="#polar-class">POLAR</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
+- <code><a href="#polar-class">POLAR</a> <a href="#big-float-type">BIG-FLOAT</a></code>
+
+</details>
+
+
+***
+
+#### <code>RADICAL</code> <sup><sub>[CLASS]</sub></sup><a name="radical-class"></a>
+<code><a href="#radical-class">RADICAL</a> :A</code>
+
+Obeys (^ (sqrt x) 2) = x = (^^ (nth-root n x) n)
+
+Methods:
+- <code>NTH-ROOT :: (<a href="#integer-type">INTEGER</a> &rarr; :A &rarr; :A)</code>
+- <code>SQRT :: (:A &rarr; :A)</code>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#radical-class">RADICAL</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#radical-class">RADICAL</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#elementary-class">ELEMENTARY</a> :A &rArr; <a href="#radical-class">RADICAL</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
+- <code><a href="#radical-class">RADICAL</a> <a href="#big-float-type">BIG-FLOAT</a></code>
+
+</details>
+
+
+***
+
+#### <code>ELEMENTARY</code> <sup><sub>[CLASS]</sub></sup><a name="elementary-class"></a>
+<code>(<a href="#reciprocable-class">RECIPROCABLE</a> :A) (<a href="#polar-class">POLAR</a> :A) (<a href="#trigonometric-class">TRIGONOMETRIC</a> :A) (<a href="#exponentiable-class">EXPONENTIABLE</a> :A) (<a href="#radical-class">RADICAL</a> :A) &rArr; <a href="#elementary-class">ELEMENTARY</a> :A</code>
+
+Numbers that can be can be passed to elementary functions.
+
+Methods:
+- <code>EE :: :A</code>
+- <code>PI :: :A</code>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#elementary-class">ELEMENTARY</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#elementary-class">ELEMENTARY</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#elementary-class">ELEMENTARY</a> :A &rArr; <a href="#elementary-class">ELEMENTARY</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
+- <code><a href="#elementary-class">ELEMENTARY</a> <a href="#big-float-type">BIG-FLOAT</a></code>
+
+</details>
+
+
+***
+
+#### <code>EXPONENTIABLE</code> <sup><sub>[CLASS]</sub></sup><a name="exponentiable-class"></a>
+<code><a href="#exponentiable-class">EXPONENTIABLE</a> :A</code>
+
+Exponential maps obeying:
+
+    (* (exp x) (exp y)) = (exp (+ x y))
+    (exp (ln x)) = x = (ln (exp x))
+    (log b x) = (/ (ln x) (ln b))
+    (pow x y) = (exp (* y (ln x)))
+
+
+Methods:
+- <code>EXP :: (:A &rarr; :A)</code>
+- <code>POW :: (:A &rarr; :A &rarr; :A)</code>
+- <code>LN :: (:A &rarr; :A)</code>
+- <code>LOG :: (:A &rarr; :A &rarr; :A)</code>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#elementary-class">ELEMENTARY</a> :A &rArr; <a href="#exponentiable-class">EXPONENTIABLE</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
+- <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#big-float-type">BIG-FLOAT</a></code>
+
+</details>
+
+
+***
+
+#### <code>TRIGONOMETRIC</code> <sup><sub>[CLASS]</sub></sup><a name="trigonometric-class"></a>
+<code><a href="#trigonometric-class">TRIGONOMETRIC</a> :A</code>
+
+Standard circular functions and their inverses.
+
+Methods:
+- <code>SIN :: (:A &rarr; :A)</code>
+- <code>COS :: (:A &rarr; :A)</code>
+- <code>TAN :: (:A &rarr; :A)</code>
+- <code>ASIN :: (:A &rarr; :A)</code>
+- <code>ACOS :: (:A &rarr; :A)</code>
+- <code>ATAN :: (:A &rarr; :A)</code>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#trigonometric-class">TRIGONOMETRIC</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#trigonometric-class">TRIGONOMETRIC</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#elementary-class">ELEMENTARY</a> :A &rArr; <a href="#trigonometric-class">TRIGONOMETRIC</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
+- <code><a href="#trigonometric-class">TRIGONOMETRIC</a> <a href="#big-float-type">BIG-FLOAT</a></code>
+
+</details>
+
+
+***
+
+### Values
+
+#### <code>CIS</code> <sup><sub>[FUNCTION]</sub></sup><a name="cis-value"></a>
+<code>&forall; A. (<a href="#trigonometric-class">TRIGONOMETRIC</a> :A) (<a href="#complex-class">COMPLEX</a> :A) &rArr; (:A &rarr; (<a href="#complex-type">COMPLEX</a> :A))</code>
+
+(cis z) = (exp (complex 0 z)) = (+ (cos z) (sin z))
+
+
+***
+
+#### <code>COSH</code> <sup><sub>[FUNCTION]</sub></sup><a name="cosh-value"></a>
+<code>&forall; A. <a href="#elementary-class">ELEMENTARY</a> :A &rArr; (:A &rarr; :A)</code>
+
+***
+
+#### <code>SINH</code> <sup><sub>[FUNCTION]</sub></sup><a name="sinh-value"></a>
+<code>&forall; A. <a href="#elementary-class">ELEMENTARY</a> :A &rArr; (:A &rarr; :A)</code>
+
+***
+
+#### <code>TANH</code> <sup><sub>[FUNCTION]</sub></sup><a name="tanh-value"></a>
+<code>&forall; A. <a href="#elementary-class">ELEMENTARY</a> :A &rArr; (:A &rarr; :A)</code>
+
+***
+
+#### <code>ACOSH</code> <sup><sub>[FUNCTION]</sub></sup><a name="acosh-value"></a>
+<code>&forall; A. <a href="#elementary-class">ELEMENTARY</a> :A &rArr; (:A &rarr; :A)</code>
+
+***
+
+#### <code>ASINH</code> <sup><sub>[FUNCTION]</sub></sup><a name="asinh-value"></a>
+<code>&forall; A. <a href="#elementary-class">ELEMENTARY</a> :A &rArr; (:A &rarr; :A)</code>
+
+***
+
+#### <code>ATAN2</code> <sup><sub>[FUNCTION]</sub></sup><a name="atan2-value"></a>
+<code>&forall; A. (<a href="#ord-class">ORD</a> :A) (<a href="#elementary-class">ELEMENTARY</a> :A) &rArr; (:A &rarr; :A &rarr; :A)</code>
+
+Computes the two-argument arctangent of y and x, which is roughly the same
+as (atan (/ y x)) when defined and accounting for the quadrant of the (x,y).
+
+
+***
+
+#### <code>ATANH</code> <sup><sub>[FUNCTION]</sub></sup><a name="atanh-value"></a>
+<code>&forall; A. <a href="#elementary-class">ELEMENTARY</a> :A &rArr; (:A &rarr; :A)</code>
+
+***
+
+#### <code>SINCOS</code> <sup><sub>[FUNCTION]</sub></sup><a name="sincos-value"></a>
+<code>&forall; A. <a href="#trigonometric-class">TRIGONOMETRIC</a> :A &rArr; (:A &rarr; (<a href="#tuple-type">TUPLE</a> :A :A))</code>
+
+***
+
+#### <code>MAGNITUDE</code> <sup><sub>[FUNCTION]</sub></sup><a name="magnitude-value"></a>
+<code>&forall; A. (<a href="#radical-class">RADICAL</a> :A) (<a href="#complex-class">COMPLEX</a> :A) &rArr; ((<a href="#complex-type">COMPLEX</a> :A) &rarr; :A)</code>
+
+For z = x + yi, (magnitude z) = (sqrt (+ (^ x 2) (^ y 2)))
+
+
+***
+
 # Package `coalton-library/bits`<a name="coalton-library/bits-package"></a>
 
 ## [bits.lisp](https://github.com/coalton-lang/coalton/tree/main/library/bits.lisp) <a name="coalton-library/bits-bits-lisp-file"></a>
@@ -2532,133 +3491,6 @@ Returns TRUE if X is ERR
 
 ***
 
-# Package `coalton-library/functions`<a name="coalton-library/functions-package"></a>
-
-## [functions.lisp](https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp) <a name="coalton-library/functions-functions-lisp-file"></a>
-
-### Values
-
-#### <code>/=</code> <sup><sub>[FUNCTION]</sub></sup><a name="/=-value"></a>
-<code>&forall; A. <a href="#eq-class">EQ</a> :A &rArr; (:A &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
-
-***
-
-#### <code>ID</code> <sup><sub>[FUNCTION]</sub></sup><a name="id-value"></a>
-<code>&forall; A. (:A &rarr; :A)</code>
-
-A function that always returns its argument.
-
-
-***
-
-#### <code>FIX</code> <sup><sub>[FUNCTION]</sub></sup><a name="fix-value"></a>
-<code>&forall; A B. (((:A &rarr; :B) &rarr; :A &rarr; :B) &rarr; :A &rarr; :B)</code>
-
-Compute the fixed point of a unary function. This is equivalent to the Y-combinator of the lambda calculus. This combinator allows recursion without specific assignment of names. For example, the factorial function can be written
-
-
-    ```
-    (define fact
-      (fix
-        (fn (f n)
-          (if (== n 0)
-            1
-            (* n (f (- n 1)))))))
-    ```
-
-
-***
-
-#### <code>ASUM</code> <sup><sub>[FUNCTION]</sub></sup><a name="asum-value"></a>
-<code>&forall; A B C. (<a href="#alternative-class">ALTERNATIVE</a> :B) (<a href="#foldable-class">FOLDABLE</a> :A) &rArr; ((:A (:B :C)) &rarr; (:B :C))</code>
-
-Fold over a list using alt
-
-
-***
-
-#### <code>FLIP</code> <sup><sub>[FUNCTION]</sub></sup><a name="flip-value"></a>
-<code>&forall; A B C. ((:A &rarr; :B &rarr; :C) &rarr; :B &rarr; :A &rarr; :C)</code>
-
-Returns a function that takes its arguments in reverse order.
-
-
-***
-
-#### <code>MSUM</code> <sup><sub>[FUNCTION]</sub></sup><a name="msum-value"></a>
-<code>&forall; A B. (<a href="#monoid-class">MONOID</a> :B) (<a href="#foldable-class">FOLDABLE</a> :A) &rArr; ((:A :B) &rarr; :B)</code>
-
-Fold over a list using &lt;&gt;
-
-
-***
-
-#### <code>CONST</code> <sup><sub>[FUNCTION]</sub></sup><a name="const-value"></a>
-<code>&forall; A B. (:A &rarr; :B &rarr; :A)</code>
-
-A function that always returns its first argument.
-
-
-***
-
-#### <code>TRACE</code> <sup><sub>[FUNCTION]</sub></sup><a name="trace-value"></a>
-<code>(<a href="#string-type">STRING</a> &rarr; <a href="#unit-type">UNIT</a>)</code>
-
-Print a line to *STANDARD-OUTPUT*
-
-
-***
-
-#### <code>REDUCE</code> <sup><sub>[FUNCTION]</sub></sup><a name="reduce-value"></a>
-<code>&forall; A B C. <a href="#foldable-class">FOLDABLE</a> :C &rArr; ((:A &rarr; :B &rarr; :B) &rarr; :B &rarr; (:C :A) &rarr; :B)</code>
-
-The same as `fold` but with the argument order swapped to match `cl:reduce`
-
-
-***
-
-#### <code>COMPOSE</code> <sup><sub>[FUNCTION]</sub></sup><a name="compose-value"></a>
-<code>&forall; A B C. ((:A &rarr; :B) &rarr; (:C &rarr; :A) &rarr; :C &rarr; :B)</code>
-
-***
-
-#### <code>CONJOIN</code> <sup><sub>[FUNCTION]</sub></sup><a name="conjoin-value"></a>
-<code>&forall; A. ((:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
-
-Compute the conjunction of two unary Boolean functions.
-
-
-***
-
-#### <code>DISJOIN</code> <sup><sub>[FUNCTION]</sub></sup><a name="disjoin-value"></a>
-<code>&forall; A. ((:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
-
-Compute the disjunction of two unary Boolean functions.
-
-
-***
-
-#### <code>UNCURRY</code> <sup><sub>[FUNCTION]</sub></sup><a name="uncurry-value"></a>
-<code>&forall; A B C. ((:A &rarr; :B &rarr; :C) &rarr; (<a href="#tuple-type">TUPLE</a> :A :B) &rarr; :C)</code>
-
-***
-
-#### <code>COMPLEMENT</code> <sup><sub>[FUNCTION]</sub></sup><a name="complement-value"></a>
-<code>&forall; A. ((:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
-
-Compute the complement of a unary Boolean function.
-
-
-***
-
-#### <code>TRACEOBJECT</code> <sup><sub>[FUNCTION]</sub></sup><a name="traceobject-value"></a>
-<code>&forall; A. (<a href="#string-type">STRING</a> &rarr; :A &rarr; <a href="#unit-type">UNIT</a>)</code>
-
-Print a line to *STANDARD-OUTPUT* in the form "{STR}: {ITEM}"
-
-
-***
-
 # Package `coalton-library/cell`<a name="coalton-library/cell-package"></a>
 
 ### Types
@@ -3276,6 +4108,51 @@ Crate a new empty hashtable with a given capacity
 ***
 
 # Package `coalton-library/monad/state`<a name="coalton-library/monad/state-package"></a>
+
+## [monad/state.lisp](https://github.com/coalton-lang/coalton/tree/main/library/monad/state.lisp) <a name="coalton-library/monad/state-monad-state-lisp-file"></a>
+
+### Types
+
+#### <code>ST A B</code> <sup><sub>[TYPE]</sub></sup><a name="st-type"></a>
+- <code>(ST (:A &rarr; (<a href="#tuple-type">TUPLE</a> :A :B)))</code>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#monad-class">MONAD</a> (<a href="#st-type">ST</a> :A)</code>
+- <code><a href="#functor-class">FUNCTOR</a> (<a href="#st-type">ST</a> :A)</code>
+- <code><a href="#applicative-class">APPLICATIVE</a> (<a href="#st-type">ST</a> :A)</code>
+
+</details>
+
+
+***
+
+### Values
+
+#### <code>GET</code> <sup><sub>[VALUE]</sub></sup><a name="get-value"></a>
+<code>&forall; A. (<a href="#st-type">ST</a> :A :A)</code>
+
+A StatefulComputation which returns the current state as the value.
+
+
+***
+
+#### <code>PUT</code> <sup><sub>[FUNCTION]</sub></sup><a name="put-value"></a>
+<code>&forall; A. (:A &rarr; (<a href="#st-type">ST</a> :A <a href="#unit-type">UNIT</a>))</code>
+
+A StatefulComputation with state set to be given state. The returned value is Unit.
+
+
+***
+
+#### <code>RUN</code> <sup><sub>[FUNCTION]</sub></sup><a name="run-value"></a>
+<code>&forall; A B. ((<a href="#st-type">ST</a> :A :B) &rarr; :A &rarr; (<a href="#tuple-type">TUPLE</a> :A :B))</code>
+
+Runs a StatefulComputation to produce a final updated state and value given an initial state
+
+
+***
 
 # Package `coalton-library/iterator`<a name="coalton-library/iterator-package"></a>
 
