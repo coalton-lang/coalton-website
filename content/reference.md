@@ -562,6 +562,7 @@ Unbound integer. Uses `integer`.
 - <code><a href="#hash-class">HASH</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#dyadic-type">DYADIC</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ufix-type">UFIX</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ifix-type">IFIX</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i64-type">I64</a> <a href="#integer-type">INTEGER</a></code>
@@ -608,6 +609,7 @@ A ratio of integers always in reduced form.
 - <code><a href="#num-class">NUM</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> <a href="#big-float-type">BIG-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#dyadic-type">DYADIC</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#double-float-type">DOUBLE-FLOAT</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#single-float-type">SINGLE-FLOAT</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#real-class">REAL</a> <a href="#fraction-type">FRACTION</a></code>
@@ -814,6 +816,7 @@ Methods:
 - <code><a href="#eq-class">EQ</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#complex-class">COMPLEX</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
+- <code><a href="#eq-class">EQ</a> <a href="#dyadic-type">DYADIC</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#string-type">STRING</a></code>
 - <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
@@ -884,6 +887,7 @@ Methods:
 - <code><a href="#num-class">NUM</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#complex-class">COMPLEX</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
+- <code><a href="#num-class">NUM</a> <a href="#dyadic-type">DYADIC</a></code>
 - <code><a href="#num-class">NUM</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
 - <code><a href="#num-class">NUM</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#cell-type">CELL</a> :A)</code>
 - <code><a href="#num-class">NUM</a> <a href="#big-float-type">BIG-FLOAT</a></code>
@@ -920,6 +924,7 @@ Methods:
 - <code><a href="#ord-class">ORD</a> <a href="#ufix-type">UFIX</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#dyadic-type">DYADIC</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#string-type">STRING</a></code>
 - <code>(<a href="#ord-class">ORD</a> :A) (<a href="#ord-class">ORD</a> :B) &rArr; <a href="#ord-class">ORD</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
@@ -1013,6 +1018,8 @@ Methods:
 - <code><a href="#into-class">INTO</a> <a href="#ifix-type">IFIX</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ufix-type">UFIX</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#complex-class">COMPLEX</a> :A &rArr; <a href="#into-class">INTO</a> :A (<a href="#complex-type">COMPLEX</a> :A)</code>
+- <code><a href="#into-class">INTO</a> <a href="#dyadic-type">DYADIC</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#dyadic-type">DYADIC</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#string-type">STRING</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#string-type">STRING</a></code>
@@ -1767,7 +1774,7 @@ Compute the "arithmetic shift" of X by N.
 ***
 
 #### <code>SIGN</code> <sup><sub>[FUNCTION]</sub></sup><a name="sign-value"></a>
-<code>&forall; :A. (<a href="#ord-class">ORD</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; (:A &rarr; :A)</code>
+<code>&forall; :A :B. (<a href="#ord-class">ORD</a> :A) (<a href="#num-class">NUM</a> :A) (<a href="#num-class">NUM</a> :B) &rArr; (:A &rarr; :B)</code>
 
 The sign of X.
 
@@ -1982,6 +1989,22 @@ The least common multiple of A and B.
 
 ***
 
+#### <code>LSH</code> <sup><sub>[FUNCTION]</sub></sup><a name="lsh-value"></a>
+<code>&forall; :A :B. (<a href="#integral-class">INTEGRAL</a> :B) (<a href="#bits-class">BITS</a> :A) &rArr; (:A &rarr; :B &rarr; :A)</code>
+
+Left shift X by N
+
+
+***
+
+#### <code>RSH</code> <sup><sub>[FUNCTION]</sub></sup><a name="rsh-value"></a>
+<code>&forall; :A :B. (<a href="#integral-class">INTEGRAL</a> :B) (<a href="#bits-class">BITS</a> :A) &rArr; (:A &rarr; :B &rarr; :A)</code>
+
+Right shift X by N
+
+
+***
+
 #### <code>ILOG</code> <sup><sub>[FUNCTION]</sub></sup><a name="ilog-value"></a>
 <code>&forall; :A. <a href="#integral-class">INTEGRAL</a> :A &rArr; (:A &rarr; :A &rarr; :A)</code>
 
@@ -2062,6 +2085,7 @@ Methods:
 - <code><a href="#real-class">REAL</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#real-class">REAL</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#real-class">REAL</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#real-class">REAL</a> <a href="#dyadic-type">DYADIC</a></code>
 - <code><a href="#real-class">REAL</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 
 </details>
@@ -2100,6 +2124,7 @@ Methods:
 - <code><a href="#rational-class">RATIONAL</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#rational-class">RATIONAL</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#rational-class">RATIONAL</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#rational-class">RATIONAL</a> <a href="#dyadic-type">DYADIC</a></code>
 - <code><a href="#rational-class">RATIONAL</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 
 </details>
@@ -2137,6 +2162,7 @@ Methods:
 - <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#dyadic-type">DYADIC</a></code>
 - <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 
 </details>
