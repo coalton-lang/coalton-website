@@ -2653,6 +2653,14 @@ Compute a substring of a string bounded by given indices.
 
 ***
 
+#### <code>SUBSTRING?</code> <sup><sub>[FUNCTION]</sub></sup><a name="substring?-value"></a>
+<code>(<a href="#string-type">STRING</a> &rarr; <a href="#string-type">STRING</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Return true if the first argument appears as a substring within the second argument.
+
+
+***
+
 #### <code>STRIP-PREFIX</code> <sup><sub>[FUNCTION]</sub></sup><a name="strip-prefix-value"></a>
 <code>(<a href="#string-type">STRING</a> &rarr; <a href="#string-type">STRING</a> &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#string-type">STRING</a>))</code>
 
@@ -2673,6 +2681,14 @@ does not have that suffix.
 
 #### <code>REF-UNCHECKED</code> <sup><sub>[FUNCTION]</sub></sup><a name="ref-unchecked-value"></a>
 <code>(<a href="#string-type">STRING</a> &rarr; <a href="#ufix-type">UFIX</a> &rarr; <a href="#char-type">CHAR</a>)</code>
+
+***
+
+#### <code>SUBSTRING-INDEX</code> <sup><sub>[FUNCTION]</sub></sup><a name="substring-index-value"></a>
+<code>(<a href="#string-type">STRING</a> &rarr; <a href="#string-type">STRING</a> &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#ufix-type">UFIX</a>))</code>
+
+If the first argument appears as a substring within the second argument, return the starting index into the second argument.
+
 
 ***
 
