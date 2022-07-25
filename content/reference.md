@@ -2622,7 +2622,7 @@ Concatenate STR1 and STR2 together, returning a new string.
 ***
 
 #### <code>LENGTH</code> <sup><sub>[FUNCTION]</sub></sup><a name="length-value"></a>
-<code>(<a href="#string-type">STRING</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
+<code>(<a href="#string-type">STRING</a> &rarr; <a href="#ufix-type">UFIX</a>)</code>
 
 The length of a string STR.
 
@@ -2646,7 +2646,7 @@ Parse the integer in string STR.
 ***
 
 #### <code>SUBSTRING</code> <sup><sub>[FUNCTION]</sub></sup><a name="substring-value"></a>
-<code>(<a href="#string-type">STRING</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#string-type">STRING</a>)</code>
+<code>(<a href="#string-type">STRING</a> &rarr; <a href="#ufix-type">UFIX</a> &rarr; <a href="#ufix-type">UFIX</a> &rarr; <a href="#string-type">STRING</a>)</code>
 
 Compute a substring of a string bounded by given indices.
 
@@ -2827,7 +2827,7 @@ Return the traditional cdr of a list. This function is partial
 ***
 
 #### <code>NTH</code> <sup><sub>[FUNCTION]</sub></sup><a name="nth-value"></a>
-<code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; (<a href="#list-type">LIST</a> :A) &rarr; :A)</code>
+<code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#list-type">LIST</a> :A) &rarr; :A)</code>
 
 Like INDEX, but errors if the index is not found.
 
@@ -2851,7 +2851,7 @@ Builds a list of tuples with the elements of XS and YS.
 ***
 
 #### <code>DROP</code> <sup><sub>[FUNCTION]</sub></sup><a name="drop-value"></a>
-<code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
+<code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 Returns a list with the first N elements removed.
 
@@ -2907,7 +2907,7 @@ Returns every element except the first in a list.
 ***
 
 #### <code>TAKE</code> <sup><sub>[FUNCTION]</sub></sup><a name="take-value"></a>
-<code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
+<code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 Returns the first N elements of a list.
 
@@ -2925,7 +2925,7 @@ The ordering of elements of L is preserved in the ordering of elements in each l
 ***
 
 #### <code>INDEX</code> <sup><sub>[FUNCTION]</sub></sup><a name="index-value"></a>
-<code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
+<code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
 Returns the Ith element of a list.
 
@@ -2949,9 +2949,9 @@ Produce all permutations of the list L.
 ***
 
 #### <code>RANGE</code> <sup><sub>[FUNCTION]</sub></sup><a name="range-value"></a>
-<code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; (<a href="#list-type">LIST</a> <a href="#integer-type">INTEGER</a>))</code>
+<code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; :A &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
-Returns a list containing the numbers from START to END inclusive.
+Returns a list containing the numbers from START to END inclusive, counting by 1.
 
 
     ```
@@ -3019,7 +3019,7 @@ Inserts an element into a list at the first place it is less than or equal to th
 ***
 
 #### <code>LENGTH</code> <sup><sub>[FUNCTION]</sub></sup><a name="length-value"></a>
-<code>&forall; :A. ((<a href="#list-type">LIST</a> :A) &rarr; <a href="#integer-type">INTEGER</a>)</code>
+<code>&forall; :A. ((<a href="#list-type">LIST</a> :A) &rarr; <a href="#ufix-type">UFIX</a>)</code>
 
 Returns the length of a list.
 
@@ -3043,7 +3043,7 @@ Returns true if any element of XS is equal to E.
 ***
 
 #### <code>REPEAT</code> <sup><sub>[FUNCTION]</sub></sup><a name="repeat-value"></a>
-<code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; :A &rarr; (<a href="#list-type">LIST</a> :A))</code>
+<code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; :A &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 Returns a list with the same value repeated multiple times.
 
@@ -3059,7 +3059,7 @@ Generic version of sort
 ***
 
 #### <code>COMBSOF</code> <sup><sub>[FUNCTION]</sub></sup><a name="combsof-value"></a>
-<code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> (<a href="#list-type">LIST</a> :A)))</code>
+<code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> (<a href="#list-type">LIST</a> :A)))</code>
 
 Produce a list of size-N subsets of L.
 
@@ -3071,7 +3071,7 @@ This function is equivalent to all size-N elements of `(COMBS L)`.
 ***
 
 #### <code>COUNTBY</code> <sup><sub>[FUNCTION]</sub></sup><a name="countby-value"></a>
-<code>&forall; :A. ((:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; <a href="#integer-type">INTEGER</a>)</code>
+<code>&forall; :A. ((:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; <a href="#ufix-type">UFIX</a>)</code>
 
 Count the number of items in THINGS that satisfy the predicate F.
 
@@ -3159,12 +3159,12 @@ Apply F to each element in XS and concatenate the results.
 ***
 
 #### <code>ELEMINDEX</code> <sup><sub>[FUNCTION]</sub></sup><a name="elemindex-value"></a>
-<code>&forall; :A. <a href="#eq-class">EQ</a> :A &rArr; (:A &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#integer-type">INTEGER</a>))</code>
+<code>&forall; :A. <a href="#eq-class">EQ</a> :A &rArr; (:A &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#ufix-type">UFIX</a>))</code>
 
 ***
 
 #### <code>FINDINDEX</code> <sup><sub>[FUNCTION]</sub></sup><a name="findindex-value"></a>
-<code>&forall; :A. ((:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#integer-type">INTEGER</a>))</code>
+<code>&forall; :A. ((:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#ufix-type">UFIX</a>))</code>
 
 Returns the index of the first element matching the predicate function F.
 
@@ -3469,7 +3469,7 @@ Remove and return the first item of V
 ***
 
 #### <code>SET!</code> <sup><sub>[FUNCTION]</sub></sup><a name="set!-value"></a>
-<code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; :A &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
+<code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; :A &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Set the INDEXth element of V to ITEM. This function left intentionally unsafe because it does not have a return value to check.
 
@@ -3477,7 +3477,7 @@ Set the INDEXth element of V to ITEM. This function left intentionally unsafe be
 ***
 
 #### <code>INDEX</code> <sup><sub>[FUNCTION]</sub></sup><a name="index-value"></a>
-<code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
+<code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
 Return the INDEXth element of V
 
@@ -3485,7 +3485,7 @@ Return the INDEXth element of V
 ***
 
 #### <code>PUSH!</code> <sup><sub>[FUNCTION]</sub></sup><a name="push!-value"></a>
-<code>&forall; :A. (:A &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#integer-type">INTEGER</a>)</code>
+<code>&forall; :A. (:A &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#ufix-type">UFIX</a>)</code>
 
 Append ITEM to V and resize V if necessary
 
@@ -3517,7 +3517,7 @@ Returns TRUE if V is empty
 ***
 
 #### <code>LENGTH</code> <sup><sub>[FUNCTION]</sub></sup><a name="length-value"></a>
-<code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#integer-type">INTEGER</a>)</code>
+<code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#ufix-type">UFIX</a>)</code>
 
 Returns the length of V
 
@@ -3533,7 +3533,7 @@ Call the function F once for each item in V
 ***
 
 #### <code>CAPACITY</code> <sup><sub>[FUNCTION]</sub></sup><a name="capacity-value"></a>
-<code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#integer-type">INTEGER</a>)</code>
+<code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#ufix-type">UFIX</a>)</code>
 
 Returns the number of elements that V can store without resizing
 
@@ -3557,7 +3557,7 @@ Sort a vector inplace with predicate function F
 ***
 
 #### <code>FIND-ELEM</code> <sup><sub>[FUNCTION]</sub></sup><a name="find-elem-value"></a>
-<code>&forall; :A. <a href="#eq-class">EQ</a> :A &rArr; (:A &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#integer-type">INTEGER</a>))</code>
+<code>&forall; :A. <a href="#eq-class">EQ</a> :A &rArr; (:A &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#ufix-type">UFIX</a>))</code>
 
 Find the index of element E in V
 
@@ -3589,7 +3589,7 @@ Remove and return the first item of V without checking if the vector is empty
 ***
 
 #### <code>INDEX-UNSAFE</code> <sup><sub>[FUNCTION]</sub></sup><a name="index-unsafe-value"></a>
-<code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; :A)</code>
+<code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; :A)</code>
 
 Return the INDEXth element of V without checking if the element exists
 
@@ -3597,7 +3597,7 @@ Return the INDEXth element of V without checking if the element exists
 ***
 
 #### <code>SWAP-REMOVE!</code> <sup><sub>[FUNCTION]</sub></sup><a name="swap-remove!-value"></a>
-<code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
+<code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
 Remove the element IDX from VEC and replace it with the last element in VEC. Then return the removed element.
 
@@ -3605,7 +3605,7 @@ Remove the element IDX from VEC and replace it with the last element in VEC. The
 ***
 
 #### <code>FOREACH-INDEX</code> <sup><sub>[FUNCTION]</sub></sup><a name="foreach-index-value"></a>
-<code>&forall; :A :B. ((<a href="#integer-type">INTEGER</a> &rarr; :A &rarr; :B) &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
+<code>&forall; :A :B. ((<a href="#ufix-type">UFIX</a> &rarr; :A &rarr; :B) &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Call the function F once for each item in V with its index
 
@@ -3613,7 +3613,7 @@ Call the function F once for each item in V with its index
 ***
 
 #### <code>WITH-CAPACITY</code> <sup><sub>[FUNCTION]</sub></sup><a name="with-capacity-value"></a>
-<code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
+<code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
 
 Create a new vector with N elements preallocated
 
@@ -3621,7 +3621,7 @@ Create a new vector with N elements preallocated
 ***
 
 #### <code>SWAP-REMOVE-UNSAFE!</code> <sup><sub>[FUNCTION]</sub></sup><a name="swap-remove-unsafe!-value"></a>
-<code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; :A)</code>
+<code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; :A)</code>
 
 Remove the element IDX from VEC and replace it with the last element in VEC without bounds checking. Then return the removed element.
 
@@ -3654,7 +3654,7 @@ Remove the element IDX from VEC and replace it with the last element in VEC with
 ### Values
 
 #### <code>NEW</code> <sup><sub>[FUNCTION]</sub></sup><a name="new-value"></a>
-<code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#slice-type">SLICE</a> :A))</code>
+<code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; <a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#slice-type">SLICE</a> :A))</code>
 
 ***
 
@@ -3667,7 +3667,7 @@ Returns a new slice containg the same elements as S
 ***
 
 #### <code>SET!</code> <sup><sub>[FUNCTION]</sub></sup><a name="set!-value"></a>
-<code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; :A &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
+<code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; :A &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Set the element at INDEX in S to ITEM
 
@@ -3675,7 +3675,7 @@ Set the element at INDEX in S to ITEM
 ***
 
 #### <code>INDEX</code> <sup><sub>[FUNCTION]</sub></sup><a name="index-value"></a>
-<code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
+<code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
 Lookup the element at INDEX in S
 
@@ -3683,7 +3683,7 @@ Lookup the element at INDEX in S
 ***
 
 #### <code>LENGTH</code> <sup><sub>[FUNCTION]</sub></sup><a name="length-value"></a>
-<code>&forall; :A. ((<a href="#slice-type">SLICE</a> :A) &rarr; <a href="#integer-type">INTEGER</a>)</code>
+<code>&forall; :A. ((<a href="#slice-type">SLICE</a> :A) &rarr; <a href="#ufix-type">UFIX</a>)</code>
 
 Returns the length of S
 
@@ -3707,7 +3707,7 @@ Iterate over S1 and S2 calling F once on each iteration
 ***
 
 #### <code>INDEX-UNSAFE</code> <sup><sub>[FUNCTION]</sub></sup><a name="index-unsafe-value"></a>
-<code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; :A)</code>
+<code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; :A)</code>
 
 Lookup the element at INDEX in S without bounds checking
 
@@ -3715,7 +3715,7 @@ Lookup the element at INDEX in S without bounds checking
 ***
 
 #### <code>ITER-CHUNKED</code> <sup><sub>[FUNCTION]</sub></sup><a name="iter-chunked-value"></a>
-<code>&forall; :A :B. (((<a href="#slice-type">SLICE</a> :A) &rarr; :B) &rarr; <a href="#integer-type">INTEGER</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
+<code>&forall; :A :B. (((<a href="#slice-type">SLICE</a> :A) &rarr; :B) &rarr; <a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Chunked iteration over a vector. Ignores elements at the end if the vector does not evenly divide by the chunk size.
 
@@ -3723,7 +3723,7 @@ Chunked iteration over a vector. Ignores elements at the end if the vector does 
 ***
 
 #### <code>ITER-SLIDING</code> <sup><sub>[FUNCTION]</sub></sup><a name="iter-sliding-value"></a>
-<code>&forall; :A :B. (((<a href="#slice-type">SLICE</a> :A) &rarr; :B) &rarr; <a href="#integer-type">INTEGER</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
+<code>&forall; :A :B. (((<a href="#slice-type">SLICE</a> :A) &rarr; :B) &rarr; <a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Sliding iteration over a vector
 
@@ -3731,7 +3731,7 @@ Sliding iteration over a vector
 ***
 
 #### <code>FOREACH-INDEX</code> <sup><sub>[FUNCTION]</sub></sup><a name="foreach-index-value"></a>
-<code>&forall; :A :B. ((<a href="#integer-type">INTEGER</a> &rarr; :A &rarr; :B) &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
+<code>&forall; :A :B. ((<a href="#ufix-type">UFIX</a> &rarr; :A &rarr; :B) &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Call the function F once for each item in S with its index
 
@@ -4032,7 +4032,7 @@ An iterator which begins at zero and counts up to, but not including, LIMIT.
 ***
 
 #### <code>COUNT!</code> <sup><sub>[FUNCTION]</sub></sup><a name="count!-value"></a>
-<code>&forall; :A. ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; <a href="#integer-type">INTEGER</a>)</code>
+<code>&forall; :A. ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; <a href="#ufix-type">UFIX</a>)</code>
 
 Return the number of elements in ITER.
 This operation could be called `length!`, but `count!` emphasizes the fact that it consumes ITER, and
@@ -4274,7 +4274,7 @@ Yield unique elements from ITER in order of first appearance.
 ***
 
 #### <code>COLLECT-VECTOR-SIZE-HINT!</code> <sup><sub>[FUNCTION]</sub></sup><a name="collect-vector-size-hint!-value"></a>
-<code>&forall; :A. (<a href="#integer-type">INTEGER</a> &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
+<code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
 
 Construct a `Vector` with initial allocation for SIZE elements, and fill it with all the elements from ITER in order.
 
