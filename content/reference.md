@@ -3439,6 +3439,14 @@ Returns TRUE if X is ERR
 
 ***
 
+#### <code>MAPERR</code> <sup><sub>[FUNCTION]</sub></sup><a name="maperr-value"></a>
+<code>&forall; :A :B :C. ((:A &rarr; :B) &rarr; (<a href="#result-type">RESULT</a> :A :C) &rarr; (<a href="#result-type">RESULT</a> :B :C))</code>
+
+Map over the ERR case
+
+
+***
+
 #### <code>FLATTEN</code> <sup><sub>[FUNCTION]</sub></sup><a name="flatten-value"></a>
 <code>&forall; :A. ((<a href="#result-type">RESULT</a> :A :A) &rarr; :A)</code>
 
