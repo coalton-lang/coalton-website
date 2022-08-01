@@ -1672,6 +1672,9 @@ Are X or Y True, but not both?
 #### <code>/=</code> <sup><sub>[FUNCTION]</sub></sup><a name="/=-value"></a>
 <code>&forall; :A. <a href="#eq-class">EQ</a> :A &rArr; (:A &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
+Is A not equal to B?
+
+
 ***
 
 #### <code>ID</code> <sup><sub>[FUNCTION]</sub></sup><a name="id-value"></a>
