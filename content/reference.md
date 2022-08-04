@@ -1483,15 +1483,19 @@ Methods:
 
 Containers which can be unwrapped to get access to their contents.
 
-The first argument to `unwrap-or-else` is a continuation, usually named `fail`. Methods should call `fail` and
-return its value if they are unable to unwrap a value.
+(unwrap-or-else SUCCEED FAIL CONTAINER) should invoke the SUCCEED continuation on the unwrapped contents of
+CONTAINER when successful, or invoke the FAIL continuation with no arguments (i.e. with Unit as an argument)
+when unable to unwrap a value.
+
+The SUCCEED continuation will often, but not always, be the identity function. `as-optional` passes Some to
+construct an Optional.
 
 Typical `fail` continuations are:
 - Return a default value, or
 - Signal an error.
 
 Methods:
-- <code>UNWRAP-OR-ELSE :: ((<a href="#unit-type">UNIT</a> &rarr; :B) &rarr; (:A :B) &rarr; :B)</code>
+- <code>UNWRAP-OR-ELSE :: ((:B &rarr; :C) &rarr; (<a href="#unit-type">UNIT</a> &rarr; :C) &rarr; (:A :B) &rarr; :C)</code>
 
 <details>
 <summary>Instances</summary>
@@ -1585,6 +1589,14 @@ Unwrap CONTAINER, signaling an error on failure.
 
 #### <code>SEQUENCE</code> <sup><sub>[FUNCTION]</sub></sup><a name="sequence-value"></a>
 <code>&forall; :A :B :C. (<a href="#traversable-class">TRAVERSABLE</a> :A) (<a href="#applicative-class">APPLICATIVE</a> :B) &rArr; ((:A (:B :C)) &rarr; (:B (:A :C)))</code>
+
+***
+
+#### <code>AS-OPTIONAL</code> <sup><sub>[FUNCTION]</sub></sup><a name="as-optional-value"></a>
+<code>&forall; :A :B. <a href="#unwrappable-class">UNWRAPPABLE</a> :A &rArr; ((:A :B) &rarr; (<a href="#optional-type">OPTIONAL</a> :B))</code>
+
+Convert any Unwrappable container into an Optional, constructing Some on a successful unwrap and None on a failed unwrap.
+
 
 ***
 
@@ -4305,6 +4317,11 @@ Pair successive zero-based incides with elements from ITER
 
 Returns an iterator over tuples whose FSTs are elements from KEYS, and whose SNDs are the results of applying FUNC to those KEYS.
 
+
+***
+
+#### <code>UNWRAPPED!</code> <sup><sub>[FUNCTION]</sub></sup><a name="unwrapped!-value"></a>
+<code>&forall; :A :B. <a href="#unwrappable-class">UNWRAPPABLE</a> :A &rArr; ((<a href="#iterator-type">ITERATOR</a> (:A :B)) &rarr; (<a href="#iterator-type">ITERATOR</a> :B))</code>
 
 ***
 
