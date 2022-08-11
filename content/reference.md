@@ -1587,6 +1587,11 @@ Unwrap CONTAINER, signaling an error on failure.
 
 ***
 
+#### <code>MCONCAT</code> <sup><sub>[FUNCTION]</sub></sup><a name="mconcat-value"></a>
+<code>&forall; :A :B. (<a href="#foldable-class">FOLDABLE</a> :A) (<a href="#monoid-class">MONOID</a> :B) &rArr; ((:A :B) &rarr; :B)</code>
+
+***
+
 #### <code>SEQUENCE</code> <sup><sub>[FUNCTION]</sub></sup><a name="sequence-value"></a>
 <code>&forall; :A :B :C. (<a href="#traversable-class">TRAVERSABLE</a> :A) (<a href="#applicative-class">APPLICATIVE</a> :B) &rArr; ((:A (:B :C)) &rarr; (:B (:A :C)))</code>
 
