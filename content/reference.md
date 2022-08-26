@@ -1510,7 +1510,7 @@ Methods:
 
 ### Values
 
-#### <code>&lt;</code> <sup><sub>[FUNCTION]</sub></sup><a name="&lt;-value"></a>
+#### <code>(&lt; X Y)/code> <sup><sub>FUNCTION</sub></sup><a name="&lt;-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; (:A &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 Is X less than Y?
@@ -1518,7 +1518,7 @@ Is X less than Y?
 
 ***
 
-#### <code>&gt;</code> <sup><sub>[FUNCTION]</sub></sup><a name="&gt;-value"></a>
+#### <code>(&gt; X Y)/code> <sup><sub>FUNCTION</sub></sup><a name="&gt;-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; (:A &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 Is X greater than Y?
@@ -1526,7 +1526,7 @@ Is X greater than Y?
 
 ***
 
-#### <code>&lt;=</code> <sup><sub>[FUNCTION]</sub></sup><a name="&lt;=-value"></a>
+#### <code>(&lt;= X Y)/code> <sup><sub>FUNCTION</sub></sup><a name="&lt;=-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; (:A &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 Is X less than or equal to Y?
@@ -1534,7 +1534,7 @@ Is X less than or equal to Y?
 
 ***
 
-#### <code>&gt;=</code> <sup><sub>[FUNCTION]</sub></sup><a name="&gt;=-value"></a>
+#### <code>(&gt;= X Y)/code> <sup><sub>FUNCTION</sub></sup><a name="&gt;=-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; (:A &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 Is X greater than or equal to Y?
@@ -1542,12 +1542,12 @@ Is X greater than or equal to Y?
 
 ***
 
-#### <code>&gt;&gt;</code> <sup><sub>[FUNCTION]</sub></sup><a name="&gt;&gt;-value"></a>
+#### <code>(&gt;&gt; A B)/code> <sup><sub>FUNCTION</sub></sup><a name="&gt;&gt;-value"></a>
 <code>&forall; :A :B :C. <a href="#monad-class">MONAD</a> :A &rArr; ((:A :B) &rarr; (:A :C) &rarr; (:A :C))</code>
 
 ***
 
-#### <code>MAX</code> <sup><sub>[FUNCTION]</sub></sup><a name="max-value"></a>
+#### <code>(MAX X Y)/code> <sup><sub>FUNCTION</sub></sup><a name="max-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; (:A &rarr; :A &rarr; :A)</code>
 
 Returns the greater element of X and Y.
@@ -1555,7 +1555,7 @@ Returns the greater element of X and Y.
 
 ***
 
-#### <code>MIN</code> <sup><sub>[FUNCTION]</sub></sup><a name="min-value"></a>
+#### <code>(MIN X Y)/code> <sup><sub>FUNCTION</sub></sup><a name="min-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; (:A &rarr; :A &rarr; :A)</code>
 
 Returns the lesser element of X and Y.
@@ -1563,7 +1563,7 @@ Returns the lesser element of X and Y.
 
 ***
 
-#### <code>ERROR</code> <sup><sub>[FUNCTION]</sub></sup><a name="error-value"></a>
+#### <code>(ERROR STR)/code> <sup><sub>FUNCTION</sub></sup><a name="error-value"></a>
 <code>&forall; :A. (<a href="#string-type">STRING</a> &rarr; :A)</code>
 
 Signal an error by calling `CL:ERROR`.
@@ -1571,7 +1571,7 @@ Signal an error by calling `CL:ERROR`.
 
 ***
 
-#### <code>EXPECT</code> <sup><sub>[FUNCTION]</sub></sup><a name="expect-value"></a>
+#### <code>(EXPECT REASON CONTAINER)/code> <sup><sub>FUNCTION</sub></sup><a name="expect-value"></a>
 <code>&forall; :A :B. <a href="#unwrappable-class">UNWRAPPABLE</a> :A &rArr; (<a href="#string-type">STRING</a> &rarr; (:A :B) &rarr; :B)</code>
 
 Unwrap CONTAINER, signaling an error with the description REASON on failure.
@@ -1579,7 +1579,7 @@ Unwrap CONTAINER, signaling an error with the description REASON on failure.
 
 ***
 
-#### <code>UNWRAP</code> <sup><sub>[FUNCTION]</sub></sup><a name="unwrap-value"></a>
+#### <code>(UNWRAP CONTAINER)/code> <sup><sub>FUNCTION</sub></sup><a name="unwrap-value"></a>
 <code>&forall; :A :B. <a href="#unwrappable-class">UNWRAPPABLE</a> :A &rArr; ((:A :B) &rarr; :B)</code>
 
 Unwrap CONTAINER, signaling an error on failure.
@@ -1597,7 +1597,7 @@ Unwrap CONTAINER, signaling an error on failure.
 
 ***
 
-#### <code>AS-OPTIONAL</code> <sup><sub>[FUNCTION]</sub></sup><a name="as-optional-value"></a>
+#### <code>(AS-OPTIONAL CONTAINER)/code> <sup><sub>FUNCTION</sub></sup><a name="as-optional-value"></a>
 <code>&forall; :A :B. <a href="#unwrappable-class">UNWRAPPABLE</a> :A &rArr; ((:A :B) &rarr; (<a href="#optional-type">OPTIONAL</a> :B))</code>
 
 Convert any Unwrappable container into an Optional, constructing Some on a successful unwrap and None on a failed unwrap.
@@ -1605,7 +1605,7 @@ Convert any Unwrappable container into an Optional, constructing Some on a succe
 
 ***
 
-#### <code>WITH-DEFAULT</code> <sup><sub>[FUNCTION]</sub></sup><a name="with-default-value"></a>
+#### <code>(WITH-DEFAULT DEFAULT CONTAINER)/code> <sup><sub>FUNCTION</sub></sup><a name="with-default-value"></a>
 <code>&forall; :A :B. <a href="#unwrappable-class">UNWRAPPABLE</a> :B &rArr; (:A &rarr; (:B :A) &rarr; :A)</code>
 
 Unwrap CONTAINER, returning DEFAULT on failure.
@@ -1613,7 +1613,7 @@ Unwrap CONTAINER, returning DEFAULT on failure.
 
 ***
 
-#### <code>COMBINE-HASHES</code> <sup><sub>[FUNCTION]</sub></sup><a name="combine-hashes-value"></a>
+#### <code>(COMBINE-HASHES LEFT RIGHT)/code> <sup><sub>FUNCTION</sub></sup><a name="combine-hashes-value"></a>
 <code>(<a href="#ufix-type">UFIX</a> &rarr; <a href="#ufix-type">UFIX</a> &rarr; <a href="#ufix-type">UFIX</a>)</code>
 
 ***
@@ -1640,7 +1640,7 @@ Synonym for BOOLEAN-XOR.
 
 ***
 
-#### <code>UNDEFINED</code> <sup><sub>[FUNCTION]</sub></sup><a name="undefined-value"></a>
+#### <code>(UNDEFINED X)/code> <sup><sub>FUNCTION</sub></sup><a name="undefined-value"></a>
 <code>&forall; :A :B. (:A &rarr; :B)</code>
 
 A function which can be used in place of any value, throwing an error at runtime.
@@ -1648,7 +1648,7 @@ A function which can be used in place of any value, throwing an error at runtime
 
 ***
 
-#### <code>BOOLEAN-OR</code> <sup><sub>[FUNCTION]</sub></sup><a name="boolean-or-value"></a>
+#### <code>(BOOLEAN-OR X Y)/code> <sup><sub>FUNCTION</sub></sup><a name="boolean-or-value"></a>
 <code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 Is X or Y True? Note that this is a *function* which means both X and Y will be evaluated. Use the OR macro for short-circuiting behavior.
@@ -1656,7 +1656,7 @@ Is X or Y True? Note that this is a *function* which means both X and Y will be 
 
 ***
 
-#### <code>BOOLEAN-AND</code> <sup><sub>[FUNCTION]</sub></sup><a name="boolean-and-value"></a>
+#### <code>(BOOLEAN-AND X Y)/code> <sup><sub>FUNCTION</sub></sup><a name="boolean-and-value"></a>
 <code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 Are X and Y True? Note that this is a *function* which means both X and Y will be evaluated. Use the AND macro for short-circuiting behavior.
@@ -1664,7 +1664,7 @@ Are X and Y True? Note that this is a *function* which means both X and Y will b
 
 ***
 
-#### <code>BOOLEAN-NOT</code> <sup><sub>[FUNCTION]</sub></sup><a name="boolean-not-value"></a>
+#### <code>(BOOLEAN-NOT X)/code> <sup><sub>FUNCTION</sub></sup><a name="boolean-not-value"></a>
 <code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 Is X False?
@@ -1672,7 +1672,7 @@ Is X False?
 
 ***
 
-#### <code>BOOLEAN-XOR</code> <sup><sub>[FUNCTION]</sub></sup><a name="boolean-xor-value"></a>
+#### <code>(BOOLEAN-XOR X Y)/code> <sup><sub>FUNCTION</sub></sup><a name="boolean-xor-value"></a>
 <code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 Are X or Y True, but not both?
@@ -1686,7 +1686,7 @@ Are X or Y True, but not both?
 
 ### Values
 
-#### <code>/=</code> <sup><sub>[FUNCTION]</sub></sup><a name="/=-value"></a>
+#### <code>(/= A B)/code> <sup><sub>FUNCTION</sub></sup><a name="/=-value"></a>
 <code>&forall; :A. <a href="#eq-class">EQ</a> :A &rArr; (:A &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 Is A not equal to B?
@@ -1694,7 +1694,7 @@ Is A not equal to B?
 
 ***
 
-#### <code>ID</code> <sup><sub>[FUNCTION]</sub></sup><a name="id-value"></a>
+#### <code>(ID X)/code> <sup><sub>FUNCTION</sub></sup><a name="id-value"></a>
 <code>&forall; :A. (:A &rarr; :A)</code>
 
 A function that always returns its argument.
@@ -1702,7 +1702,7 @@ A function that always returns its argument.
 
 ***
 
-#### <code>FIX</code> <sup><sub>[FUNCTION]</sub></sup><a name="fix-value"></a>
+#### <code>(FIX F N)/code> <sup><sub>FUNCTION</sub></sup><a name="fix-value"></a>
 <code>&forall; :A :B. (((:A &rarr; :B) &rarr; :A &rarr; :B) &rarr; :A &rarr; :B)</code>
 
 Compute the fixed point of a unary function. This is equivalent to the Y-combinator of the lambda calculus. This combinator allows recursion without specific assignment of names. For example, the factorial function can be written
@@ -1717,7 +1717,7 @@ Compute the fixed point of a unary function. This is equivalent to the Y-combina
 
 ***
 
-#### <code>ASUM</code> <sup><sub>[FUNCTION]</sub></sup><a name="asum-value"></a>
+#### <code>(ASUM XS)/code> <sup><sub>FUNCTION</sub></sup><a name="asum-value"></a>
 <code>&forall; :A :B :C. (<a href="#alternative-class">ALTERNATIVE</a> :B) (<a href="#foldable-class">FOLDABLE</a> :A) &rArr; ((:A (:B :C)) &rarr; (:B :C))</code>
 
 Fold over a list using alt
@@ -1725,7 +1725,7 @@ Fold over a list using alt
 
 ***
 
-#### <code>FLIP</code> <sup><sub>[FUNCTION]</sub></sup><a name="flip-value"></a>
+#### <code>(FLIP F X Y)/code> <sup><sub>FUNCTION</sub></sup><a name="flip-value"></a>
 <code>&forall; :A :B :C. ((:A &rarr; :B &rarr; :C) &rarr; :B &rarr; :A &rarr; :C)</code>
 
 Returns a function that takes its arguments in reverse order.
@@ -1733,7 +1733,7 @@ Returns a function that takes its arguments in reverse order.
 
 ***
 
-#### <code>MSUM</code> <sup><sub>[FUNCTION]</sub></sup><a name="msum-value"></a>
+#### <code>(MSUM XS)/code> <sup><sub>FUNCTION</sub></sup><a name="msum-value"></a>
 <code>&forall; :A :B. (<a href="#monoid-class">MONOID</a> :B) (<a href="#foldable-class">FOLDABLE</a> :A) &rArr; ((:A :B) &rarr; :B)</code>
 
 Fold over a list using &lt;&gt;
@@ -1741,7 +1741,7 @@ Fold over a list using &lt;&gt;
 
 ***
 
-#### <code>CONST</code> <sup><sub>[FUNCTION]</sub></sup><a name="const-value"></a>
+#### <code>(CONST A B)/code> <sup><sub>FUNCTION</sub></sup><a name="const-value"></a>
 <code>&forall; :A :B. (:A &rarr; :B &rarr; :A)</code>
 
 A function that always returns its first argument.
@@ -1749,7 +1749,7 @@ A function that always returns its first argument.
 
 ***
 
-#### <code>TRACE</code> <sup><sub>[FUNCTION]</sub></sup><a name="trace-value"></a>
+#### <code>(TRACE STR)/code> <sup><sub>FUNCTION</sub></sup><a name="trace-value"></a>
 <code>(<a href="#string-type">STRING</a> &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Print a line to `*STANDARD-OUTPUT*`
@@ -1757,7 +1757,7 @@ Print a line to `*STANDARD-OUTPUT*`
 
 ***
 
-#### <code>REDUCE</code> <sup><sub>[FUNCTION]</sub></sup><a name="reduce-value"></a>
+#### <code>(REDUCE F Y XS)/code> <sup><sub>FUNCTION</sub></sup><a name="reduce-value"></a>
 <code>&forall; :A :B :C. <a href="#foldable-class">FOLDABLE</a> :C &rArr; ((:A &rarr; :B &rarr; :B) &rarr; :B &rarr; (:C :A) &rarr; :B)</code>
 
 The same as `fold` but with the argument order swapped to match `cl:reduce`
@@ -1765,12 +1765,12 @@ The same as `fold` but with the argument order swapped to match `cl:reduce`
 
 ***
 
-#### <code>COMPOSE</code> <sup><sub>[FUNCTION]</sub></sup><a name="compose-value"></a>
+#### <code>(COMPOSE F G)/code> <sup><sub>FUNCTION</sub></sup><a name="compose-value"></a>
 <code>&forall; :A :B :C. ((:A &rarr; :B) &rarr; (:C &rarr; :A) &rarr; :C &rarr; :B)</code>
 
 ***
 
-#### <code>CONJOIN</code> <sup><sub>[FUNCTION]</sub></sup><a name="conjoin-value"></a>
+#### <code>(CONJOIN F G X)/code> <sup><sub>FUNCTION</sub></sup><a name="conjoin-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 Compute the conjunction of two unary Boolean functions.
@@ -1778,7 +1778,7 @@ Compute the conjunction of two unary Boolean functions.
 
 ***
 
-#### <code>DISJOIN</code> <sup><sub>[FUNCTION]</sub></sup><a name="disjoin-value"></a>
+#### <code>(DISJOIN F G X)/code> <sup><sub>FUNCTION</sub></sup><a name="disjoin-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 Compute the disjunction of two unary Boolean functions.
@@ -1786,12 +1786,12 @@ Compute the disjunction of two unary Boolean functions.
 
 ***
 
-#### <code>UNCURRY</code> <sup><sub>[FUNCTION]</sub></sup><a name="uncurry-value"></a>
+#### <code>(UNCURRY FUNC TPL)/code> <sup><sub>FUNCTION</sub></sup><a name="uncurry-value"></a>
 <code>&forall; :A :B :C. ((:A &rarr; :B &rarr; :C) &rarr; (<a href="#tuple-type">TUPLE</a> :A :B) &rarr; :C)</code>
 
 ***
 
-#### <code>COMPLEMENT</code> <sup><sub>[FUNCTION]</sub></sup><a name="complement-value"></a>
+#### <code>(COMPLEMENT F X)/code> <sup><sub>FUNCTION</sub></sup><a name="complement-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 Compute the complement of a unary Boolean function.
@@ -1799,7 +1799,7 @@ Compute the complement of a unary Boolean function.
 
 ***
 
-#### <code>TRACEOBJECT</code> <sup><sub>[FUNCTION]</sub></sup><a name="traceobject-value"></a>
+#### <code>(TRACEOBJECT STR ITEM)/code> <sup><sub>FUNCTION</sub></sup><a name="traceobject-value"></a>
 <code>&forall; :A. (<a href="#string-type">STRING</a> &rarr; :A &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Print a line to `*STANDARD-OUTPUT*` in the form "{STR}: {ITEM}"
@@ -1905,17 +1905,17 @@ Methods:
 
 ### Values
 
-#### <code>1+</code> <sup><sub>[FUNCTION]</sub></sup><a name="1+-value"></a>
+#### <code>(1+ NUM)/code> <sup><sub>FUNCTION</sub></sup><a name="1+-value"></a>
 <code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; (:A &rarr; :A)</code>
 
 ***
 
-#### <code>1-</code> <sup><sub>[FUNCTION]</sub></sup><a name="1--value"></a>
+#### <code>(1- NUM)/code> <sup><sub>FUNCTION</sub></sup><a name="1--value"></a>
 <code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; (:A &rarr; :A)</code>
 
 ***
 
-#### <code>ABS</code> <sup><sub>[FUNCTION]</sub></sup><a name="abs-value"></a>
+#### <code>(ABS X)/code> <sup><sub>FUNCTION</sub></sup><a name="abs-value"></a>
 <code>&forall; :A. (<a href="#ord-class">ORD</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; (:A &rarr; :A)</code>
 
 Absolute value of X.
@@ -1923,7 +1923,7 @@ Absolute value of X.
 
 ***
 
-#### <code>ASH</code> <sup><sub>[FUNCTION]</sub></sup><a name="ash-value"></a>
+#### <code>(ASH X N)/code> <sup><sub>FUNCTION</sub></sup><a name="ash-value"></a>
 <code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
 
 Compute the "arithmetic shift" of X by N. 
@@ -1931,7 +1931,7 @@ Compute the "arithmetic shift" of X by N.
 
 ***
 
-#### <code>SIGN</code> <sup><sub>[FUNCTION]</sub></sup><a name="sign-value"></a>
+#### <code>(SIGN X)/code> <sup><sub>FUNCTION</sub></sup><a name="sign-value"></a>
 <code>&forall; :A :B. (<a href="#ord-class">ORD</a> :A) (<a href="#num-class">NUM</a> :A) (<a href="#num-class">NUM</a> :B) &rArr; (:A &rarr; :B)</code>
 
 The sign of X.
@@ -1939,12 +1939,12 @@ The sign of X.
 
 ***
 
-#### <code>NEGATE</code> <sup><sub>[FUNCTION]</sub></sup><a name="negate-value"></a>
+#### <code>(NEGATE X)/code> <sup><sub>FUNCTION</sub></sup><a name="negate-value"></a>
 <code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; (:A &rarr; :A)</code>
 
 ***
 
-#### <code>FINITE?</code> <sup><sub>[FUNCTION]</sub></sup><a name="finite?-value"></a>
+#### <code>(FINITE? X)/code> <sup><sub>FUNCTION</sub></sup><a name="finite?-value"></a>
 <code>&forall; :A. <a href="#transfinite-class">TRANSFINITE</a> :A &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 Neither infinite or NaN.
@@ -1952,27 +1952,27 @@ Neither infinite or NaN.
 
 ***
 
-#### <code>NONZERO?</code> <sup><sub>[FUNCTION]</sub></sup><a name="nonzero?-value"></a>
+#### <code>(NONZERO? X)/code> <sup><sub>FUNCTION</sub></sup><a name="nonzero?-value"></a>
 <code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 ***
 
-#### <code>NEGATIVE?</code> <sup><sub>[FUNCTION]</sub></sup><a name="negative?-value"></a>
+#### <code>(NEGATIVE? X)/code> <sup><sub>FUNCTION</sub></sup><a name="negative?-value"></a>
 <code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 ***
 
-#### <code>POSITIVE?</code> <sup><sub>[FUNCTION]</sub></sup><a name="positive?-value"></a>
+#### <code>(POSITIVE? X)/code> <sup><sub>FUNCTION</sub></sup><a name="positive?-value"></a>
 <code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 ***
 
-#### <code>NONNEGATIVE?</code> <sup><sub>[FUNCTION]</sub></sup><a name="nonnegative?-value"></a>
+#### <code>(NONNEGATIVE? X)/code> <sup><sub>FUNCTION</sub></sup><a name="nonnegative?-value"></a>
 <code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 ***
 
-#### <code>NONPOSITIVE?</code> <sup><sub>[FUNCTION]</sub></sup><a name="nonpositive?-value"></a>
+#### <code>(NONPOSITIVE? X)/code> <sup><sub>FUNCTION</sub></sup><a name="nonpositive?-value"></a>
 <code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 ***
@@ -2022,7 +2022,7 @@ Methods:
 
 ### Values
 
-#### <code>NUMERATOR</code> <sup><sub>[FUNCTION]</sub></sup><a name="numerator-value"></a>
+#### <code>(NUMERATOR Q)/code> <sup><sub>FUNCTION</sub></sup><a name="numerator-value"></a>
 <code>(<a href="#fraction-type">FRACTION</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
 
 The numerator of a fraction.
@@ -2030,12 +2030,12 @@ The numerator of a fraction.
 
 ***
 
-#### <code>MKFRACTION</code> <sup><sub>[FUNCTION]</sub></sup><a name="mkfraction-value"></a>
+#### <code>(MKFRACTION A B)/code> <sup><sub>FUNCTION</sub></sup><a name="mkfraction-value"></a>
 <code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#fraction-type">FRACTION</a>)</code>
 
 ***
 
-#### <code>DENOMINATOR</code> <sup><sub>[FUNCTION]</sub></sup><a name="denominator-value"></a>
+#### <code>(DENOMINATOR Q)/code> <sup><sub>FUNCTION</sub></sup><a name="denominator-value"></a>
 <code>(<a href="#fraction-type">FRACTION</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
 
 The denominator of a fraction.
@@ -2115,7 +2115,7 @@ Methods:
 
 ### Values
 
-#### <code>^</code> <sup><sub>[FUNCTION]</sub></sup><a name="^-value"></a>
+#### <code>(^ BASE POWER)/code> <sup><sub>FUNCTION</sub></sup><a name="^-value"></a>
 <code>&forall; :A :B. (<a href="#num-class">NUM</a> :A) (<a href="#integral-class">INTEGRAL</a> :B) &rArr; (:A &rarr; :B &rarr; :A)</code>
 
 Exponentiate BASE to a non-negative POWER.
@@ -2123,7 +2123,7 @@ Exponentiate BASE to a non-negative POWER.
 
 ***
 
-#### <code>^^</code> <sup><sub>[FUNCTION]</sub></sup><a name="^^-value"></a>
+#### <code>(^^ BASE POWER)/code> <sup><sub>FUNCTION</sub></sup><a name="^^-value"></a>
 <code>&forall; :A :B. (<a href="#reciprocable-class">RECIPROCABLE</a> :A) (<a href="#integral-class">INTEGRAL</a> :B) &rArr; (:A &rarr; :B &rarr; :A)</code>
 
 Exponentiate BASE to a signed POWER.
@@ -2131,7 +2131,7 @@ Exponentiate BASE to a signed POWER.
 
 ***
 
-#### <code>GCD</code> <sup><sub>[FUNCTION]</sub></sup><a name="gcd-value"></a>
+#### <code>(GCD A B)/code> <sup><sub>FUNCTION</sub></sup><a name="gcd-value"></a>
 <code>&forall; :A. (<a href="#remainder-class">REMAINDER</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; :A &rarr; :A)</code>
 
 The greatest common divisor of A and B.
@@ -2139,7 +2139,7 @@ The greatest common divisor of A and B.
 
 ***
 
-#### <code>LCM</code> <sup><sub>[FUNCTION]</sub></sup><a name="lcm-value"></a>
+#### <code>(LCM A B)/code> <sup><sub>FUNCTION</sub></sup><a name="lcm-value"></a>
 <code>&forall; :A. (<a href="#remainder-class">REMAINDER</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; :A &rarr; :A)</code>
 
 The least common multiple of A and B.
@@ -2147,7 +2147,7 @@ The least common multiple of A and B.
 
 ***
 
-#### <code>LSH</code> <sup><sub>[FUNCTION]</sub></sup><a name="lsh-value"></a>
+#### <code>(LSH X N)/code> <sup><sub>FUNCTION</sub></sup><a name="lsh-value"></a>
 <code>&forall; :A :B. (<a href="#integral-class">INTEGRAL</a> :B) (<a href="#bits-class">BITS</a> :A) &rArr; (:A &rarr; :B &rarr; :A)</code>
 
 Left shift X by N
@@ -2155,7 +2155,7 @@ Left shift X by N
 
 ***
 
-#### <code>RSH</code> <sup><sub>[FUNCTION]</sub></sup><a name="rsh-value"></a>
+#### <code>(RSH X N)/code> <sup><sub>FUNCTION</sub></sup><a name="rsh-value"></a>
 <code>&forall; :A :B. (<a href="#integral-class">INTEGRAL</a> :B) (<a href="#bits-class">BITS</a> :A) &rArr; (:A &rarr; :B &rarr; :A)</code>
 
 Right shift X by N
@@ -2163,7 +2163,7 @@ Right shift X by N
 
 ***
 
-#### <code>ILOG</code> <sup><sub>[FUNCTION]</sub></sup><a name="ilog-value"></a>
+#### <code>(ILOG B X)/code> <sup><sub>FUNCTION</sub></sup><a name="ilog-value"></a>
 <code>&forall; :A. <a href="#integral-class">INTEGRAL</a> :A &rArr; (:A &rarr; :A &rarr; :A)</code>
 
 The floor of the logarithm with base B &gt; 1 of X &gt;= 1.
@@ -2171,7 +2171,7 @@ The floor of the logarithm with base B &gt; 1 of X &gt;= 1.
 
 ***
 
-#### <code>ODD?</code> <sup><sub>[FUNCTION]</sub></sup><a name="odd?-value"></a>
+#### <code>(ODD? N)/code> <sup><sub>FUNCTION</sub></sup><a name="odd?-value"></a>
 <code>&forall; :A. <a href="#integral-class">INTEGRAL</a> :A &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 Is N odd?
@@ -2179,7 +2179,7 @@ Is N odd?
 
 ***
 
-#### <code>EVEN?</code> <sup><sub>[FUNCTION]</sub></sup><a name="even?-value"></a>
+#### <code>(EVEN? N)/code> <sup><sub>FUNCTION</sub></sup><a name="even?-value"></a>
 <code>&forall; :A. <a href="#integral-class">INTEGRAL</a> :A &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 Is N even?
@@ -2187,7 +2187,7 @@ Is N even?
 
 ***
 
-#### <code>ISQRT</code> <sup><sub>[FUNCTION]</sub></sup><a name="isqrt-value"></a>
+#### <code>(ISQRT X)/code> <sup><sub>FUNCTION</sub></sup><a name="isqrt-value"></a>
 <code>&forall; :A. <a href="#integral-class">INTEGRAL</a> :A &rArr; (:A &rarr; :A)</code>
 
 The floor of the square root of N &gt; 0.
@@ -2195,7 +2195,7 @@ The floor of the square root of N &gt; 0.
 
 ***
 
-#### <code>INTEGRAL-&gt;NUM</code> <sup><sub>[FUNCTION]</sub></sup><a name="integral-&gt;num-value"></a>
+#### <code>(INTEGRAL-&gt;NUM N)/code> <sup><sub>FUNCTION</sub></sup><a name="integral-&gt;num-value"></a>
 <code>&forall; :A :B. (<a href="#integral-class">INTEGRAL</a> :A) (<a href="#num-class">NUM</a> :B) &rArr; (:A &rarr; :B)</code>
 
 Converts any Integral N into any Num.
@@ -2338,7 +2338,7 @@ Methods:
 
 ### Values
 
-#### <code>ROUND</code> <sup><sub>[FUNCTION]</sub></sup><a name="round-value"></a>
+#### <code>(ROUND X)/code> <sup><sub>FUNCTION</sub></sup><a name="round-value"></a>
 <code>&forall; :A. (<a href="#quantizable-class">QUANTIZABLE</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; (:A &rarr; <a href="#integer-type">INTEGER</a>)</code>
 
 Return the nearest integer to X, with ties breaking towards even numbers.
@@ -2346,7 +2346,7 @@ Return the nearest integer to X, with ties breaking towards even numbers.
 
 ***
 
-#### <code>SAFE/</code> <sup><sub>[FUNCTION]</sub></sup><a name="safe/-value"></a>
+#### <code>(SAFE/ X Y)/code> <sup><sub>FUNCTION</sub></sup><a name="safe/-value"></a>
 <code>&forall; :A :B. (<a href="#num-class">NUM</a> :A) (<a href="#dividable-class">DIVIDABLE</a> :A :B) &rArr; (:A &rarr; :A &rarr; (<a href="#optional-type">OPTIONAL</a> :B))</code>
 
 Safely divide X by Y, returning None if Y is zero.
@@ -2354,7 +2354,7 @@ Safely divide X by Y, returning None if Y is zero.
 
 ***
 
-#### <code>EXACT/</code> <sup><sub>[FUNCTION]</sub></sup><a name="exact/-value"></a>
+#### <code>(EXACT/ A B)/code> <sup><sub>FUNCTION</sub></sup><a name="exact/-value"></a>
 <code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#fraction-type">FRACTION</a>)</code>
 
 Exactly divide two integers and produce a fraction.
@@ -2362,7 +2362,7 @@ Exactly divide two integers and produce a fraction.
 
 ***
 
-#### <code>FLOOR/</code> <sup><sub>[FUNCTION]</sub></sup><a name="floor/-value"></a>
+#### <code>(FLOOR/ A B)/code> <sup><sub>FUNCTION</sub></sup><a name="floor/-value"></a>
 <code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
 
 Divide two integers and compute the floor of the quotient.
@@ -2370,7 +2370,7 @@ Divide two integers and compute the floor of the quotient.
 
 ***
 
-#### <code>ROUND/</code> <sup><sub>[FUNCTION]</sub></sup><a name="round/-value"></a>
+#### <code>(ROUND/ A B)/code> <sup><sub>FUNCTION</sub></sup><a name="round/-value"></a>
 <code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
 
 Divide two integers and round the quotient.
@@ -2378,7 +2378,7 @@ Divide two integers and round the quotient.
 
 ***
 
-#### <code>CEILING/</code> <sup><sub>[FUNCTION]</sub></sup><a name="ceiling/-value"></a>
+#### <code>(CEILING/ A B)/code> <sup><sub>FUNCTION</sub></sup><a name="ceiling/-value"></a>
 <code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
 
 Divide two integers and compute the ceiling of the quotient.
@@ -2386,7 +2386,7 @@ Divide two integers and compute the ceiling of the quotient.
 
 ***
 
-#### <code>INEXACT/</code> <sup><sub>[FUNCTION]</sub></sup><a name="inexact/-value"></a>
+#### <code>(INEXACT/ A B)/code> <sup><sub>FUNCTION</sub></sup><a name="inexact/-value"></a>
 <code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#double-float-type">DOUBLE-FLOAT</a>)</code>
 
 Compute the quotient of integers as a double-precision float.
@@ -2396,7 +2396,7 @@ Note: This does *not* divide double-float arguments.
 
 ***
 
-#### <code>QUANTIZE</code> <sup><sub>[FUNCTION]</sub></sup><a name="quantize-value"></a>
+#### <code>(QUANTIZE X)/code> <sup><sub>FUNCTION</sub></sup><a name="quantize-value"></a>
 <code>&forall; :A. <a href="#real-class">REAL</a> :A &rArr; (:A &rarr; (<a href="#quantization-type">QUANTIZATION</a> :A))</code>
 
 Given X, (QUANTIZE X) will return the least integer greater or equal to X,
@@ -2406,7 +2406,7 @@ remainders expressed as values of type of X.
 
 ***
 
-#### <code>TRUNCATE</code> <sup><sub>[FUNCTION]</sub></sup><a name="truncate-value"></a>
+#### <code>(TRUNCATE X)/code> <sup><sub>FUNCTION</sub></sup><a name="truncate-value"></a>
 <code>&forall; :A. <a href="#quantizable-class">QUANTIZABLE</a> :A &rArr; (:A &rarr; <a href="#integer-type">INTEGER</a>)</code>
 
 Returns the integer closest/equal to X that is within 0 and X.
@@ -2414,7 +2414,7 @@ Returns the integer closest/equal to X that is within 0 and X.
 
 ***
 
-#### <code>ROUND-HALF-UP</code> <sup><sub>[FUNCTION]</sub></sup><a name="round-half-up-value"></a>
+#### <code>(ROUND-HALF-UP X)/code> <sup><sub>FUNCTION</sub></sup><a name="round-half-up-value"></a>
 <code>&forall; :A. (<a href="#quantizable-class">QUANTIZABLE</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; (:A &rarr; <a href="#integer-type">INTEGER</a>)</code>
 
 Return the nearest integer to X, with ties breaking toward positive infinity.
@@ -2422,7 +2422,7 @@ Return the nearest integer to X, with ties breaking toward positive infinity.
 
 ***
 
-#### <code>ROUND-HALF-DOWN</code> <sup><sub>[FUNCTION]</sub></sup><a name="round-half-down-value"></a>
+#### <code>(ROUND-HALF-DOWN X)/code> <sup><sub>FUNCTION</sub></sup><a name="round-half-down-value"></a>
 <code>&forall; :A. (<a href="#quantizable-class">QUANTIZABLE</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; (:A &rarr; <a href="#integer-type">INTEGER</a>)</code>
 
 Return the nearest integer to X, with ties breaking toward positive infinity.
@@ -2504,7 +2504,7 @@ The complex unit i. (The double ii represents a blackboard-bold i.)
 
 ***
 
-#### <code>CONJUGATE</code> <sup><sub>[FUNCTION]</sub></sup><a name="conjugate-value"></a>
+#### <code>(CONJUGATE N)/code> <sup><sub>FUNCTION</sub></sup><a name="conjugate-value"></a>
 <code>&forall; :A. <a href="#complex-class">COMPLEX</a> :A &rArr; ((<a href="#complex-type">COMPLEX</a> :A) &rarr; (<a href="#complex-type">COMPLEX</a> :A))</code>
 
 The complex conjugate.
@@ -2512,7 +2512,7 @@ The complex conjugate.
 
 ***
 
-#### <code>SQUARE-MAGNITUDE</code> <sup><sub>[FUNCTION]</sub></sup><a name="square-magnitude-value"></a>
+#### <code>(SQUARE-MAGNITUDE A)/code> <sup><sub>FUNCTION</sub></sup><a name="square-magnitude-value"></a>
 <code>&forall; :A. <a href="#complex-class">COMPLEX</a> :A &rArr; ((<a href="#complex-type">COMPLEX</a> :A) &rarr; :A)</code>
 
 The length of a complex number.
@@ -2654,7 +2654,7 @@ Methods:
 
 ### Values
 
-#### <code>CIS</code> <sup><sub>[FUNCTION]</sub></sup><a name="cis-value"></a>
+#### <code>(CIS Z)/code> <sup><sub>FUNCTION</sub></sup><a name="cis-value"></a>
 <code>&forall; :A. (<a href="#trigonometric-class">TRIGONOMETRIC</a> :A) (<a href="#complex-class">COMPLEX</a> :A) &rArr; (:A &rarr; (<a href="#complex-type">COMPLEX</a> :A))</code>
 
 (cis z) = (exp (complex 0 z)) = (+ (cos z) (sin z))
@@ -2662,32 +2662,32 @@ Methods:
 
 ***
 
-#### <code>COSH</code> <sup><sub>[FUNCTION]</sub></sup><a name="cosh-value"></a>
+#### <code>(COSH X)/code> <sup><sub>FUNCTION</sub></sup><a name="cosh-value"></a>
 <code>&forall; :A. <a href="#elementary-class">ELEMENTARY</a> :A &rArr; (:A &rarr; :A)</code>
 
 ***
 
-#### <code>SINH</code> <sup><sub>[FUNCTION]</sub></sup><a name="sinh-value"></a>
+#### <code>(SINH X)/code> <sup><sub>FUNCTION</sub></sup><a name="sinh-value"></a>
 <code>&forall; :A. <a href="#elementary-class">ELEMENTARY</a> :A &rArr; (:A &rarr; :A)</code>
 
 ***
 
-#### <code>TANH</code> <sup><sub>[FUNCTION]</sub></sup><a name="tanh-value"></a>
+#### <code>(TANH X)/code> <sup><sub>FUNCTION</sub></sup><a name="tanh-value"></a>
 <code>&forall; :A. <a href="#elementary-class">ELEMENTARY</a> :A &rArr; (:A &rarr; :A)</code>
 
 ***
 
-#### <code>ACOSH</code> <sup><sub>[FUNCTION]</sub></sup><a name="acosh-value"></a>
+#### <code>(ACOSH X)/code> <sup><sub>FUNCTION</sub></sup><a name="acosh-value"></a>
 <code>&forall; :A. <a href="#elementary-class">ELEMENTARY</a> :A &rArr; (:A &rarr; :A)</code>
 
 ***
 
-#### <code>ASINH</code> <sup><sub>[FUNCTION]</sub></sup><a name="asinh-value"></a>
+#### <code>(ASINH X)/code> <sup><sub>FUNCTION</sub></sup><a name="asinh-value"></a>
 <code>&forall; :A. <a href="#elementary-class">ELEMENTARY</a> :A &rArr; (:A &rarr; :A)</code>
 
 ***
 
-#### <code>ATAN2</code> <sup><sub>[FUNCTION]</sub></sup><a name="atan2-value"></a>
+#### <code>(ATAN2 Y X)/code> <sup><sub>FUNCTION</sub></sup><a name="atan2-value"></a>
 <code>&forall; :A. (<a href="#ord-class">ORD</a> :A) (<a href="#elementary-class">ELEMENTARY</a> :A) &rArr; (:A &rarr; :A &rarr; :A)</code>
 
 Computes the two-argument arctangent of y and x, which is roughly the same
@@ -2696,17 +2696,17 @@ as (atan (/ y x)) when defined and accounting for the quadrant of the (x,y).
 
 ***
 
-#### <code>ATANH</code> <sup><sub>[FUNCTION]</sub></sup><a name="atanh-value"></a>
+#### <code>(ATANH X)/code> <sup><sub>FUNCTION</sub></sup><a name="atanh-value"></a>
 <code>&forall; :A. <a href="#elementary-class">ELEMENTARY</a> :A &rArr; (:A &rarr; :A)</code>
 
 ***
 
-#### <code>SINCOS</code> <sup><sub>[FUNCTION]</sub></sup><a name="sincos-value"></a>
+#### <code>(SINCOS X)/code> <sup><sub>FUNCTION</sub></sup><a name="sincos-value"></a>
 <code>&forall; :A. <a href="#trigonometric-class">TRIGONOMETRIC</a> :A &rArr; (:A &rarr; (<a href="#tuple-type">TUPLE</a> :A :A))</code>
 
 ***
 
-#### <code>MAGNITUDE</code> <sup><sub>[FUNCTION]</sub></sup><a name="magnitude-value"></a>
+#### <code>(MAGNITUDE Z)/code> <sup><sub>FUNCTION</sub></sup><a name="magnitude-value"></a>
 <code>&forall; :A. (<a href="#radical-class">RADICAL</a> :A) (<a href="#complex-class">COMPLEX</a> :A) &rArr; ((<a href="#complex-type">COMPLEX</a> :A) &rarr; :A)</code>
 
 For z = x + yi, (magnitude z) = (sqrt (+ (^ x 2) (^ y 2)))
@@ -2758,12 +2758,12 @@ Methods:
 
 ### Values
 
-#### <code>CHAR-CODE</code> <sup><sub>[FUNCTION]</sub></sup><a name="char-code-value"></a>
+#### <code>(CHAR-CODE CHAR)/code> <sup><sub>FUNCTION</sub></sup><a name="char-code-value"></a>
 <code>(<a href="#char-type">CHAR</a> &rarr; <a href="#ufix-type">UFIX</a>)</code>
 
 ***
 
-#### <code>CODE-CHAR</code> <sup><sub>[FUNCTION]</sub></sup><a name="code-char-value"></a>
+#### <code>(CODE-CHAR CODE)/code> <sup><sub>FUNCTION</sub></sup><a name="code-char-value"></a>
 <code>(<a href="#ufix-type">UFIX</a> &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#char-type">CHAR</a>))</code>
 
 ***
@@ -2774,12 +2774,12 @@ Methods:
 
 ### Values
 
-#### <code>REF</code> <sup><sub>[FUNCTION]</sub></sup><a name="ref-value"></a>
+#### <code>(REF STR IDX)/code> <sup><sub>FUNCTION</sub></sup><a name="ref-value"></a>
 <code>(<a href="#string-type">STRING</a> &rarr; <a href="#ufix-type">UFIX</a> &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#char-type">CHAR</a>))</code>
 
 ***
 
-#### <code>CONCAT</code> <sup><sub>[FUNCTION]</sub></sup><a name="concat-value"></a>
+#### <code>(CONCAT STR1 STR2)/code> <sup><sub>FUNCTION</sub></sup><a name="concat-value"></a>
 <code>(<a href="#string-type">STRING</a> &rarr; <a href="#string-type">STRING</a> &rarr; <a href="#string-type">STRING</a>)</code>
 
 Concatenate STR1 and STR2 together, returning a new string.
@@ -2787,7 +2787,7 @@ Concatenate STR1 and STR2 together, returning a new string.
 
 ***
 
-#### <code>LENGTH</code> <sup><sub>[FUNCTION]</sub></sup><a name="length-value"></a>
+#### <code>(LENGTH STR)/code> <sup><sub>FUNCTION</sub></sup><a name="length-value"></a>
 <code>(<a href="#string-type">STRING</a> &rarr; <a href="#ufix-type">UFIX</a>)</code>
 
 The length of a string STR.
@@ -2795,7 +2795,7 @@ The length of a string STR.
 
 ***
 
-#### <code>REVERSE</code> <sup><sub>[FUNCTION]</sub></sup><a name="reverse-value"></a>
+#### <code>(REVERSE S)/code> <sup><sub>FUNCTION</sub></sup><a name="reverse-value"></a>
 <code>(<a href="#string-type">STRING</a> &rarr; <a href="#string-type">STRING</a>)</code>
 
 Reverse a string.
@@ -2803,7 +2803,7 @@ Reverse a string.
 
 ***
 
-#### <code>PARSE-INT</code> <sup><sub>[FUNCTION]</sub></sup><a name="parse-int-value"></a>
+#### <code>(PARSE-INT STR)/code> <sup><sub>FUNCTION</sub></sup><a name="parse-int-value"></a>
 <code>(<a href="#string-type">STRING</a> &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#integer-type">INTEGER</a>))</code>
 
 Parse the integer in string STR.
@@ -2811,7 +2811,7 @@ Parse the integer in string STR.
 
 ***
 
-#### <code>SUBSTRING</code> <sup><sub>[FUNCTION]</sub></sup><a name="substring-value"></a>
+#### <code>(SUBSTRING STR START END)/code> <sup><sub>FUNCTION</sub></sup><a name="substring-value"></a>
 <code>(<a href="#string-type">STRING</a> &rarr; <a href="#ufix-type">UFIX</a> &rarr; <a href="#ufix-type">UFIX</a> &rarr; <a href="#string-type">STRING</a>)</code>
 
 Compute a substring of a string bounded by given indices.
@@ -2819,7 +2819,7 @@ Compute a substring of a string bounded by given indices.
 
 ***
 
-#### <code>SUBSTRING?</code> <sup><sub>[FUNCTION]</sub></sup><a name="substring?-value"></a>
+#### <code>(SUBSTRING? SMALL BIG)/code> <sup><sub>FUNCTION</sub></sup><a name="substring?-value"></a>
 <code>(<a href="#string-type">STRING</a> &rarr; <a href="#string-type">STRING</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 Return true if the first argument appears as a substring within the second argument.
@@ -2827,7 +2827,7 @@ Return true if the first argument appears as a substring within the second argum
 
 ***
 
-#### <code>STRIP-PREFIX</code> <sup><sub>[FUNCTION]</sub></sup><a name="strip-prefix-value"></a>
+#### <code>(STRIP-PREFIX PREFIX STR)/code> <sup><sub>FUNCTION</sub></sup><a name="strip-prefix-value"></a>
 <code>(<a href="#string-type">STRING</a> &rarr; <a href="#string-type">STRING</a> &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#string-type">STRING</a>))</code>
 
 Returns a string without a give prefix, or None if the string
@@ -2836,7 +2836,7 @@ does not have that suffix.
 
 ***
 
-#### <code>STRIP-SUFFIX</code> <sup><sub>[FUNCTION]</sub></sup><a name="strip-suffix-value"></a>
+#### <code>(STRIP-SUFFIX SUFFIX STR)/code> <sup><sub>FUNCTION</sub></sup><a name="strip-suffix-value"></a>
 <code>(<a href="#string-type">STRING</a> &rarr; <a href="#string-type">STRING</a> &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#string-type">STRING</a>))</code>
 
 Returns a string without a give suffix, or None if the string
@@ -2845,12 +2845,12 @@ does not have that suffix.
 
 ***
 
-#### <code>REF-UNCHECKED</code> <sup><sub>[FUNCTION]</sub></sup><a name="ref-unchecked-value"></a>
+#### <code>(REF-UNCHECKED STR IDX)/code> <sup><sub>FUNCTION</sub></sup><a name="ref-unchecked-value"></a>
 <code>(<a href="#string-type">STRING</a> &rarr; <a href="#ufix-type">UFIX</a> &rarr; <a href="#char-type">CHAR</a>)</code>
 
 ***
 
-#### <code>SUBSTRING-INDEX</code> <sup><sub>[FUNCTION]</sub></sup><a name="substring-index-value"></a>
+#### <code>(SUBSTRING-INDEX SMALL BIG)/code> <sup><sub>FUNCTION</sub></sup><a name="substring-index-value"></a>
 <code>(<a href="#string-type">STRING</a> &rarr; <a href="#string-type">STRING</a> &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#ufix-type">UFIX</a>))</code>
 
 If the first argument appears as a substring within the second argument, return the starting index into the second argument.
@@ -2908,7 +2908,7 @@ If the first argument appears as a substring within the second argument, return 
 
 ### Values
 
-#### <code>FST</code> <sup><sub>[FUNCTION]</sub></sup><a name="fst-value"></a>
+#### <code>(FST T)/code> <sup><sub>FUNCTION</sub></sup><a name="fst-value"></a>
 <code>&forall; :A :B. ((<a href="#tuple-type">TUPLE</a> :A :B) &rarr; :A)</code>
 
 Get the first element of a tuple.
@@ -2916,7 +2916,7 @@ Get the first element of a tuple.
 
 ***
 
-#### <code>SND</code> <sup><sub>[FUNCTION]</sub></sup><a name="snd-value"></a>
+#### <code>(SND T)/code> <sup><sub>FUNCTION</sub></sup><a name="snd-value"></a>
 <code>&forall; :A :B. ((<a href="#tuple-type">TUPLE</a> :A :B) &rarr; :B)</code>
 
 Get the second element of a tuple.
@@ -2930,7 +2930,7 @@ Get the second element of a tuple.
 
 ### Values
 
-#### <code>ISNONE</code> <sup><sub>[FUNCTION]</sub></sup><a name="isnone-value"></a>
+#### <code>(ISNONE X)/code> <sup><sub>FUNCTION</sub></sup><a name="isnone-value"></a>
 <code>&forall; :A. ((<a href="#optional-type">OPTIONAL</a> :A) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 Is X None?
@@ -2938,7 +2938,7 @@ Is X None?
 
 ***
 
-#### <code>ISSOME</code> <sup><sub>[FUNCTION]</sub></sup><a name="issome-value"></a>
+#### <code>(ISSOME X)/code> <sup><sub>FUNCTION</sub></sup><a name="issome-value"></a>
 <code>&forall; :A. ((<a href="#optional-type">OPTIONAL</a> :A) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 Is X Some?
@@ -2946,7 +2946,7 @@ Is X Some?
 
 ***
 
-#### <code>FROMSOME</code> <sup><sub>[FUNCTION]</sub></sup><a name="fromsome-value"></a>
+#### <code>(FROMSOME STR OPT)/code> <sup><sub>FUNCTION</sub></sup><a name="fromsome-value"></a>
 <code>&forall; :A. (<a href="#string-type">STRING</a> &rarr; (<a href="#optional-type">OPTIONAL</a> :A) &rarr; :A)</code>
 
 Get the value of OPT, erroring with the provided string if it is None.
@@ -2960,7 +2960,7 @@ Get the value of OPT, erroring with the provided string if it is None.
 
 ### Values
 
-#### <code>ALL</code> <sup><sub>[FUNCTION]</sub></sup><a name="all-value"></a>
+#### <code>(ALL F XS)/code> <sup><sub>FUNCTION</sub></sup><a name="all-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 Returns TRUE if every element in XS matches F.
@@ -2968,7 +2968,7 @@ Returns TRUE if every element in XS matches F.
 
 ***
 
-#### <code>ANY</code> <sup><sub>[FUNCTION]</sub></sup><a name="any-value"></a>
+#### <code>(ANY F L)/code> <sup><sub>FUNCTION</sub></sup><a name="any-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 Returns TRUE if at least one element in XS matches F.
@@ -2976,7 +2976,7 @@ Returns TRUE if at least one element in XS matches F.
 
 ***
 
-#### <code>CAR</code> <sup><sub>[FUNCTION]</sub></sup><a name="car-value"></a>
+#### <code>(CAR X)/code> <sup><sub>FUNCTION</sub></sup><a name="car-value"></a>
 <code>&forall; :A. ((<a href="#list-type">LIST</a> :A) &rarr; :A)</code>
 
 Return the traditional car of a list. This function is partial
@@ -2984,7 +2984,7 @@ Return the traditional car of a list. This function is partial
 
 ***
 
-#### <code>CDR</code> <sup><sub>[FUNCTION]</sub></sup><a name="cdr-value"></a>
+#### <code>(CDR XS)/code> <sup><sub>FUNCTION</sub></sup><a name="cdr-value"></a>
 <code>&forall; :A. ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 Return the traditional cdr of a list. This function is partial
@@ -2992,7 +2992,7 @@ Return the traditional cdr of a list. This function is partial
 
 ***
 
-#### <code>NTH</code> <sup><sub>[FUNCTION]</sub></sup><a name="nth-value"></a>
+#### <code>(NTH N L)/code> <sup><sub>FUNCTION</sub></sup><a name="nth-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#list-type">LIST</a> :A) &rarr; :A)</code>
 
 Like INDEX, but errors if the index is not found.
@@ -3000,7 +3000,7 @@ Like INDEX, but errors if the index is not found.
 
 ***
 
-#### <code>SUM</code> <sup><sub>[FUNCTION]</sub></sup><a name="sum-value"></a>
+#### <code>(SUM XS)/code> <sup><sub>FUNCTION</sub></sup><a name="sum-value"></a>
 <code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; ((<a href="#list-type">LIST</a> :A) &rarr; :A)</code>
 
 Returns the sum of XS
@@ -3008,7 +3008,7 @@ Returns the sum of XS
 
 ***
 
-#### <code>ZIP</code> <sup><sub>[FUNCTION]</sub></sup><a name="zip-value"></a>
+#### <code>(ZIP XS YS)/code> <sup><sub>FUNCTION</sub></sup><a name="zip-value"></a>
 <code>&forall; :A :B. ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :B) &rarr; (<a href="#list-type">LIST</a> (<a href="#tuple-type">TUPLE</a> :A :B)))</code>
 
 Builds a list of tuples with the elements of XS and YS.
@@ -3016,7 +3016,7 @@ Builds a list of tuples with the elements of XS and YS.
 
 ***
 
-#### <code>DROP</code> <sup><sub>[FUNCTION]</sub></sup><a name="drop-value"></a>
+#### <code>(DROP N XS)/code> <sup><sub>FUNCTION</sub></sup><a name="drop-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 Returns a list with the first N elements removed.
@@ -3024,7 +3024,7 @@ Returns a list with the first N elements removed.
 
 ***
 
-#### <code>FIND</code> <sup><sub>[FUNCTION]</sub></sup><a name="find-value"></a>
+#### <code>(FIND F XS)/code> <sup><sub>FUNCTION</sub></sup><a name="find-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
 Returns the first element in a list matching the predicate function F.
@@ -3032,7 +3032,7 @@ Returns the first element in a list matching the predicate function F.
 
 ***
 
-#### <code>HEAD</code> <sup><sub>[FUNCTION]</sub></sup><a name="head-value"></a>
+#### <code>(HEAD L)/code> <sup><sub>FUNCTION</sub></sup><a name="head-value"></a>
 <code>&forall; :A. ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
 Returns the first element of a list.
@@ -3040,7 +3040,7 @@ Returns the first element of a list.
 
 ***
 
-#### <code>INIT</code> <sup><sub>[FUNCTION]</sub></sup><a name="init-value"></a>
+#### <code>(INIT L)/code> <sup><sub>FUNCTION</sub></sup><a name="init-value"></a>
 <code>&forall; :A. ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 Returns every element except the last in a list.
@@ -3048,7 +3048,7 @@ Returns every element except the last in a list.
 
 ***
 
-#### <code>LAST</code> <sup><sub>[FUNCTION]</sub></sup><a name="last-value"></a>
+#### <code>(LAST L)/code> <sup><sub>FUNCTION</sub></sup><a name="last-value"></a>
 <code>&forall; :A. ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
 Returns the last element of a list.
@@ -3056,7 +3056,7 @@ Returns the last element of a list.
 
 ***
 
-#### <code>SORT</code> <sup><sub>[FUNCTION]</sub></sup><a name="sort-value"></a>
+#### <code>(SORT XS)/code> <sup><sub>FUNCTION</sub></sup><a name="sort-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 Performs a sort of XS.
@@ -3064,7 +3064,7 @@ Performs a sort of XS.
 
 ***
 
-#### <code>TAIL</code> <sup><sub>[FUNCTION]</sub></sup><a name="tail-value"></a>
+#### <code>(TAIL L)/code> <sup><sub>FUNCTION</sub></sup><a name="tail-value"></a>
 <code>&forall; :A. ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> (<a href="#list-type">LIST</a> :A)))</code>
 
 Returns every element except the first in a list.
@@ -3072,7 +3072,7 @@ Returns every element except the first in a list.
 
 ***
 
-#### <code>TAKE</code> <sup><sub>[FUNCTION]</sub></sup><a name="take-value"></a>
+#### <code>(TAKE N XS)/code> <sup><sub>FUNCTION</sub></sup><a name="take-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 Returns the first N elements of a list.
@@ -3080,7 +3080,7 @@ Returns the first N elements of a list.
 
 ***
 
-#### <code>COMBS</code> <sup><sub>[FUNCTION]</sub></sup><a name="combs-value"></a>
+#### <code>(COMBS L)/code> <sup><sub>FUNCTION</sub></sup><a name="combs-value"></a>
 <code>&forall; :A. ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> (<a href="#list-type">LIST</a> :A)))</code>
 
 Compute a list of all combinations of elements of L. This function is sometimes goes by the name "power set" or "subsets".
@@ -3090,7 +3090,7 @@ The ordering of elements of L is preserved in the ordering of elements in each l
 
 ***
 
-#### <code>INDEX</code> <sup><sub>[FUNCTION]</sub></sup><a name="index-value"></a>
+#### <code>(INDEX I XS)/code> <sup><sub>FUNCTION</sub></sup><a name="index-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
 Returns the Ith element of a list.
@@ -3098,7 +3098,7 @@ Returns the Ith element of a list.
 
 ***
 
-#### <code>NULL?</code> <sup><sub>[FUNCTION]</sub></sup><a name="null?-value"></a>
+#### <code>(NULL? XS)/code> <sup><sub>FUNCTION</sub></sup><a name="null?-value"></a>
 <code>&forall; :A. ((<a href="#list-type">LIST</a> :A) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 Returns TRUE if XS is an empty list.
@@ -3106,7 +3106,7 @@ Returns TRUE if XS is an empty list.
 
 ***
 
-#### <code>PERMS</code> <sup><sub>[FUNCTION]</sub></sup><a name="perms-value"></a>
+#### <code>(PERMS L)/code> <sup><sub>FUNCTION</sub></sup><a name="perms-value"></a>
 <code>&forall; :A. ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> (<a href="#list-type">LIST</a> :A)))</code>
 
 Produce all permutations of the list L.
@@ -3114,7 +3114,7 @@ Produce all permutations of the list L.
 
 ***
 
-#### <code>RANGE</code> <sup><sub>[FUNCTION]</sub></sup><a name="range-value"></a>
+#### <code>(RANGE START END)/code> <sup><sub>FUNCTION</sub></sup><a name="range-value"></a>
 <code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; :A &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 Returns a list containing the numbers from START to END inclusive, counting by 1.
@@ -3131,12 +3131,12 @@ Returns a list containing the numbers from START to END inclusive, counting by 1
 
 ***
 
-#### <code>SPLIT</code> <sup><sub>[FUNCTION]</sub></sup><a name="split-value"></a>
+#### <code>(SPLIT C STR)/code> <sup><sub>FUNCTION</sub></sup><a name="split-value"></a>
 <code>(<a href="#char-type">CHAR</a> &rarr; <a href="#string-type">STRING</a> &rarr; (<a href="#list-type">LIST</a> <a href="#string-type">STRING</a>))</code>
 
 ***
 
-#### <code>UNION</code> <sup><sub>[FUNCTION]</sub></sup><a name="union-value"></a>
+#### <code>(UNION XS YS)/code> <sup><sub>FUNCTION</sub></sup><a name="union-value"></a>
 <code>&forall; :A. <a href="#eq-class">EQ</a> :A &rArr; ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 Returns a new list with the elements from both XS and YS and without duplicates.
@@ -3144,7 +3144,7 @@ Returns a new list with the elements from both XS and YS and without duplicates.
 
 ***
 
-#### <code>APPEND</code> <sup><sub>[FUNCTION]</sub></sup><a name="append-value"></a>
+#### <code>(APPEND XS YS)/code> <sup><sub>FUNCTION</sub></sup><a name="append-value"></a>
 <code>&forall; :A. ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 Appends two lists together and returns a new list.
@@ -3152,7 +3152,7 @@ Appends two lists together and returns a new list.
 
 ***
 
-#### <code>CONCAT</code> <sup><sub>[FUNCTION]</sub></sup><a name="concat-value"></a>
+#### <code>(CONCAT XS)/code> <sup><sub>FUNCTION</sub></sup><a name="concat-value"></a>
 <code>&forall; :A. ((<a href="#list-type">LIST</a> (<a href="#list-type">LIST</a> :A)) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 Appends a list of lists together into a single new list.
@@ -3160,7 +3160,7 @@ Appends a list of lists together into a single new list.
 
 ***
 
-#### <code>DELETE</code> <sup><sub>[FUNCTION]</sub></sup><a name="delete-value"></a>
+#### <code>(DELETE X YS)/code> <sup><sub>FUNCTION</sub></sup><a name="delete-value"></a>
 <code>&forall; :A. <a href="#eq-class">EQ</a> :A &rArr; (:A &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 Return a new list with the first element equal to X removed.
@@ -3168,7 +3168,7 @@ Return a new list with the first element equal to X removed.
 
 ***
 
-#### <code>FILTER</code> <sup><sub>[FUNCTION]</sub></sup><a name="filter-value"></a>
+#### <code>(FILTER F XS)/code> <sup><sub>FUNCTION</sub></sup><a name="filter-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 Returns a new list containing every element of XS that matches the predicate function F in the same order.
@@ -3176,7 +3176,7 @@ Returns a new list containing every element of XS that matches the predicate fun
 
 ***
 
-#### <code>INSERT</code> <sup><sub>[FUNCTION]</sub></sup><a name="insert-value"></a>
+#### <code>(INSERT E LS)/code> <sup><sub>FUNCTION</sub></sup><a name="insert-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; (:A &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 Inserts an element into a list at the first place it is less than or equal to the next element.
@@ -3184,7 +3184,7 @@ Inserts an element into a list at the first place it is less than or equal to th
 
 ***
 
-#### <code>LENGTH</code> <sup><sub>[FUNCTION]</sub></sup><a name="length-value"></a>
+#### <code>(LENGTH L)/code> <sup><sub>FUNCTION</sub></sup><a name="length-value"></a>
 <code>&forall; :A. ((<a href="#list-type">LIST</a> :A) &rarr; <a href="#ufix-type">UFIX</a>)</code>
 
 Returns the length of a list.
@@ -3192,7 +3192,7 @@ Returns the length of a list.
 
 ***
 
-#### <code>LOOKUP</code> <sup><sub>[FUNCTION]</sub></sup><a name="lookup-value"></a>
+#### <code>(LOOKUP E XS)/code> <sup><sub>FUNCTION</sub></sup><a name="lookup-value"></a>
 <code>&forall; :A :B. <a href="#eq-class">EQ</a> :A &rArr; (:A &rarr; (<a href="#list-type">LIST</a> (<a href="#tuple-type">TUPLE</a> :A :B)) &rarr; (<a href="#optional-type">OPTIONAL</a> :B))</code>
 
 Returns the value of the first (key, value) tuple in XS where the key matches E.
@@ -3200,7 +3200,7 @@ Returns the value of the first (key, value) tuple in XS where the key matches E.
 
 ***
 
-#### <code>MEMBER</code> <sup><sub>[FUNCTION]</sub></sup><a name="member-value"></a>
+#### <code>(MEMBER E XS)/code> <sup><sub>FUNCTION</sub></sup><a name="member-value"></a>
 <code>&forall; :A. <a href="#eq-class">EQ</a> :A &rArr; (:A &rarr; (<a href="#list-type">LIST</a> :A) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 Returns true if any element of XS is equal to E.
@@ -3208,7 +3208,7 @@ Returns true if any element of XS is equal to E.
 
 ***
 
-#### <code>REPEAT</code> <sup><sub>[FUNCTION]</sub></sup><a name="repeat-value"></a>
+#### <code>(REPEAT N X)/code> <sup><sub>FUNCTION</sub></sup><a name="repeat-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; :A &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 Returns a list with the same value repeated multiple times.
@@ -3216,7 +3216,7 @@ Returns a list with the same value repeated multiple times.
 
 ***
 
-#### <code>SORTBY</code> <sup><sub>[FUNCTION]</sub></sup><a name="sortby-value"></a>
+#### <code>(SORTBY CMP XS)/code> <sup><sub>FUNCTION</sub></sup><a name="sortby-value"></a>
 <code>&forall; :A. ((:A &rarr; :A &rarr; <a href="#ord-type">ORD</a>) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 Generic version of sort
@@ -3224,7 +3224,7 @@ Generic version of sort
 
 ***
 
-#### <code>COMBSOF</code> <sup><sub>[FUNCTION]</sub></sup><a name="combsof-value"></a>
+#### <code>(COMBSOF N L)/code> <sup><sub>FUNCTION</sub></sup><a name="combsof-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> (<a href="#list-type">LIST</a> :A)))</code>
 
 Produce a list of size-N subsets of L.
@@ -3236,7 +3236,7 @@ This function is equivalent to all size-N elements of `(COMBS L)`.
 
 ***
 
-#### <code>COUNTBY</code> <sup><sub>[FUNCTION]</sub></sup><a name="countby-value"></a>
+#### <code>(COUNTBY F THINGS)/code> <sup><sub>FUNCTION</sub></sup><a name="countby-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; <a href="#ufix-type">UFIX</a>)</code>
 
 Count the number of items in THINGS that satisfy the predicate F.
@@ -3244,7 +3244,7 @@ Count the number of items in THINGS that satisfy the predicate F.
 
 ***
 
-#### <code>MAXIMUM</code> <sup><sub>[FUNCTION]</sub></sup><a name="maximum-value"></a>
+#### <code>(MAXIMUM L)/code> <sup><sub>FUNCTION</sub></sup><a name="maximum-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
 Returns a greatest element of a list, or None.
@@ -3252,7 +3252,7 @@ Returns a greatest element of a list, or None.
 
 ***
 
-#### <code>MINIMUM</code> <sup><sub>[FUNCTION]</sub></sup><a name="minimum-value"></a>
+#### <code>(MINIMUM L)/code> <sup><sub>FUNCTION</sub></sup><a name="minimum-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
 Returns a least element of a list, or None.
@@ -3260,7 +3260,7 @@ Returns a least element of a list, or None.
 
 ***
 
-#### <code>PRODUCT</code> <sup><sub>[FUNCTION]</sub></sup><a name="product-value"></a>
+#### <code>(PRODUCT XS)/code> <sup><sub>FUNCTION</sub></sup><a name="product-value"></a>
 <code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; ((<a href="#list-type">LIST</a> :A) &rarr; :A)</code>
 
 Returns the product of XS
@@ -3268,7 +3268,7 @@ Returns the product of XS
 
 ***
 
-#### <code>REVERSE</code> <sup><sub>[FUNCTION]</sub></sup><a name="reverse-value"></a>
+#### <code>(REVERSE XS)/code> <sup><sub>FUNCTION</sub></sup><a name="reverse-value"></a>
 <code>&forall; :A. ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 Returns a new list containing the same elements in reverse order.
@@ -3276,7 +3276,7 @@ Returns a new list containing the same elements in reverse order.
 
 ***
 
-#### <code>ZIPWITH</code> <sup><sub>[FUNCTION]</sub></sup><a name="zipwith-value"></a>
+#### <code>(ZIPWITH F XS YS)/code> <sup><sub>FUNCTION</sub></sup><a name="zipwith-value"></a>
 <code>&forall; :A :B :C. ((:A &rarr; :B &rarr; :C) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :B) &rarr; (<a href="#list-type">LIST</a> :C))</code>
 
 Builds a new list by calling F with elements of XS and YS.
@@ -3284,7 +3284,7 @@ Builds a new list by calling F with elements of XS and YS.
 
 ***
 
-#### <code>INSERTBY</code> <sup><sub>[FUNCTION]</sub></sup><a name="insertby-value"></a>
+#### <code>(INSERTBY CMP X YS)/code> <sup><sub>FUNCTION</sub></sup><a name="insertby-value"></a>
 <code>&forall; :A. ((:A &rarr; :A &rarr; <a href="#ord-type">ORD</a>) &rarr; :A &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 Generic version of insert
@@ -3292,7 +3292,7 @@ Generic version of insert
 
 ***
 
-#### <code>ZIPWITH3</code> <sup><sub>[FUNCTION]</sub></sup><a name="zipwith3-value"></a>
+#### <code>(ZIPWITH3 F XS YS ZS)/code> <sup><sub>FUNCTION</sub></sup><a name="zipwith3-value"></a>
 <code>&forall; :A :B :C :D. ((:A &rarr; :B &rarr; :C &rarr; :D) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :B) &rarr; (<a href="#list-type">LIST</a> :C) &rarr; (<a href="#list-type">LIST</a> :D))</code>
 
 Build a new list by calling F with elements of XS, YS and ZS
@@ -3300,7 +3300,7 @@ Build a new list by calling F with elements of XS, YS and ZS
 
 ***
 
-#### <code>ZIPWITH4</code> <sup><sub>[FUNCTION]</sub></sup><a name="zipwith4-value"></a>
+#### <code>(ZIPWITH4 F AS BS CS DS)/code> <sup><sub>FUNCTION</sub></sup><a name="zipwith4-value"></a>
 <code>&forall; :A :B :C :D :E. ((:A &rarr; :B &rarr; :C &rarr; :D &rarr; :E) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :B) &rarr; (<a href="#list-type">LIST</a> :C) &rarr; (<a href="#list-type">LIST</a> :D) &rarr; (<a href="#list-type">LIST</a> :E))</code>
 
 Build a new list by calling F with elements of AS, BS, CS and DS
@@ -3308,7 +3308,7 @@ Build a new list by calling F with elements of AS, BS, CS and DS
 
 ***
 
-#### <code>ZIPWITH5</code> <sup><sub>[FUNCTION]</sub></sup><a name="zipwith5-value"></a>
+#### <code>(ZIPWITH5 F AS BS CS DS ES)/code> <sup><sub>FUNCTION</sub></sup><a name="zipwith5-value"></a>
 <code>&forall; :A :B :C :D :E :F. ((:A &rarr; :B &rarr; :C &rarr; :D &rarr; :E &rarr; :F) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :B) &rarr; (<a href="#list-type">LIST</a> :C) &rarr; (<a href="#list-type">LIST</a> :D) &rarr; (<a href="#list-type">LIST</a> :E) &rarr; (<a href="#list-type">LIST</a> :F))</code>
 
 Build a new list by calling F with elements of AS, BS, CS, DS and ES
@@ -3316,7 +3316,7 @@ Build a new list by calling F with elements of AS, BS, CS, DS and ES
 
 ***
 
-#### <code>CONCATMAP</code> <sup><sub>[FUNCTION]</sub></sup><a name="concatmap-value"></a>
+#### <code>(CONCATMAP F XS)/code> <sup><sub>FUNCTION</sub></sup><a name="concatmap-value"></a>
 <code>&forall; :A :B. ((:A &rarr; (<a href="#list-type">LIST</a> :B)) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :B))</code>
 
 Apply F to each element in XS and concatenate the results.
@@ -3324,12 +3324,12 @@ Apply F to each element in XS and concatenate the results.
 
 ***
 
-#### <code>ELEMINDEX</code> <sup><sub>[FUNCTION]</sub></sup><a name="elemindex-value"></a>
+#### <code>(ELEMINDEX X XS)/code> <sup><sub>FUNCTION</sub></sup><a name="elemindex-value"></a>
 <code>&forall; :A. <a href="#eq-class">EQ</a> :A &rArr; (:A &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#ufix-type">UFIX</a>))</code>
 
 ***
 
-#### <code>FINDINDEX</code> <sup><sub>[FUNCTION]</sub></sup><a name="findindex-value"></a>
+#### <code>(FINDINDEX F XS)/code> <sup><sub>FUNCTION</sub></sup><a name="findindex-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#ufix-type">UFIX</a>))</code>
 
 Returns the index of the first element matching the predicate function F.
@@ -3337,7 +3337,7 @@ Returns the index of the first element matching the predicate function F.
 
 ***
 
-#### <code>OPTIMUMBY</code> <sup><sub>[FUNCTION]</sub></sup><a name="optimumby-value"></a>
+#### <code>(OPTIMUMBY F XS)/code> <sup><sub>FUNCTION</sub></sup><a name="optimumby-value"></a>
 <code>&forall; :A. ((:A &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
 Returns an optimum according to a total order.
@@ -3345,7 +3345,7 @@ Returns an optimum according to a total order.
 
 ***
 
-#### <code>PARTITION</code> <sup><sub>[FUNCTION]</sub></sup><a name="partition-value"></a>
+#### <code>(PARTITION F XS)/code> <sup><sub>FUNCTION</sub></sup><a name="partition-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#tuple-type">TUPLE</a> (<a href="#list-type">LIST</a> :A) (<a href="#list-type">LIST</a> :A)))</code>
 
 Splits a list into two new lists. The first list contains elements matching predicate F.
@@ -3353,7 +3353,7 @@ Splits a list into two new lists. The first list contains elements matching pred
 
 ***
 
-#### <code>SINGLETON</code> <sup><sub>[FUNCTION]</sub></sup><a name="singleton-value"></a>
+#### <code>(SINGLETON X)/code> <sup><sub>FUNCTION</sub></sup><a name="singleton-value"></a>
 <code>&forall; :A. (:A &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 Returns a list containting one element.
@@ -3361,7 +3361,7 @@ Returns a list containting one element.
 
 ***
 
-#### <code>TRANSPOSE</code> <sup><sub>[FUNCTION]</sub></sup><a name="transpose-value"></a>
+#### <code>(TRANSPOSE XS)/code> <sup><sub>FUNCTION</sub></sup><a name="transpose-value"></a>
 <code>&forall; :A. ((<a href="#list-type">LIST</a> (<a href="#list-type">LIST</a> :A)) &rarr; (<a href="#list-type">LIST</a> (<a href="#list-type">LIST</a> :A)))</code>
 
 Transposes a matrix represented by a list of lists.
@@ -3369,7 +3369,7 @@ Transposes a matrix represented by a list of lists.
 
 ***
 
-#### <code>DIFFERENCE</code> <sup><sub>[FUNCTION]</sub></sup><a name="difference-value"></a>
+#### <code>(DIFFERENCE XS YS)/code> <sup><sub>FUNCTION</sub></sup><a name="difference-value"></a>
 <code>&forall; :A. <a href="#eq-class">EQ</a> :A &rArr; ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 Returns a new list with the first occurence of each element in YS deleted from XS.
@@ -3377,7 +3377,7 @@ Returns a new list with the first occurence of each element in YS deleted from X
 
 ***
 
-#### <code>INSERTIONS</code> <sup><sub>[FUNCTION]</sub></sup><a name="insertions-value"></a>
+#### <code>(INSERTIONS A L)/code> <sup><sub>FUNCTION</sub></sup><a name="insertions-value"></a>
 <code>&forall; :A. (:A &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> (<a href="#list-type">LIST</a> :A)))</code>
 
 Produce a list of copies of L, each with A inserted at a possible position.
@@ -3389,7 +3389,7 @@ Produce a list of copies of L, each with A inserted at a possible position.
 
 ***
 
-#### <code>INTERCALATE</code> <sup><sub>[FUNCTION]</sub></sup><a name="intercalate-value"></a>
+#### <code>(INTERCALATE XS XSS)/code> <sup><sub>FUNCTION</sub></sup><a name="intercalate-value"></a>
 <code>&forall; :A. ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> (<a href="#list-type">LIST</a> :A)) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 Intersperses XS into XSS and then concatenates the result.
@@ -3397,7 +3397,7 @@ Intersperses XS into XSS and then concatenates the result.
 
 ***
 
-#### <code>INTERSPERSE</code> <sup><sub>[FUNCTION]</sub></sup><a name="intersperse-value"></a>
+#### <code>(INTERSPERSE E XS)/code> <sup><sub>FUNCTION</sub></sup><a name="intersperse-value"></a>
 <code>&forall; :A. (:A &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 Returns a new list where every other element is E.
@@ -3405,7 +3405,7 @@ Returns a new list where every other element is E.
 
 ***
 
-#### <code>INTERSECTION</code> <sup><sub>[FUNCTION]</sub></sup><a name="intersection-value"></a>
+#### <code>(INTERSECTION XS YS)/code> <sup><sub>FUNCTION</sub></sup><a name="intersection-value"></a>
 <code>&forall; :A. <a href="#eq-class">EQ</a> :A &rArr; ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 Returns elements which occur in both lists. Does not return duplicates and does not guarantee order.
@@ -3413,7 +3413,7 @@ Returns elements which occur in both lists. Does not return duplicates and does 
 
 ***
 
-#### <code>REMOVE-DUPLICATES</code> <sup><sub>[FUNCTION]</sub></sup><a name="remove-duplicates-value"></a>
+#### <code>(REMOVE-DUPLICATES XS)/code> <sup><sub>FUNCTION</sub></sup><a name="remove-duplicates-value"></a>
 <code>&forall; :A. <a href="#eq-class">EQ</a> :A &rArr; ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 Returns a new list without duplicate elements.
@@ -3426,7 +3426,7 @@ Returns a new list without duplicate elements.
 
 ***
 
-#### <code>EQUIVALENCE-CLASSES-BY</code> <sup><sub>[FUNCTION]</sub></sup><a name="equivalence-classes-by-value"></a>
+#### <code>(EQUIVALENCE-CLASSES-BY F L)/code> <sup><sub>FUNCTION</sub></sup><a name="equivalence-classes-by-value"></a>
 <code>&forall; :A. ((:A &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> (<a href="#list-type">LIST</a> :A)))</code>
 
 Break a list into a list of equivalence classes according to an equivalence relation.
@@ -3440,7 +3440,7 @@ Break a list into a list of equivalence classes according to an equivalence rela
 
 ### Values
 
-#### <code>ISOK</code> <sup><sub>[FUNCTION]</sub></sup><a name="isok-value"></a>
+#### <code>(ISOK X)/code> <sup><sub>FUNCTION</sub></sup><a name="isok-value"></a>
 <code>&forall; :A :B. ((<a href="#result-type">RESULT</a> :A :B) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 Returns TRUE if X is ERR
@@ -3448,7 +3448,7 @@ Returns TRUE if X is ERR
 
 ***
 
-#### <code>ISERR</code> <sup><sub>[FUNCTION]</sub></sup><a name="iserr-value"></a>
+#### <code>(ISERR X)/code> <sup><sub>FUNCTION</sub></sup><a name="iserr-value"></a>
 <code>&forall; :A :B. ((<a href="#result-type">RESULT</a> :A :B) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 Returns TRUE if X is ERR
@@ -3456,7 +3456,7 @@ Returns TRUE if X is ERR
 
 ***
 
-#### <code>MAPERR</code> <sup><sub>[FUNCTION]</sub></sup><a name="maperr-value"></a>
+#### <code>(MAPERR F X)/code> <sup><sub>FUNCTION</sub></sup><a name="maperr-value"></a>
 <code>&forall; :A :B :C. ((:A &rarr; :B) &rarr; (<a href="#result-type">RESULT</a> :A :C) &rarr; (<a href="#result-type">RESULT</a> :B :C))</code>
 
 Map over the ERR case
@@ -3464,7 +3464,7 @@ Map over the ERR case
 
 ***
 
-#### <code>FLATTEN</code> <sup><sub>[FUNCTION]</sub></sup><a name="flatten-value"></a>
+#### <code>(FLATTEN X)/code> <sup><sub>FUNCTION</sub></sup><a name="flatten-value"></a>
 <code>&forall; :A. ((<a href="#result-type">RESULT</a> :A :A) &rarr; :A)</code>
 
 ***
@@ -3498,7 +3498,7 @@ Internally mutable cell
 
 ### Values
 
-#### <code>NEW</code> <sup><sub>[FUNCTION]</sub></sup><a name="new-value"></a>
+#### <code>(NEW DATA)/code> <sup><sub>FUNCTION</sub></sup><a name="new-value"></a>
 <code>&forall; :A. (:A &rarr; (<a href="#cell-type">CELL</a> :A))</code>
 
 Create a new mutable cell
@@ -3506,12 +3506,12 @@ Create a new mutable cell
 
 ***
 
-#### <code>POP!</code> <sup><sub>[FUNCTION]</sub></sup><a name="pop!-value"></a>
+#### <code>(POP! CEL)/code> <sup><sub>FUNCTION</sub></sup><a name="pop!-value"></a>
 <code>&forall; :A. ((<a href="#cell-type">CELL</a> (<a href="#list-type">LIST</a> :A)) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
 ***
 
-#### <code>READ</code> <sup><sub>[FUNCTION]</sub></sup><a name="read-value"></a>
+#### <code>(READ CEL)/code> <sup><sub>FUNCTION</sub></sup><a name="read-value"></a>
 <code>&forall; :A. ((<a href="#cell-type">CELL</a> :A) &rarr; :A)</code>
 
 Read the value of a mutable cell
@@ -3519,12 +3519,12 @@ Read the value of a mutable cell
 
 ***
 
-#### <code>PUSH!</code> <sup><sub>[FUNCTION]</sub></sup><a name="push!-value"></a>
+#### <code>(PUSH! CEL NEW-ELT)/code> <sup><sub>FUNCTION</sub></sup><a name="push!-value"></a>
 <code>&forall; :A. ((<a href="#cell-type">CELL</a> (<a href="#list-type">LIST</a> :A)) &rarr; :A &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 ***
 
-#### <code>SWAP!</code> <sup><sub>[FUNCTION]</sub></sup><a name="swap!-value"></a>
+#### <code>(SWAP! CEL DATA)/code> <sup><sub>FUNCTION</sub></sup><a name="swap!-value"></a>
 <code>&forall; :A. ((<a href="#cell-type">CELL</a> :A) &rarr; :A &rarr; :A)</code>
 
 Replace the value of a mutable cell with a new value, then return the old value
@@ -3532,7 +3532,7 @@ Replace the value of a mutable cell with a new value, then return the old value
 
 ***
 
-#### <code>WRITE!</code> <sup><sub>[FUNCTION]</sub></sup><a name="write!-value"></a>
+#### <code>(WRITE! CEL DATA)/code> <sup><sub>FUNCTION</sub></sup><a name="write!-value"></a>
 <code>&forall; :A. ((<a href="#cell-type">CELL</a> :A) &rarr; :A &rarr; :A)</code>
 
 Set the value of a mutable cell, returning the new value
@@ -3540,7 +3540,7 @@ Set the value of a mutable cell, returning the new value
 
 ***
 
-#### <code>UPDATE!</code> <sup><sub>[FUNCTION]</sub></sup><a name="update!-value"></a>
+#### <code>(UPDATE! F CEL)/code> <sup><sub>FUNCTION</sub></sup><a name="update!-value"></a>
 <code>&forall; :A. ((:A &rarr; :A) &rarr; (<a href="#cell-type">CELL</a> :A) &rarr; :A)</code>
 
 Apply F to the contents of CEL, storing and returning the result
@@ -3548,7 +3548,7 @@ Apply F to the contents of CEL, storing and returning the result
 
 ***
 
-#### <code>DECREMENT!</code> <sup><sub>[FUNCTION]</sub></sup><a name="decrement!-value"></a>
+#### <code>(DECREMENT! CEL)/code> <sup><sub>FUNCTION</sub></sup><a name="decrement!-value"></a>
 <code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; ((<a href="#cell-type">CELL</a> :A) &rarr; :A)</code>
 
 Subtract one from the contents of CEL, storing and returning the new value
@@ -3556,7 +3556,7 @@ Subtract one from the contents of CEL, storing and returning the new value
 
 ***
 
-#### <code>INCREMENT!</code> <sup><sub>[FUNCTION]</sub></sup><a name="increment!-value"></a>
+#### <code>(INCREMENT! CEL)/code> <sup><sub>FUNCTION</sub></sup><a name="increment!-value"></a>
 <code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; ((<a href="#cell-type">CELL</a> :A) &rarr; :A)</code>
 
 Add one to the contents of CEL, storing and returning the new value
@@ -3564,7 +3564,7 @@ Add one to the contents of CEL, storing and returning the new value
 
 ***
 
-#### <code>UPDATE-SWAP!</code> <sup><sub>[FUNCTION]</sub></sup><a name="update-swap!-value"></a>
+#### <code>(UPDATE-SWAP! F CEL)/code> <sup><sub>FUNCTION</sub></sup><a name="update-swap!-value"></a>
 <code>&forall; :A. ((:A &rarr; :A) &rarr; (<a href="#cell-type">CELL</a> :A) &rarr; :A)</code>
 
 Apply F to the contents of CEL, swapping the result for the old value
@@ -3602,7 +3602,7 @@ Apply F to the contents of CEL, swapping the result for the old value
 
 ### Values
 
-#### <code>NEW</code> <sup><sub>[FUNCTION]</sub></sup><a name="new-value"></a>
+#### <code>(NEW _)/code> <sup><sub>FUNCTION</sub></sup><a name="new-value"></a>
 <code>&forall; :A. (<a href="#unit-type">UNIT</a> &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
 
 Create a new empty vector
@@ -3610,7 +3610,7 @@ Create a new empty vector
 
 ***
 
-#### <code>COPY</code> <sup><sub>[FUNCTION]</sub></sup><a name="copy-value"></a>
+#### <code>(COPY V)/code> <sup><sub>FUNCTION</sub></sup><a name="copy-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
 
 Return a new vector containing the same elements as V
@@ -3618,7 +3618,7 @@ Return a new vector containing the same elements as V
 
 ***
 
-#### <code>HEAD</code> <sup><sub>[FUNCTION]</sub></sup><a name="head-value"></a>
+#### <code>(HEAD V)/code> <sup><sub>FUNCTION</sub></sup><a name="head-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
 Return the first item of V
@@ -3626,7 +3626,7 @@ Return the first item of V
 
 ***
 
-#### <code>LAST</code> <sup><sub>[FUNCTION]</sub></sup><a name="last-value"></a>
+#### <code>(LAST V)/code> <sup><sub>FUNCTION</sub></sup><a name="last-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
 Return the last element of V
@@ -3634,7 +3634,7 @@ Return the last element of V
 
 ***
 
-#### <code>POP!</code> <sup><sub>[FUNCTION]</sub></sup><a name="pop!-value"></a>
+#### <code>(POP! V)/code> <sup><sub>FUNCTION</sub></sup><a name="pop!-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
 Remove and return the first item of V
@@ -3642,7 +3642,7 @@ Remove and return the first item of V
 
 ***
 
-#### <code>SET!</code> <sup><sub>[FUNCTION]</sub></sup><a name="set!-value"></a>
+#### <code>(SET! INDEX ITEM V)/code> <sup><sub>FUNCTION</sub></sup><a name="set!-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; :A &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Set the INDEXth element of V to ITEM. This function left intentionally unsafe because it does not have a return value to check.
@@ -3650,7 +3650,7 @@ Set the INDEXth element of V to ITEM. This function left intentionally unsafe be
 
 ***
 
-#### <code>INDEX</code> <sup><sub>[FUNCTION]</sub></sup><a name="index-value"></a>
+#### <code>(INDEX INDEX V)/code> <sup><sub>FUNCTION</sub></sup><a name="index-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
 Return the INDEXth element of V
@@ -3658,7 +3658,7 @@ Return the INDEXth element of V
 
 ***
 
-#### <code>PUSH!</code> <sup><sub>[FUNCTION]</sub></sup><a name="push!-value"></a>
+#### <code>(PUSH! ITEM V)/code> <sup><sub>FUNCTION</sub></sup><a name="push!-value"></a>
 <code>&forall; :A. (:A &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#ufix-type">UFIX</a>)</code>
 
 Append ITEM to V and resize V if necessary
@@ -3666,7 +3666,7 @@ Append ITEM to V and resize V if necessary
 
 ***
 
-#### <code>SORT!</code> <sup><sub>[FUNCTION]</sub></sup><a name="sort!-value"></a>
+#### <code>(SORT! V)/code> <sup><sub>FUNCTION</sub></sup><a name="sort!-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Sort a vector inplace
@@ -3674,7 +3674,7 @@ Sort a vector inplace
 
 ***
 
-#### <code>APPEND</code> <sup><sub>[FUNCTION]</sub></sup><a name="append-value"></a>
+#### <code>(APPEND V1 V2)/code> <sup><sub>FUNCTION</sub></sup><a name="append-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
 
 Create a new VECTOR containing the elements of v1 followed by the elements of v2
@@ -3682,7 +3682,7 @@ Create a new VECTOR containing the elements of v1 followed by the elements of v2
 
 ***
 
-#### <code>EMPTY?</code> <sup><sub>[FUNCTION]</sub></sup><a name="empty?-value"></a>
+#### <code>(EMPTY? V)/code> <sup><sub>FUNCTION</sub></sup><a name="empty?-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 Returns TRUE if V is empty
@@ -3690,7 +3690,7 @@ Returns TRUE if V is empty
 
 ***
 
-#### <code>LENGTH</code> <sup><sub>[FUNCTION]</sub></sup><a name="length-value"></a>
+#### <code>(LENGTH V)/code> <sup><sub>FUNCTION</sub></sup><a name="length-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#ufix-type">UFIX</a>)</code>
 
 Returns the length of V
@@ -3698,7 +3698,7 @@ Returns the length of V
 
 ***
 
-#### <code>FOREACH</code> <sup><sub>[FUNCTION]</sub></sup><a name="foreach-value"></a>
+#### <code>(FOREACH F V)/code> <sup><sub>FUNCTION</sub></sup><a name="foreach-value"></a>
 <code>&forall; :A :B. ((:A &rarr; :B) &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Call the function F once for each item in V
@@ -3706,7 +3706,7 @@ Call the function F once for each item in V
 
 ***
 
-#### <code>CAPACITY</code> <sup><sub>[FUNCTION]</sub></sup><a name="capacity-value"></a>
+#### <code>(CAPACITY V)/code> <sup><sub>FUNCTION</sub></sup><a name="capacity-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#ufix-type">UFIX</a>)</code>
 
 Returns the number of elements that V can store without resizing
@@ -3714,7 +3714,7 @@ Returns the number of elements that V can store without resizing
 
 ***
 
-#### <code>FOREACH2</code> <sup><sub>[FUNCTION]</sub></sup><a name="foreach2-value"></a>
+#### <code>(FOREACH2 F V1 V2)/code> <sup><sub>FUNCTION</sub></sup><a name="foreach2-value"></a>
 <code>&forall; :A :B :C. ((:A &rarr; :B &rarr; :C) &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#vector-type">VECTOR</a> :B) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Like vector-foreach but twice as good
@@ -3722,7 +3722,7 @@ Like vector-foreach but twice as good
 
 ***
 
-#### <code>SORT-BY!</code> <sup><sub>[FUNCTION]</sub></sup><a name="sort-by!-value"></a>
+#### <code>(SORT-BY! F V)/code> <sup><sub>FUNCTION</sub></sup><a name="sort-by!-value"></a>
 <code>&forall; :A. ((:A &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Sort a vector inplace with predicate function F
@@ -3730,7 +3730,7 @@ Sort a vector inplace with predicate function F
 
 ***
 
-#### <code>FIND-ELEM</code> <sup><sub>[FUNCTION]</sub></sup><a name="find-elem-value"></a>
+#### <code>(FIND-ELEM E V)/code> <sup><sub>FUNCTION</sub></sup><a name="find-elem-value"></a>
 <code>&forall; :A. <a href="#eq-class">EQ</a> :A &rArr; (:A &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#ufix-type">UFIX</a>))</code>
 
 Find the index of element E in V
@@ -3738,7 +3738,7 @@ Find the index of element E in V
 
 ***
 
-#### <code>HEAD-UNSAFE</code> <sup><sub>[FUNCTION]</sub></sup><a name="head-unsafe-value"></a>
+#### <code>(HEAD-UNSAFE V)/code> <sup><sub>FUNCTION</sub></sup><a name="head-unsafe-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; :A)</code>
 
 Return the first item of V without first checking if V is empty
@@ -3746,7 +3746,7 @@ Return the first item of V without first checking if V is empty
 
 ***
 
-#### <code>LAST-UNSAFE</code> <sup><sub>[FUNCTION]</sub></sup><a name="last-unsafe-value"></a>
+#### <code>(LAST-UNSAFE V)/code> <sup><sub>FUNCTION</sub></sup><a name="last-unsafe-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; :A)</code>
 
 Return the last element of V without first checking if V is empty
@@ -3754,7 +3754,7 @@ Return the last element of V without first checking if V is empty
 
 ***
 
-#### <code>POP-UNSAFE!</code> <sup><sub>[FUNCTION]</sub></sup><a name="pop-unsafe!-value"></a>
+#### <code>(POP-UNSAFE! V)/code> <sup><sub>FUNCTION</sub></sup><a name="pop-unsafe!-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; :A)</code>
 
 Remove and return the first item of V without checking if the vector is empty
@@ -3762,7 +3762,7 @@ Remove and return the first item of V without checking if the vector is empty
 
 ***
 
-#### <code>INDEX-UNSAFE</code> <sup><sub>[FUNCTION]</sub></sup><a name="index-unsafe-value"></a>
+#### <code>(INDEX-UNSAFE INDEX V)/code> <sup><sub>FUNCTION</sub></sup><a name="index-unsafe-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; :A)</code>
 
 Return the INDEXth element of V without checking if the element exists
@@ -3770,7 +3770,7 @@ Return the INDEXth element of V without checking if the element exists
 
 ***
 
-#### <code>SWAP-REMOVE!</code> <sup><sub>[FUNCTION]</sub></sup><a name="swap-remove!-value"></a>
+#### <code>(SWAP-REMOVE! IDX VEC)/code> <sup><sub>FUNCTION</sub></sup><a name="swap-remove!-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
 Remove the element IDX from VEC and replace it with the last element in VEC. Then return the removed element.
@@ -3778,7 +3778,7 @@ Remove the element IDX from VEC and replace it with the last element in VEC. The
 
 ***
 
-#### <code>FOREACH-INDEX</code> <sup><sub>[FUNCTION]</sub></sup><a name="foreach-index-value"></a>
+#### <code>(FOREACH-INDEX F V)/code> <sup><sub>FUNCTION</sub></sup><a name="foreach-index-value"></a>
 <code>&forall; :A :B. ((<a href="#ufix-type">UFIX</a> &rarr; :A &rarr; :B) &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Call the function F once for each item in V with its index
@@ -3786,7 +3786,7 @@ Call the function F once for each item in V with its index
 
 ***
 
-#### <code>WITH-CAPACITY</code> <sup><sub>[FUNCTION]</sub></sup><a name="with-capacity-value"></a>
+#### <code>(WITH-CAPACITY N)/code> <sup><sub>FUNCTION</sub></sup><a name="with-capacity-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
 
 Create a new vector with N elements preallocated
@@ -3794,7 +3794,7 @@ Create a new vector with N elements preallocated
 
 ***
 
-#### <code>SWAP-REMOVE-UNSAFE!</code> <sup><sub>[FUNCTION]</sub></sup><a name="swap-remove-unsafe!-value"></a>
+#### <code>(SWAP-REMOVE-UNSAFE! IDX VEC)/code> <sup><sub>FUNCTION</sub></sup><a name="swap-remove-unsafe!-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; :A)</code>
 
 Remove the element IDX from VEC and replace it with the last element in VEC without bounds checking. Then return the removed element.
@@ -3827,12 +3827,12 @@ Remove the element IDX from VEC and replace it with the last element in VEC with
 
 ### Values
 
-#### <code>NEW</code> <sup><sub>[FUNCTION]</sub></sup><a name="new-value"></a>
+#### <code>(NEW START LENGTH V)/code> <sup><sub>FUNCTION</sub></sup><a name="new-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; <a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#slice-type">SLICE</a> :A))</code>
 
 ***
 
-#### <code>COPY</code> <sup><sub>[FUNCTION]</sub></sup><a name="copy-value"></a>
+#### <code>(COPY S)/code> <sup><sub>FUNCTION</sub></sup><a name="copy-value"></a>
 <code>&forall; :A. ((<a href="#slice-type">SLICE</a> :A) &rarr; (<a href="#slice-type">SLICE</a> :A))</code>
 
 Returns a new slice containg the same elements as S
@@ -3840,7 +3840,7 @@ Returns a new slice containg the same elements as S
 
 ***
 
-#### <code>SET!</code> <sup><sub>[FUNCTION]</sub></sup><a name="set!-value"></a>
+#### <code>(SET! INDEX ITEM S)/code> <sup><sub>FUNCTION</sub></sup><a name="set!-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; :A &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Set the element at INDEX in S to ITEM
@@ -3848,7 +3848,7 @@ Set the element at INDEX in S to ITEM
 
 ***
 
-#### <code>INDEX</code> <sup><sub>[FUNCTION]</sub></sup><a name="index-value"></a>
+#### <code>(INDEX IDX S)/code> <sup><sub>FUNCTION</sub></sup><a name="index-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
 Lookup the element at INDEX in S
@@ -3856,7 +3856,7 @@ Lookup the element at INDEX in S
 
 ***
 
-#### <code>LENGTH</code> <sup><sub>[FUNCTION]</sub></sup><a name="length-value"></a>
+#### <code>(LENGTH S)/code> <sup><sub>FUNCTION</sub></sup><a name="length-value"></a>
 <code>&forall; :A. ((<a href="#slice-type">SLICE</a> :A) &rarr; <a href="#ufix-type">UFIX</a>)</code>
 
 Returns the length of S
@@ -3864,7 +3864,7 @@ Returns the length of S
 
 ***
 
-#### <code>FOREACH</code> <sup><sub>[FUNCTION]</sub></sup><a name="foreach-value"></a>
+#### <code>(FOREACH F S)/code> <sup><sub>FUNCTION</sub></sup><a name="foreach-value"></a>
 <code>&forall; :A :B. ((:A &rarr; :B) &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Call the function F once for each item in S
@@ -3872,7 +3872,7 @@ Call the function F once for each item in S
 
 ***
 
-#### <code>FOREACH2</code> <sup><sub>[FUNCTION]</sub></sup><a name="foreach2-value"></a>
+#### <code>(FOREACH2 F S1 S2)/code> <sup><sub>FUNCTION</sub></sup><a name="foreach2-value"></a>
 <code>&forall; :A :B :C. ((:A &rarr; :B &rarr; :C) &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; (<a href="#slice-type">SLICE</a> :B) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Iterate over S1 and S2 calling F once on each iteration
@@ -3880,7 +3880,7 @@ Iterate over S1 and S2 calling F once on each iteration
 
 ***
 
-#### <code>INDEX-UNSAFE</code> <sup><sub>[FUNCTION]</sub></sup><a name="index-unsafe-value"></a>
+#### <code>(INDEX-UNSAFE IDX S)/code> <sup><sub>FUNCTION</sub></sup><a name="index-unsafe-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; :A)</code>
 
 Lookup the element at INDEX in S without bounds checking
@@ -3888,7 +3888,7 @@ Lookup the element at INDEX in S without bounds checking
 
 ***
 
-#### <code>ITER-CHUNKED</code> <sup><sub>[FUNCTION]</sub></sup><a name="iter-chunked-value"></a>
+#### <code>(ITER-CHUNKED F SIZE V)/code> <sup><sub>FUNCTION</sub></sup><a name="iter-chunked-value"></a>
 <code>&forall; :A :B. (((<a href="#slice-type">SLICE</a> :A) &rarr; :B) &rarr; <a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Chunked iteration over a vector. Ignores elements at the end if the vector does not evenly divide by the chunk size.
@@ -3896,7 +3896,7 @@ Chunked iteration over a vector. Ignores elements at the end if the vector does 
 
 ***
 
-#### <code>ITER-SLIDING</code> <sup><sub>[FUNCTION]</sub></sup><a name="iter-sliding-value"></a>
+#### <code>(ITER-SLIDING F SIZE V)/code> <sup><sub>FUNCTION</sub></sup><a name="iter-sliding-value"></a>
 <code>&forall; :A :B. (((<a href="#slice-type">SLICE</a> :A) &rarr; :B) &rarr; <a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Sliding iteration over a vector
@@ -3904,7 +3904,7 @@ Sliding iteration over a vector
 
 ***
 
-#### <code>FOREACH-INDEX</code> <sup><sub>[FUNCTION]</sub></sup><a name="foreach-index-value"></a>
+#### <code>(FOREACH-INDEX F S)/code> <sup><sub>FUNCTION</sub></sup><a name="foreach-index-value"></a>
 <code>&forall; :A :B. ((<a href="#ufix-type">UFIX</a> &rarr; :A &rarr; :B) &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Call the function F once for each item in S with its index
@@ -3932,7 +3932,7 @@ Call the function F once for each item in S with its index
 
 ### Values
 
-#### <code>GET</code> <sup><sub>[FUNCTION]</sub></sup><a name="get-value"></a>
+#### <code>(GET TABLE KEY)/code> <sup><sub>FUNCTION</sub></sup><a name="get-value"></a>
 <code>&forall; :A :B. <a href="#hash-class">HASH</a> :A &rArr; ((<a href="#hashtable-type">HASHTABLE</a> :A :B) &rarr; :A &rarr; (<a href="#optional-type">OPTIONAL</a> :B))</code>
 
 Lookup KEY in TABLE
@@ -3940,7 +3940,7 @@ Lookup KEY in TABLE
 
 ***
 
-#### <code>NEW</code> <sup><sub>[FUNCTION]</sub></sup><a name="new-value"></a>
+#### <code>(NEW _)/code> <sup><sub>FUNCTION</sub></sup><a name="new-value"></a>
 <code>&forall; :A :B. <a href="#hash-class">HASH</a> :A &rArr; (<a href="#unit-type">UNIT</a> &rarr; (<a href="#hashtable-type">HASHTABLE</a> :A :B))</code>
 
 Create a new empty hashtable
@@ -3948,7 +3948,7 @@ Create a new empty hashtable
 
 ***
 
-#### <code>KEYS</code> <sup><sub>[FUNCTION]</sub></sup><a name="keys-value"></a>
+#### <code>(KEYS TABLE)/code> <sup><sub>FUNCTION</sub></sup><a name="keys-value"></a>
 <code>&forall; :A :B. ((<a href="#hashtable-type">HASHTABLE</a> :A :B) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 Returns the keys in TABLE as a list
@@ -3956,7 +3956,7 @@ Returns the keys in TABLE as a list
 
 ***
 
-#### <code>SET!</code> <sup><sub>[FUNCTION]</sub></sup><a name="set!-value"></a>
+#### <code>(SET! TABLE KEY VALUE)/code> <sup><sub>FUNCTION</sub></sup><a name="set!-value"></a>
 <code>&forall; :A :B. <a href="#hash-class">HASH</a> :A &rArr; ((<a href="#hashtable-type">HASHTABLE</a> :A :B) &rarr; :A &rarr; :B &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Set KEY to VALUE in TABLE
@@ -3964,7 +3964,7 @@ Set KEY to VALUE in TABLE
 
 ***
 
-#### <code>COUNT</code> <sup><sub>[FUNCTION]</sub></sup><a name="count-value"></a>
+#### <code>(COUNT TABLE)/code> <sup><sub>FUNCTION</sub></sup><a name="count-value"></a>
 <code>&forall; :A :B. ((<a href="#hashtable-type">HASHTABLE</a> :A :B) &rarr; <a href="#integer-type">INTEGER</a>)</code>
 
 Returns the number of entries in TABLE
@@ -3972,7 +3972,7 @@ Returns the number of entries in TABLE
 
 ***
 
-#### <code>VALUES</code> <sup><sub>[FUNCTION]</sub></sup><a name="values-value"></a>
+#### <code>(VALUES TABLE)/code> <sup><sub>FUNCTION</sub></sup><a name="values-value"></a>
 <code>&forall; :A :B. ((<a href="#hashtable-type">HASHTABLE</a> :A :B) &rarr; (<a href="#list-type">LIST</a> :B))</code>
 
 Returns the values in TABLE as a list
@@ -3980,12 +3980,12 @@ Returns the values in TABLE as a list
 
 ***
 
-#### <code>ENTRIES</code> <sup><sub>[FUNCTION]</sub></sup><a name="entries-value"></a>
+#### <code>(ENTRIES TABLE)/code> <sup><sub>FUNCTION</sub></sup><a name="entries-value"></a>
 <code>&forall; :A :B. ((<a href="#hashtable-type">HASHTABLE</a> :A :B) &rarr; (<a href="#list-type">LIST</a> (<a href="#tuple-type">TUPLE</a> :A :B)))</code>
 
 ***
 
-#### <code>FOREACH</code> <sup><sub>[FUNCTION]</sub></sup><a name="foreach-value"></a>
+#### <code>(FOREACH F TABLE)/code> <sup><sub>FUNCTION</sub></sup><a name="foreach-value"></a>
 <code>&forall; :A :B :C. ((:A &rarr; :B &rarr; :C) &rarr; (<a href="#hashtable-type">HASHTABLE</a> :A :B) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Call F once for each key value pair in TABLE
@@ -3993,7 +3993,7 @@ Call F once for each key value pair in TABLE
 
 ***
 
-#### <code>REMOVE!</code> <sup><sub>[FUNCTION]</sub></sup><a name="remove!-value"></a>
+#### <code>(REMOVE! TABLE KEY)/code> <sup><sub>FUNCTION</sub></sup><a name="remove!-value"></a>
 <code>&forall; :A :B. <a href="#hash-class">HASH</a> :A &rArr; ((<a href="#hashtable-type">HASHTABLE</a> :A :B) &rarr; :A &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Remove the entry at KEY from TABLE
@@ -4001,7 +4001,7 @@ Remove the entry at KEY from TABLE
 
 ***
 
-#### <code>WITH-CAPACITY</code> <sup><sub>[FUNCTION]</sub></sup><a name="with-capacity-value"></a>
+#### <code>(WITH-CAPACITY CAPACITY)/code> <sup><sub>FUNCTION</sub></sup><a name="with-capacity-value"></a>
 <code>&forall; :A :B. <a href="#hash-class">HASH</a> :A &rArr; (<a href="#integer-type">INTEGER</a> &rarr; (<a href="#hashtable-type">HASHTABLE</a> :A :B))</code>
 
 Crate a new empty hashtable with a given capacity
@@ -4043,7 +4043,7 @@ A StatefulComputation which returns the current state as the value.
 
 ***
 
-#### <code>PUT</code> <sup><sub>[FUNCTION]</sub></sup><a name="put-value"></a>
+#### <code>(PUT STATE)/code> <sup><sub>FUNCTION</sub></sup><a name="put-value"></a>
 <code>&forall; :A. (:A &rarr; (<a href="#st-type">ST</a> :A <a href="#unit-type">UNIT</a>))</code>
 
 A StatefulComputation with state set to be given state. The returned value is Unit.
@@ -4051,7 +4051,7 @@ A StatefulComputation with state set to be given state. The returned value is Un
 
 ***
 
-#### <code>RUN</code> <sup><sub>[FUNCTION]</sub></sup><a name="run-value"></a>
+#### <code>(RUN SC)/code> <sup><sub>FUNCTION</sub></sup><a name="run-value"></a>
 <code>&forall; :A :B. ((<a href="#st-type">ST</a> :A :B) &rarr; :A &rarr; (<a href="#tuple-type">TUPLE</a> :A :B))</code>
 
 Runs a StatefulComputation to produce a final updated state and value given an initial state
@@ -4096,7 +4096,7 @@ A forward-moving pointer into an ordered sequence of :ELTs
 
 ***
 
-#### <code>ANY!</code> <sup><sub>[FUNCTION]</sub></sup><a name="any!-value"></a>
+#### <code>(ANY! GOOD? ITER)/code> <sup><sub>FUNCTION</sub></sup><a name="any!-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 Return `True` as soon as any element of ITER is GOOD?, or `False` if none of them are.
@@ -4106,7 +4106,7 @@ Returns `False` if ITER is empty.
 
 ***
 
-#### <code>MAX!</code> <sup><sub>[FUNCTION]</sub></sup><a name="max!-value"></a>
+#### <code>(MAX! ITER)/code> <sup><sub>FUNCTION</sub></sup><a name="max!-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
 Return the most-positive element of ITER, or `None` if ITER is empty.
@@ -4114,7 +4114,7 @@ Return the most-positive element of ITER, or `None` if ITER is empty.
 
 ***
 
-#### <code>MIN!</code> <sup><sub>[FUNCTION]</sub></sup><a name="min!-value"></a>
+#### <code>(MIN! ITER)/code> <sup><sub>FUNCTION</sub></sup><a name="min!-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
 Return the most-negative element of ITER, or `None` if ITER is empty.
@@ -4122,7 +4122,7 @@ Return the most-negative element of ITER, or `None` if ITER is empty.
 
 ***
 
-#### <code>SUM!</code> <sup><sub>[FUNCTION]</sub></sup><a name="sum!-value"></a>
+#### <code>(SUM! ITER)/code> <sup><sub>FUNCTION</sub></sup><a name="sum!-value"></a>
 <code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; :A)</code>
 
 Add together all the elements of ITER.
@@ -4146,7 +4146,7 @@ Yields nothing; stops immediately
 
 ***
 
-#### <code>FIND!</code> <sup><sub>[FUNCTION]</sub></sup><a name="find!-value"></a>
+#### <code>(FIND! THIS? ITER)/code> <sup><sub>FUNCTION</sub></sup><a name="find!-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
 Return the first element of ITER for which THIS? returns `True`, or `None` if no element matches.
@@ -4154,7 +4154,7 @@ Return the first element of ITER for which THIS? returns `True`, or `None` if no
 
 ***
 
-#### <code>FOLD!</code> <sup><sub>[FUNCTION]</sub></sup><a name="fold!-value"></a>
+#### <code>(FOLD! FUNC INIT ITER)/code> <sup><sub>FUNCTION</sub></sup><a name="fold!-value"></a>
 <code>&forall; :A :B. ((:A &rarr; :B &rarr; :A) &rarr; :A &rarr; (<a href="#iterator-type">ITERATOR</a> :B) &rarr; :A)</code>
 
 Tail recursive in-order fold. Common Lisp calls this operation `reduce`.
@@ -4165,7 +4165,7 @@ STATE, using INIT as the first STATE.
 
 ***
 
-#### <code>LAST!</code> <sup><sub>[FUNCTION]</sub></sup><a name="last!-value"></a>
+#### <code>(LAST! ITER)/code> <sup><sub>FUNCTION</sub></sup><a name="last!-value"></a>
 <code>&forall; :A. ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
 Yields the last element of ITER, completely consuming it.
@@ -4173,7 +4173,7 @@ Yields the last element of ITER, completely consuming it.
 
 ***
 
-#### <code>NEXT!</code> <sup><sub>[FUNCTION]</sub></sup><a name="next!-value"></a>
+#### <code>(NEXT! ITER)/code> <sup><sub>FUNCTION</sub></sup><a name="next!-value"></a>
 <code>&forall; :A. ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
 Advance ITER, returning its next yielded value, or `None` if the iterator is exhausted.
@@ -4184,7 +4184,7 @@ most of the operators defined on iterators call `next!` internally, or create ne
 
 ***
 
-#### <code>TAKE!</code> <sup><sub>[FUNCTION]</sub></sup><a name="take!-value"></a>
+#### <code>(TAKE! COUNT ITER)/code> <sup><sub>FUNCTION</sub></sup><a name="take!-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
 An `Iterator` which yields at most COUNT elements from ITER.
@@ -4192,7 +4192,7 @@ An `Iterator` which yields at most COUNT elements from ITER.
 
 ***
 
-#### <code>UP-TO</code> <sup><sub>[FUNCTION]</sub></sup><a name="up-to-value"></a>
+#### <code>(UP-TO LIMIT)/code> <sup><sub>FUNCTION</sub></sup><a name="up-to-value"></a>
 <code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
 An iterator which begins at zero and counts up to, but not including, LIMIT.
@@ -4200,12 +4200,12 @@ An iterator which begins at zero and counts up to, but not including, LIMIT.
 
 ***
 
-#### <code>CHAIN!</code> <sup><sub>[FUNCTION]</sub></sup><a name="chain!-value"></a>
+#### <code>(CHAIN! ITER1 ITER2)/code> <sup><sub>FUNCTION</sub></sup><a name="chain!-value"></a>
 <code>&forall; :A. ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
 ***
 
-#### <code>COUNT!</code> <sup><sub>[FUNCTION]</sub></sup><a name="count!-value"></a>
+#### <code>(COUNT! ITER)/code> <sup><sub>FUNCTION</sub></sup><a name="count!-value"></a>
 <code>&forall; :A. ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; <a href="#ufix-type">UFIX</a>)</code>
 
 Return the number of elements in ITER.
@@ -4215,7 +4215,7 @@ afterwards, ITER will be exhausted.
 
 ***
 
-#### <code>EVERY!</code> <sup><sub>[FUNCTION]</sub></sup><a name="every!-value"></a>
+#### <code>(EVERY! GOOD? ITER)/code> <sup><sub>FUNCTION</sub></sup><a name="every!-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 Return `True` if every element of ITER is GOOD?, or `False` as soon as any element is not GOOD?.
@@ -4225,7 +4225,7 @@ Returns `True` if ITER is empty.
 
 ***
 
-#### <code>CONCAT!</code> <sup><sub>[FUNCTION]</sub></sup><a name="concat!-value"></a>
+#### <code>(CONCAT! FIRST SECOND)/code> <sup><sub>FUNCTION</sub></sup><a name="concat!-value"></a>
 <code>&forall; :A. ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
 Yield all the elements of FIRST followed by all the elements from SECOND.
@@ -4233,7 +4233,7 @@ Yield all the elements of FIRST followed by all the elements from SECOND.
 
 ***
 
-#### <code>FILTER!</code> <sup><sub>[FUNCTION]</sub></sup><a name="filter!-value"></a>
+#### <code>(FILTER! KEEP? ITER)/code> <sup><sub>FUNCTION</sub></sup><a name="filter!-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
 Return an iterator over the elements from ITER for which KEEP? returns true.
@@ -4241,7 +4241,7 @@ Return an iterator over the elements from ITER for which KEEP? returns true.
 
 ***
 
-#### <code>FLATTEN!</code> <sup><sub>[FUNCTION]</sub></sup><a name="flatten!-value"></a>
+#### <code>(FLATTEN! ITERS)/code> <sup><sub>FUNCTION</sub></sup><a name="flatten!-value"></a>
 <code>&forall; :A. ((<a href="#iterator-type">ITERATOR</a> (<a href="#iterator-type">ITERATOR</a> :A)) &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
 Yield all the elements from each of the ITERS in order.
@@ -4249,7 +4249,7 @@ Yield all the elements from each of the ITERS in order.
 
 ***
 
-#### <code>ZIPWITH!</code> <sup><sub>[FUNCTION]</sub></sup><a name="zipwith!-value"></a>
+#### <code>(ZIPWITH! F LEFT RIGHT)/code> <sup><sub>FUNCTION</sub></sup><a name="zipwith!-value"></a>
 <code>&forall; :A :B :C. ((:A &rarr; :B &rarr; :C) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :B) &rarr; (<a href="#iterator-type">ITERATOR</a> :C))</code>
 
 Return an iterator of elements from LEFT and RIGHT which terminates as soon as either LEFT or RIGHT does.
@@ -4257,7 +4257,7 @@ Return an iterator of elements from LEFT and RIGHT which terminates as soon as e
 
 ***
 
-#### <code>DOWN-FROM</code> <sup><sub>[FUNCTION]</sub></sup><a name="down-from-value"></a>
+#### <code>(DOWN-FROM LIMIT)/code> <sup><sub>FUNCTION</sub></sup><a name="down-from-value"></a>
 <code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
 An iterator which begins below the provided limit and counts down through and including zero.
@@ -4265,7 +4265,7 @@ An iterator which begins below the provided limit and counts down through and in
 
 ***
 
-#### <code>FOR-EACH!</code> <sup><sub>[FUNCTION]</sub></sup><a name="for-each!-value"></a>
+#### <code>(FOR-EACH! THUNK ITER)/code> <sup><sub>FUNCTION</sub></sup><a name="for-each!-value"></a>
 <code>&forall; :A :B. ((:A &rarr; :B) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Call THUNK on each element of ITER in order for side effects.
@@ -4274,7 +4274,7 @@ Discard values returned by THUNK.
 
 ***
 
-#### <code>INDEX-OF!</code> <sup><sub>[FUNCTION]</sub></sup><a name="index-of!-value"></a>
+#### <code>(INDEX-OF! THIS? ITER)/code> <sup><sub>FUNCTION</sub></sup><a name="index-of!-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#ufix-type">UFIX</a>))</code>
 
 Return the zero-based index of the first element of ITER for which THIS? is `True`, or `None` if no element matches.
@@ -4282,7 +4282,7 @@ Return the zero-based index of the first element of ITER for which THIS? is `Tru
 
 ***
 
-#### <code>LIST-ITER</code> <sup><sub>[FUNCTION]</sub></sup><a name="list-iter-value"></a>
+#### <code>(LIST-ITER LST)/code> <sup><sub>FUNCTION</sub></sup><a name="list-iter-value"></a>
 <code>&forall; :A. ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
 Yield successive elements of LST.
@@ -4291,7 +4291,7 @@ Behavior is undefined if the iterator is advanced after a destructive modificati
 
 ***
 
-#### <code>OPTIMIZE!</code> <sup><sub>[FUNCTION]</sub></sup><a name="optimize!-value"></a>
+#### <code>(OPTIMIZE! BETTER? ITER)/code> <sup><sub>FUNCTION</sub></sup><a name="optimize!-value"></a>
 <code>&forall; :A. ((:A &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
 For an order BETTER? which returns `True` if its first argument is better than its second argument, return the best element of ITER.
@@ -4301,7 +4301,7 @@ Return `None` if ITER is empty.
 
 ***
 
-#### <code>CHAR-RANGE</code> <sup><sub>[FUNCTION]</sub></sup><a name="char-range-value"></a>
+#### <code>(CHAR-RANGE START END)/code> <sup><sub>FUNCTION</sub></sup><a name="char-range-value"></a>
 <code>(<a href="#char-type">CHAR</a> &rarr; <a href="#char-type">CHAR</a> &rarr; (<a href="#iterator-type">ITERATOR</a> <a href="#char-type">CHAR</a>))</code>
 
 An inclusive range of characters from START to END by cl:char-code.
@@ -4309,7 +4309,7 @@ An inclusive range of characters from START to END by cl:char-code.
 
 ***
 
-#### <code>ENUMERATE!</code> <sup><sub>[FUNCTION]</sub></sup><a name="enumerate!-value"></a>
+#### <code>(ENUMERATE! ITER)/code> <sup><sub>FUNCTION</sub></sup><a name="enumerate!-value"></a>
 <code>&forall; :A. ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> (<a href="#tuple-type">TUPLE</a> <a href="#ufix-type">UFIX</a> :A)))</code>
 
 Pair successive zero-based incides with elements from ITER
@@ -4317,7 +4317,7 @@ Pair successive zero-based incides with elements from ITER
 
 ***
 
-#### <code>PAIR-WITH!</code> <sup><sub>[FUNCTION]</sub></sup><a name="pair-with!-value"></a>
+#### <code>(PAIR-WITH! FUNC KEYS)/code> <sup><sub>FUNCTION</sub></sup><a name="pair-with!-value"></a>
 <code>&forall; :A :B. ((:A &rarr; :B) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> (<a href="#tuple-type">TUPLE</a> :A :B)))</code>
 
 Returns an iterator over tuples whose FSTs are elements from KEYS, and whose SNDs are the results of applying FUNC to those KEYS.
@@ -4325,12 +4325,12 @@ Returns an iterator over tuples whose FSTs are elements from KEYS, and whose SND
 
 ***
 
-#### <code>UNWRAPPED!</code> <sup><sub>[FUNCTION]</sub></sup><a name="unwrapped!-value"></a>
+#### <code>(UNWRAPPED! ITER)/code> <sup><sub>FUNCTION</sub></sup><a name="unwrapped!-value"></a>
 <code>&forall; :A :B. <a href="#unwrappable-class">UNWRAPPABLE</a> :A &rArr; ((<a href="#iterator-type">ITERATOR</a> (:A :B)) &rarr; (<a href="#iterator-type">ITERATOR</a> :B))</code>
 
 ***
 
-#### <code>UP-THROUGH</code> <sup><sub>[FUNCTION]</sub></sup><a name="up-through-value"></a>
+#### <code>(UP-THROUGH LIMIT)/code> <sup><sub>FUNCTION</sub></sup><a name="up-through-value"></a>
 <code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
 An iterator which begins at zero and counts up through and including LIMIT.
@@ -4338,7 +4338,7 @@ An iterator which begins at zero and counts up through and including LIMIT.
 
 ***
 
-#### <code>INTERLEAVE!</code> <sup><sub>[FUNCTION]</sub></sup><a name="interleave!-value"></a>
+#### <code>(INTERLEAVE! LEFT RIGHT)/code> <sup><sub>FUNCTION</sub></sup><a name="interleave!-value"></a>
 <code>&forall; :A. ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
 Return an interator of interleaved elements from LEFT and RIGHT which terminates as soon as both LEFT and RIGHT do.
@@ -4347,7 +4347,7 @@ In the case one iterator terminates before the other, the other is exhausted bef
 
 ***
 
-#### <code>REPEAT-ITEM</code> <sup><sub>[FUNCTION]</sub></sup><a name="repeat-item-value"></a>
+#### <code>(REPEAT-ITEM ITEM COUNT)/code> <sup><sub>FUNCTION</sub></sup><a name="repeat-item-value"></a>
 <code>&forall; :A. (:A &rarr; <a href="#ufix-type">UFIX</a> &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
 Yield ITEM COUNT times, then stop.
@@ -4355,7 +4355,7 @@ Yield ITEM COUNT times, then stop.
 
 ***
 
-#### <code>VECTOR-ITER</code> <sup><sub>[FUNCTION]</sub></sup><a name="vector-iter-value"></a>
+#### <code>(VECTOR-ITER VEC)/code> <sup><sub>FUNCTION</sub></sup><a name="vector-iter-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
 Yield successive elements of VEC.
@@ -4364,7 +4364,7 @@ Behavior is undefined if the iterator is advanced after a destructive modificati
 
 ***
 
-#### <code>STRING-CHARS</code> <sup><sub>[FUNCTION]</sub></sup><a name="string-chars-value"></a>
+#### <code>(STRING-CHARS STR)/code> <sup><sub>FUNCTION</sub></sup><a name="string-chars-value"></a>
 <code>(<a href="#string-type">STRING</a> &rarr; (<a href="#iterator-type">ITERATOR</a> <a href="#char-type">CHAR</a>))</code>
 
 Yield successive `Char`s from STR.
@@ -4373,7 +4373,7 @@ Behavior is undefined if the iterator is advanced after a destructive modificati
 
 ***
 
-#### <code>COLLECT-LIST!</code> <sup><sub>[FUNCTION]</sub></sup><a name="collect-list!-value"></a>
+#### <code>(COLLECT-LIST! ITER)/code> <sup><sub>FUNCTION</sub></sup><a name="collect-list!-value"></a>
 <code>&forall; :A. ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
 Construct a `List` containing all the elements from ITER in order.
@@ -4381,7 +4381,7 @@ Construct a `List` containing all the elements from ITER in order.
 
 ***
 
-#### <code>COUNT-FOREVER</code> <sup><sub>[FUNCTION]</sub></sup><a name="count-forever-value"></a>
+#### <code>(COUNT-FOREVER _)/code> <sup><sub>FUNCTION</sub></sup><a name="count-forever-value"></a>
 <code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (<a href="#unit-type">UNIT</a> &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
 An infinite iterator which starts at 0 and counts upwards by 1.
@@ -4389,7 +4389,7 @@ An infinite iterator which starts at 0 and counts upwards by 1.
 
 ***
 
-#### <code>RECURSIVE-ITER</code> <sup><sub>[FUNCTION]</sub></sup><a name="recursive-iter-value"></a>
+#### <code>(RECURSIVE-ITER SUCC DONE? START)/code> <sup><sub>FUNCTION</sub></sup><a name="recursive-iter-value"></a>
 <code>&forall; :A. ((:A &rarr; :A) &rarr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; :A &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
 An iterator which yields first START, then (SUCC START), then (SUCC (SUCC START)), and so on, stopping as soon as such a value is `done?`.
@@ -4400,7 +4400,7 @@ iterator is empty.
 
 ***
 
-#### <code>REPEAT-FOREVER</code> <sup><sub>[FUNCTION]</sub></sup><a name="repeat-forever-value"></a>
+#### <code>(REPEAT-FOREVER ITEM)/code> <sup><sub>FUNCTION</sub></sup><a name="repeat-forever-value"></a>
 <code>&forall; :A. (:A &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
 Yield ITEM over and over, infinitely.
@@ -4408,7 +4408,7 @@ Yield ITEM over and over, infinitely.
 
 ***
 
-#### <code>COLLECT-VECTOR!</code> <sup><sub>[FUNCTION]</sub></sup><a name="collect-vector!-value"></a>
+#### <code>(COLLECT-VECTOR! ITER)/code> <sup><sub>FUNCTION</sub></sup><a name="collect-vector!-value"></a>
 <code>&forall; :A. ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
 
 Construct a `Vector` containing all the elements from ITER in order.
@@ -4416,7 +4416,7 @@ Construct a `Vector` containing all the elements from ITER in order.
 
 ***
 
-#### <code>RANGE-DECREASING</code> <sup><sub>[FUNCTION]</sub></sup><a name="range-decreasing-value"></a>
+#### <code>(RANGE-DECREASING STEP START END)/code> <sup><sub>FUNCTION</sub></sup><a name="range-decreasing-value"></a>
 <code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; :A &rarr; :A &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
 A range which begins below START and counts down through and including END by STEP.
@@ -4426,7 +4426,7 @@ Equivalent to reversing `range-increasing`
 
 ***
 
-#### <code>RANGE-INCREASING</code> <sup><sub>[FUNCTION]</sub></sup><a name="range-increasing-value"></a>
+#### <code>(RANGE-INCREASING STEP START END)/code> <sup><sub>FUNCTION</sub></sup><a name="range-increasing-value"></a>
 <code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; :A &rarr; :A &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
 An iterator which begins at START and yields successive elements spaced by STEP, stopping before END.
@@ -4434,7 +4434,7 @@ An iterator which begins at START and yields successive elements spaced by STEP,
 
 ***
 
-#### <code>COLLECT-HASHTABLE!</code> <sup><sub>[FUNCTION]</sub></sup><a name="collect-hashtable!-value"></a>
+#### <code>(COLLECT-HASHTABLE! ITER)/code> <sup><sub>FUNCTION</sub></sup><a name="collect-hashtable!-value"></a>
 <code>&forall; :A :B. <a href="#hash-class">HASH</a> :A &rArr; ((<a href="#iterator-type">ITERATOR</a> (<a href="#tuple-type">TUPLE</a> :A :B)) &rarr; (<a href="#hashtable-type">HASHTABLE</a> :A :B))</code>
 
 Construct a `HashTable` containing all the key/value pairs from ITER.
@@ -4444,7 +4444,7 @@ If a key appears in ITER multiple times, the resulting table will contain its la
 
 ***
 
-#### <code>REMOVE-DUPLICATES!</code> <sup><sub>[FUNCTION]</sub></sup><a name="remove-duplicates!-value"></a>
+#### <code>(REMOVE-DUPLICATES! ITER)/code> <sup><sub>FUNCTION</sub></sup><a name="remove-duplicates!-value"></a>
 <code>&forall; :A. <a href="#hash-class">HASH</a> :A &rArr; ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
 Yield unique elements from ITER in order of first appearance.
@@ -4452,7 +4452,7 @@ Yield unique elements from ITER in order of first appearance.
 
 ***
 
-#### <code>COLLECT-VECTOR-SIZE-HINT!</code> <sup><sub>[FUNCTION]</sub></sup><a name="collect-vector-size-hint!-value"></a>
+#### <code>(COLLECT-VECTOR-SIZE-HINT! SIZE ITER)/code> <sup><sub>FUNCTION</sub></sup><a name="collect-vector-size-hint!-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
 
 Construct a `Vector` with initial allocation for SIZE elements, and fill it with all the elements from ITER in order.
