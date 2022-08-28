@@ -51,7 +51,7 @@ params:
   containerMaxWidth: 700px
   dateFormat: Jan 2, 2006
   homeText: The Coalton Language
-  footerText: Copyright © 2018–2021 Coalton Developers. [source](https://github.com/coalton-lang/coalton-website) · [rss](/index.xml)
+  footerText: Copyright © 2018–2022 Coalton Developers. [source](https://github.com/coalton-lang/coalton-website) · [rss](/index.xml)
   hideFooter: false
 #  katex: true
 
