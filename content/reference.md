@@ -1878,9 +1878,12 @@ Methods:
 #### <code>RECIPROCABLE</code> <sup><sub>[CLASS]</sub></sup><a name="reciprocable-class"></a>
 <code><a href="#num-class">NUM</a> :A &rArr; <a href="#reciprocable-class">RECIPROCABLE</a> :A</code>
 
-Any number with a multplicative inverse (reciprocal) where:
+Any number with a multiplicative inverse (reciprocal) where:
+
+
     1 = (* (reciprocal x) x) = (* x (reciprocal x))
     (/ x y) = (* x (reciprocal y))
+
 
 If no reciprocal exists for an element, produce a run-time error (e.g. zero).
 
@@ -1908,17 +1911,23 @@ Methods:
 #### <code>(1+ NUM)</code> <sup><sub>FUNCTION</sub></sup><a name="1+-value"></a>
 <code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; (:A &rarr; :A)</code>
 
+Increment `num`.
+
+
 ***
 
 #### <code>(1- NUM)</code> <sup><sub>FUNCTION</sub></sup><a name="1--value"></a>
 <code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; (:A &rarr; :A)</code>
+
+Decrement `num`.
+
 
 ***
 
 #### <code>(ABS X)</code> <sup><sub>FUNCTION</sub></sup><a name="abs-value"></a>
 <code>&forall; :A. (<a href="#ord-class">ORD</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; (:A &rarr; :A)</code>
 
-Absolute value of X.
+Absolute value of `x`.
 
 
 ***
@@ -1934,13 +1943,16 @@ Compute the "arithmetic shift" of X by N.
 #### <code>(SIGN X)</code> <sup><sub>FUNCTION</sub></sup><a name="sign-value"></a>
 <code>&forall; :A :B. (<a href="#ord-class">ORD</a> :A) (<a href="#num-class">NUM</a> :A) (<a href="#num-class">NUM</a> :B) &rArr; (:A &rarr; :B)</code>
 
-The sign of X.
+The sign of `x`, where `(sign 0) = 1`.
 
 
 ***
 
 #### <code>(NEGATE X)</code> <sup><sub>FUNCTION</sub></sup><a name="negate-value"></a>
 <code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; (:A &rarr; :A)</code>
+
+The negation, or additive inverse, of `x`.
+
 
 ***
 
@@ -1955,25 +1967,40 @@ Neither infinite or NaN.
 #### <code>(NONZERO? X)</code> <sup><sub>FUNCTION</sub></sup><a name="nonzero?-value"></a>
 <code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
+Is `x` not zero?
+
+
 ***
 
 #### <code>(NEGATIVE? X)</code> <sup><sub>FUNCTION</sub></sup><a name="negative?-value"></a>
 <code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Is `x` negative?
+
 
 ***
 
 #### <code>(POSITIVE? X)</code> <sup><sub>FUNCTION</sub></sup><a name="positive?-value"></a>
 <code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
+Is `x` positive?
+
+
 ***
 
 #### <code>(NONNEGATIVE? X)</code> <sup><sub>FUNCTION</sub></sup><a name="nonnegative?-value"></a>
 <code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
+Is `x` not negative?
+
+
 ***
 
 #### <code>(NONPOSITIVE? X)</code> <sup><sub>FUNCTION</sub></sup><a name="nonpositive?-value"></a>
 <code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Is `x` not positive?
+
 
 ***
 
@@ -2052,7 +2079,7 @@ The denominator of a fraction.
 #### <code>INTEGRAL</code> <sup><sub>[CLASS]</sub></sup><a name="integral-class"></a>
 <code>(<a href="#remainder-class">REMAINDER</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; <a href="#integral-class">INTEGRAL</a> :A</code>
 
-Integral is a number that is either even or odd where `div' and `quot'
+Integral is a number that is either even or odd where `div` and `quot`
 are floored and truncated division, respectively.
 
 Methods:
@@ -2082,8 +2109,12 @@ Methods:
 <code><a href="#num-class">NUM</a> :A &rArr; <a href="#remainder-class">REMAINDER</a> :A</code>
 
 Remainder is typically an integral domain satisfying:
-    a = (+ (* b (quot a b)) (rem a b))
-    a = (+ (* b (div a b)) (mod a b))
+
+```
+a = (+ (* b (quot a b)) (rem a b))
+a = (+ (* b (div a b)) (mod a b))
+```
+
 
 Methods:
 - <code>QUOT :: (:A &rarr; :A &rarr; :A)</code>
@@ -2263,12 +2294,15 @@ Methods:
 <code>(<a href="#real-class">REAL</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; <a href="#rational-class">RATIONAL</a> :A</code>
 
 Any number that can be exactly represented by a fraction, or is not finite.
+
 If a rational can be converted from a fraction it must satisfy:
 
-(into (to-fraction x)) = x
-(into (best-approx x)) = x
 
-Furthermore, best-approx returns the simplest fraction, and both functions may be partial.
+    (into (to-fraction x)) = x
+    (into (best-approx x)) = x
+
+
+Furthermore, `best-approx` returns the simplest fraction, and both functions may be partial.
 
 
 Methods:
@@ -2302,10 +2336,21 @@ Methods:
 <code><a href="#quantizable-class">QUANTIZABLE</a> :A</code>
 
 The representation of a type that allows for rounding operations
-max x such that (floor x) &lt;= x
-min x such that (ceiling x) &lt;= x
-And (proper x) = (Tuple (truncate x) (- x (truncate x)))
-where (truncate x) = (* (sign x) (floor (abs x))
+
+
+    max x such that (floor x) &lt;= x
+    min x such that (ceiling x) &lt;= x
+
+And
+
+
+    (proper x) = (Tuple (truncate x) (- x (truncate x)))
+
+
+where
+
+
+    (truncate x) = (* (sign x) (floor (abs x))
 
 
 Methods:
@@ -2409,7 +2454,7 @@ remainders expressed as values of type of X.
 #### <code>(TRUNCATE X)</code> <sup><sub>FUNCTION</sub></sup><a name="truncate-value"></a>
 <code>&forall; :A. <a href="#quantizable-class">QUANTIZABLE</a> :A &rArr; (:A &rarr; <a href="#integer-type">INTEGER</a>)</code>
 
-Returns the integer closest/equal to X that is within 0 and X.
+Returns the integer closest/equal to `x` that is within `0` and `x`.
 
 
 ***
@@ -2529,7 +2574,8 @@ The length of a complex number.
 #### <code>POLAR</code> <sup><sub>[CLASS]</sub></sup><a name="polar-class"></a>
 <code>(<a href="#complex-class">COMPLEX</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; <a href="#polar-class">POLAR</a> :A</code>
 
-For a complex number z = (complex x y)
+For a complex number `z = (complex x y)`, the following identities hold:
+
     z = (* (magnitude z) (exp (* ii (phase z))))
     (polar z) = (Tuple (magnitude z) (phase z))
     (phase z) = (atan2 y x)
@@ -2555,7 +2601,9 @@ Methods:
 #### <code>RADICAL</code> <sup><sub>[CLASS]</sub></sup><a name="radical-class"></a>
 <code><a href="#radical-class">RADICAL</a> :A</code>
 
-Obeys (^ (sqrt x) 2) = x = (^^ (nth-root n x) n)
+Obeys:
+
+    (^ (sqrt x) 2) = x = (^^ (nth-root n x) n)
 
 Methods:
 - <code>NTH-ROOT :: (<a href="#integer-type">INTEGER</a> &rarr; :A &rarr; :A)</code>
@@ -2657,7 +2705,12 @@ Methods:
 #### <code>(CIS Z)</code> <sup><sub>FUNCTION</sub></sup><a name="cis-value"></a>
 <code>&forall; :A. (<a href="#trigonometric-class">TRIGONOMETRIC</a> :A) (<a href="#complex-class">COMPLEX</a> :A) &rArr; (:A &rarr; (<a href="#complex-type">COMPLEX</a> :A))</code>
 
-(cis z) = (exp (complex 0 z)) = (+ (cos z) (sin z))
+A point on the complex unit circle:
+
+
+    (cis z) := (exp (complex 0 z))
+             = (complex (cos z) (sin z))
+
 
 
 ***
@@ -2709,7 +2762,10 @@ as (atan (/ y x)) when defined and accounting for the quadrant of the (x,y).
 #### <code>(MAGNITUDE Z)</code> <sup><sub>FUNCTION</sub></sup><a name="magnitude-value"></a>
 <code>&forall; :A. (<a href="#radical-class">RADICAL</a> :A) (<a href="#complex-class">COMPLEX</a> :A) &rArr; ((<a href="#complex-type">COMPLEX</a> :A) &rarr; :A)</code>
 
-For z = x + yi, (magnitude z) = (sqrt (+ (^ x 2) (^ y 2)))
+For `z = x + yi`,
+
+
+    (magnitude z) = (sqrt (+ (^ x 2) (^ y 2)))
 
 
 ***
