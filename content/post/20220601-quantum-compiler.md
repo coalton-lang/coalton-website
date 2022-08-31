@@ -1,6 +1,7 @@
 ---
 title: "Using Coalton to Implement a Quantum Compiler"
 date: 2022-05-20
+math: true
 ---
 
 By [Elias Lawson-Fox](https://github.com/eliaslfox), [Aidan Nyquist](https://github.com/aijony), and [Robert Smith](https://twitter.com/stylewarning)
@@ -45,35 +46,59 @@ It was a valuable case study, and we learned a lot from it, but we needed to try
 A typical quantum program is comprised of a sequence of operations that can be expressed mathematically as square matrices of complex numbers. The matrices are *unitary*—which means the matrices can never stretch or shrink a vector they multiply onto—and they have to have a power-of-two size. Just like classical computers, quantum computers have a set of operations they can natively perform. Quantum computers typically have only a small handful. For example, the set of native operations of an IBM quantum computer is:
 
 $$
-\begin{align*}
-\mathrm{RX}_{\pi/2} &:= \begin{pmatrix}\tfrac{1}{\sqrt{2}} & i\tfrac{1}{\sqrt{2}} \\ i\tfrac{1}{\sqrt{2}} & \tfrac{1}{\sqrt{2}}\end{pmatrix}\\
-\mathrm{RX}_{-\pi/2} &:= \begin{pmatrix}\tfrac{1}{\sqrt{2}} & -i\tfrac{1}{\sqrt{2}} \\ -i\tfrac{1}{\sqrt{2}} & \tfrac{1}{\sqrt{2}}\end{pmatrix}\\\mathrm{RZ}_{\theta} &:= \begin{pmatrix}\cos\tfrac{\theta}{2}-i\sin\tfrac{\theta}{2} & 0 \\0 & \cos\tfrac{\theta}{2}+i\sin\tfrac{\theta}{2}\end{pmatrix}\\
-\mathrm{CNOT} &:= \begin{pmatrix}1 & 0 & 0 & 0\\0 & 1 & 0 & 0\\0 & 0 & 0 & 1\\0 & 0 & 1 & 0\end{pmatrix}
-\end{align*}
+\begin{aligned}
+\mathrm{RX}\_{\pi/2} &:=
+  \begin{pmatrix}
+    \frac{1}{\sqrt{2}} & i\frac{1}{\sqrt{2}} \\\\
+    i\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
+  \end{pmatrix}\\\\
+\mathrm{RX}\_{-\pi/2} &:=
+  \begin{pmatrix}
+    \frac{1}{\sqrt{2}} & -i\frac{1}{\sqrt{2}} \\\\
+    -i\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
+  \end{pmatrix}\\\\
+\mathrm{RZ}\_{\theta} &:=
+  \begin{pmatrix}
+    \cos\frac{\theta}{2}-i\sin\frac{\theta}{2} & 0 \\\\
+    0 & \cos\frac{\theta}{2}+i\sin\frac{\theta}{2}
+  \end{pmatrix}\\\\
+\mathrm{CNOT} &:=
+  \begin{pmatrix}
+    1 & 0 & 0 & 0\\\\
+    0 & 1 & 0 & 0\\\\
+    0 & 0 & 0 & 1\\\\
+    0 & 0 & 1 & 0
+  \end{pmatrix}
+\end{aligned}
 $$
+
 In this case, $\theta$ is actually parametric and can be any value between $0$ and $2\pi$.
 
 It is a surprising fact that you can build *any* $2^n\times 2^n$-size complex unitary matrix out of the above matrices by way of matrix multiplications and Kronecker products. For example, consider the following unitary matrix which we'll call $M$:
+
 $$
 M := \begin{pmatrix}
-1 & 0 & 0 & 0\\
-0 & \tfrac{\sqrt{3}}{2} & \tfrac{i}{2} & 0\\
-0 & \tfrac{i}{2} & \tfrac{\sqrt{3}}{2} & 0\\
+1 & 0 & 0 & 0\\\\
+0 & \frac{\sqrt{3}}{2} & \frac{i}{2} & 0\\\\
+0 & \frac{i}{2} & \frac{\sqrt{3}}{2} & 0\\\\
 0 & 0 & 0 & 1
 \end{pmatrix}.
 $$
+
 With extremely laborious math, one can determine that $M$ can be written as follows:
+
 $$
-\begin{align*}
-m'   &:=  (\mathrm{RZ}_{\pi/2}\cdot\mathrm{RX}_{\pi/2}\cdot\mathrm{RZ}_{-5\pi/4})\otimes \mathrm{RZ}_{-\pi/4} \\
-m''  &:= (\mathrm{RX}_{-\pi/2}\cdot\mathrm{RZ}_{\pi/6}\cdot\mathrm{RX}_{\pi/2})\otimes(\mathrm{RX}_{-\pi/2}\cdot\mathrm{RZ}_{\pi/6}\cdot\mathrm{RX}_{\pi/2})\\
-m''' &:= (\mathrm{RZ}_{\pi/4}\cdot\mathrm{RX}_{\pi/2}\cdot\mathrm{RZ}_{\pi/2})\otimes\mathrm{RZ}_{\pi/4}\\
-M &\hphantom{:}= m'''\cdot \mathrm{CNOT} \cdot m'' \cdot \mathrm{CNOT} \cdot m'
-\end{align*}
+\begin{aligned}
+m^{\prime}   &:=  (\mathrm{RZ}\_{\pi/2}\cdot\mathrm{RX}\_{\pi/2}\cdot\mathrm{RZ}\_{-5\pi/4})\otimes \mathrm{RZ}\_{-\pi/4} \\\\
+m^{\prime\prime}  &:= (\mathrm{RX}\_{-\pi/2}\cdot\mathrm{RZ}\_{\pi/6}\cdot\mathrm{RX}\_{\pi/2})\otimes(\mathrm{RX}\_{-\pi/2}\cdot\mathrm{RZ}\_{\pi/6}\cdot\mathrm{RX}\_{\pi/2})\\\\
+m^{\prime\prime\prime} &:= (\mathrm{RZ}\_{\pi/4}\cdot\mathrm{RX}\_{\pi/2}\cdot\mathrm{RZ}\_{\pi/2})\otimes\mathrm{RZ}\_{\pi/4}\\\\
+M &\hphantom{:}= m^{\prime\prime\prime}\cdot \mathrm{CNOT} \cdot m^{\prime\prime} \cdot \mathrm{CNOT} \cdot m^{\prime}
+\end{aligned}
 $$
+
 The intermediate $m$'s are just there for abbreviation. Notice how _only_ the aforementioned list of native operations are used, and how they're combined using multiplication (syntactically: $A\cdot B$) and Kronecker products (syntactically: $A\otimes B$). While it would be appealing to describe Kronecker products in more detail in this blog post, for the sake of brevity, we'll just consider them a separate kind of matrix multiplication.
 
-One of the primary tasks of a quantum compiler is to break down arbitrary unitary matrices, usually given by the quantum programmer, into a sequence of native ones. Using a fact from teh quantum computing field that the above matrix is usually specified as $\mathrm{XY}(\pi/3)$, Quilc can recover the above result like so:
+One of the primary tasks of a quantum compiler is to break down arbitrary unitary matrices, usually given by the quantum programmer, into a sequence of native ones. Using conventions from the quantum computing field that the above matrix is usually specified as $\mathrm{XY}(\pi/3)$, Quilc can recover the above result like so:
 
 ```
 $ echo 'XY(pi/3) 1 0' | ./quilc --isa ibmqx5
@@ -104,9 +129,9 @@ B 0
 
 represents the Kronecker product $A\otimes B$.
 
-Different quantum computers have a different set of native operators, so quilc must be a retargetable compiler. This mathematical puzzle is interesting and already quite difficult, but lurking is also an engineering problem of great concern.
+Different quantum computers each have a different set of native operators, so quilc must be a retargetable compiler. This mathematical puzzle is interesting and already quite difficult, but lurking is also an engineering problem of great concern.
 
-Almost every quantum computer in use today has some sort of _continuous_ operation—possibly many—like the $\mathrm{RZ}_\theta$ above. These continuous operations represent the analog nature of these quantum computers. Analog devices have their merits, but one thing analog hardware usually isn't good at is extreme precision. While I might request the quantum computer perform an $\mathrm{RZ}_{0.12345}$, due to the computer's physical nature, it might only accomplish something between an $\mathrm{RZ}_{0.11}$ and an $\mathrm{RZ}_{0.13}$. Quantum hardware engineers around the world, every day, are putting effort into improving the precision of the available native operations, but it'll never be  to feasible have _infinite_ precision, simply due to physical limitations. Just like high fidelity analog audio, we can never eliminate 100% of the noise in a system.
+Almost every quantum computer in use today has some sort of _continuous_ operation—possibly many—like the $\mathrm{RZ}\_\theta$ above. These continuous operations represent the analog nature of these quantum computers. Analog devices have their merits, but one thing analog hardware usually isn't good at is extreme precision. While I might request the quantum computer perform an $\mathrm{RZ}\_{0.12345}$, due to the computer's physical nature, it might only accomplish something between an $\mathrm{RZ}\_{0.11}$ and an $\mathrm{RZ}\_{0.13}$. Quantum hardware engineers around the world, every day, are putting effort into improving the precision of the available native operations, but it'll never be  to feasible have _infinite_ precision, simply due to physical limitations. Just like high fidelity analog audio, we can never eliminate 100% of the noise in a system.
 
 Can there instead be some set of _discrete_ native operations while still being able perform _any_ quantum computation we'd like? And if we have such a set, will it be *easy and efficient* to compile a given matrix? These two questions represent the problem of **discrete compilation** of quantum programs.
 
@@ -120,31 +145,31 @@ About 20 years after Solovay and Kitaev's work, Peter Selinger came up with anot
 
 ## The Selinger Approach to Discrete Compilation
 
-In order to have a set of discrete operations, we must be able to discretize the parametric operation $\mathrm{RZ}_\theta$, which is a $2\times2$ matrix with entried depending on $\theta$.
+In order to have a set of discrete operations, we must be able to discretize the parametric operation $\mathrm{RZ}\_\theta$, which is a $2\times2$ matrix with entries depending on $\theta$.
 
 Selinger considers the following native operators:
 $$
-\begin{align*}
-\mathrm{H} &:= \frac{1}{\sqrt 2}\begin{pmatrix}\tfrac{1}{\sqrt{2}} & \tfrac{1}{\sqrt{2}} \\ \tfrac{1}{\sqrt{2}} & -\tfrac{1}{\sqrt{2}}\end{pmatrix}\\
+\begin{aligned}
+\mathrm{H} &:= \frac{1}{\sqrt 2}\begin{pmatrix}\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}}\end{pmatrix}\\
 \mathrm{S} &:= \begin{pmatrix}1 & 0 \\0 & i\end{pmatrix}\\
-\mathrm{T} &:= \begin{pmatrix}1 & 0 \\0 & \tfrac{1}{\sqrt{2}}+i\tfrac{1}{\sqrt{2}}\end{pmatrix}
-\end{align*}
+\mathrm{T} &:= \begin{pmatrix}1 & 0 \\0 & \frac{1}{\sqrt{2}}+i\frac{1}{\sqrt{2}}\end{pmatrix}
+\end{aligned}
 $$
 This is called the _Clifford+T set_. These operators have mathematical significance because (1) the $\mathrm{H}$ and $\mathrm{S}$ form a special algebraic space called the one-qubit Clifford group, and (2) $\mathrm{T}$ happens to equal $\sqrt{\mathrm{S}}$, and (3) arbitrary products of these operators form a _dense_ set of the unitary matrices. The third point means to say is that this set of operators could be used to approximate any $2\times 2$ unitary matrix to an arbitrary precision, though Selinger will need to find an algorithm to do it.
 
-Next, Selinger turns to a result by Kliuchnikov, Maslov, and Mosca which says a given $2\times2$ matrix can be written precisely as a product of Clifford+T elements if and only if the matrix elements are all members of the number ring $R := \mathbb{Z}[\tfrac{1}{\sqrt 2}, i]$. So Selinger sets up the following goal: Try to write the problematic parametric gate $\mathrm{RZ}_\theta$  as a matrix
+Next, Selinger turns to a result by Kliuchnikov, Maslov, and Mosca which says a given $2\times2$ matrix can be written precisely as a product of Clifford+T elements if and only if the matrix elements are all members of the number ring $R := \mathbb{Z}[\frac{1}{\sqrt 2}, i]$. So Selinger sets up the following goal: Try to write the problematic parametric gate $\mathrm{RZ}\_\theta$  as a matrix
 $$
 \begin{pmatrix}
 a & -b^*\\b & a^*
 \end{pmatrix}
 $$
-with user-selectable precision, where $a$ and $b$ are elements of $R$, and $z^*$ represents the complex conjugate of $z$. If we can write this matrix, then we can use Kliuchnikov-Maslov-Mosca to write it in terms of Clifford+T. And if we can do _that_, then we can write any program with parametric $\mathrm{RZ}_\theta$ operators into an equivalent one (up to user-specified precision, at least) using only discrete operators.
+with user-selectable precision, where $a$ and $b$ are elements of $R$, and $z^*$ represents the complex conjugate of $z$. If we can write this matrix, then we can use Kliuchnikov-Maslov-Mosca to write it in terms of Clifford+T. And if we can do _that_, then we can write any program with parametric $\mathrm{RZ}\_\theta$ operators into an equivalent one (up to user-specified precision, at least) using only discrete operators.
 
 Selinger succeeds at solving this problem, by turning that matrix problem into a Diophantine equation that has to be solved over a specific number ring, and coming up with an algorithm to solve that.
 
 Since the two-qubit operators of usual interest are already discrete (like `CNOT`, `CZ`, etc.), this would make a fully discretized native gate set, so long as quantum computer implementers could supply the Clifford+T set as native operations.
 
-Already, even without the gory details of _how_ to find the approximating matrix, we see we're in for quite a ride. There's a lot of machinery we'll need, but one piece that sticks out is the need to do arithmetic over the ring $\mathbb{Z}[\tfrac{1}{\sqrt{2}},i]$. If we let $\omega:=(1+i)/\sqrt{2}$, then with a bit of exercise, we can see that elements of $\mathbb{Z}[\tfrac{1}{\sqrt{2}},i]$ all take the following canonical form:
+Already, even without the gory details of _how_ to find the approximating matrix, we see we're in for quite a ride. There's a lot of machinery we'll need, but one piece that sticks out is the need to do arithmetic over the ring $\mathbb{Z}[\frac{1}{\sqrt{2}},i]$. If we let $\omega:=(1+i)/\sqrt{2}$, then with a bit of exercise, we can see that elements of $\mathbb{Z}[\frac{1}{\sqrt{2}},i]$ all take the following canonical form:
 $$
 \frac{a_0}{2^{n_0}}+\frac{a_1}{2^{n_1}}\omega+\frac{a_2}{2^{n_2}}\omega^2+\frac{a_3}{2^{n_3}}\omega^3,
 $$
@@ -161,62 +186,66 @@ These difficulties presented a second opportunity for Coalton. Coalton's builds 
 ## Coalton to the rescue, take two
 
 Coalton is based around a system of organized polymorphism (called *type classes*) that allows for extensibility and composability in a statically typed manner. For example, this ring of algebraic numbers
+
 $$
-\mathbb{Z}[\sqrt{2}] = \left\{a_1 + a_2\sqrt{2} : a_1,a_2\in \mathbb{Z}\right\}
+\mathbb{Z}[\sqrt{2}] = \left\\\{a\_1 + a\_2\sqrt{2} : a\_1,a\_2\in \mathbb{Z}\right\\\}
 $$
-can be modeled as pairs of integers $[a_1;\;a_2]$ that obey certain laws. For instance, with a little bit of algebra, we can derive a multiplication law like so:
+
+can be modeled as pairs of integers $[a\_1; a\_2]$ that obey certain laws. For instance, with a little bit of algebra, we can derive a multiplication law like so:
+
 $$
-\begin{align*}
-[a_1;\; a_2]\cdot [b_1;\; b_2]
-                         &= (a_1 + a_2\sqrt{2})(b_1 + b_2\sqrt{2})\\
-                         &= a_1b_1 + a_1(b_2\sqrt{2})+ (a_2\sqrt{2})b_1+(a_2\sqrt{2})(b_2\sqrt{2}) \\
-                         &= (a_1b_1 + 2a_2b_2) + (a_1b_2+a_2b_1)\sqrt{2}\\
-                         &= [a_1b_1+2a_2b_2;\; a_1b_2+a_2b_1].
-\end{align*}
+\begin{aligned}
+[a\_1; a\_2]\cdot [b\_1; b\_2]
+                         &= (a\_1 + a\_2\sqrt{2})(b\_1 + b\_2\sqrt{2})\\\\
+                         &= a\_1b\_1 + a_1(b\_2\sqrt{2})+ (a\_2\sqrt{2})b\_1+(a\_2\sqrt{2})(b\_2\sqrt{2}) \\\\
+                         &= (a\_1b\_1 + 2a\_2b\_2) + (a\_1b\_2+a\_2b\_1)\sqrt{2}\\\\
+                         &= [a\_1b\_1+2a\_2b\_2; a\_1b\_2+a\_2b\_1].
+\end{aligned}
 $$
-These algebraic numbers could be written as a new type called `AlgNum` in Coalton that implements the `Eq` type class (which demands we implement equality) and the `Num` type class (which demands we implement addition, subtraction, multiplication, and some way to convert an integer into our new type):
+
+These algebraic numbers could be written as a new type called `Alg` in Coalton that implements the `Eq` type class (which demands we implement equality) and the `Num` type class (which demands we implement addition, subtraction, multiplication, and some way to convert an integer into our new type):
 
 ```lisp
-  (define-type AlgNum
+  (define-type Alg
     "Represents the algebraic number a1 + a2 * sqrt(2)."
-    (AlgNum Integer Integer))
+    (Alg Integer Integer))
 
-  (define-instance (Eq AlgNum)
+  (define-instance (Eq Alg)
     (define (== a b)
       (match (Tuple a b)
-        ((Tuple (AlgNum a1 a2) (AlgNum b1 b2))
+        ((Tuple (Alg a1 a2) (Alg b1 b2))
          (and (== a1 b1) (== a2 b2))))))
-  
-  (define-instance (Num AlgNum)
+
+  (define-instance (Num Alg)
     (define (+ a b)
       (match (Tuple a b)
-        ((Tuple (AlgNum a1 a2) (AlgNum b1 b2))
+        ((Tuple (Alg a1 a2) (Alg b1 b2))
          (AlgInt (+ a1 b1) (+ a2 b2)))))
     (define (- a b)
       (match (Tuple a b)
-        ((Tuple (AlgNum a1 a2) (AlgNum b1 b2))
+        ((Tuple (Alg a1 a2) (Alg b1 b2))
          (AlgInt (- a1 b1) (- a2 b2)))))
     (define (* a b)
       (match (Tuple a b)
-        ((Tuple (AlgNum a1 a2) (AlgNum b1 b2))
+        ((Tuple (Alg a1 a2) (Alg b1 b2))
          (AlgInt (+ (* a1 b1) (* 2 (* a2 b2)))
                  (+ (* a1 b2) (* a2 b1))))))
     (define (fromInt n)
-      (AlgNum n 0)))
+      (Alg n 0)))
 ```
 
 We can verify it works by seeing that $(1-2\sqrt{2})^2 = 9-4\sqrt{2}$:
 
 ```lisp
-> (coalton (* (AlgNum 1 -2) (AlgNum 1 -2)))
-#.(ALGNUM 9 -4)
+> (coalton (* (Alg 1 -2) (Alg 1 -2)))
+#.(ALG 9 -4)
 ```
 
-Since `Num` requires `fromInt` to be defined, any `Num` type, including our own `AlgNum`, permits overloading integer syntax. We don't have to laboriously write `(fromInt 2)` every time we want to use integer syntax as a shorthand for our `AlgNum` type.
+Since `Num` requires `fromInt` to be defined, any `Num` type, including our own `Alg`, permits overloading integer syntax. We don't have to laboriously write `(fromInt 2)` every time we want to use integer syntax as a shorthand for our `Alg` type.
 
 ```lisp
-> (coalton (* 2 (AlgNum 0 -1)))
-#.(ALGNUM 0 -2)
+> (coalton (* 2 (Alg 0 -1)))
+#.(ALG 0 -2)
 ```
 
 As is to be expected at this point, functions on `AlgInt` are inferred appropriately.
@@ -224,14 +253,14 @@ As is to be expected at this point, functions on `AlgInt` are inferred appropria
 ```lisp
 (define (algebraic-conjugate x)
   (match x
-    ((AlgNum a b) (AlgNum a (negate b)))))
+    ((Alg a b) (Alg a (negate b)))))
 ```
 
 We can see that
 
 ```lisp
 > (type-of 'algebraic-conjugate)
-(ALGNUM → ALGNUM)
+(ALG → ALG)
 ```
 
 Modeling these algebras works out quite well, especially when we have more of them, matrices of them, vectors of them, polynomials of them, and so on. They _compose_ well. We can even make our own `Ring` class so that we can write code that is generic on _any_ ring.
@@ -266,43 +295,43 @@ We can repeat the compilation of the $M$ gate that we did before for the IBM chi
 
 ```
 $ echo 'PRAGMA TOLERANCE "0.001"; XY(pi/3) 1 0' | ./quilc --isa discrete2
-T 0       H 0       T 0       H 0       H 1       H 1       H 1       S 1       
-S 0       T 0       S 0       T 0       T 1       T 1       T 1       H 1       
-S 0       H 0       H 0       H 0       H 1       H 1       H 1       T 1       
-S 0       T 0       T 0       T 0       T 1       T 1       T 1       H 1       
-H 0       S 0       S 0       S 0       S 1       S 1       S 1       T 1       
-T 1       H 0       H 0       H 0       H 1       H 1       H 1       H 1       
-CNOT 0 1  T 0       T 0       T 0       T 1       T 1       T 1       T 1       
-S 0       H 0       S 0       S 0       S 1       S 1       H 1       S 1       
-H 0       T 0       H 0       H 0       H 1       H 1       T 1       H 1       
-S 0       S 0       T 0       T 0       T 1       T 1       H 1       T 1       
-H 0       H 0       H 0       S 0       S 1       S 1       T 1       S 1       
-T 0       T 0       T 0       H 0       H 1       H 1       S 1       H 1       
-H 0       H 0       H 0       T 0       T 1       T 1       H 1       T 1       
-T 0       T 0       T 0       H 0       S 1       S 1       T 1       S 1       
-S 0       S 0       S 0       T 0       H 1       H 1       S 1       H 1       
-H 0       H 0       H 0       H 0       T 1       T 1       H 1       T 1       
-T 0       T 0       T 0       T 0       S 1       S 1       T 1       H 1       
-S 0       S 0       H 0       S 0       H 1       H 1       H 1       S 1       
-H 0       H 0       T 0       H 0       T 1       T 1       T 1       S 1       
-T 0       T 0       H 0       T 0       H 1       S 1       S 1       S 1       
-S 0       S 0       T 0       S 0       T 1       H 1       H 1       H 1       
-H 0       H 0       S 0       H 0       S 1       T 1       T 1       S 1       
-T 0       T 0       H 0       T 0       H 1       S 1       S 1       S 1       
-S 0       S 0       T 0       S 0       T 1       H 1       H 1       S 1       
-H 0       H 0       S 0       H 0       S 1       T 1       T 1       CNOT 0 1  
-T 0       T 0       H 0       T 0       H 1       S 1       H 1       H 0       
-S 0       S 0       T 0       H 0       T 1       H 1       T 1       T 0       
-H 0       H 0       H 0       S 0       H 1       T 1       H 1       T 1       
-T 0       T 0       T 0       S 0       T 1       S 1       T 1       S 1       
-H 0       S 0       S 0       S 0       H 1       H 1       H 1       S 1       
-T 0       H 0       H 0       H 0       T 1       T 1       T 1       S 1       
-S 0       T 0       T 0       S 0       S 1       S 1       S 1                 
-H 0       S 0       S 0       S 0       H 1       H 1       H 1                 
-T 0       H 0       H 0       S 0       T 1       T 1       T 1                 
-S 0       T 0       T 0       S 1       H 1       S 1       S 1                 
-H 0       S 0       H 0       H 1       T 1       H 1       H 1                 
-T 0       H 0       T 0       S 1       S 1       T 1       T 1              
+T 0       H 0       T 0       H 0       H 1       H 1       H 1       S 1
+S 0       T 0       S 0       T 0       T 1       T 1       T 1       H 1
+S 0       H 0       H 0       H 0       H 1       H 1       H 1       T 1
+S 0       T 0       T 0       T 0       T 1       T 1       T 1       H 1
+H 0       S 0       S 0       S 0       S 1       S 1       S 1       T 1
+T 1       H 0       H 0       H 0       H 1       H 1       H 1       H 1
+CNOT 0 1  T 0       T 0       T 0       T 1       T 1       T 1       T 1
+S 0       H 0       S 0       S 0       S 1       S 1       H 1       S 1
+H 0       T 0       H 0       H 0       H 1       H 1       T 1       H 1
+S 0       S 0       T 0       T 0       T 1       T 1       H 1       T 1
+H 0       H 0       H 0       S 0       S 1       S 1       T 1       S 1
+T 0       T 0       T 0       H 0       H 1       H 1       S 1       H 1
+H 0       H 0       H 0       T 0       T 1       T 1       H 1       T 1
+T 0       T 0       T 0       H 0       S 1       S 1       T 1       S 1
+S 0       S 0       S 0       T 0       H 1       H 1       S 1       H 1
+H 0       H 0       H 0       H 0       T 1       T 1       H 1       T 1
+T 0       T 0       T 0       T 0       S 1       S 1       T 1       H 1
+S 0       S 0       H 0       S 0       H 1       H 1       H 1       S 1
+H 0       H 0       T 0       H 0       T 1       T 1       T 1       S 1
+T 0       T 0       H 0       T 0       H 1       S 1       S 1       S 1
+S 0       S 0       T 0       S 0       T 1       H 1       H 1       H 1
+H 0       H 0       S 0       H 0       S 1       T 1       T 1       S 1
+T 0       T 0       H 0       T 0       H 1       S 1       S 1       S 1
+S 0       S 0       T 0       S 0       T 1       H 1       H 1       S 1
+H 0       H 0       S 0       H 0       S 1       T 1       T 1       CNOT 0 1
+T 0       T 0       H 0       T 0       H 1       S 1       H 1       H 0
+S 0       S 0       T 0       H 0       T 1       H 1       T 1       T 0
+H 0       H 0       H 0       S 0       H 1       T 1       H 1       T 1
+T 0       T 0       T 0       S 0       T 1       S 1       T 1       S 1
+H 0       S 0       S 0       S 0       H 1       H 1       H 1       S 1
+T 0       H 0       H 0       H 0       T 1       T 1       T 1       S 1
+S 0       T 0       T 0       S 0       S 1       S 1       S 1
+H 0       S 0       S 0       S 0       H 1       H 1       H 1
+T 0       H 0       H 0       S 0       T 1       T 1       T 1
+S 0       T 0       T 0       S 1       H 1       S 1       S 1
+H 0       S 0       H 0       H 1       T 1       H 1       H 1
+T 0       H 0       T 0       S 1       S 1       T 1       T 1
 ```
 
 Notice how every operation in the output is either `H`, `S`, `T`, or `CNOT`. But also notice how there are a _lot_ of operations—290 of them to be exact. There are only two differences in how we run the compiler between this and the previous IBM-chip compilation:
@@ -321,15 +350,15 @@ Despite being 1.8x the number of operations more, we've also increased precision
 
 ***
 
-| Precision | Operation Count |
-| --------- | --------------- |
-| 0.1       | 152             |
-| 0.01      | 232             |
-| 0.001     | 290             |
-| 0.0001    | 354             |
-| 0.00001   | 404             |
-| 0.000001  | 502             |
-| 0.0000001 | 540             |
+| Precision             | Operation Count |
+| ---------             | --------------- |
+| 0.1                   | 152             |
+| 0.01                  | 232             |
+| 0.001                 | 290             |
+| 0.0001                | 354             |
+| 0.00001               | 404             |
+| 0.000001              | 502             |
+| 0.0000001&nbsp;&nbsp; | 540             |
 
 ***
 
@@ -337,11 +366,30 @@ One particularly nice thing going on is that the whole machinery quilc uses top 
 
 ## Inaccuracy and validation
 
-<TODO: characterize accuracy>
+With this implementation, the only operator being approximated is $\mathrm{RZ}\_{\theta}$, which means the error will increase with each additional $\mathrm{RZ}$ approximation used in the same computation. Our `TOLERANCE` pragma is asserting the precision of individual approximations, not whole quilc programs. While there are rules that give insight into how these errors accumulate, such notions are not yet readily available to plug into quilc. To get around this requires some trial and error from the user by attempting compilations with increasing precision until a tolerable error is achieved. To help with this, passing `-Pm` to `quilc` will print out the whole program's error. Nonetheless, we are guaranteed the precision of our approximation $U$ is directly related to a tolerance of $\varepsilon$ by:
 
-<TODO: talk about accumulation of error>
+$$
+\left\Vert(\mathrm{RZ}\_\theta - U) v \right\Vert \leq \varepsilon \left\Vert v \right\Vert
+$$
 
-<TODO: use QVM>
+where $0<\varepsilon < 1/2$,  $v$ is a two-dimensional complex vector, and $\Vert \cdot \Vert$ is the vector magnitude. We can read the above expression as "the distance between $\mathrm{RZ}\_\theta$ and $U$ is less than or equal to $\varepsilon$."
+
+Quantum states have probabilistic measurements, and quantum operators affect a state's probabilities. For a qubit, these are the probabilities of whether we measure 0 or 1. If two quantum operators are *close*, then the probabilities of the qubits they act on should be similiar. To see this in action we can approximate a 3-qubit W state with various tolerance values and measure it a few thousand times on a simulated quantum computer (i.e., [QVM](https://github.com/quil-lang/qvm)). Just how a coin toss has a 50–50 distribution, each qubit in a W state has a $1/3$ chance of being 1 when measured. Expectedly, as we increase precision, the closer we get to an even distribution.
+
+***
+| Tolerance&nbsp;&nbsp;&nbsp; | 001    |  010   | 100    | $\chi^2$ |
+|------     |--------|--------|--------|--------- |
+|$2^{-1}$   | 11.35% | 44.35% | 44.30% | 220000  |
+|$2^{-2}$   | 34.89%&nbsp;&nbsp;&nbsp; | 32.55%&nbsp;&nbsp;&nbsp; | 32.57%&nbsp;&nbsp;&nbsp; | 1100  |
+|$2^{-4}$   | 33.50% | 33.29% | 33.21% | 14  | 
+|$2^{-8}$   | 33.21% | 33.42% | 33.37% | 7.1  |
+|$2^{-16}$  | 33.43% | 33.28% | 33.28% | 4.4  |
+|$2^{-32}$  | 33.40% | 33.31% | 33.29% | 1.9  | 
+|$2^{-64}$  | 33.36% | 33.31% | 33.33% | 0.28  |
+***
+
+Note that $\chi^2$ quantifies how far off the the results are from the expected distribution.
+
 
 ## Onward
 
@@ -349,4 +397,4 @@ It's remarkable that Coalton has come to a point that 4,000 lines of complicated
 
 Discrete compilation in quilc has been in the works for a while, starting during investigations of the Solovay-Kitaev algorithm during a summer internship at Rigetti Computing many years ago. The development of Coalton and catalyzing the implementation of discrete compilation was supported by [HRL Laboratories quantum computing group](https://quantum.hrl.com/). We especially acknowledge Erik Davis, Cole Scott, and Brendan Pawlowski.
 
-The Coalton developement team is always looking for and excited by improvements to the language, especially in the standard library. If you're interesting in helping out with Coalton, please join the [Discord]()!
+The Coalton developement team is always looking for and excited by improvements to the language, especially in the standard library. If you're interesting in helping out with Coalton, please join the [Discord](https://discord.gg/cPb6Bc4xAH)!
