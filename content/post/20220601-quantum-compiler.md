@@ -17,25 +17,25 @@ Common Lisp has been a great choice for many reasons, including for its interact
 - numerical precision errors, and
 - plain old wrong answers.
 
-In addition to bugs, from time to time, quilc developers would feel that Common Lisp wasn't allowing certain specific mathematical ideas to be clearly expressed, since Common Lisp's standard library for numbers and math is "locked shut" by the language standard. There is no way to extend its behavior or install new behavior.
+In addition to bugs, from time to time, quilc developers would feel that Common Lisp wasn't allowing certain specific mathematical ideas to be clearly expressed, since Common Lisp's standard library for numbers and math is "locked shut" by the language standard. There is no way to extend its existing behavior or install new numerical classes.
 
-Programming language theorists around the world have been and continue to work to help programmers avoid these mistakes by making compilers smarter and programming languages more expressive. There are *vast* efforts in domains like formal verification, advanced type theory, proof assistants, and so on whose primary goal is to make writing safer, bug-free programs easier. One such research project that has been around since the 1990s is [ACL2](https://www.cs.utexas.edu/users/moore/acl2/), which is effectively a subset of Common Lisp that permits code to be _mechanically_ proven to be correct. Famously, after the Intel `FDIV` bug was discovered, ACL2 was used in 1995 to prove that floating point division of the AMD K5 processor was correct.
+Programming language theorists around the world work to help programmers avoid these mistakes by making compilers smarter and programming languages more expressive. There are *vast* efforts in domains like formal verification, advanced type theory, proof assistants, and so on whose primary goal is to make writing safer, bug-free programs easier. One such research project that has been around since the 1990s is [ACL2](https://www.cs.utexas.edu/users/moore/acl2/), which is effectively a subset of Common Lisp that permits code to be _mechanically_ proven to be correct. Famously, after the Intel `FDIV` bug was discovered, ACL2 was used in 1995 to prove that floating point division of the AMD K5 processor was correct.
 
-The suite of tools for working with the Quil programming language, including the Quil compiler and the Quil simulator, is currently around 50,000 lines of Common Lisp, and much of it is dense and mathematical. As such, it's not economical to rewrite wholesale, and it's not feasible to use existing theorem-proving tools to an extent that would address our concerns.
+One of our goals is to somehow make it harder to introduce a bug to quilc. The suite of tools for working with the Quil programming language, including the Quil compiler and the Quil simulator, is currently around 50,000 lines of Common Lisp, and much of it is dense and mathematical. As such, it's not economical to rewrite wholesale, and it's not feasible to use existing theorem-proving tools to an extent that would address our concerns.
 
 ## Coalton to the rescue, maybe?
 
 For years, we have been working on a programming language called Coalton. The language sought to improve things in a different way: Offer an extension to Common Lisp that allows many of the fruits of programming language theory and type theory to be used without requiring wholesale adoption. Coalton's approach is to introduce an embedded ML-like language, that can be written within and totally interoperate with Common Lisp, that doesn't give up on an expressiveness and and safety afforded by a modern compile-time type system.
 
-Fast-forward some time, and Coalton made its [debut](https://coalton-lang.github.io/20211010-introducing-coalton/). One could now write code with many of the virtues and benefits of Standard ML, OCaml, or Haskell, straight inside of Common Lisp: single-namespace, currying, algebraic data types, type inference, ad hoc and parametric polymorphism, etc. We now have an expressive and relatively safe language which we can use in Lisp, but we weren't going to immediately rewrite all of quilc from the ground up. So, where do we start?
+Fast-forward some time, and Coalton made its [debut](https://coalton-lang.github.io/20211010-introducing-coalton/). One could now write code with many of the virtues and benefits of Standard ML, OCaml, or Haskell, straight inside of Common Lisp: single-namespace, currying, algebraic data types, type inference, ad hoc and parametric polymorphism, native compilation, etc. We now have an expressive and relatively safe language which we can use in Lisp, but we weren't going to immediately rewrite all of quilc from the ground up. So, where do we start?
 
-Our first approach was to take a small, relatively inconsequential module of quilc and slowly Coalton-ify it. The module implemented a compiler pass called _gate fusion_, which takes quantum instructions (called _gates_) and finds opportunities to fuse them into a more efficient form. This module uses lots of arrays of doubly linked lists. We wrote an array-of-double-linked-lists data structure in Coalton, ported the code, and ultimately, we weren't happy with the results. The virtues of mostly pure, statically typed functional programming didn't actually make the code any clearer. We were left with a mess of hacks, unbridled mutation, pointer emulation, and so on just to make this code work in Coalton.
+Our first approach was to take a small, relatively isolated module of quilc and slowly Coalton-ify it. The module implemented a compiler pass called _gate fusion_, which takes quantum instructions (called _gates_) and finds opportunities to fuse them into a more efficient form. This module uses lots of arrays of doubly linked lists. We wrote an array-of-double-linked-lists data structure in Coalton, ported the code, and ultimately, we weren't happy with the results. The virtues of mostly pure, statically typed functional programming didn't actually make the code any clearer. We were left with a mess of hacks, unbridled mutation, pointer emulation, and so on just to make this code work in Coalton.
 
 What went wrong? Empty promises of functional programming? The complexity of the real world? We did a retrospective and concluded a few things.
 
-First, the Coalton standard library was just too anemic. Standard, robust data structures didn't exist, and we had to implement some from scratch to just get the job done, without a lot of regard to generality, efficiency, safety, etc. So, certainly, the standard library could be improved.
+First, the Coalton standard library was just too anemic. Standard, robust data structures didn't exist, and we had to implement some from scratch to just get the job done, without a lot of regard to generality, efficiency, or safety. So, certainly, the standard library could be improved.
 
-Second, "porting" idiomatic Common Lisp line-by-line probably isn't the right approach in general. A decent amount of idiomatic Lisp code relies on mutation and imperative loops. Doing a one-to-one port to Coalton is possible—sometimes even easy—but the result isn't satisfying.
+Second, "porting" idiomatic Common Lisp line-by-line probably isn't the right approach in most cases. A decent amount of idiomatic Lisp code relies on mutation and imperative loops. Doing a one-to-one port to Coalton is possible—sometimes even easy—but the result isn't satisfying.
 
 Third, the specific module we ported mostly took existing data structures and modified them. The existing data structures weren't game to be touched, lest we wanted to modify a lot more of quilc to be Coalton-compatible. So, we had to write Coalton with one hand tied behind our back.
 
@@ -98,7 +98,7 @@ $$
 
 The intermediate $m$'s are just there for abbreviation. Notice how _only_ the aforementioned list of native operations are used, and how they're combined using multiplication (syntactically: $A\cdot B$) and Kronecker products (syntactically: $A\otimes B$). While it would be appealing to describe Kronecker products in more detail in this blog post, for the sake of brevity, we'll just consider them a separate kind of matrix multiplication.
 
-One of the primary tasks of a quantum compiler is to break down arbitrary unitary matrices, usually given by the quantum programmer, into a sequence of native ones. Using conventions from the quantum computing field that the above matrix is usually specified as $\mathrm{XY}(\pi/3)$, Quilc can recover the above result like so:
+One of the primary tasks of a quantum compiler is to break down arbitrary unitary matrices, usually given by the quantum programmer, into a sequence of native ones. Using conventions from the quantum computing field, the above matrix is usually specified as $\mathrm{XY}(\pi/3)$. Quilc can recover the decomposition of this matrix like so:
 
 ```
 $ echo 'XY(pi/3) 1 0' | ./quilc --isa ibmqx5
@@ -120,7 +120,7 @@ RX(pi/2) 1
 RZ(pi/4) 1
 ```
 
-Using software engineering terminology, we say we've _compiled_ the `CZ` matrix into the native operations of an IBM quantum computer. In quilc's output, the numbers `0` and `1` denote how to do the Kronecker products. For example, the syntax
+Using software engineering terminology, we say we've _compiled_ the `XY(pi/3)` matrix into the native operations of an IBM quantum computer. In quilc's output, the numbers `0` and `1` denote how to do the Kronecker products. For example, the syntax
 
 ```
 A 1
@@ -137,7 +137,7 @@ Can there instead be some set of _discrete_ native operations while still being 
 
 Fortunately, the answer to both questions is a resounding _yes_, with a small but reasonable caveat. Robert Solovay and Alexei Kitaev both proved this was possible in the mid-90s. Their algorithm is flexible in allowing a large family of discrete operation sets, and decompositions of arbitrary matrices into any of those discrete operations were efficient to calculate, at least as far as big-O is concerned. The caveat is this: It is not possible to find an _exact_ sequence of native operations to reconstruct a given matrix. Instead, we can only get _arbitrarily close_, at the expense of running more native operations.
 
-This is perfectly sensible. If we want to do arbitrary precision arithmetic on a classical computer (like calculating billions of digits of $\pi$), we must use more CPU instructions. CPU instructions only let us do a relatively small collection of operations: basic arithmetic on "small" integers (integers less than $2^{64}$) and floating-point numbers. If we want to go beyond 64 bits of integer, or go beyond 16ish digits of floating-point mantissa, we need to spend more memory and more CPU instructions.
+This is perfectly sensible. If we want to do arbitrary precision arithmetic on a classical computer (like calculating billions of digits of $\pi$), we must use more CPU instructions. CPU instructions only let us do a relatively small collection of operations: basic arithmetic on "small" integers and floating-point numbers. If we want to go beyond 20ish digits of integer, or go beyond 16ish digits of floating-point mantissa, we need to spend more memory and more CPU instructions.
 
 The Solovay-Kitaev algorithm is famously difficult to implement, and relies on a great deal of pre-processing to accomplish, but it's useful both for its mathematical utility and its generality.
 
@@ -148,21 +148,38 @@ About 20 years after Solovay and Kitaev's work, Peter Selinger came up with anot
 In order to have a set of discrete operations, we must be able to discretize the parametric operation $\mathrm{RZ}\_\theta$, which is a $2\times2$ matrix with entries depending on $\theta$.
 
 Selinger considers the following native operators:
+
 $$
 \begin{aligned}
-\mathrm{H} &:= \frac{1}{\sqrt 2}\begin{pmatrix}\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}}\end{pmatrix}\\
-\mathrm{S} &:= \begin{pmatrix}1 & 0 \\0 & i\end{pmatrix}\\
-\mathrm{T} &:= \begin{pmatrix}1 & 0 \\0 & \frac{1}{\sqrt{2}}+i\frac{1}{\sqrt{2}}\end{pmatrix}
+\mathrm{H} &:=
+  \begin{pmatrix}
+    \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\\\
+    \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}}
+  \end{pmatrix}\\\\
+\mathrm{S} &:=
+  \begin{pmatrix}
+    1 & 0 \\\\
+    0 & i
+  \end{pmatrix}\\\\
+\mathrm{T} &:=
+  \begin{pmatrix}
+    1 & 0 \\\\
+    0 & \frac{1}{\sqrt{2}}+i\frac{1}{\sqrt{2}}
+  \end{pmatrix}
 \end{aligned}
 $$
+
 This is called the _Clifford+T set_. These operators have mathematical significance because (1) the $\mathrm{H}$ and $\mathrm{S}$ form a special algebraic space called the one-qubit Clifford group, and (2) $\mathrm{T}$ happens to equal $\sqrt{\mathrm{S}}$, and (3) arbitrary products of these operators form a _dense_ set of the unitary matrices. The third point means to say is that this set of operators could be used to approximate any $2\times 2$ unitary matrix to an arbitrary precision, though Selinger will need to find an algorithm to do it.
 
 Next, Selinger turns to a result by Kliuchnikov, Maslov, and Mosca which says a given $2\times2$ matrix can be written precisely as a product of Clifford+T elements if and only if the matrix elements are all members of the number ring $R := \mathbb{Z}[\frac{1}{\sqrt 2}, i]$. So Selinger sets up the following goal: Try to write the problematic parametric gate $\mathrm{RZ}\_\theta$  as a matrix
+
 $$
 \begin{pmatrix}
-a & -b^*\\b & a^*
+a & -b^* \\\\
+b & a^*
 \end{pmatrix}
 $$
+
 with user-selectable precision, where $a$ and $b$ are elements of $R$, and $z^*$ represents the complex conjugate of $z$. If we can write this matrix, then we can use Kliuchnikov-Maslov-Mosca to write it in terms of Clifford+T. And if we can do _that_, then we can write any program with parametric $\mathrm{RZ}\_\theta$ operators into an equivalent one (up to user-specified precision, at least) using only discrete operators.
 
 Selinger succeeds at solving this problem, by turning that matrix problem into a Diophantine equation that has to be solved over a specific number ring, and coming up with an algorithm to solve that.
