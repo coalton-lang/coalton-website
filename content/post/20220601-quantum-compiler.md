@@ -1,6 +1,6 @@
 ---
 title: "Using Coalton to Implement a Quantum Compiler"
-date: 2022-05-20
+date: 2022-09-03
 math: true
 ---
 
@@ -19,7 +19,7 @@ Common Lisp has been a great choice for many reasons, including for its interact
 
 In addition to bugs, from time to time, quilc developers would feel that Common Lisp wasn't allowing certain specific mathematical ideas to be clearly expressed, since Common Lisp's standard library for numbers and math is "locked shut" by the language standard. There is no way to extend its existing behavior or install new numerical classes.
 
-Programming language theorists around the world work to help programmers avoid these mistakes by making compilers smarter and programming languages more expressive. There are *vast* efforts in domains like formal verification, advanced type theory, proof assistants, and so on whose primary goal is to make writing safer, bug-free programs easier. One such research project that has been around since the 1990s is [ACL2](https://www.cs.utexas.edu/users/moore/acl2/), which is effectively a subset of Common Lisp that permits code to be _mechanically_ proven to be correct. Famously, after the Intel `FDIV` bug was discovered, ACL2 was used in 1995 to prove that floating point division of the AMD K5 processor was correct.
+Programming language theorists around the world work to help programmers avoid these mistakes by making compilers smarter and programming languages more expressive. There are *vast* efforts in domains like formal verification, advanced type theory, proof assistants, and so on whose primary goal is to make writing safer, bug-free programs easier. One such research project that has been around since the 1990s is [ACL2](https://www.cs.utexas.edu/users/moore/acl2/), which is effectively a subset of Common Lisp that permits code to be _mechanically_ proven to be correct. Famously, after the [Pentium FDIV bug](https://en.wikipedia.org/wiki/Pentium_FDIV_bug) was discovered, ACL2 was used in 1995 to prove that floating point division of the AMD K5 processor was correct.
 
 One of our goals is to somehow make it harder to introduce a bug to quilc. The suite of tools for working with the Quil programming language, including the Quil compiler and the Quil simulator, is currently around 50,000 lines of Common Lisp, and much of it is dense and mathematical. As such, it's not economical to rewrite wholesale, and it's not feasible to use existing theorem-proving tools to an extent that would address our concerns.
 
@@ -41,9 +41,9 @@ Third, the specific module we ported mostly took existing data structures and mo
 
 It was a valuable case study, and we learned a lot from it, but we needed to try something different.
 
-## Towards a Discrete Instruction Set for Quantum Computation
+## Towards a discrete instruction set for quantum computation
 
-A typical quantum program is comprised of a sequence of operations that can be expressed mathematically as square matrices of complex numbers. The matrices are *unitary*—which means the matrices can never stretch or shrink a vector they multiply onto—and they have to have a power-of-two size. Just like classical computers, quantum computers have a set of operations they can natively perform. Quantum computers typically have only a small handful. For example, the set of native operations of an IBM quantum computer is:
+A typical quantum program is comprised of a sequence of operations that can be expressed mathematically as square matrices of complex numbers. The matrices are [*unitary*](https://en.wikipedia.org/wiki/Unitary_matrix)—which means the matrices can never stretch or shrink a vector they multiply onto—and they have to have a power-of-two size. Just like classical computers, quantum computers have a set of operations they can natively perform. Quantum computers typically have only a small handful. For example, the set of native operations of an IBM quantum computer is:
 
 $$
 \begin{aligned}
@@ -74,7 +74,7 @@ $$
 
 In this case, $\theta$ is actually parametric and can be any value between $0$ and $2\pi$.
 
-It is a surprising fact that you can build *any* $2^n\times 2^n$-size complex unitary matrix out of the above matrices by way of matrix multiplications and Kronecker products. For example, consider the following unitary matrix which we'll call $M$:
+It is a surprising fact that you can build *any* $2^n\times 2^n$-size complex unitary matrix out of the above matrices by way of matrix multiplications and [Kronecker products](https://en.wikipedia.org/wiki/Kronecker_product). For example, consider the following unitary matrix:
 
 $$
 M := \begin{pmatrix}
@@ -85,7 +85,10 @@ M := \begin{pmatrix}
 \end{pmatrix}.
 $$
 
-With extremely laborious math, one can determine that $M$ can be written as follows:
+
+This matrix $M$ can be written[^difficult] as the following product:
+
+[^difficult]: It is not obvious *how* to find this way of writing $M$ using only paper and pencil. Similar to how we compute integrals in calculus, practitioners in the field often have a tables of matrix identities, and other tricks, to figure these things out. As we shall see, there is an algorithmic process to compute these products mechanically.
 
 $$
 \begin{aligned}
@@ -131,19 +134,21 @@ represents the Kronecker product $A\otimes B$.
 
 Different quantum computers each have a different set of native operators, so quilc must be a retargetable compiler. This mathematical puzzle is interesting and already quite difficult, but lurking is also an engineering problem of great concern.
 
-Almost every quantum computer in use today has some sort of _continuous_ operation—possibly many—like the $\mathrm{RZ}\_\theta$ above. These continuous operations represent the analog nature of these quantum computers. Analog devices have their merits, but one thing analog hardware usually isn't good at is extreme precision. While I might request the quantum computer perform an $\mathrm{RZ}\_{0.12345}$, due to the computer's physical nature, it might only accomplish something between an $\mathrm{RZ}\_{0.11}$ and an $\mathrm{RZ}\_{0.13}$. Quantum hardware engineers around the world, every day, are putting effort into improving the precision of the available native operations, but it'll never be  to feasible have _infinite_ precision, simply due to physical limitations. Just like high fidelity analog audio, we can never eliminate 100% of the noise in a system.
+Almost every quantum computer in use today has some sort of _continuous_ operation—possibly many—like the $\mathrm{RZ}\_\theta$ above. These continuous operations represent the analog nature of these quantum computers. Analog devices have their merits, but one thing analog hardware usually isn't good at is extreme precision. While I might request the quantum computer perform an $\mathrm{RZ}\_{0.12345}$, due to the computer's physical nature, it might only accomplish something between an $\mathrm{RZ}\_{0.11}$ and an $\mathrm{RZ}\_{0.13}$. Quantum hardware engineers around the world, every day, are putting effort into improving the precision of the available native operations, but it'll never be to feasible have _infinite_ precision, simply due to physical limitations. In practice, we will always have some amount of noise.
 
 Can there instead be some set of _discrete_ native operations while still being able perform _any_ quantum computation we'd like? And if we have such a set, will it be *easy and efficient* to compile a given matrix? These two questions represent the problem of **discrete compilation** of quantum programs.
 
-Fortunately, the answer to both questions is a resounding _yes_, with a small but reasonable caveat. Robert Solovay and Alexei Kitaev both proved this was possible in the mid-90s. Their algorithm is flexible in allowing a large family of discrete operation sets, and decompositions of arbitrary matrices into any of those discrete operations were efficient to calculate, at least as far as big-O is concerned. The caveat is this: It is not possible to find an _exact_ sequence of native operations to reconstruct a given matrix. Instead, we can only get _arbitrarily close_, at the expense of running more native operations.
+Fortunately, the answer to both questions is a resounding _yes_, with a small but reasonable caveat. Robert Solovay and Alexei Kitaev [both proved](https://en.wikipedia.org/wiki/Solovay%E2%80%93Kitaev_theorem) this was possible in the mid-90s. Their algorithm is flexible in allowing a large family of discrete operation sets, and decompositions of arbitrary matrices into any of those discrete operations were efficient to calculate, at least as far as big-O is concerned. The caveat is this: It is not possible to find an _exact_ sequence of native operations to reconstruct a given matrix. Instead, we can only get _arbitrarily close_, at the expense of running more native operations.
 
 This is perfectly sensible. If we want to do arbitrary precision arithmetic on a classical computer (like calculating billions of digits of $\pi$), we must use more CPU instructions. CPU instructions only let us do a relatively small collection of operations: basic arithmetic on "small" integers and floating-point numbers. If we want to go beyond 20ish digits of integer, or go beyond 16ish digits of floating-point mantissa, we need to spend more memory and more CPU instructions.
 
-The Solovay-Kitaev algorithm is famously difficult to implement, and relies on a great deal of pre-processing to accomplish, but it's useful both for its mathematical utility and its generality.
+The [Solovay-Kitaev algorithm](https://arxiv.org/abs/quant-ph/0505030) is famously difficult to implement, and relies on a great deal of pre-processing to accomplish, but it's useful both for its mathematical utility and its generality.
 
-About 20 years after Solovay and Kitaev's work, Peter Selinger came up with another idea. Using a specific native operation set (called the Clifford+T set), and making careful use of algebraic number theory, not only can we have merely "good" big-O performance, we could also have nearly _optimal-length_ decompositions, off only by a constant number of operations. (Peter Selinger and Neil Ross were later able to modify the algorithm so that it produces *actually* optimal sequences... but you need a machine that can efficiently factorize integers to do that.)
+About 20 years after Solovay and Kitaev's work, Peter Selinger came up with [another idea](https://arxiv.org/abs/1212.6253). Using a specific native operation set (called the Clifford+T set), and making careful use of algebraic number theory, not only can we have merely "good" big-O performance, we could also have _nearly optimal-length_ decompositions[^optimal], off only by a constant number of operations. 
 
-## The Selinger Approach to Discrete Compilation
+[^optimal]: Peter Selinger and Neil Ross were later able to [modify the algorithm](https://arxiv.org/abs/1403.2975) so that it produces *actually* optimal sequences, however, the algorithm requires one to be able to efficiently factorize integers. The theoretically best known way to factorize an integer is Shor's algorithm, which requires a quantum computer with essentially no error.
+
+## The Selinger approach to discrete compilation
 
 In order to have a set of discrete operations, we must be able to discretize the parametric operation $\mathrm{RZ}\_\theta$, which is a $2\times2$ matrix with entries depending on $\theta$.
 
@@ -169,9 +174,17 @@ $$
 \end{aligned}
 $$
 
-This is called the _Clifford+T set_. These operators have mathematical significance because (1) the $\mathrm{H}$ and $\mathrm{S}$ form a special algebraic space called the one-qubit Clifford group, and (2) $\mathrm{T}$ happens to equal $\sqrt{\mathrm{S}}$, and (3) arbitrary products of these operators form a _dense_ set of the unitary matrices. The third point means to say is that this set of operators could be used to approximate any $2\times 2$ unitary matrix to an arbitrary precision, though Selinger will need to find an algorithm to do it.
+This is called the _Clifford+T set_. These operators have mathematical significance because
 
-Next, Selinger turns to a result by Kliuchnikov, Maslov, and Mosca which says a given $2\times2$ matrix can be written precisely as a product of Clifford+T elements if and only if the matrix elements are all members of the number ring $R := \mathbb{Z}[\frac{1}{\sqrt 2}, i]$. So Selinger sets up the following goal: Try to write the problematic parametric gate $\mathrm{RZ}\_\theta$  as a matrix
+1. the $\mathrm{H}$ and $\mathrm{S}$ form a special algebraic space called the one-qubit [Clifford group](https://en.wikipedia.org/wiki/Clifford_gates),
+
+2. $\mathrm{T}$ happens to equal $\sqrt{\mathrm{S}}$, and
+
+3. arbitrary products of these operators form a _dense_ set of the unitary matrices.
+
+The third point means to say is that this set of operators could be used to approximate any $2\times 2$ unitary matrix to an arbitrary precision, though Selinger will need to find an algorithm to do it.
+
+Next, Selinger turns to a [result](https://arxiv.org/abs/1206.5236) by Kliuchnikov, Maslov, and Mosca which says a given $2\times2$ matrix can be written precisely as a product of Clifford+T elements if and only if the matrix elements are all members of the [number ring](https://en.wikipedia.org/wiki/Ring_(mathematics)) $R := \mathbb{Z}[\frac{1}{\sqrt 2}, i]$. So Selinger sets up the following goal: Try to write the problematic parametric gate $\mathrm{RZ}\_\theta$  as a matrix
 
 $$
 \begin{pmatrix}
@@ -180,9 +193,9 @@ b & a^*
 \end{pmatrix}
 $$
 
-with user-selectable precision, where $a$ and $b$ are elements of $R$, and $z^*$ represents the complex conjugate of $z$. If we can write this matrix, then we can use Kliuchnikov-Maslov-Mosca to write it in terms of Clifford+T. And if we can do _that_, then we can write any program with parametric $\mathrm{RZ}\_\theta$ operators into an equivalent one (up to user-specified precision, at least) using only discrete operators.
+with user-selectable precision, where $a$ and $b$ are elements of $R$, and $z^*$ represents the [complex conjugate](https://en.wikipedia.org/wiki/Complex_conjugate) of $z$. If we can write this matrix, then we can use Kliuchnikov-Maslov-Mosca to write it in terms of Clifford+T. And if we can do _that_, then we can write any program with parametric $\mathrm{RZ}\_\theta$ operators into an equivalent one (up to user-specified precision, at least) using only discrete operators.
 
-Selinger succeeds at solving this problem, by turning that matrix problem into a Diophantine equation that has to be solved over a specific number ring, and coming up with an algorithm to solve that.
+Selinger succeeds at solving this problem, by turning that matrix problem into a [Diophantine equation](https://en.wikipedia.org/wiki/Diophantine_equation) that has to be solved over a specific number ring, and coming up with an algorithm to solve that.
 
 Since the two-qubit operators of usual interest are already discrete (like `CNOT`, `CZ`, etc.), this would make a fully discretized native gate set, so long as quantum computer implementers could supply the Clifford+T set as native operations.
 
@@ -194,7 +207,7 @@ where $a_\bullet$ are integers and $n_\bullet$ are non-negative integers. If we 
 
 For Selinger's algorithm, it turns out we also need to work in other rings, like the cyclomatic integers of degree 8, the quadratic integers of $\sqrt{2}$, and about a half-dozen others.
 
-How do we implement these mathematical objects in a program? At least in principle, Common Lisp would have no trouble representing elements of any of these rings; just define some new classes, perhaps some new methods like `ring+` and `ring*`, and you're off to the races.
+How do we implement these mathematical objects in a program? At least in principle, Common Lisp would have no trouble representing elements of any of these rings; just define some new classes, perhaps some new generic functions like `ring+` and `ring*`, and you're off to the races.
 
 The trouble is that it's cumbersome. In Lisp, first, there's no way to integrate with the existing numerical operators; there is no way to "overload" the standard operator `cl:+` to work with different rings. Second, as explained in a previous blog post, there's no way to uniformly treat additive and multiplicative identity in a convenient fashion. Third, it gets very messy, with lots of casts, upconversions, downconversions, etc. It's very difficult to build a _new_ numerical tower atop of or aside Common Lisp's existing one. Common Lisp's multiple-dispatch mechanism at least eases the pain a bit.
 
@@ -202,13 +215,13 @@ These difficulties presented a second opportunity for Coalton. Coalton's builds 
 
 ## Coalton to the rescue, take two
 
-Coalton is based around a system of organized polymorphism (called *type classes*) that allows for extensibility and composability in a statically typed manner. For example, this ring of algebraic numbers
+Coalton has a system for ad hoc polymorphism called *type classes*. Type classes allow one to extend existing functionality of a program, like that of the `+` or `*` operators, in a composable and statically typed manner. For example, this ring of algebraic numbers
 
 $$
 \mathbb{Z}[\sqrt{2}] = \left\\\{a\_1 + a\_2\sqrt{2} : a\_1,a\_2\in \mathbb{Z}\right\\\}
 $$
 
-can be modeled as pairs of integers $[a\_1; a\_2]$ that obey certain laws. For instance, with a little bit of algebra, we can derive a multiplication law like so:
+can be modeled as pairs of integers $[a\_1; a\_2]$ that obey certain laws. We can derive one such law, a multiplication law, with a little bit of algebra:
 
 $$
 \begin{aligned}
@@ -220,13 +233,17 @@ $$
 \end{aligned}
 $$
 
-These algebraic numbers could be written as a new type called `Alg` in Coalton that implements the `Eq` type class (which demands we implement equality) and the `Num` type class (which demands we implement addition, subtraction, multiplication, and some way to convert an integer into our new type):
+These algebraic numbers can be implemented as a new type in Coalton, which we'll call `Alg`.
 
 ```lisp
   (define-type Alg
     "Represents the algebraic number a1 + a2 * sqrt(2)."
     (Alg Integer Integer))
+```
 
+The type can implement the `Eq` type class (which demands we implement equality) and the `Num` type class (which demands we implement addition, subtraction, multiplication, and some way to convert an integer into our new type).
+
+```lisp
   (define-instance (Eq Alg)
     (define (== a b)
       (match (Tuple a b)
@@ -237,15 +254,15 @@ These algebraic numbers could be written as a new type called `Alg` in Coalton t
     (define (+ a b)
       (match (Tuple a b)
         ((Tuple (Alg a1 a2) (Alg b1 b2))
-         (AlgInt (+ a1 b1) (+ a2 b2)))))
+         (Alg (+ a1 b1) (+ a2 b2)))))
     (define (- a b)
       (match (Tuple a b)
         ((Tuple (Alg a1 a2) (Alg b1 b2))
-         (AlgInt (- a1 b1) (- a2 b2)))))
+         (Alg (- a1 b1) (- a2 b2)))))
     (define (* a b)
       (match (Tuple a b)
         ((Tuple (Alg a1 a2) (Alg b1 b2))
-         (AlgInt (+ (* a1 b1) (* 2 (* a2 b2)))
+         (Alg (+ (* a1 b1) (* 2 (* a2 b2)))
                  (+ (* a1 b2) (* a2 b1))))))
     (define (fromInt n)
       (Alg n 0)))
@@ -258,14 +275,26 @@ We can verify it works by seeing that $(1-2\sqrt{2})^2 = 9-4\sqrt{2}$:
 #.(ALG 9 -4)
 ```
 
-Since `Num` requires `fromInt` to be defined, any `Num` type, including our own `Alg`, permits overloading integer syntax. We don't have to laboriously write `(fromInt 2)` every time we want to use integer syntax as a shorthand for our `Alg` type.
+How would we compute $2(-\sqrt{2})$? One way is to write $2$ explicitly as $2+0\sqrt{2}$, and $-\sqrt{2}$ explicitly sa $0-1\sqrt{2}$.
+
+```
+> (coalton (* (Alg 2 0) (Alg 0 -1)))
+#.(ALG 0 -2)
+```
+
+Coalton however provides us a shorthand for `Num`-typed values. When Coalton sees a plain integer like `2` in the source syntax, it will actually interpret it as `(fromInt 2)`. One of two things are possible:
+
+1. From type inference, Coalton concludes that `(fromInt 2)` should result in a value of a specific type, such as `Alg`. In this case, it will use `(Num Alg)`'s `fromInt` method.
+2. Otherwise, Coalton concludes that the type of `(fromInt 2)` is ambiguous---we just know it must be a `Num` type and nothing else---in which case it assumes it is an `Integer`.
+
+Since `Alg` implements `fromInt`, the integer syntax $n$ in a place where `Alg` is expected will automatically be interpreted as $n+0\sqrt{2}$. So we can rewrite the previous prompt more simply as:
 
 ```lisp
 > (coalton (* 2 (Alg 0 -1)))
 #.(ALG 0 -2)
 ```
 
-As is to be expected at this point, functions on `AlgInt` are inferred appropriately.
+As is to be expected at this point, functions on `Alg` are inferred appropriately.
 
 ```lisp
 (define (algebraic-conjugate x)
@@ -288,16 +317,6 @@ Modeling these algebras works out quite well, especially when we have more of th
   (mul-id (:t))              ; multiplicative identity
   (ring-+ (:t -> :t -> :t))
   (ring-* (:t -> :t -> :t)))
-```
-
-We can even make every existing `Num`-like object be a `Ring`:
-
-```lisp
-(define-instance (Num :t => Ring :t)
-  (define add-id (fromInt 0))
-  (define mul-id (fromInt 1))
-  (define ring-+ +)
-  (define ring-* *))
 ```
 
 One can imagine how we could do the same for vector spaces, inner product spaces, and so on. These concepts aren't just theoretical benefits, they're actually routinely used in practice.
@@ -410,8 +429,9 @@ Note that $\chi^2$ quantifies how far off the the results are from the expected 
 
 ## Onward
 
-It's remarkable that Coalton has come to a point that 4,000 lines of complicated mathematical code to implement discrete compilation can not only run, but run correctly *and* run efficiently. Coalton is still evolving in order to make programs like these and others faster to write and faster to execute, without compromising on correctness.
+It's remarkable that Coalton has come to a point that a relatively complicated mathematical algorithm to implement discrete compilation can not only run, but run correctly *and* run efficiently. Coalton is still evolving in order to make programs like these and others faster to write and faster to execute, without compromising on correctness.
 
 Discrete compilation in quilc has been in the works for a while, starting during investigations of the Solovay-Kitaev algorithm during a summer internship at Rigetti Computing many years ago. The development of Coalton and catalyzing the implementation of discrete compilation was supported by [HRL Laboratories quantum computing group](https://quantum.hrl.com/). We especially acknowledge Erik Davis, Cole Scott, and Brendan Pawlowski.
 
 The Coalton developement team is always looking for and excited by improvements to the language, especially in the standard library. If you're interesting in helping out with Coalton, please join the [Discord](https://discord.gg/cPb6Bc4xAH)!
+
