@@ -6,40 +6,19 @@ math: true
 
 By [Elias Lawson-Fox](https://github.com/eliaslfox), [Aidan Nyquist](https://github.com/aijony), and [Robert Smith](https://twitter.com/stylewarning)
 
-## Common Lisp and the quilc compiler
+{{< toc >}}
+
+## Coalton and the quilc compiler
 
 [Quilc](https://github.com/quil-lang/quilc) is one of the best optimizing compilers for quantum computers. It is written in Common Lisp and is capable of taking arbitrary quantum programs written in [Quil](https://quil-lang.github.io/), and compiling and optimizing them into code that conforms to the majority of quantum computing architectures that exist today.
 
-Common Lisp has been a great choice for many reasons, including for its interactive debugging facilities and its efficient implementations like Steel Bank Common Lisp. But quilc development hasn't been without trouble. Quilc is a large and complex program, and as such, we often lack confidence in the correctness of the program when making large changes. Confidence would wax and wane with the coming and going of different kinds of bugs, like
+Quilc and its related tooling are around 50,000 lines of code, and though it has good test coverage, it falls trap to problems that frequently show up in dynamically typed programming languagues, two of which are
 
-- classic type errors, "got X but expected Y",
-- data structure inconsistency errors,
-- numerical precision errors, and
-- plain old wrong answers.
+1. type errors showing up at runtime, usually a result from the code following a not-happy path, and
+2. not having certain useful abstractions that can only be enabled by having a static type system (e.g., certain kinds of polymorphism).
 
-In addition to bugs, from time to time, quilc developers would feel that Common Lisp wasn't allowing certain specific mathematical ideas to be clearly expressed, since Common Lisp's standard library for numbers and math is "locked shut" by the language standard. There is no way to extend its existing behavior or install new numerical classes.
+Coalton addresses these two problems in principle. Since it's not practical to rewrite an entire compiler, we opted to implement a significant new feature of quilc in Coalton called *discrete compilation*, which we'll describe in the next sections.
 
-Programming language theorists around the world work to help programmers avoid these mistakes by making compilers smarter and programming languages more expressive. There are *vast* efforts in domains like formal verification, advanced type theory, proof assistants, and so on whose primary goal is to make writing safer, bug-free programs easier. One such research project that has been around since the 1990s is [ACL2](https://www.cs.utexas.edu/users/moore/acl2/), which is effectively a subset of Common Lisp that permits code to be _mechanically_ proven to be correct. Famously, after the [Pentium FDIV bug](https://en.wikipedia.org/wiki/Pentium_FDIV_bug) was discovered, ACL2 was used in 1995 to prove that floating point division of the AMD K5 processor was correct.
-
-One of our goals is to somehow make it harder to introduce a bug to quilc. The suite of tools for working with the Quil programming language, including the Quil compiler and the Quil simulator, is currently around 50,000 lines of Common Lisp, and much of it is dense and mathematical. As such, it's not economical to rewrite wholesale, and it's not feasible to use existing theorem-proving tools to an extent that would address our concerns.
-
-## Coalton to the rescue, maybe?
-
-For years, we have been working on a programming language called Coalton. The language sought to improve things in a different way: Offer an extension to Common Lisp that allows many of the fruits of programming language theory and type theory to be used without requiring wholesale adoption. Coalton's approach is to introduce an embedded ML-like language, that can be written within and totally interoperate with Common Lisp, that doesn't give up on an expressiveness and and safety afforded by a modern compile-time type system.
-
-Fast-forward some time, and Coalton made its [debut](https://coalton-lang.github.io/20211010-introducing-coalton/). One could now write code with many of the virtues and benefits of Standard ML, OCaml, or Haskell, straight inside of Common Lisp: single-namespace, currying, algebraic data types, type inference, ad hoc and parametric polymorphism, native compilation, etc. We now have an expressive and relatively safe language which we can use in Lisp, but we weren't going to immediately rewrite all of quilc from the ground up. So, where do we start?
-
-Our first approach was to take a small, relatively isolated module of quilc and slowly Coalton-ify it. The module implemented a compiler pass called _gate fusion_, which takes quantum instructions (called _gates_) and finds opportunities to fuse them into a more efficient form. This module uses lots of arrays of doubly linked lists. We wrote an array-of-double-linked-lists data structure in Coalton, ported the code, and ultimately, we weren't happy with the results. The virtues of mostly pure, statically typed functional programming didn't actually make the code any clearer. We were left with a mess of hacks, unbridled mutation, pointer emulation, and so on just to make this code work in Coalton.
-
-What went wrong? Empty promises of functional programming? The complexity of the real world? We did a retrospective and concluded a few things.
-
-First, the Coalton standard library was just too anemic. Standard, robust data structures didn't exist, and we had to implement some from scratch to just get the job done, without a lot of regard to generality, efficiency, or safety. So, certainly, the standard library could be improved.
-
-Second, "porting" idiomatic Common Lisp line-by-line probably isn't the right approach in most cases. A decent amount of idiomatic Lisp code relies on mutation and imperative loops. Doing a one-to-one port to Coalton is possible—sometimes even easy—but the result isn't satisfying.
-
-Third, the specific module we ported mostly took existing data structures and modified them. The existing data structures weren't game to be touched, lest we wanted to modify a lot more of quilc to be Coalton-compatible. So, we had to write Coalton with one hand tied behind our back.
-
-It was a valuable case study, and we learned a lot from it, but we needed to try something different.
 
 ## Towards a discrete instruction set for quantum computation
 
@@ -138,17 +117,21 @@ Almost every quantum computer in use today has some sort of _continuous_ operati
 
 Can there instead be some set of _discrete_ native operations while still being able perform _any_ quantum computation we'd like? And if we have such a set, will it be *easy and efficient* to compile a given matrix? These two questions represent the problem of **discrete compilation** of quantum programs.
 
-Fortunately, the answer to both questions is a resounding _yes_, with a small but reasonable caveat. Robert Solovay and Alexei Kitaev [both proved](https://en.wikipedia.org/wiki/Solovay%E2%80%93Kitaev_theorem) this was possible in the mid-90s. Their algorithm is flexible in allowing a large family of discrete operation sets, and decompositions of arbitrary matrices into any of those discrete operations were efficient to calculate, at least as far as big-O is concerned. The caveat is this: It is not possible to find an _exact_ sequence of native operations to reconstruct a given matrix. Instead, we can only get _arbitrarily close_, at the expense of running more native operations.
+Fortunately, the answer to both questions is a resounding _yes_, with a small but reasonable caveat: It is not possible to find an _exact_ sequence of native operations to reconstruct a given matrix. Instead, we can only get _arbitrarily close_, at the expense of running more native operations[^reasonable].
 
-This is perfectly sensible. If we want to do arbitrary precision arithmetic on a classical computer (like calculating billions of digits of $\pi$), we must use more CPU instructions. CPU instructions only let us do a relatively small collection of operations: basic arithmetic on "small" integers and floating-point numbers. If we want to go beyond 20ish digits of integer, or go beyond 16ish digits of floating-point mantissa, we need to spend more memory and more CPU instructions.
+[^reasonable]: This caveat is perfectly sensible. If we want to do arbitrary precision arithmetic on a classical computer (like calculating billions of digits of $\pi$), we must use more CPU instructions. CPU instructions only let us do a relatively small collection of operations: basic arithmetic on "small" integers and floating-point numbers. If we want to go beyond 20ish digits of integer, or go beyond 16ish digits of floating-point mantissa, we need to spend more memory and more CPU instructions.
 
-The [Solovay-Kitaev algorithm](https://arxiv.org/abs/quant-ph/0505030) is famously difficult to implement, and relies on a great deal of pre-processing to accomplish, but it's useful both for its mathematical utility and its generality.
+There is a 20+-year history of many different algorithms for doing discrete compilation with their own advantages and disadvantages[^history]. We will focus on one by Peter Selinger.
 
-About 20 years after Solovay and Kitaev's work, Peter Selinger came up with [another idea](https://arxiv.org/abs/1212.6253). Using a specific native operation set (called the Clifford+T set), and making careful use of algebraic number theory, not only can we have merely "good" big-O performance, we could also have _nearly optimal-length_ decompositions[^optimal], off only by a constant number of operations. 
+[^history]: Robert Solovay and Alexei Kitaev [both proved](https://en.wikipedia.org/wiki/Solovay%E2%80%93Kitaev_theorem) that discrete compilation was possible and efficient in the mid-90s. Their algorithm is flexible in allowing a large family of discrete operation sets, and decompositions of arbitrary matrices into any of those discrete operations were efficient to calculate, at least as far as big-O is concerned. The [Solovay-Kitaev algorithm](https://arxiv.org/abs/quant-ph/0505030) is famously difficult to implement, and relies on a great deal of pre-processing to accomplish, but it's useful both for its mathematical utility and its generality.
 
-[^optimal]: Peter Selinger and Neil Ross were later able to [modify the algorithm](https://arxiv.org/abs/1403.2975) so that it produces *actually* optimal sequences, however, the algorithm requires one to be able to efficiently factorize integers. The theoretically best known way to factorize an integer is Shor's algorithm, which requires a quantum computer with essentially no error.
+Selinger [proved](https://arxiv.org/abs/1212.6253) that if we use a specific native operation set, we can accomplish _nearly optimal-length_ decompositions[^optimal] of one-qubit matrices. From there, we can use other results to decompose matrices of any number of qubits.
 
-## The Selinger approach to discrete compilation
+[^optimal]: Peter Selinger and Neil Ross were later able to [modify the algorithm](https://arxiv.org/abs/1403.2975) so that it produces *actually* optimal sequences for parametric $z$-rotations, however, the algorithm requires one to be able to efficiently factorize integers. The theoretically best known way to factorize an integer is Shor's algorithm, which requires a quantum computer with essentially no error.
+
+In the next section, we give an overview of Selinger's algorithm. It is somewhat mathematically intensive, so for readers uninterested in those details, we recommend skippiing. (We duly recap the main takeaways when we return to discussing Coalton.)
+
+### The Selinger approach to discrete compilation
 
 In order to have a set of discrete operations, we must be able to discretize the parametric operation $\mathrm{RZ}\_\theta$, which is a $2\times2$ matrix with entries depending on $\theta$.
 
@@ -176,13 +159,13 @@ $$
 
 This is called the _Clifford+T set_. These operators have mathematical significance because
 
-1. the $\mathrm{H}$ and $\mathrm{S}$ form a special algebraic space called the one-qubit [Clifford group](https://en.wikipedia.org/wiki/Clifford_gates),
+1. arbitrary combinations of $\mathrm{H}$ and $\mathrm{S}$ form a special algebraic space called the one-qubit [Clifford group](https://en.wikipedia.org/wiki/Clifford_gates),
 
-2. $\mathrm{T}$ happens to equal $\sqrt{\mathrm{S}}$, and
+2. $\mathrm{S}$ equals $\mathrm{T}^2$, and
 
 3. arbitrary products of these operators form a _dense_ set of the unitary matrices.
 
-The third point means to say is that this set of operators could be used to approximate any $2\times 2$ unitary matrix to an arbitrary precision, though Selinger will need to find an algorithm to do it.
+The third point means to say is that this set of operators could be used to approximate any $2\times 2$ unitary matrix to an arbitrary precision, though Selinger will need to devise an algorithm to do it.
 
 Next, Selinger turns to a [result](https://arxiv.org/abs/1206.5236) by Kliuchnikov, Maslov, and Mosca which says a given $2\times2$ matrix can be written precisely as a product of Clifford+T elements if and only if the matrix elements are all members of the [number ring](https://en.wikipedia.org/wiki/Ring_(mathematics)) $R := \mathbb{Z}[\frac{1}{\sqrt 2}, i]$. So Selinger sets up the following goal: Try to write the problematic parametric gate $\mathrm{RZ}\_\theta$  as a matrix
 
@@ -207,13 +190,15 @@ where $a_\bullet$ are integers and $n_\bullet$ are non-negative integers. If we 
 
 For Selinger's algorithm, it turns out we also need to work in other rings, like the cyclomatic integers of degree 8, the quadratic integers of $\sqrt{2}$, and about a half-dozen others.
 
-How do we implement these mathematical objects in a program? At least in principle, Common Lisp would have no trouble representing elements of any of these rings; just define some new classes, perhaps some new generic functions like `ring+` and `ring*`, and you're off to the races.
+## Coalton to the rescue, take two
 
-The trouble is that it's cumbersome. In Lisp, first, there's no way to integrate with the existing numerical operators; there is no way to "overload" the standard operator `cl:+` to work with different rings. Second, as explained in a previous blog post, there's no way to uniformly treat additive and multiplicative identity in a convenient fashion. Third, it gets very messy, with lots of casts, upconversions, downconversions, etc. It's very difficult to build a _new_ numerical tower atop of or aside Common Lisp's existing one. Common Lisp's multiple-dispatch mechanism at least eases the pain a bit.
+One of the implementation difficulties of Selinger's algorithm is being able to work with a bunch of different-but-interoperable[^interop] number types. How do we implement these mathematical objects in a program? At least in principle, Common Lisp would have no trouble representing elements of any of these rings; just define some new classes, perhaps some new generic functions like `ring+` and `ring*`, and you're off to the races.
+
+[^interop]: They're interoperable specifically because all of these numbers are either real or complex numbers. Similar to how in most ordinary programming languages integers and floats are different kinds of real numbers (and thus can be added and multiplied), the number rings and fields of Selinger's algorithm can work with one another because they all are ultimately drawn from the same set.
+
+The trouble is that it's cumbersome. In Lisp, first, there's no way to integrate with the existing numerical operators; there is no way to "overload" the standard operator `cl:+` to work with different rings. Second, as explained in a previous blog post, there's no way to uniformly treat additive and multiplicative identity in a convenient fashion. Third, it gets very messy, with lots of casts, upconversions, downconversions, etc. It's very difficult to build a _new_ numerical tower atop of or aside Common Lisp's existing one, though Common Lisp's multiple-dispatch mechanism at least eases the pain a bit.
 
 These difficulties presented a second opportunity for Coalton. Coalton's builds its fundamental abstractions from a different starting point, making this kind of mathematics easier and safer to express. As such, we used this as a testing ground to implement new functionality of quilc in Coalton.
-
-## Coalton to the rescue, take two
 
 Coalton has a system for ad hoc polymorphism called *type classes*. Type classes allow one to extend existing functionality of a program, like that of the `+` or `*` operators, in a composable and statically typed manner. For example, this ring of algebraic numbers
 
@@ -241,7 +226,7 @@ These algebraic numbers can be implemented as a new type in Coalton, which we'll
     (Alg Integer Integer))
 ```
 
-The type can implement the `Eq` type class (which demands we implement equality) and the `Num` type class (which demands we implement addition, subtraction, multiplication, and some way to convert an integer into our new type).
+The `Alg` type can implement the `Eq` type class (which demands we implement equality) and the `Num` type class (which demands we implement addition, subtraction, multiplication, and some way to convert an integer into our new type).
 
 ```lisp
   (define-instance (Eq Alg)
@@ -330,7 +315,7 @@ Discrete compilation is implemented as a part of the [`cl-quil/discrete` contrib
 We can repeat the compilation of the $M$ gate that we did before for the IBM chip instead for a made-up chip of two qubits that only supports the Clifford+T set. (The output is reformatted into columns to fit the page.)
 
 ```
-$ echo 'PRAGMA TOLERANCE "0.001"; XY(pi/3) 1 0' | ./quilc --isa discrete2
+$ echo 'PRAGMA TOLERANCE "0.001"; XY(pi/3) 1 0' | ./quilc --isa 4Q-cliffordt
 T 0       H 0       T 0       H 0       H 1       H 1       H 1       S 1
 S 0       T 0       S 0       T 0       T 1       T 1       T 1       H 1
 S 0       H 0       H 0       H 0       H 1       H 1       H 1       T 1
@@ -372,13 +357,13 @@ T 0       H 0       T 0       S 1       S 1       T 1       T 1
 
 Notice how every operation in the output is either `H`, `S`, `T`, or `CNOT`. But also notice how there are a _lot_ of operations—290 of them to be exact. There are only two differences in how we run the compiler between this and the previous IBM-chip compilation:
 
-1. We had to specify the chip `discrete2`. (Quilc will be happy to construct a chip of any requested shape, size, and native operations; `discrete2` is just a convenient built-in for testing.)
+1. We had to specify the chip `4Q-cliffordt`. (Quilc will be happy to construct a chip of any requested shape, size, and native operations; `4Q-cliffordt` is just a convenient built-in for testing.)
 2. We had to specify a tolerance, here a discrete compilation accuracy within 0.1% for each approximation made.
 
 If we request more precision, we notice an increase in operation count.
 
 ```
-$ echo 'PRAGMA TOLERANCE "0.0000001d0"; XY(pi/3) 1 0' | ./quilc --isa discrete2 | wc -l
+$ echo 'PRAGMA TOLERANCE "0.0000001d0"; XY(pi/3) 1 0' | ./quilc --isa 4Q-cliffordt | wc -l
      540
 ```
 
