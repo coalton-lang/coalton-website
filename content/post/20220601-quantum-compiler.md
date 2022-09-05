@@ -190,7 +190,7 @@ where $a_\bullet$ are integers and $n_\bullet$ are non-negative integers. If we 
 
 For Selinger's algorithm, it turns out we also need to work in other rings, like the cyclomatic integers of degree 8, the quadratic integers of $\sqrt{2}$, and about a half-dozen others.
 
-## Coalton to the rescue, take two
+## Coalton's strength in implementing math
 
 One of the implementation difficulties of Selinger's algorithm is being able to work with a bunch of different-but-interoperable[^interop] number types. How do we implement these mathematical objects in a program? At least in principle, Common Lisp would have no trouble representing elements of any of these rings; just define some new classes, perhaps some new generic functions like `ring+` and `ring*`, and you're off to the races.
 
@@ -305,6 +305,42 @@ Modeling these algebras works out quite well, especially when we have more of th
 ```
 
 One can imagine how we could do the same for vector spaces, inner product spaces, and so on. These concepts aren't just theoretical benefits, they're actually routinely used in practice.
+
+We've implemented one number system, but we can endow Coalton further with an understanding of how to convert out of this representation. As a simple example, we can instruct Coalton on how to convert, when possible, an `Alg` into a `Double-Float`:
+
+```lisp
+(define-instance (TryInto Alg Double-Float)
+  (define (tryInto x)
+    (match x
+      ((Alg a b)
+       ;; An Integer may fail to convert to a Double-Float
+       (match (Tuple (tryInto a) (tryInto b))
+         ((Tuple (Ok a) (Ok b))
+          (Ok (+ a (* b (math:sqrt 2.0d0)))))
+         (_ (Err "Can't represent an Alg as a Double-Float")))))))
+```
+
+Whenever we need a double-float, we can safely get one by calling `tryInto` on our `Alg` object, and matching the `Ok` case if it succeeded, or the `Err` case if it failed. In this first example, we successfully convert $1+2\sqrt{2}$ into a float $3.828\ldots$ without otherwise being explicit about the conversion. (It figured it out since the other branch returns a `Double-Float`-related value, and both branches must have types that unify.)
+
+```lisp
+COALTON-USER> (coalton
+                 (match (tryInto (Alg 1 2))
+                   ((Ok f) f)
+                   ((Err _) (the Double-Float math:nan))))
+3.8284271247461903d0
+```
+
+Contrast with this example, where $1+10^{1000}\sqrt{2}$ has no representation as a floating-point number, so the code instead returns a "[not a number](https://en.wikipedia.org/wiki/NaN)" value.
+
+```lisp
+COALTON-USER> (coalton
+                 (match (tryInto (Alg 1 (^ 10 1000)))
+                   ((Ok f) f)
+                   ((Err _) (the Double-Float math:nan))))
+#<DOUBLE-FLOAT quiet NaN>
+```
+
+As we can see, Coalton makes working within and between arithmetic systems convenient, explicit, and safe.
 
 ## Discrete compilation in quilc
 
