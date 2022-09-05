@@ -8,21 +8,21 @@ By [Elias Lawson-Fox](https://github.com/eliaslfox), [Aidan Nyquist](https://git
 
 {{< toc >}}
 
-## Coalton and the quilc compiler
+## Introduction: Coalton and the quilc compiler
 
-[Quilc](https://github.com/quil-lang/quilc) is one of the best optimizing compilers for quantum computers. It is written in Common Lisp and is capable of taking arbitrary quantum programs written in [Quil](https://quil-lang.github.io/), and compiling and optimizing them into code that conforms to the majority of quantum computing architectures that exist today.
+[Quilc](https://github.com/quil-lang/quilc) is a state-of-the-art optimizing compiler for quantum computers written in Common Lisp. It is capable of taking arbitrary quantum programs written in [Quil](https://quil-lang.github.io/), and compiling and optimizing them into code that conforms to the majority of quantum computing architectures that exist today.
 
-Quilc and its related tooling are around 50,000 lines of code, and though it has good test coverage, it falls trap to problems that frequently show up in dynamically typed programming languagues, two of which are
+Quilc and its related tooling are around 50,000 lines of code, and though it has good test coverage, it falls trap to problems that frequently show up when using dynamically typed programming languagues, two of which are
 
-1. type errors showing up at runtime, usually a result from the code following a not-happy path, and
+1. type errors showing up at runtime, usually a result from the code following a less probable control path, and
 2. not having certain useful abstractions that can only be enabled by having a static type system (e.g., certain kinds of polymorphism).
 
-Coalton addresses these two problems in principle. Since it's not practical to rewrite an entire compiler, we opted to implement a significant new feature of quilc in Coalton called *discrete compilation*, which we'll describe in the next sections.
+Coalton addresses these two problems in principle. Since it's not practical to rewrite an entire compiler, we opted to implement a significant new feature of quilc in Coalton called *discrete compilation*. In this post, we'll walk through what discrete compilation is, how Coalton made it simpler to implement (compared to Common Lisp), and how we tested that such a complicated feature actually works.
 
 
-## Towards a discrete instruction set for quantum computation
+## Towards a discrete set of operations for quantum computation
 
-A typical quantum program is comprised of a sequence of **operations** (sometimes called **operators**, **gates**, or **matrices**) that can be expressed mathematically as square matrices of complex numbers. The matrices are [*unitary*](https://en.wikipedia.org/wiki/Unitary_matrix)—which means the matrices can never stretch or shrink a vector they multiply onto—and they have to have a power-of-two size. Just like classical computers, quantum computers have a set of operations they can natively perform. Quantum computers typically have only a small handful. For example, the set of native operations of an IBM quantum computer is:
+A typical quantum program is comprised of a sequence of **operations** (sometimes called **instructions**, **operators**, **gates**, or **matrices**) that can be expressed mathematically as square matrices of complex numbers. The matrices are [*unitary*](https://en.wikipedia.org/wiki/Unitary_matrix)—which means the matrices can never stretch or shrink a vector they multiply onto—and they have to have a power-of-two size. Just like classical computers, quantum computers have a set of operations they can natively perform. Quantum computers typically have only a small handful. For example, the set of native operations of an IBM quantum computer is:
 
 $$
 \begin{aligned}
@@ -53,7 +53,7 @@ $$
 
 In this case, $\theta$ is actually parametric and can be any value between $0$ and $2\pi$.
 
-It is a surprising fact that you can build *any* $2^n\times 2^n$-size complex unitary matrix out of the above matrices by way of matrix multiplications and [Kronecker products](https://en.wikipedia.org/wiki/Kronecker_product). For example, consider the following unitary matrix:
+It is a surprising fact that you can build *any* $2^n\times 2^n$-size complex unitary matrix out of the above matrices by way of matrix multiplications and [Kronecker products](https://en.wikipedia.org/wiki/Kronecker_product). This means the operation set is **computationally universal**, not unlike the concept of universality of Boolean logic in ordinary computing. For example, consider the following unitary matrix:
 
 $$
 M := \begin{pmatrix}
@@ -113,7 +113,7 @@ represents the Kronecker product $A\otimes B$.
 
 Different quantum computers each have a different set of native operations, so quilc must be a retargetable compiler. This mathematical puzzle is interesting and already quite difficult, but lurking is also an engineering problem of great concern.
 
-Almost every quantum computer in use today has some sort of _continuous_ operation—possibly many—like the $\mathrm{RZ}\_\theta$ above. These continuous operations represent the analog nature of these quantum computers. Analog devices have their merits, but one thing analog hardware usually isn't good at is extreme precision. While I might request the quantum computer perform an $\mathrm{RZ}\_{0.12345}$, due to the computer's physical nature, it might only accomplish something between an $\mathrm{RZ}\_{0.11}$ and an $\mathrm{RZ}\_{0.13}$. Quantum hardware engineers around the world, every day, are putting effort into improving the precision of the available native operations, but it'll never be to feasible have _infinite_ precision, simply due to physical limitations. In practice, we will always have some amount of noise.
+Almost every quantum computer in use today has some sort of _continuous_ operation, possibly many, like the $\mathrm{RZ}\_\theta$ above. These continuous operations represent the analog nature of these quantum computers. Analog devices have their merits, but one thing analog hardware usually isn't good at is extreme precision. While I might request the quantum computer perform an $\mathrm{RZ}\_{0.12345}$, due to the computer's physical nature, it might only accomplish something between an $\mathrm{RZ}\_{0.11}$ and an $\mathrm{RZ}\_{0.13}$. Quantum hardware engineers around the world, every day, are putting effort into improving the precision of the available native operations, but it'll never be to feasible have _infinite_ precision, simply due to physical limitations. In practice, we will always have some amount of noise.
 
 Can there instead be some set of _discrete_ native operations while still being able perform _any_ quantum computation we'd like? And if we have such a set, will it be *easy and efficient* to compile a given matrix? These two questions represent the problem of **discrete compilation** of quantum programs.
 
