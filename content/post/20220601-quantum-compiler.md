@@ -22,7 +22,7 @@ Coalton addresses these two problems in principle. Since it's not practical to r
 
 ## Towards a discrete instruction set for quantum computation
 
-A typical quantum program is comprised of a sequence of operations that can be expressed mathematically as square matrices of complex numbers. The matrices are [*unitary*](https://en.wikipedia.org/wiki/Unitary_matrix)—which means the matrices can never stretch or shrink a vector they multiply onto—and they have to have a power-of-two size. Just like classical computers, quantum computers have a set of operations they can natively perform. Quantum computers typically have only a small handful. For example, the set of native operations of an IBM quantum computer is:
+A typical quantum program is comprised of a sequence of **operations** (sometimes called **operators**, **gates**, or **matrices**) that can be expressed mathematically as square matrices of complex numbers. The matrices are [*unitary*](https://en.wikipedia.org/wiki/Unitary_matrix)—which means the matrices can never stretch or shrink a vector they multiply onto—and they have to have a power-of-two size. Just like classical computers, quantum computers have a set of operations they can natively perform. Quantum computers typically have only a small handful. For example, the set of native operations of an IBM quantum computer is:
 
 $$
 \begin{aligned}
@@ -111,7 +111,7 @@ B 0
 
 represents the Kronecker product $A\otimes B$.
 
-Different quantum computers each have a different set of native operators, so quilc must be a retargetable compiler. This mathematical puzzle is interesting and already quite difficult, but lurking is also an engineering problem of great concern.
+Different quantum computers each have a different set of native operations, so quilc must be a retargetable compiler. This mathematical puzzle is interesting and already quite difficult, but lurking is also an engineering problem of great concern.
 
 Almost every quantum computer in use today has some sort of _continuous_ operation—possibly many—like the $\mathrm{RZ}\_\theta$ above. These continuous operations represent the analog nature of these quantum computers. Analog devices have their merits, but one thing analog hardware usually isn't good at is extreme precision. While I might request the quantum computer perform an $\mathrm{RZ}\_{0.12345}$, due to the computer's physical nature, it might only accomplish something between an $\mathrm{RZ}\_{0.11}$ and an $\mathrm{RZ}\_{0.13}$. Quantum hardware engineers around the world, every day, are putting effort into improving the precision of the available native operations, but it'll never be to feasible have _infinite_ precision, simply due to physical limitations. In practice, we will always have some amount of noise.
 
@@ -135,7 +135,7 @@ In the next section, we give an overview of Selinger's algorithm. It is somewhat
 
 In order to have a set of discrete operations, we must be able to discretize the parametric operation $\mathrm{RZ}\_\theta$, which is a $2\times2$ matrix with entries depending on $\theta$.
 
-Selinger considers the following native operators:
+Selinger considers the following native operations:
 
 $$
 \begin{aligned}
@@ -157,17 +157,17 @@ $$
 \end{aligned}
 $$
 
-This is called the _Clifford+T set_. These operators have mathematical significance because
+This is called the _Clifford+T set_. These operations have mathematical significance because
 
 1. arbitrary combinations of $\mathrm{H}$ and $\mathrm{S}$ form a special algebraic space called the one-qubit [Clifford group](https://en.wikipedia.org/wiki/Clifford_gates),
 
 2. $\mathrm{S}$ equals $\mathrm{T}^2$, and
 
-3. arbitrary products of these operators form a _dense_ set of the unitary matrices.
+3. arbitrary products of these operations form a _dense_ set of the unitary matrices.
 
-The third point means to say is that this set of operators could be used to approximate any $2\times 2$ unitary matrix to an arbitrary precision, though Selinger will need to devise an algorithm to do it.
+The third point means to say is that this set of operations could be used to approximate any $2\times 2$ unitary matrix to an arbitrary precision, though Selinger will need to devise an algorithm to do it.
 
-Next, Selinger turns to a [result](https://arxiv.org/abs/1206.5236) by Kliuchnikov, Maslov, and Mosca which says a given $2\times2$ matrix can be written precisely as a product of Clifford+T elements if and only if the matrix elements are all members of the [number ring](https://en.wikipedia.org/wiki/Ring_(mathematics)) $R := \mathbb{Z}[\frac{1}{\sqrt 2}, i]$. So Selinger sets up the following goal: Try to write the problematic parametric gate $\mathrm{RZ}\_\theta$  as a matrix
+Next, Selinger turns to a [result](https://arxiv.org/abs/1206.5236) by Kliuchnikov, Maslov, and Mosca which says a given $2\times2$ matrix can be written precisely as a product of Clifford+T elements if and only if the matrix elements are all members of the [number ring](https://en.wikipedia.org/wiki/Ring_(mathematics)) $R := \mathbb{Z}[\frac{1}{\sqrt 2}, i]$. So Selinger sets up the following goal: Try to write the problematic parametric operation $\mathrm{RZ}\_\theta$  as a matrix
 
 $$
 \begin{pmatrix}
@@ -176,11 +176,11 @@ b & a^*
 \end{pmatrix}
 $$
 
-with user-selectable precision, where $a$ and $b$ are elements of $R$, and $z^*$ represents the [complex conjugate](https://en.wikipedia.org/wiki/Complex_conjugate) of $z$. If we can write this matrix, then we can use Kliuchnikov-Maslov-Mosca to write it in terms of Clifford+T. And if we can do _that_, then we can write any program with parametric $\mathrm{RZ}\_\theta$ operators into an equivalent one (up to user-specified precision, at least) using only discrete operators.
+with user-selectable precision, where $a$ and $b$ are elements of $R$, and $z^*$ represents the [complex conjugate](https://en.wikipedia.org/wiki/Complex_conjugate) of $z$. If we can write this matrix, then we can use Kliuchnikov-Maslov-Mosca to write it in terms of Clifford+T. And if we can do _that_, then we can write any program with parametric $\mathrm{RZ}\_\theta$ operations into an equivalent one (up to user-specified precision, at least) using only discrete operations.
 
 Selinger succeeds at solving this problem, by turning that matrix problem into a [Diophantine equation](https://en.wikipedia.org/wiki/Diophantine_equation) that has to be solved over a specific number ring, and coming up with an algorithm to solve that.
 
-Since the two-qubit operators of usual interest are already discrete (like `CNOT`, `CZ`, etc.), this would make a fully discretized native gate set, so long as quantum computer implementers could supply the Clifford+T set as native operations.
+Since the two-qubit operations of usual interest are already discrete (like `CNOT`, `CZ`, etc.), this would make a fully discretized native operation set, so long as quantum computer implementers could supply the Clifford+T set as native operations.
 
 Already, even without the gory details of _how_ to find the approximating matrix, we see we're in for quite a ride. There's a lot of machinery we'll need, but one piece that sticks out is the need to do arithmetic over the ring $\mathbb{Z}[\frac{1}{\sqrt{2}},i]$. If we let $\omega:=(1+i)/\sqrt{2}$, then with a bit of exercise, we can see that elements of $\mathbb{Z}[\frac{1}{\sqrt{2}},i]$ all take the following canonical form:
 $$
@@ -312,7 +312,7 @@ Though perhaps not as effective as mathematics itself, Coalton's facilities hand
 
 Discrete compilation is implemented as a part of the [`cl-quil/discrete` contrib module](https://github.com/quil-lang/quilc/tree/master/src/discrete) to quilc.
 
-We can repeat the compilation of the $M$ gate that we did before for the IBM chip instead for a made-up chip of two qubits that only supports the Clifford+T set. (The output is reformatted into columns to fit the page.)
+We can repeat the compilation of the $M$ operation that we did before for the IBM chip instead for a made-up chip of two qubits that only supports the Clifford+T set. (The output is reformatted into columns to fit the page.)
 
 ```
 $ echo 'PRAGMA TOLERANCE "0.001"; XY(pi/3) 1 0' | ./quilc --isa 4Q-cliffordt
@@ -387,7 +387,7 @@ One particularly nice thing going on is that the whole machinery quilc uses top 
 
 ## Inaccuracy gotchas and validating the compiler
 
-With this implementation, the only operator being approximated is $\mathrm{RZ}\_{\theta}$, which means the error will increase with each additional $\mathrm{RZ}$ approximation used in the same computation. Our `TOLERANCE` pragma asserts the precision of individual approximations, not whole quilc programs. While there are rules that give insight into how these errors accumulate, such notions are not yet readily available to plug into quilc. To get around this requires some trial and error from the user by attempting compilations with increasing precision until a tolerable error is achieved. To help with this, passing `-Pm` to `quilc` will print out the whole program's error. Nonetheless, we are guaranteed the precision of our approximation $U$ is directly related to a tolerance of $\varepsilon$ by:
+With this implementation, the only operation being approximated is $\mathrm{RZ}\_{\theta}$, which means the error will increase with each additional $\mathrm{RZ}_\theta$ approximation used in the same computation. Our `TOLERANCE` pragma asserts the precision of individual approximations, not whole quilc programs. While there are rules that give insight into how these errors accumulate, such notions are not yet readily available to plug into quilc. To get around this requires some trial and error from the user by attempting compilations with increasing precision until a tolerable error is achieved. To help with this, passing `-Pm` to `quilc` will print out the whole program's error. Nonetheless, we are guaranteed the precision of our approximation $U$ is directly related to a tolerance of $\varepsilon$ by:
 
 $$
 \left\Vert(\mathrm{RZ}\_\theta - U) v \right\Vert \leq \varepsilon \left\Vert v \right\Vert
@@ -395,15 +395,15 @@ $$
 
 where $0 < \varepsilon < 1/2$, $v$ is a two-dimensional complex vector, and $\Vert \cdot \Vert$ is the vector magnitude. We can read the above expression as "the distance between $\mathrm{RZ}\_\theta$ and $U$ is less than or equal to $\varepsilon$."
 
-Measurements of a quantum states are probabilistic, and quantum operators serve to affect a states' probabilities. For a qubit, these are the probabilities of whether we measure 0 or 1. If two quantum operators are *close*, then the probabilities of each possible measurement resulting from applying the quantum operators to the same quantum state should too be similiar.
+Measurements of a quantum states are probabilistic, and quantum operations serve to affect a states' probabilities. For a qubit, these are the probabilities of whether we measure a `0` bit or a `1` bit. If two quantum operations are *close*, then the probabilities of each possible measurement resulting from applying the quantum operations to the same quantum state should too be similiar.
 
-To see this in action, we can try it on a real example. The **W state** on 3 qubits is defined as
+With this in mind, we can construct a numerical experiment on a real program example. For our example, we will consider a program which can construct the W state. The **W state** on 3 qubits is defined as
 
 $$
 \psi_W := \frac{1}{3}\left(\vert001\rangle + \vert010\rangle + \vert100\rangle\right).
 $$
 
-If we properly prepare $\psi_W$ and measure it, we should either get the bitstring `001`, `010`, or `100`, each with equal probability. The following Quil program prepares the W state on a freshly initialized quantum computer:
+On an ideal quantum computer, if we prepare $\psi_W$ and measure it, we should either get the bitstring `001`, `010`, or `100`, each with equal probability. The following Quil program prepares the W state on a freshly initialized quantum computer:
 
 ```
 RY(1.9106332362490184) 0      # 2*arccos(1/sqrt(3))
@@ -413,7 +413,15 @@ CNOT                   0 1
 X                      0
 ```
 
-So, to measure the effects selecting a successively decreasing `TOLERANCE`, we will compile this program with a tolerance, run it on a simulated quantum computer using the [QVM](https://github.com/quil-lang/qvm), and measure it lots of times and tally the results. For a tolerance $\varepsilon$, we will take $1/\varepsilon^2$ samples to achieve some level of statistical certainty (i.e., we want to ensure our results are *not* dominated by sampling noise).
+So, to analyze the effectiveness of our compilation program as written, we execute the following procedure:
+
+0. Determine how many $\mathrm{RZ}\_\theta$ will be approximated and call it $k$. For our W state program, this will be about $K=12$. (The W state program results in about 12 $\mathrm{RZ}\_\theta$ operations on a $\mathrm{CNOT}$ architecture, like the IBM architecture from earlier.)
+1. Select a tolerance $\varepsilon$. (We'll successively decrease this.)
+2. Compile the W state preparation program with the `TOLERANCE` pragma set to $\varepsilon/K$. An $\mathrm{RZ}\_\theta$ tolerance of $\varepsilon/K$ approximates a global program tolerance of $\varepsilon$.
+3. Run the program on the [QVM](https://github.com/quil-lang/qvm), a simulated quantum computer.
+4. Measure the resulting state lots of times, on the order of $\lceil 1/\varepsilon^2\rceil$ repetitions, and tally the results to form an empirical distribution.
+
+After running this procedure for each power of two from $1/2^1$ to $1/2^{16}$, we get the following empirical distributions.
 
 ***
 | $\mathrm{RZ}_\theta$ Tol. &nbsp;&nbsp;&nbsp; | Samples  | `001`      | | `010`      | | `100` |
@@ -436,18 +444,18 @@ So, to measure the effects selecting a successively decreasing `TOLERANCE`, we w
 | $\frac{1}{12}2^{-16}$ | $2^{32}$ | 33.333412% | &nbsp;&nbsp;&nbsp; | 33.333180% | &nbsp;&nbsp;&nbsp; | 33.333410% |
 ***
 
-A few remarks. First, we have a local tolerance with a $1/12$ factor because without discrete compilation, the W state program results in about 12 $\mathrm{RZ}_\theta$ instructions on a $\mathrm{CNOT}$ architecture, like the aforementioned IBM architecture. Because of this factor, we are approximating a *global* program tolerance as simply being the adjacent power-of-two. Second, we can observe the distribution converging toward $1/3$, as expected. Since there are about $3.3$ bits per decimal digit, we see approximately one correct decimal digit appear for every three rows.
+ We can immediately observe the distribution converging toward $1/3$, as expected. Since there are about $3.3$ bits per decimal digit, we see about one correct decimal digit appear for every three rows.
 
-In a similar numerical experiment, we approximate $\psi\_W$ by compiling the program with different tolerances. This time, instead, we produce a (numerically) *exact* state $\tilde\psi_W$ corresponding to our compiled program. Then we calculate a few things:
+In a similar numerical experiment, we approximate $\psi\_W$ by compiling the program with different tolerances just as before. This time, instead, we produce a (numerically) *exact* state $\tilde\psi_W$ corresponding to our compiled program. Then we calculate a few things:
 
-1. The total number of gates in the compiled program,
-2. The percentage of those gates that are $\mathrm{T}$ gates, and
+1. The total number of operations in the compiled program.
+2. The percentage of those operations that are $\mathrm{T}$ operations.
 3. A $\chi^2$ test on the approximate distribution $\vert\tilde\psi_W\vert^2$ resulting from the calculation of the state by simulating the compiled program.
 
-The following table calculates this for between 2 and 64 bits of tolerance.
+The following table shows the results of calculating this for tolerances $2^{-2^1}$ to $2^{-2^6}$.
 
 ***
-| &nbsp;&nbsp;$\mathrm{RZ}_\theta$ Tol. &nbsp;&nbsp; | Gate Count | &nbsp;&nbsp;$\mathrm{T}$ Percentage&nbsp;&nbsp; | $\chi^2$ |  
+| &nbsp;&nbsp;$\mathrm{RZ}_\theta$ Tol. &nbsp;&nbsp; | Operation Count | &nbsp;&nbsp;$\mathrm{T}$ Percentage&nbsp;&nbsp; | $\chi^2$ |  
 |:---------:|:---:|:---:|----------:|
 | $\frac{1}{12}2^{- 2}$ | 121 | 30% | 8.644d-4 |
 | $\frac{1}{12}2^{- 4}$ | 147 | 31% | 5.398d-5 |
@@ -457,15 +465,17 @@ The following table calculates this for between 2 and 64 bits of tolerance.
 | $\frac{1}{12}2^{-64}$ | 738 | 39% | 2.990d-27 |
 ***
 
-We see a trend[^wobble] of programs getting linearly longer, with little variation in $\mathrm{T} percentage, and the $\chi^2$ statistic tending toward zero.
+We see a trend[^wobble] of programs getting linearly longer (with only minor variation in $\mathrm{T}$ percentage) and the $\chi^2$ statistic tending toward zero.
 
-[^wobble]: When this data was taken, from time to time, quilc would result in somewhat "wobbly" data for larger (i.e., worse) tolerance values. For instance, for a tolerance of $2^{-2}$, quilc would occasionally emit a gate count of approximately 500. From time to time, due to the probabilistic nature of Selinger's algorithm and other parts of quilc itself, one will observe spurious spikes in absolute numbers, though these numbers are still asymptotically correct. The data presented here doesn't represent the *best* values, just qualitatively *usual* values.
+[^wobble]: When this data was taken, from time to time, quilc would result in somewhat "wobbly" data for larger (i.e., worse) tolerance values. For instance, for a tolerance of $2^{-2}$, quilc would occasionally emit an operation count of approximately 500. From time to time, due to the probabilistic nature of Selinger's algorithm and other parts of quilc itself, one will observe spurious spikes in absolute numbers, though these numbers are still asymptotically correct. The data presented here doesn't represent the *best* values, just qualitatively *usual* values.
 
-## Onward
+These tests, among others, give us confidence in the correctness of the algorithm.
+
+## Conclusion
 
 It's remarkable that Coalton has come to a point that a relatively complicated mathematical algorithm to implement discrete compilation can not only run, but run correctly *and* run efficiently. Coalton is still evolving in order to make programs like these and others faster to write and faster to execute, without compromising on correctness.
 
-Discrete compilation in quilc has been in the works for a while, starting during investigations of the Solovay-Kitaev algorithm during a summer internship at Rigetti Computing many years ago. The development of Coalton and catalyzing the implementation of discrete compilation was supported by [HRL Laboratories quantum computing group](https://quantum.hrl.com/). We especially acknowledge Erik Davis, Cole Scott, and Brendan Pawlowski.
+Discrete compilation in quilc has been in the works for a while, starting during investigations of the Solovay-Kitaev algorithm during a summer internship at Rigetti Computing many years ago. The development of Coalton and catalyzing the implementation of discrete compilation was supported by the [HRL Laboratories quantum computing group](https://quantum.hrl.com/). We especially acknowledge Erik Davis, Cole Scott, and Brendan Pawlowski for their assistance during development. Eric Peterson, Mark Skilbeck, and Parker Williams each provided valuable feedback to drafts of this post.
 
 The Coalton developement team is always looking for and excited by improvements to the language, especially in the standard library. If you're interesting in helping out with Coalton, please join the [Discord](https://discord.gg/cPb6Bc4xAH)!
 
