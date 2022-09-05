@@ -385,32 +385,81 @@ Despite being 1.8x the number of operations more, we've also increased precision
 
 One particularly nice thing going on is that the whole machinery quilc uses top optimize programs automatically gets applied. It's not _just_ a discrete compiler, it's an optimizing compiler with support for discrete operation sets.
 
-## Inaccuracy and validation
+## Inaccuracy gotchas and validating the compiler
 
-With this implementation, the only operator being approximated is $\mathrm{RZ}\_{\theta}$, which means the error will increase with each additional $\mathrm{RZ}$ approximation used in the same computation. Our `TOLERANCE` pragma is asserting the precision of individual approximations, not whole quilc programs. While there are rules that give insight into how these errors accumulate, such notions are not yet readily available to plug into quilc. To get around this requires some trial and error from the user by attempting compilations with increasing precision until a tolerable error is achieved. To help with this, passing `-Pm` to `quilc` will print out the whole program's error. Nonetheless, we are guaranteed the precision of our approximation $U$ is directly related to a tolerance of $\varepsilon$ by:
+With this implementation, the only operator being approximated is $\mathrm{RZ}\_{\theta}$, which means the error will increase with each additional $\mathrm{RZ}$ approximation used in the same computation. Our `TOLERANCE` pragma asserts the precision of individual approximations, not whole quilc programs. While there are rules that give insight into how these errors accumulate, such notions are not yet readily available to plug into quilc. To get around this requires some trial and error from the user by attempting compilations with increasing precision until a tolerable error is achieved. To help with this, passing `-Pm` to `quilc` will print out the whole program's error. Nonetheless, we are guaranteed the precision of our approximation $U$ is directly related to a tolerance of $\varepsilon$ by:
 
 $$
 \left\Vert(\mathrm{RZ}\_\theta - U) v \right\Vert \leq \varepsilon \left\Vert v \right\Vert
 $$
 
-where $0<\varepsilon < 1/2$,  $v$ is a two-dimensional complex vector, and $\Vert \cdot \Vert$ is the vector magnitude. We can read the above expression as "the distance between $\mathrm{RZ}\_\theta$ and $U$ is less than or equal to $\varepsilon$."
+where $0 < \varepsilon < 1/2$, $v$ is a two-dimensional complex vector, and $\Vert \cdot \Vert$ is the vector magnitude. We can read the above expression as "the distance between $\mathrm{RZ}\_\theta$ and $U$ is less than or equal to $\varepsilon$."
 
-Quantum states have probabilistic measurements, and quantum operators affect a state's probabilities. For a qubit, these are the probabilities of whether we measure 0 or 1. If two quantum operators are *close*, then the probabilities of the qubits they act on should be similiar. To see this in action we can approximate a 3-qubit W state with various tolerance values and measure it a few thousand times on a simulated quantum computer (i.e., [QVM](https://github.com/quil-lang/qvm)). Just how a coin toss has a 50–50 distribution, each qubit in a W state has a $1/3$ chance of being 1 when measured. Expectedly, as we increase precision, the closer we get to an even distribution.
+Measurements of a quantum states are probabilistic, and quantum operators serve to affect a states' probabilities. For a qubit, these are the probabilities of whether we measure 0 or 1. If two quantum operators are *close*, then the probabilities of each possible measurement resulting from applying the quantum operators to the same quantum state should too be similiar.
+
+To see this in action, we can try it on a real example. The **W state** on 3 qubits is defined as
+
+$$
+\psi_W := \frac{1}{3}\left(\vert001\rangle + \vert010\rangle + \vert100\rangle\right).
+$$
+
+If we properly prepare $\psi_W$ and measure it, we should either get the bitstring `001`, `010`, or `100`, each with equal probability. The following Quil program prepares the W state on a freshly initialized quantum computer:
+
+```
+RY(1.9106332362490184) 0      # 2*arccos(1/sqrt(3))
+CONTROLLED H           0 1
+CNOT                   1 2
+CNOT                   0 1
+X                      0
+```
+
+So, to measure the effects selecting a successively decreasing `TOLERANCE`, we will compile this program with a tolerance, run it on a simulated quantum computer using the [QVM](https://github.com/quil-lang/qvm), and measure it lots of times and tally the results. For a tolerance $\varepsilon$, we will take $1/\varepsilon^2$ samples to achieve some level of statistical certainty (i.e., we want to ensure our results are *not* dominated by sampling noise).
 
 ***
-| Tolerance&nbsp;&nbsp;&nbsp; | 001    |  010   | 100    | $\chi^2$ |
-|------     |--------|--------|--------|--------- |
-|$2^{-1}$   | 11.35% | 44.35% | 44.30% | 220000  |
-|$2^{-2}$   | 34.89%&nbsp;&nbsp;&nbsp; | 32.55%&nbsp;&nbsp;&nbsp; | 32.57%&nbsp;&nbsp;&nbsp; | 1100  |
-|$2^{-4}$   | 33.50% | 33.29% | 33.21% | 14  | 
-|$2^{-8}$   | 33.21% | 33.42% | 33.37% | 7.1  |
-|$2^{-16}$  | 33.43% | 33.28% | 33.28% | 4.4  |
-|$2^{-32}$  | 33.40% | 33.31% | 33.29% | 1.9  | 
-|$2^{-64}$  | 33.36% | 33.31% | 33.33% | 0.28  |
+| $\mathrm{RZ}_\theta$ Tol. &nbsp;&nbsp;&nbsp; | Samples  | `001`      | | `010`      | | `100` |
+|----------------------------------------------|:--------:|:----------:|-|:----------:|-|:-----:|
+| $\frac{1}{12}2^{- 1}$ | $2^{ 2}$ | 25.000000% | &nbsp;&nbsp;&nbsp; | 50.000000% | &nbsp;&nbsp;&nbsp; | 25.000000% |
+| $\frac{1}{12}2^{- 2}$ | $2^{ 4}$ | 50.000000% | &nbsp;&nbsp;&nbsp; | 25.000000% | &nbsp;&nbsp;&nbsp; | 25.000000% |
+| $\frac{1}{12}2^{- 3}$ | $2^{ 6}$ | 35.937500% | &nbsp;&nbsp;&nbsp; | 31.250000% | &nbsp;&nbsp;&nbsp; | 32.812500% |
+| $\frac{1}{12}2^{- 4}$ | $2^{ 8}$ | 33.203125% | &nbsp;&nbsp;&nbsp; | 27.734375% | &nbsp;&nbsp;&nbsp; | 39.062500% |
+| $\frac{1}{12}2^{- 5}$ | $2^{10}$ | 34.277344% | &nbsp;&nbsp;&nbsp; | 30.761719% | &nbsp;&nbsp;&nbsp; | 34.960938% |
+| $\frac{1}{12}2^{- 6}$ | $2^{12}$ | 32.421875% | &nbsp;&nbsp;&nbsp; | 35.229492% | &nbsp;&nbsp;&nbsp; | 32.348633% |
+| $\frac{1}{12}2^{- 7}$ | $2^{14}$ | 33.489990% | &nbsp;&nbsp;&nbsp; | 33.349610% | &nbsp;&nbsp;&nbsp; | 33.160400% |
+| $\frac{1}{12}2^{- 8}$ | $2^{16}$ | 33.461000% | &nbsp;&nbsp;&nbsp; | 33.520508% | &nbsp;&nbsp;&nbsp; | 33.018494% |
+| $\frac{1}{12}2^{- 9}$ | $2^{18}$ | 33.374786% | &nbsp;&nbsp;&nbsp; | 33.224487% | &nbsp;&nbsp;&nbsp; | 33.400726% |
+| $\frac{1}{12}2^{-10}$ | $2^{20}$ | 33.378030% | &nbsp;&nbsp;&nbsp; | 33.320810% | &nbsp;&nbsp;&nbsp; | 33.301163% |
+| $\frac{1}{12}2^{-11}$ | $2^{22}$ | 33.337547% | &nbsp;&nbsp;&nbsp; | 33.331940% | &nbsp;&nbsp;&nbsp; | 33.330513% |
+| $\frac{1}{12}2^{-12}$ | $2^{24}$ | 33.338287% | &nbsp;&nbsp;&nbsp; | 33.327377% | &nbsp;&nbsp;&nbsp; | 33.334330% |
+| $\frac{1}{12}2^{-13}$ | $2^{26}$ | 33.330345% | &nbsp;&nbsp;&nbsp; | 33.334663% | &nbsp;&nbsp;&nbsp; | 33.334990% |
+| $\frac{1}{12}2^{-14}$ | $2^{28}$ | 33.335648% | &nbsp;&nbsp;&nbsp; | 33.335526% | &nbsp;&nbsp;&nbsp; | 33.328827% |
+| $\frac{1}{12}2^{-15}$ | $2^{30}$ | 33.335090% | &nbsp;&nbsp;&nbsp; | 33.331825% | &nbsp;&nbsp;&nbsp; | 33.333076% |
+| $\frac{1}{12}2^{-16}$ | $2^{32}$ | 33.333412% | &nbsp;&nbsp;&nbsp; | 33.333180% | &nbsp;&nbsp;&nbsp; | 33.333410% |
 ***
 
-Note that $\chi^2$ quantifies how far off the the results are from the expected distribution.
+A few remarks. First, we have a local tolerance with a $1/12$ factor because without discrete compilation, the W state program results in about 12 $\mathrm{RZ}_\theta$ instructions on a $\mathrm{CNOT}$ architecture, like the aforementioned IBM architecture. Because of this factor, we are approximating a *global* program tolerance as simply being the adjacent power-of-two. Second, we can observe the distribution converging toward $1/3$, as expected. Since there are about $3.3$ bits per decimal digit, we see approximately one correct decimal digit appear for every three rows.
 
+In a similar numerical experiment, we approximate $\psi\_W$ by compiling the program with different tolerances. This time, instead, we produce a (numerically) *exact* state $\tilde\psi_W$ corresponding to our compiled program. Then we calculate a few things:
+
+1. The total number of gates in the compiled program,
+2. The percentage of those gates that are $\mathrm{T}$ gates, and
+3. A $\chi^2$ test on the approximate distribution $\vert\tilde\psi_W\vert^2$ resulting from the calculation of the state by simulating the compiled program.
+
+The following table calculates this for between 2 and 64 bits of tolerance.
+
+***
+| &nbsp;&nbsp;$\mathrm{RZ}_\theta$ Tol. &nbsp;&nbsp; | Gate Count | &nbsp;&nbsp;$\mathrm{T}$ Percentage&nbsp;&nbsp; | $\chi^2$ |  
+|:---------:|:---:|:---:|----------:|
+| $\frac{1}{12}2^{- 2}$ | 121 | 30% | 8.644d-4 |
+| $\frac{1}{12}2^{- 4}$ | 147 | 31% | 5.398d-5 |
+| $\frac{1}{12}2^{- 8}$ | 186 | 32% | 2.119d-7  |
+| $\frac{1}{12}2^{-16}$ | 262 | 35% | 1.438d-12 |
+| $\frac{1}{12}2^{-32}$ | 403 | 39% | 3.346d-22 |
+| $\frac{1}{12}2^{-64}$ | 738 | 39% | 2.990d-27 |
+***
+
+We see a trend[^wobble] of programs getting linearly longer, with little variation in $\mathrm{T} percentage, and the $\chi^2$ statistic tending toward zero.
+
+[^wobble]: When this data was taken, from time to time, quilc would result in somewhat "wobbly" data for larger (i.e., worse) tolerance values. For instance, for a tolerance of $2^{-2}$, quilc would occasionally emit a gate count of approximately 500. From time to time, due to the probabilistic nature of Selinger's algorithm and other parts of quilc itself, one will observe spurious spikes in absolute numbers, though these numbers are still asymptotically correct. The data presented here doesn't represent the *best* values, just qualitatively *usual* values.
 
 ## Onward
 
