@@ -1768,6 +1768,9 @@ The same as `fold` but with the argument order swapped to match `cl:reduce`
 #### <code>(COMPOSE F G)</code> <sup><sub>FUNCTION</sub></sup><a name="compose-value"></a>
 <code>&forall; :A :B :C. ((:A &rarr; :B) &rarr; (:C &rarr; :A) &rarr; :C &rarr; :B)</code>
 
+Produces a function equivalent to applying G then F in succession.
+
+
 ***
 
 #### <code>(CONJOIN F G X)</code> <sup><sub>FUNCTION</sub></sup><a name="conjoin-value"></a>
