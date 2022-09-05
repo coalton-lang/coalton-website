@@ -457,7 +457,7 @@ So, to analyze the effectiveness of our compilation program as written, we execu
 3. Run the program on the [QVM](https://github.com/quil-lang/qvm), a simulated quantum computer.
 4. Measure the resulting state lots of times, on the order of $\lceil 1/\varepsilon^2\rceil$ repetitions, and tally the results to form an empirical distribution.
 
-After running this procedure for each power of two from $1/2^1$ to $1/2^{16}$, we get the following empirical distributions.
+After running this procedure for each power of two from $2^{-1}$ to $2^{-16}$, we get the following empirical distributions.
 
 ***
 | $\mathrm{RZ}_\theta$ Tol. &nbsp;&nbsp;&nbsp; | Samples  | `001`      | | `010`      | | `100` |
