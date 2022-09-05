@@ -471,11 +471,13 @@ We see a trend[^wobble] of programs getting linearly longer (with only minor var
 
 These tests, among others, give us confidence in the correctness of the algorithm.
 
-## Conclusion
+## Conclusion and how to get involved
 
 It's remarkable that Coalton has come to a point that a relatively complicated mathematical algorithm to implement discrete compilation can not only run, but run correctly *and* run efficiently. Coalton is still evolving in order to make programs like these and others faster to write and faster to execute, without compromising on correctness.
 
-Discrete compilation in quilc has been in the works for a while, starting during investigations of the Solovay-Kitaev algorithm during a summer internship at Rigetti Computing many years ago. The development of Coalton and catalyzing the implementation of discrete compilation was supported by the [HRL Laboratories quantum computing group](https://quantum.hrl.com/). We especially acknowledge Erik Davis, Cole Scott, and Brendan Pawlowski for their assistance during development. Eric Peterson, Mark Skilbeck, and Parker Williams each provided valuable feedback to drafts of this post.
-
 The Coalton developement team is always looking for and excited by improvements to the language, especially in the standard library. If you're interesting in helping out with Coalton, please join the [Discord](https://discord.gg/cPb6Bc4xAH)!
+
+### Acknowledgements
+
+Discrete compilation in quilc has been in the works for a while, starting during investigations of the Solovay-Kitaev algorithm during a summer internship at Rigetti Computing many years ago. The development of Coalton and catalyzing the implementation of discrete compilation was supported by the [HRL Laboratories quantum computing group](https://quantum.hrl.com/). We especially acknowledge Erik Davis, Cole Scott, and Brendan Pawlowski for their assistance during development. Eric Peterson, Mark Skilbeck, and Parker Williams each provided valuable feedback to drafts of this post.
 
