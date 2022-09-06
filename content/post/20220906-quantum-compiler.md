@@ -129,7 +129,7 @@ Selinger [proved](https://arxiv.org/abs/1212.6253) that if we use a specific nat
 
 [^optimal]: Peter Selinger and Neil Ross were later able to [modify the algorithm](https://arxiv.org/abs/1403.2975) so that it produces *actually* optimal sequences for parametric $z$-rotations, however, the algorithm requires one to be able to efficiently factorize integers. The theoretically best known way to factorize an integer is Shor's algorithm, which requires a quantum computer with essentially no error.
 
-In the next section, we give an overview of Selinger's algorithm. It is somewhat mathematically intensive, so for readers uninterested in those details, we recommend skippiing. (We duly recap the main takeaways when we return to discussing Coalton.)
+In the next section, we give an overview of Selinger's algorithm. It is somewhat mathematically intensive, so for readers uninterested in those details, we recommend skipping. (We duly recap the main takeaways when we return to discussing Coalton.)
 
 ### The Selinger approach to discrete compilation
 
