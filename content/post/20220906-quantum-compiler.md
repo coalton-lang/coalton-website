@@ -1,6 +1,6 @@
 ---
 title: "Using Coalton to Implement a Quantum Compiler"
-date: 2022-09-03
+date: 2022-09-06
 math: true
 ---
 
