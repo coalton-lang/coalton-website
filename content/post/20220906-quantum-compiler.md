@@ -121,21 +121,21 @@ Fortunately, the answer to both questions is a resounding _yes_, with a small bu
 
 [^reasonable]: This caveat is perfectly sensible. If we want to do arbitrary precision arithmetic on a classical computer (like calculating billions of digits of $\pi$), we must use more CPU instructions. CPU instructions only let us do a relatively small collection of operations: basic arithmetic on "small" integers and floating-point numbers. If we want to go beyond 20ish digits of integer, or go beyond 16ish digits of floating-point mantissa, we need to spend more memory and more CPU instructions.
 
-There is a 20+-year history of many different algorithms for doing discrete compilation with their own advantages and disadvantages[^history]. We will focus on one by Peter Selinger.
+There is a 20+-year history of many different algorithms for doing discrete compilation with their own advantages and disadvantages[^history]. We will focus on one by Neil Ross and Peter Selinger.
 
 [^history]: Robert Solovay and Alexei Kitaev [both proved](https://en.wikipedia.org/wiki/Solovay%E2%80%93Kitaev_theorem) that discrete compilation was possible and efficient in the mid-90s. Their algorithm is flexible in allowing a large family of discrete operation sets, and decompositions of arbitrary matrices into any of those discrete operations were efficient to calculate, at least as far as big-O is concerned. The [Solovay-Kitaev algorithm](https://arxiv.org/abs/quant-ph/0505030) is famously difficult to implement, and relies on a great deal of pre-processing to accomplish, but it's useful both for its mathematical utility and its generality.
 
-Selinger [proved](https://arxiv.org/abs/1212.6253) that if we use a specific native operation set, we can accomplish _nearly optimal-length_ decompositions[^optimal] of one-qubit matrices. From there, we can use other results to decompose matrices of any number of qubits.
+Ross and Selinger [proved](https://arxiv.org/abs/1212.6253) that if we use a specific native operation set, we can accomplish _nearly optimal-length_ decompositions[^optimal] of one-qubit matrices. From there, we can use other results to decompose matrices of any number of qubits.
 
-[^optimal]: Peter Selinger and Neil Ross were later able to [modify the algorithm](https://arxiv.org/abs/1403.2975) so that it produces *actually* optimal sequences for parametric $z$-rotations, however, the algorithm requires one to be able to efficiently factorize integers. The theoretically best known way to factorize an integer is Shor's algorithm, which requires a quantum computer with essentially no error.
+[^optimal]: Ross and Selinger were later able to [modify the algorithm](https://arxiv.org/abs/1403.2975) so that it produces *actually* optimal sequences for parametric $z$-rotations, however, the algorithm requires one to be able to efficiently factorize integers. The theoretically best known way to factorize an integer is Shor's algorithm, which requires a quantum computer with essentially no error.
 
-In the next section, we give an overview of Selinger's algorithm. It is somewhat mathematically intensive, so for readers uninterested in those details, we recommend skipping. (We duly recap the main takeaways when we return to discussing Coalton.)
+In the next section, we give an overview of the Ross-Selinger algorithm. It is somewhat mathematically intensive, so for readers uninterested in those details, we recommend skipping. (We duly recap the main takeaways when we return to discussing Coalton.)
 
-### The Selinger approach to discrete compilation
+### An approach to discrete compilation by Ross and Selinger
 
 In order to have a set of discrete operations, we must be able to discretize the parametric operation $\mathrm{RZ}\_\theta$, which is a $2\times2$ matrix with entries depending on $\theta$.
 
-Selinger considers the following native operations:
+Ross and Selinger consider the following native operations:
 
 $$
 \begin{aligned}
@@ -165,9 +165,9 @@ This is called the _Clifford+T set_. These operations have mathematical signific
 
 3. arbitrary products of these operations form a _dense_ set of the unitary matrices.
 
-The third point means to say is that this set of operations could be used to approximate any $2\times 2$ unitary matrix to an arbitrary precision, though Selinger will need to devise an algorithm to do it.
+The third point means to say is that this set of operations could be used to approximate any $2\times 2$ unitary matrix to an arbitrary precision, though Ross and Selinger will need to devise an algorithm to do it.
 
-Next, Selinger turns to a [result](https://arxiv.org/abs/1206.5236) by Kliuchnikov, Maslov, and Mosca which says a given $2\times2$ matrix can be written precisely as a product of Clifford+T elements if and only if the matrix elements are all members of the [number ring](https://en.wikipedia.org/wiki/Ring_(mathematics)) $R := \mathbb{Z}[\frac{1}{\sqrt 2}, i]$. So Selinger sets up the following goal: Try to write the problematic parametric operation $\mathrm{RZ}\_\theta$  as a matrix
+Next, Ross and Selinger turn to a [result](https://arxiv.org/abs/1206.5236) by Kliuchnikov, Maslov, and Mosca which says a given $2\times2$ matrix can be written precisely as a product of Clifford+T elements if and only if the matrix elements are all members of the [number ring](https://en.wikipedia.org/wiki/Ring_(mathematics)) $R := \mathbb{Z}[\frac{1}{\sqrt 2}, i]$. So Ross and Selinger set up the following goal: Try to write the problematic parametric operation $\mathrm{RZ}\_\theta$  as a matrix
 
 $$
 \begin{pmatrix}
@@ -178,7 +178,7 @@ $$
 
 with user-selectable precision, where $a$ and $b$ are elements of $R$, and $z^*$ represents the [complex conjugate](https://en.wikipedia.org/wiki/Complex_conjugate) of $z$. If we can write this matrix, then we can use Kliuchnikov-Maslov-Mosca to write it in terms of Clifford+T. And if we can do _that_, then we can write any program with parametric $\mathrm{RZ}\_\theta$ operations into an equivalent one (up to user-specified precision, at least) using only discrete operations.
 
-Selinger succeeds at solving this problem, by turning that matrix problem into a [Diophantine equation](https://en.wikipedia.org/wiki/Diophantine_equation) that has to be solved over a specific number ring, and coming up with an algorithm to solve that.
+Ross and Selinger succeed at solving this problem, by turning that matrix problem into a [Diophantine equation](https://en.wikipedia.org/wiki/Diophantine_equation) that has to be solved over a specific number ring, and coming up with an algorithm to solve that.
 
 Since the two-qubit operations of usual interest are already discrete (like `CNOT`, `CZ`, etc.), this would make a fully discretized native operation set, so long as quantum computer implementers could supply the Clifford+T set as native operations.
 
@@ -188,13 +188,13 @@ $$
 $$
 where $a_\bullet$ are integers and $n_\bullet$ are non-negative integers. If we take two elements of this form and add or multiply them, we'll always end back up in the same ring.
 
-For Selinger's algorithm, it turns out we also need to work in other rings, like the cyclomatic integers of degree 8, the quadratic integers of $\sqrt{2}$, and about a half-dozen others.
+For the Ross-Selinger algorithm, it turns out we also need to work in other rings, like the cyclotomic integers of degree 8, the quadratic integers of $\sqrt{2}$, and about a half-dozen others.
 
 ## Coalton's strength in implementing math
 
-One of the implementation difficulties of Selinger's algorithm is being able to work with a bunch of different-but-interoperable[^interop] number types. How do we implement these mathematical objects in a program? At least in principle, Common Lisp would have no trouble representing elements of any of these rings; just define some new classes, perhaps some new generic functions like `ring+` and `ring*`, and you're off to the races.
+One of the implementation difficulties of the Ross-Selinger algorithm is being able to work with a bunch of different-but-interoperable[^interop] number types. How do we implement these mathematical objects in a program? At least in principle, Common Lisp would have no trouble representing elements of any of these rings; just define some new classes, perhaps some new generic functions like `ring+` and `ring*`, and you're off to the races.
 
-[^interop]: They're interoperable specifically because all of these numbers are either real or complex numbers. Similar to how in most ordinary programming languages integers and floats are different kinds of real numbers (and thus can be added and multiplied), the number rings and fields of Selinger's algorithm can work with one another because they all are ultimately drawn from the same set.
+[^interop]: They're interoperable specifically because all of these numbers are either real or complex numbers. Similar to how in most ordinary programming languages integers and floats are different kinds of real numbers (and thus can be added and multiplied), the number rings and fields of the Ross-Selinger algorithm can work with one another because they all are ultimately drawn from the same set.
 
 The trouble is that it's cumbersome. In Lisp, first, there's no way to integrate with the existing numerical operators; there is no way to "overload" the standard operator `cl:+` to work with different rings. Second, as explained in a previous blog post, there's no way to uniformly treat additive and multiplicative identity in a convenient fashion. Third, it gets very messy, with lots of casts, upconversions, downconversions, etc. It's very difficult to build a _new_ numerical tower atop of or aside Common Lisp's existing one, though Common Lisp's multiple-dispatch mechanism at least eases the pain a bit.
 
@@ -344,7 +344,7 @@ As we can see, Coalton makes working within and between arithmetic systems conve
 
 ## Discrete compilation in quilc
 
-Though perhaps not as effective as mathematics itself, Coalton's facilities handle the Selinger  Clifford+T decomposition algorithm handsomely. This lead to the introduction of a first-of-its-kind feature to a general-purpose quantum compiler: the ability to do discrete compilation of arbitrary quantum programs. We are happy to introduce full-featured discrete compilation into quilc. With quilc, it is now possible to target backends that support the Clifford+T set. There is nothing special the programmer has to do to enable this feature; just build a quilc ISA that only has Clifford+T, and it'll just work.
+Though perhaps not as effective as mathematics itself, Coalton's facilities handle the Ross-Selinger Clifford+T decomposition algorithm handsomely. This lead to the introduction of a first-of-its-kind feature to a general-purpose quantum compiler: the ability to do discrete compilation of arbitrary quantum programs. We are happy to introduce full-featured discrete compilation into quilc. With quilc, it is now possible to target backends that support the Clifford+T set. There is nothing special the programmer has to do to enable this feature; just build a quilc ISA that only has Clifford+T, and it'll just work.
 
 Discrete compilation is implemented as a part of the [`cl-quil/discrete` contrib module](https://github.com/quil-lang/quilc/tree/master/src/discrete) to quilc. If you're a Lisp developer, all you need to do is load the `cl-quil/discrete` system, and it will Just Work.
 
@@ -403,7 +403,7 @@ $ echo 'PRAGMA TOLERANCE "0.0000001d0"; XY(pi/3) 1 0' | ./quilc --isa 4Q-cliffor
      540
 ```
 
-Despite being 1.8x the number of operations more, we've also increased precision by 10,000x. This is in line with the efficiency of the Selinger algorithm: an exponential increase in precision does _not_ mean an exponential increase in compiled output size. Here, we can see the trend in compilation efficiency for different precisions:
+Despite being 1.8x the number of operations more, we've also increased precision by 10,000x. This is in line with the efficiency of the Ross-Selinger algorithm: an exponential increase in precision does _not_ mean an exponential increase in compiled output size. Here, we can see the trend in compilation efficiency for different precisions:
 
 ***
 
@@ -503,7 +503,7 @@ The following table shows the results of calculating this for tolerances $2^{-2^
 
 We see a trend[^wobble] of programs getting linearly longer (with only minor variation in $\mathrm{T}$ percentage) and the $\chi^2$ statistic tending toward zero.
 
-[^wobble]: When this data was taken, from time to time, quilc would result in somewhat "wobbly" data for larger (i.e., worse) tolerance values. For instance, for a tolerance of $2^{-2}$, quilc would occasionally emit an operation count of approximately 500. From time to time, due to the probabilistic nature of Selinger's algorithm and other parts of quilc itself, one will observe spurious spikes in absolute numbers, though these numbers are still asymptotically correct. The data presented here doesn't represent the *best* values, just qualitatively *usual* values.
+[^wobble]: When this data was taken, from time to time, quilc would result in somewhat "wobbly" data for larger (i.e., worse) tolerance values. For instance, for a tolerance of $2^{-2}$, quilc would occasionally emit an operation count of approximately 500. From time to time, due to the probabilistic nature of the Ross-Selinger algorithm and other parts of quilc itself, one will observe spurious spikes in absolute numbers, though these numbers are still asymptotically correct. The data presented here doesn't represent the *best* values, just qualitatively *usual* values.
 
 These tests, among others, give us confidence in the correctness of the algorithm.
 
