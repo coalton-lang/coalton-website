@@ -654,6 +654,8 @@ Unbound integer. Uses `integer`.
 - <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#string-type">STRING</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#integer-type">INTEGER</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#integer-type">INTEGER</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#integer-type">INTEGER</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#integer-type">INTEGER</a> <a href="#ufix-type">UFIX</a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#integer-type">INTEGER</a> <a href="#i64-type">I64</a></code>
@@ -725,6 +727,7 @@ Double precision floating point numer. Uses `double-float`.
 - <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#integer-type">INTEGER</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#double-float-type">DOUBLE-FLOAT</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#real-class">REAL</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#rational-class">RATIONAL</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
@@ -761,6 +764,7 @@ Single precision floating point numer. Uses `single-float`.
 - <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#integer-type">INTEGER</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#single-float-type">SINGLE-FLOAT</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#real-class">REAL</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#rational-class">RATIONAL</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
@@ -1307,6 +1311,8 @@ Methods:
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#integer-type">INTEGER</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#integer-type">INTEGER</a> <a href="#ufix-type">UFIX</a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#integer-type">INTEGER</a> <a href="#ifix-type">IFIX</a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#integer-type">INTEGER</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#integer-type">INTEGER</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#string-type">STRING</a> <a href="#integer-type">INTEGER</a></code>
 
 </details>
