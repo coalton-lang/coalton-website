@@ -17,7 +17,7 @@ Quilc and its related tooling are around 50,000 lines of code, and though it has
 1. type errors showing up at runtime, usually a result from the code following a less probable control path, and
 2. not having certain useful abstractions that can only be enabled by having a static type system (e.g., certain kinds of polymorphism).
 
-Coalton addresses these two problems in principle. Since it's not practical to rewrite an entire compiler, we opted to implement a significant new feature of quilc in Coalton called *discrete compilation*. In this post, we'll walk through what discrete compilation is, how Coalton made it simpler to implement (compared to Common Lisp), and how we tested that such a complicated feature actually works.
+Coalton, being a strictly typed language within Common Lisp, addresses these two problems in principle. Since it's not practical to rewrite an entire compiler, we opted to implement a significant new feature of quilc in Coalton called *discrete compilation*. In this post, we'll walk through what discrete compilation is, how Coalton made it simpler to implement (compared to Common Lisp), and how we tested that such a complicated feature actually works.
 
 
 ## Towards a discrete set of operations for quantum computation
