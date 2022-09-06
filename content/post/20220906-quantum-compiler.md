@@ -260,7 +260,7 @@ We can verify it works by seeing that $(1-2\sqrt{2})^2 = 9-4\sqrt{2}$:
 #.(ALG 9 -4)
 ```
 
-How would we compute $2(-\sqrt{2})$? One way is to write $2$ explicitly as $2+0\sqrt{2}$, and $-\sqrt{2}$ explicitly sa $0-1\sqrt{2}$.
+How would we compute $2(-\sqrt{2})$? One way is to write $2$ explicitly as $2+0\sqrt{2}$, and $-\sqrt{2}$ explicitly as $0-1\sqrt{2}$, like so:
 
 ```
 > (coalton (* (Alg 2 0) (Alg 0 -1)))
@@ -279,7 +279,7 @@ Since `Alg` implements `fromInt`, the integer syntax $n$ in a place where `Alg` 
 #.(ALG 0 -2)
 ```
 
-As is to be expected at this point, functions on `Alg` are inferred appropriately.
+As is to be expected at this point, functions on `Alg` are inferred appropriately. For example, consider this function which conjugates a number, i.e., flips the sign of the $\sqrt{2}$ part:
 
 ```lisp
 (define (algebraic-conjugate x)
@@ -287,7 +287,7 @@ As is to be expected at this point, functions on `Alg` are inferred appropriatel
     ((Alg a b) (Alg a (negate b)))))
 ```
 
-We can see that
+We can see that Coalton has properly inferred the type:
 
 ```lisp
 > (type-of 'algebraic-conjugate)
@@ -330,7 +330,7 @@ COALTON-USER> (coalton
 3.8284271247461903d0
 ```
 
-Contrast with this example, where $1+10^{1000}\sqrt{2}$ has no representation as a floating-point number, so the code instead returns a "[not a number](https://en.wikipedia.org/wiki/NaN)" value.
+Contrast with this example, where $1+10^{1000}\sqrt{2}$ has no cogent representation as a floating-point number, so the code instead returns a "[not a number](https://en.wikipedia.org/wiki/NaN)" value.
 
 ```lisp
 COALTON-USER> (coalton
@@ -346,9 +346,9 @@ As we can see, Coalton makes working within and between arithmetic systems conve
 
 Though perhaps not as effective as mathematics itself, Coalton's facilities handle the Selinger  Clifford+T decomposition algorithm handsomely. This lead to the introduction of a first-of-its-kind feature to a general-purpose quantum compiler: the ability to do discrete compilation of arbitrary quantum programs. We are happy to introduce full-featured discrete compilation into quilc. With quilc, it is now possible to target backends that support the Clifford+T set. There is nothing special the programmer has to do to enable this feature; just build a quilc ISA that only has Clifford+T, and it'll just work.
 
-Discrete compilation is implemented as a part of the [`cl-quil/discrete` contrib module](https://github.com/quil-lang/quilc/tree/master/src/discrete) to quilc.
+Discrete compilation is implemented as a part of the [`cl-quil/discrete` contrib module](https://github.com/quil-lang/quilc/tree/master/src/discrete) to quilc. If you're a Lisp developer, all you need to do is load the `cl-quil/discrete` system, and it will Just Work.
 
-We can repeat the compilation of the $M$ operation that we did before for the IBM chip instead for a made-up chip of two qubits that only supports the Clifford+T set. (The output is reformatted into columns to fit the page.)
+We can repeat the compilation of the $M$ operation from before instead for a made-up chip of two qubits that only supports the Clifford+T set. This chip is called `4Q-cliffordt` and is in essence a virtual "test chip". (The output below is reformatted into columns to fit the page.)
 
 ```
 $ echo 'PRAGMA TOLERANCE "0.001"; XY(pi/3) 1 0' | ./quilc --isa 4Q-cliffordt
@@ -391,9 +391,9 @@ H 0       S 0       H 0       H 1       T 1       H 1       H 1
 T 0       H 0       T 0       S 1       S 1       T 1       T 1
 ```
 
-Notice how every operation in the output is either `H`, `S`, `T`, or `CNOT`. But also notice how there are a _lot_ of operations—290 of them to be exact. There are only two differences in how we run the compiler between this and the previous IBM-chip compilation:
+Notice how every operation in the output is either `H`, `S`, `T`, or `CNOT`. But also notice how there are a _lot_ of operations—290 of them to be exact. (To recount, there were 16 operations for the compilation before, but again, that had to use *continuous* operations.) There are only two differences in how we run the compiler between this and the previous IBM-chip compilation:
 
-1. We had to specify the chip `4Q-cliffordt`. (Quilc will be happy to construct a chip of any requested shape, size, and native operations; `4Q-cliffordt` is just a convenient built-in for testing.)
+1. We had to specify the chip `4Q-cliffordt`. (Quilc will be happy to construct a chip of any requested shape, size, and native operations; `4Q-cliffordt` is just a convenient built-in for testing the discrete compilation machinery.)
 2. We had to specify a tolerance, here a discrete compilation accuracy within 0.1% for each approximation made.
 
 If we request more precision, we notice an increase in operation count.
@@ -403,7 +403,7 @@ $ echo 'PRAGMA TOLERANCE "0.0000001d0"; XY(pi/3) 1 0' | ./quilc --isa 4Q-cliffor
      540
 ```
 
-Despite being 1.8x the number of operations more, we've also increased precision by 10,000x. This is in line with the efficiency of the Selinger algorithm: an exponential increase in precision does _not_ mean an exponential increase in compiled output. Here, we can see the trend in compilation efficiency for different precisions
+Despite being 1.8x the number of operations more, we've also increased precision by 10,000x. This is in line with the efficiency of the Selinger algorithm: an exponential increase in precision does _not_ mean an exponential increase in compiled output size. Here, we can see the trend in compilation efficiency for different precisions:
 
 ***
 
@@ -419,11 +419,11 @@ Despite being 1.8x the number of operations more, we've also increased precision
 
 ***
 
-One particularly nice thing going on is that the whole machinery quilc uses top optimize programs automatically gets applied. It's not _just_ a discrete compiler, it's an optimizing compiler with support for discrete operation sets.
+One particularly nice thing going on is that the whole machinery quilc uses top optimize programs automatically gets applied. It's not _just_ a discrete compiler, it's an *optimizing* compiler with support for discrete operation sets.
 
 ## Inaccuracy gotchas and validating the compiler
 
-With this implementation, the only operation being approximated is $\mathrm{RZ}\_{\theta}$, which means the error will increase with each additional $\mathrm{RZ}_\theta$ approximation used in the same computation. Our `TOLERANCE` pragma asserts the precision of individual approximations, not whole quilc programs. While there are rules that give insight into how these errors accumulate, such notions are not yet readily available to plug into quilc. To get around this requires some trial and error from the user by attempting compilations with increasing precision until a tolerable error is achieved. To help with this, passing `-Pm` to `quilc` will print out the whole program's error. Nonetheless, we are guaranteed the precision of our approximation $U$ is directly related to a tolerance of $\varepsilon$ by:
+With this implementation, the only operation being approximated is $\mathrm{RZ}\_{\theta}$, which means the error will increase with each additional $\mathrm{RZ}_\theta$ used in a given computation. Our `TOLERANCE` pragma asserts the precision of individual approximations, not whole quilc programs. While there are rules that give insight into how these errors accumulate, such notions are not yet readily available to plug into quilc. To get around this requires some trial and error from the user by attempting compilations with increasing precision until a tolerable error is achieved. To help with this, passing `-Pm` to `quilc` will print out the whole program's error. Nonetheless, we are guaranteed the precision of our approximation $U$ is directly related to a tolerance of $\varepsilon$ by:
 
 $$
 \left\Vert(\mathrm{RZ}\_\theta - U) v \right\Vert \leq \varepsilon \left\Vert v \right\Vert
