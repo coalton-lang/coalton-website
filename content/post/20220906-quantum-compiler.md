@@ -419,7 +419,7 @@ Despite being 1.8x the number of operations more, we've also increased precision
 
 ***
 
-One particularly nice thing going on is that the whole machinery quilc uses top optimize programs automatically gets applied. It's not _just_ a discrete compiler, it's an *optimizing* compiler with support for discrete operation sets.
+One particularly nice thing going on is that the whole machinery quilc uses to optimize programs automatically gets applied. It's not _just_ a discrete compiler, it's an *optimizing* compiler with support for discrete operation sets.
 
 ## Inaccuracy gotchas and validating the compiler
 
