@@ -38,6 +38,8 @@ identifier: Reference
 - <a href="#coalton-library/hashtable-package"><code>coalton-library/hashtable</code></a>
 - <a href="#coalton-library/monad/state-package"><code>coalton-library/monad/state</code></a>
 - <a href="#coalton-library/iterator-package"><code>coalton-library/iterator</code></a>
+- <a href="#coalton-library/ord-tree-package"><code>coalton-library/ord-tree</code></a>
+- <a href="#coalton-library/ord-map-package"><code>coalton-library/ord-map</code></a>
 
 
 </div>
@@ -819,6 +821,7 @@ A heterogeneous collection of items.
 - <code><a href="#iso-class">ISO</a> (<a href="#tuple-type">TUPLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :B :A)</code>
 - <code>(<a href="#ord-class">ORD</a> :A) (<a href="#ord-class">ORD</a> :B) &rArr; <a href="#ord-class">ORD</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#mappair-type">MAPPAIR</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#tuple-type">TUPLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :B :A)</code>
 
 </details>
@@ -925,6 +928,10 @@ Methods:
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#cell-type">CELL</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#slice-type">SLICE</a> :A)</code>
+- <code><a href="#eq-class">EQ</a> <a href="#color-type">COLOR</a></code>
+- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#tree-type">TREE</a> :A)</code>
+- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#mappair-type">MAPPAIR</a> :A :B)</code>
+- <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) &rArr; <a href="#eq-class">EQ</a> (<a href="#map-type">MAP</a> :A :B)</code>
 - <code><a href="#eq-class">EQ</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 
 </details>
@@ -1026,6 +1033,7 @@ Methods:
 - <code>(<a href="#ord-class">ORD</a> :A) (<a href="#ord-class">ORD</a> :B) &rArr; <a href="#ord-class">ORD</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#ord-class">ORD</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
 - <code>(<a href="#ord-class">ORD</a> :A) (<a href="#ord-class">ORD</a> :B) &rArr; <a href="#ord-class">ORD</a> (<a href="#result-type">RESULT</a> :A :B)</code>
+- <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#ord-class">ORD</a> (<a href="#mappair-type">MAPPAIR</a> :A :B)</code>
 - <code><a href="#ord-class">ORD</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 
 </details>
@@ -1067,6 +1075,8 @@ Methods:
 - <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) (<a href="#hash-class">HASH</a> :D) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple4-type">TUPLE4</a> :A :B :C :D)</code>
 - <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) (<a href="#hash-class">HASH</a> :D) (<a href="#hash-class">HASH</a> :E) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple5-type">TUPLE5</a> :A :B :C :D :E)</code>
 - <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#hash-class">HASH</a> (<a href="#list-type">LIST</a> :A)</code>
+- <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#hash-class">HASH</a> (<a href="#tree-type">TREE</a> :A)</code>
+- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) &rArr; <a href="#hash-class">HASH</a> (<a href="#map-type">MAP</a> :A :B)</code>
 
 </details>
 
@@ -1153,6 +1163,7 @@ Methods:
 - <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#slice-type">SLICE</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#mappair-type">MAPPAIR</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#single-float-type">SINGLE-FLOAT</a> <a href="#big-float-type">BIG-FLOAT</a></code>
@@ -1199,6 +1210,7 @@ Methods:
 - <code><a href="#monoid-class">MONOID</a> :A &rArr; <a href="#monoid-class">MONOID</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
 - <code><a href="#monoid-class">MONOID</a> (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#monoid-class">MONOID</a> :A &rArr; <a href="#monoid-class">MONOID</a> (<a href="#result-type">RESULT</a> :B :A)</code>
+- <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#monoid-class">MONOID</a> (<a href="#tree-type">TREE</a> :A)</code>
 
 </details>
 
@@ -1223,6 +1235,7 @@ Methods:
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#vector-type">VECTOR</a></code>
 - <code><a href="#functor-class">FUNCTOR</a> (<a href="#st-type">ST</a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#iterator-type">ITERATOR</a></code>
+- <code><a href="#functor-class">FUNCTOR</a> (<a href="#map-type">MAP</a> :A)</code>
 
 </details>
 
@@ -1339,6 +1352,7 @@ Methods:
 - <code><a href="#foldable-class">FOLDABLE</a> <a href="#list-type">LIST</a></code>
 - <code><a href="#foldable-class">FOLDABLE</a> <a href="#vector-type">VECTOR</a></code>
 - <code><a href="#foldable-class">FOLDABLE</a> <a href="#slice-type">SLICE</a></code>
+- <code><a href="#foldable-class">FOLDABLE</a> <a href="#tree-type">TREE</a></code>
 
 </details>
 
@@ -1378,6 +1392,8 @@ Methods:
 - <code><a href="#semigroup-class">SEMIGROUP</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#result-type">RESULT</a> :B :A)</code>
 - <code><a href="#semigroup-class">SEMIGROUP</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#cell-type">CELL</a> :A)</code>
 - <code><a href="#semigroup-class">SEMIGROUP</a> (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#tree-type">TREE</a> :A)</code>
+- <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#map-type">MAP</a> :A :B)</code>
 
 </details>
 
@@ -1419,6 +1435,7 @@ Methods:
 - <code><a href="#addressable-class">ADDRESSABLE</a> (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#addressable-class">ADDRESSABLE</a> (<a href="#slice-type">SLICE</a> :A)</code>
 - <code><a href="#addressable-class">ADDRESSABLE</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B)</code>
+- <code><a href="#addressable-class">ADDRESSABLE</a> <a href="#color-type">COLOR</a></code>
 
 </details>
 
@@ -4454,6 +4471,17 @@ An infinite iterator which starts at 0 and counts upwards by 1.
 
 ***
 
+#### <code>ELEMENTWISE==!</code> <sup><sub>[FUNCTION]</sub></sup><a name="elementwise==!-value"></a>
+<code>&forall; :A. <a href="#eq-class">EQ</a> :A &rArr; ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Is every element of the first iterator `==' to the corresponding element of the second?
+
+True if two iterators have the same length, and for every N, the Nth element of the first iterator is `==' to
+the Nth element of the second iterator.
+
+
+***
+
 #### <code>(RECURSIVE-ITER SUCC DONE? START)</code> <sup><sub>FUNCTION</sub></sup><a name="recursive-iter-value"></a>
 <code>&forall; :A. ((:A &rarr; :A) &rarr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; :A &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
@@ -4499,12 +4527,33 @@ An iterator which begins at START and yields successive elements spaced by STEP,
 
 ***
 
+#### <code>(ELEMENTWISE-HASH! ITER)</code> <sup><sub>FUNCTION</sub></sup><a name="elementwise-hash!-value"></a>
+<code>&forall; :A. <a href="#hash-class">HASH</a> :A &rArr; ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; <a href="#ufix-type">UFIX</a>)</code>
+
+Hash an iterator by combining the hashes of all its elements.
+
+The empty iterator will hash as 0.
+
+
+***
+
 #### <code>(COLLECT-HASHTABLE! ITER)</code> <sup><sub>FUNCTION</sub></sup><a name="collect-hashtable!-value"></a>
 <code>&forall; :A :B. <a href="#hash-class">HASH</a> :A &rArr; ((<a href="#iterator-type">ITERATOR</a> (<a href="#tuple-type">TUPLE</a> :A :B)) &rarr; (<a href="#hashtable-type">HASHTABLE</a> :A :B))</code>
 
 Construct a `HashTable` containing all the key/value pairs from ITER.
 
 If a key appears in ITER multiple times, the resulting table will contain its last corresponding value.
+
+
+***
+
+#### <code>(ELEMENTWISE-MATCH! SAME? LEFT RIGHT)</code> <sup><sub>FUNCTION</sub></sup><a name="elementwise-match!-value"></a>
+<code>&forall; :A. ((:A &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Are LEFT and RIGHT elementwise-identical under SAME?
+
+True if, for every pair of elements (A B) in (LEFT RIGHT), (same? A B) is True, and LEFT and RIGHT have the
+same length.
 
 
 ***
@@ -4523,6 +4572,271 @@ Yield unique elements from ITER in order of first appearance.
 Construct a `Vector` with initial allocation for SIZE elements, and fill it with all the elements from ITER in order.
 
 The vector will be resized if ITER contains more than SIZE elements.
+
+
+***
+
+# Package `coalton-library/ord-tree`<a name="coalton-library/ord-tree-package"></a>
+
+## [ord-tree.lisp](https://github.com/coalton-lang/coalton/tree/main/library/ord-tree.lisp) <a name="coalton-library/ord-tree-ord-tree-lisp-file"></a>
+
+### Types
+
+#### <code>TREE :A</code> <sup><sub>[TYPE]</sub></sup><a name="tree-type"></a>
+- <code>EMPTY</code>
+
+A red-black balanced binary tree, sorted by `&lt;=&gt;' and unique by `=='.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#tree-type">TREE</a> :A)</code>
+- <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#hash-class">HASH</a> (<a href="#tree-type">TREE</a> :A)</code>
+- <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#monoid-class">MONOID</a> (<a href="#tree-type">TREE</a> :A)</code>
+- <code><a href="#foldable-class">FOLDABLE</a> <a href="#tree-type">TREE</a></code>
+- <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#tree-type">TREE</a> :A)</code>
+
+</details>
+
+
+***
+
+### Values
+
+#### <code>(MERGE A B)</code> <sup><sub>FUNCTION</sub></sup><a name="merge-value"></a>
+<code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#tree-type">TREE</a> :A) &rarr; (<a href="#tree-type">TREE</a> :A) &rarr; (<a href="#tree-type">TREE</a> :A))</code>
+
+Construct a Tree containing all the elements of both A and B.
+
+If A and B contain elements A' and B' respectively where (== A' B'), the result will contain either A' or
+B'. Which one is chosen for the result is undefined.
+
+
+***
+
+#### <code>(INSERT TRE ELT)</code> <sup><sub>FUNCTION</sub></sup><a name="insert-value"></a>
+<code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#tree-type">TREE</a> :A) &rarr; :A &rarr; (<a href="#optional-type">OPTIONAL</a> (<a href="#tree-type">TREE</a> :A)))</code>
+
+Construct a new Tree like TRE but containing ELT. If TRE already had an element `==' to ELT, return None.
+
+
+***
+
+#### <code>(LOOKUP HAYSTACK NEEDLE)</code> <sup><sub>FUNCTION</sub></sup><a name="lookup-value"></a>
+<code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#tree-type">TREE</a> :A) &rarr; :A &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
+
+If HAYSTACK contains an element `==' to NEEDLE, return it.
+
+
+***
+
+#### <code>(REMOVE TRE ELT)</code> <sup><sub>FUNCTION</sub></sup><a name="remove-value"></a>
+<code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#tree-type">TREE</a> :A) &rarr; :A &rarr; (<a href="#optional-type">OPTIONAL</a> (<a href="#tree-type">TREE</a> :A)))</code>
+
+Construct a new Tree like TRE but without an element `==' to ELT. Return None if TRE does not contain an element `==' to ELT.
+
+
+***
+
+#### <code>(REPLACE TRE ELT)</code> <sup><sub>FUNCTION</sub></sup><a name="replace-value"></a>
+<code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#tree-type">TREE</a> :A) &rarr; :A &rarr; (<a href="#optional-type">OPTIONAL</a> (<a href="#tuple-type">TUPLE</a> (<a href="#tree-type">TREE</a> :A) :A)))</code>
+
+Construct a new Tree like TRE but with ELT replacing an old element `==' to ELT.
+
+Return the new tree and the removed element.
+
+If TRE did not have an element `==' to ELT, return None.
+
+
+***
+
+#### <code>(COLLECT! ITER)</code> <sup><sub>FUNCTION</sub></sup><a name="collect!-value"></a>
+<code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#tree-type">TREE</a> :A))</code>
+
+Construct a Tree containing all the elements of ITER.
+
+If ITER contains duplicates, later elements will overwrite earlier elements.
+
+
+***
+
+#### <code>DECREASING-ORDER</code> <sup><sub>[FUNCTION]</sub></sup><a name="decreasing-order-value"></a>
+<code>&forall; :A. ((<a href="#tree-type">TREE</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
+
+Iterate the elements of a tree, starting with the greatest by `&lt;=&gt;' and ending with the least.
+
+
+***
+
+#### <code>INCREASING-ORDER</code> <sup><sub>[FUNCTION]</sub></sup><a name="increasing-order-value"></a>
+<code>&forall; :A. ((<a href="#tree-type">TREE</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
+
+Iterate the elements of a tree, starting with the least by `&lt;=&gt;' and ending with the greatest.
+
+
+***
+
+#### <code>(INSERT-OR-REPLACE TRE ELT)</code> <sup><sub>FUNCTION</sub></sup><a name="insert-or-replace-value"></a>
+<code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#tree-type">TREE</a> :A) &rarr; :A &rarr; (<a href="#tree-type">TREE</a> :A))</code>
+
+Construct a new Tree like TRE but containing ELT.
+
+If TRE already had an element `==' to ELT, remove it, replace it with ELT, and discard the removed value.
+
+Like `replace-or-insert', but prioritizing insertion as a use case.
+
+
+***
+
+#### <code>(REPLACE-OR-INSERT TRE ELT)</code> <sup><sub>FUNCTION</sub></sup><a name="replace-or-insert-value"></a>
+<code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#tree-type">TREE</a> :A) &rarr; :A &rarr; (<a href="#tuple-type">TUPLE</a> (<a href="#tree-type">TREE</a> :A) (<a href="#optional-type">OPTIONAL</a> :A)))</code>
+
+Construct a new Tree like TRE but containing ELT.
+
+If TRE already had an element `==' to ELT, remove it, replace it with ELT, and return the removed value
+alongside the new tree.
+
+
+***
+
+# Package `coalton-library/ord-map`<a name="coalton-library/ord-map-package"></a>
+
+## [ord-map.lisp](https://github.com/coalton-lang/coalton/tree/main/library/ord-map.lisp) <a name="coalton-library/ord-map-ord-map-lisp-file"></a>
+
+### Types
+
+#### <code>MAP :A :B</code> <sup><sub>[TYPE]</sub></sup><a name="map-type"></a>
+
+A red-black binary tree which associates each :KEY with a :VALUE, sorted by `&lt;=&gt;' on the keys and unique by `==' on the keys.
+
+<details>
+<summary>Instances</summary>
+
+- <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) &rArr; <a href="#eq-class">EQ</a> (<a href="#map-type">MAP</a> :A :B)</code>
+- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) &rArr; <a href="#hash-class">HASH</a> (<a href="#map-type">MAP</a> :A :B)</code>
+- <code><a href="#functor-class">FUNCTOR</a> (<a href="#map-type">MAP</a> :A)</code>
+- <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#map-type">MAP</a> :A :B)</code>
+
+</details>
+
+
+***
+
+### Values
+
+#### <code>(KEYS MP)</code> <sup><sub>FUNCTION</sub></sup><a name="keys-value"></a>
+<code>&forall; :A :B. ((<a href="#map-type">MAP</a> :A :B) &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
+
+Iterate over the keys in MP, sorted least-to-greatest.
+
+
+***
+
+#### <code>EMPTY</code> <sup><sub>[VALUE]</sub></sup><a name="empty-value"></a>
+<code>&forall; :A :B. (<a href="#map-type">MAP</a> :A :B)</code>
+
+A Map containing no mappings.
+
+
+***
+
+#### <code>(MERGE A B)</code> <sup><sub>FUNCTION</sub></sup><a name="merge-value"></a>
+<code>&forall; :A :B. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#map-type">MAP</a> :A :B) &rarr; (<a href="#map-type">MAP</a> :A :B) &rarr; (<a href="#map-type">MAP</a> :A :B))</code>
+
+Construct a Tree containing all the mappings of both A and B.
+
+If A and B contain mappings X -&gt; A' and X -&gt; B', it is undefined whether the result maps X to A' or B'.
+
+Because of the possibility that A and B will map the same X to different A' and B', this is not an associative
+operation, and therefore Map cannot implement Monoid.
+
+
+***
+
+#### <code>(INSERT MP K V)</code> <sup><sub>FUNCTION</sub></sup><a name="insert-value"></a>
+<code>&forall; :A :B. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#map-type">MAP</a> :A :B) &rarr; :A &rarr; :B &rarr; (<a href="#optional-type">OPTIONAL</a> (<a href="#map-type">MAP</a> :A :B)))</code>
+
+Associate K with V in MP. If MP already contains a mapping for K, return None.
+
+
+***
+
+#### <code>(LOOKUP MP K)</code> <sup><sub>FUNCTION</sub></sup><a name="lookup-value"></a>
+<code>&forall; :A :B. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#map-type">MAP</a> :A :B) &rarr; :A &rarr; (<a href="#optional-type">OPTIONAL</a> :B))</code>
+
+Retrieve the value associated with K in MP, or None if MP does not contain K.
+
+
+***
+
+#### <code>(REMOVE MP K)</code> <sup><sub>FUNCTION</sub></sup><a name="remove-value"></a>
+<code>&forall; :A :B. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#map-type">MAP</a> :A :B) &rarr; :A &rarr; (<a href="#optional-type">OPTIONAL</a> (<a href="#map-type">MAP</a> :A :B)))</code>
+
+Remove the mapping associated with K in MP. If K does not have a value in MP, return None.
+
+
+***
+
+#### <code>(UPDATE FUNC MP KEY)</code> <sup><sub>FUNCTION</sub></sup><a name="update-value"></a>
+<code>&forall; :A :B. <a href="#ord-class">ORD</a> :B &rArr; ((:A &rarr; :A) &rarr; (<a href="#map-type">MAP</a> :B :A) &rarr; :B &rarr; (<a href="#optional-type">OPTIONAL</a> (<a href="#map-type">MAP</a> :B :A)))</code>
+
+Apply FUNC to the value corresponding to KEY in MP, returning a new `Map' which maps KEY to the result of the function.
+
+
+***
+
+#### <code>(VALUES MP)</code> <sup><sub>FUNCTION</sub></sup><a name="values-value"></a>
+<code>&forall; :A :B. ((<a href="#map-type">MAP</a> :A :B) &rarr; (<a href="#iterator-type">ITERATOR</a> :B))</code>
+
+Iterate over the values in MP, sorted by their corresponding keys in least-to-greatest order.
+
+
+***
+
+#### <code>(ENTRIES MP)</code> <sup><sub>FUNCTION</sub></sup><a name="entries-value"></a>
+<code>&forall; :A :B. ((<a href="#map-type">MAP</a> :A :B) &rarr; (<a href="#iterator-type">ITERATOR</a> (<a href="#tuple-type">TUPLE</a> :A :B)))</code>
+
+Iterate over the (key value) pairs in MP, sorted by the keys in least-to-greatest order.
+
+
+***
+
+#### <code>(REPLACE MP K V)</code> <sup><sub>FUNCTION</sub></sup><a name="replace-value"></a>
+<code>&forall; :A :B. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#map-type">MAP</a> :A :B) &rarr; :A &rarr; :B &rarr; (<a href="#optional-type">OPTIONAL</a> (<a href="#tuple-type">TUPLE</a> (<a href="#map-type">MAP</a> :A :B) :B)))</code>
+
+Change the association of K to V in MP. If MP did not already contain a mapping for K, return None.
+
+
+***
+
+#### <code>(COLLECT! ITER)</code> <sup><sub>FUNCTION</sub></sup><a name="collect!-value"></a>
+<code>&forall; :A :B. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#iterator-type">ITERATOR</a> (<a href="#tuple-type">TUPLE</a> :A :B)) &rarr; (<a href="#map-type">MAP</a> :A :B))</code>
+
+Construct a Map containing all the (key value) pairs in ITER.
+
+If ITER contains duplicate keys, later values will overwrite earlier values.
+
+
+***
+
+#### <code>(INSERT-OR-REPLACE MP K V)</code> <sup><sub>FUNCTION</sub></sup><a name="insert-or-replace-value"></a>
+<code>&forall; :A :B. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#map-type">MAP</a> :A :B) &rarr; :A &rarr; :B &rarr; (<a href="#map-type">MAP</a> :A :B))</code>
+
+Update MP to associate K with V.
+
+If MP already contains a mapping for K, replace it and discard the old value.
+
+Like `replace-or-insert', but prioritizing insertion as a use case.
+
+
+***
+
+#### <code>(REPLACE-OR-INSERT MP K V)</code> <sup><sub>FUNCTION</sub></sup><a name="replace-or-insert-value"></a>
+<code>&forall; :A :B. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#map-type">MAP</a> :A :B) &rarr; :A &rarr; :B &rarr; (<a href="#tuple-type">TUPLE</a> (<a href="#map-type">MAP</a> :A :B) (<a href="#optional-type">OPTIONAL</a> :B)))</code>
+
+Update MP to associate K with V.
+
+If MP already contains a mapping for K, replace it and return the old value.
 
 
 ***
