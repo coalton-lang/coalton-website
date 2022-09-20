@@ -16,6 +16,7 @@ identifier: Reference
 ### Reference
 - <a href="#coalton-package"><code>coalton</code></a>
 - <a href="#coalton-library/classes-package"><code>coalton-library/classes</code></a>
+- <a href="#coalton-library/types-package"><code>coalton-library/types</code></a>
 - <a href="#coalton-library/builtin-package"><code>coalton-library/builtin</code></a>
 - <a href="#coalton-library/functions-package"><code>coalton-library/functions</code></a>
 - <a href="#coalton-library/math/arith-package"><code>coalton-library/math/arith</code></a>
@@ -60,6 +61,7 @@ Signed 8-bit integer capable of storing values in `[-128, 127]`. Uses `(signed-b
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#i8-type">I8</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#i8-type">I8</a></code>
@@ -107,6 +109,7 @@ Unsigned 8-bit integer capable of storing values in `[0, 255]`. Uses `(unsigned-
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#u8-type">U8</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#u8-type">U8</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#u8-type">U8</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#u8-type">U8</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#u8-type">U8</a></code>
@@ -154,6 +157,7 @@ Signed 16-bit integer capable of storing values in `[-32768, 32767]`. Uses `(sig
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#i16-type">I16</a></code>
@@ -198,6 +202,7 @@ Signed 32-bit integer capable of storing values in `[-2147483648, 2147483647]`. 
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#i32-type">I32</a></code>
@@ -244,6 +249,7 @@ Signed 64-bit integer capable of storing values in `[-9223372036854775808, 92233
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#i64-type">I64</a></code>
@@ -289,6 +295,7 @@ Unsigned 16-bit integer capable of storing values in `[0, 65535]`. Uses `(unsign
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#u16-type">U16</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#u16-type">U16</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#u16-type">U16</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#u16-type">U16</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#u16-type">U16</a></code>
@@ -333,6 +340,7 @@ Unsigned 32-bit integer capable of storing values in `[0, 4294967295]`. Uses `(u
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#u32-type">U32</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#u32-type">U32</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#u32-type">U32</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#u32-type">U32</a></code>
@@ -379,6 +387,7 @@ Unsigned 64-bit integer capable of storing values in `[0, 18446744073709551615]`
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#u64-type">U64</a></code>
@@ -424,6 +433,7 @@ Non-allocating tagged integer; range is platform-dependent. Does not error on ov
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#ifix-type">IFIX</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#ifix-type">IFIX</a></code>
@@ -469,6 +479,7 @@ Non-allocating tagged non-negative integer; range is platform-dependent. Uses `(
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#ufix-type">UFIX</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#ufix-type">UFIX</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#ufix-type">UFIX</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#ufix-type">UFIX</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#ufix-type">UFIX</a></code>
@@ -516,6 +527,7 @@ Non-allocating tagged non-negative integer; range is platform-dependent. Uses `(
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#unit-type">UNIT</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#unit-type">UNIT</a></code>
 - <code><a href="#addressable-class">ADDRESSABLE</a> <a href="#unit-type">UNIT</a></code>
 
@@ -525,6 +537,13 @@ Non-allocating tagged non-negative integer; range is platform-dependent. Uses `(
 ***
 
 #### <code>VOID</code> <sup><sub>[TYPE]</sub></sup><a name="void-type"></a>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#void-type">VOID</a></code>
+
+</details>
 
 
 ***
@@ -538,6 +557,7 @@ A single character represented as a `character` type.
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#char-type">CHAR</a></code>
@@ -556,6 +576,7 @@ Homogeneous list of objects represented as a Common Lisp `list`.
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#iso-class">ISO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#iso-class">ISO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
@@ -583,6 +604,13 @@ Homogeneous list of objects represented as a Common Lisp `list`.
 
 Type constructor for function types.
 
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (:A &rarr; :B)</code>
+
+</details>
+
 
 ***
 
@@ -593,6 +621,7 @@ String of characters represented by Common Lisp `string`.
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#iso-class">ISO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#string-type">STRING</a></code>
@@ -621,6 +650,7 @@ Either true or false represented by `t` and `nil` respectively.
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#boolean-type">BOOLEAN</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#boolean-type">BOOLEAN</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#boolean-type">BOOLEAN</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#boolean-type">BOOLEAN</a></code>
@@ -638,6 +668,7 @@ Unbound integer. Uses `integer`.
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#integer-type">INTEGER</a></code>
@@ -691,6 +722,7 @@ A ratio of integers always in reduced form.
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#fraction-type">FRACTION</a></code>
@@ -717,6 +749,7 @@ Double precision floating point numer. Uses `double-float`.
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
@@ -756,6 +789,7 @@ Single precision floating point numer. Uses `single-float`.
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
@@ -800,6 +834,7 @@ Single precision floating point numer. Uses `single-float`.
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#ord-type">ORD</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#ord-type">ORD</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#ord-type">ORD</a></code>
 - <code><a href="#addressable-class">ADDRESSABLE</a> <a href="#ord-type">ORD</a></code>
@@ -817,6 +852,7 @@ A heterogeneous collection of items.
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code><a href="#iso-class">ISO</a> (<a href="#tuple-type">TUPLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :B :A)</code>
 - <code>(<a href="#ord-class">ORD</a> :A) (<a href="#ord-class">ORD</a> :B) &rArr; <a href="#ord-class">ORD</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
@@ -838,6 +874,7 @@ Represents something that may have failed.
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#result-type">RESULT</a> :A :B)</code>
 - <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) &rArr; <a href="#eq-class">EQ</a> (<a href="#result-type">RESULT</a> :A :B)</code>
 - <code><a href="#iso-class">ISO</a> (<a href="#result-type">RESULT</a> <a href="#unit-type">UNIT</a> :A) (<a href="#optional-type">OPTIONAL</a> :A)</code>
 - <code>(<a href="#ord-class">ORD</a> :A) (<a href="#ord-class">ORD</a> :B) &rArr; <a href="#ord-class">ORD</a> (<a href="#result-type">RESULT</a> :A :B)</code>
@@ -864,6 +901,7 @@ Represents something that may not have a value.
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
 - <code><a href="#iso-class">ISO</a> (<a href="#result-type">RESULT</a> <a href="#unit-type">UNIT</a> :A) (<a href="#optional-type">OPTIONAL</a> :A)</code>
 - <code><a href="#num-class">NUM</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
@@ -1641,6 +1679,128 @@ Unwrap CONTAINER, returning DEFAULT on failure.
 
 ***
 
+# Package `coalton-library/types`<a name="coalton-library/types-package"></a>
+
+## [types.lisp](https://github.com/coalton-lang/coalton/tree/main/library/types.lisp) <a name="coalton-library/types-types-lisp-file"></a>
+
+### Types
+
+#### <code>PROXY :A</code> <sup><sub>[TYPE]</sub></sup><a name="proxy-type"></a>
+- <code>PROXY</code>
+
+Proxy holds no data, but has a phantom type parameter.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#proxy-type">PROXY</a> :A)</code>
+
+</details>
+
+
+***
+
+#### <code>LISPTYPE</code> <sup><sub>[TYPE]</sub></sup><a name="lisptype-type"></a>
+
+The runtime representation of a Coalton type as a lisp type.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#lisptype-type">LISPTYPE</a></code>
+
+</details>
+
+
+***
+
+### Classes
+
+#### <code>RUNTIMEREPR</code> <sup><sub>[CLASS]</sub></sup><a name="runtimerepr-class"></a>
+<code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A</code>
+
+Types which have a runtime LispType representation.
+
+`runtime-repr` corresponds to the type emitted by the Coalton compiler for the type parameter to the given Proxy.
+
+The compiler will auto-generate instances of `RuntimeRepr` for all defined types.
+
+Methods:
+- <code>RUNTIME-REPR :: ((<a href="#proxy-type">PROXY</a> :A) &rarr; <a href="#lisptype-type">LISPTYPE</a>)</code>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#boolean-type">BOOLEAN</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#char-type">CHAR</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (:A &rarr; :B)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#list-type">LIST</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#lisptype-type">LISPTYPE</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#proxy-type">PROXY</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#ufix-type">UFIX</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#ifix-type">IFIX</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#i8-type">I8</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#u16-type">U16</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#u8-type">U8</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#void-type">VOID</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#unit-type">UNIT</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#ord-type">ORD</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#result-type">RESULT</a> :A :B)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#quantization-type">QUANTIZATION</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#dyadic-type">DYADIC</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tuple5-type">TUPLE5</a> :A :B :C :D :E)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tuple4-type">TUPLE4</a> :A :B :C :D)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tuple3-type">TUPLE3</a> :A :B :C)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#cell-type">CELL</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#slice-type">SLICE</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#st-type">ST</a> :A :B)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#iterator-type">ITERATOR</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#color-type">COLOR</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tree-type">TREE</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#iteratorstacknode-type">ITERATORSTACKNODE</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#mappair-type">MAPPAIR</a> :A :B)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#map-type">MAP</a> :A :B)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#big-float-type">BIG-FLOAT</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#roundingmode-type">ROUNDINGMODE</a></code>
+
+</details>
+
+
+***
+
+### Values
+
+#### <code>(PROXY-OF _)</code> <sup><sub>FUNCTION</sub></sup><a name="proxy-of-value"></a>
+<code>&forall; :A. (:A &rarr; (<a href="#proxy-type">PROXY</a> :A))</code>
+
+Returns a Proxy containing the type of the parameter.
+
+
+***
+
+#### <code>(RUNTIME-REPR-OF X)</code> <sup><sub>FUNCTION</sub></sup><a name="runtime-repr-of-value"></a>
+<code>&forall; :A. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; (:A &rarr; <a href="#lisptype-type">LISPTYPE</a>)</code>
+
+Returns the runtime representation of the type of the given value.
+
+
+***
+
 # Package `coalton-library/builtin`<a name="coalton-library/builtin-package"></a>
 
 ## [builtin.lisp](https://github.com/coalton-lang/coalton/tree/main/library/builtin.lisp) <a name="coalton-library/builtin-builtin-lisp-file"></a>
@@ -2280,6 +2440,13 @@ The fields are defined as follows:
 5. The remainder of this as a value of type `:a`.
 
 
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#quantization-type">QUANTIZATION</a> :A)</code>
+
+</details>
+
 
 ***
 
@@ -2514,6 +2681,7 @@ Complex number that may either have a native or constructed representation.
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
 - <code><a href="#complex-class">COMPLEX</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
 - <code><a href="#complex-class">COMPLEX</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
 - <code><a href="#complex-class">COMPLEX</a> :A &rArr; <a href="#into-class">INTO</a> :A (<a href="#complex-type">COMPLEX</a> :A)</code>
@@ -2952,6 +3120,7 @@ If the first argument appears as a substring within the second argument, return 
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tuple3-type">TUPLE3</a> :A :B :C)</code>
 - <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) (<a href="#eq-class">EQ</a> :C) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple3-type">TUPLE3</a> :A :B :C)</code>
 - <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple3-type">TUPLE3</a> :A :B :C)</code>
 
@@ -2966,6 +3135,7 @@ If the first argument appears as a substring within the second argument, return 
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tuple4-type">TUPLE4</a> :A :B :C :D)</code>
 - <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) (<a href="#eq-class">EQ</a> :C) (<a href="#eq-class">EQ</a> :D) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple4-type">TUPLE4</a> :A :B :C :D)</code>
 - <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) (<a href="#hash-class">HASH</a> :D) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple4-type">TUPLE4</a> :A :B :C :D)</code>
 
@@ -2980,6 +3150,7 @@ If the first argument appears as a substring within the second argument, return 
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tuple5-type">TUPLE5</a> :A :B :C :D :E)</code>
 - <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) (<a href="#eq-class">EQ</a> :C) (<a href="#eq-class">EQ</a> :D) (<a href="#eq-class">EQ</a> :E) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple5-type">TUPLE5</a> :A :B :C :D :E)</code>
 - <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) (<a href="#hash-class">HASH</a> :D) (<a href="#hash-class">HASH</a> :E) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple5-type">TUPLE5</a> :A :B :C :D :E)</code>
 
@@ -3564,6 +3735,7 @@ Internally mutable cell
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#cell-type">CELL</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#cell-type">CELL</a> :A)</code>
 - <code><a href="#num-class">NUM</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#cell-type">CELL</a> :A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#cell-type">CELL</a> :A) :A</code>
@@ -3665,6 +3837,7 @@ Apply F to the contents of CEL, swapping the result for the old value
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#iso-class">ISO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#iso-class">ISO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
@@ -3895,6 +4068,7 @@ Remove the element IDX from VEC and replace it with the last element in VEC with
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#slice-type">SLICE</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#slice-type">SLICE</a> :A)</code>
 - <code><a href="#iso-class">ISO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#slice-type">SLICE</a> :A)</code>
@@ -4005,6 +4179,7 @@ Call the function F once for each item in S with its index
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B)</code>
 - <code><a href="#addressable-class">ADDRESSABLE</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B)</code>
 
 </details>
@@ -4106,6 +4281,7 @@ Represented as a closure from initial state to updated state and value.
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#st-type">ST</a> :A :B)</code>
 - <code><a href="#monad-class">MONAD</a> (<a href="#st-type">ST</a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> (<a href="#st-type">ST</a> :A)</code>
 - <code><a href="#applicative-class">APPLICATIVE</a> (<a href="#st-type">ST</a> :A)</code>
@@ -4154,6 +4330,7 @@ A forward-moving pointer into an ordered sequence of :ELTs
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#iterator-type">ITERATOR</a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#iterator-type">ITERATOR</a></code>
 
 </details>
@@ -4590,6 +4767,7 @@ A red-black balanced binary tree, sorted by `&lt;=&gt;' and unique by `=='.
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tree-type">TREE</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#tree-type">TREE</a> :A)</code>
 - <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#hash-class">HASH</a> (<a href="#tree-type">TREE</a> :A)</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#monoid-class">MONOID</a> (<a href="#tree-type">TREE</a> :A)</code>
@@ -4712,6 +4890,7 @@ A red-black binary tree which associates each :KEY with a :VALUE, sorted by `&lt
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#map-type">MAP</a> :A :B)</code>
 - <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) &rArr; <a href="#eq-class">EQ</a> (<a href="#map-type">MAP</a> :A :B)</code>
 - <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) &rArr; <a href="#hash-class">HASH</a> (<a href="#map-type">MAP</a> :A :B)</code>
 - <code><a href="#functor-class">FUNCTOR</a> (<a href="#map-type">MAP</a> :A)</code>
