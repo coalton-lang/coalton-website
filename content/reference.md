@@ -49,6 +49,8 @@ identifier: Reference
 
 # Package `coalton`<a name="coalton-package"></a>
 
+Public interface to COALTON.
+
 ## [fixed-size-numbers.lisp](https://github.com/coalton-lang/coalton/tree/main/library/fixed-size-numbers.lisp) <a name="coalton-fixed-size-numbers-lisp-file"></a>
 
 ### Types
