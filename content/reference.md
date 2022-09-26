@@ -580,11 +580,11 @@ Homogeneous list of objects represented as a Common Lisp `list`.
 
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#list-type">LIST</a> :A)</code>
-- <code><a href="#iso-class">ISO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#iso-class">ISO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#iso-class">ISO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
 - <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#hash-class">HASH</a> (<a href="#list-type">LIST</a> :A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#string-type">STRING</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>)</code>
 - <code><a href="#monad-class">MONAD</a> <a href="#list-type">LIST</a></code>
@@ -937,6 +937,7 @@ Methods:
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#eq-class">EQ</a> <a href="#lisptype-type">LISPTYPE</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#unit-type">UNIT</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#ord-type">ORD</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#boolean-type">BOOLEAN</a></code>
@@ -993,8 +994,8 @@ Methods:
 - <code><a href="#iso-class">ISO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
 - <code><a href="#iso-class">ISO</a> (<a href="#tuple-type">TUPLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :B :A)</code>
 - <code><a href="#iso-class">ISO</a> (<a href="#result-type">RESULT</a> <a href="#unit-type">UNIT</a> :A) (<a href="#optional-type">OPTIONAL</a> :A)</code>
-- <code><a href="#iso-class">ISO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
-- <code><a href="#iso-class">ISO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#iso-class">ISO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#iso-class">ISO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
 
 </details>
 
@@ -1199,10 +1200,10 @@ Methods:
 - <code><a href="#into-class">INTO</a> (<a href="#optional-type">OPTIONAL</a> :A) (<a href="#result-type">RESULT</a> <a href="#unit-type">UNIT</a> :A)</code>
 - <code><a href="#into-class">INTO</a> :A (<a href="#cell-type">CELL</a> :A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#cell-type">CELL</a> :A) :A</code>
-- <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#slice-type">SLICE</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#slice-type">SLICE</a> :A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#mappair-type">MAPPAIR</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> <a href="#big-float-type">BIG-FLOAT</a></code>
@@ -1431,7 +1432,7 @@ Methods:
 - <code><a href="#semigroup-class">SEMIGROUP</a> (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#semigroup-class">SEMIGROUP</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#result-type">RESULT</a> :B :A)</code>
 - <code><a href="#semigroup-class">SEMIGROUP</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#cell-type">CELL</a> :A)</code>
-- <code><a href="#semigroup-class">SEMIGROUP</a> (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#tree-type">TREE</a> :A)</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#map-type">MAP</a> :A :B)</code>
 
@@ -1710,6 +1711,7 @@ The runtime representation of a Coalton type as a lisp type.
 <summary>Instances</summary>
 
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#lisptype-type">LISPTYPE</a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#lisptype-type">LISPTYPE</a></code>
 
 </details>
 
@@ -1791,6 +1793,14 @@ Methods:
 <code>&forall; :A. (:A &rarr; (<a href="#proxy-type">PROXY</a> :A))</code>
 
 Returns a Proxy containing the type of the parameter.
+
+
+***
+
+#### <code>(AS-PROXY-OF X _)</code> <sup><sub>FUNCTION</sub></sup><a name="as-proxy-of-value"></a>
+<code>&forall; :A. (:A &rarr; (<a href="#proxy-type">PROXY</a> :A) &rarr; :A)</code>
+
+Returns the parameter, forcing the proxy to have the same type as the parameter.
 
 
 ***
@@ -3841,15 +3851,15 @@ Apply F to the contents of CEL, swapping the result for the old value
 
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#vector-type">VECTOR</a> :A)</code>
-- <code><a href="#iso-class">ISO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
-- <code><a href="#iso-class">ISO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#slice-type">SLICE</a> :A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#iso-class">ISO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#iso-class">ISO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#slice-type">SLICE</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#vector-type">VECTOR</a></code>
 - <code><a href="#foldable-class">FOLDABLE</a> <a href="#vector-type">VECTOR</a></code>
-- <code><a href="#semigroup-class">SEMIGROUP</a> (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#addressable-class">ADDRESSABLE</a> (<a href="#vector-type">VECTOR</a> :A)</code>
 
 </details>
@@ -3860,7 +3870,7 @@ Apply F to the contents of CEL, swapping the result for the old value
 ### Values
 
 #### <code>(NEW _)</code> <sup><sub>FUNCTION</sub></sup><a name="new-value"></a>
-<code>&forall; :A. (<a href="#unit-type">UNIT</a> &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
+<code>&forall; :A. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; (<a href="#unit-type">UNIT</a> &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
 
 Create a new empty vector
 
@@ -3932,7 +3942,7 @@ Sort a vector inplace
 ***
 
 #### <code>(APPEND V1 V2)</code> <sup><sub>FUNCTION</sub></sup><a name="append-value"></a>
-<code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
+<code>&forall; :A. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; ((<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
 
 Create a new VECTOR containing the elements of v1 followed by the elements of v2
 
@@ -4019,6 +4029,14 @@ Remove and return the first item of V without checking if the vector is empty
 
 ***
 
+#### <code>(ELEMENT-TYPE V)</code> <sup><sub>FUNCTION</sub></sup><a name="element-type-value"></a>
+<code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#lisptype-type">LISPTYPE</a>)</code>
+
+Returns the element type of V as a LispType
+
+
+***
+
 #### <code>(INDEX-UNSAFE INDEX V)</code> <sup><sub>FUNCTION</sub></sup><a name="index-unsafe-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; :A)</code>
 
@@ -4044,7 +4062,7 @@ Call the function F once for each item in V with its index
 ***
 
 #### <code>(WITH-CAPACITY N)</code> <sup><sub>FUNCTION</sub></sup><a name="with-capacity-value"></a>
-<code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
+<code>&forall; :A. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
 
 Create a new vector with N elements preallocated
 
@@ -4072,9 +4090,9 @@ Remove the element IDX from VEC and replace it with the last element in VEC with
 
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#slice-type">SLICE</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#slice-type">SLICE</a> :A)</code>
-- <code><a href="#iso-class">ISO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#slice-type">SLICE</a> :A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#iso-class">ISO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#slice-type">SLICE</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#foldable-class">FOLDABLE</a> <a href="#slice-type">SLICE</a></code>
 - <code><a href="#addressable-class">ADDRESSABLE</a> (<a href="#slice-type">SLICE</a> :A)</code>
 
@@ -4086,7 +4104,7 @@ Remove the element IDX from VEC and replace it with the last element in VEC with
 ### Values
 
 #### <code>(NEW START LENGTH V)</code> <sup><sub>FUNCTION</sub></sup><a name="new-value"></a>
-<code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; <a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#slice-type">SLICE</a> :A))</code>
+<code>&forall; :A. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; (<a href="#ufix-type">UFIX</a> &rarr; <a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#slice-type">SLICE</a> :A))</code>
 
 ***
 
@@ -4138,6 +4156,14 @@ Iterate over S1 and S2 calling F once on each iteration
 
 ***
 
+#### <code>(ELEMENT-TYPE S)</code> <sup><sub>FUNCTION</sub></sup><a name="element-type-value"></a>
+<code>&forall; :A. ((<a href="#slice-type">SLICE</a> :A) &rarr; <a href="#lisptype-type">LISPTYPE</a>)</code>
+
+Returns the element type of S as a LispType
+
+
+***
+
 #### <code>(INDEX-UNSAFE IDX S)</code> <sup><sub>FUNCTION</sub></sup><a name="index-unsafe-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; :A)</code>
 
@@ -4147,7 +4173,7 @@ Lookup the element at INDEX in S without bounds checking
 ***
 
 #### <code>(ITER-CHUNKED F SIZE V)</code> <sup><sub>FUNCTION</sub></sup><a name="iter-chunked-value"></a>
-<code>&forall; :A :B. (((<a href="#slice-type">SLICE</a> :A) &rarr; :B) &rarr; <a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
+<code>&forall; :A :B. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; (((<a href="#slice-type">SLICE</a> :A) &rarr; :B) &rarr; <a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Chunked iteration over a vector. Ignores elements at the end if the vector does not evenly divide by the chunk size.
 
@@ -4155,7 +4181,7 @@ Chunked iteration over a vector. Ignores elements at the end if the vector does 
 ***
 
 #### <code>(ITER-SLIDING F SIZE V)</code> <sup><sub>FUNCTION</sub></sup><a name="iter-sliding-value"></a>
-<code>&forall; :A :B. (((<a href="#slice-type">SLICE</a> :A) &rarr; :B) &rarr; <a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
+<code>&forall; :A :B. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; (((<a href="#slice-type">SLICE</a> :A) &rarr; :B) &rarr; <a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Sliding iteration over a vector
 
@@ -4681,7 +4707,7 @@ Yield ITEM over and over, infinitely.
 ***
 
 #### <code>(COLLECT-VECTOR! ITER)</code> <sup><sub>FUNCTION</sub></sup><a name="collect-vector!-value"></a>
-<code>&forall; :A. ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
+<code>&forall; :A. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
 
 Construct a `Vector` containing all the elements from ITER in order.
 
@@ -4746,7 +4772,7 @@ Yield unique elements from ITER in order of first appearance.
 ***
 
 #### <code>(COLLECT-VECTOR-SIZE-HINT! SIZE ITER)</code> <sup><sub>FUNCTION</sub></sup><a name="collect-vector-size-hint!-value"></a>
-<code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
+<code>&forall; :A. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
 
 Construct a `Vector` with initial allocation for SIZE elements, and fill it with all the elements from ITER in order.
 
