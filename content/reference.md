@@ -3928,7 +3928,7 @@ Return the INDEXth element of V
 #### <code>(PUSH! ITEM V)</code> <sup><sub>FUNCTION</sub></sup><a name="push!-value"></a>
 <code>&forall; :A. (:A &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#ufix-type">UFIX</a>)</code>
 
-Append ITEM to V and resize V if necessary
+Append ITEM to V and resize V if necessary, returning the index of the new item.
 
 
 ***
