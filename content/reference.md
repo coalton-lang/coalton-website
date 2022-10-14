@@ -563,6 +563,7 @@ A single character represented as a `character` type.
 - <code><a href="#eq-class">EQ</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#char-type">CHAR</a></code>
+- <code><a href="#intoiterator-class">INTOITERATOR</a> <a href="#string-type">STRING</a> <a href="#char-type">CHAR</a></code>
 
 </details>
 
@@ -596,6 +597,8 @@ Homogeneous list of objects represented as a Common Lisp `list`.
 - <code><a href="#alternative-class">ALTERNATIVE</a> <a href="#list-type">LIST</a></code>
 - <code><a href="#applicative-class">APPLICATIVE</a> <a href="#list-type">LIST</a></code>
 - <code><a href="#traversable-class">TRAVERSABLE</a> <a href="#list-type">LIST</a></code>
+- <code><a href="#fromiterator-class">FROMITERATOR</a> (<a href="#list-type">LIST</a> :A) :A</code>
+- <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#list-type">LIST</a> :A) :A</code>
 
 </details>
 
@@ -637,6 +640,7 @@ String of characters represented by Common Lisp `string`.
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#string-type">STRING</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#semigroup-class">SEMIGROUP</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#addressable-class">ADDRESSABLE</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#intoiterator-class">INTOITERATOR</a> <a href="#string-type">STRING</a> <a href="#char-type">CHAR</a></code>
 
 </details>
 
@@ -861,6 +865,9 @@ A heterogeneous collection of items.
 - <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#mappair-type">MAPPAIR</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#tuple-type">TUPLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :B :A)</code>
+- <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#map-type">MAP</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
+- <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
+- <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#map-type">MAP</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 
 </details>
 
@@ -3861,6 +3868,8 @@ Apply F to the contents of CEL, swapping the result for the old value
 - <code><a href="#foldable-class">FOLDABLE</a> <a href="#vector-type">VECTOR</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#addressable-class">ADDRESSABLE</a> (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#vector-type">VECTOR</a> :A) :A</code>
+- <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#vector-type">VECTOR</a> :A) :A</code>
 
 </details>
 
@@ -4209,6 +4218,7 @@ Call the function F once for each item in S with its index
 
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B)</code>
 - <code><a href="#addressable-class">ADDRESSABLE</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B)</code>
+- <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 
 </details>
 
@@ -4360,6 +4370,52 @@ A forward-moving pointer into an ordered sequence of :ELTs
 
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#iterator-type">ITERATOR</a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#iterator-type">ITERATOR</a></code>
+
+</details>
+
+
+***
+
+### Classes
+
+#### <code>FROMITERATOR</code> <sup><sub>[CLASS]</sub></sup><a name="fromiterator-class"></a>
+<code><a href="#fromiterator-class">FROMITERATOR</a> :A :B</code>
+
+Methods:
+- <code>COLLECT! :: ((<a href="#iterator-type">ITERATOR</a> :B) &rarr; :A)</code>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#fromiterator-class">FROMITERATOR</a> (<a href="#list-type">LIST</a> :A) :A</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#vector-type">VECTOR</a> :A) :A</code>
+- <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
+- <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#tree-type">TREE</a> :A) :A</code>
+- <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#map-type">MAP</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
+
+</details>
+
+
+***
+
+#### <code>INTOITERATOR</code> <sup><sub>[CLASS]</sub></sup><a name="intoiterator-class"></a>
+<code><a href="#intoiterator-class">INTOITERATOR</a> :A :B</code>
+
+Containers which can be converted into iterators.
+
+`into-iter' must not mutate its argument, only produce a "view" into it.
+
+Methods:
+- <code>INTO-ITER :: (:A &rarr; (<a href="#iterator-type">ITERATOR</a> :B))</code>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#list-type">LIST</a> :A) :A</code>
+- <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#vector-type">VECTOR</a> :A) :A</code>
+- <code><a href="#intoiterator-class">INTOITERATOR</a> <a href="#string-type">STRING</a> <a href="#char-type">CHAR</a></code>
+- <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#tree-type">TREE</a> :A) :A</code>
+- <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#map-type">MAP</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 
 </details>
 
@@ -4629,7 +4685,9 @@ An iterator which begins at zero and counts up through and including LIMIT.
 <code>&forall; :A. ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
 Return an interator of interleaved elements from LEFT and RIGHT which terminates as soon as both LEFT and RIGHT do.
-In the case one iterator terminates before the other, the other is exhausted before terminating.
+
+If one iterator terminates before the other, elements from the longer iterator will be yielded without
+interleaving. (interleave empty ITER) is equivalent to (id ITER).
 
 
 ***
@@ -4801,6 +4859,8 @@ A red-black balanced binary tree, sorted by `&lt;=&gt;' and unique by `=='.
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#monoid-class">MONOID</a> (<a href="#tree-type">TREE</a> :A)</code>
 - <code><a href="#foldable-class">FOLDABLE</a> <a href="#tree-type">TREE</a></code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#tree-type">TREE</a> :A)</code>
+- <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#tree-type">TREE</a> :A) :A</code>
+- <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#tree-type">TREE</a> :A) :A</code>
 
 </details>
 
@@ -4923,6 +4983,8 @@ A red-black binary tree which associates each :KEY with a :VALUE, sorted by `&lt
 - <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) &rArr; <a href="#hash-class">HASH</a> (<a href="#map-type">MAP</a> :A :B)</code>
 - <code><a href="#functor-class">FUNCTOR</a> (<a href="#map-type">MAP</a> :A)</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#map-type">MAP</a> :A :B)</code>
+- <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#map-type">MAP</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
+- <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#map-type">MAP</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 
 </details>
 
