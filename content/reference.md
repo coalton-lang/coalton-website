@@ -3259,7 +3259,7 @@ Return the traditional car of a list. This function is partial
 #### <code>(CDR XS)</code> <sup><sub>FUNCTION</sub></sup><a name="cdr-value"></a>
 <code>&forall; :A. ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
-Return the traditional cdr of a list. This function is partial
+Return the traditional cdr of a list.
 
 
 ***
@@ -3913,7 +3913,7 @@ Return the last element of V
 #### <code>(POP! V)</code> <sup><sub>FUNCTION</sub></sup><a name="pop!-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
-Remove and return the first item of V
+Remove and return the last item of V
 
 
 ***
@@ -4033,7 +4033,7 @@ Return the last element of V without first checking if V is empty
 #### <code>(POP-UNSAFE! V)</code> <sup><sub>FUNCTION</sub></sup><a name="pop-unsafe!-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; :A)</code>
 
-Remove and return the first item of V without checking if the vector is empty
+Remove and return the last item of V without checking if the vector is empty
 
 
 ***
