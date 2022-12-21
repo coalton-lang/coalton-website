@@ -837,6 +837,8 @@ Single precision floating point numer. Uses `single-float`.
 - <code>GT</code>
 - <code>EQ</code>
 
+The result of an ordered comparison.
+
 <details>
 <summary>Instances</summary>
 
@@ -1660,6 +1662,9 @@ Unwrap CONTAINER, signaling an error on failure.
 
 #### <code>MCONCAT</code> <sup><sub>[FUNCTION]</sub></sup><a name="mconcat-value"></a>
 <code>&forall; :A :B. (<a href="#foldable-class">FOLDABLE</a> :A) (<a href="#monoid-class">MONOID</a> :B) &rArr; ((:A :B) &rarr; :B)</code>
+
+Fold a container of monoids into a single element.
+
 
 ***
 
@@ -2970,6 +2975,9 @@ as (atan (/ y x)) when defined and accounting for the quadrant of the (x,y).
 #### <code>(SINCOS X)</code> <sup><sub>FUNCTION</sub></sup><a name="sincos-value"></a>
 <code>&forall; :A. <a href="#trigonometric-class">TRIGONOMETRIC</a> :A &rArr; (:A &rarr; (<a href="#tuple-type">TUPLE</a> :A :A))</code>
 
+Computes the sine and cosine of X.
+
+
 ***
 
 #### <code>(MAGNITUDE Z)</code> <sup><sub>FUNCTION</sub></sup><a name="magnitude-value"></a>
@@ -3027,13 +3035,107 @@ Methods:
 
 ### Values
 
+#### <code>(ALPHA? C)</code> <sup><sub>FUNCTION</sub></sup><a name="alpha?-value"></a>
+<code>(<a href="#char-type">CHAR</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Is C an alphabetic character?
+
+
+***
+
+#### <code>(DIGIT? C)</code> <sup><sub>FUNCTION</sub></sup><a name="digit?-value"></a>
+<code>(<a href="#char-type">CHAR</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Is C a digit character?
+
+
+***
+
+#### <code>(UPCASE C)</code> <sup><sub>FUNCTION</sub></sup><a name="upcase-value"></a>
+<code>(<a href="#char-type">CHAR</a> &rarr; <a href="#char-type">CHAR</a>)</code>
+
+Returns the upcased version of C, returning C when there is none.
+
+
+***
+
+#### <code>(DOWNCASE C)</code> <sup><sub>FUNCTION</sub></sup><a name="downcase-value"></a>
+<code>(<a href="#char-type">CHAR</a> &rarr; <a href="#char-type">CHAR</a>)</code>
+
+Returns the downcased version of C, returning C when there is none.
+
+
+***
+
 #### <code>(CHAR-CODE CHAR)</code> <sup><sub>FUNCTION</sub></sup><a name="char-code-value"></a>
 <code>(<a href="#char-type">CHAR</a> &rarr; <a href="#ufix-type">UFIX</a>)</code>
+
+Convert a character to its ASCII representation.
+
 
 ***
 
 #### <code>(CODE-CHAR CODE)</code> <sup><sub>FUNCTION</sub></sup><a name="code-char-value"></a>
 <code>(<a href="#ufix-type">UFIX</a> &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#char-type">CHAR</a>))</code>
+
+Convert a number to its ASCII character, returning None on failure.
+
+
+***
+
+#### <code>(LOWERCASE? C)</code> <sup><sub>FUNCTION</sub></sup><a name="lowercase?-value"></a>
+<code>(<a href="#char-type">CHAR</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Is C a lowercase character?
+
+
+***
+
+#### <code>(UPPERCASE? C)</code> <sup><sub>FUNCTION</sub></sup><a name="uppercase?-value"></a>
+<code>(<a href="#char-type">CHAR</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Is C an uppercase character?
+
+
+***
+
+#### <code>(ASCII-ALPHA? C)</code> <sup><sub>FUNCTION</sub></sup><a name="ascii-alpha?-value"></a>
+<code>(<a href="#char-type">CHAR</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Is C an ASCII alphabetic character?
+
+
+***
+
+#### <code>(ASCII-DIGIT? C)</code> <sup><sub>FUNCTION</sub></sup><a name="ascii-digit?-value"></a>
+<code>(<a href="#char-type">CHAR</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Is C an ASCII digit character?
+
+
+***
+
+#### <code>(ASCII-LOWERCASE? C)</code> <sup><sub>FUNCTION</sub></sup><a name="ascii-lowercase?-value"></a>
+<code>(<a href="#char-type">CHAR</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Is C an ASCII lowercase character?
+
+
+***
+
+#### <code>(ASCII-UPPERCASE? C)</code> <sup><sub>FUNCTION</sub></sup><a name="ascii-uppercase?-value"></a>
+<code>(<a href="#char-type">CHAR</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Is C an ASCII uppercase character?
+
+
+***
+
+#### <code>(ASCII-ALPHANUMERIC? C)</code> <sup><sub>FUNCTION</sub></sup><a name="ascii-alphanumeric?-value"></a>
+<code>(<a href="#char-type">CHAR</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Is C an ASCII alphanumeric character?
+
 
 ***
 
@@ -3045,6 +3147,9 @@ Methods:
 
 #### <code>(REF STR IDX)</code> <sup><sub>FUNCTION</sub></sup><a name="ref-value"></a>
 <code>(<a href="#string-type">STRING</a> &rarr; <a href="#ufix-type">UFIX</a> &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#char-type">CHAR</a>))</code>
+
+Return the IDXth character of STR.
+
 
 ***
 
@@ -3116,6 +3221,9 @@ does not have that suffix.
 
 #### <code>(REF-UNCHECKED STR IDX)</code> <sup><sub>FUNCTION</sub></sup><a name="ref-unchecked-value"></a>
 <code>(<a href="#string-type">STRING</a> &rarr; <a href="#ufix-type">UFIX</a> &rarr; <a href="#char-type">CHAR</a>)</code>
+
+Return the IDXth character of STR. This function is partial.
+
 
 ***
 
@@ -3782,6 +3890,9 @@ Create a new mutable cell
 #### <code>(POP! CEL)</code> <sup><sub>FUNCTION</sub></sup><a name="pop!-value"></a>
 <code>&forall; :A. ((<a href="#cell-type">CELL</a> (<a href="#list-type">LIST</a> :A)) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
+Remove and return the first element of the list in CEL.
+
+
 ***
 
 #### <code>(READ CEL)</code> <sup><sub>FUNCTION</sub></sup><a name="read-value"></a>
@@ -3794,6 +3905,9 @@ Read the value of a mutable cell
 
 #### <code>(PUSH! CEL NEW-ELT)</code> <sup><sub>FUNCTION</sub></sup><a name="push!-value"></a>
 <code>&forall; :A. ((<a href="#cell-type">CELL</a> (<a href="#list-type">LIST</a> :A)) &rarr; :A &rarr; (<a href="#list-type">LIST</a> :A))</code>
+
+Push NEW-ELT onto the start of the list in CEL.
+
 
 ***
 
@@ -3993,7 +4107,7 @@ Returns the number of elements that V can store without resizing
 #### <code>(FOREACH2 F V1 V2)</code> <sup><sub>FUNCTION</sub></sup><a name="foreach2-value"></a>
 <code>&forall; :A :B :C. ((:A &rarr; :B &rarr; :C) &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#vector-type">VECTOR</a> :B) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
-Like vector-foreach but twice as good
+Iterate in parallel over V1 and V2 calling F once for each pair of elements. Iteration stops when the shorter vector runs out of elements.
 
 
 ***
@@ -4115,6 +4229,9 @@ Remove the element IDX from VEC and replace it with the last element in VEC with
 #### <code>(NEW START LENGTH V)</code> <sup><sub>FUNCTION</sub></sup><a name="new-value"></a>
 <code>&forall; :A. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; (<a href="#ufix-type">UFIX</a> &rarr; <a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#slice-type">SLICE</a> :A))</code>
 
+Create a new slice backed by V starting at index START and continuing for LENGTH elements.
+
+
 ***
 
 #### <code>(COPY S)</code> <sup><sub>FUNCTION</sub></sup><a name="copy-value"></a>
@@ -4213,6 +4330,8 @@ Call the function F once for each item in S with its index
 
 #### <code>HASHTABLE :A :B</code> <sup><sub>[TYPE]</sub></sup><a name="hashtable-type"></a>
 
+A mutable hash table.
+
 <details>
 <summary>Instances</summary>
 
@@ -4277,6 +4396,9 @@ Returns the values in TABLE as a list
 
 #### <code>(ENTRIES TABLE)</code> <sup><sub>FUNCTION</sub></sup><a name="entries-value"></a>
 <code>&forall; :A :B. ((<a href="#hashtable-type">HASHTABLE</a> :A :B) &rarr; (<a href="#list-type">LIST</a> (<a href="#tuple-type">TUPLE</a> :A :B)))</code>
+
+Returns the key-values pairs as a list.
+
 
 ***
 
@@ -4427,15 +4549,24 @@ Methods:
 #### <code>NEW</code> <sup><sub>[FUNCTION]</sub></sup><a name="new-value"></a>
 <code>&forall; :A. ((<a href="#unit-type">UNIT</a> &rarr; (<a href="#optional-type">OPTIONAL</a> :A)) &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
-***
+Create a new iterator from a function that yields elements.
 
-#### <code>OR!</code> <sup><sub>[FUNCTION]</sub></sup><a name="or!-value"></a>
-<code>((<a href="#iterator-type">ITERATOR</a> <a href="#boolean-type">BOOLEAN</a>) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 ***
 
-#### <code>AND!</code> <sup><sub>[FUNCTION]</sub></sup><a name="and!-value"></a>
+#### <code>(OR! ITER)</code> <sup><sub>FUNCTION</sub></sup><a name="or!-value"></a>
 <code>((<a href="#iterator-type">ITERATOR</a> <a href="#boolean-type">BOOLEAN</a>) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Returns True if any iterator elements are True. May not consume the entire iterator. Returns False on an empty iterator.
+
+
+***
+
+#### <code>(AND! ITER)</code> <sup><sub>FUNCTION</sub></sup><a name="and!-value"></a>
+<code>((<a href="#iterator-type">ITERATOR</a> <a href="#boolean-type">BOOLEAN</a>) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Returns True if all iterator elements are True. May not consume the entire iterator. Returns True on an empty iterator.
+
 
 ***
 
