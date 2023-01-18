@@ -4494,6 +4494,7 @@ A forward-moving pointer into an ordered sequence of :ELTs
 
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#iterator-type">ITERATOR</a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#iterator-type">ITERATOR</a></code>
+- <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#iterator-type">ITERATOR</a> :A) :A</code>
 
 </details>
 
@@ -4536,6 +4537,7 @@ Methods:
 <summary>Instances</summary>
 
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#list-type">LIST</a> :A) :A</code>
+- <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#iterator-type">ITERATOR</a> :A) :A</code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#vector-type">VECTOR</a> :A) :A</code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> <a href="#string-type">STRING</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#tree-type">TREE</a> :A) :A</code>
