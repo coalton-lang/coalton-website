@@ -3314,7 +3314,7 @@ Get the second element of a tuple.
 
 ### Values
 
-#### <code>(ISNONE X)</code> <sup><sub>FUNCTION</sub></sup><a name="isnone-value"></a>
+#### <code>(NONE? X)</code> <sup><sub>FUNCTION</sub></sup><a name="none?-value"></a>
 <code>&forall; :A. ((<a href="#optional-type">OPTIONAL</a> :A) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 Is X None?
@@ -3322,7 +3322,7 @@ Is X None?
 
 ***
 
-#### <code>(ISSOME X)</code> <sup><sub>FUNCTION</sub></sup><a name="issome-value"></a>
+#### <code>(SOME? X)</code> <sup><sub>FUNCTION</sub></sup><a name="some?-value"></a>
 <code>&forall; :A. ((<a href="#optional-type">OPTIONAL</a> :A) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 Is X Some?
@@ -3330,7 +3330,7 @@ Is X Some?
 
 ***
 
-#### <code>(FROMSOME STR OPT)</code> <sup><sub>FUNCTION</sub></sup><a name="fromsome-value"></a>
+#### <code>(FROM-SOME STR OPT)</code> <sup><sub>FUNCTION</sub></sup><a name="from-some-value"></a>
 <code>&forall; :A. (<a href="#string-type">STRING</a> &rarr; (<a href="#optional-type">OPTIONAL</a> :A) &rarr; :A)</code>
 
 Get the value of OPT, erroring with the provided string if it is None.
@@ -3824,7 +3824,7 @@ Break a list into a list of equivalence classes according to an equivalence rela
 
 ### Values
 
-#### <code>(ISOK X)</code> <sup><sub>FUNCTION</sub></sup><a name="isok-value"></a>
+#### <code>(OK? X)</code> <sup><sub>FUNCTION</sub></sup><a name="ok?-value"></a>
 <code>&forall; :A :B. ((<a href="#result-type">RESULT</a> :A :B) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 Returns TRUE if X is ERR
@@ -3832,24 +3832,24 @@ Returns TRUE if X is ERR
 
 ***
 
-#### <code>(ISERR X)</code> <sup><sub>FUNCTION</sub></sup><a name="iserr-value"></a>
+#### <code>(ERR? X)</code> <sup><sub>FUNCTION</sub></sup><a name="err?-value"></a>
 <code>&forall; :A :B. ((<a href="#result-type">RESULT</a> :A :B) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 Returns TRUE if X is ERR
-
-
-***
-
-#### <code>(MAPERR F X)</code> <sup><sub>FUNCTION</sub></sup><a name="maperr-value"></a>
-<code>&forall; :A :B :C. ((:A &rarr; :B) &rarr; (<a href="#result-type">RESULT</a> :A :C) &rarr; (<a href="#result-type">RESULT</a> :B :C))</code>
-
-Map over the ERR case
 
 
 ***
 
 #### <code>(FLATTEN X)</code> <sup><sub>FUNCTION</sub></sup><a name="flatten-value"></a>
 <code>&forall; :A. ((<a href="#result-type">RESULT</a> :A :A) &rarr; :A)</code>
+
+***
+
+#### <code>(MAP-ERR F X)</code> <sup><sub>FUNCTION</sub></sup><a name="map-err-value"></a>
+<code>&forall; :A :B :C. ((:A &rarr; :B) &rarr; (<a href="#result-type">RESULT</a> :A :C) &rarr; (<a href="#result-type">RESULT</a> :B :C))</code>
+
+Map over the ERR case
+
 
 ***
 
