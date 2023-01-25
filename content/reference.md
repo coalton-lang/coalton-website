@@ -868,6 +868,7 @@ A heterogeneous collection of items.
 - <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#mappair-type">MAPPAIR</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#tuple-type">TUPLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :B :A)</code>
+- <code><a href="#bifunctor-class">BIFUNCTOR</a> <a href="#tuple-type">TUPLE</a></code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#map-type">MAP</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#map-type">MAP</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
@@ -895,6 +896,7 @@ Represents something that may have failed.
 - <code><a href="#monad-class">MONAD</a> (<a href="#result-type">RESULT</a> :A)</code>
 - <code><a href="#monoid-class">MONOID</a> :A &rArr; <a href="#monoid-class">MONOID</a> (<a href="#result-type">RESULT</a> :B :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> (<a href="#result-type">RESULT</a> :A)</code>
+- <code><a href="#bifunctor-class">BIFUNCTOR</a> <a href="#result-type">RESULT</a></code>
 - <code><a href="#semigroup-class">SEMIGROUP</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#result-type">RESULT</a> :B :A)</code>
 - <code><a href="#applicative-class">APPLICATIVE</a> (<a href="#result-type">RESULT</a> :A)</code>
 - <code><a href="#unwrappable-class">UNWRAPPABLE</a> (<a href="#result-type">RESULT</a> :A)</code>
@@ -1413,6 +1415,25 @@ Methods:
 
 ***
 
+#### <code>BIFUNCTOR</code> <sup><sub>[CLASS]</sub></sup><a name="bifunctor-class"></a>
+<code><a href="#bifunctor-class">BIFUNCTOR</a> :A</code>
+
+Types which take two type arguments and are functors on both.
+
+Methods:
+- <code>BIMAP :: ((:B &rarr; :C) &rarr; (:D &rarr; :E) &rarr; ((:A :B) :D) &rarr; ((:A :C) :E))</code>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#bifunctor-class">BIFUNCTOR</a> <a href="#tuple-type">TUPLE</a></code>
+- <code><a href="#bifunctor-class">BIFUNCTOR</a> <a href="#result-type">RESULT</a></code>
+
+</details>
+
+
+***
+
 #### <code>MONADFAIL</code> <sup><sub>[CLASS]</sub></sup><a name="monadfail-class"></a>
 <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monadfail-class">MONADFAIL</a> :A</code>
 
@@ -1660,6 +1681,22 @@ Unwrap CONTAINER, signaling an error with the description REASON on failure.
 <code>&forall; :A :B. <a href="#unwrappable-class">UNWRAPPABLE</a> :A &rArr; ((:A :B) &rarr; :B)</code>
 
 Unwrap CONTAINER, signaling an error on failure.
+
+
+***
+
+#### <code>(MAP-FST F B)</code> <sup><sub>FUNCTION</sub></sup><a name="map-fst-value"></a>
+<code>&forall; :A :B :C :D. <a href="#bifunctor-class">BIFUNCTOR</a> :C &rArr; ((:A &rarr; :B) &rarr; (:C :A :D) &rarr; (:C :B :D))</code>
+
+Map over the first argument of a Bifunctor.
+
+
+***
+
+#### <code>(MAP-SND F B)</code> <sup><sub>FUNCTION</sub></sup><a name="map-snd-value"></a>
+<code>&forall; :A :B :C :D. <a href="#bifunctor-class">BIFUNCTOR</a> :C &rArr; ((:A &rarr; :B) &rarr; (:C :D :A) &rarr; (:C :D :B))</code>
+
+Map over the second argument of a Bifunctor.
 
 
 ***
