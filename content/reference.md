@@ -16,6 +16,7 @@ identifier: Reference
 ### Reference
 - <a href="#coalton-package"><code>coalton</code></a>
 - <a href="#coalton-library/classes-package"><code>coalton-library/classes</code></a>
+- <a href="#coalton-library/hash-package"><code>coalton-library/hash</code></a>
 - <a href="#coalton-library/types-package"><code>coalton-library/types</code></a>
 - <a href="#coalton-library/builtin-package"><code>coalton-library/builtin</code></a>
 - <a href="#coalton-library/functions-package"><code>coalton-library/functions</code></a>
@@ -63,11 +64,11 @@ Signed 8-bit integer capable of storing values in `[-128, 127]`. Uses `(signed-b
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#i8-type">I8</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#i8-type">I8</a></code>
-- <code><a href="#hash-class">HASH</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#integer-type">INTEGER</a></code>
@@ -111,11 +112,11 @@ Unsigned 8-bit integer capable of storing values in `[0, 255]`. Uses `(unsigned-
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#u8-type">U8</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#u8-type">U8</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#u8-type">U8</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#u8-type">U8</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#u8-type">U8</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#u8-type">U8</a></code>
-- <code><a href="#hash-class">HASH</a> <a href="#u8-type">U8</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#integer-type">INTEGER</a></code>
@@ -159,11 +160,11 @@ Signed 16-bit integer capable of storing values in `[-32768, 32767]`. Uses `(sig
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#i16-type">I16</a></code>
-- <code><a href="#hash-class">HASH</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i16-type">I16</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i16-type">I16</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i16-type">I16</a> <a href="#integer-type">INTEGER</a></code>
@@ -204,11 +205,11 @@ Signed 32-bit integer capable of storing values in `[-2147483648, 2147483647]`. 
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#i32-type">I32</a></code>
-- <code><a href="#hash-class">HASH</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i32-type">I32</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i32-type">I32</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i32-type">I32</a> <a href="#ifix-type">IFIX</a></code>
@@ -251,11 +252,11 @@ Signed 64-bit integer capable of storing values in `[-9223372036854775808, 92233
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#i64-type">I64</a></code>
-- <code><a href="#hash-class">HASH</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ifix-type">IFIX</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ufix-type">UFIX</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i64-type">I64</a> <a href="#integer-type">INTEGER</a></code>
@@ -297,11 +298,11 @@ Unsigned 16-bit integer capable of storing values in `[0, 65535]`. Uses `(unsign
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#u16-type">U16</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#u16-type">U16</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#u16-type">U16</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#u16-type">U16</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#u16-type">U16</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#u16-type">U16</a></code>
-- <code><a href="#hash-class">HASH</a> <a href="#u16-type">U16</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#integer-type">INTEGER</a></code>
@@ -342,11 +343,11 @@ Unsigned 32-bit integer capable of storing values in `[0, 4294967295]`. Uses `(u
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#u32-type">U32</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#u32-type">U32</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#u32-type">U32</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#u32-type">U32</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#u32-type">U32</a></code>
-- <code><a href="#hash-class">HASH</a> <a href="#u32-type">U32</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#ifix-type">IFIX</a></code>
@@ -389,11 +390,11 @@ Unsigned 64-bit integer capable of storing values in `[0, 18446744073709551615]`
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#u64-type">U64</a></code>
-- <code><a href="#hash-class">HASH</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ufix-type">UFIX</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u64-type">U64</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#u64-type">U64</a></code>
@@ -435,11 +436,11 @@ Non-allocating tagged integer; range is platform-dependent. Does not error on ov
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#ifix-type">IFIX</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#ifix-type">IFIX</a></code>
-- <code><a href="#hash-class">HASH</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ifix-type">IFIX</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ifix-type">IFIX</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ufix-type">UFIX</a> <a href="#ifix-type">IFIX</a></code>
@@ -481,11 +482,11 @@ Non-allocating tagged non-negative integer; range is platform-dependent. Uses `(
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#ufix-type">UFIX</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#ufix-type">UFIX</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#ufix-type">UFIX</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#ufix-type">UFIX</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#ufix-type">UFIX</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#ufix-type">UFIX</a></code>
-- <code><a href="#hash-class">HASH</a> <a href="#ufix-type">UFIX</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ufix-type">UFIX</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ufix-type">UFIX</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ufix-type">UFIX</a> <a href="#i64-type">I64</a></code>
@@ -559,10 +560,10 @@ A single character represented as a `character` type.
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#hash-class">HASH</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#char-type">CHAR</a></code>
-- <code><a href="#hash-class">HASH</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> <a href="#string-type">STRING</a> <a href="#char-type">CHAR</a></code>
 
 </details>
@@ -579,12 +580,12 @@ Homogeneous list of objects represented as a Common Lisp `list`.
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#hash-class">HASH</a> (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#iso-class">ISO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#iso-class">ISO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#ord-class">ORD</a> (<a href="#list-type">LIST</a> :A)</code>
-- <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#hash-class">HASH</a> (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
@@ -627,11 +628,11 @@ String of characters represented by Common Lisp `string`.
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#hash-class">HASH</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#iso-class">ISO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#string-type">STRING</a></code>
-- <code><a href="#hash-class">HASH</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#double-float-type">DOUBLE-FLOAT</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#single-float-type">SINGLE-FLOAT</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#string-type">STRING</a></code>
@@ -657,10 +658,10 @@ Either true or false represented by `t` and `nil` respectively.
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#hash-class">HASH</a> <a href="#boolean-type">BOOLEAN</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#boolean-type">BOOLEAN</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#boolean-type">BOOLEAN</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#boolean-type">BOOLEAN</a></code>
-- <code><a href="#hash-class">HASH</a> <a href="#boolean-type">BOOLEAN</a></code>
 
 </details>
 
@@ -675,11 +676,11 @@ Unbound integer. Uses `integer`.
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#integer-type">INTEGER</a></code>
-- <code><a href="#hash-class">HASH</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#dyadic-type">DYADIC</a></code>
@@ -756,11 +757,11 @@ Double precision floating point numer. Uses `double-float`.
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#hash-class">HASH</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
-- <code><a href="#hash-class">HASH</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#double-float-type">DOUBLE-FLOAT</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#double-float-type">DOUBLE-FLOAT</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i32-type">I32</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
@@ -796,11 +797,11 @@ Single precision floating point numer. Uses `single-float`.
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#hash-class">HASH</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
-- <code><a href="#hash-class">HASH</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#single-float-type">SINGLE-FLOAT</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#single-float-type">SINGLE-FLOAT</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i16-type">I16</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
@@ -861,11 +862,11 @@ A heterogeneous collection of items.
 <details>
 <summary>Instances</summary>
 
+- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code><a href="#iso-class">ISO</a> (<a href="#tuple-type">TUPLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :B :A)</code>
 - <code>(<a href="#ord-class">ORD</a> :A) (<a href="#ord-class">ORD</a> :B) &rArr; <a href="#ord-class">ORD</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
-- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#mappair-type">MAPPAIR</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#tuple-type">TUPLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :B :A)</code>
 - <code><a href="#bifunctor-class">BIFUNCTOR</a> <a href="#tuple-type">TUPLE</a></code>
@@ -954,6 +955,7 @@ Methods:
 - <code><a href="#eq-class">EQ</a> <a href="#lisptype-type">LISPTYPE</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#unit-type">UNIT</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#ord-type">ORD</a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#hash-type">HASH</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#boolean-type">BOOLEAN</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#u8-type">U8</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#u16-type">U16</a></code>
@@ -1067,6 +1069,7 @@ Methods:
 <summary>Instances</summary>
 
 - <code><a href="#ord-class">ORD</a> <a href="#ord-type">ORD</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#hash-type">HASH</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#boolean-type">BOOLEAN</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#u8-type">U8</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#u16-type">U16</a></code>
@@ -1091,48 +1094,6 @@ Methods:
 - <code>(<a href="#ord-class">ORD</a> :A) (<a href="#ord-class">ORD</a> :B) &rArr; <a href="#ord-class">ORD</a> (<a href="#result-type">RESULT</a> :A :B)</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#ord-class">ORD</a> (<a href="#mappair-type">MAPPAIR</a> :A :B)</code>
 - <code><a href="#ord-class">ORD</a> <a href="#big-float-type">BIG-FLOAT</a></code>
-
-</details>
-
-
-***
-
-#### <code>HASH</code> <sup><sub>[CLASS]</sub></sup><a name="hash-class"></a>
-<code><a href="#eq-class">EQ</a> :A &rArr; <a href="#hash-class">HASH</a> :A</code>
-
-Types which can be hashed for storage in hash tables.
-
-Invariant (== left right) implies (== (hash left) (hash right)).
-
-Methods:
-- <code>HASH :: (:A &rarr; <a href="#ufix-type">UFIX</a>)</code>
-
-<details>
-<summary>Instances</summary>
-
-- <code><a href="#hash-class">HASH</a> <a href="#boolean-type">BOOLEAN</a></code>
-- <code><a href="#hash-class">HASH</a> <a href="#i8-type">I8</a></code>
-- <code><a href="#hash-class">HASH</a> <a href="#i16-type">I16</a></code>
-- <code><a href="#hash-class">HASH</a> <a href="#i32-type">I32</a></code>
-- <code><a href="#hash-class">HASH</a> <a href="#i64-type">I64</a></code>
-- <code><a href="#hash-class">HASH</a> <a href="#u8-type">U8</a></code>
-- <code><a href="#hash-class">HASH</a> <a href="#u16-type">U16</a></code>
-- <code><a href="#hash-class">HASH</a> <a href="#u32-type">U32</a></code>
-- <code><a href="#hash-class">HASH</a> <a href="#u64-type">U64</a></code>
-- <code><a href="#hash-class">HASH</a> <a href="#integer-type">INTEGER</a></code>
-- <code><a href="#hash-class">HASH</a> <a href="#ifix-type">IFIX</a></code>
-- <code><a href="#hash-class">HASH</a> <a href="#ufix-type">UFIX</a></code>
-- <code><a href="#hash-class">HASH</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
-- <code><a href="#hash-class">HASH</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
-- <code><a href="#hash-class">HASH</a> <a href="#char-type">CHAR</a></code>
-- <code><a href="#hash-class">HASH</a> <a href="#string-type">STRING</a></code>
-- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
-- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple3-type">TUPLE3</a> :A :B :C)</code>
-- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) (<a href="#hash-class">HASH</a> :D) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple4-type">TUPLE4</a> :A :B :C :D)</code>
-- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) (<a href="#hash-class">HASH</a> :D) (<a href="#hash-class">HASH</a> :E) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple5-type">TUPLE5</a> :A :B :C :D :E)</code>
-- <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#hash-class">HASH</a> (<a href="#list-type">LIST</a> :A)</code>
-- <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#hash-class">HASH</a> (<a href="#tree-type">TREE</a> :A)</code>
-- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) &rArr; <a href="#hash-class">HASH</a> (<a href="#map-type">MAP</a> :A :B)</code>
 
 </details>
 
@@ -1262,6 +1223,7 @@ Methods:
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#monoid-class">MONOID</a> <a href="#hash-type">HASH</a></code>
 - <code><a href="#monoid-class">MONOID</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#monoid-class">MONOID</a> :A &rArr; <a href="#monoid-class">MONOID</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
 - <code><a href="#monoid-class">MONOID</a> (<a href="#list-type">LIST</a> :A)</code>
@@ -1461,6 +1423,7 @@ Methods:
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#semigroup-class">SEMIGROUP</a> <a href="#hash-type">HASH</a></code>
 - <code><a href="#semigroup-class">SEMIGROUP</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#semigroup-class">SEMIGROUP</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
 - <code><a href="#semigroup-class">SEMIGROUP</a> (<a href="#list-type">LIST</a> :A)</code>
@@ -1730,8 +1693,80 @@ Unwrap CONTAINER, returning DEFAULT on failure.
 
 ***
 
-#### <code>(COMBINE-HASHES LEFT RIGHT)</code> <sup><sub>FUNCTION</sub></sup><a name="combine-hashes-value"></a>
-<code>(<a href="#ufix-type">UFIX</a> &rarr; <a href="#ufix-type">UFIX</a> &rarr; <a href="#ufix-type">UFIX</a>)</code>
+# Package `coalton-library/hash`<a name="coalton-library/hash-package"></a>
+
+## [hash.lisp](https://github.com/coalton-lang/coalton/tree/main/library/hash.lisp) <a name="coalton-library/hash-hash-lisp-file"></a>
+
+### Types
+
+#### <code>HASH</code> <sup><sub>[TYPE]</sub></sup><a name="hash-type"></a>
+
+Implementation dependent hash code
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#hash-class">HASH</a> <a href="#hash-type">HASH</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#hash-type">HASH</a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#hash-type">HASH</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#hash-type">HASH</a></code>
+- <code><a href="#monoid-class">MONOID</a> <a href="#hash-type">HASH</a></code>
+- <code><a href="#semigroup-class">SEMIGROUP</a> <a href="#hash-type">HASH</a></code>
+
+</details>
+
+
+***
+
+### Classes
+
+#### <code>HASH</code> <sup><sub>[CLASS]</sub></sup><a name="hash-class"></a>
+<code><a href="#eq-class">EQ</a> :A &rArr; <a href="#hash-class">HASH</a> :A</code>
+
+Types which can be hashed for storage in hash tables.
+
+Invariant (== left right) implies (== (hash left) (hash right)).
+
+Methods:
+- <code>HASH :: (:A &rarr; <a href="#hash-type">HASH</a>)</code>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#hash-class">HASH</a> <a href="#hash-type">HASH</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#boolean-type">BOOLEAN</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#i8-type">I8</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#u8-type">U8</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#u16-type">U16</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#integer-type">INTEGER</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#ifix-type">IFIX</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#ufix-type">UFIX</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#char-type">CHAR</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#string-type">STRING</a></code>
+- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
+- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple3-type">TUPLE3</a> :A :B :C)</code>
+- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) (<a href="#hash-class">HASH</a> :D) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple4-type">TUPLE4</a> :A :B :C :D)</code>
+- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) (<a href="#hash-class">HASH</a> :D) (<a href="#hash-class">HASH</a> :E) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple5-type">TUPLE5</a> :A :B :C :D :E)</code>
+- <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#hash-class">HASH</a> (<a href="#list-type">LIST</a> :A)</code>
+- <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#hash-class">HASH</a> (<a href="#tree-type">TREE</a> :A)</code>
+- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) &rArr; <a href="#hash-class">HASH</a> (<a href="#map-type">MAP</a> :A :B)</code>
+
+</details>
+
+
+***
+
+### Values
+
+#### <code>(COMBINE-HASHES LHS RHS)</code> <sup><sub>FUNCTION</sub></sup><a name="combine-hashes-value"></a>
+<code>(<a href="#hash-type">HASH</a> &rarr; <a href="#hash-type">HASH</a> &rarr; <a href="#hash-type">HASH</a>)</code>
 
 ***
 
@@ -1815,6 +1850,7 @@ Methods:
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#result-type">RESULT</a> :A :B)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#hash-type">HASH</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#quantization-type">QUANTIZATION</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#dyadic-type">DYADIC</a></code>
@@ -3288,9 +3324,9 @@ If the first argument appears as a substring within the second argument, return 
 <details>
 <summary>Instances</summary>
 
+- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple3-type">TUPLE3</a> :A :B :C)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tuple3-type">TUPLE3</a> :A :B :C)</code>
 - <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) (<a href="#eq-class">EQ</a> :C) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple3-type">TUPLE3</a> :A :B :C)</code>
-- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple3-type">TUPLE3</a> :A :B :C)</code>
 
 </details>
 
@@ -3303,9 +3339,9 @@ If the first argument appears as a substring within the second argument, return 
 <details>
 <summary>Instances</summary>
 
+- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) (<a href="#hash-class">HASH</a> :D) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple4-type">TUPLE4</a> :A :B :C :D)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tuple4-type">TUPLE4</a> :A :B :C :D)</code>
 - <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) (<a href="#eq-class">EQ</a> :C) (<a href="#eq-class">EQ</a> :D) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple4-type">TUPLE4</a> :A :B :C :D)</code>
-- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) (<a href="#hash-class">HASH</a> :D) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple4-type">TUPLE4</a> :A :B :C :D)</code>
 
 </details>
 
@@ -3318,9 +3354,9 @@ If the first argument appears as a substring within the second argument, return 
 <details>
 <summary>Instances</summary>
 
+- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) (<a href="#hash-class">HASH</a> :D) (<a href="#hash-class">HASH</a> :E) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple5-type">TUPLE5</a> :A :B :C :D :E)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tuple5-type">TUPLE5</a> :A :B :C :D :E)</code>
 - <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) (<a href="#eq-class">EQ</a> :C) (<a href="#eq-class">EQ</a> :D) (<a href="#eq-class">EQ</a> :E) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple5-type">TUPLE5</a> :A :B :C :D :E)</code>
-- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) (<a href="#hash-class">HASH</a> :D) (<a href="#hash-class">HASH</a> :E) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple5-type">TUPLE5</a> :A :B :C :D :E)</code>
 
 </details>
 
@@ -4967,7 +5003,7 @@ An iterator which begins at START and yields successive elements spaced by STEP,
 ***
 
 #### <code>(ELEMENTWISE-HASH! ITER)</code> <sup><sub>FUNCTION</sub></sup><a name="elementwise-hash!-value"></a>
-<code>&forall; :A. <a href="#hash-class">HASH</a> :A &rArr; ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; <a href="#ufix-type">UFIX</a>)</code>
+<code>&forall; :A. <a href="#hash-class">HASH</a> :A &rArr; ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; <a href="#hash-type">HASH</a>)</code>
 
 Hash an iterator by combining the hashes of all its elements.
 
@@ -5029,9 +5065,9 @@ A red-black balanced binary tree, sorted by `&lt;=&gt;' and unique by `=='.
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#hash-class">HASH</a> (<a href="#tree-type">TREE</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tree-type">TREE</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#tree-type">TREE</a> :A)</code>
-- <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#hash-class">HASH</a> (<a href="#tree-type">TREE</a> :A)</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#monoid-class">MONOID</a> (<a href="#tree-type">TREE</a> :A)</code>
 - <code><a href="#foldable-class">FOLDABLE</a> <a href="#tree-type">TREE</a></code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#tree-type">TREE</a> :A)</code>
@@ -5154,9 +5190,9 @@ A red-black binary tree which associates each :KEY with a :VALUE, sorted by `&lt
 <details>
 <summary>Instances</summary>
 
+- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) &rArr; <a href="#hash-class">HASH</a> (<a href="#map-type">MAP</a> :A :B)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#map-type">MAP</a> :A :B)</code>
 - <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) &rArr; <a href="#eq-class">EQ</a> (<a href="#map-type">MAP</a> :A :B)</code>
-- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) &rArr; <a href="#hash-class">HASH</a> (<a href="#map-type">MAP</a> :A :B)</code>
 - <code><a href="#functor-class">FUNCTOR</a> (<a href="#map-type">MAP</a> :A)</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#map-type">MAP</a> :A :B)</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#map-type">MAP</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
