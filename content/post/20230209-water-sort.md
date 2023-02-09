@@ -48,7 +48,10 @@ unit of red liquid. The following is a sample initial state:
 - `(blue blue green green)`
 - `()`
 
-![Example 1 - Unsolved](/water-sort-images/example-1-unsolved.png)
+{{<figure
+src="/water-sort-images/example-1-unsolved.png"
+title="Example 1 - Unsolved"
+>}}
 
 In my text notation, the "top" of a beaker is leftmost, and the "bottom" is rightmost.
 
@@ -61,7 +64,10 @@ The following is a solved state from the above initial state:
 - `(green green green green)`
 - `(blue blue blue blue)`
 
-![Example 1 - Solved](/water-sort-images/example-1-solved.png)
+{{<figure
+src="/water-sort-images/example-1-solved.png"
+title="Example 1 - Solved"
+>}}
 
 In order to accomplish this, you pour one beaker onto another, under the following
 constraints:
@@ -75,22 +81,53 @@ constraints:
 
 Here are some example legal pours:
 - `(green blue red red)` onto `(green blue red)` => `(blue red red)` and `(green green blue red)`
-  ![Example Pour 1 - Before](/water-sort-images/example-pour-1-before.png)
-  ![Example Pour 1 - After](/water-sort-images/example-pour-1-after.png)
+
+  {{<twoimagefigure
+  src1="/water-sort-images/example-pour-1-before.png"
+  alt1="Example Pour 1 - Before"
+  src2="/water-sort-images/example-pour-1-after.png"
+  alt2="Example Pour 1 - After"
+  title="Example pour 1, before and after"
+  >}}
+  
 - `(green green red red)` onto `(green red)` => `(red red)` and `(green green green red)`
-  ![Example Pour 2 - Before](/water-sort-images/example-pour-2-before.png)
-  ![Example Pour 2 - After](/water-sort-images/example-pour-2-after.png)
+
+  {{<twoimagefigure
+  src1="/water-sort-images/example-pour-2-before.png"
+  alt1="Example Pour 2 - Before"
+  src2="/water-sort-images/example-pour-2-after.png"
+  alt2="Example Pour 2 - After"
+  title="Example pour 2, before and after"
+  >}}
+  
 - `(green green red red)` onto `(green red red)` => `(green red red)` and `(green green red red)`
-  ![Example Pour 3 - Before](/water-sort-images/example-pour-3-before.png)
-  ![Example Pour 3 - After](/water-sort-images/example-pour-3-after.png)
+
+  {{<twoimagefigure
+  src1="/water-sort-images/example-pour-3-before.png"
+  alt1="Example Pour 3 - Before"
+  src2="/water-sort-images/example-pour-3-after.png"
+  alt2="Example Pour 3 - After"
+  title="Example pour 2, before and after"
+  >}}
 
 Here are some example illegal pours:
 - `(green blue red red)` onto `(blue green red)`
   is illegal because the source and destination have different top colors.
-  ![Example Pour 4 - Invalid](/water-sort-images/example-pour-4-invalid.png)
+  
+  {{<figure
+  src="/water-sort-images/example-pour-4-invalid.png"
+  title="Example Pour 4 - Invalid"
+  width="30%"
+  >}}
+
 - `(green blue red red)` onto `(green blue green red)`
   is illegal because the destination is full.
-  ![Example Pour 5 - Invalid](/water-sort-images/example-pour-5-invalid.png)
+
+  {{<figure
+  src="/water-sort-images/example-pour-5-invalid.png"
+  title="Example Pour 5 - Invalid"
+  width="30%"
+  >}}
 
 An interesting (?) aside is that this is actually a solitaire variant, and you can play it
 with a deck of cards. Determine your number of "colors" and "beakers," making sure that
@@ -146,45 +183,72 @@ This last point is not obvious, but it's important as a way to shrink our state
 space. Imagine if we treat a puzzle state as an ordered set of beakers, like `Vector
 Beaker'. Consider these two (partial) states:
 
-1. 
-   1. `(red blue)`
+1. 1. `(red blue)`
    2. `(blue red)`
    3. `(red blue)`
-   ![Example 2.1](/water-sort-images/example-2-1.png)
 
-2. 
-   1. `(blue red)`
+{{<figure
+src="/water-sort-images/example-2-1.png"
+title="Example 2.1 - a partial state"
+width="30%"
+>}}
+
+2. 1. `(blue red)`
    2. `(red blue)`
    3. `(red blue)`
-   ![Example 2.2](/water-sort-images/example-2-2.png)
+
+{{<figure
+src="/water-sort-images/example-2-2.png"
+title="Example 2.2 - a permutation of 2.1"
+width="30%"
+>}}
 
 Note that they're permutations of the same set of beakers, and that each contains two
 different beaker configurations. If we treat a puzzle state as an ordered set of beakers,
 the two states each offer two moves:
 
-1. 
-  1. Pour beaker 1 into 3, resulting in
+1. From state 1, pour beaker 1 into 3, resulting in
      1. `(blue)`
      2. `(blue red)`
      3. `(red red blue)`
-     ![Example 2.1.1](/water-sort-images/example-2-1-1.png)
-  2. Pour beaker 3 into 1, resulting in
+
+{{<figure
+src="/water-sort-images/example-2-1-1.png"
+title="Example 2.1.1 - a successor of 2.1"
+width="30%"
+>}}
+   
+2. From state 1, pour beaker 3 into 1, resulting in
      1. `(red red blue)`
      2. `(blue red)`
      3. `(blue)`
-     ![Example 2.1.2](/water-sort-images/example-2-1-2.png)
+     
+{{<figure
+src="/water-sort-images/example-2-1-2.png"
+title="Example 2.1.2 - a successor of 2.1, and a permutation of 2.1.1"
+width="30%"
+>}}
 
-2. 
-   1. Pour beaker 2 into 3, resulting in
+3. From state 2, pour beaker 2 into 3, resulting in
       1. `(blue red)`
       2. `(blue)`
       3. `(red red blue)`
-      ![Example 2.2.1](/water-sort-images/example-2-2-1.png)
-   2. Pour beaker 3 into 2, resulting in
+     
+{{<figure
+src="/water-sort-images/example-2-2-1.png"
+title="Example 2.2.1 - a successor of 2.2, and a permutation of 2.1.1"
+width="30%"
+>}}
+4. From state 2, pour beaker 3 into 2, resulting in
       1. `(blue red)`
       2. `(red red blue)`
       3. `(blue)`
-      ![Example 2.2.2](/water-sort-images/example-2-2-2.png)
+      
+{{<figure
+src="/water-sort-images/example-2-2-2.png"
+title="Example 2.2.2 - a successor of 2.2, and a permutation of 2.1.1"
+width="30%"
+>}}
 
 The key observation is that our initial states 1 and 2 behave identically, and that all
 four of their successor states behave identically. The only information we actually care
@@ -206,18 +270,21 @@ bookkeeping later on when we do inserts and removals, but saves our map from gro
 arbitrarily large as we store a bunch of useless `BeakerConfiguration`s.
 
 ```lisp
-(repr :transparent) ; Specifying the `:transparent' representation for a single-variant, single-member type
-                    ; allows the Coalton compiler to optimize away its runtime container, leaving it
-                    ; representationally identical to the inner type. Because SBCL's allocator and garbage
-                    ; collector are quite fast, this is a pretty minor optimization; the difference in this
-                    ; code was an overall speedup of roughly 1%. But hey, there's no reason not to do it in
-                    ; this case, and 1% is better than 0%.
+(repr :transparent)
 (define-type PuzzleState
   (PuzzleState (map:Map BeakerConfiguration
-                        ;; maps each variety of BeakerConfiguration to the number of beakers in that
-                        ;; configuration in the puzzle. zeros are not present.
+                        ;; maps each variety of BeakerConfiguration to the 
+                        ;; number of beakers in that configuration in the
+                        ;; puzzle. zeros are not present.
                         UFix)))
 ```
+
+A quick aside: Specifying the `:transparent' representation for a single-variant,
+single-member type allows the Coalton compiler to optimize away its runtime container,
+leaving it representationally identical to the inner type. Because SBCL's allocator and
+garbage collector are quite fast, this is a pretty minor optimization; the difference in
+this code was an overall speedup of roughly 1%. But hey, there's no reason not to do it in
+this case, and 1% is better than 0%.
 
 We need to be able to do two operations on `BeakerConfiguration`s without mutating them:
 - Add a new color on top.
@@ -382,7 +449,9 @@ To remove a beaker:
 - If there were multiple such beakers in the puzzle, decrement their count.
 
 ```lisp
-(declare remove-beaker (PuzzleState -> BeakerConfiguration -> Optional PuzzleState))
+(declare remove-beaker (PuzzleState
+                        -> BeakerConfiguration 
+                        -> Optional PuzzleState))
 (define (remove-beaker puz bk)
   (let (PuzzleState puz) = puz)
   (match (map:lookup puz bk)
@@ -390,11 +459,13 @@ To remove a beaker:
     ((Some ct)
      (Some (PuzzleState
              (if (> ct 1)
-                 ;; both unwraps here are infallible because `lookup' already returned `Some'.
-                 ;; if there's multiple beakers like this in the puzzle, decrement the count.
+                 ;; both unwraps here are infallible because `lookup'
+                 ;; already returned `Some'.
+                 ;; if there's multiple beakers like this in the puzzle,
+                 ;; decrement the count.
                  (unwrap (map:update 1- puz bk))
-                 ;; if there was only one beaker like this in the puzzle, remove it from the map rather than
-                 ;; storing a zero.
+                 ;; if there was only one beaker like this in the puzzle,
+                 ;; remove it from the map rather than storing a zero.
                  (unwrap (map:remove puz bk))))))))
 ```
 
@@ -402,7 +473,10 @@ This is a helper that does both a `remove-beaker` and an `add-beaker`, for when 
 an old beaker with its new state after a pour.
 
 ```lisp
-(declare replace-beaker (PuzzleState -> BeakerConfiguration -> BeakerConfiguration -> Optional PuzzleState))
+(declare replace-beaker (PuzzleState 
+                         -> BeakerConfiguration 
+                         -> BeakerConfiguration 
+                         -> Optional PuzzleState))
 (define (replace-beaker puz old-bk new-bk)
   "Replace OLD-BK with NEW-BK within PUZ.
 
@@ -429,17 +503,27 @@ and the behavior of pouring multiple units of the same color at once:
   impossible.
   
 ```lisp
-(declare try-pour (Move -> Optional (Tuple BeakerConfiguration BeakerConfiguration)))
+(declare try-pour (Move -> 
+                   Optional (Tuple BeakerConfiguration
+                                   BeakerConfiguration)))
 (define (try-pour pour)
-  (let (PourInto (BeakerConfiguration from) (BeakerConfiguration into)) = pour)
+  (let (PourInto (BeakerConfiguration from) 
+                 (BeakerConfiguration into)) = pour)
+
   (let maybe-keep-pouring =
-    ;; the `match' below tries to pour a single unit of liquid from FROM into INTO. this recursive helper
-    ;; handles continuing to pour as long as possible.
-    (the (List Color -> List Color -> (Tuple BeakerConfiguration BeakerConfiguration))
+    ;; the `match' below tries to pour a single unit of liquid from FROM 
+    ;; into INTO. this recursive helper handles continuing to pour as long 
+    ;; as possible.
+    (the (List Color
+          -> List Color
+          -> (Tuple BeakerConfiguration BeakerConfiguration))
          (fn (from into)
-           (match (try-pour (PourInto (BeakerConfiguration from) (BeakerConfiguration into)))
+           (match (try-pour (PourInto (BeakerConfiguration from)
+                                      (BeakerConfiguration into)))
              ((Some tpl) tpl)
-             ((None) (Tuple (BeakerConfiguration from) (BeakerConfiguration into)))))))
+             ((None) (Tuple (BeakerConfiguration from) 
+                            (BeakerConfiguration into)))))))
+
   (match (Tuple from into)
     ;; you can't pour from an empty beaker
     ((Tuple (Nil) _) None)
@@ -455,7 +539,9 @@ and the behavior of pouring multiple units of the same color at once:
      (if (or (/= from-top into-top)
              (>= (list:length into-bot) 3))
          None
-         (Some (maybe-keep-pouring from-bot (Cons from-top (Cons into-top into-bot))))))))
+         (Some (maybe-keep-pouring from-bot
+                                   (Cons from-top 
+                                         (Cons into-top into-bot))))))))
 ```
 
 This is a helper that combines `try-pour` with `replace-beaker` to return the whole
@@ -466,8 +552,9 @@ updated puzzle after a move, where `try-pour` just returns the two updated beake
 (define (puzzle-try-pour puz pour)
   "Attempt to advance PUZ via (PourInto FROM INTO) by pouring FROM into INTO.
 
-FROM and INTO must both be BeakerConfigurations contained in PUZ. If FROM and INTO are ==, PuzzleState must
-contain at least two BeakerConfigurations in that configuration."
+FROM and INTO must both be BeakerConfigurations contained in PUZ. If FROM 
+and INTO are ==, PuzzleState must contain at least two BeakerConfigurations
+in that configuration."
   (let (PourInto from into) = pour)
   (match (try-pour pour)
     ((None) None)
@@ -482,7 +569,8 @@ the beaker when considering all the possible source beakers for all the possible
 the count to decide if it's possible to pour a beaker into another beaker with the same contents.
 
 ```lisp
-(declare puzzle-beakers-with-counts (PuzzleState -> iter:Iterator (Tuple BeakerConfiguration UFix)))
+(declare puzzle-beakers-with-counts
+         (PuzzleState -> iter:Iterator (Tuple BeakerConfiguration UFix)))
 (define (puzzle-beakers-with-counts puz)
   (let (PuzzleState puz) = puz)
   (map:entries puz))
@@ -492,7 +580,8 @@ This is an iterator over all the `BeakerConfiguration`s in a `PuzzleState`, rega
 when considering all the possible destination beakers for all the possible moves in a puzzle.
 
 ```lisp
-(declare puzzle-unique-beakers (PuzzleState -> iter:Iterator BeakerConfiguration))
+(declare puzzle-unique-beakers
+         (PuzzleState -> iter:Iterator BeakerConfiguration))
 (define (puzzle-unique-beakers puz)
   (let (PuzzleState puz) = puz)
   (map:keys puz))
@@ -510,40 +599,54 @@ NEW-STATE)`, then it is possible and legal to take `MOVE` from `PUZZLE`, and tak
 `NEW-PUZZLE`.
 
 ```lisp
-(declare possible-pours (PuzzleState -> iter:Iterator (Tuple Move PuzzleState)))
+(declare possible-pours
+         (PuzzleState -> iter:Iterator (Tuple Move PuzzleState)))
 (define (possible-pours puz)
-  "An iterator over all of the possible successor states from PUZ by making any valid move."
-  (let pour-from = (fn (from count)
-                     ;; we're interested only in unique beakers here because the result states from pouring
-                     ;; a beaker A into either a beaker B or B' where (== B B') are the same
-                     (pipe (puzzle-unique-beakers puz)
-                           (map (fn (into)
-                                  (if (and (== count 1) (== from into))
-                                      ;; you can't pour from a beaker into itself, but you can potentially
-                                      ;; pour between two beakers with the same contents. puzzle-try-pour
-                                      ;; would catch this and return None, but we can save a bit of compute
-                                      ;; by checking and bailing out early here.
-                                      None
-                                      (progn
-                                        (let pour = (PourInto from into))
-                                        (match (puzzle-try-pour puz pour)
-                                          ((None) None)
-                                          ((Some puz) (Some (Tuple pour puz))))))))
-                           iter:unwrapped!)))
-  ;; once again, we're interested only in unique beakers here, but we need to know the count to know if we
-  ;; can pour A into A' where (== A A')
+  "An iterator over all of the possible successor states from PUZ by making
+any valid move."
+  (let pour-from
+    = (fn (from count)
+         ;; we're interested only in unique beakers here because the result
+         ;; states from pouring a beaker A into either a beaker B or B'
+         ;; where (== B B') are the same
+         (pipe (puzzle-unique-beakers puz)
+           (map (fn (into)
+           (if (and (== count 1) (== from into))
+             ;; you can't pour from a beaker into 
+             ;; itself, but you can potentially pour 
+             ;; between two beakers with the same
+             ;; contents. puzzle-try-pour
+             ;; would catch this and return None,
+             ;; but we can save a bit of compute
+             ;; by checking and bailing out early.
+             None
+             (progn
+               (let pour = (PourInto from into))
+               (match (puzzle-try-pour puz pour)
+                 ((None) None)
+                 ((Some puz) (Some (Tuple pour puz))))))))
+           iter:unwrapped!)))
 
+  ;; once again, we're interested only in unique beakers here, but we need 
+  ;; to know the count to know if we can pour A into A' where (== A A')
   (pipe (puzzle-beakers-with-counts puz)
-        ;; also, it's never useful to pour from a "solved" beaker, i.e. an empty beaker or a full
-        ;; consolidated beaker. so we'll skip those when determining our possible source beakers.
-        (iter:filter! (uncurry (fn (beaker _) (not (beaker-solved? beaker)))))
-        ;; An aside on uncurry: puzzle-beakers-with-count is an iterator over tuples, i.e. pairs of two
-        ;; elements. We could destructure these manually using let or match, but in this function it's much
-        ;; easier to use uncurry to automatically destructure the tuple and pass both its elements to a
-        ;; function. The (uncurry (fn ...)) in the previous line behaves equivalently to:
+
+        ;; also, it's never useful to pour from a "solved" beaker, i.e. an 
+        ;; empty beaker or a full consolidated beaker. so we'll skip those 
+        ;; when determining our possible source beakers.
+        (iter:filter! (uncurry (fn (beaker _)
+                                 (not (beaker-solved? beaker)))))
+
+        ;; An aside on uncurry: puzzle-beakers-with-count is an iterator 
+        ;; over tuples, i.e. pairs of two elements. We could destructure 
+        ;; these manually using let or match, but in this function it's much
+        ;; easier to use uncurry to automatically destructure the tuple 
+        ;; and pass both its elements to a function. The (uncurry (fn ...))
+        ;; in the previous line behaves equivalently to:
         ;;   (fn (tpl)
         ;;     (let (Tuple beaker _) = tpl)
         ;;     (not (beaker-solved? beaker)))
+
         (map (uncurry pour-from))
         iter:flatten!))
 ```
@@ -589,8 +692,12 @@ e.g.:
                        ((Nil) count-so-far)
                        ((Cons other-clr rest)
                         (if (== clr other-clr)
-                            (slurp-run rest clr count-so-far)
-                            (slurp-run rest other-clr (1+ count-so-far))))))))
+                            (slurp-run rest 
+                                       clr
+                                       count-so-far)
+                            (slurp-run rest
+                                       other-clr
+                                       (1+ count-so-far))))))))
        (slurp-run rest first-clr 1)))))
 ```
 
@@ -615,7 +722,8 @@ sum of all its beakers.
 (declare predict-state-cost (PuzzleState -> UFix))
 (define (predict-state-cost puz)
   (pipe (puzzle-beakers-with-counts puz)
-        ;; uncurry once again saving me having to type out a destructuring let form.
+        ;; uncurry once again saving me having to type out a destructuring
+        ;; let form.
         (map (uncurry (fn (bk count)
                         (* (beaker-cost bk) count))))
         iter:sum!))
@@ -682,21 +790,28 @@ believe A* (and most search algorithms) are most cleanly and intuitively impleme
 procedural style with mutable state. Luckily, Coalton makes that easy too!
 
 ```lisp
-(declare find-solution (PuzzleState -> Optional (Tuple (List Move) PuzzleState)))
+(declare find-solution 
+         (PuzzleState -> Optional (Tuple (List Move) PuzzleState)))
 (define (find-solution start)
-  ;; a priority queue of states to search. lower-cost states will be searched first.
+  ;; a priority queue of states to search. 
+  ;; lower-cost states will be searched first.
   (let frontier = (the (queue:PriorityQueue UFix PuzzleState)
                        (queue:new)))
   (queue:insert! frontier 0 start)
-  ;; for computing search heuristics, a map from states to the cost along the shortest path to reach them.
+
+  ;; for computing search heuristics, a map from states to the cost along
+  ;; the shortest path to reach them.
   (let cost-to-reach = (the (hashtable:Hashtable PuzzleState UFix)
                             (hashtable:new)))
   (hashtable:set! cost-to-reach start 0)
-  ;; for reconstructing paths, a map from each state to its predecessor and the move between the two.
-  (let breadcrumbs = (the (hashtable:Hashtable PuzzleState (Tuple PuzzleState Move))
+
+  ;; for reconstructing paths, a map from each state to its predecessor
+  ;; and the move between the two.
+  (let breadcrumbs = (the (hashtable:Hashtable PuzzleState 
+                                               (Tuple PuzzleState Move))
                           (hashtable:new)))
-  ;; to avoid revisiting states, a map from state to visited? booleans. states not present in the map have
-  ;; not been visited.
+  ;; to avoid revisiting states, a map from state to visited? booleans. 
+  ;; states not present in the map have not been visited.
   (let visited = (the (hashtable:Hashtable PuzzleState Boolean)
                       (hashtable:new)))
 
@@ -707,11 +822,19 @@ procedural style with mutable state. Luckily, Coalton makes that easy too!
 
   (let new-shortest-path!
     = (the (UFix -> PuzzleState -> PuzzleState -> Move -> Unit)
-           (fn (cost-to-new-state new-state predecessor move-from-predecessor)
-             (hashtable:set! breadcrumbs new-state (Tuple predecessor move-from-predecessor))
-             (hashtable:set! cost-to-reach new-state cost-to-new-state)
+           (fn (cost-to-new-state 
+                new-state 
+                predecessor
+                move-from-predecessor)
+             (hashtable:set! breadcrumbs
+                             new-state
+                             (Tuple predecessor move-from-predecessor))
+             (hashtable:set! cost-to-reach
+                             new-state
+                             cost-to-new-state)
              (queue:insert! frontier
-                            (predict-total-cost cost-to-new-state new-state)
+                            (predict-total-cost cost-to-new-state
+                                                new-state)
                             new-state))))
 
   (let find-cost-to-reach
@@ -724,7 +847,10 @@ procedural style with mutable state. Luckily, Coalton makes that easy too!
     = (the (UFix -> PuzzleState -> PuzzleState -> Move -> Unit)
            (fn (cost-to-reach new-state predecessor move-from-predecessor)
              (when (< cost-to-reach (find-cost-to-reach new-state))
-               (new-shortest-path! cost-to-reach new-state predecessor move-from-predecessor)))))
+               (new-shortest-path! cost-to-reach
+                                   new-state
+                                   predecessor 
+                                   move-from-predecessor)))))
 
   (let move-cost
     = (the (Move -> UFix)
@@ -738,24 +864,33 @@ procedural style with mutable state. Luckily, Coalton makes that easy too!
   (let queue-neighbors-for-visit!
     = (the (PuzzleState -> UFix -> Unit)
            (fn (current-state cost-to-reach-current-state)
-             (iter:for-each! (uncurry (fn (move new-state)
-                                        (let cost-to-reach-new-state = (+ cost-to-reach-current-state (move-cost move)))
-                                        (possible-new-path! cost-to-reach-new-state
-                                                            new-state
-                                                            current-state
-                                                            move)))
-                             (possible-pours current-state)))))
+             (iter:for-each! 
+               (uncurry (fn (move new-state)
+                          (let cost-to-reach-new-state
+                            = (+ cost-to-reach-current-state 
+                                 (move-cost move)))
+                          (possible-new-path! cost-to-reach-new-state
+                                              new-state
+                                              current-state
+                                              move)))
+               (possible-pours current-state)))))
 
   (let ((visit!
           (the (PuzzleState -> Optional (Tuple (List Move) PuzzleState))
                (fn (current-state)
-                 (cond ((solved? current-state) (Some (Tuple (reverse (reconstruct-path current-state))
-                                                             current-state)))
+                 (cond ((solved? current-state) 
+                        (Some (Tuple (reverse 
+                                       (reconstruct-path current-state))
+                                     current-state)))
+
                        ((not (visited? current-state))
                         (progn
                           (hashtable:set! visited current-state True)
-                          (queue-neighbors-for-visit! current-state (find-cost-to-reach current-state))
+                          (queue-neighbors-for-visit! 
+                            current-state 
+                            (find-cost-to-reach current-state))
                           (search-loop!)))
+
                        (True (search-loop!))))))
 
         (search-loop!
@@ -770,7 +905,9 @@ procedural style with mutable state. Luckily, Coalton makes that easy too!
                (fn (destination)
                  (match (hashtable:get breadcrumbs destination)
                    ((None) Nil)
-                   ((Some (Tuple prev move)) (Cons move (reconstruct-path prev))))))))
+                   ((Some (Tuple prev move)) 
+                    (Cons move (reconstruct-path prev))))))))
+
     (search-loop!)))
 ```
 
@@ -816,12 +953,13 @@ Outside of our `coalton-toplevel`, back in the regular Lisp world:
 (cl:defmacro make-puzzle (colors cl:&body beakers)
   "Construct a PuzzleState containing the BEAKERS.
 
-COLORS should be a list of symbols which name colors. Each will be assigned a unique integer for use in Color
-objects.
+COLORS should be a list of symbols which name colors. Each will be assigned 
+a unique integer for use in Color objects.
 
 BEAKERS should each be either:
-- a list of color names from COLORS, denoting a beaker with those contents. The \"top\" of a beaker is on the
-  left, and the \"bottom\" of a beaker is on the right.
+- a list of color names from COLORS, denoting a beaker with those contents. 
+  The \"top\" of a beaker is on the left, and the \"bottom\" of a beaker is 
+  on the right.
 - the symbol coalton:Nil denoting an empty beaker.
 
 e.g.:
@@ -851,7 +989,8 @@ constructs a puzzle that might look graphically like:
                          'Nil
                          `(make-list ,@beaker))))
       `(let ,(cl:mapcar #'color-binding-form colors)
-         (%make-puzzle (make-list ,@(cl:mapcar #'beaker-make-list beakers)))))))
+         (%make-puzzle (make-list ,@(cl:mapcar #'beaker-make-list
+                                               beakers)))))))
 ```
 
 ## Trying it out!
@@ -860,7 +999,9 @@ As of writing, I was stuck on level 133 of the app, which corresponds to the fol
 `make-puzzle` form:
 
 ```lisp
-(make-puzzle (lime blue maroon baby-blue teal yellow navy-blue pink green orange grey magenta)
+(make-puzzle (lime blue maroon baby-blue 
+              teal yellow navy-blue pink 
+              green orange grey magenta)
   (lime blue maroon lime)
   (blue baby-blue teal yellow)
   (yellow navy-blue teal yellow)
@@ -884,7 +1025,11 @@ flags tuned for performance before finding a solution, so my repl session looked
 ```lisp
 CL-USER> (push :coalton-release *features*)
 (:COALTON-RELEASE #| other features elided |#)
-CL-USER> (declaim (optimize (speed 3) (safety 1) (space 1) (debug 1) (compilation-speed 0)))
+CL-USER> (declaim (optimize (speed 3)
+                            (safety 1)
+                            (space 1)
+                            (debug 1)
+                            (compilation-speed 0)))
 NIL
 CL-USER> (asdf:load-system "coalton" :force :all)
 #| boring compiler output elided |#
@@ -892,21 +1037,24 @@ T
 CL-USER> (asdf:load-system "water-sort")
 #| boring compiler output elided |#
 CL-USER> (in-package "water-sort")
-WATER-SORT/PACKAGE> (coalton (find-solution (make-puzzle (lime blue maroon baby-blue teal yellow navy-blue pink green orange grey magenta)
-                                              (lime blue maroon lime)
-                                              (blue baby-blue teal yellow)
-                                              (yellow navy-blue teal yellow)
-                                              (pink baby-blue green yellow)
-                                              (orange pink navy-blue grey)
-                                              (blue baby-blue navy-blue magenta)
-                                              (teal green maroon maroon)
-                                              (pink magenta lime maroon)
-                                              (orange grey grey pink)
-                                              (green lime teal magenta)
-                                              (grey baby-blue orange navy-blue)
-                                              (magenta blue green orange)
-                                              Nil
-                                              Nil)))
+WATER-SORT/PACKAGE> (coalton 
+  (make-puzzle (lime blue maroon baby-blue 
+                teal yellow navy-blue pink 
+                green orange grey magenta)
+    (lime blue maroon lime)
+    (blue baby-blue teal yellow)
+    (yellow navy-blue teal yellow)
+    (pink baby-blue green yellow)
+    (orange pink navy-blue grey)
+    (blue baby-blue navy-blue magenta)
+    (teal green maroon maroon)
+    (pink magenta lime maroon)
+    (orange grey grey pink)
+    (green lime teal magenta)
+    (grey baby-blue orange navy-blue)
+    (magenta blue green orange)
+    Nil
+    Nil))
 ```
 
 It chugged along for a few seconds (12ish, according to `CL:TIME`, on my m1 MacBook Air),
@@ -918,43 +1066,82 @@ enough, it worked!
 The solution, after my cleaning, was:
 
 ```lisp
-(POURINTO (BEAKER (green lime teal magenta)) (BEAKER Nil))
-(POURINTO (BEAKER (lime blue maroon lime)) (BEAKER (lime teal magenta)))
-(POURINTO (BEAKER (blue baby-blue navy-blue magenta)) (BEAKER (blue maroon lime)))
-(POURINTO (BEAKER (blue baby-blue teal yellow)) (BEAKER Nil))
-(POURINTO (BEAKER (baby-blue teal yellow)) (BEAKER (baby-blue navy-blue magenta)))
-(POURINTO (BEAKER (teal green maroon maroon)) (BEAKER (teal yellow)))
-(POURINTO (BEAKER (green maroon maroon)) (BEAKER (green)))
-(POURINTO (BEAKER (blue blue maroon lime)) (BEAKER (blue)))
-(POURINTO (BEAKER (maroon lime)) (BEAKER (maroon maroon)))
-(POURINTO (BEAKER (lime lime teal magenta)) (BEAKER (lime)))
-(POURINTO (BEAKER (teal magenta)) (BEAKER (teal teal yellow)))
-(POURINTO (BEAKER (magenta blue green orange)) (BEAKER (magenta)))
-(POURINTO (BEAKER (blue green orange)) (BEAKER (blue blue blue)))
-(POURINTO (BEAKER (green orange)) (BEAKER (green green)))
-(POURINTO (BEAKER (orange grey grey pink)) (BEAKER (orange)))
-(POURINTO (BEAKER (orange pink navy-blue grey)) (BEAKER (orange orange)))
-(POURINTO (BEAKER (pink magenta lime maroon)) (BEAKER (pink navy-blue grey)))
-(POURINTO (BEAKER (magenta lime maroon)) (BEAKER (magenta magenta)))
-(POURINTO (BEAKER (grey baby-blue orange navy-blue)) (BEAKER (grey grey pink)))
-(POURINTO (BEAKER (lime maroon)) (BEAKER (lime lime lime)))
-(POURINTO (BEAKER (maroon)) (BEAKER (maroon maroon maroon)))
-(POURINTO (BEAKER (baby-blue orange navy-blue)) (BEAKER Nil))
-(POURINTO (BEAKER (orange navy-blue)) (BEAKER (orange orange orange)))
-(POURINTO (BEAKER (baby-blue baby-blue navy-blue magenta)) (BEAKER (baby-blue)))
-(POURINTO (BEAKER (navy-blue magenta)) (BEAKER (navy-blue)))
-(POURINTO (BEAKER (magenta)) (BEAKER (magenta magenta magenta)))
-(POURINTO (BEAKER (teal teal teal yellow)) (BEAKER Nil))
-(POURINTO (BEAKER (yellow navy-blue teal yellow)) (BEAKER (yellow)))
-(POURINTO (BEAKER (navy-blue teal yellow)) (BEAKER (navy-blue navy-blue)))
-(POURINTO (BEAKER (teal yellow)) (BEAKER (teal teal teal)))
-(POURINTO (BEAKER (yellow)) (BEAKER (yellow yellow)))
-(POURINTO (BEAKER (pink pink navy-blue grey)) (BEAKER Nil))
-(POURINTO (BEAKER (navy-blue grey)) (BEAKER (navy-blue navy-blue navy-blue)))
-(POURINTO (BEAKER (grey grey grey pink)) (BEAKER (grey)))
-(POURINTO (BEAKER (pink baby-blue green yellow)) (BEAKER (pink)))
-(POURINTO (BEAKER (baby-blue green yellow)) (BEAKER (baby-blue baby-blue baby-blue)))
-(POURINTO (BEAKER (green yellow)) (BEAKER (green green green)))
-(POURINTO (BEAKER (yellow)) (BEAKER (yellow yellow yellow)))
-(POURINTO (BEAKER (pink pink)) (BEAKER (pink pink)))
+(POURINTO (BEAKER (green lime teal magenta)) 
+          (BEAKER Nil))
+(POURINTO (BEAKER (lime blue maroon lime)) 
+          (BEAKER (lime teal magenta)))
+(POURINTO (BEAKER (blue baby-blue navy-blue magenta)) 
+          (BEAKER (blue maroon lime)))
+(POURINTO (BEAKER (blue baby-blue teal yellow)) 
+          (BEAKER Nil))
+(POURINTO (BEAKER (baby-blue teal yellow)) 
+          (BEAKER (baby-blue navy-blue magenta)))
+(POURINTO (BEAKER (teal green maroon maroon)) 
+          (BEAKER (teal yellow)))
+(POURINTO (BEAKER (green maroon maroon)) 
+          (BEAKER (green)))
+(POURINTO (BEAKER (blue blue maroon lime)) 
+          (BEAKER (blue)))
+(POURINTO (BEAKER (maroon lime)) 
+          (BEAKER (maroon maroon)))
+(POURINTO (BEAKER (lime lime teal magenta)) 
+          (BEAKER (lime)))
+(POURINTO (BEAKER (teal magenta)) 
+          (BEAKER (teal teal yellow)))
+(POURINTO (BEAKER (magenta blue green orange)) 
+          (BEAKER (magenta)))
+(POURINTO (BEAKER (blue green orange)) 
+          (BEAKER (blue blue blue)))
+(POURINTO (BEAKER (green orange)) 
+          (BEAKER (green green)))
+(POURINTO (BEAKER (orange grey grey pink)) 
+          (BEAKER (orange)))
+(POURINTO (BEAKER (orange pink navy-blue grey)) 
+          (BEAKER (orange orange)))
+(POURINTO (BEAKER (pink magenta lime maroon)) 
+          (BEAKER (pink navy-blue grey)))
+(POURINTO (BEAKER (magenta lime maroon)) 
+          (BEAKER (magenta magenta)))
+(POURINTO (BEAKER (grey baby-blue orange navy-blue)) 
+          (BEAKER (grey grey pink)))
+(POURINTO (BEAKER (lime maroon)) 
+          (BEAKER (lime lime lime)))
+(POURINTO (BEAKER (maroon)) 
+          (BEAKER (maroon maroon maroon)))
+(POURINTO (BEAKER (baby-blue orange navy-blue)) 
+          (BEAKER Nil))
+(POURINTO (BEAKER (orange navy-blue)) 
+          (BEAKER (orange orange orange)))
+(POURINTO (BEAKER (baby-blue baby-blue navy-blue magenta)) 
+          (BEAKER (baby-blue)))
+(POURINTO (BEAKER (navy-blue magenta)) 
+          (BEAKER (navy-blue)))
+(POURINTO (BEAKER (magenta)) 
+          (BEAKER (magenta magenta magenta)))
+(POURINTO (BEAKER (teal teal teal yellow)) 
+          (BEAKER Nil))
+(POURINTO (BEAKER (yellow navy-blue teal yellow)) 
+          (BEAKER (yellow)))
+(POURINTO (BEAKER (navy-blue teal yellow)) 
+          (BEAKER (navy-blue navy-blue)))
+(POURINTO (BEAKER (teal yellow)) 
+          (BEAKER (teal teal teal)))
+(POURINTO (BEAKER (yellow)) 
+          (BEAKER (yellow yellow)))
+(POURINTO (BEAKER (pink pink navy-blue grey)) 
+          (BEAKER Nil))
+(POURINTO (BEAKER (navy-blue grey)) 
+          (BEAKER (navy-blue navy-blue navy-blue)))
+(POURINTO (BEAKER (grey grey grey pink)) 
+          (BEAKER (grey)))
+(POURINTO (BEAKER (pink baby-blue green yellow)) 
+          (BEAKER (pink)))
+(POURINTO (BEAKER (baby-blue green yellow)) 
+          (BEAKER (baby-blue baby-blue baby-blue)))
+(POURINTO (BEAKER (green yellow)) 
+          (BEAKER (green green green)))
+(POURINTO (BEAKER (yellow)) 
+          (BEAKER (yellow yellow yellow)))
+(POURINTO (BEAKER (pink pink)) 
+          (BEAKER (pink pink)))
 ```
