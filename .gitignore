@@ -1,4 +1,5 @@
 .DS_Store
+.direnv
 .hugo_build.lock
 public
 *~
