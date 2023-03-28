@@ -4123,7 +4123,7 @@ Returns the length of V
 ***
 
 #### <code>(FOREACH F V)</code> <sup><sub>FUNCTION</sub></sup><a name="foreach-value"></a>
-<code>&forall; :A :B. ((:A &rarr; :B) &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
+<code>&forall; :A. ((:A &rarr; <a href="#unit-type">UNIT</a>) &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Call the function F once for each item in V
 
@@ -4139,7 +4139,7 @@ Returns the number of elements that V can store without resizing
 ***
 
 #### <code>(FOREACH2 F V1 V2)</code> <sup><sub>FUNCTION</sub></sup><a name="foreach2-value"></a>
-<code>&forall; :A :B :C. ((:A &rarr; :B &rarr; :C) &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#vector-type">VECTOR</a> :B) &rarr; <a href="#unit-type">UNIT</a>)</code>
+<code>&forall; :A :B. ((:A &rarr; :B &rarr; <a href="#unit-type">UNIT</a>) &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#vector-type">VECTOR</a> :B) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Iterate in parallel over V1 and V2 calling F once for each pair of elements. Iteration stops when the shorter vector runs out of elements.
 
@@ -4211,7 +4211,7 @@ Remove the element IDX from VEC and replace it with the last element in VEC. The
 ***
 
 #### <code>(FOREACH-INDEX F V)</code> <sup><sub>FUNCTION</sub></sup><a name="foreach-index-value"></a>
-<code>&forall; :A :B. ((<a href="#ufix-type">UFIX</a> &rarr; :A &rarr; :B) &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
+<code>&forall; :A. ((<a href="#ufix-type">UFIX</a> &rarr; :A &rarr; <a href="#unit-type">UNIT</a>) &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Call the function F once for each item in V with its index
 
@@ -4300,7 +4300,7 @@ Returns the length of S
 ***
 
 #### <code>(FOREACH F S)</code> <sup><sub>FUNCTION</sub></sup><a name="foreach-value"></a>
-<code>&forall; :A :B. ((:A &rarr; :B) &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
+<code>&forall; :A. ((:A &rarr; <a href="#unit-type">UNIT</a>) &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Call the function F once for each item in S
 
@@ -4308,7 +4308,7 @@ Call the function F once for each item in S
 ***
 
 #### <code>(FOREACH2 F S1 S2)</code> <sup><sub>FUNCTION</sub></sup><a name="foreach2-value"></a>
-<code>&forall; :A :B :C. ((:A &rarr; :B &rarr; :C) &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; (<a href="#slice-type">SLICE</a> :B) &rarr; <a href="#unit-type">UNIT</a>)</code>
+<code>&forall; :A :B. ((:A &rarr; :B &rarr; <a href="#unit-type">UNIT</a>) &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; (<a href="#slice-type">SLICE</a> :B) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Iterate over S1 and S2 calling F once on each iteration
 
@@ -4348,7 +4348,7 @@ Sliding iteration over a vector
 ***
 
 #### <code>(FOREACH-INDEX F S)</code> <sup><sub>FUNCTION</sub></sup><a name="foreach-index-value"></a>
-<code>&forall; :A :B. ((<a href="#ufix-type">UFIX</a> &rarr; :A &rarr; :B) &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
+<code>&forall; :A. ((<a href="#ufix-type">UFIX</a> &rarr; :A &rarr; <a href="#unit-type">UNIT</a>) &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Call the function F once for each item in S with its index
 
@@ -4435,7 +4435,7 @@ Returns the key-values pairs as a list.
 ***
 
 #### <code>(FOREACH F TABLE)</code> <sup><sub>FUNCTION</sub></sup><a name="foreach-value"></a>
-<code>&forall; :A :B :C. ((:A &rarr; :B &rarr; :C) &rarr; (<a href="#hashtable-type">HASHTABLE</a> :A :B) &rarr; <a href="#unit-type">UNIT</a>)</code>
+<code>&forall; :A :B. ((:A &rarr; :B &rarr; <a href="#unit-type">UNIT</a>) &rarr; (<a href="#hashtable-type">HASHTABLE</a> :A :B) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Call F once for each key value pair in TABLE
 
@@ -4776,7 +4776,7 @@ An iterator which begins below the provided limit and counts down through and in
 ***
 
 #### <code>(FOR-EACH! THUNK ITER)</code> <sup><sub>FUNCTION</sub></sup><a name="for-each!-value"></a>
-<code>&forall; :A :B. ((:A &rarr; :B) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
+<code>&forall; :A. ((:A &rarr; <a href="#unit-type">UNIT</a>) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
 Call THUNK on each element of ITER in order for side effects.
 Discard values returned by THUNK.
