@@ -2101,7 +2101,7 @@ Methods:
 #### <code>TRANSFINITE</code> <sup><sub>[CLASS]</sub></sup><a name="transfinite-class"></a>
 <code><a href="#transfinite-class">TRANSFINITE</a> :A</code>
 
-Numberic type with a value for (positive) 'infinity' and/or 'NaN'
+Numeric type with a value for (positive) 'infinity' and/or 'NaN'
 
 Methods:
 - <code>INFINITY :: :A</code>
@@ -2181,7 +2181,7 @@ Absolute value of `x`.
 #### <code>(ASH X N)</code> <sup><sub>FUNCTION</sub></sup><a name="ash-value"></a>
 <code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#integer-type">INTEGER</a>)</code>
 
-Compute the "arithmetic shift" of X by N. 
+Compute the "arithmetic shift" of `x` by `n`. 
 
 
 ***
@@ -2190,6 +2190,14 @@ Compute the "arithmetic shift" of X by N.
 <code>&forall; :A :B. (<a href="#ord-class">ORD</a> :A) (<a href="#num-class">NUM</a> :A) (<a href="#num-class">NUM</a> :B) &rArr; (:A &rarr; :B)</code>
 
 The sign of `x`, where `(sign 0) = 1`.
+
+
+***
+
+#### <code>(ZERO? X)</code> <sup><sub>FUNCTION</sub></sup><a name="zero?-value"></a>
+<code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Is `x` zero?
 
 
 ***
