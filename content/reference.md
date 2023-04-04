@@ -4590,7 +4590,7 @@ Methods:
 
 ### Values
 
-#### <code>NEW</code> <sup><sub>[FUNCTION]</sub></sup><a name="new-value"></a>
+#### <code>(NEW F)</code> <sup><sub>FUNCTION</sub></sup><a name="new-value"></a>
 <code>&forall; :A. ((<a href="#unit-type">UNIT</a> &rarr; (<a href="#optional-type">OPTIONAL</a> :A)) &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
 Create a new iterator from a function that yields elements.
@@ -4819,6 +4819,11 @@ Return `None` if ITER is empty.
 
 ***
 
+#### <code>(SIZE-HINT ITER)</code> <sup><sub>FUNCTION</sub></sup><a name="size-hint-value"></a>
+<code>&forall; :A. ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#ufix-type">UFIX</a>))</code>
+
+***
+
 #### <code>(CHAR-RANGE START END)</code> <sup><sub>FUNCTION</sub></sup><a name="char-range-value"></a>
 <code>(<a href="#char-type">CHAR</a> &rarr; <a href="#char-type">CHAR</a> &rarr; (<a href="#iterator-type">ITERATOR</a> <a href="#char-type">CHAR</a>))</code>
 
@@ -4852,6 +4857,14 @@ Returns an iterator over tuples whose FSTs are elements from KEYS, and whose SND
 <code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
 An iterator which begins at zero and counts up through and including LIMIT.
+
+
+***
+
+#### <code>(FILTER-MAP! F ITER)</code> <sup><sub>FUNCTION</sub></sup><a name="filter-map!-value"></a>
+<code>&forall; :A :B. ((:A &rarr; (<a href="#optional-type">OPTIONAL</a> :B)) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :B))</code>
+
+Map an iterator, retaining only the elements where F returns SOME.
 
 
 ***
