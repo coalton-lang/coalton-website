@@ -27,6 +27,7 @@ identifier: Reference
 - <a href="#coalton-library/math/real-package"><code>coalton-library/math/real</code></a>
 - <a href="#coalton-library/math/complex-package"><code>coalton-library/math/complex</code></a>
 - <a href="#coalton-library/math/elementary-package"><code>coalton-library/math/elementary</code></a>
+- <a href="#coalton-library/math/dyadic-package"><code>coalton-library/math/dyadic</code></a>
 - <a href="#coalton-library/bits-package"><code>coalton-library/bits</code></a>
 - <a href="#coalton-library/char-package"><code>coalton-library/char</code></a>
 - <a href="#coalton-library/string-package"><code>coalton-library/string</code></a>
@@ -3031,6 +3032,69 @@ For `z = x + yi`,
 
 
     (magnitude z) = (sqrt (+ (^ x 2) (^ y 2)))
+
+
+***
+
+# Package `coalton-library/math/dyadic`<a name="coalton-library/math/dyadic-package"></a>
+
+## [math/dyadic.lisp](https://github.com/coalton-lang/coalton/tree/main/library/math/dyadic.lisp) <a name="coalton-library/math/dyadic-math-dyadic-lisp-file"></a>
+
+### Types
+
+#### <code>DYADIC</code> <sup><sub>[TYPE]</sub></sup><a name="dyadic-type"></a>
+- <code>(DYADIC <a href="#integer-type">INTEGER</a> <a href="#integer-type">INTEGER</a>)</code>
+
+`(Dyadic n k)` represents the rational n*2^k.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#dyadic-type">DYADIC</a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#dyadic-type">DYADIC</a></code>
+- <code><a href="#num-class">NUM</a> <a href="#dyadic-type">DYADIC</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#dyadic-type">DYADIC</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#dyadic-type">DYADIC</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#dyadic-type">DYADIC</a></code>
+- <code><a href="#real-class">REAL</a> <a href="#dyadic-type">DYADIC</a></code>
+- <code><a href="#rational-class">RATIONAL</a> <a href="#dyadic-type">DYADIC</a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#dyadic-type">DYADIC</a></code>
+
+</details>
+
+
+***
+
+### Values
+
+#### <code>(SCALE X J)</code> <sup><sub>FUNCTION</sub></sup><a name="scale-value"></a>
+<code>(<a href="#dyadic-type">DYADIC</a> &rarr; <a href="#integer-type">INTEGER</a> &rarr; <a href="#dyadic-type">DYADIC</a>)</code>
+
+Scales the exponent of a dyadic X by J.
+
+
+***
+
+#### <code>(SHIFT K A)</code> <sup><sub>FUNCTION</sub></sup><a name="shift-value"></a>
+<code>(<a href="#ufix-type">UFIX</a> &rarr; <a href="#dyadic-type">DYADIC</a> &rarr; <a href="#dyadic-type">DYADIC</a>)</code>
+
+Shift dyadic A to its floor with K+1 bits of precision.
+
+
+***
+
+#### <code>(SIMPLIFY D)</code> <sup><sub>FUNCTION</sub></sup><a name="simplify-value"></a>
+<code>(<a href="#dyadic-type">DYADIC</a> &rarr; <a href="#dyadic-type">DYADIC</a>)</code>
+
+Simplifies a Dyadic by maximizing the absolute value of the exponent.
+
+
+***
+
+#### <code>(SIMPLIFY-INTEGER N)</code> <sup><sub>FUNCTION</sub></sup><a name="simplify-integer-value"></a>
+<code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#dyadic-type">DYADIC</a>)</code>
+
+Finds the simplest dyadic given an integer
 
 
 ***
