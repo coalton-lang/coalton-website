@@ -3396,7 +3396,7 @@ If the first argument appears as a substring within the second argument, return 
 
 ### Values
 
-#### <code>(FST T)</code> <sup><sub>FUNCTION</sub></sup><a name="fst-value"></a>
+#### <code>(FST (TUPLE A _))</code> <sup><sub>FUNCTION</sub></sup><a name="fst-value"></a>
 <code>&forall; :A :B. ((<a href="#tuple-type">TUPLE</a> :A :B) &rarr; :A)</code>
 
 Get the first element of a tuple.
@@ -3404,7 +3404,7 @@ Get the first element of a tuple.
 
 ***
 
-#### <code>(SND T)</code> <sup><sub>FUNCTION</sub></sup><a name="snd-value"></a>
+#### <code>(SND (TUPLE _ B))</code> <sup><sub>FUNCTION</sub></sup><a name="snd-value"></a>
 <code>&forall; :A :B. ((<a href="#tuple-type">TUPLE</a> :A :B) &rarr; :B)</code>
 
 Get the second element of a tuple.
