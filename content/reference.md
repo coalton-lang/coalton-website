@@ -53,7 +53,7 @@ identifier: Reference
 
 Public interface to COALTON.
 
-## [fixed-size-numbers.lisp](https://github.com/coalton-lang/coalton/tree/main/library/fixed-size-numbers.lisp) <a name="coalton-fixed-size-numbers-lisp-file"></a>
+## [primitive-types.lisp](https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp) <a name="coalton-primitive-types-lisp-file"></a>
 
 ### Types
 
@@ -521,10 +521,6 @@ Non-allocating tagged non-negative integer; range is platform-dependent. Uses `(
 
 ***
 
-## [classes.lisp](https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp) <a name="coalton-classes-lisp-file"></a>
-
-### Types
-
 #### <code>VOID</code> <sup><sub>[TYPE]</sub></sup><a name="void-type"></a>
 
 <details>
@@ -550,6 +546,7 @@ A single character represented as a `character` type.
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#char-type">CHAR</a></code>
+- <code><a href="#fromiterator-class">FROMITERATOR</a> <a href="#string-type">STRING</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> <a href="#string-type">STRING</a> <a href="#char-type">CHAR</a></code>
 
 </details>
@@ -569,13 +566,13 @@ Homogeneous list of objects represented as a Common Lisp `list`.
 - <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#hash-class">HASH</a> (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#list-type">LIST</a> :A)</code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#iso-class">ISO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#iso-class">ISO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#iso-class">ISO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#ord-class">ORD</a> (<a href="#list-type">LIST</a> :A)</code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#into-class">INTO</a> <a href="#string-type">STRING</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#monad-class">MONAD</a> <a href="#list-type">LIST</a></code>
 - <code><a href="#monoid-class">MONOID</a> (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#list-type">LIST</a></code>
@@ -601,6 +598,7 @@ Homogeneous list of objects represented as a Common Lisp `list`.
 <summary>Instances</summary>
 
 - <code><a href="#eq-class">EQ</a> <a href="#unit-type">UNIT</a></code>
+- <code><a href="#intoiterator-class">INTOITERATOR</a> <a href="#unit-type">UNIT</a> :A</code>
 
 </details>
 
@@ -641,6 +639,7 @@ String of characters represented by Common Lisp `string`.
 - <code><a href="#monoid-class">MONOID</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#string-type">STRING</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#semigroup-class">SEMIGROUP</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#fromiterator-class">FROMITERATOR</a> <a href="#string-type">STRING</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> <a href="#string-type">STRING</a> <a href="#char-type">CHAR</a></code>
 
 </details>
@@ -871,6 +870,7 @@ A heterogeneous collection of items.
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#map-type">MAP</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#map-type">MAP</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
+- <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 
 </details>
 
@@ -899,6 +899,7 @@ Represents something that may have failed.
 - <code><a href="#semigroup-class">SEMIGROUP</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#result-type">RESULT</a> :B :A)</code>
 - <code><a href="#applicative-class">APPLICATIVE</a> (<a href="#result-type">RESULT</a> :A)</code>
 - <code><a href="#unwrappable-class">UNWRAPPABLE</a> (<a href="#result-type">RESULT</a> :A)</code>
+- <code><a href="#fromiterator-class">FROMITERATOR</a> :A :B &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#result-type">RESULT</a> :C :A) (<a href="#result-type">RESULT</a> :C :B)</code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#result-type">RESULT</a> :A :B) :B</code>
 
 </details>
@@ -930,6 +931,7 @@ Represents something that may not have a value.
 - <code><a href="#alternative-class">ALTERNATIVE</a> <a href="#optional-type">OPTIONAL</a></code>
 - <code><a href="#applicative-class">APPLICATIVE</a> <a href="#optional-type">OPTIONAL</a></code>
 - <code><a href="#unwrappable-class">UNWRAPPABLE</a> <a href="#optional-type">OPTIONAL</a></code>
+- <code><a href="#fromiterator-class">FROMITERATOR</a> :A :B &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#optional-type">OPTIONAL</a> :A) (<a href="#optional-type">OPTIONAL</a> :B)</code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#optional-type">OPTIONAL</a> :A) :A</code>
 
 </details>
@@ -950,9 +952,9 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#eq-class">EQ</a> <a href="#lisptype-type">LISPTYPE</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#ord-type">ORD</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#unit-type">UNIT</a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#lisptype-type">LISPTYPE</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#hash-type">HASH</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#boolean-type">BOOLEAN</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#u8-type">U8</a></code>
@@ -971,18 +973,19 @@ Methods:
 - <code><a href="#eq-class">EQ</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#complex-class">COMPLEX</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> <a href="#dyadic-type">DYADIC</a></code>
-- <code><a href="#eq-class">EQ</a> <a href="#char-type">CHAR</a></code>
-- <code><a href="#eq-class">EQ</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#cell-type">CELL</a> :A)</code>
+- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
+- <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) &rArr; <a href="#eq-class">EQ</a> (<a href="#result-type">RESULT</a> :A :B)</code>
 - <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) (<a href="#eq-class">EQ</a> :C) (<a href="#eq-class">EQ</a> :D) (<a href="#eq-class">EQ</a> :E) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple5-type">TUPLE5</a> :A :B :C :D :E)</code>
 - <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) (<a href="#eq-class">EQ</a> :C) (<a href="#eq-class">EQ</a> :D) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple4-type">TUPLE4</a> :A :B :C :D)</code>
 - <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) (<a href="#eq-class">EQ</a> :C) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple3-type">TUPLE3</a> :A :B :C)</code>
 - <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
-- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#list-type">LIST</a> :A)</code>
-- <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) &rArr; <a href="#eq-class">EQ</a> (<a href="#result-type">RESULT</a> :A :B)</code>
-- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#cell-type">CELL</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#eq-class">EQ</a> <a href="#char-type">CHAR</a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#slice-type">SLICE</a> :A)</code>
+- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#eq-class">EQ</a> :B) &rArr; <a href="#eq-class">EQ</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#tree-type">TREE</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> <a href="#color-type">COLOR</a></code>
 - <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) &rArr; <a href="#eq-class">EQ</a> (<a href="#map-type">MAP</a> :A :B)</code>
@@ -997,7 +1000,7 @@ Methods:
 #### <code>ISO</code> <sup><sub>[CLASS]</sub></sup><a name="iso-class"></a>
 <code>(<a href="#into-class">INTO</a> :A :B) (<a href="#into-class">INTO</a> :B :A) &rArr; <a href="#iso-class">ISO</a> :A :B</code>
 
-Opting into this marker typeclass imples that the instances for (Into :a :b) and (Into :b :a) form a bijection.
+Opting into this marker typeclass imples that the instances for `(Into :a :b)` and `(Into :b :a)` form a bijection.
 
 Methods:
 
@@ -1005,10 +1008,10 @@ Methods:
 <summary>Instances</summary>
 
 - <code><a href="#iso-class">ISO</a> :A :A</code>
-- <code><a href="#iso-class">ISO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
-- <code><a href="#iso-class">ISO</a> (<a href="#tuple-type">TUPLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :B :A)</code>
 - <code><a href="#iso-class">ISO</a> (<a href="#result-type">RESULT</a> <a href="#unit-type">UNIT</a> :A) (<a href="#optional-type">OPTIONAL</a> :A)</code>
+- <code><a href="#iso-class">ISO</a> (<a href="#tuple-type">TUPLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :B :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#iso-class">ISO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
+- <code><a href="#iso-class">ISO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#iso-class">ISO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
 
 </details>
@@ -1046,8 +1049,8 @@ Methods:
 - <code><a href="#num-class">NUM</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#complex-class">COMPLEX</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
 - <code><a href="#num-class">NUM</a> <a href="#dyadic-type">DYADIC</a></code>
-- <code><a href="#num-class">NUM</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
 - <code><a href="#num-class">NUM</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#cell-type">CELL</a> :A)</code>
+- <code><a href="#num-class">NUM</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
 - <code><a href="#num-class">NUM</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 
 </details>
@@ -1084,12 +1087,12 @@ Methods:
 - <code><a href="#ord-class">ORD</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#dyadic-type">DYADIC</a></code>
+- <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#ord-class">ORD</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
+- <code>(<a href="#ord-class">ORD</a> :A) (<a href="#ord-class">ORD</a> :B) &rArr; <a href="#ord-class">ORD</a> (<a href="#result-type">RESULT</a> :A :B)</code>
+- <code>(<a href="#ord-class">ORD</a> :A) (<a href="#ord-class">ORD</a> :B) &rArr; <a href="#ord-class">ORD</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
+- <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#ord-class">ORD</a> (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#ord-class">ORD</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#string-type">STRING</a></code>
-- <code>(<a href="#ord-class">ORD</a> :A) (<a href="#ord-class">ORD</a> :B) &rArr; <a href="#ord-class">ORD</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
-- <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#ord-class">ORD</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
-- <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#ord-class">ORD</a> (<a href="#list-type">LIST</a> :A)</code>
-- <code>(<a href="#ord-class">ORD</a> :A) (<a href="#ord-class">ORD</a> :B) &rArr; <a href="#ord-class">ORD</a> (<a href="#result-type">RESULT</a> :A :B)</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#ord-class">ORD</a> (<a href="#mappair-type">MAPPAIR</a> :A :B)</code>
 - <code><a href="#ord-class">ORD</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 
@@ -1164,18 +1167,18 @@ Methods:
 - <code><a href="#complex-class">COMPLEX</a> :A &rArr; <a href="#into-class">INTO</a> :A (<a href="#complex-type">COMPLEX</a> :A)</code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#dyadic-type">DYADIC</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#dyadic-type">DYADIC</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#into-class">INTO</a> (<a href="#cell-type">CELL</a> :A) :A</code>
+- <code><a href="#into-class">INTO</a> :A (<a href="#cell-type">CELL</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#optional-type">OPTIONAL</a> :A) (<a href="#result-type">RESULT</a> <a href="#unit-type">UNIT</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#result-type">RESULT</a> :A :B) (<a href="#optional-type">OPTIONAL</a> :B)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#tuple-type">TUPLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :B :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#into-class">INTO</a> <a href="#double-float-type">DOUBLE-FLOAT</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#single-float-type">SINGLE-FLOAT</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#string-type">STRING</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#tuple-type">TUPLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :B :A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#optional-type">OPTIONAL</a> :A) (<a href="#result-type">RESULT</a> <a href="#unit-type">UNIT</a> :A)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#result-type">RESULT</a> :A :B) (<a href="#optional-type">OPTIONAL</a> :B)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#cell-type">CELL</a> :A) :A</code>
-- <code><a href="#into-class">INTO</a> :A (<a href="#cell-type">CELL</a> :A)</code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#slice-type">SLICE</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#mappair-type">MAPPAIR</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
@@ -1201,8 +1204,8 @@ Methods:
 <summary>Instances</summary>
 
 - <code><a href="#monad-class">MONAD</a> <a href="#optional-type">OPTIONAL</a></code>
-- <code><a href="#monad-class">MONAD</a> <a href="#list-type">LIST</a></code>
 - <code><a href="#monad-class">MONAD</a> (<a href="#result-type">RESULT</a> :A)</code>
+- <code><a href="#monad-class">MONAD</a> <a href="#list-type">LIST</a></code>
 - <code><a href="#monad-class">MONAD</a> (<a href="#st-type">ST</a> :A)</code>
 
 </details>
@@ -1222,10 +1225,10 @@ Methods:
 <summary>Instances</summary>
 
 - <code><a href="#monoid-class">MONOID</a> <a href="#hash-type">HASH</a></code>
-- <code><a href="#monoid-class">MONOID</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#monoid-class">MONOID</a> :A &rArr; <a href="#monoid-class">MONOID</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
-- <code><a href="#monoid-class">MONOID</a> (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#monoid-class">MONOID</a> :A &rArr; <a href="#monoid-class">MONOID</a> (<a href="#result-type">RESULT</a> :B :A)</code>
+- <code><a href="#monoid-class">MONOID</a> (<a href="#list-type">LIST</a> :A)</code>
+- <code><a href="#monoid-class">MONOID</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#monoid-class">MONOID</a> (<a href="#tree-type">TREE</a> :A)</code>
 
 </details>
@@ -1244,13 +1247,13 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#functor-class">FUNCTOR</a> <a href="#optional-type">OPTIONAL</a></code>
-- <code><a href="#functor-class">FUNCTOR</a> <a href="#list-type">LIST</a></code>
-- <code><a href="#functor-class">FUNCTOR</a> (<a href="#result-type">RESULT</a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#cell-type">CELL</a></code>
+- <code><a href="#functor-class">FUNCTOR</a> <a href="#iterator-type">ITERATOR</a></code>
+- <code><a href="#functor-class">FUNCTOR</a> <a href="#optional-type">OPTIONAL</a></code>
+- <code><a href="#functor-class">FUNCTOR</a> (<a href="#result-type">RESULT</a> :A)</code>
+- <code><a href="#functor-class">FUNCTOR</a> <a href="#list-type">LIST</a></code>
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#vector-type">VECTOR</a></code>
 - <code><a href="#functor-class">FUNCTOR</a> (<a href="#st-type">ST</a> :A)</code>
-- <code><a href="#functor-class">FUNCTOR</a> <a href="#iterator-type">ITERATOR</a></code>
 - <code><a href="#functor-class">FUNCTOR</a> (<a href="#map-type">MAP</a> :A)</code>
 
 </details>
@@ -1261,7 +1264,7 @@ Methods:
 #### <code>TRYINTO</code> <sup><sub>[CLASS]</sub></sup><a name="tryinto-class"></a>
 <code><a href="#tryinto-class">TRYINTO</a> :A :B</code>
 
-TRY-INTO implies *most* elements of :a can be represented exactly by an element of :b, but sometimes not. If not, an error string is returned.
+TRY-INTO implies some elements of `:a` can be represented exactly by an element of :b, but sometimes not. If not, an error string is returned.
 
 Methods:
 - <code>TRYINTO :: (:A &rarr; (<a href="#result-type">RESULT</a> <a href="#string-type">STRING</a> :B))</code>
@@ -1386,8 +1389,8 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#bifunctor-class">BIFUNCTOR</a> <a href="#tuple-type">TUPLE</a></code>
 - <code><a href="#bifunctor-class">BIFUNCTOR</a> <a href="#result-type">RESULT</a></code>
+- <code><a href="#bifunctor-class">BIFUNCTOR</a> <a href="#tuple-type">TUPLE</a></code>
 
 </details>
 
@@ -1422,12 +1425,12 @@ Methods:
 <summary>Instances</summary>
 
 - <code><a href="#semigroup-class">SEMIGROUP</a> <a href="#hash-type">HASH</a></code>
-- <code><a href="#semigroup-class">SEMIGROUP</a> <a href="#string-type">STRING</a></code>
-- <code><a href="#semigroup-class">SEMIGROUP</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
-- <code><a href="#semigroup-class">SEMIGROUP</a> (<a href="#list-type">LIST</a> :A)</code>
-- <code><a href="#semigroup-class">SEMIGROUP</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#result-type">RESULT</a> :B :A)</code>
 - <code><a href="#semigroup-class">SEMIGROUP</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#cell-type">CELL</a> :A)</code>
+- <code><a href="#semigroup-class">SEMIGROUP</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
+- <code><a href="#semigroup-class">SEMIGROUP</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#result-type">RESULT</a> :B :A)</code>
+- <code><a href="#semigroup-class">SEMIGROUP</a> (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#semigroup-class">SEMIGROUP</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#tree-type">TREE</a> :A)</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#map-type">MAP</a> :A :B)</code>
 
@@ -1468,10 +1471,10 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#applicative-class">APPLICATIVE</a> <a href="#optional-type">OPTIONAL</a></code>
-- <code><a href="#applicative-class">APPLICATIVE</a> <a href="#list-type">LIST</a></code>
-- <code><a href="#applicative-class">APPLICATIVE</a> (<a href="#result-type">RESULT</a> :A)</code>
 - <code><a href="#applicative-class">APPLICATIVE</a> <a href="#cell-type">CELL</a></code>
+- <code><a href="#applicative-class">APPLICATIVE</a> <a href="#optional-type">OPTIONAL</a></code>
+- <code><a href="#applicative-class">APPLICATIVE</a> (<a href="#result-type">RESULT</a> :A)</code>
+- <code><a href="#applicative-class">APPLICATIVE</a> <a href="#list-type">LIST</a></code>
 - <code><a href="#applicative-class">APPLICATIVE</a> (<a href="#st-type">ST</a> :A)</code>
 
 </details>
@@ -1704,13 +1707,13 @@ Methods:
 - <code><a href="#hash-class">HASH</a> <a href="#ufix-type">UFIX</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
-- <code><a href="#hash-class">HASH</a> <a href="#char-type">CHAR</a></code>
-- <code><a href="#hash-class">HASH</a> <a href="#string-type">STRING</a></code>
 - <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) (<a href="#hash-class">HASH</a> :D) (<a href="#hash-class">HASH</a> :E) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple5-type">TUPLE5</a> :A :B :C :D :E)</code>
 - <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) (<a href="#hash-class">HASH</a> :D) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple4-type">TUPLE4</a> :A :B :C :D)</code>
 - <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple3-type">TUPLE3</a> :A :B :C)</code>
 - <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#hash-class">HASH</a> (<a href="#list-type">LIST</a> :A)</code>
+- <code><a href="#hash-class">HASH</a> <a href="#char-type">CHAR</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#hash-class">HASH</a> (<a href="#tree-type">TREE</a> :A)</code>
 - <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) &rArr; <a href="#hash-class">HASH</a> (<a href="#map-type">MAP</a> :A :B)</code>
 
@@ -1790,6 +1793,7 @@ Methods:
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#boolean-type">BOOLEAN</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#void-type">VOID</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#u8-type">U8</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#u16-type">U16</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#u32-type">U32</a></code>
@@ -1800,7 +1804,6 @@ Methods:
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#ufix-type">UFIX</a></code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#void-type">VOID</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#result-type">RESULT</a> :A :B)</code>
@@ -1809,15 +1812,15 @@ Methods:
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#quantization-type">QUANTIZATION</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#dyadic-type">DYADIC</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#cell-type">CELL</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#iterator-type">ITERATOR</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tuple3-type">TUPLE3</a> :A :B :C)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tuple4-type">TUPLE4</a> :A :B :C :D)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tuple5-type">TUPLE5</a> :A :B :C :D :E)</code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#cell-type">CELL</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#slice-type">SLICE</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#st-type">ST</a> :A :B)</code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#iterator-type">ITERATOR</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#color-type">COLOR</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tree-type">TREE</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#iteratorstacknode-type">ITERATORSTACKNODE</a> :A)</code>
@@ -1846,6 +1849,11 @@ Returns a Proxy containing the type of the parameter.
 
 Returns the parameter, forcing the proxy to have the same type as the parameter.
 
+
+***
+
+#### <code>(PROXY-INNER _)</code> <sup><sub>FUNCTION</sub></sup><a name="proxy-inner-value"></a>
+<code>&forall; :A :B. ((<a href="#proxy-type">PROXY</a> (:A :B)) &rarr; (<a href="#proxy-type">PROXY</a> :B))</code>
 
 ***
 
@@ -3143,6 +3151,14 @@ Methods:
 
 ### Values
 
+#### <code>(RANGE START END)</code> <sup><sub>FUNCTION</sub></sup><a name="range-value"></a>
+<code>(<a href="#char-type">CHAR</a> &rarr; <a href="#char-type">CHAR</a> &rarr; (<a href="#iterator-type">ITERATOR</a> <a href="#char-type">CHAR</a>))</code>
+
+An inclusive range of characters from START to END by cl:char-code.
+
+
+***
+
 #### <code>(ALPHA? C)</code> <sup><sub>FUNCTION</sub></sup><a name="alpha?-value"></a>
 <code>(<a href="#char-type">CHAR</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
@@ -3257,6 +3273,14 @@ Is C an ASCII alphanumeric character?
 <code>(<a href="#string-type">STRING</a> &rarr; <a href="#ufix-type">UFIX</a> &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#char-type">CHAR</a>))</code>
 
 Return the IDXth character of STR.
+
+
+***
+
+#### <code>(CHARS STR)</code> <sup><sub>FUNCTION</sub></sup><a name="chars-value"></a>
+<code>(<a href="#string-type">STRING</a> &rarr; (<a href="#iterator-type">ITERATOR</a> <a href="#char-type">CHAR</a>))</code>
+
+Returns an iterator over the characters in STR.
 
 
 ***
@@ -3931,7 +3955,7 @@ Break a list into a list of equivalence classes according to an equivalence rela
 #### <code>(OK? X)</code> <sup><sub>FUNCTION</sub></sup><a name="ok?-value"></a>
 <code>&forall; :A :B. ((<a href="#result-type">RESULT</a> :A :B) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
-Returns TRUE if X is ERR
+Returns TRUE if X is OK
 
 
 ***
@@ -4077,6 +4101,7 @@ Apply F to the contents of CEL, swapping the result for the old value
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#sliceable-class">SLICEABLE</a> (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#iso-class">ISO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
@@ -4186,6 +4211,14 @@ Returns TRUE if V is empty
 
 ***
 
+#### <code>(EXTEND VEC ITER)</code> <sup><sub>FUNCTION</sub></sup><a name="extend-value"></a>
+<code>&forall; :A :B. <a href="#intoiterator-class">INTOITERATOR</a> :B :A &rArr; ((<a href="#vector-type">VECTOR</a> :A) &rarr; :B &rarr; <a href="#unit-type">UNIT</a>)</code>
+
+Push every element in ITER to the end of VEC.
+
+
+***
+
 #### <code>(LENGTH V)</code> <sup><sub>FUNCTION</sub></sup><a name="length-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#ufix-type">UFIX</a>)</code>
 
@@ -4194,26 +4227,10 @@ Returns the length of V
 
 ***
 
-#### <code>(FOREACH F V)</code> <sup><sub>FUNCTION</sub></sup><a name="foreach-value"></a>
-<code>&forall; :A. ((:A &rarr; <a href="#unit-type">UNIT</a>) &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
-
-Call the function F once for each item in V
-
-
-***
-
 #### <code>(CAPACITY V)</code> <sup><sub>FUNCTION</sub></sup><a name="capacity-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#ufix-type">UFIX</a>)</code>
 
 Returns the number of elements that V can store without resizing
-
-
-***
-
-#### <code>(FOREACH2 F V1 V2)</code> <sup><sub>FUNCTION</sub></sup><a name="foreach2-value"></a>
-<code>&forall; :A :B. ((:A &rarr; :B &rarr; <a href="#unit-type">UNIT</a>) &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#vector-type">VECTOR</a> :B) &rarr; <a href="#unit-type">UNIT</a>)</code>
-
-Iterate in parallel over V1 and V2 calling F once for each pair of elements. Iteration stops when the shorter vector runs out of elements.
 
 
 ***
@@ -4274,18 +4291,18 @@ Return the INDEXth element of V without checking if the element exists
 
 ***
 
-#### <code>(SWAP-REMOVE! IDX VEC)</code> <sup><sub>FUNCTION</sub></sup><a name="swap-remove!-value"></a>
-<code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
+#### <code>(SET-CAPACITY NEW-CAPACITY V)</code> <sup><sub>FUNCTION</sub></sup><a name="set-capacity-value"></a>
+<code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
-Remove the element IDX from VEC and replace it with the last element in VEC. Then return the removed element.
+Set the capacity of V to NEW-CAPACITY. Setting the capacity to lower then the length will remove elements from the end.
 
 
 ***
 
-#### <code>(FOREACH-INDEX F V)</code> <sup><sub>FUNCTION</sub></sup><a name="foreach-index-value"></a>
-<code>&forall; :A. ((<a href="#ufix-type">UFIX</a> &rarr; :A &rarr; <a href="#unit-type">UNIT</a>) &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
+#### <code>(SWAP-REMOVE! IDX VEC)</code> <sup><sub>FUNCTION</sub></sup><a name="swap-remove!-value"></a>
+<code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
-Call the function F once for each item in V with its index
+Remove the element IDX from VEC and replace it with the last element in VEC. Then return the removed element.
 
 
 ***
@@ -4317,12 +4334,15 @@ Remove the element IDX from VEC and replace it with the last element in VEC with
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#sliceable-class">SLICEABLE</a> (<a href="#slice-type">SLICE</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#slice-type">SLICE</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#slice-type">SLICE</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#iso-class">ISO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#slice-type">SLICE</a> :A)</code>
 - <code><a href="#foldable-class">FOLDABLE</a> <a href="#slice-type">SLICE</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#slice-type">SLICE</a> :A) :A</code>
+- <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#slice-type">SLICE</a> :A) :A</code>
 
 </details>
 
@@ -4332,17 +4352,9 @@ Remove the element IDX from VEC and replace it with the last element in VEC with
 ### Values
 
 #### <code>(NEW START LENGTH V)</code> <sup><sub>FUNCTION</sub></sup><a name="new-value"></a>
-<code>&forall; :A. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; (<a href="#ufix-type">UFIX</a> &rarr; <a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#slice-type">SLICE</a> :A))</code>
+<code>&forall; :A :B. (<a href="#runtimerepr-class">RUNTIMEREPR</a> :B) (<a href="#sliceable-class">SLICEABLE</a> (:A :B)) &rArr; (<a href="#ufix-type">UFIX</a> &rarr; <a href="#ufix-type">UFIX</a> &rarr; (:A :B) &rarr; (<a href="#slice-type">SLICE</a> :B))</code>
 
 Create a new slice backed by V starting at index START and continuing for LENGTH elements.
-
-
-***
-
-#### <code>(COPY S)</code> <sup><sub>FUNCTION</sub></sup><a name="copy-value"></a>
-<code>&forall; :A. ((<a href="#slice-type">SLICE</a> :A) &rarr; (<a href="#slice-type">SLICE</a> :A))</code>
-
-Returns a new slice containg the same elements as S
 
 
 ***
@@ -4371,22 +4383,6 @@ Returns the length of S
 
 ***
 
-#### <code>(FOREACH F S)</code> <sup><sub>FUNCTION</sub></sup><a name="foreach-value"></a>
-<code>&forall; :A. ((:A &rarr; <a href="#unit-type">UNIT</a>) &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
-
-Call the function F once for each item in S
-
-
-***
-
-#### <code>(FOREACH2 F S1 S2)</code> <sup><sub>FUNCTION</sub></sup><a name="foreach2-value"></a>
-<code>&forall; :A :B. ((:A &rarr; :B &rarr; <a href="#unit-type">UNIT</a>) &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; (<a href="#slice-type">SLICE</a> :B) &rarr; <a href="#unit-type">UNIT</a>)</code>
-
-Iterate over S1 and S2 calling F once on each iteration
-
-
-***
-
 #### <code>(ELEMENT-TYPE S)</code> <sup><sub>FUNCTION</sub></sup><a name="element-type-value"></a>
 <code>&forall; :A. ((<a href="#slice-type">SLICE</a> :A) &rarr; <a href="#lisptype-type">LISPTYPE</a>)</code>
 
@@ -4403,26 +4399,26 @@ Lookup the element at INDEX in S without bounds checking
 
 ***
 
-#### <code>(ITER-CHUNKED F SIZE V)</code> <sup><sub>FUNCTION</sub></sup><a name="iter-chunked-value"></a>
-<code>&forall; :A :B. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; (((<a href="#slice-type">SLICE</a> :A) &rarr; :B) &rarr; <a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
+#### <code>(ITER-CHUNKED SIZE S)</code> <sup><sub>FUNCTION</sub></sup><a name="iter-chunked-value"></a>
+<code>&forall; :A :B. (<a href="#runtimerepr-class">RUNTIMEREPR</a> :B) (<a href="#sliceable-class">SLICEABLE</a> (:A :B)) &rArr; (<a href="#ufix-type">UFIX</a> &rarr; (:A :B) &rarr; (<a href="#iterator-type">ITERATOR</a> (<a href="#slice-type">SLICE</a> :B)))</code>
 
-Chunked iteration over a vector. Ignores elements at the end if the vector does not evenly divide by the chunk size.
-
-
-***
-
-#### <code>(ITER-SLIDING F SIZE V)</code> <sup><sub>FUNCTION</sub></sup><a name="iter-sliding-value"></a>
-<code>&forall; :A :B. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; (((<a href="#slice-type">SLICE</a> :A) &rarr; :B) &rarr; <a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
-
-Sliding iteration over a vector
+Divide S into a series of slices of length SIZE. Will return a final shorter slice if S does not divide evenly.
 
 
 ***
 
-#### <code>(FOREACH-INDEX F S)</code> <sup><sub>FUNCTION</sub></sup><a name="foreach-index-value"></a>
-<code>&forall; :A. ((<a href="#ufix-type">UFIX</a> &rarr; :A &rarr; <a href="#unit-type">UNIT</a>) &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
+#### <code>(ITER-SLIDING SIZE S)</code> <sup><sub>FUNCTION</sub></sup><a name="iter-sliding-value"></a>
+<code>&forall; :A :B. (<a href="#runtimerepr-class">RUNTIMEREPR</a> :B) (<a href="#sliceable-class">SLICEABLE</a> (:A :B)) &rArr; (<a href="#ufix-type">UFIX</a> &rarr; (:A :B) &rarr; (<a href="#iterator-type">ITERATOR</a> (<a href="#slice-type">SLICE</a> :B)))</code>
 
-Call the function F once for each item in S with its index
+Returns an iterator that yeilds a series of overlapping slices of length SIZE.
+
+
+***
+
+#### <code>(ITER-CHUNKED-EXACT SIZE S)</code> <sup><sub>FUNCTION</sub></sup><a name="iter-chunked-exact-value"></a>
+<code>&forall; :A :B. (<a href="#runtimerepr-class">RUNTIMEREPR</a> :B) (<a href="#sliceable-class">SLICEABLE</a> (:A :B)) &rArr; (<a href="#ufix-type">UFIX</a> &rarr; (:A :B) &rarr; (<a href="#iterator-type">ITERATOR</a> (<a href="#slice-type">SLICE</a> :B)))</code>
+
+Divide S into a series of slices of length SIZE. Will skip trailing elements if S does not divide evenly.
 
 
 ***
@@ -4441,7 +4437,9 @@ A mutable hash table.
 <summary>Instances</summary>
 
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B)</code>
+- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#eq-class">EQ</a> :B) &rArr; <a href="#eq-class">EQ</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B)</code>
 - <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
+- <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 
 </details>
 
@@ -4467,7 +4465,7 @@ Create a new empty hashtable
 ***
 
 #### <code>(KEYS TABLE)</code> <sup><sub>FUNCTION</sub></sup><a name="keys-value"></a>
-<code>&forall; :A :B. ((<a href="#hashtable-type">HASHTABLE</a> :A :B) &rarr; (<a href="#list-type">LIST</a> :A))</code>
+<code>&forall; :A :B. ((<a href="#hashtable-type">HASHTABLE</a> :A :B) &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
 Returns the keys in TABLE as a list
 
@@ -4491,7 +4489,7 @@ Returns the number of entries in TABLE
 ***
 
 #### <code>(VALUES TABLE)</code> <sup><sub>FUNCTION</sub></sup><a name="values-value"></a>
-<code>&forall; :A :B. ((<a href="#hashtable-type">HASHTABLE</a> :A :B) &rarr; (<a href="#list-type">LIST</a> :B))</code>
+<code>&forall; :A :B. ((<a href="#hashtable-type">HASHTABLE</a> :A :B) &rarr; (<a href="#iterator-type">ITERATOR</a> :B))</code>
 
 Returns the values in TABLE as a list
 
@@ -4499,17 +4497,9 @@ Returns the values in TABLE as a list
 ***
 
 #### <code>(ENTRIES TABLE)</code> <sup><sub>FUNCTION</sub></sup><a name="entries-value"></a>
-<code>&forall; :A :B. ((<a href="#hashtable-type">HASHTABLE</a> :A :B) &rarr; (<a href="#list-type">LIST</a> (<a href="#tuple-type">TUPLE</a> :A :B)))</code>
+<code>&forall; :A :B. ((<a href="#hashtable-type">HASHTABLE</a> :A :B) &rarr; (<a href="#iterator-type">ITERATOR</a> (<a href="#tuple-type">TUPLE</a> :A :B)))</code>
 
 Returns the key-values pairs as a list.
-
-
-***
-
-#### <code>(FOREACH F TABLE)</code> <sup><sub>FUNCTION</sub></sup><a name="foreach-value"></a>
-<code>&forall; :A :B. ((:A &rarr; :B &rarr; <a href="#unit-type">UNIT</a>) &rarr; (<a href="#hashtable-type">HASHTABLE</a> :A :B) &rarr; <a href="#unit-type">UNIT</a>)</code>
-
-Call F once for each key value pair in TABLE
 
 
 ***
@@ -4614,9 +4604,13 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#vector-type">VECTOR</a> :A) :A</code>
+- <code><a href="#fromiterator-class">FROMITERATOR</a> :A :B &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#optional-type">OPTIONAL</a> :A) (<a href="#optional-type">OPTIONAL</a> :B)</code>
+- <code><a href="#fromiterator-class">FROMITERATOR</a> :A :B &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#result-type">RESULT</a> :C :A) (<a href="#result-type">RESULT</a> :C :B)</code>
 - <code><a href="#fromiterator-class">FROMITERATOR</a> (<a href="#list-type">LIST</a> :A) :A</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#vector-type">VECTOR</a> :A) :A</code>
+- <code><a href="#fromiterator-class">FROMITERATOR</a> <a href="#string-type">STRING</a> <a href="#char-type">CHAR</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#slice-type">SLICE</a> :A) :A</code>
+- <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#tree-type">TREE</a> :A) :A</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#map-type">MAP</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 
@@ -4630,7 +4624,7 @@ Methods:
 
 Containers which can be converted into iterators.
 
-`into-iter' must not mutate its argument, only produce a "view" into it.
+`INTO-ITER` must not mutate its argument, only produce a "view" into it.
 
 Methods:
 - <code>INTO-ITER :: (:A &rarr; (<a href="#iterator-type">ITERATOR</a> :B))</code>
@@ -4638,12 +4632,15 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#intoiterator-class">INTOITERATOR</a> <a href="#string-type">STRING</a> <a href="#char-type">CHAR</a></code>
-- <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#vector-type">VECTOR</a> :A) :A</code>
-- <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#result-type">RESULT</a> :A :B) :B</code>
-- <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#optional-type">OPTIONAL</a> :A) :A</code>
+- <code><a href="#intoiterator-class">INTOITERATOR</a> <a href="#unit-type">UNIT</a> :A</code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#iterator-type">ITERATOR</a> :A) :A</code>
+- <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#optional-type">OPTIONAL</a> :A) :A</code>
+- <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#result-type">RESULT</a> :A :B) :B</code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#list-type">LIST</a> :A) :A</code>
+- <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#vector-type">VECTOR</a> :A) :A</code>
+- <code><a href="#intoiterator-class">INTOITERATOR</a> <a href="#string-type">STRING</a> <a href="#char-type">CHAR</a></code>
+- <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#slice-type">SLICE</a> :A) :A</code>
+- <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#tree-type">TREE</a> :A) :A</code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#map-type">MAP</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 
@@ -4785,6 +4782,9 @@ An iterator which begins at zero and counts up to, but not including, LIMIT.
 #### <code>(CHAIN! ITER1 ITER2)</code> <sup><sub>FUNCTION</sub></sup><a name="chain!-value"></a>
 <code>&forall; :A. ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
+Yield all the elements of ITER1 followed by all the elements from ITER2.
+
+
 ***
 
 #### <code>(COUNT! ITER)</code> <sup><sub>FUNCTION</sub></sup><a name="count!-value"></a>
@@ -4807,10 +4807,10 @@ Returns `True` if ITER is empty.
 
 ***
 
-#### <code>(CONCAT! FIRST SECOND)</code> <sup><sub>FUNCTION</sub></sup><a name="concat!-value"></a>
-<code>&forall; :A. ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
+#### <code>(REPEAT ITEM)</code> <sup><sub>FUNCTION</sub></sup><a name="repeat-value"></a>
+<code>&forall; :A. (:A &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
-Yield all the elements of FIRST followed by all the elements from SECOND.
+Yield ITEM over and over, infinitely.
 
 
 ***
@@ -4827,14 +4827,6 @@ Return an iterator over the elements from ITER for which KEEP? returns true.
 <code>&forall; :A. ((<a href="#iterator-type">ITERATOR</a> (<a href="#iterator-type">ITERATOR</a> :A)) &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
 Yield all the elements from each of the ITERS in order.
-
-
-***
-
-#### <code>(ZIPWITH! F LEFT RIGHT)</code> <sup><sub>FUNCTION</sub></sup><a name="zipwith!-value"></a>
-<code>&forall; :A :B :C. ((:A &rarr; :B &rarr; :C) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :B) &rarr; (<a href="#iterator-type">ITERATOR</a> :C))</code>
-
-Return an iterator of elements from LEFT and RIGHT which terminates as soon as either LEFT or RIGHT does.
 
 
 ***
@@ -4864,15 +4856,6 @@ Return the zero-based index of the first element of ITER for which THIS? is `Tru
 
 ***
 
-#### <code>(LIST-ITER LST)</code> <sup><sub>FUNCTION</sub></sup><a name="list-iter-value"></a>
-<code>&forall; :A. ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
-
-Yield successive elements of LST.
-Behavior is undefined if the iterator is advanced after a destructive modification of LST.
-
-
-***
-
 #### <code>(OPTIMIZE! BETTER? ITER)</code> <sup><sub>FUNCTION</sub></sup><a name="optimize!-value"></a>
 <code>&forall; :A. ((:A &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
@@ -4888,10 +4871,15 @@ Return `None` if ITER is empty.
 
 ***
 
-#### <code>(CHAR-RANGE START END)</code> <sup><sub>FUNCTION</sub></sup><a name="char-range-value"></a>
-<code>(<a href="#char-type">CHAR</a> &rarr; <a href="#char-type">CHAR</a> &rarr; (<a href="#iterator-type">ITERATOR</a> <a href="#char-type">CHAR</a>))</code>
+#### <code>(WITH-SIZE F SIZE)</code> <sup><sub>FUNCTION</sub></sup><a name="with-size-value"></a>
+<code>&forall; :A. ((<a href="#unit-type">UNIT</a> &rarr; (<a href="#optional-type">OPTIONAL</a> :A)) &rarr; <a href="#ufix-type">UFIX</a> &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
-An inclusive range of characters from START to END by cl:char-code.
+***
+
+#### <code>(ZIP-WITH! F LEFT RIGHT)</code> <sup><sub>FUNCTION</sub></sup><a name="zip-with!-value"></a>
+<code>&forall; :A :B :C. ((:A &rarr; :B &rarr; :C) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :B) &rarr; (<a href="#iterator-type">ITERATOR</a> :C))</code>
+
+Return an iterator of elements from LEFT and RIGHT which terminates as soon as either LEFT or RIGHT does.
 
 
 ***
@@ -4904,10 +4892,26 @@ Pair successive zero-based incides with elements from ITER
 
 ***
 
+#### <code>(MAP-WHILE! F ITER)</code> <sup><sub>FUNCTION</sub></sup><a name="map-while!-value"></a>
+<code>&forall; :A :B. ((:A &rarr; (<a href="#optional-type">OPTIONAL</a> :B)) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :B))</code>
+
+Map an iterator, stopping early if F returns NONE.
+
+
+***
+
 #### <code>(PAIR-WITH! FUNC KEYS)</code> <sup><sub>FUNCTION</sub></sup><a name="pair-with!-value"></a>
 <code>&forall; :A :B. ((:A &rarr; :B) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> (<a href="#tuple-type">TUPLE</a> :A :B)))</code>
 
 Returns an iterator over tuples whose FSTs are elements from KEYS, and whose SNDs are the results of applying FUNC to those KEYS.
+
+
+***
+
+#### <code>(REPEAT-FOR ITEM COUNT)</code> <sup><sub>FUNCTION</sub></sup><a name="repeat-for-value"></a>
+<code>&forall; :A. (:A &rarr; <a href="#ufix-type">UFIX</a> &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
+
+Yield ITEM COUNT times, then stop.
 
 
 ***
@@ -4944,40 +4948,6 @@ interleaving. (interleave empty ITER) is equivalent to (id ITER).
 
 ***
 
-#### <code>(REPEAT-ITEM ITEM COUNT)</code> <sup><sub>FUNCTION</sub></sup><a name="repeat-item-value"></a>
-<code>&forall; :A. (:A &rarr; <a href="#ufix-type">UFIX</a> &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
-
-Yield ITEM COUNT times, then stop.
-
-
-***
-
-#### <code>(VECTOR-ITER VEC)</code> <sup><sub>FUNCTION</sub></sup><a name="vector-iter-value"></a>
-<code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
-
-Yield successive elements of VEC.
-Behavior is undefined if the iterator is advanced after a destructive modification of VEC.
-
-
-***
-
-#### <code>(STRING-CHARS STR)</code> <sup><sub>FUNCTION</sub></sup><a name="string-chars-value"></a>
-<code>(<a href="#string-type">STRING</a> &rarr; (<a href="#iterator-type">ITERATOR</a> <a href="#char-type">CHAR</a>))</code>
-
-Yield successive `Char`s from STR.
-Behavior is undefined if the iterator is advanced after a destructive modification of STR.
-
-
-***
-
-#### <code>(COLLECT-LIST! ITER)</code> <sup><sub>FUNCTION</sub></sup><a name="collect-list!-value"></a>
-<code>&forall; :A. ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
-
-Construct a `List` containing all the elements from ITER in order.
-
-
-***
-
 #### <code>(COUNT-FOREVER _)</code> <sup><sub>FUNCTION</sub></sup><a name="count-forever-value"></a>
 <code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (<a href="#unit-type">UNIT</a> &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
@@ -5004,22 +4974,6 @@ An iterator which yields first START, then (SUCC START), then (SUCC (SUCC START)
 
 Beware off-by-one errors: the first value which is `done?` is not yielded. If `(done?  start)' is true, the
 iterator is empty.
-
-
-***
-
-#### <code>(REPEAT-FOREVER ITEM)</code> <sup><sub>FUNCTION</sub></sup><a name="repeat-forever-value"></a>
-<code>&forall; :A. (:A &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
-
-Yield ITEM over and over, infinitely.
-
-
-***
-
-#### <code>(COLLECT-VECTOR! ITER)</code> <sup><sub>FUNCTION</sub></sup><a name="collect-vector!-value"></a>
-<code>&forall; :A. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
-
-Construct a `Vector` containing all the elements from ITER in order.
 
 
 ***
@@ -5052,16 +5006,6 @@ The empty iterator will hash as 0.
 
 ***
 
-#### <code>(COLLECT-HASHTABLE! ITER)</code> <sup><sub>FUNCTION</sub></sup><a name="collect-hashtable!-value"></a>
-<code>&forall; :A :B. <a href="#hash-class">HASH</a> :A &rArr; ((<a href="#iterator-type">ITERATOR</a> (<a href="#tuple-type">TUPLE</a> :A :B)) &rarr; (<a href="#hashtable-type">HASHTABLE</a> :A :B))</code>
-
-Construct a `HashTable` containing all the key/value pairs from ITER.
-
-If a key appears in ITER multiple times, the resulting table will contain its last corresponding value.
-
-
-***
-
 #### <code>(ELEMENTWISE-MATCH! SAME? LEFT RIGHT)</code> <sup><sub>FUNCTION</sub></sup><a name="elementwise-match!-value"></a>
 <code>&forall; :A. ((:A &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
@@ -5073,20 +5017,14 @@ same length.
 
 ***
 
+## [hashtable.lisp](https://github.com/coalton-lang/coalton/tree/main/library/hashtable.lisp) <a name="coalton-library/iterator-hashtable-lisp-file"></a>
+
+### Values
+
 #### <code>(REMOVE-DUPLICATES! ITER)</code> <sup><sub>FUNCTION</sub></sup><a name="remove-duplicates!-value"></a>
 <code>&forall; :A. <a href="#hash-class">HASH</a> :A &rArr; ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
 Yield unique elements from ITER in order of first appearance.
-
-
-***
-
-#### <code>(COLLECT-VECTOR-SIZE-HINT! SIZE ITER)</code> <sup><sub>FUNCTION</sub></sup><a name="collect-vector-size-hint!-value"></a>
-<code>&forall; :A. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
-
-Construct a `Vector` with initial allocation for SIZE elements, and fill it with all the elements from ITER in order.
-
-The vector will be resized if ITER contains more than SIZE elements.
 
 
 ***
