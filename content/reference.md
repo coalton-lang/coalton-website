@@ -710,8 +710,8 @@ Unbound integer. Uses `integer`.
 - <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#fraction-type">FRACTION</a></code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#integer-type">INTEGER</a></code>
@@ -734,8 +734,8 @@ A ratio of integers always in reduced form.
 - <code><a href="#ord-class">ORD</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#dyadic-type">DYADIC</a> <a href="#fraction-type">FRACTION</a></code>
-- <code><a href="#tryinto-class">TRYINTO</a> <a href="#double-float-type">DOUBLE-FLOAT</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#single-float-type">SINGLE-FLOAT</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#double-float-type">DOUBLE-FLOAT</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#real-class">REAL</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#rational-class">RATIONAL</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#fraction-type">FRACTION</a></code>
@@ -957,20 +957,20 @@ Methods:
 - <code><a href="#eq-class">EQ</a> <a href="#lisptype-type">LISPTYPE</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#hash-type">HASH</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#boolean-type">BOOLEAN</a></code>
-- <code><a href="#eq-class">EQ</a> <a href="#u8-type">U8</a></code>
-- <code><a href="#eq-class">EQ</a> <a href="#u16-type">U16</a></code>
-- <code><a href="#eq-class">EQ</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#u64-type">U64</a></code>
-- <code><a href="#eq-class">EQ</a> <a href="#i8-type">I8</a></code>
-- <code><a href="#eq-class">EQ</a> <a href="#i16-type">I16</a></code>
-- <code><a href="#eq-class">EQ</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#u16-type">U16</a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#u8-type">U8</a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#i8-type">I8</a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#ufix-type">UFIX</a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#fraction-type">FRACTION</a></code>
-- <code><a href="#eq-class">EQ</a> <a href="#ifix-type">IFIX</a></code>
-- <code><a href="#eq-class">EQ</a> <a href="#ufix-type">UFIX</a></code>
-- <code><a href="#eq-class">EQ</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
-- <code><a href="#eq-class">EQ</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#complex-class">COMPLEX</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> <a href="#dyadic-type">DYADIC</a></code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#cell-type">CELL</a> :A)</code>
@@ -1033,19 +1033,19 @@ Methods:
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#num-class">NUM</a> <a href="#ufix-type">UFIX</a></code>
+- <code><a href="#num-class">NUM</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#num-class">NUM</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#num-class">NUM</a> <a href="#u16-type">U16</a></code>
+- <code><a href="#num-class">NUM</a> <a href="#u8-type">U8</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#integer-type">INTEGER</a></code>
-- <code><a href="#num-class">NUM</a> <a href="#u8-type">U8</a></code>
-- <code><a href="#num-class">NUM</a> <a href="#u16-type">U16</a></code>
-- <code><a href="#num-class">NUM</a> <a href="#u32-type">U32</a></code>
-- <code><a href="#num-class">NUM</a> <a href="#u64-type">U64</a></code>
-- <code><a href="#num-class">NUM</a> <a href="#ufix-type">UFIX</a></code>
-- <code><a href="#num-class">NUM</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#num-class">NUM</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#complex-class">COMPLEX</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
 - <code><a href="#num-class">NUM</a> <a href="#dyadic-type">DYADIC</a></code>
@@ -1072,20 +1072,20 @@ Methods:
 - <code><a href="#ord-class">ORD</a> <a href="#ord-type">ORD</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#hash-type">HASH</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#boolean-type">BOOLEAN</a></code>
-- <code><a href="#ord-class">ORD</a> <a href="#u8-type">U8</a></code>
-- <code><a href="#ord-class">ORD</a> <a href="#u16-type">U16</a></code>
-- <code><a href="#ord-class">ORD</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#u64-type">U64</a></code>
-- <code><a href="#ord-class">ORD</a> <a href="#i8-type">I8</a></code>
-- <code><a href="#ord-class">ORD</a> <a href="#i16-type">I16</a></code>
-- <code><a href="#ord-class">ORD</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#u16-type">U16</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#u8-type">U8</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#i8-type">I8</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#ufix-type">UFIX</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#fraction-type">FRACTION</a></code>
-- <code><a href="#ord-class">ORD</a> <a href="#ifix-type">IFIX</a></code>
-- <code><a href="#ord-class">ORD</a> <a href="#ufix-type">UFIX</a></code>
-- <code><a href="#ord-class">ORD</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
-- <code><a href="#ord-class">ORD</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#dyadic-type">DYADIC</a></code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#ord-class">ORD</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
 - <code>(<a href="#ord-class">ORD</a> :A) (<a href="#ord-class">ORD</a> :B) &rArr; <a href="#ord-class">ORD</a> (<a href="#result-type">RESULT</a> :A :B)</code>
@@ -1272,8 +1272,8 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#tryinto-class">TRYINTO</a> <a href="#single-float-type">SINGLE-FLOAT</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#double-float-type">DOUBLE-FLOAT</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#single-float-type">SINGLE-FLOAT</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u8-type">U8</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i8-type">I8</a> <a href="#ufix-type">UFIX</a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i8-type">I8</a> <a href="#u64-type">U64</a></code>
@@ -1694,6 +1694,7 @@ Methods:
 
 - <code><a href="#hash-class">HASH</a> <a href="#hash-type">HASH</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#boolean-type">BOOLEAN</a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#i32-type">I32</a></code>
@@ -1702,7 +1703,6 @@ Methods:
 - <code><a href="#hash-class">HASH</a> <a href="#u16-type">U16</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#u32-type">U32</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#u64-type">U64</a></code>
-- <code><a href="#hash-class">HASH</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#ufix-type">UFIX</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
@@ -2097,8 +2097,8 @@ Methods:
 <summary>Instances</summary>
 
 - <code><a href="#reciprocable-class">RECIPROCABLE</a> :A &rArr; <a href="#dividable-class">DIVIDABLE</a> :A :A</code>
-- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 
@@ -2150,8 +2150,8 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#reciprocable-class">RECIPROCABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#reciprocable-class">RECIPROCABLE</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code><a href="#reciprocable-class">RECIPROCABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#reciprocable-class">RECIPROCABLE</a> <a href="#fraction-type">FRACTION</a></code>
 - <code>(<a href="#complex-class">COMPLEX</a> :A) (<a href="#reciprocable-class">RECIPROCABLE</a> :A) &rArr; <a href="#reciprocable-class">RECIPROCABLE</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
 - <code><a href="#reciprocable-class">RECIPROCABLE</a> <a href="#big-float-type">BIG-FLOAT</a></code>
@@ -3128,17 +3128,17 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#bits-class">BITS</a> <a href="#i8-type">I8</a></code>
-- <code><a href="#bits-class">BITS</a> <a href="#i16-type">I16</a></code>
-- <code><a href="#bits-class">BITS</a> <a href="#i32-type">I32</a></code>
-- <code><a href="#bits-class">BITS</a> <a href="#i64-type">I64</a></code>
-- <code><a href="#bits-class">BITS</a> <a href="#ifix-type">IFIX</a></code>
-- <code><a href="#bits-class">BITS</a> <a href="#integer-type">INTEGER</a></code>
-- <code><a href="#bits-class">BITS</a> <a href="#u8-type">U8</a></code>
-- <code><a href="#bits-class">BITS</a> <a href="#u16-type">U16</a></code>
-- <code><a href="#bits-class">BITS</a> <a href="#u32-type">U32</a></code>
-- <code><a href="#bits-class">BITS</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#bits-class">BITS</a> <a href="#ufix-type">UFIX</a></code>
+- <code><a href="#bits-class">BITS</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#bits-class">BITS</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#bits-class">BITS</a> <a href="#u16-type">U16</a></code>
+- <code><a href="#bits-class">BITS</a> <a href="#u8-type">U8</a></code>
+- <code><a href="#bits-class">BITS</a> <a href="#ifix-type">IFIX</a></code>
+- <code><a href="#bits-class">BITS</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#bits-class">BITS</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#bits-class">BITS</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#bits-class">BITS</a> <a href="#i8-type">I8</a></code>
+- <code><a href="#bits-class">BITS</a> <a href="#integer-type">INTEGER</a></code>
 
 </details>
 
