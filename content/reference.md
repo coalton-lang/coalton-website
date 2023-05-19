@@ -40,6 +40,7 @@ identifier: Reference
 - <a href="#coalton-library/slice-package"><code>coalton-library/slice</code></a>
 - <a href="#coalton-library/hashtable-package"><code>coalton-library/hashtable</code></a>
 - <a href="#coalton-library/monad/state-package"><code>coalton-library/monad/state</code></a>
+- <a href="#coalton-library/monad/free-package"><code>coalton-library/monad/free</code></a>
 - <a href="#coalton-library/iterator-package"><code>coalton-library/iterator</code></a>
 - <a href="#coalton-library/ord-tree-package"><code>coalton-library/ord-tree</code></a>
 - <a href="#coalton-library/ord-map-package"><code>coalton-library/ord-map</code></a>
@@ -634,6 +635,7 @@ Type constructor for function types.
 <summary>Instances</summary>
 
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (:A &rarr; :B)</code>
+- <code><a href="#functor-class">FUNCTOR</a> (<a href="#arrow-type">ARROW</a> :A)</code>
 
 </details>
 
@@ -1245,6 +1247,7 @@ Methods:
 - <code><a href="#monad-class">MONAD</a> (<a href="#result-type">RESULT</a> :A)</code>
 - <code><a href="#monad-class">MONAD</a> <a href="#list-type">LIST</a></code>
 - <code><a href="#monad-class">MONAD</a> (<a href="#st-type">ST</a> :A)</code>
+- <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#monad-class">MONAD</a> (<a href="#free-type">FREE</a> :A)</code>
 
 </details>
 
@@ -1326,6 +1329,7 @@ Methods:
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#functor-class">FUNCTOR</a> (<a href="#arrow-type">ARROW</a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#cell-type">CELL</a></code>
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#iterator-type">ITERATOR</a></code>
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#optional-type">OPTIONAL</a></code>
@@ -1334,6 +1338,7 @@ Methods:
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#vector-type">VECTOR</a></code>
 - <code><a href="#functor-class">FUNCTOR</a> (<a href="#st-type">ST</a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> (<a href="#map-type">MAP</a> :A)</code>
+- <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#functor-class">FUNCTOR</a> (<a href="#free-type">FREE</a> :A)</code>
 
 </details>
 
@@ -1461,6 +1466,7 @@ Methods:
 - <code><a href="#foldable-class">FOLDABLE</a> <a href="#vector-type">VECTOR</a></code>
 - <code><a href="#foldable-class">FOLDABLE</a> <a href="#slice-type">SLICE</a></code>
 - <code><a href="#foldable-class">FOLDABLE</a> <a href="#tree-type">TREE</a></code>
+- <code><a href="#foldable-class">FOLDABLE</a> :A &rArr; <a href="#foldable-class">FOLDABLE</a> (<a href="#free-type">FREE</a> :A)</code>
 
 </details>
 
@@ -1565,6 +1571,7 @@ Methods:
 - <code><a href="#applicative-class">APPLICATIVE</a> (<a href="#result-type">RESULT</a> :A)</code>
 - <code><a href="#applicative-class">APPLICATIVE</a> <a href="#list-type">LIST</a></code>
 - <code><a href="#applicative-class">APPLICATIVE</a> (<a href="#st-type">ST</a> :A)</code>
+- <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#applicative-class">APPLICATIVE</a> (<a href="#free-type">FREE</a> :A)</code>
 
 </details>
 
@@ -1581,6 +1588,7 @@ Methods:
 <summary>Instances</summary>
 
 - <code><a href="#traversable-class">TRAVERSABLE</a> <a href="#list-type">LIST</a></code>
+- <code><a href="#traversable-class">TRAVERSABLE</a> :A &rArr; <a href="#traversable-class">TRAVERSABLE</a> (<a href="#free-type">FREE</a> :A)</code>
 
 </details>
 
@@ -1923,6 +1931,7 @@ Methods:
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#iteratorstacknode-type">ITERATORSTACKNODE</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#mappair-type">MAPPAIR</a> :A :B)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#map-type">MAP</a> :A :B)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> ((<a href="#free-type">FREE</a> :A) :B)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#roundingmode-type">ROUNDINGMODE</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 
@@ -4670,6 +4679,54 @@ A StatefulComputation with state set to be given state. The returned value is Un
 <code>&forall; :A :B. ((<a href="#st-type">ST</a> :A :B) &rarr; :A &rarr; (<a href="#tuple-type">TUPLE</a> :A :B))</code>
 
 Runs a StatefulComputation to produce a final updated state and value given an initial state
+
+
+***
+
+# Package `coalton-library/monad/free`<a name="coalton-library/monad/free-package"></a>
+
+## [monad/free.lisp](https://github.com/coalton-lang/coalton/tree/main/library/monad/free.lisp) <a name="coalton-library/monad/free-monad-free-lisp-file"></a>
+
+### Types
+
+#### <code>FREE :A :B</code> <sup><sub>[TYPE]</sub></sup><a name="free-type"></a>
+- <code>(FREE (:A ((<a href="#free-type">FREE</a> :A) :B)))</code>
+- <code>(VAL :B)</code>
+
+`Free :f` gives you a Monad instance for any `Functor :f`.
+
+Refernces: [here](https://serokell.io/blog/introduction-to-free-monads) and [here](https://www.tweag.io/blog/2018-02-05-free-monads/)
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> ((<a href="#free-type">FREE</a> :A) :B)</code>
+- <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#monad-class">MONAD</a> (<a href="#free-type">FREE</a> :A)</code>
+- <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#functor-class">FUNCTOR</a> (<a href="#free-type">FREE</a> :A)</code>
+- <code><a href="#foldable-class">FOLDABLE</a> :A &rArr; <a href="#foldable-class">FOLDABLE</a> (<a href="#free-type">FREE</a> :A)</code>
+- <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#applicative-class">APPLICATIVE</a> (<a href="#free-type">FREE</a> :A)</code>
+- <code><a href="#traversable-class">TRAVERSABLE</a> :A &rArr; <a href="#traversable-class">TRAVERSABLE</a> (<a href="#free-type">FREE</a> :A)</code>
+
+</details>
+
+
+***
+
+### Values
+
+#### <code>(LIFTF F)</code> <sup><sub>FUNCTION</sub></sup><a name="liftf-value"></a>
+<code>&forall; :A :B. <a href="#functor-class">FUNCTOR</a> :A &rArr; ((:A :B) &rarr; ((<a href="#free-type">FREE</a> :A) :B))</code>
+
+Lift a Functor into the Free Monad.
+
+
+***
+
+#### <code>(FOLDFREE NAT FR)</code> <sup><sub>FUNCTION</sub></sup><a name="foldfree-value"></a>
+<code>&forall; :A :B :C. <a href="#monad-class">MONAD</a> :C &rArr; (((:A ((<a href="#free-type">FREE</a> :A) :B)) &rarr; (:C ((<a href="#free-type">FREE</a> :A) :B))) &rarr; ((<a href="#free-type">FREE</a> :A) :B) &rarr; (:C :B))</code>
+
+Given a natural transformation, induce a Monad homomorphism from a
+free monad to a target monad.
 
 
 ***
