@@ -28,6 +28,7 @@ identifier: Reference
 - <a href="#coalton-library/math/complex-package"><code>coalton-library/math/complex</code></a>
 - <a href="#coalton-library/math/elementary-package"><code>coalton-library/math/elementary</code></a>
 - <a href="#coalton-library/math/dyadic-package"><code>coalton-library/math/dyadic</code></a>
+- <a href="#coalton-library/math/dual-package"><code>coalton-library/math/dual</code></a>
 - <a href="#coalton-library/bits-package"><code>coalton-library/bits</code></a>
 - <a href="#coalton-library/char-package"><code>coalton-library/char</code></a>
 - <a href="#coalton-library/string-package"><code>coalton-library/string</code></a>
@@ -1013,6 +1014,8 @@ Methods:
 - <code><a href="#eq-class">EQ</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#complex-class">COMPLEX</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> <a href="#dyadic-type">DYADIC</a></code>
+- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#dual-type">DUAL</a> :A)</code>  
+Note: Eq only uses the primal component.
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#cell-type">CELL</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
 - <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) &rArr; <a href="#eq-class">EQ</a> (<a href="#result-type">RESULT</a> :A :B)</code>
@@ -1089,6 +1092,7 @@ Methods:
 - <code><a href="#num-class">NUM</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#complex-class">COMPLEX</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
 - <code><a href="#num-class">NUM</a> <a href="#dyadic-type">DYADIC</a></code>
+- <code><a href="#num-class">NUM</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#dual-type">DUAL</a> :A)</code>
 - <code><a href="#num-class">NUM</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#cell-type">CELL</a> :A)</code>
 - <code><a href="#num-class">NUM</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
 - <code><a href="#num-class">NUM</a> <a href="#big-float-type">BIG-FLOAT</a></code>
@@ -1127,6 +1131,8 @@ Methods:
 - <code><a href="#ord-class">ORD</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#dyadic-type">DYADIC</a></code>
+- <code>(<a href="#ord-class">ORD</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; <a href="#ord-class">ORD</a> (<a href="#dual-type">DUAL</a> :A)</code>  
+Note: Ord only uses the primal component.
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#ord-class">ORD</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
 - <code>(<a href="#ord-class">ORD</a> :A) (<a href="#ord-class">ORD</a> :B) &rArr; <a href="#ord-class">ORD</a> (<a href="#result-type">RESULT</a> :A :B)</code>
 - <code>(<a href="#ord-class">ORD</a> :A) (<a href="#ord-class">ORD</a> :B) &rArr; <a href="#ord-class">ORD</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
@@ -1812,6 +1818,8 @@ Methods:
 - <code><a href="#hash-class">HASH</a> <a href="#ufix-type">UFIX</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
+- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :A) &rArr; <a href="#hash-class">HASH</a> (<a href="#dual-type">DUAL</a> :A)</code>  
+Note: Hash only uses the primal component.
 - <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) (<a href="#hash-class">HASH</a> :D) (<a href="#hash-class">HASH</a> :E) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple5-type">TUPLE5</a> :A :B :C :D :E)</code>
 - <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) (<a href="#hash-class">HASH</a> :D) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple4-type">TUPLE4</a> :A :B :C :D)</code>
 - <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) (<a href="#hash-class">HASH</a> :C) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple3-type">TUPLE3</a> :A :B :C)</code>
@@ -1917,6 +1925,7 @@ Methods:
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#quantization-type">QUANTIZATION</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#dyadic-type">DYADIC</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#dual-type">DUAL</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#cell-type">CELL</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#iterator-type">ITERATOR</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tuple3-type">TUPLE3</a> :A :B :C)</code>
@@ -2260,6 +2269,7 @@ Methods:
 - <code><a href="#reciprocable-class">RECIPROCABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#reciprocable-class">RECIPROCABLE</a> <a href="#fraction-type">FRACTION</a></code>
 - <code>(<a href="#complex-class">COMPLEX</a> :A) (<a href="#reciprocable-class">RECIPROCABLE</a> :A) &rArr; <a href="#reciprocable-class">RECIPROCABLE</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
+- <code><a href="#reciprocable-class">RECIPROCABLE</a> :A &rArr; <a href="#reciprocable-class">RECIPROCABLE</a> (<a href="#dual-type">DUAL</a> :A)</code>
 - <code><a href="#reciprocable-class">RECIPROCABLE</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 
 </details>
@@ -2992,6 +3002,7 @@ Methods:
 - <code><a href="#radical-class">RADICAL</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#radical-class">RADICAL</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#elementary-class">ELEMENTARY</a> :A &rArr; <a href="#radical-class">RADICAL</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
+- <code>(<a href="#num-class">NUM</a> :A) (<a href="#radical-class">RADICAL</a> :A) (<a href="#reciprocable-class">RECIPROCABLE</a> :A) (<a href="#exponentiable-class">EXPONENTIABLE</a> :A) &rArr; <a href="#radical-class">RADICAL</a> (<a href="#dual-type">DUAL</a> :A)</code>
 - <code><a href="#radical-class">RADICAL</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 
 </details>
@@ -3044,6 +3055,7 @@ Methods:
 - <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#elementary-class">ELEMENTARY</a> :A &rArr; <a href="#exponentiable-class">EXPONENTIABLE</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
+- <code>(<a href="#num-class">NUM</a> :A) (<a href="#exponentiable-class">EXPONENTIABLE</a> :A) (<a href="#reciprocable-class">RECIPROCABLE</a> :A) &rArr; <a href="#exponentiable-class">EXPONENTIABLE</a> (<a href="#dual-type">DUAL</a> :A)</code>
 - <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 
 </details>
@@ -3070,6 +3082,7 @@ Methods:
 - <code><a href="#trigonometric-class">TRIGONOMETRIC</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#trigonometric-class">TRIGONOMETRIC</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#elementary-class">ELEMENTARY</a> :A &rArr; <a href="#trigonometric-class">TRIGONOMETRIC</a> (<a href="#complex-type">COMPLEX</a> :A)</code>
+- <code>(<a href="#num-class">NUM</a> :A) (<a href="#trigonometric-class">TRIGONOMETRIC</a> :A) (<a href="#reciprocable-class">RECIPROCABLE</a> :A) (<a href="#radical-class">RADICAL</a> :A) &rArr; <a href="#trigonometric-class">TRIGONOMETRIC</a> (<a href="#dual-type">DUAL</a> :A)</code>
 - <code><a href="#trigonometric-class">TRIGONOMETRIC</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 
 </details>
@@ -3210,6 +3223,89 @@ Simplifies a Dyadic by maximizing the absolute value of the exponent.
 
 Finds the simplest dyadic given an integer
 
+
+***
+
+# Package `coalton-library/math/dual`<a name="coalton-library/math/dual-package"></a>
+
+
+Dual numbers are a hypercomplex number system [1]. A dual number has the form
+a + bε where a and b are real numbers and ε is a symbol that satisfies ε^2=0
+and ε!=0. One application of dual numbers is automatic differentiation; an example
+taken from [2] is as follows:
+
+    consider you have the given expression f(x) = 3x+2 and you want to calculate
+    f(4) and f'(4). By the usual rules of differentiation, we know f'(x) = 3 and thus
+    (f(4), f'(4)) = (14, 3). We seek to recover this with dual numbers.
+
+    Firstly, You then convert 4 into a dual number which gives:
+
+        4 + 0ε but to enable automatic differentiation we convert 4 to  4+1ε.
+
+    The computation further proceeds as:
+
+      We have f(x) = 3x + 2. So:
+
+        f(4 + ε) = 3(4 + ε) + 2 = 12 + 3ε + 2 = 14 + 3ε.
+
+   In this result, the primal 14 is the value of f(4) and the dual is the value of
+   of f'(4).
+
+   Haskell has an automatic differentiation library and you can find it here
+   https://hackage.haskell.org/package/ad.
+
+   Limitations:
+
+      We have decided to implement Ord, Eq, and Hash to look at only the primal part of
+      numbers. This is so the Dual type can be used primarily for the purpose of automatic
+      differentiation of existing code, and not for general abstract mathematics. If you need
+      these type classes acting in the usual way (i.e., on both primal and dual parts), then we
+      recommend making your own data type which wraps a dual number.
+
+   References:
+
+   [1] https://en.wikipedia.org/wiki/Dual_number
+   [2] https://blog.demofox.org/2014/12/30/dual-numbers-automatic-differentiation/
+
+## [math/dual.lisp](https://github.com/coalton-lang/coalton/tree/main/library/math/dual.lisp) <a name="coalton-library/math/dual-math-dual-lisp-file"></a>
+
+### Types
+
+#### <code>DUAL :A</code> <sup><sub>[TYPE]</sub></sup><a name="dual-type"></a>
+- <code>(DUAL :A :A)</code>
+
+Representation of a dual number in the form a + bε where a and b are real numbers and ε satisfies ε^2 = 0 and ε != 0.  Note: `Eq`, and `Ord` and `Hash` only make use of the primal component.
+
+<details>
+<summary>Instances</summary>
+
+- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :A) &rArr; <a href="#hash-class">HASH</a> (<a href="#dual-type">DUAL</a> :A)</code>  
+Note: Hash only uses the primal component.
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#dual-type">DUAL</a> :A)</code>
+- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#dual-type">DUAL</a> :A)</code>  
+Note: Eq only uses the primal component.
+- <code><a href="#num-class">NUM</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#dual-type">DUAL</a> :A)</code>
+- <code>(<a href="#ord-class">ORD</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; <a href="#ord-class">ORD</a> (<a href="#dual-type">DUAL</a> :A)</code>  
+Note: Ord only uses the primal component.
+- <code><a href="#reciprocable-class">RECIPROCABLE</a> :A &rArr; <a href="#reciprocable-class">RECIPROCABLE</a> (<a href="#dual-type">DUAL</a> :A)</code>
+- <code>(<a href="#num-class">NUM</a> :A) (<a href="#radical-class">RADICAL</a> :A) (<a href="#reciprocable-class">RECIPROCABLE</a> :A) (<a href="#exponentiable-class">EXPONENTIABLE</a> :A) &rArr; <a href="#radical-class">RADICAL</a> (<a href="#dual-type">DUAL</a> :A)</code>
+- <code>(<a href="#num-class">NUM</a> :A) (<a href="#exponentiable-class">EXPONENTIABLE</a> :A) (<a href="#reciprocable-class">RECIPROCABLE</a> :A) &rArr; <a href="#exponentiable-class">EXPONENTIABLE</a> (<a href="#dual-type">DUAL</a> :A)</code>
+- <code>(<a href="#num-class">NUM</a> :A) (<a href="#trigonometric-class">TRIGONOMETRIC</a> :A) (<a href="#reciprocable-class">RECIPROCABLE</a> :A) (<a href="#radical-class">RADICAL</a> :A) &rArr; <a href="#trigonometric-class">TRIGONOMETRIC</a> (<a href="#dual-type">DUAL</a> :A)</code>
+
+</details>
+
+
+***
+
+### Values
+
+#### <code>(DUAL-PART (DUAL _ D))</code> <sup><sub>FUNCTION</sub></sup><a name="dual-part-value"></a>
+<code>&forall; :A. ((<a href="#dual-type">DUAL</a> :A) &rarr; :A)</code>
+
+***
+
+#### <code>(PRIMAL-PART (DUAL P _))</code> <sup><sub>FUNCTION</sub></sup><a name="primal-part-value"></a>
+<code>&forall; :A. ((<a href="#dual-type">DUAL</a> :A) &rarr; :A)</code>
 
 ***
 
