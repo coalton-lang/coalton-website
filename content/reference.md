@@ -4428,6 +4428,14 @@ Create a new VECTOR containing the elements of v1 followed by the elements of v2
 
 ***
 
+#### <code>(CLEAR! V)</code> <sup><sub>FUNCTION</sub></sup><a name="clear!-value"></a>
+<code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
+
+Set the capacity of V to 0.
+
+
+***
+
 #### <code>(EMPTY? V)</code> <sup><sub>FUNCTION</sub></sup><a name="empty?-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
@@ -4516,18 +4524,18 @@ Return the INDEXth element of V without checking if the element exists
 
 ***
 
-#### <code>(SET-CAPACITY NEW-CAPACITY V)</code> <sup><sub>FUNCTION</sub></sup><a name="set-capacity-value"></a>
-<code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
-
-Set the capacity of V to NEW-CAPACITY. Setting the capacity to lower then the length will remove elements from the end.
-
-
-***
-
 #### <code>(SWAP-REMOVE! IDX VEC)</code> <sup><sub>FUNCTION</sub></sup><a name="swap-remove!-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
 Remove the element IDX from VEC and replace it with the last element in VEC. Then return the removed element.
+
+
+***
+
+#### <code>(SET-CAPACITY! NEW-CAPACITY V)</code> <sup><sub>FUNCTION</sub></sup><a name="set-capacity!-value"></a>
+<code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
+
+Set the capacity of V to NEW-CAPACITY. Setting the capacity to lower then the length will remove elements from the end.
 
 
 ***
