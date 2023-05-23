@@ -2002,7 +2002,7 @@ Synonym for BOOLEAN-XOR.
 
 ***
 
-#### <code>(UNDEFINED X)</code> <sup><sub>FUNCTION</sub></sup><a name="undefined-value"></a>
+#### <code>(UNDEFINED _)</code> <sup><sub>FUNCTION</sub></sup><a name="undefined-value"></a>
 <code>&forall; :A :B. (:A &rarr; :B)</code>
 
 A function which can be used in place of any value, throwing an error at runtime.
@@ -2103,7 +2103,7 @@ Fold over a list using &lt;&gt;
 
 ***
 
-#### <code>(CONST A B)</code> <sup><sub>FUNCTION</sub></sup><a name="const-value"></a>
+#### <code>(CONST A _B)</code> <sup><sub>FUNCTION</sub></sup><a name="const-value"></a>
 <code>&forall; :A :B. (:A &rarr; :B &rarr; :A)</code>
 
 A function that always returns its first argument.
