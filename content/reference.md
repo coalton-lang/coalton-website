@@ -3995,6 +3995,14 @@ Returns a least element of a list, or None.
 
 ***
 
+#### <code>(NTH-CDR N L)</code> <sup><sub>FUNCTION</sub></sup><a name="nth-cdr-value"></a>
+<code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
+
+Returns the nth-cdr of a list.
+
+
+***
+
 #### <code>(PRODUCT XS)</code> <sup><sub>FUNCTION</sub></sup><a name="product-value"></a>
 <code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; ((<a href="#list-type">LIST</a> :A) &rarr; :A)</code>
 
