@@ -4452,18 +4452,18 @@ Returns TRUE if V is empty
 
 ***
 
-#### <code>(EXTEND VEC ITER)</code> <sup><sub>FUNCTION</sub></sup><a name="extend-value"></a>
-<code>&forall; :A :B. <a href="#intoiterator-class">INTOITERATOR</a> :B :A &rArr; ((<a href="#vector-type">VECTOR</a> :A) &rarr; :B &rarr; <a href="#unit-type">UNIT</a>)</code>
-
-Push every element in ITER to the end of VEC.
-
-
-***
-
 #### <code>(LENGTH V)</code> <sup><sub>FUNCTION</sub></sup><a name="length-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#ufix-type">UFIX</a>)</code>
 
 Returns the length of V
+
+
+***
+
+#### <code>(EXTEND! VEC ITER)</code> <sup><sub>FUNCTION</sub></sup><a name="extend!-value"></a>
+<code>&forall; :A :B. <a href="#intoiterator-class">INTOITERATOR</a> :B :A &rArr; ((<a href="#vector-type">VECTOR</a> :A) &rarr; :B &rarr; <a href="#unit-type">UNIT</a>)</code>
+
+Push every element in ITER to the end of VEC.
 
 
 ***
@@ -4742,6 +4742,14 @@ Returns the values in TABLE as a list
 <code>&forall; :A :B. ((<a href="#hashtable-type">HASHTABLE</a> :A :B) &rarr; (<a href="#iterator-type">ITERATOR</a> (<a href="#tuple-type">TUPLE</a> :A :B)))</code>
 
 Returns the key-values pairs as a list.
+
+
+***
+
+#### <code>(EXTEND! TABLE ITER)</code> <sup><sub>FUNCTION</sub></sup><a name="extend!-value"></a>
+<code>&forall; :A :B :C. (<a href="#hash-class">HASH</a> :A) (<a href="#intoiterator-class">INTOITERATOR</a> :C (<a href="#tuple-type">TUPLE</a> :A :B)) &rArr; ((<a href="#hashtable-type">HASHTABLE</a> :A :B) &rarr; :C &rarr; <a href="#unit-type">UNIT</a>)</code>
+
+Insert all of the key value pairs from ITER into TABLE, overwriting duplicate keys.
 
 
 ***
