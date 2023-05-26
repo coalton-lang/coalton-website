@@ -4564,6 +4564,14 @@ Remove the element IDX from VEC and replace it with the last element in VEC with
 
 ***
 
+#### <code>(WITH-INITIAL-ELEMENT N X)</code> <sup><sub>FUNCTION</sub></sup><a name="with-initial-element-value"></a>
+<code>&forall; :A. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; (<a href="#ufix-type">UFIX</a> &rarr; :A &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
+
+Create a new vector with N elements equal to X
+
+
+***
+
 # Package `coalton-library/slice`<a name="coalton-library/slice-package"></a>
 
 ## [slice.lisp](https://github.com/coalton-lang/coalton/tree/main/library/slice.lisp) <a name="coalton-library/slice-slice-lisp-file"></a>
