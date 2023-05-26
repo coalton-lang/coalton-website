@@ -5124,7 +5124,7 @@ Yield ITEM over and over, infinitely.
 #### <code>(FILTER! KEEP? ITER)</code> <sup><sub>FUNCTION</sub></sup><a name="filter!-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
-Return an iterator over the elements from ITER for which KEEP? returns true.
+Return an iterator over the elements from ITER for which KEEP?returns true.
 
 
 ***
@@ -5141,6 +5141,14 @@ Yield all the elements from each of the ITERS in order.
 <code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
 An iterator which begins below the provided limit and counts down through and including zero.
+
+
+***
+
+#### <code>(FLAT-MAP! FUNC ITER)</code> <sup><sub>FUNCTION</sub></sup><a name="flat-map!-value"></a>
+<code>&forall; :A :B. ((:A &rarr; (<a href="#iterator-type">ITERATOR</a> :B)) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :B))</code>
+
+Flatten! wrapped around map.
 
 
 ***
