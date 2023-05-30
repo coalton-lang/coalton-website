@@ -3505,6 +3505,14 @@ Returns an iterator over the characters in STR.
 
 ***
 
+#### <code>(SPLIT N STR)</code> <sup><sub>FUNCTION</sub></sup><a name="split-value"></a>
+<code>(<a href="#ufix-type">UFIX</a> &rarr; <a href="#string-type">STRING</a> &rarr; (<a href="#tuple-type">TUPLE</a> <a href="#string-type">STRING</a> <a href="#string-type">STRING</a>))</code>
+
+Splits a string into a head and tail at the nth index.
+
+
+***
+
 #### <code>(CONCAT STR1 STR2)</code> <sup><sub>FUNCTION</sub></sup><a name="concat-value"></a>
 <code>(<a href="#string-type">STRING</a> &rarr; <a href="#string-type">STRING</a> &rarr; <a href="#string-type">STRING</a>)</code>
 
