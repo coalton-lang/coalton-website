@@ -5143,6 +5143,14 @@ An iterator which begins below the provided limit and counts down through and in
 
 ***
 
+#### <code>(FIND-MAP! F)</code> <sup><sub>FUNCTION</sub></sup><a name="find-map!-value"></a>
+<code>&forall; :A :B. ((:A &rarr; (<a href="#optional-type">OPTIONAL</a> :B)) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :B))</code>
+
+Return the first element of (map F ITER) for which F returns `Some`.
+
+
+***
+
 #### <code>(FLAT-MAP! FUNC ITER)</code> <sup><sub>FUNCTION</sub></sup><a name="flat-map!-value"></a>
 <code>&forall; :A :B. ((:A &rarr; (<a href="#iterator-type">ITERATOR</a> :B)) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :B))</code>
 
