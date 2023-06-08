@@ -3896,14 +3896,6 @@ Appends a list of lists together into a single new list.
 
 ***
 
-#### <code>(DELETE X YS)</code> <sup><sub>FUNCTION</sub></sup><a name="delete-value"></a>
-<code>&forall; :A. <a href="#eq-class">EQ</a> :A &rArr; (:A &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
-
-Return a new list with the first element equal to X removed.
-
-
-***
-
 #### <code>(FILTER F XS)</code> <sup><sub>FUNCTION</sub></sup><a name="filter-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
@@ -3940,6 +3932,14 @@ Returns the value of the first (key, value) tuple in XS where the key matches E.
 <code>&forall; :A. <a href="#eq-class">EQ</a> :A &rArr; (:A &rarr; (<a href="#list-type">LIST</a> :A) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 Returns true if any element of XS is equal to E.
+
+
+***
+
+#### <code>(REMOVE X YS)</code> <sup><sub>FUNCTION</sub></sup><a name="remove-value"></a>
+<code>&forall; :A. <a href="#eq-class">EQ</a> :A &rArr; (:A &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
+
+Return a new list with the first element equal to X removed.
 
 
 ***
@@ -4097,6 +4097,14 @@ Splits a list into two new lists. The first list contains elements matching pred
 
 ***
 
+#### <code>(REMOVE-IF PRED XS)</code> <sup><sub>FUNCTION</sub></sup><a name="remove-if-value"></a>
+<code>&forall; :A. ((:A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
+
+Return a new list with the first element for which PRED is `True` is removed.
+
+
+***
+
 #### <code>(SINGLETON X)</code> <sup><sub>FUNCTION</sub></sup><a name="singleton-value"></a>
 <code>&forall; :A. (:A &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
@@ -4116,7 +4124,7 @@ Transposes a matrix represented by a list of lists.
 #### <code>(DIFFERENCE XS YS)</code> <sup><sub>FUNCTION</sub></sup><a name="difference-value"></a>
 <code>&forall; :A. <a href="#eq-class">EQ</a> :A &rArr; ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
-Returns a new list with the first occurence of each element in YS deleted from XS.
+Returns a new list with the first occurence of each element in YS removed from XS.
 
 
 ***
