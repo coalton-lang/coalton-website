@@ -1141,7 +1141,7 @@ Note: Ord only compares the primal component.
 #### <code>INTO</code> <sup><sub>[CLASS]</sub></sup><a name="into-class"></a>
 <code><a href="#into-class">INTO</a> :A :B</code>
 
-INTO imples *every* element of :a can be represented by an element of :b. This conversion might not be injective (i.e., there may be elements in :a that don't correspond to any in :b).
+INTO imples *every* element of :a can be represented by an element of :b. This conversion might not be bijective (i.e., there may be elements in :b that don't correspond to any in :a).
 
 Methods:
 - <code>INTO :: (:A &rarr; :B)</code>
