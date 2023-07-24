@@ -45,6 +45,7 @@ identifier: Reference
 - <a href="#coalton-library/iterator-package"><code>coalton-library/iterator</code></a>
 - <a href="#coalton-library/ord-tree-package"><code>coalton-library/ord-tree</code></a>
 - <a href="#coalton-library/ord-map-package"><code>coalton-library/ord-map</code></a>
+- <a href="#coalton-library/seq-package"><code>coalton-library/seq</code></a>
 
 
 </div>
@@ -1024,6 +1025,7 @@ Note: Eq only compares the primal component.
 - <code><a href="#eq-class">EQ</a> <a href="#color-type">COLOR</a></code>
 - <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) &rArr; <a href="#eq-class">EQ</a> (<a href="#map-type">MAP</a> :A :B)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#mappair-type">MAPPAIR</a> :A :B)</code>
+- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#seq-type">SEQ</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 
 </details>
@@ -1219,6 +1221,7 @@ Methods:
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#slice-type">SLICE</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#mappair-type">MAPPAIR</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
+- <code>(<a href="#foldable-class">FOLDABLE</a> :A) (<a href="#runtimerepr-class">RUNTIMEREPR</a> :B) &rArr; <a href="#into-class">INTO</a> (:A :B) (<a href="#seq-type">SEQ</a> :B)</code>
 - <code><a href="#into-class">INTO</a> <a href="#double-float-type">DOUBLE-FLOAT</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#single-float-type">SINGLE-FLOAT</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> <a href="#big-float-type">BIG-FLOAT</a></code>
@@ -1268,6 +1271,7 @@ Methods:
 - <code><a href="#monoid-class">MONOID</a> (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#monoid-class">MONOID</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#monoid-class">MONOID</a> (<a href="#tree-type">TREE</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#monoid-class">MONOID</a> (<a href="#seq-type">SEQ</a> :A)</code>
 
 </details>
 
@@ -1309,6 +1313,7 @@ Methods:
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#default-class">DEFAULT</a> (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#default-class">DEFAULT</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#default-class">DEFAULT</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#default-class">DEFAULT</a> (<a href="#seq-type">SEQ</a> :A)</code>
 
 </details>
 
@@ -1336,6 +1341,7 @@ Methods:
 - <code><a href="#functor-class">FUNCTOR</a> (<a href="#st-type">ST</a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> (<a href="#map-type">MAP</a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#functor-class">FUNCTOR</a> (<a href="#free-type">FREE</a> :A)</code>
+- <code><a href="#functor-class">FUNCTOR</a> <a href="#seq-type">SEQ</a></code>
 
 </details>
 
@@ -1525,6 +1531,7 @@ Methods:
 - <code><a href="#semigroup-class">SEMIGROUP</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#tree-type">TREE</a> :A)</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#map-type">MAP</a> :A :B)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#seq-type">SEQ</a> :A)</code>
 
 </details>
 
@@ -1931,6 +1938,7 @@ Methods:
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#mappair-type">MAPPAIR</a> :A :B)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#map-type">MAP</a> :A :B)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> ((<a href="#free-type">FREE</a> :A) :B)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#seq-type">SEQ</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#roundingmode-type">ROUNDINGMODE</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 
@@ -4925,6 +4933,7 @@ Methods:
 - <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#tree-type">TREE</a> :A) :A</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#map-type">MAP</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#seq-type">SEQ</a> :A) :A</code>
 
 </details>
 
@@ -4955,6 +4964,7 @@ Methods:
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#tree-type">TREE</a> :A) :A</code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#map-type">MAP</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
+- <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#seq-type">SEQ</a> :A) :A</code>
 
 </details>
 
@@ -5624,6 +5634,98 @@ Update MP to associate K with V.
 
 If MP already contains a mapping for K, replace it and return the old value.
 
+
+***
+
+# Package `coalton-library/seq`<a name="coalton-library/seq-package"></a>
+
+## [seq.lisp](https://github.com/coalton-lang/coalton/tree/main/library/seq.lisp) <a name="coalton-library/seq-seq-lisp-file"></a>
+
+### Types
+
+#### <code>SEQ :A</code> <sup><sub>[TYPE]</sub></sup><a name="seq-type"></a>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#seq-type">SEQ</a> :A)</code>
+- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#seq-type">SEQ</a> :A)</code>
+- <code>(<a href="#foldable-class">FOLDABLE</a> :A) (<a href="#runtimerepr-class">RUNTIMEREPR</a> :B) &rArr; <a href="#into-class">INTO</a> (:A :B) (<a href="#seq-type">SEQ</a> :B)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#monoid-class">MONOID</a> (<a href="#seq-type">SEQ</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#default-class">DEFAULT</a> (<a href="#seq-type">SEQ</a> :A)</code>
+- <code><a href="#functor-class">FUNCTOR</a> <a href="#seq-type">SEQ</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#seq-type">SEQ</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#seq-type">SEQ</a> :A) :A</code>
+- <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#seq-type">SEQ</a> :A) :A</code>
+
+</details>
+
+
+***
+
+### Values
+
+#### <code>(GET SEQ IDX)</code> <sup><sub>FUNCTION</sub></sup><a name="get-value"></a>
+<code>&forall; :A. ((<a href="#seq-type">SEQ</a> :A) &rarr; <a href="#ufix-type">UFIX</a> &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
+
+Get the member of `seq` at index `idx`, or `None` if `idx` is larger
+than `(size seq)`
+
+
+***
+
+#### <code>(NEW _)</code> <sup><sub>FUNCTION</sub></sup><a name="new-value"></a>
+<code>&forall; :A. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; (<a href="#unit-type">UNIT</a> &rarr; (<a href="#seq-type">SEQ</a> :A))</code>
+
+Create a new empty `Seq`.
+
+
+***
+
+#### <code>(POP SEQ)</code> <sup><sub>FUNCTION</sub></sup><a name="pop-value"></a>
+<code>&forall; :A. ((<a href="#seq-type">SEQ</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> (<a href="#tuple-type">TUPLE</a> :A (<a href="#seq-type">SEQ</a> :A))))</code>
+
+If `seq` is empty, return `None`. Otherwise, the last member of `seq` and
+a new `Seq` instance.
+
+
+***
+
+#### <code>(PUT SEQ IDX A)</code> <sup><sub>FUNCTION</sub></sup><a name="put-value"></a>
+<code>&forall; :A. ((<a href="#seq-type">SEQ</a> :A) &rarr; <a href="#ufix-type">UFIX</a> &rarr; :A &rarr; (<a href="#optional-type">OPTIONAL</a> (<a href="#seq-type">SEQ</a> :A)))</code>
+
+If `idx` is less than `(size seq)`, Return a new `seq` whose `idx` position
+contains `a`.
+
+
+***
+
+#### <code>(CONC LEFT RIGHT)</code> <sup><sub>FUNCTION</sub></sup><a name="conc-value"></a>
+<code>&forall; :A. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; ((<a href="#seq-type">SEQ</a> :A) &rarr; (<a href="#seq-type">SEQ</a> :A) &rarr; (<a href="#seq-type">SEQ</a> :A))</code>
+
+Concatenate two `Seq`s
+
+
+***
+
+#### <code>(PUSH SEQ A)</code> <sup><sub>FUNCTION</sub></sup><a name="push-value"></a>
+<code>&forall; :A. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; ((<a href="#seq-type">SEQ</a> :A) &rarr; :A &rarr; (<a href="#seq-type">SEQ</a> :A))</code>
+
+Push `a` onto the end of `seq`, returning a new `Seq` instance.
+
+
+***
+
+#### <code>(SIZE SEQ)</code> <sup><sub>FUNCTION</sub></sup><a name="size-value"></a>
+<code>&forall; :A. ((<a href="#seq-type">SEQ</a> :A) &rarr; <a href="#ufix-type">UFIX</a>)</code>
+
+Return the number of elements in the `seq`.
+
+
+***
+
+#### <code>(EMPTY? SEQ)</code> <sup><sub>FUNCTION</sub></sup><a name="empty?-value"></a>
+<code>&forall; :A. ((<a href="#seq-type">SEQ</a> :A) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
 ***
 
