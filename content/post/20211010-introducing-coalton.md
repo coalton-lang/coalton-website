@@ -7,17 +7,17 @@ By [Robert Smith](https://twitter.com/stylewarning), [Elias Lawson-Fox](https://
 
 ## Introduction
 
-Coalton is a statically typed functional programming language built with Common Lisp. This is Coalton computing Fibonacci numbers by exponentiating *functions* (not numbers!).
+Coalton is a statically typed functional programming language built with Common Lisp.
+
+This is Coalton computing Fibonacci numbers by exponentiating *functions* (not numbers!):
 
 ```lisp
 (coalton-toplevel
   (declare function-power (Integer -> (:t -> :t) -> (:t -> :t)))
   (define (function-power n f)
-    (let ((build (fn (n g)
-            (if (== n 0)
-                g
-                (build (- n 1) (compose f g))))))
-      (build n id)))
+    (if (<= n 0)
+        f
+        (compose f (function-power (1- n) f))))
                 
   (declare fib-step ((Tuple Integer Integer) -> (Tuple Integer Integer)))
   (define (fib-step x)
@@ -29,7 +29,7 @@ Coalton is a statically typed functional programming language built with Common 
     (fst ((function-power n fib-step) (Tuple 0 1)))))
 ```
 
-This is Coalton greeting you by making native use of Common Lisp functions.
+This is Coalton greeting you by making native use of Common Lisp functions:
 
 ```lisp
 (coalton-toplevel
@@ -42,21 +42,20 @@ This is Coalton greeting you by making native use of Common Lisp functions.
 
   (declare hello (String -> Unit))
   (define (hello name)
-    (print (concat-string "Hello, " name))))
+    (print (str:concat "Hello, " name))))
 ```
-
-This is Coalton detecting a type error at *compile time*.
+This is Coalton detecting a type error at *compile time*:
 
 ```lisp
 (coalton-toplevel
   (define (bad-hello name)
     (print (concat "Hello, " name))))
                   
-; Failed to unify types STRING and (LIST (LIST :C))
-; in unification of types (STRING → :A → :B)
-;                     and ((LIST (LIST :C)) → (LIST :C))
-; in definition of BAD-HELLO
-; in COALTON-TOPLEVEL
+;error: Type mismatch
+;  --> COALTON-TOPLEVEL (/private/var/tmp/slimevRMH15):3:19
+;   |
+; 3 |      (PRINT (CONCAT "Hello, " NAME))))
+;   |                     ^^^^^^^^^ Expected type '(LIST (LIST :A))' but got type 'STRING'
 ```
 
 The Coalton function `concat` is for a `List`-of-`List`s!
@@ -93,15 +92,26 @@ This is the fully native x86_64 assembly code for the Coalton function `hello`:
 ; D9:       CC10             INT3 16
 ```
 
+You might have noticed that some of the above examples include package prefixes. Although the core of Coalton's power is stored in the packages `#:coalton` and `#:coalton-prelude`, many other functions and data structures are spread across its standard library, imported as needed. Here is the package definition for the examples in this post:
+
+```
+(defpackage #:coalton-introduction
+  (:use #:coalton
+        #:coalton-prelude)
+  (:local-nicknames (#:math #:coalton-library/math)
+                    (#:str #:coalton-library/string)
+                    (#:list #:coalton-library/list)))
+```
+
 Coalton embraces the three S's of typing discipline: *Strict*, *Static*, and *Strong*. If you know Standard ML, OCaml, Haskell, Elm, or Scala, then you'll already be familiar with the feel of Coalton. Coalton doesn't aim to be an independent language from Common Lisp, but instead to augment it. In fact, Coalton is a language embedded *inside of* Lisp, so Coalton makes use of all of Lisp's already-available tooling. We want the freedom and agility of dynamic, interactive, and incremental development, with the safety and expressivity of a powerful type system. Normally these are at odds, but we think that—with Coalton—we can have our cake and eat it too. 
 
 We believe Coalton will fundamentally change the way we write Common Lisp.
 
 ## Isn't Common Lisp Supposed to Be Dynamic?!
 
-Common Lisp is renowned for being a dynamic language; its type system, its featureful object system, its error-handling system (also known as the *condition system*), and its syntactic foundation of S-expressions all contribute the language's dynamic nature. In Lisp, at *run-time*, it's possible to re-define classes on-the-fly. The very fact types can be re-defined during program execution seems to indicate type and language dynamicism is the only way with Lisp.
+Common Lisp is renowned for being a dynamic language; its type system, its featureful object system, its error-handling system (also known as the *condition system*), and its syntactic foundation of S-expressions all contribute to the language's dynamic nature. In Lisp, at *run-time*, it's possible to re-define classes on-the-fly. The very fact that types can be re-defined during program execution seems to indicate that type and language dynamicism is the only way with Lisp.
 
-However, there is a lot of evidence that Lisp benefits from statically declared types. First, Lisp has a built-in feature for declaring types, namely `declare`. Not only can this feature be used to improve the correctness of your code by (possibly) installing run-time checks, but it can also drastically increase performance. Second, Lisp implementations like CMUCL and SBCL have rich support for type inference and static type checking. Most SBCL users would positively attest to the benefits of SBCL's type checker. As such, it seems reasonable that there's plenty of room to have benefits of dynamicism and staticism in the same language.
+However, there is a lot of evidence that Lisp benefits from statically declared types. First, Lisp already has a built-in feature for declaring types, `declare`, which can be used to not only improve the correctness of your code by (possibly) installing run-time checks, but also to drastically increase performance. Second, Lisp implementations like CMUCL and SBCL have rich support for type inference and static type checking. Most SBCL users would positively attest to the benefits of SBCL's type checker. As such, it seems reasonable that there's plenty of room to have benefits of dynamicism and staticism in the same language.
 
 Dynamicism, at the type level and otherwise, is part of Lisp's DNA, and so we believe it's futile to attempt to add any sort of type system to on top of ordinary Common Lisp that tries to strong-arm its own built-in system. If we are correct in this belief, this means that the usual approach to "gradual typing" simply isn't practical with modern Lisp codebases.
 
@@ -115,7 +125,7 @@ Coalton doesn't innovate on programming language theory or type systems. Even th
 
 ```lisp
 (define (stutter x)     ; Coalton
-  (concat-string x x))
+  (str:concat x x))
 ```
 
 essentially compiles into the following Common Lisp code:
@@ -128,7 +138,7 @@ essentially compiles into the following Common Lisp code:
 It does so *within the ordinary compilation process for Common Lisp*. That's right. Lisp functions and Coalton functions are one in the same, and *no additional tools are needed*. Using Coalton is as ordinary as using any other Lisp library:
 
 1. Add `#:coalton` to your ASDF dependencies,
-2. Create a package and `:use` the packages `#:coalton` and `#:coalton-library` (but *not* `#:cl`), and
+2. Create a package and `:use` the packages `#:coalton` and `#:coalton-prelude` (but *not* `#:cl`), and
 3. Write Coalton code inside of `(coalton-toplevel ...)`.
 
 From here, your development process is the exact same for any other Lisp program. That's truly all there is to it.
@@ -137,24 +147,24 @@ Let's walk through some of Coalton's headline features.
 
 ### Headline #1: Coalton's Type System
 
-In terms of its type system, Coalton's closest cousin is Haskell. Coalton's isn't as advanced as the Glasgow Haskell Compiler, which is state-of-the-art, but Coalton does have the following features.
+In terms of its type system, Coalton's closest cousin is Haskell. Coalton's compiler isn't as advanced as the state-of-the-art Glasgow Haskell Compiler, but Coalton does have the following features:
 
 - Parametric polymorphism and type variables:
 
   ```lisp
   (coalton-toplevel
-    (declare compose ((:b -> :c) -> (:a -> :b) -> (:a -> :c)))
-    (define (compose f g x)
+    (declare my-compose ((:b -> :c) -> (:a -> :b) -> (:a -> :c)))
+    (define (my-compose f g x)
       (f (g x)))
   
-    (declare list-length ((List :t) -> Integer))
+    (declare list-length ((List :t) -> UFix))
     (define (list-length l)
       (match l
         ((Nil)       0)
-        ((Cons _ xs) (+ 1 (list-length xs))))))
+        ((Cons _ xs) (1+ (list-length xs))))))
   ```
 
-  Here, the keywords `:a`, `:b`, `:c`, and `:t` are type variables
+  Here, the keywords `:a`, `:b`, `:c`, and `:t` are type variables:
 
 - Truly parametric algebraic data types:
 
@@ -193,13 +203,13 @@ In terms of its type system, Coalton's closest cousin is Haskell. Coalton's isn'
 
   ```lisp
   (coalton-toplevel
-    (define-class (Functor :F)
-      (map ((:a -> :b) -> (:F :a) -> (:F :b))))
+    (define-class (MyFunctor :F)
+      (map1 ((:a -> :b) -> (:F :a) -> (:F :b))))
     
-    (define-instance (Functor Binary-Tree)
-      (define (map f t)
+    (define-instance (MyFunctor Binary-Tree)
+      (define (map1 f t)
         (match t
-          ((Node v t1 t2) (Node (f v) (map f t1) (map f t2)))
+          ((Node v t1 t2) (Node (f v) (map1 f t1) (map1 f t2)))
           ((Leaf) Leaf)))))
   ```
 
@@ -217,9 +227,9 @@ In terms of its type system, Coalton's closest cousin is Haskell. Coalton's isn'
   ∀ :A. (NUM :A) (ORD :A) ⇒ (:A → :A → :A → :A)
   ```
 
-  We've been writing out the types of functions with the `declare` operator, but unless disambiguation or type-specialization is needed, declaring the types is not necessary due to its type inference capabilities.
+  We've been writing out the types of functions with the `declare` operator, but unless disambiguation or type-specialization is needed, declaring types is not necessary due to Coalton's type inference capabilities.
 
-All of these constructs are well-known to the functional programming community. Some languages call these concepts different names. For instance, a "type class" closely resembles a "trait" in Rust. An "algebraic data type" closely resembles a "case class" in Scala.
+All of these constructs are well-known in the functional programming community. Some languages refer to these concepts by different names, for instance, a "type class" closely resembles a "trait" in Rust, and an "algebraic data type" closely resembles a "case class" in Scala.
 
 ### Headline #2: Macros
 
@@ -231,22 +241,24 @@ Why are macros intended to be written in Common Lisp and not Coalton? We think i
 
 We describe the Coalton-Lisp interop in the following way: the *Coalton-calls-Lisp bridge* and the *Lisp-calls-Coalton bridge*.
 
-The Coalton-calls-Lisp bridge is pretty simple. Coalton has a special operator called `lisp` that allows arbitrary Lisp code to be embedded into Coalton. A lot of Coalton's standard library is written this way. For instance, the `string-concat` function is written:
+The Coalton-calls-Lisp bridge is pretty simple. Coalton has a special operator called `lisp` that allows arbitrary Lisp code to be embedded into Coalton. A lot of Coalton's standard library is written this way. For instance, the string library's `concat` function is written:
 
 ```lisp
 (coalton-toplevel
-  (declare concat-string (String -> String -> String))
-  (define (concat-string str1 str2)
+  (declare concat (String -> String -> String))
+  (define (concat str1 str2)
     (lisp String (str1 str2)
       (cl:concatenate 'cl:string str1 str2))))
 ```
+Coalton can import Lisp types using the `(repr :native <cl-type>)` function. This import can be explicit, by specifying the type or types that fulfill the Coalton corresponding coalton type, or implicit, by giving `t` as the cl-type and accepting any Lisp object. In order to manipulate these objects with lisp-defined accessors, you will need to use the `Lisp` special operator.
 
-Coalton can also stuff Lisp objects into its data structures in opaque ways, using the `Lisp-Object` type. From within a `lisp` form, one can simply use a `Lisp-Object` directly. There is no way for Coalton itself to "see" the guts of the `Lisp-Object` without using the `lisp` operator. Here's an example creating a simple `String-Map` piggy-backing off of Lisp hash tables:
+Here's an example creating a simple `String-Map` type, piggy-backing off of Lisp hash tables:
 
 ```lisp
 (coalton-toplevel
-  (define-type String-Map
-    (Hash-Table Lisp-Object))
+
+  (repr :native cl:hash-table)
+  (define-type String-Map)
 
   (declare make-table (Integer -> String-Map))
   (define (make-table size)
@@ -257,24 +269,20 @@ Coalton can also stuff Lisp objects into its data structures in opaque ways, usi
   
   (declare table-set (String-Map -> String -> String -> String-Map))
   (define (table-set tbl k v)
-    (match tbl
-      ((Hash-Table obj)
-       (lisp String-Map (k v obj tbl)
-         (cl:let ((table obj))
-           (cl:setf (cl:gethash k table) v)
-           tbl)))))
+    (lisp String-Map (k v tbl)
+      (cl:let ((table tbl))
+        (cl:setf (cl:gethash k table) v)
+        tbl)))
   
   (declare table-get (String-Map -> String -> (Optional String)))
   (define (table-get tbl k)
-    (match tbl
-      ((Hash-Table obj)
-       (lisp (Optional String) (obj k)
-         (cl:let* ((table obj)
-                   (val   (cl:gethash k table)))
-           (cl:if (cl:null val)
-                  None
-                  (Some val))))))))
-```
+    (lisp (Optional String) (tbl k)
+      (cl:let* ((table tbl)
+                (val   (cl:gethash k table)))
+        (cl:if (cl:null val)
+               None
+               (Some val))))))
+               ```
 
 The Lisp-calls-Coalton bridge is just as easy with the `coalton` operator. For instance, we can call our `fib` function (and have type safety!) in Lisp by writing `(coalton (fib 10))`.
 
@@ -343,14 +351,14 @@ Just kidding.
 
 Actually, we're not kidding. Monads are implemented in the standard library. Finally, Common Lisp now has *true* monads! Not CLOS hack-jobs that don't work.
 
-Here's a little REPL example to compute the difference between the maximal and minimal element of a list.
+Here's a little REPL example to compute the difference between the maximal and minimal element of a list:
 
 ```lisp
 > (coalton-toplevel
     (declare list-width ((List Integer) -> (Optional Integer)))
     (define (list-width l)
-      (do (max <- (maximum l))
-          (min <- (minimum l))
+      (do (max <- (list:maximum l))
+          (min <- (list:minimum l))
         (pure (- max min)))))
 LIST-WIDTH
 
