@@ -1146,7 +1146,7 @@ Note: Ord only compares the primal component.
 #### <code>INTO</code> <sup><sub>[CLASS]</sub></sup><a name="into-class"></a>
 <code><a href="#into-class">INTO</a> :A :B</code>
 
-INTO imples *every* element of :a can be represented by an element of :b. This conversion might not be bijective (i.e., there may be elements in :b that don't correspond to any in :a).
+INTO imples *every* element of `:a` can be represented by an element of `:b`. This conversion might not be bijective (i.e., there may be elements in `:b` that don't correspond to any in `:a`).
 
 Methods:
 - <code>INTO :: (:A &rarr; :B)</code>
@@ -1458,9 +1458,9 @@ Methods:
 
 Types which can be folded into a single element.
 
-`fold` is a left tail recursive fold
+`fold` is a left tail recursive fold.
 
-`foldr` is a right non tail recursive fold
+`foldr` is a right non tail recursive fold.
 
 Methods:
 - <code>FOLD :: ((:B &rarr; :C &rarr; :B) &rarr; :B &rarr; (:A :C) &rarr; :B)</code>
@@ -1608,12 +1608,12 @@ Methods:
 
 Containers which can be unwrapped to get access to their contents.
 
-(unwrap-or-else SUCCEED FAIL CONTAINER) should invoke the SUCCEED continuation on the unwrapped contents of
-CONTAINER when successful, or invoke the FAIL continuation with no arguments (i.e. with Unit as an argument)
+`(unwrap-or-else succeed fail container)` should invoke the `succeed` continuation on the unwrapped contents of
+`container` when successful, or invoke the `fail` continuation with no arguments (i.e., with `Unit` as an argument)
 when unable to unwrap a value.
 
-The SUCCEED continuation will often, but not always, be the identity function. `as-optional` passes Some to
-construct an Optional.
+The `succeed` continuation will often, but not always, be the identity function. `as-optional` passes `Some` to
+construct an `Optional`.
 
 Typical `fail` continuations are:
 - Return a default value, or
@@ -1638,7 +1638,7 @@ Methods:
 #### <code>(&lt; X Y)</code> <sup><sub>FUNCTION</sub></sup><a name="&lt;-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; (:A &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
-Is X less than Y?
+Is `x` less than `y`?
 
 
 ***
@@ -1646,7 +1646,7 @@ Is X less than Y?
 #### <code>(&gt; X Y)</code> <sup><sub>FUNCTION</sub></sup><a name="&gt;-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; (:A &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
-Is X greater than Y?
+Is `x` greater than `y`?
 
 
 ***
@@ -1654,7 +1654,7 @@ Is X greater than Y?
 #### <code>(&lt;= X Y)</code> <sup><sub>FUNCTION</sub></sup><a name="&lt;=-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; (:A &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
-Is X less than or equal to Y?
+Is `x` less than or equal to `y`?
 
 
 ***
@@ -1662,7 +1662,7 @@ Is X less than or equal to Y?
 #### <code>(&gt;= X Y)</code> <sup><sub>FUNCTION</sub></sup><a name="&gt;=-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; (:A &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
-Is X greater than or equal to Y?
+Is `x` greater than or equal to `y`?
 
 
 ***
@@ -1675,7 +1675,7 @@ Is X greater than or equal to Y?
 #### <code>(MAX X Y)</code> <sup><sub>FUNCTION</sub></sup><a name="max-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; (:A &rarr; :A &rarr; :A)</code>
 
-Returns the greater element of X and Y.
+Returns the greater element of `x` and `y`.
 
 
 ***
@@ -1683,7 +1683,7 @@ Returns the greater element of X and Y.
 #### <code>(MIN X Y)</code> <sup><sub>FUNCTION</sub></sup><a name="min-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; (:A &rarr; :A &rarr; :A)</code>
 
-Returns the lesser element of X and Y.
+Returns the lesser element of `x` and `y`.
 
 
 ***
@@ -1699,7 +1699,7 @@ Signal an error by calling `CL:ERROR`.
 #### <code>(EXPECT REASON CONTAINER)</code> <sup><sub>FUNCTION</sub></sup><a name="expect-value"></a>
 <code>&forall; :A :B. <a href="#unwrappable-class">UNWRAPPABLE</a> :A &rArr; (<a href="#string-type">STRING</a> &rarr; (:A :B) &rarr; :B)</code>
 
-Unwrap CONTAINER, signaling an error with the description REASON on failure.
+Unwrap `container`, signaling an error with the description `reason` on failure.
 
 
 ***
@@ -1707,7 +1707,7 @@ Unwrap CONTAINER, signaling an error with the description REASON on failure.
 #### <code>(UNWRAP CONTAINER)</code> <sup><sub>FUNCTION</sub></sup><a name="unwrap-value"></a>
 <code>&forall; :A :B. <a href="#unwrappable-class">UNWRAPPABLE</a> :A &rArr; ((:A :B) &rarr; :B)</code>
 
-Unwrap CONTAINER, signaling an error on failure.
+Unwrap `container`, signaling an error on failure.
 
 
 ***
@@ -1715,7 +1715,7 @@ Unwrap CONTAINER, signaling an error on failure.
 #### <code>(MAP-FST F B)</code> <sup><sub>FUNCTION</sub></sup><a name="map-fst-value"></a>
 <code>&forall; :A :B :C :D. <a href="#bifunctor-class">BIFUNCTOR</a> :C &rArr; ((:A &rarr; :B) &rarr; (:C :A :D) &rarr; (:C :B :D))</code>
 
-Map over the first argument of a Bifunctor.
+Map over the first argument of a `Bifunctor`.
 
 
 ***
@@ -1723,7 +1723,7 @@ Map over the first argument of a Bifunctor.
 #### <code>(MAP-SND F B)</code> <sup><sub>FUNCTION</sub></sup><a name="map-snd-value"></a>
 <code>&forall; :A :B :C :D. <a href="#bifunctor-class">BIFUNCTOR</a> :C &rArr; ((:A &rarr; :B) &rarr; (:C :D :A) &rarr; (:C :D :B))</code>
 
-Map over the second argument of a Bifunctor.
+Map over the second argument of a `Bifunctor`.
 
 
 ***
@@ -1744,7 +1744,7 @@ Fold a container of monoids into a single element.
 #### <code>(AS-OPTIONAL CONTAINER)</code> <sup><sub>FUNCTION</sub></sup><a name="as-optional-value"></a>
 <code>&forall; :A :B. <a href="#unwrappable-class">UNWRAPPABLE</a> :A &rArr; ((:A :B) &rarr; (<a href="#optional-type">OPTIONAL</a> :B))</code>
 
-Convert any Unwrappable container into an Optional, constructing Some on a successful unwrap and None on a failed unwrap.
+Convert any Unwrappable container into an `Optional`, constructing Some on a successful unwrap and None on a failed unwrap.
 
 
 ***
@@ -1752,7 +1752,7 @@ Convert any Unwrappable container into an Optional, constructing Some on a succe
 #### <code>(WITH-DEFAULT DEFAULT CONTAINER)</code> <sup><sub>FUNCTION</sub></sup><a name="with-default-value"></a>
 <code>&forall; :A :B. <a href="#unwrappable-class">UNWRAPPABLE</a> :B &rArr; (:A &rarr; (:B :A) &rarr; :A)</code>
 
-Unwrap CONTAINER, returning DEFAULT on failure.
+Unwrap `container`, returning `default` on failure.
 
 
 ***
@@ -1760,7 +1760,7 @@ Unwrap CONTAINER, returning DEFAULT on failure.
 #### <code>(DEFAULTING-UNWRAP CONTAINER)</code> <sup><sub>FUNCTION</sub></sup><a name="defaulting-unwrap-value"></a>
 <code>&forall; :A :B. (<a href="#unwrappable-class">UNWRAPPABLE</a> :A) (<a href="#default-class">DEFAULT</a> :B) &rArr; ((:A :B) &rarr; :B)</code>
 
-Unwrap an UNWRAPPABLE, returning (DEFAULT) of the wrapped type on failure. 
+Unwrap an `unwrappable`, returning `(default)` of the wrapped type on failure. 
 
 
 ***
@@ -1797,7 +1797,7 @@ Implementation dependent hash code
 
 Types which can be hashed for storage in hash tables.
 
-Invariant (== left right) implies (== (hash left) (hash right)).
+The hash function must satisfy the invariant that `(== left right)` implies `(== (hash left) (hash right))`.
 
 Methods:
 - <code>HASH :: (:A &rarr; <a href="#hash-type">HASH</a>)</code>
@@ -1991,7 +1991,7 @@ Returns the runtime representation of the type of the given value.
 #### <code>NOT</code> <sup><sub>[FUNCTION]</sub></sup><a name="not-value"></a>
 <code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
-Synonym for BOOLEAN-NOT.
+Synonym for `boolean-not`.
 
 
 ***
@@ -1999,7 +1999,7 @@ Synonym for BOOLEAN-NOT.
 #### <code>XOR</code> <sup><sub>[FUNCTION]</sub></sup><a name="xor-value"></a>
 <code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
-Synonym for BOOLEAN-XOR.
+Synonym for `boolean-xor`.
 
 
 ***
@@ -2015,7 +2015,7 @@ A function which can be used in place of any value, throwing an error at runtime
 #### <code>(BOOLEAN-OR X Y)</code> <sup><sub>FUNCTION</sub></sup><a name="boolean-or-value"></a>
 <code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
-Is X or Y True? Note that this is a *function* which means both X and Y will be evaluated. Use the OR macro for short-circuiting behavior.
+Is either `x` or `y` true? Note that this is a *function* which means both `x` and `y` will be evaluated. Use the `or` macro for short-circuiting behavior.
 
 
 ***
@@ -2023,7 +2023,7 @@ Is X or Y True? Note that this is a *function* which means both X and Y will be 
 #### <code>(BOOLEAN-AND X Y)</code> <sup><sub>FUNCTION</sub></sup><a name="boolean-and-value"></a>
 <code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
-Are X and Y True? Note that this is a *function* which means both X and Y will be evaluated. Use the AND macro for short-circuiting behavior.
+Are both `x` and `y` true? Note that this is a *function* which means both `x` and `y` will be evaluated. Use the AND macro for short-circuiting behavior.
 
 
 ***
@@ -2031,7 +2031,7 @@ Are X and Y True? Note that this is a *function* which means both X and Y will b
 #### <code>(BOOLEAN-NOT X)</code> <sup><sub>FUNCTION</sub></sup><a name="boolean-not-value"></a>
 <code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
-Is X False?
+The logical negation of `x`. Is `x` false?
 
 
 ***
@@ -2039,7 +2039,7 @@ Is X False?
 #### <code>(BOOLEAN-XOR X Y)</code> <sup><sub>FUNCTION</sub></sup><a name="boolean-xor-value"></a>
 <code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
-Are X or Y True, but not both?
+Are `x` or `y` true, but not both?
 
 
 ***
@@ -2053,7 +2053,7 @@ Are X or Y True, but not both?
 #### <code>(/= A B)</code> <sup><sub>FUNCTION</sub></sup><a name="/=-value"></a>
 <code>&forall; :A. <a href="#eq-class">EQ</a> :A &rArr; (:A &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
-Is A not equal to B?
+Is `a` not equal to `b`?
 
 
 ***
@@ -2084,7 +2084,7 @@ Compute the fixed point of a unary function. This is equivalent to the Y-combina
 #### <code>(ASUM XS)</code> <sup><sub>FUNCTION</sub></sup><a name="asum-value"></a>
 <code>&forall; :A :B :C. (<a href="#alternative-class">ALTERNATIVE</a> :B) (<a href="#foldable-class">FOLDABLE</a> :A) &rArr; ((:A (:B :C)) &rarr; (:B :C))</code>
 
-Fold over a list using alt
+Fold over a list using `alt`.
 
 
 ***
@@ -2100,7 +2100,7 @@ Returns a function that takes its arguments in reverse order.
 #### <code>(MSUM XS)</code> <sup><sub>FUNCTION</sub></sup><a name="msum-value"></a>
 <code>&forall; :A :B. (<a href="#monoid-class">MONOID</a> :B) (<a href="#foldable-class">FOLDABLE</a> :A) &rArr; ((:A :B) &rarr; :B)</code>
 
-Fold over a list using &lt;&gt;
+Fold over a list using `&lt;&gt;`.
 
 
 ***
@@ -2116,7 +2116,7 @@ A function that always returns its first argument.
 #### <code>(TRACE STR)</code> <sup><sub>FUNCTION</sub></sup><a name="trace-value"></a>
 <code>(<a href="#string-type">STRING</a> &rarr; <a href="#unit-type">UNIT</a>)</code>
 
-Print a line to `*STANDARD-OUTPUT*`
+Print a line to `cl:*standard-output*`.
 
 
 ***
@@ -2132,7 +2132,7 @@ The same as `fold` but with the argument order swapped to match `cl:reduce`
 #### <code>(COMPOSE F G)</code> <sup><sub>FUNCTION</sub></sup><a name="compose-value"></a>
 <code>&forall; :A :B :C. ((:A &rarr; :B) &rarr; (:C &rarr; :A) &rarr; :C &rarr; :B)</code>
 
-Produces a function equivalent to applying G then F in succession.
+Produces a function equivalent to applying `g` followed by `f`.
 
 
 ***
@@ -2169,7 +2169,7 @@ Compute the complement of a unary Boolean function.
 #### <code>(TRACEOBJECT STR ITEM)</code> <sup><sub>FUNCTION</sub></sup><a name="traceobject-value"></a>
 <code>&forall; :A. (<a href="#string-type">STRING</a> &rarr; :A &rarr; <a href="#unit-type">UNIT</a>)</code>
 
-Print a line to `*STANDARD-OUTPUT*` in the form "{STR}: {ITEM}"
+Print a line to `cl:*standard-output*` in the form "{STR}: {ITEM}".
 
 
 ***
@@ -2204,7 +2204,7 @@ establishes that division of two `Single-Float`s can result in a `Single-Float`.
 
 Note that `Dividable` does *not* establish a default result type; you must constrain the result type yourself.
 
-The function general/ is partial, and will error produce a run-time error if the divisor is zero.
+The function `general/` is partial, and will error produce a run-time error if the divisor is zero.
 
 
 Methods:
@@ -2227,7 +2227,7 @@ Methods:
 #### <code>TRANSFINITE</code> <sup><sub>[CLASS]</sub></sup><a name="transfinite-class"></a>
 <code><a href="#transfinite-class">TRANSFINITE</a> :A</code>
 
-Numeric type with a value for (positive) 'infinity' and/or 'NaN'
+Numeric type with a value for (positive) infinity and/or NaN.
 
 Methods:
 - <code>INFINITY :: :A</code>
@@ -2257,7 +2257,7 @@ Any number with a multiplicative inverse (reciprocal) where:
     (/ x y) = (* x (reciprocal y))
 
 
-If no reciprocal exists for an element, produce a run-time error (e.g. zero).
+If no reciprocal exists for an element, produce a run-time error (e.g., zero).
 
 
 Methods:
@@ -3867,14 +3867,12 @@ Produce all permutations of the list L.
 
 Returns a list containing the numbers from START to END inclusive, counting by 1.
 
-
-    ```
-    &gt; COALTON-USER&gt; (coalton (range 1 5))
+    COALTON-USER&gt; (coalton (range 1 5))
     (1 2 3 4 5)
 
-    &gt; COALTON-USER&gt; (coalton (range 5 2))
+    COALTON-USER&gt; (coalton (range 5 2))
     (5 4 3 2)
-    ```
+
 
 
 ***
@@ -3951,7 +3949,7 @@ Returns true if any element of XS is equal to E.
 #### <code>(REMOVE X YS)</code> <sup><sub>FUNCTION</sub></sup><a name="remove-value"></a>
 <code>&forall; :A. <a href="#eq-class">EQ</a> :A &rArr; (:A &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
-Return a new list with the first element equal to X removed.
+Return a new list with the first element equal to `x` removed.
 
 
 ***
@@ -4035,7 +4033,7 @@ Returns a new list containing the same elements in reverse order.
 #### <code>(ZIPWITH F XS YS)</code> <sup><sub>FUNCTION</sub></sup><a name="zipwith-value"></a>
 <code>&forall; :A :B :C. ((:A &rarr; :B &rarr; :C) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :B) &rarr; (<a href="#list-type">LIST</a> :C))</code>
 
-Builds a new list by calling F with elements of XS and YS.
+Builds a new list by calling `f` with elements of `xs` and `ys`.
 
 
 ***
@@ -4136,7 +4134,7 @@ Transposes a matrix represented by a list of lists.
 #### <code>(DIFFERENCE XS YS)</code> <sup><sub>FUNCTION</sub></sup><a name="difference-value"></a>
 <code>&forall; :A. <a href="#eq-class">EQ</a> :A &rArr; ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
-Returns a new list with the first occurence of each element in YS removed from XS.
+Returns a new list with the first occurence of each element in `ys` removed from `xs`.
 
 
 ***
