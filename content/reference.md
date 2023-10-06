@@ -319,12 +319,12 @@ Homogeneous list of objects represented as a Common Lisp `list`.
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#iso-class">ISO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#iso-class">ISO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
+- <code><a href="#iso-class">ISO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#ord-class">ORD</a> (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#into-class">INTO</a> <a href="#string-type">STRING</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#optional-type">OPTIONAL</a> :A) (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#monad-class">MONAD</a> <a href="#list-type">LIST</a></code>
 - <code><a href="#monoid-class">MONOID</a> (<a href="#list-type">LIST</a> :A)</code>
@@ -1048,9 +1048,9 @@ Methods:
 - <code><a href="#iso-class">ISO</a> :A :A</code>
 - <code><a href="#iso-class">ISO</a> (<a href="#result-type">RESULT</a> <a href="#unit-type">UNIT</a> :A) (<a href="#optional-type">OPTIONAL</a> :A)</code>
 - <code><a href="#iso-class">ISO</a> (<a href="#tuple-type">TUPLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :B :A)</code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#iso-class">ISO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
+- <code><a href="#iso-class">ISO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#iso-class">ISO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#iso-class">ISO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#iso-class">ISO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
 
 </details>
 
@@ -1215,15 +1215,15 @@ Methods:
 - <code><a href="#into-class">INTO</a> (<a href="#result-type">RESULT</a> :A :B) (<a href="#optional-type">OPTIONAL</a> :B)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#tuple-type">TUPLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :B :A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#optional-type">OPTIONAL</a> :A) (<a href="#list-type">LIST</a> :A)</code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#into-class">INTO</a> <a href="#double-float-type">DOUBLE-FLOAT</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#single-float-type">SINGLE-FLOAT</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#string-type">STRING</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>)</code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#slice-type">SLICE</a> :A)</code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#slice-type">SLICE</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#mappair-type">MAPPAIR</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code>(<a href="#foldable-class">FOLDABLE</a> :A) (<a href="#runtimerepr-class">RUNTIMEREPR</a> :B) &rArr; <a href="#into-class">INTO</a> (:A :B) (<a href="#seq-type">SEQ</a> :B)</code>
 - <code><a href="#into-class">INTO</a> <a href="#double-float-type">DOUBLE-FLOAT</a> <a href="#big-float-type">BIG-FLOAT</a></code>
@@ -1314,7 +1314,7 @@ Methods:
 - <code>(<a href="#default-class">DEFAULT</a> :A) (<a href="#default-class">DEFAULT</a> :B) (<a href="#default-class">DEFAULT</a> :C) &rArr; <a href="#default-class">DEFAULT</a> (<a href="#tuple3-type">TUPLE3</a> :A :B :C)</code>
 - <code>(<a href="#default-class">DEFAULT</a> :A) (<a href="#default-class">DEFAULT</a> :B) &rArr; <a href="#default-class">DEFAULT</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code><a href="#default-class">DEFAULT</a> (<a href="#list-type">LIST</a> :A)</code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#default-class">DEFAULT</a> (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#default-class">DEFAULT</a> (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#default-class">DEFAULT</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#default-class">DEFAULT</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#default-class">DEFAULT</a> (<a href="#seq-type">SEQ</a> :A)</code>
@@ -1531,7 +1531,7 @@ Methods:
 - <code><a href="#semigroup-class">SEMIGROUP</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
 - <code><a href="#semigroup-class">SEMIGROUP</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#result-type">RESULT</a> :B :A)</code>
 - <code><a href="#semigroup-class">SEMIGROUP</a> (<a href="#list-type">LIST</a> :A)</code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#semigroup-class">SEMIGROUP</a> (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#semigroup-class">SEMIGROUP</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#tree-type">TREE</a> :A)</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#map-type">MAP</a> :A :B)</code>
@@ -3491,7 +3491,7 @@ Is C an ASCII alphanumeric character?
 #### <code>(REF STR IDX)</code> <sup><sub>FUNCTION</sub></sup><a name="ref-value"></a>
 <code>(<a href="#string-type">STRING</a> &rarr; <a href="#ufix-type">UFIX</a> &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#char-type">CHAR</a>))</code>
 
-Return the IDXth character of STR.
+Return the `idx`th character of `str`.
 
 
 ***
@@ -3499,7 +3499,7 @@ Return the IDXth character of STR.
 #### <code>(CHARS STR)</code> <sup><sub>FUNCTION</sub></sup><a name="chars-value"></a>
 <code>(<a href="#string-type">STRING</a> &rarr; (<a href="#iterator-type">ITERATOR</a> <a href="#char-type">CHAR</a>))</code>
 
-Returns an iterator over the characters in STR.
+Returns an iterator over the characters in `str`.
 
 
 ***
@@ -3539,7 +3539,7 @@ Reverse a string.
 #### <code>(PARSE-INT STR)</code> <sup><sub>FUNCTION</sub></sup><a name="parse-int-value"></a>
 <code>(<a href="#string-type">STRING</a> &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#integer-type">INTEGER</a>))</code>
 
-Parse the integer in string STR.
+Parse the integer in string `str`.
 
 
 ***
@@ -3563,7 +3563,7 @@ Return true if the first argument appears as a substring within the second argum
 #### <code>(STRIP-PREFIX PREFIX STR)</code> <sup><sub>FUNCTION</sub></sup><a name="strip-prefix-value"></a>
 <code>(<a href="#string-type">STRING</a> &rarr; <a href="#string-type">STRING</a> &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#string-type">STRING</a>))</code>
 
-Returns a string without a give prefix, or None if the string
+Returns a string without a give prefix, or `None` if the string
 does not have that suffix.
 
 
@@ -3572,7 +3572,7 @@ does not have that suffix.
 #### <code>(STRIP-SUFFIX SUFFIX STR)</code> <sup><sub>FUNCTION</sub></sup><a name="strip-suffix-value"></a>
 <code>(<a href="#string-type">STRING</a> &rarr; <a href="#string-type">STRING</a> &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#string-type">STRING</a>))</code>
 
-Returns a string without a give suffix, or None if the string
+Returns a string without a give suffix, or `None` if the string
 does not have that suffix.
 
 
@@ -3581,7 +3581,7 @@ does not have that suffix.
 #### <code>(REF-UNCHECKED STR IDX)</code> <sup><sub>FUNCTION</sub></sup><a name="ref-unchecked-value"></a>
 <code>(<a href="#string-type">STRING</a> &rarr; <a href="#ufix-type">UFIX</a> &rarr; <a href="#char-type">CHAR</a>)</code>
 
-Return the IDXth character of STR. This function is partial.
+Return the `idx`th character of `str`. This function is partial.
 
 
 ***
@@ -4356,17 +4356,17 @@ Apply F to the contents of CEL, swapping the result for the old value
 - <code><a href="#sliceable-class">SLICEABLE</a> (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#vector-type">VECTOR</a> :A)</code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#iso-class">ISO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#iso-class">ISO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#slice-type">SLICE</a> :A)</code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#default-class">DEFAULT</a> (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#iso-class">ISO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#iso-class">ISO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#slice-type">SLICE</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
+- <code><a href="#default-class">DEFAULT</a> (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#vector-type">VECTOR</a></code>
 - <code><a href="#foldable-class">FOLDABLE</a> <a href="#vector-type">VECTOR</a></code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#vector-type">VECTOR</a> :A)</code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#vector-type">VECTOR</a> :A) :A</code>
+- <code><a href="#semigroup-class">SEMIGROUP</a> (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#fromiterator-class">FROMITERATOR</a> (<a href="#vector-type">VECTOR</a> :A) :A</code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#vector-type">VECTOR</a> :A) :A</code>
 
 </details>
@@ -4377,7 +4377,7 @@ Apply F to the contents of CEL, swapping the result for the old value
 ### Values
 
 #### <code>(NEW _)</code> <sup><sub>FUNCTION</sub></sup><a name="new-value"></a>
-<code>&forall; :A. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; (<a href="#unit-type">UNIT</a> &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
+<code>&forall; :A. (<a href="#unit-type">UNIT</a> &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
 
 Create a new empty vector
 
@@ -4387,7 +4387,7 @@ Create a new empty vector
 #### <code>(COPY V)</code> <sup><sub>FUNCTION</sub></sup><a name="copy-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
 
-Return a new vector containing the same elements as V
+Return a new vector containing the same elements as `v`.
 
 
 ***
@@ -4395,7 +4395,7 @@ Return a new vector containing the same elements as V
 #### <code>(HEAD V)</code> <sup><sub>FUNCTION</sub></sup><a name="head-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
-Return the first item of V
+Return the first item of `v`.
 
 
 ***
@@ -4403,7 +4403,7 @@ Return the first item of V
 #### <code>(LAST V)</code> <sup><sub>FUNCTION</sub></sup><a name="last-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
-Return the last element of V
+Return the last element of `v`.
 
 
 ***
@@ -4411,7 +4411,7 @@ Return the last element of V
 #### <code>(POP! V)</code> <sup><sub>FUNCTION</sub></sup><a name="pop!-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
-Remove and return the last item of V
+Remove and return the last item of `v`.
 
 
 ***
@@ -4419,7 +4419,7 @@ Remove and return the last item of V
 #### <code>(SET! INDEX ITEM V)</code> <sup><sub>FUNCTION</sub></sup><a name="set!-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; :A &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
-Set the INDEXth element of V to ITEM. This function left intentionally unsafe because it does not have a return value to check.
+Set the `index`th element of `v` to `item`. This function left intentionally unsafe because it does not have a return value to check.
 
 
 ***
@@ -4427,7 +4427,7 @@ Set the INDEXth element of V to ITEM. This function left intentionally unsafe be
 #### <code>(INDEX INDEX V)</code> <sup><sub>FUNCTION</sub></sup><a name="index-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
-Return the INDEXth element of V
+Return the `index`th element of `v`.
 
 
 ***
@@ -4435,7 +4435,7 @@ Return the INDEXth element of V
 #### <code>(PUSH! ITEM V)</code> <sup><sub>FUNCTION</sub></sup><a name="push!-value"></a>
 <code>&forall; :A. (:A &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#ufix-type">UFIX</a>)</code>
 
-Append ITEM to V and resize V if necessary, returning the index of the new item.
+Append `item` to `v` and resize `v` if necessary, returning the index of the new item.
 
 
 ***
@@ -4443,15 +4443,15 @@ Append ITEM to V and resize V if necessary, returning the index of the new item.
 #### <code>(SORT! V)</code> <sup><sub>FUNCTION</sub></sup><a name="sort!-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
-Sort a vector inplace
+Sort a vector in-place in ascending order.
 
 
 ***
 
 #### <code>(APPEND V1 V2)</code> <sup><sub>FUNCTION</sub></sup><a name="append-value"></a>
-<code>&forall; :A. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; ((<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
+<code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
 
-Create a new VECTOR containing the elements of v1 followed by the elements of v2
+Create a new vector containing the elements of `v1` followed by the elements of `v2`.
 
 
 ***
@@ -4459,7 +4459,7 @@ Create a new VECTOR containing the elements of v1 followed by the elements of v2
 #### <code>(CLEAR! V)</code> <sup><sub>FUNCTION</sub></sup><a name="clear!-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
-Set the capacity of V to 0.
+Set the capacity of `v` to `0`.
 
 
 ***
@@ -4467,7 +4467,7 @@ Set the capacity of V to 0.
 #### <code>(EMPTY? V)</code> <sup><sub>FUNCTION</sub></sup><a name="empty?-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
-Returns TRUE if V is empty
+Is `v` empty?
 
 
 ***
@@ -4475,7 +4475,7 @@ Returns TRUE if V is empty
 #### <code>(LENGTH V)</code> <sup><sub>FUNCTION</sub></sup><a name="length-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#ufix-type">UFIX</a>)</code>
 
-Returns the length of V
+Returns the length of `v`.
 
 
 ***
@@ -4483,7 +4483,7 @@ Returns the length of V
 #### <code>(EXTEND! VEC ITER)</code> <sup><sub>FUNCTION</sub></sup><a name="extend!-value"></a>
 <code>&forall; :A :B. <a href="#intoiterator-class">INTOITERATOR</a> :B :A &rArr; ((<a href="#vector-type">VECTOR</a> :A) &rarr; :B &rarr; <a href="#unit-type">UNIT</a>)</code>
 
-Push every element in ITER to the end of VEC.
+Push every element in `iter` to the end of `vec`.
 
 
 ***
@@ -4491,7 +4491,7 @@ Push every element in ITER to the end of VEC.
 #### <code>(CAPACITY V)</code> <sup><sub>FUNCTION</sub></sup><a name="capacity-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#ufix-type">UFIX</a>)</code>
 
-Returns the number of elements that V can store without resizing
+Returns the number of elements that `v` can store without resizing.
 
 
 ***
@@ -4499,7 +4499,7 @@ Returns the number of elements that V can store without resizing
 #### <code>(SORT-BY! F V)</code> <sup><sub>FUNCTION</sub></sup><a name="sort-by!-value"></a>
 <code>&forall; :A. ((:A &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
-Sort a vector inplace with predicate function F
+Sort a vector in-place with predicate function `f`.
 
 
 ***
@@ -4507,7 +4507,7 @@ Sort a vector inplace with predicate function F
 #### <code>(FIND-ELEM E V)</code> <sup><sub>FUNCTION</sub></sup><a name="find-elem-value"></a>
 <code>&forall; :A. <a href="#eq-class">EQ</a> :A &rArr; (:A &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#ufix-type">UFIX</a>))</code>
 
-Find the index of element E in V
+Find the index of element `e` in `v`.
 
 
 ***
@@ -4515,7 +4515,7 @@ Find the index of element E in V
 #### <code>(HEAD-UNSAFE V)</code> <sup><sub>FUNCTION</sub></sup><a name="head-unsafe-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; :A)</code>
 
-Return the first item of V without first checking if V is empty
+Return the first item of `v` without first checking if `v` is empty.
 
 
 ***
@@ -4523,7 +4523,7 @@ Return the first item of V without first checking if V is empty
 #### <code>(LAST-UNSAFE V)</code> <sup><sub>FUNCTION</sub></sup><a name="last-unsafe-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; :A)</code>
 
-Return the last element of V without first checking if V is empty
+Return the last element of `v` without first checking if `v` is empty.
 
 
 ***
@@ -4531,15 +4531,7 @@ Return the last element of V without first checking if V is empty
 #### <code>(POP-UNSAFE! V)</code> <sup><sub>FUNCTION</sub></sup><a name="pop-unsafe!-value"></a>
 <code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; :A)</code>
 
-Remove and return the last item of V without checking if the vector is empty
-
-
-***
-
-#### <code>(ELEMENT-TYPE V)</code> <sup><sub>FUNCTION</sub></sup><a name="element-type-value"></a>
-<code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#lisptype-type">LISPTYPE</a>)</code>
-
-Returns the element type of V as a LispType
+Remove and return the last item of `v` without checking if the vector is empty.
 
 
 ***
@@ -4547,7 +4539,7 @@ Returns the element type of V as a LispType
 #### <code>(INDEX-UNSAFE INDEX V)</code> <sup><sub>FUNCTION</sub></sup><a name="index-unsafe-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; :A)</code>
 
-Return the INDEXth element of V without checking if the element exists
+Return the `index`th element of `v` without checking if the element exists.
 
 
 ***
@@ -4555,7 +4547,7 @@ Return the INDEXth element of V without checking if the element exists
 #### <code>(SWAP-REMOVE! IDX VEC)</code> <sup><sub>FUNCTION</sub></sup><a name="swap-remove!-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
-Remove the element IDX from VEC and replace it with the last element in VEC. Then return the removed element.
+Remove the element `idx` from `vec` and replace it with the last element in `vec`. Then return the removed element.
 
 
 ***
@@ -4563,15 +4555,15 @@ Remove the element IDX from VEC and replace it with the last element in VEC. The
 #### <code>(SET-CAPACITY! NEW-CAPACITY V)</code> <sup><sub>FUNCTION</sub></sup><a name="set-capacity!-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
-Set the capacity of V to NEW-CAPACITY. Setting the capacity to lower then the length will remove elements from the end.
+Set the capacity of `v` to `new-capacity`. Setting the capacity to lower then the length will remove elements from the end.
 
 
 ***
 
 #### <code>(WITH-CAPACITY N)</code> <sup><sub>FUNCTION</sub></sup><a name="with-capacity-value"></a>
-<code>&forall; :A. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
+<code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
 
-Create a new vector with N elements preallocated
+Create a new vector with `n` elements preallocated.
 
 
 ***
@@ -4579,7 +4571,7 @@ Create a new vector with N elements preallocated
 #### <code>(SWAP-REMOVE-UNSAFE! IDX VEC)</code> <sup><sub>FUNCTION</sub></sup><a name="swap-remove-unsafe!-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; :A)</code>
 
-Remove the element IDX from VEC and replace it with the last element in VEC without bounds checking. Then return the removed element.
+Remove the element `idx` from `vec` and replace it with the last element in `vec` without bounds checking. Then return the removed element.
 
 
 ***
@@ -4587,7 +4579,7 @@ Remove the element IDX from VEC and replace it with the last element in VEC with
 #### <code>(WITH-INITIAL-ELEMENT N X)</code> <sup><sub>FUNCTION</sub></sup><a name="with-initial-element-value"></a>
 <code>&forall; :A. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; (<a href="#ufix-type">UFIX</a> &rarr; :A &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
 
-Create a new vector with N elements equal to X
+Create a new vector with `n` elements equal to `x`.
 
 
 ***
@@ -4606,11 +4598,11 @@ Create a new vector with N elements equal to X
 - <code><a href="#sliceable-class">SLICEABLE</a> (<a href="#slice-type">SLICE</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#slice-type">SLICE</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#slice-type">SLICE</a> :A)</code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#iso-class">ISO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#slice-type">SLICE</a> :A)</code>
+- <code><a href="#iso-class">ISO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#slice-type">SLICE</a> :A)</code>
 - <code><a href="#foldable-class">FOLDABLE</a> <a href="#slice-type">SLICE</a></code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#slice-type">SLICE</a> :A) :A</code>
+- <code><a href="#fromiterator-class">FROMITERATOR</a> (<a href="#slice-type">SLICE</a> :A) :A</code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#slice-type">SLICE</a> :A) :A</code>
 
 </details>
@@ -4621,9 +4613,9 @@ Create a new vector with N elements equal to X
 ### Values
 
 #### <code>(NEW START LENGTH V)</code> <sup><sub>FUNCTION</sub></sup><a name="new-value"></a>
-<code>&forall; :A :B. (<a href="#runtimerepr-class">RUNTIMEREPR</a> :B) (<a href="#sliceable-class">SLICEABLE</a> (:A :B)) &rArr; (<a href="#ufix-type">UFIX</a> &rarr; <a href="#ufix-type">UFIX</a> &rarr; (:A :B) &rarr; (<a href="#slice-type">SLICE</a> :B))</code>
+<code>&forall; :A :B. <a href="#sliceable-class">SLICEABLE</a> (:A :B) &rArr; (<a href="#ufix-type">UFIX</a> &rarr; <a href="#ufix-type">UFIX</a> &rarr; (:A :B) &rarr; (<a href="#slice-type">SLICE</a> :B))</code>
 
-Create a new slice backed by V starting at index START and continuing for LENGTH elements.
+Create a new slice backed by `v` starting at index `start` and continuing for `length` elements.
 
 
 ***
@@ -4631,7 +4623,7 @@ Create a new slice backed by V starting at index START and continuing for LENGTH
 #### <code>(SET! INDEX ITEM S)</code> <sup><sub>FUNCTION</sub></sup><a name="set!-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; :A &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
-Set the element at INDEX in S to ITEM
+Set the element at `index` in `s` to `item`.
 
 
 ***
@@ -4639,7 +4631,7 @@ Set the element at INDEX in S to ITEM
 #### <code>(INDEX IDX S)</code> <sup><sub>FUNCTION</sub></sup><a name="index-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
-Lookup the element at INDEX in S
+Lookup the element at `index` in `s`.
 
 
 ***
@@ -4647,15 +4639,7 @@ Lookup the element at INDEX in S
 #### <code>(LENGTH S)</code> <sup><sub>FUNCTION</sub></sup><a name="length-value"></a>
 <code>&forall; :A. ((<a href="#slice-type">SLICE</a> :A) &rarr; <a href="#ufix-type">UFIX</a>)</code>
 
-Returns the length of S
-
-
-***
-
-#### <code>(ELEMENT-TYPE S)</code> <sup><sub>FUNCTION</sub></sup><a name="element-type-value"></a>
-<code>&forall; :A. ((<a href="#slice-type">SLICE</a> :A) &rarr; <a href="#lisptype-type">LISPTYPE</a>)</code>
-
-Returns the element type of S as a LispType
+Returns the length of `s`.
 
 
 ***
@@ -4663,31 +4647,31 @@ Returns the element type of S as a LispType
 #### <code>(INDEX-UNSAFE IDX S)</code> <sup><sub>FUNCTION</sub></sup><a name="index-unsafe-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; :A)</code>
 
-Lookup the element at INDEX in S without bounds checking
+Lookup the element at `index` in `s` without bounds checking.
 
 
 ***
 
 #### <code>(ITER-CHUNKED SIZE S)</code> <sup><sub>FUNCTION</sub></sup><a name="iter-chunked-value"></a>
-<code>&forall; :A :B. (<a href="#runtimerepr-class">RUNTIMEREPR</a> :B) (<a href="#sliceable-class">SLICEABLE</a> (:A :B)) &rArr; (<a href="#ufix-type">UFIX</a> &rarr; (:A :B) &rarr; (<a href="#iterator-type">ITERATOR</a> (<a href="#slice-type">SLICE</a> :B)))</code>
+<code>&forall; :A :B. <a href="#sliceable-class">SLICEABLE</a> (:A :B) &rArr; (<a href="#ufix-type">UFIX</a> &rarr; (:A :B) &rarr; (<a href="#iterator-type">ITERATOR</a> (<a href="#slice-type">SLICE</a> :B)))</code>
 
-Divide S into a series of slices of length SIZE. Will return a final shorter slice if S does not divide evenly.
+Divide `s` into a series of slices of length `size`. Will return a final shorter slice if `s` does not divide evenly.
 
 
 ***
 
 #### <code>(ITER-SLIDING SIZE S)</code> <sup><sub>FUNCTION</sub></sup><a name="iter-sliding-value"></a>
-<code>&forall; :A :B. (<a href="#runtimerepr-class">RUNTIMEREPR</a> :B) (<a href="#sliceable-class">SLICEABLE</a> (:A :B)) &rArr; (<a href="#ufix-type">UFIX</a> &rarr; (:A :B) &rarr; (<a href="#iterator-type">ITERATOR</a> (<a href="#slice-type">SLICE</a> :B)))</code>
+<code>&forall; :A :B. <a href="#sliceable-class">SLICEABLE</a> (:A :B) &rArr; (<a href="#ufix-type">UFIX</a> &rarr; (:A :B) &rarr; (<a href="#iterator-type">ITERATOR</a> (<a href="#slice-type">SLICE</a> :B)))</code>
 
-Returns an iterator that yeilds a series of overlapping slices of length SIZE.
+Returns an iterator that yeilds a series of overlapping slices of length `size`.
 
 
 ***
 
 #### <code>(ITER-CHUNKED-EXACT SIZE S)</code> <sup><sub>FUNCTION</sub></sup><a name="iter-chunked-exact-value"></a>
-<code>&forall; :A :B. (<a href="#runtimerepr-class">RUNTIMEREPR</a> :B) (<a href="#sliceable-class">SLICEABLE</a> (:A :B)) &rArr; (<a href="#ufix-type">UFIX</a> &rarr; (:A :B) &rarr; (<a href="#iterator-type">ITERATOR</a> (<a href="#slice-type">SLICE</a> :B)))</code>
+<code>&forall; :A :B. <a href="#sliceable-class">SLICEABLE</a> (:A :B) &rArr; (<a href="#ufix-type">UFIX</a> &rarr; (:A :B) &rarr; (<a href="#iterator-type">ITERATOR</a> (<a href="#slice-type">SLICE</a> :B)))</code>
 
-Divide S into a series of slices of length SIZE. Will skip trailing elements if S does not divide evenly.
+Divide `s` into a series of slices of length `size`. Will skip trailing elements if `s` does not divide evenly.
 
 
 ***
@@ -4930,9 +4914,9 @@ Methods:
 - <code><a href="#fromiterator-class">FROMITERATOR</a> :A :B &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#optional-type">OPTIONAL</a> :A) (<a href="#optional-type">OPTIONAL</a> :B)</code>
 - <code><a href="#fromiterator-class">FROMITERATOR</a> :A :B &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#result-type">RESULT</a> :C :A) (<a href="#result-type">RESULT</a> :C :B)</code>
 - <code><a href="#fromiterator-class">FROMITERATOR</a> (<a href="#list-type">LIST</a> :A) :A</code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#vector-type">VECTOR</a> :A) :A</code>
+- <code><a href="#fromiterator-class">FROMITERATOR</a> (<a href="#vector-type">VECTOR</a> :A) :A</code>
 - <code><a href="#fromiterator-class">FROMITERATOR</a> <a href="#string-type">STRING</a> <a href="#char-type">CHAR</a></code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#slice-type">SLICE</a> :A) :A</code>
+- <code><a href="#fromiterator-class">FROMITERATOR</a> (<a href="#slice-type">SLICE</a> :A) :A</code>
 - <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#tree-type">TREE</a> :A) :A</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#map-type">MAP</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
@@ -5712,7 +5696,7 @@ Concatenate two `Seq`s
 ***
 
 #### <code>(PUSH SEQ A)</code> <sup><sub>FUNCTION</sub></sup><a name="push-value"></a>
-<code>&forall; :A. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; ((<a href="#seq-type">SEQ</a> :A) &rarr; :A &rarr; (<a href="#seq-type">SEQ</a> :A))</code>
+<code>&forall; :A. ((<a href="#seq-type">SEQ</a> :A) &rarr; :A &rarr; (<a href="#seq-type">SEQ</a> :A))</code>
 
 Push `a` onto the end of `seq`, returning a new `Seq` instance.
 
