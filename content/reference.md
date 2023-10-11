@@ -3014,11 +3014,9 @@ Methods:
 #### <code>ELEMENTARY</code> <sup><sub>[CLASS]</sub></sup><a name="elementary-class"></a>
 <code>(<a href="#reciprocable-class">RECIPROCABLE</a> :A) (<a href="#polar-class">POLAR</a> :A) (<a href="#trigonometric-class">TRIGONOMETRIC</a> :A) (<a href="#exponentiable-class">EXPONENTIABLE</a> :A) (<a href="#radical-class">RADICAL</a> :A) &rArr; <a href="#elementary-class">ELEMENTARY</a> :A</code>
 
-Numbers that can be can be passed to elementary functions.
+`Elementary` is a marker class, providing `Reciprocable`, `Polar`, `Trigonometric`, `Exponentiable`, and `Radical`.
 
 Methods:
-- <code>EE :: :A</code>
-- <code>PI :: :A</code>
 
 <details>
 <summary>Instances</summary>
@@ -3049,6 +3047,7 @@ Methods:
 - <code>POW :: (:A &rarr; :A &rarr; :A)</code>
 - <code>LN :: (:A &rarr; :A)</code>
 - <code>LOG :: (:A &rarr; :A &rarr; :A)</code>
+- <code>EE :: :A</code>
 
 <details>
 <summary>Instances</summary>
@@ -3076,6 +3075,7 @@ Methods:
 - <code>ASIN :: (:A &rarr; :A)</code>
 - <code>ACOS :: (:A &rarr; :A)</code>
 - <code>ATAN :: (:A &rarr; :A)</code>
+- <code>PI :: :A</code>
 
 <details>
 <summary>Instances</summary>
@@ -3132,7 +3132,7 @@ A point on the complex unit circle:
 ***
 
 #### <code>(ATAN2 Y X)</code> <sup><sub>FUNCTION</sub></sup><a name="atan2-value"></a>
-<code>&forall; :A. (<a href="#ord-class">ORD</a> :A) (<a href="#elementary-class">ELEMENTARY</a> :A) &rArr; (:A &rarr; :A &rarr; :A)</code>
+<code>&forall; :A. (<a href="#ord-class">ORD</a> :A) (<a href="#trigonometric-class">TRIGONOMETRIC</a> :A) (<a href="#reciprocable-class">RECIPROCABLE</a> :A) &rArr; (:A &rarr; :A &rarr; :A)</code>
 
 Computes the two-argument arctangent of y and x, which is roughly the same
 as (atan (/ y x)) when defined and accounting for the quadrant of the (x,y).
