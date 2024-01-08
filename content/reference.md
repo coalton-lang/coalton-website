@@ -1023,6 +1023,7 @@ Note: Eq only compares the primal component.
 - <code><a href="#eq-class">EQ</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#slice-type">SLICE</a> :A)</code>
 - <code>(<a href="#hash-class">HASH</a> :A) (<a href="#eq-class">EQ</a> :B) &rArr; <a href="#eq-class">EQ</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B)</code>
+- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#queue-type">QUEUE</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#tree-type">TREE</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> <a href="#color-type">COLOR</a></code>
 - <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) &rArr; <a href="#eq-class">EQ</a> (<a href="#map-type">MAP</a> :A :B)</code>
@@ -1317,6 +1318,7 @@ Methods:
 - <code><a href="#default-class">DEFAULT</a> (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#default-class">DEFAULT</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#default-class">DEFAULT</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B)</code>
+- <code><a href="#default-class">DEFAULT</a> (<a href="#queue-type">QUEUE</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#default-class">DEFAULT</a> (<a href="#seq-type">SEQ</a> :A)</code>
 
 </details>
@@ -1342,6 +1344,7 @@ Methods:
 - <code><a href="#functor-class">FUNCTOR</a> (<a href="#result-type">RESULT</a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#list-type">LIST</a></code>
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#vector-type">VECTOR</a></code>
+- <code><a href="#functor-class">FUNCTOR</a> <a href="#queue-type">QUEUE</a></code>
 - <code><a href="#functor-class">FUNCTOR</a> (<a href="#st-type">ST</a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> (<a href="#map-type">MAP</a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#functor-class">FUNCTOR</a> (<a href="#free-type">FREE</a> :A)</code>
@@ -1472,6 +1475,7 @@ Methods:
 - <code><a href="#foldable-class">FOLDABLE</a> <a href="#list-type">LIST</a></code>
 - <code><a href="#foldable-class">FOLDABLE</a> <a href="#vector-type">VECTOR</a></code>
 - <code><a href="#foldable-class">FOLDABLE</a> <a href="#slice-type">SLICE</a></code>
+- <code><a href="#foldable-class">FOLDABLE</a> <a href="#queue-type">QUEUE</a></code>
 - <code><a href="#foldable-class">FOLDABLE</a> <a href="#tree-type">TREE</a></code>
 - <code><a href="#foldable-class">FOLDABLE</a> :A &rArr; <a href="#foldable-class">FOLDABLE</a> (<a href="#free-type">FREE</a> :A)</code>
 
@@ -1533,6 +1537,7 @@ Methods:
 - <code><a href="#semigroup-class">SEMIGROUP</a> (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#semigroup-class">SEMIGROUP</a> (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#semigroup-class">SEMIGROUP</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#semigroup-class">SEMIGROUP</a> (<a href="#queue-type">QUEUE</a> :A)</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#tree-type">TREE</a> :A)</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#map-type">MAP</a> :A :B)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#seq-type">SEQ</a> :A)</code>
@@ -1935,6 +1940,7 @@ Methods:
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#slice-type">SLICE</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#queue-type">QUEUE</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#st-type">ST</a> :A :B)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#color-type">COLOR</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tree-type">TREE</a> :A)</code>
@@ -4918,6 +4924,7 @@ Methods:
 - <code><a href="#fromiterator-class">FROMITERATOR</a> <a href="#string-type">STRING</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#fromiterator-class">FROMITERATOR</a> (<a href="#slice-type">SLICE</a> :A) :A</code>
 - <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
+- <code><a href="#fromiterator-class">FROMITERATOR</a> (<a href="#queue-type">QUEUE</a> :A) :A</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#tree-type">TREE</a> :A) :A</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#map-type">MAP</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#seq-type">SEQ</a> :A) :A</code>
@@ -4949,6 +4956,7 @@ Methods:
 - <code><a href="#intoiterator-class">INTOITERATOR</a> <a href="#string-type">STRING</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#slice-type">SLICE</a> :A) :A</code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
+- <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#queue-type">QUEUE</a> :A) :A</code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#tree-type">TREE</a> :A) :A</code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#map-type">MAP</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#seq-type">SEQ</a> :A) :A</code>
