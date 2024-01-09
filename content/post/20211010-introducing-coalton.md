@@ -44,6 +44,7 @@ This is Coalton greeting you by making native use of Common Lisp functions:
   (define (hello name)
     (print (str:concat "Hello, " name))))
 ```
+
 This is Coalton detecting a type error at *compile time*:
 
 ```lisp
@@ -151,24 +152,27 @@ In terms of its type system, Coalton's closest cousin is Haskell. Coalton's comp
 
 - Parametric polymorphism and type variables:
 
-  ```lisp
+```lisp
   (coalton-toplevel
-    (declare my-compose ((:b -> :c) -> (:a -> :b) -> (:a -> :c)))
-    (define (my-compose f g x)
+
+    ;; Note: Coalton has a built-in compose function
+    (declare my-compose ((:b -> :c) -> (:a -> :b) -> (:a -> :c))) 
+    (define (my-compose f g x) 
       (f (g x)))
-  
+
+    ;; Note: #:coalton-library/list contains its own length function
     (declare list-length ((List :t) -> UFix))
     (define (list-length l)
       (match l
         ((Nil)       0)
         ((Cons _ xs) (1+ (list-length xs))))))
-  ```
+```
 
   Here, the keywords `:a`, `:b`, `:c`, and `:t` are type variables:
 
 - Truly parametric algebraic data types:
 
-  ```lisp
+```lisp
   (coalton-toplevel
     (define-type Expr
       (Val Integer)
@@ -178,11 +182,11 @@ In terms of its type system, Coalton's closest cousin is Haskell. Coalton's comp
     (define-type (Binary-Tree :a)
       (Node :a (Binary-Tree :a) (Binary-Tree :a))
       (Leaf)))
-  ```
+```
 
 - Type classes (both single- and multi-parameter):
 
-  ```lisp
+```lisp
   (coalton-toplevel
     (define-class (Evaluable :s)
       (eval (:s -> Integer)))
@@ -197,12 +201,14 @@ In terms of its type system, Coalton's closest cousin is Haskell. Coalton's comp
     (declare line ((Num :t) => (:t -> :t -> :t -> :t)))
     (define (line slope y-intercept x)
       (+ y-intercept (* slope x))))
-  ```
+```
 
 - Higher-kinded types:
 
-  ```lisp
+```lisp
   (coalton-toplevel
+  
+    ;; Note: Coalton features its own built-in Functor class
     (define-class (MyFunctor :F)
       (map1 ((:a -> :b) -> (:F :a) -> (:F :b))))
     
@@ -211,11 +217,11 @@ In terms of its type system, Coalton's closest cousin is Haskell. Coalton's comp
         (match t
           ((Node v t1 t2) (Node (f v) (map1 f t1) (map1 f t2)))
           ((Leaf) Leaf)))))
-  ```
+```
 
 - Full type inference:
 
-  ```lisp
+```lisp
   > (coalton-toplevel
       (define (f x y z)
         (if (< x y)
@@ -225,7 +231,7 @@ In terms of its type system, Coalton's closest cousin is Haskell. Coalton's comp
 
   > (type-of 'f)
   ∀ :A. (NUM :A) (ORD :A) ⇒ (:A → :A → :A → :A)
-  ```
+```
 
   We've been writing out the types of functions with the `declare` operator, but unless disambiguation or type-specialization is needed, declaring types is not necessary due to Coalton's type inference capabilities.
 
@@ -244,21 +250,28 @@ We describe the Coalton-Lisp interop in the following way: the *Coalton-calls-Li
 The Coalton-calls-Lisp bridge is pretty simple. Coalton has a special operator called `lisp` that allows arbitrary Lisp code to be embedded into Coalton. A lot of Coalton's standard library is written this way. For instance, the string library's `concat` function is written:
 
 ```lisp
+(in-package #:coalton-library/string)
+
 (coalton-toplevel
   (declare concat (String -> String -> String))
   (define (concat str1 str2)
     (lisp String (str1 str2)
       (cl:concatenate 'cl:string str1 str2))))
 ```
-Coalton can import Lisp types using the `(repr :native <cl-type>)` function. This import can be explicit, by specifying the type or types that fulfill the Coalton corresponding coalton type, or implicit, by giving `t` as the cl-type and accepting any Lisp object. In order to manipulate these objects with lisp-defined accessors, you will need to use the `Lisp` special operator.
 
-Here's an example creating a simple `String-Map` type, piggy-backing off of Lisp hash tables:
+Coalton types can be linked to Lisp types by declaring `(repr :native <cl-type>)` before a `define-type` with no constructors:
 
 ```lisp
 (coalton-toplevel
 
   (repr :native cl:hash-table)
-  (define-type String-Map)
+  (define-type StringMap))
+```
+
+As a result, `StringMap` objects in Coalton are always of the Common Lisp type `cl:hash-table`. To construct and manipulate these types of objects, Coalton functions should be defined using the `lisp` special operator:
+
+```lisp
+(coalton-toplevel
 
   (declare make-table (Integer -> String-Map))
   (define (make-table size)
@@ -282,7 +295,9 @@ Here's an example creating a simple `String-Map` type, piggy-backing off of Lisp
         (cl:if (cl:null val)
                None
                (Some val))))))
-               ```
+```
+
+Note: for a dynamic, free-wheeling, lispy type, `(repr :native t)` will allow objects of any Lisp type.
 
 The Lisp-calls-Coalton bridge is just as easy with the `coalton` operator. For instance, we can call our `fib` function (and have type safety!) in Lisp by writing `(coalton (fib 10))`.
 
@@ -291,10 +306,13 @@ The Lisp-calls-Coalton bridge is just as easy with the `coalton` operator. For i
 55
 
 > (coalton (fib 10.0))
-; Failed to unify types SINGLE-FLOAT and INTEGER
-; in unification of types (SINGLE-FLOAT → :A) and (INTEGER → INTEGER)
-; in COALTON
-;    [Condition of type COALTON-IMPL/TYPECHECKER::COALTON-TYPE-ERROR-CONTEXT]
+
+;error: Type mismatch
+;  --> <unknown>:1:14
+;   |
+; 1 |  (coalton (fib 1.0))
+;   |                ^^^ Expected type 'INTEGER' but got type 'DOUBLE-FLOAT'
+;   [Condition of type COALTON-IMPL/TYPECHECKER/BASE:TC-ERROR]
 ```
 
 More advanced users can interact with the Lisp-calls-Coalton bridge via the following aspects:
