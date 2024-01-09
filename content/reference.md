@@ -40,6 +40,7 @@ identifier: Reference
 - <a href="#coalton-library/vector-package"><code>coalton-library/vector</code></a>
 - <a href="#coalton-library/slice-package"><code>coalton-library/slice</code></a>
 - <a href="#coalton-library/hashtable-package"><code>coalton-library/hashtable</code></a>
+- <a href="#coalton-library/queue-package"><code>coalton-library/queue</code></a>
 - <a href="#coalton-library/monad/state-package"><code>coalton-library/monad/state</code></a>
 - <a href="#coalton-library/monad/free-package"><code>coalton-library/monad/free</code></a>
 - <a href="#coalton-library/iterator-package"><code>coalton-library/iterator</code></a>
@@ -4784,6 +4785,155 @@ Remove the entry at KEY from TABLE
 <code>&forall; :A :B. <a href="#hash-class">HASH</a> :A &rArr; (<a href="#integer-type">INTEGER</a> &rarr; (<a href="#hashtable-type">HASHTABLE</a> :A :B))</code>
 
 Crate a new empty hashtable with a given capacity
+
+
+***
+
+# Package `coalton-library/queue`<a name="coalton-library/queue-package"></a>
+
+## [queue.lisp](https://github.com/coalton-lang/coalton/tree/main/library/queue.lisp) <a name="coalton-library/queue-queue-lisp-file"></a>
+
+### Types
+
+#### <code>QUEUE :A</code> <sup><sub>[TYPE]</sub></sup><a name="queue-type"></a>
+
+Unbounded FIFO queue implemented with a linked list.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#queue-type">QUEUE</a> :A)</code>
+- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#queue-type">QUEUE</a> :A)</code>
+- <code><a href="#default-class">DEFAULT</a> (<a href="#queue-type">QUEUE</a> :A)</code>
+- <code><a href="#functor-class">FUNCTOR</a> <a href="#queue-type">QUEUE</a></code>
+- <code><a href="#foldable-class">FOLDABLE</a> <a href="#queue-type">QUEUE</a></code>
+- <code><a href="#semigroup-class">SEMIGROUP</a> (<a href="#queue-type">QUEUE</a> :A)</code>
+- <code><a href="#fromiterator-class">FROMITERATOR</a> (<a href="#queue-type">QUEUE</a> :A) :A</code>
+- <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#queue-type">QUEUE</a> :A) :A</code>
+
+</details>
+
+
+***
+
+### Values
+
+#### <code>(NEW _)</code> <sup><sub>FUNCTION</sub></sup><a name="new-value"></a>
+<code>&forall; :A. (<a href="#unit-type">UNIT</a> &rarr; (<a href="#queue-type">QUEUE</a> :A))</code>
+
+Create a new empty queue.
+
+
+***
+
+#### <code>(COPY Q)</code> <sup><sub>FUNCTION</sub></sup><a name="copy-value"></a>
+<code>&forall; :A. ((<a href="#queue-type">QUEUE</a> :A) &rarr; (<a href="#queue-type">QUEUE</a> :A))</code>
+
+Return a new queue containing the same elements as `q`.
+
+
+***
+
+#### <code>(PEEK Q)</code> <sup><sub>FUNCTION</sub></sup><a name="peek-value"></a>
+<code>&forall; :A. ((<a href="#queue-type">QUEUE</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
+
+Peek at the first item of `q`.
+
+
+***
+
+#### <code>(POP! Q)</code> <sup><sub>FUNCTION</sub></sup><a name="pop!-value"></a>
+<code>&forall; :A. ((<a href="#queue-type">QUEUE</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
+
+Remove and return the first item of `q`.
+
+
+***
+
+#### <code>(INDEX INDEX Q)</code> <sup><sub>FUNCTION</sub></sup><a name="index-value"></a>
+<code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#queue-type">QUEUE</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
+
+Return the `index`th element of `q`.
+
+
+***
+
+#### <code>(PUSH! ITEM Q)</code> <sup><sub>FUNCTION</sub></sup><a name="push!-value"></a>
+<code>&forall; :A. (:A &rarr; (<a href="#queue-type">QUEUE</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
+
+Push `item` onto the end of `q`.
+
+
+***
+
+#### <code>(APPEND Q1 Q2)</code> <sup><sub>FUNCTION</sub></sup><a name="append-value"></a>
+<code>&forall; :A. ((<a href="#queue-type">QUEUE</a> :A) &rarr; (<a href="#queue-type">QUEUE</a> :A) &rarr; (<a href="#queue-type">QUEUE</a> :A))</code>
+
+Create a new queue containing the elements of `q1` followed by the elements of `q2`.
+
+
+***
+
+#### <code>(CLEAR! Q)</code> <sup><sub>FUNCTION</sub></sup><a name="clear!-value"></a>
+<code>&forall; :A. ((<a href="#queue-type">QUEUE</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
+
+Clear all elements from `q`.
+
+
+***
+
+#### <code>(EMPTY? Q)</code> <sup><sub>FUNCTION</sub></sup><a name="empty?-value"></a>
+<code>&forall; :A. ((<a href="#queue-type">QUEUE</a> :A) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Is `q` empty?
+
+
+***
+
+#### <code>(ITEMS! Q)</code> <sup><sub>FUNCTION</sub></sup><a name="items!-value"></a>
+<code>&forall; :A. ((<a href="#queue-type">QUEUE</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
+
+Returns an interator over the items of `q`, removing items as they are returned.
+
+
+***
+
+#### <code>(LENGTH Q)</code> <sup><sub>FUNCTION</sub></sup><a name="length-value"></a>
+<code>&forall; :A. ((<a href="#queue-type">QUEUE</a> :A) &rarr; <a href="#ufix-type">UFIX</a>)</code>
+
+Returns the length of `q`.
+
+
+***
+
+#### <code>(EXTEND! Q ITER)</code> <sup><sub>FUNCTION</sub></sup><a name="extend!-value"></a>
+<code>&forall; :A :B. <a href="#intoiterator-class">INTOITERATOR</a> :B :A &rArr; ((<a href="#queue-type">QUEUE</a> :A) &rarr; :B &rarr; <a href="#unit-type">UNIT</a>)</code>
+
+Push every element in `iter` to the end of `q`.
+
+
+***
+
+#### <code>(PEEK-UNSAFE Q)</code> <sup><sub>FUNCTION</sub></sup><a name="peek-unsafe-value"></a>
+<code>&forall; :A. ((<a href="#queue-type">QUEUE</a> :A) &rarr; :A)</code>
+
+Peek at the first item of `q` without checking if the queue is empty.
+
+
+***
+
+#### <code>(POP-UNSAFE! Q)</code> <sup><sub>FUNCTION</sub></sup><a name="pop-unsafe!-value"></a>
+<code>&forall; :A. ((<a href="#queue-type">QUEUE</a> :A) &rarr; :A)</code>
+
+Remove and return the first item of `q` without checking if the queue is empty.
+
+
+***
+
+#### <code>(INDEX-UNSAFE INDEX Q)</code> <sup><sub>FUNCTION</sub></sup><a name="index-unsafe-value"></a>
+<code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#queue-type">QUEUE</a> :A) &rarr; :A)</code>
+
+Return the `index`th element of `q` without checking if the element exists.
 
 
 ***
