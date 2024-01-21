@@ -37,6 +37,7 @@ identifier: Reference
 - <a href="#coalton-library/list-package"><code>coalton-library/list</code></a>
 - <a href="#coalton-library/result-package"><code>coalton-library/result</code></a>
 - <a href="#coalton-library/cell-package"><code>coalton-library/cell</code></a>
+- <a href="#coalton-library/randomaccess-package"><code>coalton-library/randomaccess</code></a>
 - <a href="#coalton-library/vector-package"><code>coalton-library/vector</code></a>
 - <a href="#coalton-library/slice-package"><code>coalton-library/slice</code></a>
 - <a href="#coalton-library/hashtable-package"><code>coalton-library/hashtable</code></a>
@@ -4349,6 +4350,55 @@ Apply F to the contents of CEL, swapping the result for the old value
 
 ***
 
+# Package `coalton-library/randomaccess`<a name="coalton-library/randomaccess-package"></a>
+
+## [randomaccess.lisp](https://github.com/coalton-lang/coalton/tree/main/library/randomaccess.lisp) <a name="coalton-library/randomaccess-randomaccess-lisp-file"></a>
+
+### Classes
+
+#### <code>RANDOMACCESS</code> <sup><sub>[CLASS]</sub></sup><a name="randomaccess-class"></a>
+<code><a href="#randomaccess-class">RANDOMACCESS</a> :A :B</code>
+
+Establishes that `:f` is a random-access store of elements of type `:t`. The **storage type** `:f` implies the **stored type** `:t`. The storage is expected to be sequential and O(1) in random access reads and writes.
+
+It is permitted for any of `make`, `unsafe-aref`, or `unsafe-set!` to error.
+
+Methods:
+- <code>MAKE :: (<a href="#ufix-type">UFIX</a> &rarr; :B &rarr; :A)</code>
+- <code>LENGTH :: (:A &rarr; <a href="#ufix-type">UFIX</a>)</code>
+- <code>READABLE? :: (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+- <code>WRITABLE? :: (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+- <code>UNSAFE-AREF :: (:A &rarr; <a href="#ufix-type">UFIX</a> &rarr; :B)</code>
+- <code>UNSAFE-SET! :: (:A &rarr; <a href="#ufix-type">UFIX</a> &rarr; :B &rarr; <a href="#unit-type">UNIT</a>)</code>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#randomaccess-class">RANDOMACCESS</a> (<a href="#vector-type">VECTOR</a> :A) :A</code>
+
+</details>
+
+
+***
+
+### Values
+
+#### <code>(AREF STORAGE INDEX)</code> <sup><sub>FUNCTION</sub></sup><a name="aref-value"></a>
+<code>&forall; :A :B. <a href="#randomaccess-class">RANDOMACCESS</a> :A :B &rArr; (:A &rarr; <a href="#ufix-type">UFIX</a> &rarr; (<a href="#optional-type">OPTIONAL</a> :B))</code>
+
+Read the element at `index` of the random-access storage `storage`. Return `None` if the read is out-of-bounds or not permitted.
+
+
+***
+
+#### <code>(SET! STORAGE INDEX VALUE)</code> <sup><sub>FUNCTION</sub></sup><a name="set!-value"></a>
+<code>&forall; :A :B. <a href="#randomaccess-class">RANDOMACCESS</a> :A :B &rArr; (:A &rarr; <a href="#ufix-type">UFIX</a> &rarr; :B &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#unit-type">UNIT</a>))</code>
+
+Write the element `value` at `index` of the random-access storage `storage`. Return `None` if the write is out-of-bounds or not permitted.
+
+
+***
+
 # Package `coalton-library/vector`<a name="coalton-library/vector-package"></a>
 
 ## [vector.lisp](https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp) <a name="coalton-library/vector-vector-lisp-file"></a>
@@ -4375,6 +4425,7 @@ Apply F to the contents of CEL, swapping the result for the old value
 - <code><a href="#semigroup-class">SEMIGROUP</a> (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#fromiterator-class">FROMITERATOR</a> (<a href="#vector-type">VECTOR</a> :A) :A</code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#vector-type">VECTOR</a> :A) :A</code>
+- <code><a href="#randomaccess-class">RANDOMACCESS</a> (<a href="#vector-type">VECTOR</a> :A) :A</code>
 
 </details>
 
@@ -4584,7 +4635,7 @@ Remove the element `idx` from `vec` and replace it with the last element in `vec
 ***
 
 #### <code>(WITH-INITIAL-ELEMENT N X)</code> <sup><sub>FUNCTION</sub></sup><a name="with-initial-element-value"></a>
-<code>&forall; :A. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; (<a href="#ufix-type">UFIX</a> &rarr; :A &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
+<code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; :A &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
 
 Create a new vector with `n` elements equal to `x`.
 
