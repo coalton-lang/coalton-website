@@ -33,6 +33,7 @@ identifier: Reference
 - <a href="#coalton-library/char-package"><code>coalton-library/char</code></a>
 - <a href="#coalton-library/string-package"><code>coalton-library/string</code></a>
 - <a href="#coalton-library/tuple-package"><code>coalton-library/tuple</code></a>
+- <a href="#coalton-library/lisparray-package"><code>coalton-library/lisparray</code></a>
 - <a href="#coalton-library/optional-package"><code>coalton-library/optional</code></a>
 - <a href="#coalton-library/list-package"><code>coalton-library/list</code></a>
 - <a href="#coalton-library/result-package"><code>coalton-library/result</code></a>
@@ -1939,6 +1940,7 @@ Methods:
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tuple3-type">TUPLE3</a> :A :B :C)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tuple4-type">TUPLE4</a> :A :B :C :D)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tuple5-type">TUPLE5</a> :A :B :C :D :E)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#lisparray-type">LISPARRAY</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#slice-type">SLICE</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B)</code>
@@ -3676,6 +3678,77 @@ Get the first element of a tuple.
 <code>&forall; :A :B. ((<a href="#tuple-type">TUPLE</a> :A :B) &rarr; :B)</code>
 
 Get the second element of a tuple.
+
+
+***
+
+# Package `coalton-library/lisparray`<a name="coalton-library/lisparray-package"></a>
+
+## [lisparray.lisp](https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp) <a name="coalton-library/lisparray-lisparray-lisp-file"></a>
+
+### Types
+
+#### <code>LISPARRAY :A</code> <sup><sub>[TYPE]</sub></sup><a name="lisparray-type"></a>
+
+A one-dimensional, non-resizable array of elements.
+
+These arrays are represented as possibly specialized `(cl:simple-array &lt;type&gt; (cl:*))` and are meant to be used as a tool either to interface with Lisp code or to implement efficient data structures. One should consult `Vector` or `Seq` for more general sequential data structure needs.
+
+Whether or not the arrays are specialized depends on the underlying Lisp implementation. Consult `cl:upgraded-array-element-type` to determine whether `LispArray` may get specialized.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#lisparray-type">LISPARRAY</a> :A)</code>
+
+</details>
+
+
+***
+
+### Values
+
+#### <code>(AREF V I)</code> <sup><sub>FUNCTION</sub></sup><a name="aref-value"></a>
+<code>&forall; :A. ((<a href="#lisparray-type">LISPARRAY</a> :A) &rarr; <a href="#ufix-type">UFIX</a> &rarr; :A)</code>
+
+Read the `i`th value of the `LispArray` `v`.
+
+
+***
+
+#### <code>(MAKE N X)</code> <sup><sub>FUNCTION</sub></sup><a name="make-value"></a>
+<code>&forall; :A. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; (<a href="#ufix-type">UFIX</a> &rarr; :A &rarr; (<a href="#lisparray-type">LISPARRAY</a> :A))</code>
+
+Make a new `LispArray` of length `n` initialized to `x`.
+
+If the type of `x` represents a specialized array 
+
+
+***
+
+#### <code>(SET! V I X)</code> <sup><sub>FUNCTION</sub></sup><a name="set!-value"></a>
+<code>&forall; :A. ((<a href="#lisparray-type">LISPARRAY</a> :A) &rarr; <a href="#ufix-type">UFIX</a> &rarr; :A &rarr; <a href="#unit-type">UNIT</a>)</code>
+
+Set the `i`th value of the `LispArray` `v` to `x`.
+
+
+***
+
+#### <code>(LENGTH V)</code> <sup><sub>FUNCTION</sub></sup><a name="length-value"></a>
+<code>&forall; :A. ((<a href="#lisparray-type">LISPARRAY</a> :A) &rarr; <a href="#ufix-type">UFIX</a>)</code>
+
+Return the length of the `LispArray` `v`.
+
+
+***
+
+#### <code>(MAKE-UNINITIALIZED N)</code> <sup><sub>FUNCTION</sub></sup><a name="make-uninitialized-value"></a>
+<code>&forall; :A. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#lisparray-type">LISPARRAY</a> :A))</code>
+
+Make a new LispArray of length `n` that can store elements of type `:t`.
+
+WARNING: The consequences are undefined if an uninitialized element is read before being set.
+
 
 
 ***
