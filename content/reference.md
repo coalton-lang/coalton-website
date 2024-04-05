@@ -5644,7 +5644,7 @@ Yield unique elements from ITER in order of first appearance.
 
 #### <code>TREE :A</code> <sup><sub>[TYPE]</sub></sup><a name="tree-type"></a>
 
-A red-black balanced binary tree, sorted by `&lt;=&gt;' and unique by `=='.
+A red-black balanced binary tree, sorted by `&lt;=&gt;` and unique by `==`.
 
 <details>
 <summary>Instances</summary>
@@ -5679,7 +5679,7 @@ B'. Which one is chosen for the result is undefined.
 #### <code>(INSERT TRE ELT)</code> <sup><sub>FUNCTION</sub></sup><a name="insert-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#tree-type">TREE</a> :A) &rarr; :A &rarr; (<a href="#optional-type">OPTIONAL</a> (<a href="#tree-type">TREE</a> :A)))</code>
 
-Construct a new Tree like TRE but containing ELT. If TRE already had an element `==' to ELT, return None.
+Construct a new Tree like TRE but containing ELT. If TRE already had an element `==` to ELT, return None.
 
 
 ***
@@ -5687,7 +5687,7 @@ Construct a new Tree like TRE but containing ELT. If TRE already had an element 
 #### <code>(LOOKUP HAYSTACK NEEDLE)</code> <sup><sub>FUNCTION</sub></sup><a name="lookup-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#tree-type">TREE</a> :A) &rarr; :A &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
-If HAYSTACK contains an element `==' to NEEDLE, return it.
+If HAYSTACK contains an element `==` to NEEDLE, return it.
 
 
 ***
@@ -5695,7 +5695,7 @@ If HAYSTACK contains an element `==' to NEEDLE, return it.
 #### <code>(REMOVE TRE ELT)</code> <sup><sub>FUNCTION</sub></sup><a name="remove-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#tree-type">TREE</a> :A) &rarr; :A &rarr; (<a href="#optional-type">OPTIONAL</a> (<a href="#tree-type">TREE</a> :A)))</code>
 
-Construct a new Tree like TRE but without an element `==' to ELT. Return None if TRE does not contain an element `==' to ELT.
+Construct a new Tree like TRE but without an element `==' to ELT. Return None if TRE does not contain an element `==` to ELT.
 
 
 ***
@@ -5703,7 +5703,7 @@ Construct a new Tree like TRE but without an element `==' to ELT. Return None if
 #### <code>(REPLACE TRE ELT)</code> <sup><sub>FUNCTION</sub></sup><a name="replace-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#tree-type">TREE</a> :A) &rarr; :A &rarr; (<a href="#optional-type">OPTIONAL</a> (<a href="#tuple-type">TUPLE</a> (<a href="#tree-type">TREE</a> :A) :A)))</code>
 
-Construct a new Tree like TRE but with ELT replacing an old element `==' to ELT.
+Construct a new Tree like TRE but with ELT replacing an old element `==` to ELT.
 
 Return the new tree and the removed element.
 
@@ -5743,9 +5743,9 @@ Iterate the elements of a tree, starting with the least by `&lt;=&gt;' and endin
 
 Construct a new Tree like TRE but containing ELT.
 
-If TRE already had an element `==' to ELT, remove it, replace it with ELT, and discard the removed value.
+If TRE already had an element `==` to ELT, remove it, replace it with ELT, and discard the removed value.
 
-Like `replace-or-insert', but prioritizing insertion as a use case.
+Like `replace-or-insert`, but prioritizing insertion as a use case.
 
 
 ***
@@ -5755,7 +5755,7 @@ Like `replace-or-insert', but prioritizing insertion as a use case.
 
 Construct a new Tree like TRE but containing ELT.
 
-If TRE already had an element `==' to ELT, remove it, replace it with ELT, and return the removed value
+If TRE already had an element `==` to ELT, remove it, replace it with ELT, and return the removed value
 alongside the new tree.
 
 
