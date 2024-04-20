@@ -5122,7 +5122,7 @@ Runs a StatefulComputation to produce a final updated state and value given an i
 
 `Free :f` gives you a Monad instance for any `Functor :f`.
 
-Refernces: [here](https://serokell.io/blog/introduction-to-free-monads) and [here](https://www.tweag.io/blog/2018-02-05-free-monads/)
+References: [here](https://serokell.io/blog/introduction-to-free-monads) and [here](https://www.tweag.io/blog/2018-02-05-free-monads/)
 
 <details>
 <summary>Instances</summary>
