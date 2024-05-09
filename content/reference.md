@@ -356,6 +356,7 @@ String of characters represented by Common Lisp `string`.
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#single-float-type">SINGLE-FLOAT</a> <a href="#fraction-type">FRACTION</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#double-float-type">DOUBLE-FLOAT</a> <a href="#fraction-type">FRACTION</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#semigroup-class">SEMIGROUP</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#signalable-class">SIGNALABLE</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#fromiterator-class">FROMITERATOR</a> <a href="#string-type">STRING</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> <a href="#string-type">STRING</a> <a href="#char-type">CHAR</a></code>
 
@@ -1633,6 +1634,24 @@ Methods:
 
 ***
 
+#### <code>SIGNALABLE</code> <sup><sub>[CLASS]</sub></sup><a name="signalable-class"></a>
+<code><a href="#signalable-class">SIGNALABLE</a> :A</code>
+
+Signals errors or warnings by calling their respective lisp conditions.
+
+Methods:
+- <code>ERROR :: (:A &rarr; :B)</code>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#signalable-class">SIGNALABLE</a> <a href="#string-type">STRING</a></code>
+
+</details>
+
+
+***
+
 #### <code>ALTERNATIVE</code> <sup><sub>[CLASS]</sub></sup><a name="alternative-class"></a>
 <code><a href="#applicative-class">APPLICATIVE</a> :A &rArr; <a href="#alternative-class">ALTERNATIVE</a> :A</code>
 
@@ -1775,14 +1794,6 @@ Returns the greater element of `x` and `y`.
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; (:A &rarr; :A &rarr; :A)</code>
 
 Returns the lesser element of `x` and `y`.
-
-
-***
-
-#### <code>(ERROR STR)</code> <sup><sub>FUNCTION</sub></sup><a name="error-value"></a>
-<code>&forall; :A. (<a href="#string-type">STRING</a> &rarr; :A)</code>
-
-Signal an error by calling `CL:ERROR`.
 
 
 ***
@@ -4392,6 +4403,11 @@ Returns TRUE if X is ERR
 
 Map over the ERR case
 
+
+***
+
+#### <code>(OK-OR-ERROR RES)</code> <sup><sub>FUNCTION</sub></sup><a name="ok-or-error-value"></a>
+<code>&forall; :A :B. <a href="#signalable-class">SIGNALABLE</a> :A &rArr; ((<a href="#result-type">RESULT</a> :A :B) &rarr; :B)</code>
 
 ***
 
