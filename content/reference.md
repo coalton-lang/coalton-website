@@ -3383,9 +3383,11 @@ References:
 
 ## [math/dual.lisp](https://github.com/coalton-lang/coalton/tree/main/library/math/dual.lisp) <a name="coalton-library/math/dual-math-dual-lisp-file"></a>
 
-### Types
+### Structs
 
-#### <code>DUAL :A</code> <sup><sub>[TYPE]</sub></sup><a name="dual-type"></a>
+#### <code>DUAL :A</code> <sup><sub>[STRUCT]</sub></sup><a name="dual-type"></a>
+- <code>PRIMAL-PART :: :A</code><br/>The primal part.
+- <code>DUAL-PART :: :A</code><br/>The dual part.
 
 Representation of a dual number in the form `a + bε` where `a` and `b` are real numbers and `ε` satisfies `ε^2 = 0` and `ε != 0`.
 
@@ -3394,18 +3396,18 @@ Note: `Eq`, and `Ord` and `Hash` only make use of the primal component.
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#hash-class">HASH</a> (<a href="#dual-type">DUAL</a> :A)</code>  
+- <code><a href="#hash-class">HASH</a> :B &rArr; <a href="#hash-class">HASH</a> (<a href="#dual-type">DUAL</a> :B)</code>  
 Note: Hash only considers the primal component in order to be consistent with Eq.
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#dual-type">DUAL</a> :A)</code>
-- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#dual-type">DUAL</a> :A)</code>  
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#dual-type">DUAL</a> :B)</code>
+- <code><a href="#eq-class">EQ</a> :B &rArr; <a href="#eq-class">EQ</a> (<a href="#dual-type">DUAL</a> :B)</code>  
 Note: Eq only compares the primal component.
-- <code><a href="#num-class">NUM</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#dual-type">DUAL</a> :A)</code>
-- <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#ord-class">ORD</a> (<a href="#dual-type">DUAL</a> :A)</code>  
+- <code><a href="#num-class">NUM</a> :B &rArr; <a href="#num-class">NUM</a> (<a href="#dual-type">DUAL</a> :B)</code>
+- <code><a href="#ord-class">ORD</a> :B &rArr; <a href="#ord-class">ORD</a> (<a href="#dual-type">DUAL</a> :B)</code>  
 Note: Ord only compares the primal component.
-- <code><a href="#reciprocable-class">RECIPROCABLE</a> :A &rArr; <a href="#reciprocable-class">RECIPROCABLE</a> (<a href="#dual-type">DUAL</a> :A)</code>
-- <code>(<a href="#num-class">NUM</a> :A) (<a href="#radical-class">RADICAL</a> :A) (<a href="#reciprocable-class">RECIPROCABLE</a> :A) (<a href="#exponentiable-class">EXPONENTIABLE</a> :A) &rArr; <a href="#radical-class">RADICAL</a> (<a href="#dual-type">DUAL</a> :A)</code>
-- <code>(<a href="#num-class">NUM</a> :A) (<a href="#exponentiable-class">EXPONENTIABLE</a> :A) (<a href="#reciprocable-class">RECIPROCABLE</a> :A) &rArr; <a href="#exponentiable-class">EXPONENTIABLE</a> (<a href="#dual-type">DUAL</a> :A)</code>
-- <code>(<a href="#num-class">NUM</a> :A) (<a href="#trigonometric-class">TRIGONOMETRIC</a> :A) (<a href="#reciprocable-class">RECIPROCABLE</a> :A) (<a href="#radical-class">RADICAL</a> :A) &rArr; <a href="#trigonometric-class">TRIGONOMETRIC</a> (<a href="#dual-type">DUAL</a> :A)</code>
+- <code><a href="#reciprocable-class">RECIPROCABLE</a> :B &rArr; <a href="#reciprocable-class">RECIPROCABLE</a> (<a href="#dual-type">DUAL</a> :B)</code>
+- <code>(<a href="#num-class">NUM</a> :B) (<a href="#radical-class">RADICAL</a> :B) (<a href="#reciprocable-class">RECIPROCABLE</a> :B) (<a href="#exponentiable-class">EXPONENTIABLE</a> :B) &rArr; <a href="#radical-class">RADICAL</a> (<a href="#dual-type">DUAL</a> :B)</code>
+- <code>(<a href="#num-class">NUM</a> :B) (<a href="#exponentiable-class">EXPONENTIABLE</a> :B) (<a href="#reciprocable-class">RECIPROCABLE</a> :B) &rArr; <a href="#exponentiable-class">EXPONENTIABLE</a> (<a href="#dual-type">DUAL</a> :B)</code>
+- <code>(<a href="#num-class">NUM</a> :B) (<a href="#trigonometric-class">TRIGONOMETRIC</a> :B) (<a href="#reciprocable-class">RECIPROCABLE</a> :B) (<a href="#radical-class">RADICAL</a> :B) &rArr; <a href="#trigonometric-class">TRIGONOMETRIC</a> (<a href="#dual-type">DUAL</a> :B)</code>
 
 </details>
 
