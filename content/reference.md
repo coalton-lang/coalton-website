@@ -1548,13 +1548,9 @@ Methods:
 
 Types which can be folded into a single element.
 
-`fold` is a left tail recursive fold.
-
-`foldr` is a right non tail recursive fold.
-
 Methods:
-- <code>FOLD :: ((:B &rarr; :C &rarr; :B) &rarr; :B &rarr; (:A :C) &rarr; :B)</code>
-- <code>FOLDR :: ((:D &rarr; :E &rarr; :E) &rarr; :E &rarr; (:A :D) &rarr; :E)</code>
+- <code>FOLD :: ((:B &rarr; :C &rarr; :B) &rarr; :B &rarr; (:A :C) &rarr; :B)</code><br/>A left tail-recursive fold.
+- <code>FOLDR :: ((:D &rarr; :E &rarr; :E) &rarr; :E &rarr; (:A :D) &rarr; :E)</code><br/>A right non-tail-recursive fold.
 
 <details>
 <summary>Instances</summary>
@@ -1640,7 +1636,7 @@ Methods:
 Signals errors or warnings by calling their respective lisp conditions.
 
 Methods:
-- <code>ERROR :: (:A &rarr; :B)</code>
+- <code>ERROR :: (:A &rarr; :B)</code><br/>Signal an error with a type-specific error string.
 
 <details>
 <summary>Instances</summary>
