@@ -1098,12 +1098,12 @@ Methods:
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#dual-type">DUAL</a> :A)</code>  
 Note: Eq only compares the primal component.
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#cell-type">CELL</a> :A)</code>
-- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
-- <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) &rArr; <a href="#eq-class">EQ</a> (<a href="#result-type">RESULT</a> :A :B)</code>
 - <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) (<a href="#eq-class">EQ</a> :C) (<a href="#eq-class">EQ</a> :D) (<a href="#eq-class">EQ</a> :E) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple5-type">TUPLE5</a> :A :B :C :D :E)</code>
 - <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) (<a href="#eq-class">EQ</a> :C) (<a href="#eq-class">EQ</a> :D) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple4-type">TUPLE4</a> :A :B :C :D)</code>
 - <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) (<a href="#eq-class">EQ</a> :C) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple3-type">TUPLE3</a> :A :B :C)</code>
 - <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
+- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
+- <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) &rArr; <a href="#eq-class">EQ</a> (<a href="#result-type">RESULT</a> :A :B)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#eq-class">EQ</a> <a href="#char-type">CHAR</a></code>
@@ -1134,8 +1134,8 @@ Methods:
 <summary>Instances</summary>
 
 - <code><a href="#iso-class">ISO</a> :A :A</code>
-- <code><a href="#iso-class">ISO</a> (<a href="#result-type">RESULT</a> <a href="#unit-type">UNIT</a> :A) (<a href="#optional-type">OPTIONAL</a> :A)</code>
 - <code><a href="#iso-class">ISO</a> (<a href="#tuple-type">TUPLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :B :A)</code>
+- <code><a href="#iso-class">ISO</a> (<a href="#result-type">RESULT</a> <a href="#unit-type">UNIT</a> :A) (<a href="#optional-type">OPTIONAL</a> :A)</code>
 - <code><a href="#iso-class">ISO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#iso-class">ISO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
 - <code><a href="#iso-class">ISO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
@@ -1217,9 +1217,9 @@ Methods:
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#ord-class">ORD</a> (<a href="#dual-type">DUAL</a> :A)</code>  
 Note: Ord only compares the primal component.
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#ord-class">ORD</a> (<a href="#cell-type">CELL</a> :A)</code>
+- <code>(<a href="#ord-class">ORD</a> :A) (<a href="#ord-class">ORD</a> :B) &rArr; <a href="#ord-class">ORD</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#ord-class">ORD</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
 - <code>(<a href="#ord-class">ORD</a> :A) (<a href="#ord-class">ORD</a> :B) &rArr; <a href="#ord-class">ORD</a> (<a href="#result-type">RESULT</a> :A :B)</code>
-- <code>(<a href="#ord-class">ORD</a> :A) (<a href="#ord-class">ORD</a> :B) &rArr; <a href="#ord-class">ORD</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#ord-class">ORD</a> (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#ord-class">ORD</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#string-type">STRING</a></code>
@@ -1299,9 +1299,9 @@ Methods:
 - <code><a href="#into-class">INTO</a> <a href="#dyadic-type">DYADIC</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#into-class">INTO</a> (<a href="#cell-type">CELL</a> :A) :A</code>
 - <code><a href="#into-class">INTO</a> :A (<a href="#cell-type">CELL</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#tuple-type">TUPLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :B :A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#optional-type">OPTIONAL</a> :A) (<a href="#result-type">RESULT</a> <a href="#unit-type">UNIT</a> :A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#result-type">RESULT</a> :A :B) (<a href="#optional-type">OPTIONAL</a> :B)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#tuple-type">TUPLE</a> :A :B) (<a href="#tuple-type">TUPLE</a> :B :A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#optional-type">OPTIONAL</a> :A) (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
@@ -1396,11 +1396,11 @@ Methods:
 - <code><a href="#default-class">DEFAULT</a> <a href="#u8-type">U8</a></code>
 - <code><a href="#default-class">DEFAULT</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#default-class">DEFAULT</a> :A &rArr; <a href="#default-class">DEFAULT</a> (<a href="#cell-type">CELL</a> :A)</code>
-- <code><a href="#default-class">DEFAULT</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
 - <code>(<a href="#default-class">DEFAULT</a> :A) (<a href="#default-class">DEFAULT</a> :B) (<a href="#default-class">DEFAULT</a> :C) (<a href="#default-class">DEFAULT</a> :D) (<a href="#default-class">DEFAULT</a> :E) &rArr; <a href="#default-class">DEFAULT</a> (<a href="#tuple5-type">TUPLE5</a> :A :B :C :D :E)</code>
 - <code>(<a href="#default-class">DEFAULT</a> :A) (<a href="#default-class">DEFAULT</a> :B) (<a href="#default-class">DEFAULT</a> :C) (<a href="#default-class">DEFAULT</a> :D) &rArr; <a href="#default-class">DEFAULT</a> (<a href="#tuple4-type">TUPLE4</a> :A :B :C :D)</code>
 - <code>(<a href="#default-class">DEFAULT</a> :A) (<a href="#default-class">DEFAULT</a> :B) (<a href="#default-class">DEFAULT</a> :C) &rArr; <a href="#default-class">DEFAULT</a> (<a href="#tuple3-type">TUPLE3</a> :A :B :C)</code>
 - <code>(<a href="#default-class">DEFAULT</a> :A) (<a href="#default-class">DEFAULT</a> :B) &rArr; <a href="#default-class">DEFAULT</a> (<a href="#tuple-type">TUPLE</a> :A :B)</code>
+- <code><a href="#default-class">DEFAULT</a> (<a href="#optional-type">OPTIONAL</a> :A)</code>
 - <code><a href="#default-class">DEFAULT</a> (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#default-class">DEFAULT</a> (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#default-class">DEFAULT</a> <a href="#string-type">STRING</a></code>
@@ -1578,8 +1578,8 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#bifunctor-class">BIFUNCTOR</a> <a href="#result-type">RESULT</a></code>
 - <code><a href="#bifunctor-class">BIFUNCTOR</a> <a href="#tuple-type">TUPLE</a></code>
+- <code><a href="#bifunctor-class">BIFUNCTOR</a> <a href="#result-type">RESULT</a></code>
 
 </details>
 
@@ -2026,10 +2026,10 @@ Methods:
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#dyadic-type">DYADIC</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#dual-type">DUAL</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#cell-type">CELL</a> :A)</code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#iterator-type">ITERATOR</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tuple3-type">TUPLE3</a> :A :B :C)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tuple4-type">TUPLE4</a> :A :B :C :D)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tuple5-type">TUPLE5</a> :A :B :C :D :E)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#iterator-type">ITERATOR</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#lisparray-type">LISPARRAY</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#slice-type">SLICE</a> :A)</code>
@@ -5648,6 +5648,36 @@ Return an interator of interleaved elements from LEFT and RIGHT which terminates
 
 If one iterator terminates before the other, elements from the longer iterator will be yielded without
 interleaving. (interleave empty ITER) is equivalent to (id ITER).
+
+
+***
+
+#### <code>(MAXIMIZE-BY! F ITER)</code> <sup><sub>FUNCTION</sub></sup><a name="maximize-by!-value"></a>
+<code>&forall; :A :B. <a href="#ord-class">ORD</a> :B &rArr; ((:A &rarr; :B) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
+
+For a function F, which maps the iterator, return the element of ITER where (F ELT) is the most-positive.
+
+Return `None' if ITER is empty.
+
+
+***
+
+#### <code>(MINIMIZE-BY! F ITER)</code> <sup><sub>FUNCTION</sub></sup><a name="minimize-by!-value"></a>
+<code>&forall; :A :B. <a href="#ord-class">ORD</a> :B &rArr; ((:A &rarr; :B) &rarr; (<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
+
+For a function F, which maps the iterator, return the element of ITER where (F ELT) is the most-negative.
+
+Return `None' if ITER is empty.
+
+
+***
+
+#### <code>(OPTIMIZE-BY! BETTER? F ITER)</code> <sup><sub>FUNCTION</sub></sup><a name="optimize-by!-value"></a>
+<code>&forall; :A :B. ((:A &rarr; :A &rarr; <a href="#boolean-type">BOOLEAN</a>) &rarr; (:B &rarr; :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :B) &rarr; (<a href="#optional-type">OPTIONAL</a> :B))</code>
+
+For an order BETTER? which returns `True` if its first argument is better than its second argument, return the element of ITER where (F ELT) is the best.
+
+Return `None` if ITER is empty.
 
 
 ***
