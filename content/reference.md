@@ -63,7 +63,7 @@ Public interface to COALTON.
 
 #### <code>SINGLE-FLOAT</code> <sup><sub>[TYPE]</sub></sup><a name="single-float-type"></a>
 
-Single precision floating point numer. Uses `single-float`.
+Single precision floating point number. Uses `single-float`.
 
 <details>
 <summary>Instances</summary>
@@ -108,7 +108,7 @@ Single precision floating point numer. Uses `single-float`.
 
 #### <code>DOUBLE-FLOAT</code> <sup><sub>[TYPE]</sub></sup><a name="double-float-type"></a>
 
-Double precision floating point numer. Uses `double-float`.
+Double precision floating point number. Uses `double-float`.
 
 <details>
 <summary>Instances</summary>
@@ -381,9 +381,6 @@ Type constructor for function types.
 ***
 
 #### <code>UNIT</code> <sup><sub>[TYPE]</sub></sup><a name="unit-type"></a>
-
-
-
 <details>
 <summary>Instances</summary>
 
@@ -455,7 +452,6 @@ A single character represented as a `character` type.
 ### Types
 
 #### <code>VOID</code> <sup><sub>[TYPE]</sub></sup><a name="void-type"></a>
-
 <details>
 <summary>Instances</summary>
 
@@ -1067,6 +1063,7 @@ A heterogeneous collection of items.
 #### <code>EQ</code> <sup><sub>[CLASS]</sub></sup><a name="eq-class"></a>
 <code><a href="#eq-class">EQ</a> :A</code>
 
+
 Types which have equality defined.
 
 Methods:
@@ -1127,6 +1124,7 @@ Note: Eq only compares the primal component.
 #### <code>ISO</code> <sup><sub>[CLASS]</sub></sup><a name="iso-class"></a>
 <code>(<a href="#into-class">INTO</a> :A :B) (<a href="#into-class">INTO</a> :B :A) &rArr; <a href="#iso-class">ISO</a> :A :B</code>
 
+
 Opting into this marker typeclass imples that the instances for `(Into :a :b)` and `(Into :b :a)` form a bijection.
 
 Methods:
@@ -1148,6 +1146,7 @@ Methods:
 
 #### <code>NUM</code> <sup><sub>[CLASS]</sub></sup><a name="num-class"></a>
 <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#num-class">NUM</a> :A</code>
+
 
 Types which have numeric operations defined.
 
@@ -1188,6 +1187,7 @@ Methods:
 
 #### <code>ORD</code> <sup><sub>[CLASS]</sub></sup><a name="ord-class"></a>
 <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#ord-class">ORD</a> :A</code>
+
 
 Types whose values can be ordered.
 
@@ -1234,6 +1234,7 @@ Note: Ord only compares the primal component.
 
 #### <code>INTO</code> <sup><sub>[CLASS]</sub></sup><a name="into-class"></a>
 <code><a href="#into-class">INTO</a> :A :B</code>
+
 
 `INTO` imples *every* element of `:a` can be represented by an element of `:b`. This conversion might not be bijective (i.e., there may be elements in `:b` that don't correspond to any in `:a`).
 
@@ -1330,6 +1331,7 @@ Methods:
 #### <code>MONAD</code> <sup><sub>[CLASS]</sub></sup><a name="monad-class"></a>
 <code><a href="#applicative-class">APPLICATIVE</a> :A &rArr; <a href="#monad-class">MONAD</a> :A</code>
 
+
 Types which are monads as defined in Haskell. See https://wiki.haskell.org/Monad for more information.
 
 Methods:
@@ -1351,6 +1353,7 @@ Methods:
 
 #### <code>MONOID</code> <sup><sub>[CLASS]</sub></sup><a name="monoid-class"></a>
 <code><a href="#semigroup-class">SEMIGROUP</a> :A &rArr; <a href="#monoid-class">MONOID</a> :A</code>
+
 
 Types with an associative binary operation and identity defined.
 
@@ -1375,6 +1378,7 @@ Methods:
 
 #### <code>DEFAULT</code> <sup><sub>[CLASS]</sub></sup><a name="default-class"></a>
 <code><a href="#default-class">DEFAULT</a> :A</code>
+
 
 Types which have default values.
 
@@ -1419,6 +1423,7 @@ Methods:
 #### <code>FUNCTOR</code> <sup><sub>[CLASS]</sub></sup><a name="functor-class"></a>
 <code><a href="#functor-class">FUNCTOR</a> :A</code>
 
+
 Types which can map an inner type where the mapping adheres to the identity and composition laws.
 
 Methods:
@@ -1447,6 +1452,7 @@ Methods:
 
 #### <code>TRYINTO</code> <sup><sub>[CLASS]</sub></sup><a name="tryinto-class"></a>
 <code><a href="#tryinto-class">TRYINTO</a> :A :B :C</code>
+
 
 `TRY-INTO` implies some elements of `:a` can be represented exactly by an element of `:b`, but sometimes not. If not, an error of type `:c` is returned.
 
@@ -1549,6 +1555,7 @@ Methods:
 #### <code>FOLDABLE</code> <sup><sub>[CLASS]</sub></sup><a name="foldable-class"></a>
 <code><a href="#foldable-class">FOLDABLE</a> :A</code>
 
+
 Types which can be folded into a single element.
 
 Methods:
@@ -1572,6 +1579,7 @@ Methods:
 
 #### <code>BIFUNCTOR</code> <sup><sub>[CLASS]</sub></sup><a name="bifunctor-class"></a>
 <code><a href="#bifunctor-class">BIFUNCTOR</a> :A</code>
+
 
 Types which take two type arguments and are functors on both.
 
@@ -1608,6 +1616,7 @@ Methods:
 #### <code>SEMIGROUP</code> <sup><sub>[CLASS]</sub></sup><a name="semigroup-class"></a>
 <code><a href="#semigroup-class">SEMIGROUP</a> :A</code>
 
+
 Types with an associative binary operation defined.
 
 Methods:
@@ -1636,6 +1645,7 @@ Methods:
 #### <code>SIGNALABLE</code> <sup><sub>[CLASS]</sub></sup><a name="signalable-class"></a>
 <code><a href="#signalable-class">SIGNALABLE</a> :A</code>
 
+
 Signals errors or warnings by calling their respective lisp conditions.
 
 Methods:
@@ -1653,6 +1663,7 @@ Methods:
 
 #### <code>ALTERNATIVE</code> <sup><sub>[CLASS]</sub></sup><a name="alternative-class"></a>
 <code><a href="#applicative-class">APPLICATIVE</a> :A &rArr; <a href="#alternative-class">ALTERNATIVE</a> :A</code>
+
 
 Types which are monoids on applicative functors.
 
@@ -1673,6 +1684,7 @@ Methods:
 
 #### <code>APPLICATIVE</code> <sup><sub>[CLASS]</sub></sup><a name="applicative-class"></a>
 <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#applicative-class">APPLICATIVE</a> :A</code>
+
 
 Types which are a functor which can embed pure expressions and sequence operations.
 
@@ -1714,6 +1726,7 @@ Methods:
 
 #### <code>UNWRAPPABLE</code> <sup><sub>[CLASS]</sub></sup><a name="unwrappable-class"></a>
 <code><a href="#unwrappable-class">UNWRAPPABLE</a> :A</code>
+
 
 Containers which can be unwrapped to get access to their contents.
 
@@ -1896,6 +1909,7 @@ Implementation dependent hash code
 #### <code>HASH</code> <sup><sub>[CLASS]</sub></sup><a name="hash-class"></a>
 <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#hash-class">HASH</a> :A</code>
 
+
 Types which can be hashed for storage in hash tables.
 
 The hash function must satisfy the invariant that `(== left right)` implies `(== (hash left) (hash right))`.
@@ -1984,6 +1998,7 @@ Proxy holds no data, but has a phantom type parameter.
 
 #### <code>RUNTIMEREPR</code> <sup><sub>[CLASS]</sub></sup><a name="runtimerepr-class"></a>
 <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A</code>
+
 
 Types which have a runtime LispType representation.
 
@@ -2203,7 +2218,7 @@ Returns a function that takes its arguments in reverse order.
 #### <code>(MSUM XS)</code> <sup><sub>FUNCTION</sub></sup><a name="msum-value"></a>
 <code>&forall; :A :B. (<a href="#monoid-class">MONOID</a> :B) (<a href="#foldable-class">FOLDABLE</a> :A) &rArr; ((:A :B) &rarr; :B)</code>
 
-Fold over a list using `&lt;&gt;`.
+Fold over a list using `<>`.
 
 
 ***
@@ -2291,6 +2306,7 @@ Print a line to `cl:*standard-output*` in the form "{STR}: {ITEM}".
 #### <code>DIVIDABLE</code> <sup><sub>[CLASS]</sub></sup><a name="dividable-class"></a>
 <code><a href="#dividable-class">DIVIDABLE</a> :A :B</code>
 
+
 The representation of a type such that division within that type possibly results in another type. For instance,
 
 
@@ -2330,6 +2346,7 @@ Methods:
 #### <code>TRANSFINITE</code> <sup><sub>[CLASS]</sub></sup><a name="transfinite-class"></a>
 <code><a href="#transfinite-class">TRANSFINITE</a> :A</code>
 
+
 Numeric type with a value for (positive) infinity and/or NaN.
 
 Methods:
@@ -2352,6 +2369,7 @@ Methods:
 
 #### <code>RECIPROCABLE</code> <sup><sub>[CLASS]</sub></sup><a name="reciprocable-class"></a>
 <code><a href="#num-class">NUM</a> :A &rArr; <a href="#reciprocable-class">RECIPROCABLE</a> :A</code>
+
 
 Any number with a multiplicative inverse (reciprocal) where:
 
@@ -2502,6 +2520,7 @@ Is `x` not positive?
 #### <code>BOUNDED</code> <sup><sub>[CLASS]</sub></sup><a name="bounded-class"></a>
 <code><a href="#bounded-class">BOUNDED</a> :A</code>
 
+
 Types which have a maximum and minumum bound.
 
 Methods:
@@ -2563,6 +2582,7 @@ The denominator of a fraction.
 #### <code>INTEGRAL</code> <sup><sub>[CLASS]</sub></sup><a name="integral-class"></a>
 <code>(<a href="#remainder-class">REMAINDER</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; <a href="#integral-class">INTEGRAL</a> :A</code>
 
+
 Integral is a number that is either even or odd where `div` and `quot`
 are floored and truncated division, respectively.
 
@@ -2591,6 +2611,7 @@ Methods:
 
 #### <code>REMAINDER</code> <sup><sub>[CLASS]</sub></sup><a name="remainder-class"></a>
 <code><a href="#num-class">NUM</a> :A &rArr; <a href="#remainder-class">REMAINDER</a> :A</code>
+
 
 Remainder is typically an integral domain satisfying:
 
@@ -2681,7 +2702,7 @@ Right shift X by N
 #### <code>(ILOG B X)</code> <sup><sub>FUNCTION</sub></sup><a name="ilog-value"></a>
 <code>&forall; :A. <a href="#integral-class">INTEGRAL</a> :A &rArr; (:A &rarr; :A &rarr; :A)</code>
 
-The floor of the logarithm with base B &gt; 1 of X &gt;= 1.
+The floor of the logarithm with base B > 1 of X >= 1.
 
 
 ***
@@ -2705,7 +2726,7 @@ Is N even?
 #### <code>(ISQRT X)</code> <sup><sub>FUNCTION</sub></sup><a name="isqrt-value"></a>
 <code>&forall; :A. <a href="#integral-class">INTEGRAL</a> :A &rArr; (:A &rarr; :A)</code>
 
-The floor of the square root of N &gt; 0.
+The floor of the square root of N > 0.
 
 
 ***
@@ -2752,7 +2773,8 @@ The fields are defined as follows:
 #### <code>REAL</code> <sup><sub>[CLASS]</sub></sup><a name="real-class"></a>
 <code>(<a href="#quantizable-class">QUANTIZABLE</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; <a href="#real-class">REAL</a> :A</code>
 
-A real number that can be approximated with abs(real-approx x - x) &lt; 2^-n.
+
+A real number that can be approximated with abs(real-approx x - x) < 2^-n.
 
 Methods:
 - <code>REAL-APPROX :: (<a href="#ufix-type">UFIX</a> &rarr; :A &rarr; <a href="#fraction-type">FRACTION</a>)</code>
@@ -2782,6 +2804,7 @@ Methods:
 
 #### <code>RATIONAL</code> <sup><sub>[CLASS]</sub></sup><a name="rational-class"></a>
 <code>(<a href="#real-class">REAL</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; <a href="#rational-class">RATIONAL</a> :A</code>
+
 
 Any number that can be exactly represented by a fraction, or is not finite.
 
@@ -2825,11 +2848,12 @@ Methods:
 #### <code>QUANTIZABLE</code> <sup><sub>[CLASS]</sub></sup><a name="quantizable-class"></a>
 <code><a href="#quantizable-class">QUANTIZABLE</a> :A</code>
 
+
 The representation of a type that allows for rounding operations
 
 
-    max x such that (floor x) &lt;= x
-    min x such that (ceiling x) &lt;= x
+    max x such that (floor x) <= x
+    min x such that (ceiling x) <= x
 
 And
 
@@ -3065,6 +3089,7 @@ The length of a complex number.
 #### <code>POLAR</code> <sup><sub>[CLASS]</sub></sup><a name="polar-class"></a>
 <code>(<a href="#complex-class">COMPLEX</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; <a href="#polar-class">POLAR</a> :A</code>
 
+
 For a complex number `z = (complex x y)`, the following identities hold:
 
     z = (* (magnitude z) (exp (* ii (phase z))))
@@ -3092,6 +3117,7 @@ Methods:
 #### <code>RADICAL</code> <sup><sub>[CLASS]</sub></sup><a name="radical-class"></a>
 <code><a href="#radical-class">RADICAL</a> :A</code>
 
+
 Obeys:
 
     (^ (sqrt x) 2) = x = (^^ (nth-root n x) n)
@@ -3117,6 +3143,7 @@ Methods:
 #### <code>ELEMENTARY</code> <sup><sub>[CLASS]</sub></sup><a name="elementary-class"></a>
 <code>(<a href="#reciprocable-class">RECIPROCABLE</a> :A) (<a href="#polar-class">POLAR</a> :A) (<a href="#trigonometric-class">TRIGONOMETRIC</a> :A) (<a href="#exponentiable-class">EXPONENTIABLE</a> :A) (<a href="#radical-class">RADICAL</a> :A) &rArr; <a href="#elementary-class">ELEMENTARY</a> :A</code>
 
+
 `Elementary` is a marker class, providing `Reciprocable`, `Polar`, `Trigonometric`, `Exponentiable`, and `Radical`.
 
 Methods:
@@ -3136,6 +3163,7 @@ Methods:
 
 #### <code>EXPONENTIABLE</code> <sup><sub>[CLASS]</sub></sup><a name="exponentiable-class"></a>
 <code><a href="#exponentiable-class">EXPONENTIABLE</a> :A</code>
+
 
 Exponential maps obeying:
 
@@ -3168,6 +3196,7 @@ Methods:
 
 #### <code>TRIGONOMETRIC</code> <sup><sub>[CLASS]</sub></sup><a name="trigonometric-class"></a>
 <code><a href="#trigonometric-class">TRIGONOMETRIC</a> :A</code>
+
 
 Standard circular functions and their inverses.
 
@@ -3439,6 +3468,7 @@ The primal (i.e., real) part of a dual number.
 
 #### <code>BITS</code> <sup><sub>[CLASS]</sub></sup><a name="bits-class"></a>
 <code><a href="#num-class">NUM</a> :A &rArr; <a href="#bits-class">BITS</a> :A</code>
+
 
 Operations on the bits of twos-complement integers
 
@@ -3787,7 +3817,7 @@ Get the second element of a tuple.
 
 A one-dimensional, non-resizable array of elements.
 
-These arrays are represented as possibly specialized `(cl:simple-array &lt;type&gt; (cl:*))` and are meant to be used as a tool either to interface with Lisp code or to implement efficient data structures. One should consult `Vector` or `Seq` for more general sequential data structure needs.
+These arrays are represented as possibly specialized `(cl:simple-array <type> (cl:*))` and are meant to be used as a tool either to interface with Lisp code or to implement efficient data structures. One should consult `Vector` or `Seq` for more general sequential data structure needs.
 
 Whether or not the arrays are specialized depends on the underlying Lisp implementation. Consult `cl:upgraded-array-element-type` to determine whether `LispArray` may get specialized.
 
@@ -4043,10 +4073,10 @@ Produce all permutations of the list L.
 
 Returns a list containing the numbers from START to END inclusive, counting by 1.
 
-    COALTON-USER&gt; (coalton (range 1 5))
+    COALTON-USER> (coalton (range 1 5))
     (1 2 3 4 5)
 
-    COALTON-USER&gt; (coalton (range 5 2))
+    COALTON-USER> (coalton (range 5 2))
     (5 4 3 2)
 
 
@@ -4294,7 +4324,7 @@ Return a new list with the first element for which PRED is `True` is removed.
 #### <code>(SINGLETON X)</code> <sup><sub>FUNCTION</sub></sup><a name="singleton-value"></a>
 <code>&forall; :A. (:A &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
-Returns a list containting one element.
+Returns a list containing one element.
 
 
 ***
@@ -4321,7 +4351,7 @@ Returns a new list with the first occurence of each element in `ys` removed from
 Produce a list of copies of L, each with A inserted at a possible position.
 
     (insertions 0 (make-list 1 2))
-    =&gt; ((0 1 2) (1 0 2) (1 2 0))
+    => ((0 1 2) (1 0 2) (1 2 0))
 
 
 
@@ -4532,6 +4562,7 @@ Apply F to the contents of CEL, swapping the result for the old value
 #### <code>RANDOMACCESS</code> <sup><sub>[CLASS]</sub></sup><a name="randomaccess-class"></a>
 <code><a href="#randomaccess-class">RANDOMACCESS</a> :A :B</code>
 
+
 Establishes that `:f` is a random-access store of elements of type `:t`. The **storage type** `:f` implies the **stored type** `:t`. The storage is expected to be sequential and O(1) in random access reads and writes.
 
 It is permitted for any of `make`, `unsafe-aref`, or `unsafe-set!` to error.
@@ -4579,7 +4610,6 @@ Write the element `value` at `index` of the random-access storage `storage`. Ret
 ### Types
 
 #### <code>VECTOR :A</code> <sup><sub>[TYPE]</sub></sup><a name="vector-type"></a>
-
 <details>
 <summary>Instances</summary>
 
@@ -4823,7 +4853,6 @@ Create a new vector with `n` elements equal to `x`.
 ### Types
 
 #### <code>SLICE :A</code> <sup><sub>[TYPE]</sub></sup><a name="slice-type"></a>
-
 <details>
 <summary>Instances</summary>
 
@@ -5312,6 +5341,7 @@ Methods:
 #### <code>INTOITERATOR</code> <sup><sub>[CLASS]</sub></sup><a name="intoiterator-class"></a>
 <code><a href="#intoiterator-class">INTOITERATOR</a> :A :B</code>
 
+
 Containers which can be converted into iterators.
 
 `INTO-ITER` must not mutate its argument, only produce a "view" into it.
@@ -5775,7 +5805,7 @@ Yield unique elements from ITER in order of first appearance.
 
 #### <code>TREE :A</code> <sup><sub>[TYPE]</sub></sup><a name="tree-type"></a>
 
-A red-black balanced binary tree, sorted by `&lt;=&gt;` and unique by `==`.
+A red-black balanced binary tree, sorted by `<=>` and unique by `==`.
 
 <details>
 <summary>Instances</summary>
@@ -5856,7 +5886,7 @@ If ITER contains duplicates, later elements will overwrite earlier elements.
 #### <code>DECREASING-ORDER</code> <sup><sub>[FUNCTION]</sub></sup><a name="decreasing-order-value"></a>
 <code>&forall; :A. ((<a href="#tree-type">TREE</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
-Iterate the elements of a tree, starting with the greatest by `&lt;=&gt;' and ending with the least.
+Iterate the elements of a tree, starting with the greatest by `<=>' and ending with the least.
 
 
 ***
@@ -5864,7 +5894,7 @@ Iterate the elements of a tree, starting with the greatest by `&lt;=&gt;' and en
 #### <code>INCREASING-ORDER</code> <sup><sub>[FUNCTION]</sub></sup><a name="increasing-order-value"></a>
 <code>&forall; :A. ((<a href="#tree-type">TREE</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
-Iterate the elements of a tree, starting with the least by `&lt;=&gt;' and ending with the greatest.
+Iterate the elements of a tree, starting with the least by `<=>' and ending with the greatest.
 
 
 ***
@@ -5900,7 +5930,7 @@ alongside the new tree.
 
 #### <code>MAP :A :B</code> <sup><sub>[TYPE]</sub></sup><a name="map-type"></a>
 
-A red-black binary tree which associates each :KEY with a :VALUE, sorted by `&lt;=&gt;' on the keys and unique by `==' on the keys.
+A red-black binary tree which associates each :KEY with a :VALUE, sorted by `<=>' on the keys and unique by `==' on the keys.
 
 <details>
 <summary>Instances</summary>
@@ -5941,7 +5971,7 @@ A Map containing no mappings.
 
 Construct a Tree containing all the mappings of both A and B.
 
-If A and B contain mappings X -&gt; A' and X -&gt; B', it is undefined whether the result maps X to A' or B'.
+If A and B contain mappings X -> A' and X -> B', it is undefined whether the result maps X to A' or B'.
 
 Because of the possibility that A and B will map the same X to different A' and B', this is not an associative
 operation, and therefore Map cannot implement Monoid.
@@ -6044,7 +6074,6 @@ If MP already contains a mapping for K, replace it and return the old value.
 ### Types
 
 #### <code>SEQ :A</code> <sup><sub>[TYPE]</sub></sup><a name="seq-type"></a>
-
 <details>
 <summary>Instances</summary>
 
