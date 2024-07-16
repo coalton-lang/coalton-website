@@ -49,6 +49,8 @@ identifier: Reference
 - <a href="#coalton-library/ord-tree-package"><code>coalton-library/ord-tree</code></a>
 - <a href="#coalton-library/ord-map-package"><code>coalton-library/ord-map</code></a>
 - <a href="#coalton-library/seq-package"><code>coalton-library/seq</code></a>
+- <a href="#coalton-library/system-package"><code>coalton-library/system</code></a>
+- <a href="#coalton-library/file-package"><code>coalton-library/file</code></a>
 
 
 </div>
@@ -63,7 +65,7 @@ Public interface to COALTON.
 
 #### <code>SINGLE-FLOAT</code> <sup><sub>[TYPE]</sub></sup><a name="single-float-type"></a>
 
-Single precision floating point numer. Uses `single-float`.
+Single precision floating point number. Uses `single-float`.
 
 <details>
 <summary>Instances</summary>
@@ -108,7 +110,7 @@ Single precision floating point numer. Uses `single-float`.
 
 #### <code>DOUBLE-FLOAT</code> <sup><sub>[TYPE]</sub></sup><a name="double-float-type"></a>
 
-Double precision floating point numer. Uses `double-float`.
+Double precision floating point number. Uses `double-float`.
 
 <details>
 <summary>Instances</summary>
@@ -264,6 +266,8 @@ String of characters represented by Common Lisp `string`.
 - <code><a href="#eq-class">EQ</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#iso-class">ISO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#string-type">STRING</a> <a href="#pathname-type">PATHNAME</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#pathname-type">PATHNAME</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#string-type">STRING</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#string-type">STRING</a></code>
@@ -381,9 +385,6 @@ Type constructor for function types.
 ***
 
 #### <code>UNIT</code> <sup><sub>[TYPE]</sub></sup><a name="unit-type"></a>
-
-
-
 <details>
 <summary>Instances</summary>
 
@@ -438,6 +439,7 @@ A single character represented as a `character` type.
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#file-class">FILE</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#char-type">CHAR</a></code>
@@ -455,7 +457,6 @@ A single character represented as a `character` type.
 ### Types
 
 #### <code>VOID</code> <sup><sub>[TYPE]</sub></sup><a name="void-type"></a>
-
 <details>
 <summary>Instances</summary>
 
@@ -474,6 +475,8 @@ Non-allocating tagged non-negative integer; range is platform-dependent. Uses `(
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#ufix-type">UFIX</a></code>
+- <code><a href="#file-class">FILE</a> <a href="#ufix-type">UFIX</a></code>
+- <code><a href="#%filebyte-class">%FILEBYTE</a> <a href="#ufix-type">UFIX</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#ufix-type">UFIX</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#ufix-type">UFIX</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#ufix-type">UFIX</a></code>
@@ -523,6 +526,8 @@ Non-allocating tagged integer; range is platform-dependent. Does not error on ov
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#ifix-type">IFIX</a></code>
+- <code><a href="#file-class">FILE</a> <a href="#ifix-type">IFIX</a></code>
+- <code><a href="#%filebyte-class">%FILEBYTE</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#ifix-type">IFIX</a></code>
@@ -572,6 +577,8 @@ Unsigned 64-bit integer capable of storing values in `[0, 18446744073709551615]`
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#file-class">FILE</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#%filebyte-class">%FILEBYTE</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#u64-type">U64</a></code>
@@ -621,6 +628,8 @@ Unsigned 32-bit integer capable of storing values in `[0, 4294967295]`. Uses `(u
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#file-class">FILE</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#%filebyte-class">%FILEBYTE</a> <a href="#u32-type">U32</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#u32-type">U32</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#u32-type">U32</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#u32-type">U32</a></code>
@@ -670,6 +679,8 @@ Unsigned 16-bit integer capable of storing values in `[0, 65535]`. Uses `(unsign
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#u16-type">U16</a></code>
+- <code><a href="#file-class">FILE</a> <a href="#u16-type">U16</a></code>
+- <code><a href="#%filebyte-class">%FILEBYTE</a> <a href="#u16-type">U16</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#u16-type">U16</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#u16-type">U16</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#u16-type">U16</a></code>
@@ -716,6 +727,8 @@ Signed 64-bit integer capable of storing values in `[-9223372036854775808, 92233
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#file-class">FILE</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#%filebyte-class">%FILEBYTE</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#i64-type">I64</a></code>
@@ -765,6 +778,8 @@ Signed 32-bit integer capable of storing values in `[-2147483648, 2147483647]`. 
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#file-class">FILE</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#%filebyte-class">%FILEBYTE</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#i32-type">I32</a></code>
@@ -814,6 +829,8 @@ Signed 16-bit integer capable of storing values in `[-32768, 32767]`. Uses `(sig
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#file-class">FILE</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#%filebyte-class">%FILEBYTE</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#i16-type">I16</a></code>
@@ -860,6 +877,8 @@ Unsigned 8-bit integer capable of storing values in `[0, 255]`. Uses `(unsigned-
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#u8-type">U8</a></code>
+- <code><a href="#file-class">FILE</a> <a href="#u8-type">U8</a></code>
+- <code><a href="#%filebyte-class">%FILEBYTE</a> <a href="#u8-type">U8</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#u8-type">U8</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#u8-type">U8</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#u8-type">U8</a></code>
@@ -909,6 +928,8 @@ Signed 8-bit integer capable of storing values in `[-128, 127]`. Uses `(signed-b
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#i8-type">I8</a></code>
+- <code><a href="#file-class">FILE</a> <a href="#i8-type">I8</a></code>
+- <code><a href="#%filebyte-class">%FILEBYTE</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#i8-type">I8</a></code>
@@ -1067,6 +1088,7 @@ A heterogeneous collection of items.
 #### <code>EQ</code> <sup><sub>[CLASS]</sub></sup><a name="eq-class"></a>
 <code><a href="#eq-class">EQ</a> :A</code>
 
+
 Types which have equality defined.
 
 Methods:
@@ -1117,6 +1139,7 @@ Note: Eq only compares the primal component.
 - <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) &rArr; <a href="#eq-class">EQ</a> (<a href="#map-type">MAP</a> :A :B)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#mappair-type">MAPPAIR</a> :A :B)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#seq-type">SEQ</a> :A)</code>
+- <code><a href="#eq-class">EQ</a> <a href="#pathname-type">PATHNAME</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 
 </details>
@@ -1126,6 +1149,7 @@ Note: Eq only compares the primal component.
 
 #### <code>ISO</code> <sup><sub>[CLASS]</sub></sup><a name="iso-class"></a>
 <code>(<a href="#into-class">INTO</a> :A :B) (<a href="#into-class">INTO</a> :B :A) &rArr; <a href="#iso-class">ISO</a> :A :B</code>
+
 
 Opting into this marker typeclass imples that the instances for `(Into :a :b)` and `(Into :b :a)` form a bijection.
 
@@ -1148,6 +1172,7 @@ Methods:
 
 #### <code>NUM</code> <sup><sub>[CLASS]</sub></sup><a name="num-class"></a>
 <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#num-class">NUM</a> :A</code>
+
 
 Types which have numeric operations defined.
 
@@ -1189,6 +1214,7 @@ Methods:
 #### <code>ORD</code> <sup><sub>[CLASS]</sub></sup><a name="ord-class"></a>
 <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#ord-class">ORD</a> :A</code>
 
+
 Types whose values can be ordered.
 
 Methods:
@@ -1225,6 +1251,7 @@ Note: Ord only compares the primal component.
 - <code><a href="#ord-class">ORD</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#ord-class">ORD</a> (<a href="#mappair-type">MAPPAIR</a> :A :B)</code>
+- <code><a href="#ord-class">ORD</a> <a href="#pathname-type">PATHNAME</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 
 </details>
@@ -1234,6 +1261,7 @@ Note: Ord only compares the primal component.
 
 #### <code>INTO</code> <sup><sub>[CLASS]</sub></sup><a name="into-class"></a>
 <code><a href="#into-class">INTO</a> :A :B</code>
+
 
 `INTO` imples *every* element of `:a` can be represented by an element of `:b`. This conversion might not be bijective (i.e., there may be elements in `:b` that don't correspond to any in `:a`).
 
@@ -1317,6 +1345,8 @@ Methods:
 - <code><a href="#into-class">INTO</a> (<a href="#seq-type">SEQ</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#seq-type">SEQ</a> :A) (<a href="#list-type">LIST</a> :A)</code>
 - <code>(<a href="#foldable-class">FOLDABLE</a> :A) (<a href="#runtimerepr-class">RUNTIMEREPR</a> :B) &rArr; <a href="#into-class">INTO</a> (:A :B) (<a href="#seq-type">SEQ</a> :B)</code>
+- <code><a href="#into-class">INTO</a> <a href="#pathname-type">PATHNAME</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#string-type">STRING</a> <a href="#pathname-type">PATHNAME</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#double-float-type">DOUBLE-FLOAT</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#single-float-type">SINGLE-FLOAT</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> <a href="#big-float-type">BIG-FLOAT</a></code>
@@ -1329,6 +1359,7 @@ Methods:
 
 #### <code>MONAD</code> <sup><sub>[CLASS]</sub></sup><a name="monad-class"></a>
 <code><a href="#applicative-class">APPLICATIVE</a> :A &rArr; <a href="#monad-class">MONAD</a> :A</code>
+
 
 Types which are monads as defined in Haskell. See https://wiki.haskell.org/Monad for more information.
 
@@ -1352,6 +1383,7 @@ Methods:
 #### <code>MONOID</code> <sup><sub>[CLASS]</sub></sup><a name="monoid-class"></a>
 <code><a href="#semigroup-class">SEMIGROUP</a> :A &rArr; <a href="#monoid-class">MONOID</a> :A</code>
 
+
 Types with an associative binary operation and identity defined.
 
 Methods:
@@ -1367,6 +1399,7 @@ Methods:
 - <code><a href="#monoid-class">MONOID</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#monoid-class">MONOID</a> (<a href="#tree-type">TREE</a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#monoid-class">MONOID</a> (<a href="#seq-type">SEQ</a> :A)</code>
+- <code><a href="#monoid-class">MONOID</a> <a href="#pathname-type">PATHNAME</a></code>
 
 </details>
 
@@ -1375,6 +1408,7 @@ Methods:
 
 #### <code>DEFAULT</code> <sup><sub>[CLASS]</sub></sup><a name="default-class"></a>
 <code><a href="#default-class">DEFAULT</a> :A</code>
+
 
 Types which have default values.
 
@@ -1419,6 +1453,7 @@ Methods:
 #### <code>FUNCTOR</code> <sup><sub>[CLASS]</sub></sup><a name="functor-class"></a>
 <code><a href="#functor-class">FUNCTOR</a> :A</code>
 
+
 Types which can map an inner type where the mapping adheres to the identity and composition laws.
 
 Methods:
@@ -1447,6 +1482,7 @@ Methods:
 
 #### <code>TRYINTO</code> <sup><sub>[CLASS]</sub></sup><a name="tryinto-class"></a>
 <code><a href="#tryinto-class">TRYINTO</a> :A :B :C</code>
+
 
 `TRY-INTO` implies some elements of `:a` can be represented exactly by an element of `:b`, but sometimes not. If not, an error of type `:c` is returned.
 
@@ -1549,6 +1585,7 @@ Methods:
 #### <code>FOLDABLE</code> <sup><sub>[CLASS]</sub></sup><a name="foldable-class"></a>
 <code><a href="#foldable-class">FOLDABLE</a> :A</code>
 
+
 Types which can be folded into a single element.
 
 Methods:
@@ -1572,6 +1609,7 @@ Methods:
 
 #### <code>BIFUNCTOR</code> <sup><sub>[CLASS]</sub></sup><a name="bifunctor-class"></a>
 <code><a href="#bifunctor-class">BIFUNCTOR</a> :A</code>
+
 
 Types which take two type arguments and are functors on both.
 
@@ -1608,6 +1646,7 @@ Methods:
 #### <code>SEMIGROUP</code> <sup><sub>[CLASS]</sub></sup><a name="semigroup-class"></a>
 <code><a href="#semigroup-class">SEMIGROUP</a> :A</code>
 
+
 Types with an associative binary operation defined.
 
 Methods:
@@ -1627,6 +1666,7 @@ Methods:
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#tree-type">TREE</a> :A)</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#map-type">MAP</a> :A :B)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#seq-type">SEQ</a> :A)</code>
+- <code><a href="#semigroup-class">SEMIGROUP</a> <a href="#pathname-type">PATHNAME</a></code>
 
 </details>
 
@@ -1635,6 +1675,7 @@ Methods:
 
 #### <code>SIGNALABLE</code> <sup><sub>[CLASS]</sub></sup><a name="signalable-class"></a>
 <code><a href="#signalable-class">SIGNALABLE</a> :A</code>
+
 
 Signals errors or warnings by calling their respective lisp conditions.
 
@@ -1645,6 +1686,8 @@ Methods:
 <summary>Instances</summary>
 
 - <code><a href="#signalable-class">SIGNALABLE</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#signalable-class">SIGNALABLE</a> <a href="#lispcondition-type">LISPCONDITION</a></code>
+- <code><a href="#signalable-class">SIGNALABLE</a> <a href="#fileerror-type">FILEERROR</a></code>
 
 </details>
 
@@ -1653,6 +1696,7 @@ Methods:
 
 #### <code>ALTERNATIVE</code> <sup><sub>[CLASS]</sub></sup><a name="alternative-class"></a>
 <code><a href="#applicative-class">APPLICATIVE</a> :A &rArr; <a href="#alternative-class">ALTERNATIVE</a> :A</code>
+
 
 Types which are monoids on applicative functors.
 
@@ -1673,6 +1717,7 @@ Methods:
 
 #### <code>APPLICATIVE</code> <sup><sub>[CLASS]</sub></sup><a name="applicative-class"></a>
 <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#applicative-class">APPLICATIVE</a> :A</code>
+
 
 Types which are a functor which can embed pure expressions and sequence operations.
 
@@ -1714,6 +1759,7 @@ Methods:
 
 #### <code>UNWRAPPABLE</code> <sup><sub>[CLASS]</sub></sup><a name="unwrappable-class"></a>
 <code><a href="#unwrappable-class">UNWRAPPABLE</a> :A</code>
+
 
 Containers which can be unwrapped to get access to their contents.
 
@@ -1896,6 +1942,7 @@ Implementation dependent hash code
 #### <code>HASH</code> <sup><sub>[CLASS]</sub></sup><a name="hash-class"></a>
 <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#hash-class">HASH</a> :A</code>
 
+
 Types which can be hashed for storage in hash tables.
 
 The hash function must satisfy the invariant that `(== left right)` implies `(== (hash left) (hash right))`.
@@ -1985,6 +2032,7 @@ Proxy holds no data, but has a phantom type parameter.
 #### <code>RUNTIMEREPR</code> <sup><sub>[CLASS]</sub></sup><a name="runtimerepr-class"></a>
 <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A</code>
 
+
 Types which have a runtime LispType representation.
 
 `runtime-repr` corresponds to the type emitted by the Coalton compiler for the type parameter to the given Proxy.
@@ -2046,6 +2094,12 @@ Methods:
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#map-type">MAP</a> :A :B)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> ((<a href="#free-type">FREE</a> :A) :B)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#seq-type">SEQ</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#lispcondition-type">LISPCONDITION</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#pathname-type">PATHNAME</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#fileerror-type">FILEERROR</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#filestream-type">FILESTREAM</a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#ifexists-type">IFEXISTS</a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#streamoptions-type">STREAMOPTIONS</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#roundingmode-type">ROUNDINGMODE</a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#big-float-type">BIG-FLOAT</a></code>
 
@@ -2203,7 +2257,7 @@ Returns a function that takes its arguments in reverse order.
 #### <code>(MSUM XS)</code> <sup><sub>FUNCTION</sub></sup><a name="msum-value"></a>
 <code>&forall; :A :B. (<a href="#monoid-class">MONOID</a> :B) (<a href="#foldable-class">FOLDABLE</a> :A) &rArr; ((:A :B) &rarr; :B)</code>
 
-Fold over a list using `&lt;&gt;`.
+Fold over a list using `<>`.
 
 
 ***
@@ -2228,6 +2282,18 @@ Print a line to `cl:*standard-output*`.
 <code>&forall; :A :B :C. <a href="#foldable-class">FOLDABLE</a> :C &rArr; ((:A &rarr; :B &rarr; :B) &rarr; :B &rarr; (:C :A) &rarr; :B)</code>
 
 The same as `fold` but with the argument order swapped to match `cl:reduce`
+
+
+***
+
+#### <code>(BRACKET INIT EXIT BODY)</code> <sup><sub>FUNCTION</sub></sup><a name="bracket-value"></a>
+<code>&forall; :A :B :C :D. <a href="#monad-class">MONAD</a> :A &rArr; ((:A :B) &rarr; (:B &rarr; (:A :C)) &rarr; (:B &rarr; (:A :D)) &rarr; (:A :D))</code>
+
+Bracket takes an initial state, performs a body of operations, and then forces a safe exit.
+
+This wraps `cl:unwind-protect`.
+
+Modeled after Haskell: https://wiki.haskell.org/Bracket_pattern
 
 
 ***
@@ -2291,6 +2357,7 @@ Print a line to `cl:*standard-output*` in the form "{STR}: {ITEM}".
 #### <code>DIVIDABLE</code> <sup><sub>[CLASS]</sub></sup><a name="dividable-class"></a>
 <code><a href="#dividable-class">DIVIDABLE</a> :A :B</code>
 
+
 The representation of a type such that division within that type possibly results in another type. For instance,
 
 
@@ -2330,6 +2397,7 @@ Methods:
 #### <code>TRANSFINITE</code> <sup><sub>[CLASS]</sub></sup><a name="transfinite-class"></a>
 <code><a href="#transfinite-class">TRANSFINITE</a> :A</code>
 
+
 Numeric type with a value for (positive) infinity and/or NaN.
 
 Methods:
@@ -2352,6 +2420,7 @@ Methods:
 
 #### <code>RECIPROCABLE</code> <sup><sub>[CLASS]</sub></sup><a name="reciprocable-class"></a>
 <code><a href="#num-class">NUM</a> :A &rArr; <a href="#reciprocable-class">RECIPROCABLE</a> :A</code>
+
 
 Any number with a multiplicative inverse (reciprocal) where:
 
@@ -2502,6 +2571,7 @@ Is `x` not positive?
 #### <code>BOUNDED</code> <sup><sub>[CLASS]</sub></sup><a name="bounded-class"></a>
 <code><a href="#bounded-class">BOUNDED</a> :A</code>
 
+
 Types which have a maximum and minumum bound.
 
 Methods:
@@ -2563,6 +2633,7 @@ The denominator of a fraction.
 #### <code>INTEGRAL</code> <sup><sub>[CLASS]</sub></sup><a name="integral-class"></a>
 <code>(<a href="#remainder-class">REMAINDER</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; <a href="#integral-class">INTEGRAL</a> :A</code>
 
+
 Integral is a number that is either even or odd where `div` and `quot`
 are floored and truncated division, respectively.
 
@@ -2591,6 +2662,7 @@ Methods:
 
 #### <code>REMAINDER</code> <sup><sub>[CLASS]</sub></sup><a name="remainder-class"></a>
 <code><a href="#num-class">NUM</a> :A &rArr; <a href="#remainder-class">REMAINDER</a> :A</code>
+
 
 Remainder is typically an integral domain satisfying:
 
@@ -2681,7 +2753,7 @@ Right shift X by N
 #### <code>(ILOG B X)</code> <sup><sub>FUNCTION</sub></sup><a name="ilog-value"></a>
 <code>&forall; :A. <a href="#integral-class">INTEGRAL</a> :A &rArr; (:A &rarr; :A &rarr; :A)</code>
 
-The floor of the logarithm with base B &gt; 1 of X &gt;= 1.
+The floor of the logarithm with base B > 1 of X >= 1.
 
 
 ***
@@ -2705,7 +2777,7 @@ Is N even?
 #### <code>(ISQRT X)</code> <sup><sub>FUNCTION</sub></sup><a name="isqrt-value"></a>
 <code>&forall; :A. <a href="#integral-class">INTEGRAL</a> :A &rArr; (:A &rarr; :A)</code>
 
-The floor of the square root of N &gt; 0.
+The floor of the square root of N > 0.
 
 
 ***
@@ -2752,7 +2824,8 @@ The fields are defined as follows:
 #### <code>REAL</code> <sup><sub>[CLASS]</sub></sup><a name="real-class"></a>
 <code>(<a href="#quantizable-class">QUANTIZABLE</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; <a href="#real-class">REAL</a> :A</code>
 
-A real number that can be approximated with abs(real-approx x - x) &lt; 2^-n.
+
+A real number that can be approximated with abs(real-approx x - x) < 2^-n.
 
 Methods:
 - <code>REAL-APPROX :: (<a href="#ufix-type">UFIX</a> &rarr; :A &rarr; <a href="#fraction-type">FRACTION</a>)</code>
@@ -2782,6 +2855,7 @@ Methods:
 
 #### <code>RATIONAL</code> <sup><sub>[CLASS]</sub></sup><a name="rational-class"></a>
 <code>(<a href="#real-class">REAL</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; <a href="#rational-class">RATIONAL</a> :A</code>
+
 
 Any number that can be exactly represented by a fraction, or is not finite.
 
@@ -2825,11 +2899,12 @@ Methods:
 #### <code>QUANTIZABLE</code> <sup><sub>[CLASS]</sub></sup><a name="quantizable-class"></a>
 <code><a href="#quantizable-class">QUANTIZABLE</a> :A</code>
 
+
 The representation of a type that allows for rounding operations
 
 
-    max x such that (floor x) &lt;= x
-    min x such that (ceiling x) &lt;= x
+    max x such that (floor x) <= x
+    min x such that (ceiling x) <= x
 
 And
 
@@ -3065,6 +3140,7 @@ The length of a complex number.
 #### <code>POLAR</code> <sup><sub>[CLASS]</sub></sup><a name="polar-class"></a>
 <code>(<a href="#complex-class">COMPLEX</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; <a href="#polar-class">POLAR</a> :A</code>
 
+
 For a complex number `z = (complex x y)`, the following identities hold:
 
     z = (* (magnitude z) (exp (* ii (phase z))))
@@ -3092,6 +3168,7 @@ Methods:
 #### <code>RADICAL</code> <sup><sub>[CLASS]</sub></sup><a name="radical-class"></a>
 <code><a href="#radical-class">RADICAL</a> :A</code>
 
+
 Obeys:
 
     (^ (sqrt x) 2) = x = (^^ (nth-root n x) n)
@@ -3117,6 +3194,7 @@ Methods:
 #### <code>ELEMENTARY</code> <sup><sub>[CLASS]</sub></sup><a name="elementary-class"></a>
 <code>(<a href="#reciprocable-class">RECIPROCABLE</a> :A) (<a href="#polar-class">POLAR</a> :A) (<a href="#trigonometric-class">TRIGONOMETRIC</a> :A) (<a href="#exponentiable-class">EXPONENTIABLE</a> :A) (<a href="#radical-class">RADICAL</a> :A) &rArr; <a href="#elementary-class">ELEMENTARY</a> :A</code>
 
+
 `Elementary` is a marker class, providing `Reciprocable`, `Polar`, `Trigonometric`, `Exponentiable`, and `Radical`.
 
 Methods:
@@ -3136,6 +3214,7 @@ Methods:
 
 #### <code>EXPONENTIABLE</code> <sup><sub>[CLASS]</sub></sup><a name="exponentiable-class"></a>
 <code><a href="#exponentiable-class">EXPONENTIABLE</a> :A</code>
+
 
 Exponential maps obeying:
 
@@ -3168,6 +3247,7 @@ Methods:
 
 #### <code>TRIGONOMETRIC</code> <sup><sub>[CLASS]</sub></sup><a name="trigonometric-class"></a>
 <code><a href="#trigonometric-class">TRIGONOMETRIC</a> :A</code>
+
 
 Standard circular functions and their inverses.
 
@@ -3439,6 +3519,7 @@ The primal (i.e., real) part of a dual number.
 
 #### <code>BITS</code> <sup><sub>[CLASS]</sub></sup><a name="bits-class"></a>
 <code><a href="#num-class">NUM</a> :A &rArr; <a href="#bits-class">BITS</a> :A</code>
+
 
 Operations on the bits of twos-complement integers
 
@@ -3787,7 +3868,7 @@ Get the second element of a tuple.
 
 A one-dimensional, non-resizable array of elements.
 
-These arrays are represented as possibly specialized `(cl:simple-array &lt;type&gt; (cl:*))` and are meant to be used as a tool either to interface with Lisp code or to implement efficient data structures. One should consult `Vector` or `Seq` for more general sequential data structure needs.
+These arrays are represented as possibly specialized `(cl:simple-array <type> (cl:*))` and are meant to be used as a tool either to interface with Lisp code or to implement efficient data structures. One should consult `Vector` or `Seq` for more general sequential data structure needs.
 
 Whether or not the arrays are specialized depends on the underlying Lisp implementation. Consult `cl:upgraded-array-element-type` to determine whether `LispArray` may get specialized.
 
@@ -4043,10 +4124,10 @@ Produce all permutations of the list L.
 
 Returns a list containing the numbers from START to END inclusive, counting by 1.
 
-    COALTON-USER&gt; (coalton (range 1 5))
+    COALTON-USER> (coalton (range 1 5))
     (1 2 3 4 5)
 
-    COALTON-USER&gt; (coalton (range 5 2))
+    COALTON-USER> (coalton (range 5 2))
     (5 4 3 2)
 
 
@@ -4294,7 +4375,7 @@ Return a new list with the first element for which PRED is `True` is removed.
 #### <code>(SINGLETON X)</code> <sup><sub>FUNCTION</sub></sup><a name="singleton-value"></a>
 <code>&forall; :A. (:A &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
-Returns a list containting one element.
+Returns a list containing one element.
 
 
 ***
@@ -4321,7 +4402,7 @@ Returns a new list with the first occurence of each element in `ys` removed from
 Produce a list of copies of L, each with A inserted at a possible position.
 
     (insertions 0 (make-list 1 2))
-    =&gt; ((0 1 2) (1 0 2) (1 2 0))
+    => ((0 1 2) (1 0 2) (1 2 0))
 
 
 
@@ -4532,6 +4613,7 @@ Apply F to the contents of CEL, swapping the result for the old value
 #### <code>RANDOMACCESS</code> <sup><sub>[CLASS]</sub></sup><a name="randomaccess-class"></a>
 <code><a href="#randomaccess-class">RANDOMACCESS</a> :A :B</code>
 
+
 Establishes that `:f` is a random-access store of elements of type `:t`. The **storage type** `:f` implies the **stored type** `:t`. The storage is expected to be sequential and O(1) in random access reads and writes.
 
 It is permitted for any of `make`, `unsafe-aref`, or `unsafe-set!` to error.
@@ -4579,7 +4661,6 @@ Write the element `value` at `index` of the random-access storage `storage`. Ret
 ### Types
 
 #### <code>VECTOR :A</code> <sup><sub>[TYPE]</sub></sup><a name="vector-type"></a>
-
 <details>
 <summary>Instances</summary>
 
@@ -4823,7 +4904,6 @@ Create a new vector with `n` elements equal to `x`.
 ### Types
 
 #### <code>SLICE :A</code> <sup><sub>[TYPE]</sub></sup><a name="slice-type"></a>
-
 <details>
 <summary>Instances</summary>
 
@@ -5312,6 +5392,7 @@ Methods:
 #### <code>INTOITERATOR</code> <sup><sub>[CLASS]</sub></sup><a name="intoiterator-class"></a>
 <code><a href="#intoiterator-class">INTOITERATOR</a> :A :B</code>
 
+
 Containers which can be converted into iterators.
 
 `INTO-ITER` must not mutate its argument, only produce a "view" into it.
@@ -5775,7 +5856,7 @@ Yield unique elements from ITER in order of first appearance.
 
 #### <code>TREE :A</code> <sup><sub>[TYPE]</sub></sup><a name="tree-type"></a>
 
-A red-black balanced binary tree, sorted by `&lt;=&gt;` and unique by `==`.
+A red-black balanced binary tree, sorted by `<=>` and unique by `==`.
 
 <details>
 <summary>Instances</summary>
@@ -5856,7 +5937,7 @@ If ITER contains duplicates, later elements will overwrite earlier elements.
 #### <code>DECREASING-ORDER</code> <sup><sub>[FUNCTION]</sub></sup><a name="decreasing-order-value"></a>
 <code>&forall; :A. ((<a href="#tree-type">TREE</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
-Iterate the elements of a tree, starting with the greatest by `&lt;=&gt;' and ending with the least.
+Iterate the elements of a tree, starting with the greatest by `<=>' and ending with the least.
 
 
 ***
@@ -5864,7 +5945,7 @@ Iterate the elements of a tree, starting with the greatest by `&lt;=&gt;' and en
 #### <code>INCREASING-ORDER</code> <sup><sub>[FUNCTION]</sub></sup><a name="increasing-order-value"></a>
 <code>&forall; :A. ((<a href="#tree-type">TREE</a> :A) &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
 
-Iterate the elements of a tree, starting with the least by `&lt;=&gt;' and ending with the greatest.
+Iterate the elements of a tree, starting with the least by `<=>' and ending with the greatest.
 
 
 ***
@@ -5900,7 +5981,7 @@ alongside the new tree.
 
 #### <code>MAP :A :B</code> <sup><sub>[TYPE]</sub></sup><a name="map-type"></a>
 
-A red-black binary tree which associates each :KEY with a :VALUE, sorted by `&lt;=&gt;' on the keys and unique by `==' on the keys.
+A red-black binary tree which associates each :KEY with a :VALUE, sorted by `<=>' on the keys and unique by `==' on the keys.
 
 <details>
 <summary>Instances</summary>
@@ -5941,7 +6022,7 @@ A Map containing no mappings.
 
 Construct a Tree containing all the mappings of both A and B.
 
-If A and B contain mappings X -&gt; A' and X -&gt; B', it is undefined whether the result maps X to A' or B'.
+If A and B contain mappings X -> A' and X -> B', it is undefined whether the result maps X to A' or B'.
 
 Because of the possibility that A and B will map the same X to different A' and B', this is not an associative
 operation, and therefore Map cannot implement Monoid.
@@ -6044,7 +6125,6 @@ If MP already contains a mapping for K, replace it and return the old value.
 ### Types
 
 #### <code>SEQ :A</code> <sup><sub>[TYPE]</sub></sup><a name="seq-type"></a>
-
 <details>
 <summary>Instances</summary>
 
@@ -6128,6 +6208,564 @@ Return the number of elements in the `seq`.
 
 #### <code>(EMPTY? SEQ)</code> <sup><sub>FUNCTION</sub></sup><a name="empty?-value"></a>
 <code>&forall; :A. ((<a href="#seq-type">SEQ</a> :A) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+***
+
+# Package `coalton-library/system`<a name="coalton-library/system-package"></a>
+
+## [system.lisp](https://github.com/coalton-lang/coalton/tree/main/library/system.lisp) <a name="coalton-library/system-system-lisp-file"></a>
+
+### Types
+
+#### <code>LISPCONDITION</code> <sup><sub>[TYPE]</sub></sup><a name="lispcondition-type"></a>
+
+Condition for lisp error handling. Uses `cl:condition`.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#lispcondition-type">LISPCONDITION</a></code>
+- <code><a href="#signalable-class">SIGNALABLE</a> <a href="#lispcondition-type">LISPCONDITION</a></code>
+
+</details>
+
+
+***
+
+### Values
+
+#### <code>(GC _)</code> <sup><sub>FUNCTION</sub></sup><a name="gc-value"></a>
+<code>(<a href="#unit-type">UNIT</a> &rarr; <a href="#unit-type">UNIT</a>)</code>
+
+Perform a full garbage collection.
+
+
+***
+
+#### <code>(OS _)</code> <sup><sub>FUNCTION</sub></sup><a name="os-value"></a>
+<code>(<a href="#unit-type">UNIT</a> &rarr; <a href="#string-type">STRING</a>)</code>
+
+The system's operating system (stored at compile time).
+
+
+***
+
+#### <code>(TIME F)</code> <sup><sub>FUNCTION</sub></sup><a name="time-value"></a>
+<code>&forall; :A. ((<a href="#unit-type">UNIT</a> &rarr; :A) &rarr; (<a href="#tuple-type">TUPLE</a> :A <a href="#integer-type">INTEGER</a>))</code>
+
+Run the thunk `f` and return a tuple containing its value along with the run time in microseconds.
+
+While the result will always contain microseconds, some implementations may return a value rounded to less precision (e.g., rounded to the nearest second or millisecond).
+
+
+***
+
+#### <code>(ARGV0 _)</code> <sup><sub>FUNCTION</sub></sup><a name="argv0-value"></a>
+<code>(<a href="#unit-type">UNIT</a> &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#string-type">STRING</a>))</code>
+
+The first command line argument (stored at compile time).
+
+
+***
+
+#### <code>(SLEEP N)</code> <sup><sub>FUNCTION</sub></sup><a name="sleep-value"></a>
+<code>(<a href="#integer-type">INTEGER</a> &rarr; <a href="#unit-type">UNIT</a>)</code>
+
+Sleep for `n` seconds.
+
+
+***
+
+#### <code>(GETENV VAR)</code> <sup><sub>FUNCTION</sub></sup><a name="getenv-value"></a>
+<code>(<a href="#string-type">STRING</a> &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#string-type">STRING</a>))</code>
+
+Gets the value of the environmental variable `var`, errors if `var` doesn't exist.
+
+
+***
+
+#### <code>(SETENV! VAR VAL)</code> <sup><sub>FUNCTION</sub></sup><a name="setenv!-value"></a>
+<code>(<a href="#string-type">STRING</a> &rarr; <a href="#string-type">STRING</a> &rarr; <a href="#unit-type">UNIT</a>)</code>
+
+Sets an environment variable `var` to string `val`, only if `var` already exists.
+
+
+***
+
+#### <code>(CMD-ARGS _)</code> <sup><sub>FUNCTION</sub></sup><a name="cmd-args-value"></a>
+<code>(<a href="#unit-type">UNIT</a> &rarr; (<a href="#list-type">LIST</a> <a href="#string-type">STRING</a>))</code>
+
+The current command line arguments (stored at compile time).
+
+
+***
+
+#### <code>(FEATURES _)</code> <sup><sub>FUNCTION</sub></sup><a name="features-value"></a>
+<code>(<a href="#unit-type">UNIT</a> &rarr; (<a href="#list-type">LIST</a> <a href="#string-type">STRING</a>))</code>
+
+Returns a list of active features, from `cl:*features*`.
+
+
+***
+
+#### <code>(HOSTNAME _)</code> <sup><sub>FUNCTION</sub></sup><a name="hostname-value"></a>
+<code>(<a href="#unit-type">UNIT</a> &rarr; <a href="#string-type">STRING</a>)</code>
+
+Returns the system's hostname. This is a function because the hostname can be redefined.
+
+
+***
+
+#### <code>(ADD-FEATURE FEAT)</code> <sup><sub>FUNCTION</sub></sup><a name="add-feature-value"></a>
+<code>(<a href="#string-type">STRING</a> &rarr; <a href="#unit-type">UNIT</a>)</code>
+
+Adds a feature `feat` to `cl:*features*`.
+
+
+***
+
+#### <code>(ARCHITECTURE _)</code> <sup><sub>FUNCTION</sub></sup><a name="architecture-value"></a>
+<code>(<a href="#unit-type">UNIT</a> &rarr; <a href="#string-type">STRING</a>)</code>
+
+The system's architecture (stored at compile time).
+
+
+***
+
+#### <code>(LISP-VERSION _)</code> <sup><sub>FUNCTION</sub></sup><a name="lisp-version-value"></a>
+<code>(<a href="#unit-type">UNIT</a> &rarr; <a href="#string-type">STRING</a>)</code>
+
+The lisp implementation version (stored at compile time).
+
+
+***
+
+#### <code>(IMPLEMENTATION _)</code> <sup><sub>FUNCTION</sub></sup><a name="implementation-value"></a>
+<code>(<a href="#unit-type">UNIT</a> &rarr; <a href="#string-type">STRING</a>)</code>
+
+The lisp implementation (stored at compile time).
+
+
+***
+
+# Package `coalton-library/file`<a name="coalton-library/file-package"></a>
+
+This is Coalton's library for directory utilities and file IO.
+
+Most functions return outputs of type `(Result FileError :a)`, ensuring that errors can be assessed and handled.
+
+File IO is handled using stream options, for instance:
+
+```
+(with-open-file (Bidirectional file EError)
+  (fn (stream)
+    (write-string stream "Hello World!")
+    (read-file-to-vector stream)
+```
+
+Common Lisp makes a distinction between file and directory paths. Directory paths are always terminated with a trailing slash, file paths must never have a trailing slash.
+
+## [file.lisp](https://github.com/coalton-lang/coalton/tree/main/library/file.lisp) <a name="coalton-library/file-file-lisp-file"></a>
+
+### Types
+
+#### <code>STREAMOPTIONS</code> <sup><sub>[TYPE]</sub></sup><a name="streamoptions-type"></a>
+
+A type for providing parameters for opening streams. StreamOptions take strings for pathnames, but they will error if they are not proper and appropriate pathnames.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#streamoptions-type">STREAMOPTIONS</a></code>
+
+</details>
+
+
+***
+
+#### <code>FILESTREAM :A</code> <sup><sub>[TYPE]</sub></sup><a name="filestream-type"></a>
+
+Represents a file stream, using `cl:file-stream`.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#filestream-type">FILESTREAM</a> :A)</code>
+
+</details>
+
+
+***
+
+#### <code>FILEERROR</code> <sup><sub>[TYPE]</sub></sup><a name="fileerror-type"></a>
+
+Errors for file functions.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#fileerror-type">FILEERROR</a></code>
+- <code><a href="#signalable-class">SIGNALABLE</a> <a href="#fileerror-type">FILEERROR</a></code>
+
+</details>
+
+
+***
+
+#### <code>PATHNAME</code> <sup><sub>[TYPE]</sub></sup><a name="pathname-type"></a>
+
+Pathname object. Equivalent to `cl:pathname`
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#pathname-type">PATHNAME</a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#pathname-type">PATHNAME</a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#pathname-type">PATHNAME</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#string-type">STRING</a> <a href="#pathname-type">PATHNAME</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#pathname-type">PATHNAME</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#monoid-class">MONOID</a> <a href="#pathname-type">PATHNAME</a></code>
+- <code><a href="#semigroup-class">SEMIGROUP</a> <a href="#pathname-type">PATHNAME</a></code>
+
+</details>
+
+
+***
+
+#### <code>IFEXISTS</code> <sup><sub>[TYPE]</sub></sup><a name="ifexists-type"></a>
+
+Possible options for opening a stream when the file exists.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#ifexists-type">IFEXISTS</a></code>
+
+</details>
+
+
+***
+
+### Classes
+
+#### <code>FILE</code> <sup><sub>[CLASS]</sub></sup><a name="file-class"></a>
+<code><a href="#file-class">FILE</a> :A</code>
+
+
+A class of types which are able to be written to or read from a file.
+
+Methods:
+- <code>OPEN :: (<a href="#streamoptions-type">STREAMOPTIONS</a> &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> (<a href="#filestream-type">FILESTREAM</a> :A)))</code>
+- <code>READ :: ((<a href="#filestream-type">FILESTREAM</a> :A) &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> :A))</code>
+- <code>WRITE :: ((<a href="#filestream-type">FILESTREAM</a> :A) &rarr; :A &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> <a href="#unit-type">UNIT</a>))</code>
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#file-class">FILE</a> <a href="#char-type">CHAR</a></code>
+- <code><a href="#file-class">FILE</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#file-class">FILE</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#file-class">FILE</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#file-class">FILE</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#file-class">FILE</a> <a href="#u16-type">U16</a></code>
+- <code><a href="#file-class">FILE</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#file-class">FILE</a> <a href="#u8-type">U8</a></code>
+- <code><a href="#file-class">FILE</a> <a href="#i8-type">I8</a></code>
+- <code><a href="#file-class">FILE</a> <a href="#ufix-type">UFIX</a></code>
+- <code><a href="#file-class">FILE</a> <a href="#ifix-type">IFIX</a></code>
+
+</details>
+
+
+***
+
+### Values
+
+#### <code>(ABORT STREAM)</code> <sup><sub>FUNCTION</sub></sup><a name="abort-value"></a>
+<code>&forall; :A :B. ((<a href="#filestream-type">FILESTREAM</a> :A) &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> :B))</code>
+
+Closes a FileStream and aborts all operations..
+
+
+***
+
+#### <code>(CLOSE STREAM)</code> <sup><sub>FUNCTION</sub></sup><a name="close-value"></a>
+<code>&forall; :A :B. ((<a href="#filestream-type">FILESTREAM</a> :A) &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> :B))</code>
+
+Closes a FileStream.
+
+
+***
+
+#### <code>(COPY! INPUT OUTPUT)</code> <sup><sub>FUNCTION</sub></sup><a name="copy!-value"></a>
+<code>&forall; :A :B. (<a href="#into-class">INTO</a> :A <a href="#pathname-type">PATHNAME</a>) (<a href="#into-class">INTO</a> :B <a href="#pathname-type">PATHNAME</a>) &rArr; (:A &rarr; :B &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> <a href="#unit-type">UNIT</a>))</code>
+
+Copies a file to a new location.
+
+
+***
+
+#### <code>(FLUSH STREAM)</code> <sup><sub>FUNCTION</sub></sup><a name="flush-value"></a>
+<code>&forall; :A :B. ((<a href="#filestream-type">FILESTREAM</a> :A) &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> :B))</code>
+
+Blocks until `stream` has been flushed. Calls `cl:finish-output`.
+
+
+***
+
+#### <code>(MERGE PATH1 PATH2)</code> <sup><sub>FUNCTION</sub></sup><a name="merge-value"></a>
+<code>&forall; :A :B. (<a href="#into-class">INTO</a> :A <a href="#pathname-type">PATHNAME</a>) (<a href="#into-class">INTO</a> :B <a href="#pathname-type">PATHNAME</a>) &rArr; (:A &rarr; :B &rarr; <a href="#pathname-type">PATHNAME</a>)</code>
+
+Merges two pathnames together. The directory pathname should be the first argument.
+
+
+***
+
+#### <code>(EMPTY? PATH)</code> <sup><sub>FUNCTION</sub></sup><a name="empty?-value"></a>
+<code>&forall; :A. <a href="#into-class">INTO</a> :A <a href="#pathname-type">PATHNAME</a> &rArr; (:A &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> <a href="#boolean-type">BOOLEAN</a>))</code>
+
+Checks whether a directory is empty.
+
+
+***
+
+#### <code>(EXISTS? PATH)</code> <sup><sub>FUNCTION</sub></sup><a name="exists?-value"></a>
+<code>&forall; :A. <a href="#into-class">INTO</a> :A <a href="#pathname-type">PATHNAME</a> &rArr; (:A &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> <a href="#boolean-type">BOOLEAN</a>))</code>
+
+Returns whether a file or directory exists.
+
+
+***
+
+#### <code>(READ-CHAR STREAM)</code> <sup><sub>FUNCTION</sub></sup><a name="read-char-value"></a>
+<code>((<a href="#filestream-type">FILESTREAM</a> <a href="#char-type">CHAR</a>) &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> <a href="#char-type">CHAR</a>))</code>
+
+Reads a character from an FileStream.
+
+
+***
+
+#### <code>(WRITE-CHAR STREAM DATA)</code> <sup><sub>FUNCTION</sub></sup><a name="write-char-value"></a>
+<code>((<a href="#filestream-type">FILESTREAM</a> <a href="#char-type">CHAR</a>) &rarr; <a href="#char-type">CHAR</a> &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> <a href="#unit-type">UNIT</a>))</code>
+
+Writes a `Char` to the stream.
+
+
+***
+
+#### <code>(WRITE-LINE STREAM S)</code> <sup><sub>FUNCTION</sub></sup><a name="write-line-value"></a>
+<code>((<a href="#filestream-type">FILESTREAM</a> <a href="#char-type">CHAR</a>) &rarr; <a href="#string-type">STRING</a> &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> <a href="#unit-type">UNIT</a>))</code>
+
+Writes a string with an appended newline to a filestream of type Char.
+
+
+***
+
+#### <code>(READ-VECTOR STREAM CHUNK-SIZE)</code> <sup><sub>FUNCTION</sub></sup><a name="read-vector-value"></a>
+<code>&forall; :A. <a href="#file-class">FILE</a> :A &rArr; ((<a href="#filestream-type">FILESTREAM</a> :A) &rarr; <a href="#ufix-type">UFIX</a> &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> (<a href="#vector-type">VECTOR</a> :A)))</code>
+
+Reads a chunk of a file into a vector of type `:a`.
+
+
+***
+
+#### <code>(DELETE-FILE! PATH)</code> <sup><sub>FUNCTION</sub></sup><a name="delete-file!-value"></a>
+<code>&forall; :A. <a href="#into-class">INTO</a> :A <a href="#pathname-type">PATHNAME</a> &rArr; (:A &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> <a href="#unit-type">UNIT</a>))</code>
+
+Deletes a given file if the file exists.
+
+
+***
+
+#### <code>(FILE-EXISTS? PATH)</code> <sup><sub>FUNCTION</sub></sup><a name="file-exists?-value"></a>
+<code>&forall; :A. <a href="#into-class">INTO</a> :A <a href="#pathname-type">PATHNAME</a> &rArr; (:A &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> <a href="#boolean-type">BOOLEAN</a>))</code>
+
+Returns True if a pathname names a file that exists.
+
+
+***
+
+#### <code>(WRITE-STRING FS S)</code> <sup><sub>FUNCTION</sub></sup><a name="write-string-value"></a>
+<code>((<a href="#filestream-type">FILESTREAM</a> <a href="#char-type">CHAR</a>) &rarr; <a href="#string-type">STRING</a> &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> <a href="#unit-type">UNIT</a>))</code>
+
+Writes a `string` to a FileStream of type Char.
+
+
+***
+
+#### <code>(WRITE-VECTOR STREAM V)</code> <sup><sub>FUNCTION</sub></sup><a name="write-vector-value"></a>
+<code>&forall; :A. (<a href="#runtimerepr-class">RUNTIMEREPR</a> :A) (<a href="#file-class">FILE</a> :A) &rArr; ((<a href="#filestream-type">FILESTREAM</a> :A) &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> <a href="#unit-type">UNIT</a>))</code>
+
+Writes elements of an vector of type `:a` to a stream of type `:a`.
+
+
+***
+
+#### <code>(FILE-POSITION STREAM)</code> <sup><sub>FUNCTION</sub></sup><a name="file-position-value"></a>
+<code>&forall; :A. ((<a href="#filestream-type">FILESTREAM</a> :A) &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> <a href="#ufix-type">UFIX</a>))</code>
+
+Finds the file-position of a file stream.
+
+
+***
+
+#### <code>(FILE-PATHNAME? PATH)</code> <sup><sub>FUNCTION</sub></sup><a name="file-pathname?-value"></a>
+<code>&forall; :A. <a href="#into-class">INTO</a> :A <a href="#pathname-type">PATHNAME</a> &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Returns True if a pathname has a file component.
+
+
+***
+
+#### <code>(SUBDIRECTORIES PATH)</code> <sup><sub>FUNCTION</sub></sup><a name="subdirectories-value"></a>
+<code>&forall; :A. <a href="#into-class">INTO</a> :A <a href="#pathname-type">PATHNAME</a> &rArr; (:A &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> (<a href="#list-type">LIST</a> <a href="#pathname-type">PATHNAME</a>)))</code>
+
+Returns all subdirectories within the directory. Returns an error if the pathname is not a directory pathname.
+
+
+***
+
+#### <code>(WITH-OPEN-FILE STREAM-OPTIONS THUNK)</code> <sup><sub>FUNCTION</sub></sup><a name="with-open-file-value"></a>
+<code>&forall; :A :B. <a href="#file-class">FILE</a> :A &rArr; (<a href="#streamoptions-type">STREAMOPTIONS</a> &rarr; ((<a href="#filestream-type">FILESTREAM</a> :A) &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> :B)) &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> :B))</code>
+
+Opens a file stream, performs `thunk` on it, then closes the stream.
+
+
+***
+
+#### <code>(WITH-TEMP-FILE FILE-TYPE THUNK)</code> <sup><sub>FUNCTION</sub></sup><a name="with-temp-file-value"></a>
+<code>&forall; :A :B. <a href="#file-class">FILE</a> :A &rArr; (<a href="#string-type">STRING</a> &rarr; ((<a href="#filestream-type">FILESTREAM</a> :A) &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> :B)) &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> :B))</code>
+
+Performs an operation `thunk` on a temporary file. File type extensions need to include `.`, like ".txt".
+
+
+***
+
+#### <code>(WRITE-TO-FILE! PATH DATA)</code> <sup><sub>FUNCTION</sub></sup><a name="write-to-file!-value"></a>
+<code>&forall; :A :B. (<a href="#runtimerepr-class">RUNTIMEREPR</a> :B) (<a href="#into-class">INTO</a> :A <a href="#pathname-type">PATHNAME</a>) (<a href="#file-class">FILE</a> :B) &rArr; (:A &rarr; (<a href="#vector-type">VECTOR</a> :B) &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> <a href="#unit-type">UNIT</a>))</code>
+
+Opens and writes to a file with data of type :a. Supersedes existing data on the file.
+
+
+***
+
+#### <code>(APPEND-TO-FILE! PATH DATA)</code> <sup><sub>FUNCTION</sub></sup><a name="append-to-file!-value"></a>
+<code>&forall; :A :B. (<a href="#runtimerepr-class">RUNTIMEREPR</a> :B) (<a href="#into-class">INTO</a> :A <a href="#pathname-type">PATHNAME</a>) (<a href="#file-class">FILE</a> :B) &rArr; (:A &rarr; (<a href="#vector-type">VECTOR</a> :B) &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> <a href="#unit-type">UNIT</a>))</code>
+
+Opens and appends a file with data of type :a.
+
+
+***
+
+#### <code>(DIRECTORY-FILES PATH)</code> <sup><sub>FUNCTION</sub></sup><a name="directory-files-value"></a>
+<code>&forall; :A. <a href="#into-class">INTO</a> :A <a href="#pathname-type">PATHNAME</a> &rArr; (:A &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> (<a href="#list-type">LIST</a> <a href="#pathname-type">PATHNAME</a>)))</code>
+
+Returns all files within the directory. Returns an error if the pathname is not a directory pathname.
+
+
+***
+
+#### <code>(READ-FILE-LINES PATH)</code> <sup><sub>FUNCTION</sub></sup><a name="read-file-lines-value"></a>
+<code>&forall; :A. <a href="#into-class">INTO</a> :A <a href="#pathname-type">PATHNAME</a> &rArr; (:A &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> (<a href="#list-type">LIST</a> <a href="#string-type">STRING</a>)))</code>
+
+Reads a file into lines, given a pathname or string.
+
+
+***
+
+#### <code>(CREATE-DIRECTORY! PATH)</code> <sup><sub>FUNCTION</sub></sup><a name="create-directory!-value"></a>
+<code>&forall; :A. <a href="#into-class">INTO</a> :A <a href="#pathname-type">PATHNAME</a> &rArr; (:A &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> <a href="#pathname-type">PATHNAME</a>))</code>
+
+This is equivalent to `mkdir -p`. Creates a directory and its parents. The pathname must be a valid directory pathname.
+
+
+***
+
+#### <code>(CREATE-TEMP-FILE! FILE-EXT)</code> <sup><sub>FUNCTION</sub></sup><a name="create-temp-file!-value"></a>
+<code>(<a href="#string-type">STRING</a> &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> <a href="#pathname-type">PATHNAME</a>))</code>
+
+This configures a default temporary file for use.
+
+
+***
+
+#### <code>(DIRECTORY-EXISTS? PATH)</code> <sup><sub>FUNCTION</sub></sup><a name="directory-exists?-value"></a>
+<code>&forall; :A. <a href="#into-class">INTO</a> :A <a href="#pathname-type">PATHNAME</a> &rArr; (:A &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> <a href="#boolean-type">BOOLEAN</a>))</code>
+
+Returns True if a pathname names a directory that exists.
+
+
+***
+
+#### <code>(REMOVE-DIRECTORY! PATH)</code> <sup><sub>FUNCTION</sub></sup><a name="remove-directory!-value"></a>
+<code>&forall; :A. <a href="#into-class">INTO</a> :A <a href="#pathname-type">PATHNAME</a> &rArr; (:A &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> :A))</code>
+
+Deletes an empty directory.
+
+
+***
+
+#### <code>(SET-FILE-POSITION STREAM I)</code> <sup><sub>FUNCTION</sub></sup><a name="set-file-position-value"></a>
+<code>&forall; :A. ((<a href="#filestream-type">FILESTREAM</a> :A) &rarr; <a href="#ufix-type">UFIX</a> &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> <a href="#unit-type">UNIT</a>))</code>
+
+Sets the file position of a file stream.
+
+
+***
+
+#### <code>(DIRECTORY-PATHNAME? PATH)</code> <sup><sub>FUNCTION</sub></sup><a name="directory-pathname?-value"></a>
+<code>&forall; :A. <a href="#into-class">INTO</a> :A <a href="#pathname-type">PATHNAME</a> &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Returns True if a pathname has no file component.
+
+
+***
+
+#### <code>(READ-FILE-TO-STRING PATH)</code> <sup><sub>FUNCTION</sub></sup><a name="read-file-to-string-value"></a>
+<code>&forall; :A. <a href="#into-class">INTO</a> :A <a href="#pathname-type">PATHNAME</a> &rArr; (:A &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> <a href="#string-type">STRING</a>))</code>
+
+Reads a file into a string, given a pathname string.
+
+
+***
+
+#### <code>(READ-FILE-TO-VECTOR STREAM)</code> <sup><sub>FUNCTION</sub></sup><a name="read-file-to-vector-value"></a>
+<code>&forall; :A. (<a href="#runtimerepr-class">RUNTIMEREPR</a> :A) (<a href="#file-class">FILE</a> :A) &rArr; ((<a href="#filestream-type">FILESTREAM</a> :A) &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> (<a href="#vector-type">VECTOR</a> :A)))</code>
+
+Reads a file into a vector of type `:a`.
+
+
+***
+
+#### <code>(WITH-TEMP-DIRECTORY THUNK)</code> <sup><sub>FUNCTION</sub></sup><a name="with-temp-directory-value"></a>
+<code>&forall; :A. ((<a href="#pathname-type">PATHNAME</a> &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> :A)) &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> :A))</code>
+
+Performs an operation `thunk` inside a temporary directory.
+
+
+***
+
+#### <code>(CREATE-TEMP-DIRECTORY! _)</code> <sup><sub>FUNCTION</sub></sup><a name="create-temp-directory!-value"></a>
+<code>(<a href="#unit-type">UNIT</a> &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> <a href="#pathname-type">PATHNAME</a>))</code>
+
+This configures a default temporary directory for use.
+
+
+***
+
+#### <code>(SYSTEM-RELATIVE-PATHNAME SYSTEM-NAME NAME)</code> <sup><sub>FUNCTION</sub></sup><a name="system-relative-pathname-value"></a>
+<code>&forall; :A. <a href="#into-class">INTO</a> :A <a href="#string-type">STRING</a> &rArr; (:A &rarr; <a href="#string-type">STRING</a> &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> <a href="#pathname-type">PATHNAME</a>))</code>
+
+Generates a system-relative-pathname for a given filename or path. This is a wrapper for `asdf:system-relative-pathname`. `Name` will likely be an empty string unless a subdirectory or filename is specified.
+
+
+***
+
+#### <code>(REMOVE-DIRECTORY-RECURSIVE! PATH)</code> <sup><sub>FUNCTION</sub></sup><a name="remove-directory-recursive!-value"></a>
+<code>&forall; :A. <a href="#into-class">INTO</a> :A <a href="#pathname-type">PATHNAME</a> &rArr; (:A &rarr; (<a href="#result-type">RESULT</a> <a href="#fileerror-type">FILEERROR</a> <a href="#unit-type">UNIT</a>))</code>
+
+Deletes a target directory recursively. Equivalent to `rm -r`. Errors if the path is not a directory.
+
 
 ***
 
