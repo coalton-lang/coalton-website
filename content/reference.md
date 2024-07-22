@@ -1418,6 +1418,7 @@ Methods:
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#default-class">DEFAULT</a> <a href="#hash-type">HASH</a></code>
 - <code><a href="#default-class">DEFAULT</a> <a href="#boolean-type">BOOLEAN</a></code>
 - <code><a href="#default-class">DEFAULT</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#default-class">DEFAULT</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
@@ -1930,6 +1931,7 @@ Implementation dependent hash code
 - <code><a href="#eq-class">EQ</a> <a href="#hash-type">HASH</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#hash-type">HASH</a></code>
 - <code><a href="#monoid-class">MONOID</a> <a href="#hash-type">HASH</a></code>
+- <code><a href="#default-class">DEFAULT</a> <a href="#hash-type">HASH</a></code>
 - <code><a href="#semigroup-class">SEMIGROUP</a> <a href="#hash-type">HASH</a></code>
 
 </details>
@@ -1977,6 +1979,7 @@ Note: Hash only considers the primal component in order to be consistent with Eq
 - <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#hash-class">HASH</a> (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#hash-class">HASH</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#string-type">STRING</a></code>
+- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) &rArr; <a href="#hash-class">HASH</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B)</code>
 - <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#hash-class">HASH</a> (<a href="#tree-type">TREE</a> :A)</code>
 - <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) &rArr; <a href="#hash-class">HASH</a> (<a href="#map-type">MAP</a> :A :B)</code>
 
@@ -1988,6 +1991,11 @@ Note: Hash only considers the primal component in order to be consistent with Eq
 ### Values
 
 #### <code>(COMBINE-HASHES LHS RHS)</code> <sup><sub>FUNCTION</sub></sup><a name="combine-hashes-value"></a>
+<code>(<a href="#hash-type">HASH</a> &rarr; <a href="#hash-type">HASH</a> &rarr; <a href="#hash-type">HASH</a>)</code>
+
+***
+
+#### <code>(COMBINE-HASHES-ORDER-INDEPENDENT LHS RHS)</code> <sup><sub>FUNCTION</sub></sup><a name="combine-hashes-order-independent-value"></a>
 <code>(<a href="#hash-type">HASH</a> &rarr; <a href="#hash-type">HASH</a> &rarr; <a href="#hash-type">HASH</a>)</code>
 
 ***
@@ -5001,6 +5009,7 @@ A mutable hash table.
 <details>
 <summary>Instances</summary>
 
+- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) &rArr; <a href="#hash-class">HASH</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B)</code>
 - <code>(<a href="#hash-class">HASH</a> :A) (<a href="#eq-class">EQ</a> :B) &rArr; <a href="#eq-class">EQ</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B)</code>
 - <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#default-class">DEFAULT</a> (<a href="#hashtable-type">HASHTABLE</a> :A :B)</code>
