@@ -4737,10 +4737,10 @@ Remove and return the last item of `v`.
 
 ***
 
-#### <code>(SET! INDEX ITEM V)</code> <sup><sub>FUNCTION</sub></sup><a name="set!-value"></a>
+#### <code>(SET! IDX ITEM V)</code> <sup><sub>FUNCTION</sub></sup><a name="set!-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; :A &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
-Set the `index`th element of `v` to `item`. This function left intentionally unsafe because it does not have a return value to check.
+Set the `idx`th element of `v` to `item`. This function left intentionally unsafe because it does not have a return value to check.
 
 
 ***
@@ -4857,10 +4857,10 @@ Remove and return the last item of `v` without checking if the vector is empty.
 
 ***
 
-#### <code>(INDEX-UNSAFE INDEX V)</code> <sup><sub>FUNCTION</sub></sup><a name="index-unsafe-value"></a>
+#### <code>(INDEX-UNSAFE IDX V)</code> <sup><sub>FUNCTION</sub></sup><a name="index-unsafe-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; :A)</code>
 
-Return the `index`th element of `v` without checking if the element exists.
+Return the `idx`th element of `v` without checking if the element exists.
 
 
 ***
@@ -4932,18 +4932,18 @@ Create a new vector with `n` elements equal to `x`.
 
 ### Values
 
-#### <code>(NEW START LENGTH V)</code> <sup><sub>FUNCTION</sub></sup><a name="new-value"></a>
+#### <code>(NEW START LEN V)</code> <sup><sub>FUNCTION</sub></sup><a name="new-value"></a>
 <code>&forall; :A :B. <a href="#sliceable-class">SLICEABLE</a> (:A :B) &rArr; (<a href="#ufix-type">UFIX</a> &rarr; <a href="#ufix-type">UFIX</a> &rarr; (:A :B) &rarr; (<a href="#slice-type">SLICE</a> :B))</code>
 
-Create a new slice backed by `v` starting at index `start` and continuing for `length` elements.
+Create a new slice backed by `v` starting at index `start` and continuing for `len` elements.
 
 
 ***
 
-#### <code>(SET! INDEX ITEM S)</code> <sup><sub>FUNCTION</sub></sup><a name="set!-value"></a>
+#### <code>(SET! IDX ITEM S)</code> <sup><sub>FUNCTION</sub></sup><a name="set!-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFIX</a> &rarr; :A &rarr; (<a href="#slice-type">SLICE</a> :A) &rarr; <a href="#unit-type">UNIT</a>)</code>
 
-Set the element at `index` in `s` to `item`.
+Set the element at index `idx` in `s` to `item`.
 
 
 ***
