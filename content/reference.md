@@ -2188,7 +2188,7 @@ Is either `x` or `y` true? Note that this is a *function* which means both `x` a
 #### <code>(BOOLEAN-AND X Y)</code> <sup><sub>FUNCTION</sub></sup><a name="boolean-and-value"></a>
 <code>(<a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a> &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
 
-Are both `x` and `y` true? Note that this is a *function* which means both `x` and `y` will be evaluated. Use the AND macro for short-circuiting behavior.
+Are both `x` and `y` true? Note that this is a *function* which means both `x` and `y` will be evaluated. Use the `and` macro for short-circuiting behavior.
 
 
 ***
