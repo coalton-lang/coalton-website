@@ -165,6 +165,7 @@ A ratio of integers always in reduced form.
 - <code><a href="#num-class">NUM</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> <a href="#big-float-type">BIG-FLOAT</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#dyadic-type">DYADIC</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#single-float-type">SINGLE-FLOAT</a> <a href="#fraction-type">FRACTION</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#double-float-type">DOUBLE-FLOAT</a> <a href="#fraction-type">FRACTION</a> <a href="#string-type">STRING</a></code>
@@ -174,6 +175,7 @@ A ratio of integers always in reduced form.
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type">INTEGER</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#reciprocable-class">RECIPROCABLE</a> <a href="#fraction-type">FRACTION</a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#fraction-type">FRACTION</a></code>
+- <code><a href="#remainder-class">REMAINDER</a> <a href="#fraction-type">FRACTION</a></code>
 
 </details>
 
@@ -268,11 +270,23 @@ String of characters represented by Common Lisp `string`.
 - <code><a href="#ord-class">ORD</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#string-type">STRING</a> <a href="#pathname-type">PATHNAME</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#pathname-type">PATHNAME</a> <a href="#string-type">STRING</a></code>
-- <code><a href="#into-class">INTO</a> <a href="#string-type">STRING</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>)</code>
-- <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
-- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#single-float-type">SINGLE-FLOAT</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#double-float-type">DOUBLE-FLOAT</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u64-type">U64</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i64-type">I64</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i32-type">I32</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i16-type">I16</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#ufix-type">UFIX</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#ifix-type">IFIX</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#string-type">STRING</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>)</code>
+- <code><a href="#into-class">INTO</a> <a href="#char-type">CHAR</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
 - <code><a href="#monoid-class">MONOID</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#default-class">DEFAULT</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#string-type">STRING</a> <a href="#integer-type">INTEGER</a> <a href="#string-type">STRING</a></code>
@@ -444,6 +458,7 @@ A single character represented as a `character` type.
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#char-type">CHAR</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#char-type">CHAR</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#fromiterator-class">FROMITERATOR</a> <a href="#string-type">STRING</a> <a href="#char-type">CHAR</a></code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> <a href="#string-type">STRING</a> <a href="#char-type">CHAR</a></code>
 
@@ -482,6 +497,7 @@ Non-allocating tagged non-negative integer; range is platform-dependent. Uses `(
 - <code><a href="#eq-class">EQ</a> <a href="#ufix-type">UFIX</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#ufix-type">UFIX</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#ufix-type">UFIX</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#ufix-type">UFIX</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ufix-type">UFIX</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ufix-type">UFIX</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ufix-type">UFIX</a> <a href="#ifix-type">IFIX</a></code>
@@ -533,6 +549,7 @@ Non-allocating tagged integer; range is platform-dependent. Does not error on ov
 - <code><a href="#eq-class">EQ</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#ifix-type">IFIX</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#ifix-type">IFIX</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#ifix-type">IFIX</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ifix-type">IFIX</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ifix-type">IFIX</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ufix-type">UFIX</a> <a href="#ifix-type">IFIX</a></code>
@@ -584,6 +601,7 @@ Unsigned 64-bit integer capable of storing values in `[0, 18446744073709551615]`
 - <code><a href="#eq-class">EQ</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#u64-type">U64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u64-type">U64</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ufix-type">UFIX</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u64-type">U64</a> <a href="#integer-type">INTEGER</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#u64-type">U64</a></code>
@@ -635,6 +653,7 @@ Unsigned 32-bit integer capable of storing values in `[0, 4294967295]`. Uses `(u
 - <code><a href="#eq-class">EQ</a> <a href="#u32-type">U32</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#u32-type">U32</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#u32-type">U32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#i64-type">I64</a></code>
@@ -686,6 +705,7 @@ Unsigned 16-bit integer capable of storing values in `[0, 65535]`. Uses `(unsign
 - <code><a href="#eq-class">EQ</a> <a href="#u16-type">U16</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#u16-type">U16</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#u16-type">U16</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#u32-type">U32</a></code>
@@ -734,6 +754,7 @@ Signed 64-bit integer capable of storing values in `[-9223372036854775808, 92233
 - <code><a href="#eq-class">EQ</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#i64-type">I64</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i64-type">I64</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ifix-type">IFIX</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ufix-type">UFIX</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i64-type">I64</a> <a href="#integer-type">INTEGER</a></code>
@@ -785,6 +806,7 @@ Signed 32-bit integer capable of storing values in `[-2147483648, 2147483647]`. 
 - <code><a href="#eq-class">EQ</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#i32-type">I32</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#i32-type">I32</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i32-type">I32</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i32-type">I32</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i32-type">I32</a> <a href="#i64-type">I64</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i32-type">I32</a> <a href="#ifix-type">IFIX</a></code>
@@ -836,6 +858,7 @@ Signed 16-bit integer capable of storing values in `[-32768, 32767]`. Uses `(sig
 - <code><a href="#eq-class">EQ</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#i16-type">I16</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#i16-type">I16</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i16-type">I16</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i16-type">I16</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i16-type">I16</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i16-type">I16</a> <a href="#i32-type">I32</a></code>
@@ -884,6 +907,7 @@ Unsigned 8-bit integer capable of storing values in `[0, 255]`. Uses `(unsigned-
 - <code><a href="#eq-class">EQ</a> <a href="#u8-type">U8</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#u8-type">U8</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#u8-type">U8</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#u16-type">U16</a></code>
@@ -935,6 +959,7 @@ Signed 8-bit integer capable of storing values in `[-128, 127]`. Uses `(signed-b
 - <code><a href="#eq-class">EQ</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#num-class">NUM</a> <a href="#i8-type">I8</a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#i8-type">I8</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#double-float-type">DOUBLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#single-float-type">SINGLE-FLOAT</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#i16-type">I16</a></code>
@@ -1334,11 +1359,23 @@ Methods:
 - <code><a href="#into-class">INTO</a> (<a href="#optional-type">OPTIONAL</a> :A) (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#list-type">LIST</a> :A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#char-type">CHAR</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#string-type">STRING</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>)</code>
+- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#ifix-type">IFIX</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#ufix-type">UFIX</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i8-type">I8</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type">U8</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i16-type">I16</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u16-type">U16</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i32-type">I32</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u32-type">U32</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i64-type">I64</a> <a href="#string-type">STRING</a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u64-type">U64</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#double-float-type">DOUBLE-FLOAT</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> <a href="#single-float-type">SINGLE-FLOAT</a> <a href="#string-type">STRING</a></code>
-- <code><a href="#into-class">INTO</a> <a href="#integer-type">INTEGER</a> <a href="#string-type">STRING</a></code>
-- <code><a href="#into-class">INTO</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>) <a href="#string-type">STRING</a></code>
-- <code><a href="#into-class">INTO</a> <a href="#string-type">STRING</a> (<a href="#list-type">LIST</a> <a href="#char-type">CHAR</a>)</code>
+- <code><a href="#into-class">INTO</a> <a href="#fraction-type">FRACTION</a> <a href="#string-type">STRING</a></code>
 - <code><a href="#into-class">INTO</a> (<a href="#vector-type">VECTOR</a> :A) (<a href="#slice-type">SLICE</a> :A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#slice-type">SLICE</a> :A) (<a href="#vector-type">VECTOR</a> :A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#mappair-type">MAPPAIR</a> :A :B) (<a href="#tuple-type">TUPLE</a> :A :B)</code>
@@ -1884,6 +1921,14 @@ Fold a container of monoids into a single element.
 
 ***
 
+#### <code>(DEFAULT? X)</code> <sup><sub>FUNCTION</sub></sup><a name="default?-value"></a>
+<code>&forall; :A. (<a href="#default-class">DEFAULT</a> :A) (<a href="#eq-class">EQ</a> :A) &rArr; (:A &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Is `x` the default item of its type?
+
+
+***
+
 #### <code>SEQUENCE</code> <sup><sub>[FUNCTION]</sub></sup><a name="sequence-value"></a>
 <code>&forall; :A :B :C. (<a href="#traversable-class">TRAVERSABLE</a> :A) (<a href="#applicative-class">APPLICATIVE</a> :B) &rArr; ((:A (:B :C)) &rarr; (:B (:A :C)))</code>
 
@@ -2278,6 +2323,22 @@ A function that always returns its first argument.
 
 ***
 
+#### <code>(CURRY FUNC LEFT RIGHT)</code> <sup><sub>FUNCTION</sub></sup><a name="curry-value"></a>
+<code>&forall; :A :B :C. (((<a href="#tuple-type">TUPLE</a> :A :B) &rarr; :C) &rarr; :A &rarr; :B &rarr; :C)</code>
+
+Take a function whose input is a tuple and enable curried application of the left and right parameters, equivalent to `(func (Tuple left right))`.
+
+
+***
+
+#### <code>(PRINT ITEM)</code> <sup><sub>FUNCTION</sub></sup><a name="print-value"></a>
+<code>&forall; :A. <a href="#into-class">INTO</a> :A <a href="#string-type">STRING</a> &rArr; (:A &rarr; <a href="#unit-type">UNIT</a>)</code>
+
+Print the String representation of `item` to `cl:*standard-output*`.
+
+
+***
+
 #### <code>(TRACE STR)</code> <sup><sub>FUNCTION</sub></sup><a name="trace-value"></a>
 <code>(<a href="#string-type">STRING</a> &rarr; <a href="#unit-type">UNIT</a>)</code>
 
@@ -2332,6 +2393,17 @@ Compute the disjunction of two unary Boolean functions.
 
 #### <code>(UNCURRY FUNC TPL)</code> <sup><sub>FUNCTION</sub></sup><a name="uncurry-value"></a>
 <code>&forall; :A :B :C. ((:A &rarr; :B &rarr; :C) &rarr; (<a href="#tuple-type">TUPLE</a> :A :B) &rarr; :C)</code>
+
+Take a function with two currying parameters and enable their input as a single `Tuple`.
+
+
+***
+
+#### <code>(PAIR-WITH FUNC LEFT)</code> <sup><sub>FUNCTION</sub></sup><a name="pair-with-value"></a>
+<code>&forall; :A :B. ((:A &rarr; :B) &rarr; :A &rarr; (<a href="#tuple-type">TUPLE</a> :A :B))</code>
+
+Create a `Tuple` of the form `(Tuple left (func left))`.
+
 
 ***
 
@@ -2702,6 +2774,7 @@ Methods:
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#u32-type">U32</a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#u64-type">U64</a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#ufix-type">UFIX</a></code>
+- <code><a href="#remainder-class">REMAINDER</a> <a href="#fraction-type">FRACTION</a></code>
 
 </details>
 
@@ -4416,6 +4489,14 @@ Produce a list of copies of L, each with A inserted at a possible position.
 
 ***
 
+#### <code>(SINGLETON? XS)</code> <sup><sub>FUNCTION</sub></sup><a name="singleton?-value"></a>
+<code>&forall; :A. ((<a href="#list-type">LIST</a> :A) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Is `xs` a list containing exactly one element?
+
+
+***
+
 #### <code>(INTERCALATE XS XSS)</code> <sup><sub>FUNCTION</sub></sup><a name="intercalate-value"></a>
 <code>&forall; :A. ((<a href="#list-type">LIST</a> :A) &rarr; (<a href="#list-type">LIST</a> (<a href="#list-type">LIST</a> :A)) &rarr; (<a href="#list-type">LIST</a> :A))</code>
 
@@ -4829,6 +4910,22 @@ Sort a vector in-place with predicate function `f`.
 <code>&forall; :A. <a href="#eq-class">EQ</a> :A &rArr; (:A &rarr; (<a href="#vector-type">VECTOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> <a href="#ufix-type">UFIX</a>))</code>
 
 Find the index of element `e` in `v`.
+
+
+***
+
+#### <code>(SINGLETON X)</code> <sup><sub>FUNCTION</sub></sup><a name="singleton-value"></a>
+<code>&forall; :A. (:A &rarr; (<a href="#vector-type">VECTOR</a> :A))</code>
+
+Create a new vector with a single element equal to `x`
+
+
+***
+
+#### <code>(SINGLETON? V)</code> <sup><sub>FUNCTION</sub></sup><a name="singleton?-value"></a>
+<code>&forall; :A. ((<a href="#vector-type">VECTOR</a> :A) &rarr; <a href="#boolean-type">BOOLEAN</a>)</code>
+
+Is `v` a singleton?
 
 
 ***
@@ -5479,6 +5576,14 @@ Return the most-positive element of ITER, or `None` if ITER is empty.
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#iterator-type">ITERATOR</a> :A) &rarr; (<a href="#optional-type">OPTIONAL</a> :A))</code>
 
 Return the most-negative element of ITER, or `None` if ITER is empty.
+
+
+***
+
+#### <code>(ONCE ITEM)</code> <sup><sub>FUNCTION</sub></sup><a name="once-value"></a>
+<code>&forall; :A. (:A &rarr; (<a href="#iterator-type">ITERATOR</a> :A))</code>
+
+Yield `item` once.
 
 
 ***
