@@ -6184,6 +6184,16 @@ Iterate over the values in MP, sorted by their corresponding keys in least-to-gr
 
 ***
 
+#### <code>(COLLECT COLL)</code> <sup><sub>FUNCTION</sub></sup><a name="collect-value"></a>
+<code>&forall; :A :B :C. (<a href="#ord-class">ORD</a> :B) (<a href="#foldable-class">FOLDABLE</a> :A) &rArr; ((:A (<a href="#tuple-type">TUPLE</a> :B :C)) &rarr; (<a href="#map-type">MAP</a> :B :C))</code>
+
+Construct a `Map` containing all the `(key value)` pairs in `coll`.
+
+If `coll` contains duplicate keys, later values will overwrite earlier values.
+
+
+***
+
 #### <code>(ENTRIES MP)</code> <sup><sub>FUNCTION</sub></sup><a name="entries-value"></a>
 <code>&forall; :A :B. ((<a href="#map-type">MAP</a> :A :B) &rarr; (<a href="#iterator-type">ITERATOR</a> (<a href="#tuple-type">TUPLE</a> :A :B)))</code>
 
@@ -6203,9 +6213,9 @@ Change the association of K to V in MP. If MP did not already contain a mapping 
 #### <code>(COLLECT! ITER)</code> <sup><sub>FUNCTION</sub></sup><a name="collect!-value"></a>
 <code>&forall; :A :B. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#iterator-type">ITERATOR</a> (<a href="#tuple-type">TUPLE</a> :A :B)) &rarr; (<a href="#map-type">MAP</a> :A :B))</code>
 
-Construct a Map containing all the (key value) pairs in ITER.
+Construct a `Map` containing all the `(key value)` pairs in `iter`.
 
-If ITER contains duplicate keys, later values will overwrite earlier values.
+If `iter` contains duplicate keys, later values will overwrite earlier values.
 
 
 ***
