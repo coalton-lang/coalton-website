@@ -1258,17 +1258,17 @@ RouND toward Zero.
 
 ### Classes
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/bits.lisp#L28-L34">BITS</a></code> <sup><sub>[CLASS]</sub></sup><a name="bits-class"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/bits.lisp#L28-L39">BITS</a></code> <sup><sub>[CLASS]</sub></sup><a name="bits-class"></a>
 <code><a href="#num-class">NUM</a> :A &rArr; <a href="#bits-class">BITS</a> :A</code>
 
 
 Operations on the bits of twos-complement integers
 
 Methods:
-- <code>AND :: (:A &rarr; :A &rarr; :A)</code><br/>The bitwise logical and of two integers
-- <code>OR :: (:A &rarr; :A &rarr; :A)</code><br/>The bitwise logical or of two integers
-- <code>XOR :: (:A &rarr; :A &rarr; :A)</code><br/>The bitwise logical exclusive or of two integers
-- <code>NOT :: (:A &rarr; :A)</code><br/>The bitwise logical not of two integers
+- <code>AND :: (:A &rarr; :A &rarr; :A)</code><br/>The bitwise logical `and` of two integers
+- <code>OR :: (:A &rarr; :A &rarr; :A)</code><br/>The bitwise logical `or` of two integers
+- <code>XOR :: (:A &rarr; :A &rarr; :A)</code><br/>The bitwise logical exclusive `or` of two integers
+- <code>NOT :: (:A &rarr; :A)</code><br/>The bitwise logical `not` of two integers
 - <code>SHIFT :: (<a href="#integer-type"><code>INTEGER</code></a> &rarr; :A &rarr; :A)</code><br/>The arithmetic left-shift of an integer by an integer number of bits
 <details>
 <summary>Instances</summary>
