@@ -7020,7 +7020,7 @@ Return true if the first argument appears as a substring within the second argum
 
 ### Types
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L72-L73">LISPCONDITION</a></code> <sup><sub>[TYPE]</sub></sup><a name="lispcondition-type"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L136-L137">LISPCONDITION</a></code> <sup><sub>[TYPE]</sub></sup><a name="lispcondition-type"></a>
 
 Condition for lisp error handling. Uses `cl:condition`.
 
@@ -7036,9 +7036,30 @@ Condition for lisp error handling. Uses `cl:condition`.
 
 ***
 
+### Structs
+
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L97-L107">PROFILE :A</a></code> <sup><sub>[STRUCT]</sub></sup><a name="profile-type"></a>
+- <code>OUTPUT :: :A</code><br/>The output of the function
+- <code>RUN-TIME :: COALTON:UFIX</code><br/>The run time of the run
+- <code>REAL-TIME :: COALTON:UFIX</code><br/>The real time of the run
+- <code>BYTES-CONSED :: COALTON:UFIX</code><br/>The number of bytes consed during the run.
+
+A profile of a run function.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#profile-type"><code>PROFILE</code></a> :A)</code>
+
+</details>
+
+
+
+***
+
 ### Values
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L142-L148">(ADD-FEATURE FEAT)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="add-feature-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L206-L212">(ADD-FEATURE FEAT)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="add-feature-value"></a>
 <code>(<a href="#string-type"><code>STRING</code></a> &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
 
 Adds a feature `feat` to `cl:*features*`.
@@ -7047,7 +7068,7 @@ Adds a feature `feat` to `cl:*features*`.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L106-L109">(ARCHITECTURE _)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="architecture-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L170-L173">(ARCHITECTURE _)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="architecture-value"></a>
 <code>(<a href="#unit-type"><code>UNIT</code></a> &rarr; <a href="#string-type"><code>STRING</code></a>)</code>
 
 The system's architecture (stored at compile time).
@@ -7056,7 +7077,7 @@ The system's architecture (stored at compile time).
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L161-L167">(ARGV0 _)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="argv0-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L225-L231">(ARGV0 _)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="argv0-value"></a>
 <code>(<a href="#unit-type"><code>UNIT</code></a> &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> <a href="#string-type"><code>STRING</code></a>))</code>
 
 The first command line argument (stored at compile time).
@@ -7065,7 +7086,16 @@ The first command line argument (stored at compile time).
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L155-L158">(CMD-ARGS _)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="cmd-args-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L110-L127">(CAPTURE-PROFILE F)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="capture-profile-value"></a>
+<code>&forall; :A. ((<a href="#unit-type"><code>UNIT</code></a> &rarr; :A) &rarr; (<a href="#profile-type"><code>PROFILE</code></a> :A))</code>
+
+Runs a function, recording profile information and returning a Profile object.
+
+
+
+***
+
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L219-L222">(CMD-ARGS _)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="cmd-args-value"></a>
 <code>(<a href="#unit-type"><code>UNIT</code></a> &rarr; (<a href="#list-type"><code>LIST</code></a> <a href="#string-type"><code>STRING</code></a>))</code>
 
 The current command line arguments (stored at compile time).
@@ -7074,7 +7104,7 @@ The current command line arguments (stored at compile time).
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L136-L139">(FEATURES _)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="features-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L200-L203">(FEATURES _)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="features-value"></a>
 <code>(<a href="#unit-type"><code>UNIT</code></a> &rarr; (<a href="#list-type"><code>LIST</code></a> <a href="#string-type"><code>STRING</code></a>))</code>
 
 Returns a list of active features, from `cl:*features*`.
@@ -7083,7 +7113,7 @@ Returns a list of active features, from `cl:*features*`.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L37-L41">(GC _)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="gc-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L43-L47">(GC _)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="gc-value"></a>
 <code>(<a href="#unit-type"><code>UNIT</code></a> &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
 
 Perform a full garbage collection.
@@ -7092,7 +7122,34 @@ Perform a full garbage collection.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L85-L91">(GETENV VAR)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="getenv-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L92-L95">(GET-BYTES-CONSED _)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="get-bytes-consed-value"></a>
+<code>(<a href="#unit-type"><code>UNIT</code></a> &rarr; <a href="#ufix-type"><code>UFIX</code></a>)</code>
+
+Gets the number of bytes consed (only implemented for SBCL
+
+
+
+***
+
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L84-L87">(GET-REAL-TIME _)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="get-real-time-value"></a>
+<code>(<a href="#unit-type"><code>UNIT</code></a> &rarr; <a href="#ufix-type"><code>UFIX</code></a>)</code>
+
+Gets the real-time.
+
+
+
+***
+
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L78-L81">(GET-RUN-TIME _)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="get-run-time-value"></a>
+<code>(<a href="#unit-type"><code>UNIT</code></a> &rarr; <a href="#ufix-type"><code>UFIX</code></a>)</code>
+
+Gets the run-time.
+
+
+
+***
+
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L149-L155">(GETENV VAR)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="getenv-value"></a>
 <code>(<a href="#string-type"><code>STRING</code></a> &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> <a href="#string-type"><code>STRING</code></a>))</code>
 
 Gets the value of the environmental variable `var`, errors if `var` doesn't exist.
@@ -7101,7 +7158,7 @@ Gets the value of the environmental variable `var`, errors if `var` doesn't exis
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L118-L121">(HOSTNAME _)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="hostname-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L182-L185">(HOSTNAME _)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="hostname-value"></a>
 <code>(<a href="#unit-type"><code>UNIT</code></a> &rarr; <a href="#string-type"><code>STRING</code></a>)</code>
 
 Returns the system's hostname. This is a function because the hostname can be redefined.
@@ -7110,7 +7167,7 @@ Returns the system's hostname. This is a function because the hostname can be re
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L124-L127">(IMPLEMENTATION _)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="implementation-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L188-L191">(IMPLEMENTATION _)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="implementation-value"></a>
 <code>(<a href="#unit-type"><code>UNIT</code></a> &rarr; <a href="#string-type"><code>STRING</code></a>)</code>
 
 The lisp implementation (stored at compile time).
@@ -7119,7 +7176,7 @@ The lisp implementation (stored at compile time).
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L130-L133">(LISP-VERSION _)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="lisp-version-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L194-L197">(LISP-VERSION _)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="lisp-version-value"></a>
 <code>(<a href="#unit-type"><code>UNIT</code></a> &rarr; <a href="#string-type"><code>STRING</code></a>)</code>
 
 The lisp implementation version (stored at compile time).
@@ -7128,7 +7185,7 @@ The lisp implementation version (stored at compile time).
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L112-L115">(OS _)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="os-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L176-L179">(OS _)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="os-value"></a>
 <code>(<a href="#unit-type"><code>UNIT</code></a> &rarr; <a href="#string-type"><code>STRING</code></a>)</code>
 
 The system's operating system (stored at compile time).
@@ -7137,7 +7194,7 @@ The system's operating system (stored at compile time).
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L95-L99">(SETENV! VAR VAL)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="setenv!-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L159-L163">(SETENV! VAR VAL)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="setenv!-value"></a>
 <code>(<a href="#string-type"><code>STRING</code></a> &rarr; <a href="#string-type"><code>STRING</code></a> &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
 
 Sets an environment variable `var` to string `val`, only if `var` already exists.
@@ -7146,7 +7203,7 @@ Sets an environment variable `var` to string `val`, only if `var` already exists
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L59-L63">(SLEEP N)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="sleep-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L65-L69">(SLEEP N)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="sleep-value"></a>
 <code>(<a href="#integer-type"><code>INTEGER</code></a> &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
 
 Sleep for `n` seconds.
@@ -7155,7 +7212,7 @@ Sleep for `n` seconds.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L44-L56">(TIME F)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="time-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L50-L62">(TIME F)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="time-value"></a>
 <code>&forall; :A. ((<a href="#unit-type"><code>UNIT</code></a> &rarr; :A) &rarr; (<a href="#tuple-type"><code>TUPLE</code></a> :A <a href="#integer-type"><code>INTEGER</code></a>))</code>
 
 Run the thunk `f` and return a tuple containing its value along with the run time in microseconds.
@@ -7308,6 +7365,7 @@ Methods:
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#fileerror-type"><code>FILEERROR</code></a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#pathname-type"><code>PATHNAME</code></a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#lispcondition-type"><code>LISPCONDITION</code></a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#profile-type"><code>PROFILE</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#seq-type"><code>SEQ</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> ((<a href="#free-type"><code>FREE</code></a> :A) :B)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#map-type"><code>MAP</code></a> :A :B)</code>
