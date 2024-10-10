@@ -618,6 +618,7 @@ String of characters represented by Common Lisp `string`.
 - <code><a href="#fromiterator-class">FROMITERATOR</a> <a href="#string-type"><code>STRING</code></a> <a href="#char-type"><code>CHAR</code></a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#into-class">INTO</a> (<a href="#list-type"><code>LIST</code></a> <a href="#char-type"><code>CHAR</code></a>) <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#into-class">INTO</a> :A <a href="#string-type"><code>STRING</code></a> &rArr; <a href="#into-class">INTO</a> (<a href="#cell-type"><code>CELL</code></a> :A) <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#char-type"><code>CHAR</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#double-float-type"><code>DOUBLE-FLOAT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#fraction-type"><code>FRACTION</code></a> <a href="#string-type"><code>STRING</code></a></code>
@@ -1375,6 +1376,7 @@ Internally mutable cell
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#cell-type"><code>CELL</code></a></code>
 - <code><a href="#into-class">INTO</a> (<a href="#cell-type"><code>CELL</code></a> :A) :A</code>
 - <code><a href="#into-class">INTO</a> :A (<a href="#cell-type"><code>CELL</code></a> :A)</code>
+- <code><a href="#into-class">INTO</a> :A <a href="#string-type"><code>STRING</code></a> &rArr; <a href="#into-class">INTO</a> (<a href="#cell-type"><code>CELL</code></a> :A) <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#num-class">NUM</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#cell-type"><code>CELL</code></a> :A)</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#ord-class">ORD</a> (<a href="#cell-type"><code>CELL</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#cell-type"><code>CELL</code></a> :A)</code>
@@ -2014,6 +2016,7 @@ Methods:
 - <code><a href="#into-class">INTO</a> (<a href="#optional-type"><code>OPTIONAL</code></a> :A) (<a href="#result-type"><code>RESULT</code></a> <a href="#unit-type"><code>UNIT</code></a> :A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#result-type"><code>RESULT</code></a> :A :B) (<a href="#optional-type"><code>OPTIONAL</code></a> :B)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#tuple-type"><code>TUPLE</code></a> :A :B) (<a href="#tuple-type"><code>TUPLE</code></a> :B :A)</code>
+- <code><a href="#into-class">INTO</a> :A <a href="#string-type"><code>STRING</code></a> &rArr; <a href="#into-class">INTO</a> (<a href="#cell-type"><code>CELL</code></a> :A) <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#into-class">INTO</a> (<a href="#cell-type"><code>CELL</code></a> :A) :A</code>
 - <code><a href="#into-class">INTO</a> :A (<a href="#cell-type"><code>CELL</code></a> :A)</code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#dyadic-type"><code>DYADIC</code></a></code>
