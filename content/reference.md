@@ -6799,7 +6799,7 @@ Return the number of elements in the `seq`.
 
 ### Types
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/slice.lisp#L40-L40">SLICE</a></code> <sup><sub>[TYPE]</sub></sup><a name="slice-type"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/slice.lisp#L39-L39">SLICE</a></code> <sup><sub>[TYPE]</sub></sup><a name="slice-type"></a>
 <details>
 <summary>Instances</summary>
 
@@ -6821,7 +6821,7 @@ Return the number of elements in the `seq`.
 
 ### Values
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/slice.lisp#L85-L89">(INDEX IDX S)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="index-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/slice.lisp#L84-L88">(INDEX IDX S)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="index-value"></a>
 <code>&forall; :A. (<a href="#ufix-type"><code>UFIX</code></a> &rarr; (<a href="#slice-type"><code>SLICE</code></a> :A) &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> :A))</code>
 
 Lookup the element at `index` in `s`.
@@ -6830,7 +6830,7 @@ Lookup the element at `index` in `s`.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/slice.lisp#L92-L95">(INDEX-UNSAFE IDX S)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="index-unsafe-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/slice.lisp#L91-L94">(INDEX-UNSAFE IDX S)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="index-unsafe-value"></a>
 <code>&forall; :A. (<a href="#ufix-type"><code>UFIX</code></a> &rarr; (<a href="#slice-type"><code>SLICE</code></a> :A) &rarr; :A)</code>
 
 Lookup the element at `index` in `s` without bounds checking.
@@ -6839,7 +6839,7 @@ Lookup the element at `index` in `s` without bounds checking.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/slice.lisp#L115-L140">(ITER-CHUNKED SIZE S)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="iter-chunked-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/slice.lisp#L114-L139">(ITER-CHUNKED SIZE S)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="iter-chunked-value"></a>
 <code>&forall; :A :B. <a href="#sliceable-class">SLICEABLE</a> (:A :B) &rArr; (<a href="#ufix-type"><code>UFIX</code></a> &rarr; (:A :B) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> (<a href="#slice-type"><code>SLICE</code></a> :B)))</code>
 
 Divide `s` into a series of slices of length `size`. Will return a final shorter slice if `s` does not divide evenly.
@@ -6848,7 +6848,7 @@ Divide `s` into a series of slices of length `size`. Will return a final shorter
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/slice.lisp#L143-L155">(ITER-CHUNKED-EXACT SIZE S)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="iter-chunked-exact-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/slice.lisp#L142-L154">(ITER-CHUNKED-EXACT SIZE S)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="iter-chunked-exact-value"></a>
 <code>&forall; :A :B. <a href="#sliceable-class">SLICEABLE</a> (:A :B) &rArr; (<a href="#ufix-type"><code>UFIX</code></a> &rarr; (:A :B) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> (<a href="#slice-type"><code>SLICE</code></a> :B)))</code>
 
 Divide `s` into a series of slices of length `size`. Will skip trailing elements if `s` does not divide evenly.
@@ -6857,7 +6857,7 @@ Divide `s` into a series of slices of length `size`. Will skip trailing elements
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/slice.lisp#L98-L112">(ITER-SLIDING SIZE S)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="iter-sliding-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/slice.lisp#L97-L111">(ITER-SLIDING SIZE S)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="iter-sliding-value"></a>
 <code>&forall; :A :B. <a href="#sliceable-class">SLICEABLE</a> (:A :B) &rArr; (<a href="#ufix-type"><code>UFIX</code></a> &rarr; (:A :B) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> (<a href="#slice-type"><code>SLICE</code></a> :B)))</code>
 
 Returns an iterator that yeilds a series of overlapping slices of length `size`.
@@ -6866,7 +6866,7 @@ Returns an iterator that yeilds a series of overlapping slices of length `size`.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/slice.lisp#L72-L75">(LENGTH S)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="length-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/slice.lisp#L71-L74">(LENGTH S)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="length-value"></a>
 <code>&forall; :A. ((<a href="#slice-type"><code>SLICE</code></a> :A) &rarr; <a href="#ufix-type"><code>UFIX</code></a>)</code>
 
 Returns the length of `s`.
@@ -6875,7 +6875,7 @@ Returns the length of `s`.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/slice.lisp#L52-L69">(NEW START LEN V)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="new-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/slice.lisp#L51-L68">(NEW START LEN V)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="new-value"></a>
 <code>&forall; :A :B. <a href="#sliceable-class">SLICEABLE</a> (:A :B) &rArr; (<a href="#ufix-type"><code>UFIX</code></a> &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; (:A :B) &rarr; (<a href="#slice-type"><code>SLICE</code></a> :B))</code>
 
 Create a new slice backed by `v` starting at index `start` and continuing for `len` elements.
@@ -6884,7 +6884,7 @@ Create a new slice backed by `v` starting at index `start` and continuing for `l
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/slice.lisp#L78-L82">(SET! IDX ITEM S)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="set!-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/slice.lisp#L77-L81">(SET! IDX ITEM S)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="set!-value"></a>
 <code>&forall; :A. (<a href="#ufix-type"><code>UFIX</code></a> &rarr; :A &rarr; (<a href="#slice-type"><code>SLICE</code></a> :A) &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
 
 Set the element at index `idx` in `s` to `item`.
