@@ -475,6 +475,7 @@ Unbound integer. Uses `integer`.
 - <code><a href="#complex-class">COMPLEX</a> <a href="#integer-type"><code>INTEGER</code></a></code>
 - <code><a href="#default-class">DEFAULT</a> <a href="#integer-type"><code>INTEGER</code></a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#big-float-type"><code>BIG-FLOAT</code></a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#double-float-type"><code>DOUBLE-FLOAT</code></a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#single-float-type"><code>SINGLE-FLOAT</code></a></code>
@@ -2619,6 +2620,7 @@ Unwrap `container`, returning `default` on failure.
 <summary>Instances</summary>
 
 - <code><a href="#complex-class">COMPLEX</a> <a href="#creal-type"><code>CREAL</code></a></code>
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
 - <code><a href="#elementary-class">ELEMENTARY</a> <a href="#creal-type"><code>CREAL</code></a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#creal-type"><code>CREAL</code></a></code>
 - <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#creal-type"><code>CREAL</code></a></code>
@@ -2654,7 +2656,7 @@ Unwrap `container`, returning `default` on failure.
 
 ### Values
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L286-L293">(APPROX X K)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="approx-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L292-L299">(APPROX X K)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="approx-value"></a>
 <code>(<a href="#creal-type"><code>CREAL</code></a> &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; <a href="#integer-type"><code>INTEGER</code></a>)</code>
 
 Computes an approximation of the bits of a given `Creal`. Specifically, given an object of type `Creal` `X` and a non-negative integer `K`, return an integer `A` with
@@ -2678,7 +2680,7 @@ This threshold is used to ensure `Eq` and `Ord` instances terminate. (In general
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L321-L324">(CR-PRINT X K)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="cr-print-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L327-L330">(CR-PRINT X K)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="cr-print-value"></a>
 <code>(<a href="#creal-type"><code>CREAL</code></a> &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Prints a real `R` up to `K` bits of precision.
@@ -2687,7 +2689,7 @@ Prints a real `R` up to `K` bits of precision.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L296-L301">(RATIONAL-APPROX X K)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="rational-approx-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L302-L307">(RATIONAL-APPROX X K)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="rational-approx-value"></a>
 <code>(<a href="#creal-type"><code>CREAL</code></a> &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; <a href="#fraction-type"><code>FRACTION</code></a>)</code>
 
 Produce a rational approximation of `X` called `R` such that
@@ -2698,7 +2700,7 @@ Produce a rational approximation of `X` called `R` such that
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L304-L312">(RATIONALIZE X K)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="rationalize-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L310-L318">(RATIONALIZE X K)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="rationalize-value"></a>
 <code>(<a href="#creal-type"><code>CREAL</code></a> &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; <a href="#fraction-type"><code>FRACTION</code></a>)</code>
 
 Produce a rational approximation of `X` called `R` such that
@@ -4814,6 +4816,7 @@ Methods:
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#big-float-type"><code>BIG-FLOAT</code></a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#double-float-type"><code>DOUBLE-FLOAT</code></a></code>
