@@ -5745,20 +5745,16 @@ Exponentiate BASE to a signed POWER.
 
 # Package `COALTON-LIBRARY/MATH/REAL`<a name="coalton-library/math/real-package"></a>
 
-### Types
+### Structs
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L201-L212">QUANTIZATION</a></code> <sup><sub>[TYPE]</sub></sup><a name="quantization-type"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L201-L212">QUANTIZATION :A</a></code> <sup><sub>[STRUCT]</sub></sup><a name="quantization-type"></a>
+- <code>VALUE :: :A</code><br/>A value of type `:a`.
+- <code>FLOOR :: COALTON:INTEGER</code><br/>The greatest integer less than or equal to a particular value.
+- <code>FLOOR-REM :: :A</code><br/>The remainder of the floor operation as type `:a`.
+- <code>CEILING :: COALTON:INTEGER</code><br/>The least integer greater than or equal to a particular value.
+- <code>CEILING-REM :: :A</code><br/>The remainder of the ceiling operation as type `:a`.
 
 Represents an integer quantization of `:a`.
-
-The fields are defined as follows:
-
-1. A value of type `:a`.
-2. The greatest integer less than or equal to a particular value.
-3. The remainder of this as a value of type `:a`.
-4. The least integer greater than or equal to a particular value.
-5. The remainder of this as a value of type `:a`.
-
 
 <details>
 <summary>Instances</summary>
