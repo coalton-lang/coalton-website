@@ -1260,7 +1260,7 @@ RouND toward Zero.
 
 ### Classes
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/bits.lisp#L28-L39">BITS</a></code> <sup><sub>[CLASS]</sub></sup><a name="bits-class"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/bits.lisp#L30-L41">BITS</a></code> <sup><sub>[CLASS]</sub></sup><a name="bits-class"></a>
 <code><a href="#num-class">NUM</a> :A &rArr; <a href="#bits-class">BITS</a> :A</code>
 
 
@@ -1288,6 +1288,26 @@ Methods:
 - <code><a href="#bits-class">BITS</a> <a href="#integer-type"><code>INTEGER</code></a></code>
 
 </details>
+
+
+
+***
+
+### Values
+
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/bits.lisp#L44-L47">(DPB NEWBYTE SIZE POSITION BITSTRING)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="dpb-value"></a>
+<code>&forall; :A. <a href="#bits-class">BITS</a> :A &rArr; (:A &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; :A &rarr; :A)</code>
+
+Deposits a byte `newbyte` of size `size` into a bitstring `bitstring` at a position `position`.
+
+
+
+***
+
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/bits.lisp#L50-L53">(LDB SIZE POSITION BITSTRING)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="ldb-value"></a>
+<code>&forall; :A. <a href="#bits-class">BITS</a> :A &rArr; (<a href="#ufix-type"><code>UFIX</code></a> &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; :A &rarr; :A)</code>
+
+Deposits a byte of size `size` into a bitstring at a position `position`.
 
 
 
