@@ -69,7 +69,9 @@ Type constructor for function types.
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#applicative-class">APPLICATIVE</a> (<a href="#arrow-type"><code>ARROW</code></a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> (<a href="#arrow-type"><code>ARROW</code></a> :A)</code>
+- <code><a href="#monad-class">MONAD</a> (<a href="#arrow-type"><code>ARROW</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (:A &rarr; :B)</code>
 
 </details>
@@ -1747,7 +1749,7 @@ A heterogeneous collection of items.
 
 ### Classes
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L220-L223">ALTERNATIVE</a></code> <sup><sub>[CLASS]</sub></sup><a name="alternative-class"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L226-L229">ALTERNATIVE</a></code> <sup><sub>[CLASS]</sub></sup><a name="alternative-class"></a>
 <code><a href="#applicative-class">APPLICATIVE</a> :A &rArr; <a href="#alternative-class">ALTERNATIVE</a> :A</code>
 
 
@@ -1786,6 +1788,7 @@ Methods:
 - <code><a href="#applicative-class">APPLICATIVE</a> (<a href="#result-type"><code>RESULT</code></a> :A)</code>
 - <code><a href="#applicative-class">APPLICATIVE</a> <a href="#optional-type"><code>OPTIONAL</code></a></code>
 - <code><a href="#applicative-class">APPLICATIVE</a> <a href="#cell-type"><code>CELL</code></a></code>
+- <code><a href="#applicative-class">APPLICATIVE</a> (<a href="#arrow-type"><code>ARROW</code></a> :A)</code>
 
 </details>
 
@@ -1793,7 +1796,7 @@ Methods:
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L251-L253">BIFUNCTOR</a></code> <sup><sub>[CLASS]</sub></sup><a name="bifunctor-class"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L257-L259">BIFUNCTOR</a></code> <sup><sub>[CLASS]</sub></sup><a name="bifunctor-class"></a>
 <code><a href="#bifunctor-class">BIFUNCTOR</a> :A</code>
 
 
@@ -1813,7 +1816,7 @@ Methods:
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L350-L352">DEFAULT</a></code> <sup><sub>[CLASS]</sub></sup><a name="default-class"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L361-L363">DEFAULT</a></code> <sup><sub>[CLASS]</sub></sup><a name="default-class"></a>
 <code><a href="#default-class">DEFAULT</a> :A</code>
 
 
@@ -1921,7 +1924,7 @@ Note: Eq only compares the primal component.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L225-L228">FOLDABLE</a></code> <sup><sub>[CLASS]</sub></sup><a name="foldable-class"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L231-L234">FOLDABLE</a></code> <sup><sub>[CLASS]</sub></sup><a name="foldable-class"></a>
 <code><a href="#foldable-class">FOLDABLE</a> :A</code>
 
 
@@ -1976,7 +1979,7 @@ Methods:
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L269-L271">INTO</a></code> <sup><sub>[CLASS]</sub></sup><a name="into-class"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L275-L277">INTO</a></code> <sup><sub>[CLASS]</sub></sup><a name="into-class"></a>
 <code><a href="#into-class">INTO</a> :A :B</code>
 
 
@@ -2102,7 +2105,7 @@ Methods:
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L273-L274">ISO</a></code> <sup><sub>[CLASS]</sub></sup><a name="iso-class"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L279-L280">ISO</a></code> <sup><sub>[CLASS]</sub></sup><a name="iso-class"></a>
 <code>(<a href="#into-class">INTO</a> :A :B) (<a href="#into-class">INTO</a> :B :A) &rArr; <a href="#iso-class">ISO</a> :A :B</code>
 
 
@@ -2141,6 +2144,7 @@ Methods:
 - <code><a href="#monad-class">MONAD</a> <a href="#list-type"><code>LIST</code></a></code>
 - <code><a href="#monad-class">MONAD</a> (<a href="#result-type"><code>RESULT</code></a> :A)</code>
 - <code><a href="#monad-class">MONAD</a> <a href="#optional-type"><code>OPTIONAL</code></a></code>
+- <code><a href="#monad-class">MONAD</a> (<a href="#arrow-type"><code>ARROW</code></a> :A)</code>
 
 </details>
 
@@ -2148,7 +2152,7 @@ Methods:
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L217-L218">MONADFAIL</a></code> <sup><sub>[CLASS]</sub></sup><a name="monadfail-class"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L223-L224">MONADFAIL</a></code> <sup><sub>[CLASS]</sub></sup><a name="monadfail-class"></a>
 <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monadfail-class">MONADFAIL</a> :A</code>
 
 Methods:
@@ -2332,7 +2336,7 @@ Methods:
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L245-L246">TRAVERSABLE</a></code> <sup><sub>[CLASS]</sub></sup><a name="traversable-class"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L251-L252">TRAVERSABLE</a></code> <sup><sub>[CLASS]</sub></sup><a name="traversable-class"></a>
 <code><a href="#traversable-class">TRAVERSABLE</a> :A</code>
 
 Methods:
@@ -2349,7 +2353,7 @@ Methods:
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L279-L281">TRYINTO</a></code> <sup><sub>[CLASS]</sub></sup><a name="tryinto-class"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L285-L287">TRYINTO</a></code> <sup><sub>[CLASS]</sub></sup><a name="tryinto-class"></a>
 <code><a href="#tryinto-class">TRYINTO</a> :A :B :C</code>
 
 
@@ -2451,7 +2455,7 @@ Methods:
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L289-L305">UNWRAPPABLE</a></code> <sup><sub>[CLASS]</sub></sup><a name="unwrappable-class"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L295-L311">UNWRAPPABLE</a></code> <sup><sub>[CLASS]</sub></sup><a name="unwrappable-class"></a>
 <code><a href="#unwrappable-class">UNWRAPPABLE</a> :A</code>
 
 
@@ -2520,13 +2524,16 @@ Is `x` greater than or equal to `y`?
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L214-L215">(&gt;&gt; A B)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name=">>-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L214-L216">(&gt;&gt; A B)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name=">>-value"></a>
 <code>&forall; :A :B :C. <a href="#monad-class">MONAD</a> :A &rArr; ((:A :B) &rarr; (:A :C) &rarr; (:A :C))</code>
+
+Equivalent to `(>>= a (fn (_) b))`.
+
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L339-L343">(AS-OPTIONAL CONTAINER)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="as-optional-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L350-L354">(AS-OPTIONAL CONTAINER)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="as-optional-value"></a>
 <code>&forall; :A :B. <a href="#unwrappable-class">UNWRAPPABLE</a> :A &rArr; ((:A :B) &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> :B))</code>
 
 Convert any Unwrappable container into an `Optional`, constructing Some on a successful unwrap and None on a failed unwrap.
@@ -2535,7 +2542,7 @@ Convert any Unwrappable container into an `Optional`, constructing Some on a suc
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L363-L365">(DEFAULT? X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="default?-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L374-L376">(DEFAULT? X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="default?-value"></a>
 <code>&forall; :A. (<a href="#default-class">DEFAULT</a> :A) (<a href="#eq-class">EQ</a> :A) &rArr; (:A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Is `x` the default item of its type?
@@ -2544,7 +2551,7 @@ Is `x` the default item of its type?
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L356-L360">(DEFAULTING-UNWRAP CONTAINER)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="defaulting-unwrap-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L367-L371">(DEFAULTING-UNWRAP CONTAINER)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="defaulting-unwrap-value"></a>
 <code>&forall; :A :B. (<a href="#unwrappable-class">UNWRAPPABLE</a> :A) (<a href="#default-class">DEFAULT</a> :B) &rArr; ((:A :B) &rarr; :B)</code>
 
 Unwrap an `unwrappable`, returning `(default)` of the wrapped type on failure. 
@@ -2553,7 +2560,7 @@ Unwrap an `unwrappable`, returning `(default)` of the wrapped type on failure.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L311-L315">(EXPECT REASON CONTAINER)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="expect-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L317-L321">(EXPECT REASON CONTAINER)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="expect-value"></a>
 <code>&forall; :A :B. <a href="#unwrappable-class">UNWRAPPABLE</a> :A &rArr; (<a href="#string-type"><code>STRING</code></a> &rarr; (:A :B) &rarr; :B)</code>
 
 Unwrap `container`, signaling an error with the description `reason` on failure.
@@ -2562,7 +2569,16 @@ Unwrap `container`, signaling an error with the description `reason` on failure.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L256-L258">(MAP-FST F B)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="map-fst-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L219-L221">(JOIN M)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="join-value"></a>
+<code>&forall; :A :B. <a href="#monad-class">MONAD</a> :A &rArr; ((:A (:A :B)) &rarr; (:A :B))</code>
+
+Equivalent to `(>>= m id)`.
+
+
+
+***
+
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L262-L264">(MAP-FST F B)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="map-fst-value"></a>
 <code>&forall; :A :B :C :D. <a href="#bifunctor-class">BIFUNCTOR</a> :C &rArr; ((:A &rarr; :B) &rarr; (:C :A :D) &rarr; (:C :B :D))</code>
 
 Map over the first argument of a `Bifunctor`.
@@ -2571,7 +2587,7 @@ Map over the first argument of a `Bifunctor`.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L261-L263">(MAP-SND F B)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="map-snd-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L267-L269">(MAP-SND F B)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="map-snd-value"></a>
 <code>&forall; :A :B :C :D. <a href="#bifunctor-class">BIFUNCTOR</a> :C &rArr; ((:A &rarr; :B) &rarr; (:C :D :A) &rarr; (:C :D :B))</code>
 
 Map over the second argument of a `Bifunctor`.
@@ -2589,7 +2605,7 @@ Returns the greater element of `x` and `y`.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L241-L243">(MCOMMUTE? A B)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="mcommute?-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L247-L249">(MCOMMUTE? A B)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="mcommute?-value"></a>
 <code>&forall; :A. (<a href="#eq-class">EQ</a> :A) (<a href="#semigroup-class">SEMIGROUP</a> :A) &rArr; (:A &rarr; :A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Does `a <> b` equal `b <> a`?
@@ -2598,7 +2614,7 @@ Does `a <> b` equal `b <> a`?
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L231-L233">(MCONCAT A)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="mconcat-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L237-L239">(MCONCAT A)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="mconcat-value"></a>
 <code>&forall; :A :B. (<a href="#foldable-class">FOLDABLE</a> :A) (<a href="#monoid-class">MONOID</a> :B) &rArr; ((:A :B) &rarr; :B)</code>
 
 Fold a container of monoids into a single element.
@@ -2607,7 +2623,7 @@ Fold a container of monoids into a single element.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L236-L238">(MCONCATMAP F A)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="mconcatmap-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L242-L244">(MCONCATMAP F A)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="mconcatmap-value"></a>
 <code>&forall; :A :B :C. (<a href="#foldable-class">FOLDABLE</a> :C) (<a href="#monoid-class">MONOID</a> :B) &rArr; ((:A &rarr; :B) &rarr; (:C :A) &rarr; :B)</code>
 
 Map a container to a container of monoids, and then fold that container into a single element.
@@ -2625,13 +2641,13 @@ Returns the lesser element of `x` and `y`.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L249-L249">(SEQUENCE)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="sequence-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L255-L255">(SEQUENCE)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="sequence-value"></a>
 <code>&forall; :A :B :C. (<a href="#traversable-class">TRAVERSABLE</a> :A) (<a href="#applicative-class">APPLICATIVE</a> :B) &rArr; ((:A (:B :C)) &rarr; (:B (:A :C)))</code>
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L320-L326">(UNWRAP CONTAINER)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="unwrap-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L326-L332">(UNWRAP CONTAINER)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="unwrap-value"></a>
 <code>&forall; :A :B. <a href="#unwrappable-class">UNWRAPPABLE</a> :A &rArr; ((:A :B) &rarr; :B)</code>
 
 Unwrap `container`, signaling an error on failure.
@@ -2640,7 +2656,16 @@ Unwrap `container`, signaling an error on failure.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L332-L336">(WITH-DEFAULT DEFAULT CONTAINER)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="with-default-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L335-L337">(UNWRAP-INTO X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="unwrap-into-value"></a>
+<code>&forall; :A :B :C. (<a href="#unwrappable-class">UNWRAPPABLE</a> (<a href="#result-type"><code>RESULT</code></a> :A)) (<a href="#tryinto-class">TRYINTO</a> :B :C :A) &rArr; (:B &rarr; :C)</code>
+
+Same as `tryInto` followed by `unwrap`.
+
+
+
+***
+
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L343-L347">(WITH-DEFAULT DEFAULT CONTAINER)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="with-default-value"></a>
 <code>&forall; :A :B. <a href="#unwrappable-class">UNWRAPPABLE</a> :B &rArr; (:A &rarr; (:B :A) &rarr; :A)</code>
 
 Unwrap `container`, returning `default` on failure.
@@ -3249,7 +3274,7 @@ Fold over a list using `alt`.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L184-L193">(BRACKET INIT EXIT BODY)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="bracket-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L191-L200">(BRACKET INIT EXIT BODY)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="bracket-value"></a>
 <code>&forall; :A :B :C :D. <a href="#monad-class">MONAD</a> :A &rArr; ((:A :B) &rarr; (:B &rarr; (:A :C)) &rarr; (:B &rarr; (:A :D)) &rarr; (:A :D))</code>
 
 Bracket takes an initial state, performs a body of operations, and then forces a safe exit.
