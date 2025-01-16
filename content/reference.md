@@ -1816,7 +1816,7 @@ Methods:
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L356-L358">DEFAULT</a></code> <sup><sub>[CLASS]</sub></sup><a name="default-class"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L361-L363">DEFAULT</a></code> <sup><sub>[CLASS]</sub></sup><a name="default-class"></a>
 <code><a href="#default-class">DEFAULT</a> :A</code>
 
 
@@ -2533,7 +2533,7 @@ Equivalent to `(>>= a (fn (_) b))`.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L345-L349">(AS-OPTIONAL CONTAINER)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="as-optional-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L350-L354">(AS-OPTIONAL CONTAINER)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="as-optional-value"></a>
 <code>&forall; :A :B. <a href="#unwrappable-class">UNWRAPPABLE</a> :A &rArr; ((:A :B) &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> :B))</code>
 
 Convert any Unwrappable container into an `Optional`, constructing Some on a successful unwrap and None on a failed unwrap.
@@ -2542,7 +2542,7 @@ Convert any Unwrappable container into an `Optional`, constructing Some on a suc
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L369-L371">(DEFAULT? X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="default?-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L374-L376">(DEFAULT? X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="default?-value"></a>
 <code>&forall; :A. (<a href="#default-class">DEFAULT</a> :A) (<a href="#eq-class">EQ</a> :A) &rArr; (:A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Is `x` the default item of its type?
@@ -2551,7 +2551,7 @@ Is `x` the default item of its type?
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L362-L366">(DEFAULTING-UNWRAP CONTAINER)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="defaulting-unwrap-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L367-L371">(DEFAULTING-UNWRAP CONTAINER)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="defaulting-unwrap-value"></a>
 <code>&forall; :A :B. (<a href="#unwrappable-class">UNWRAPPABLE</a> :A) (<a href="#default-class">DEFAULT</a> :B) &rArr; ((:A :B) &rarr; :B)</code>
 
 Unwrap an `unwrappable`, returning `(default)` of the wrapped type on failure. 
@@ -2656,7 +2656,16 @@ Unwrap `container`, signaling an error on failure.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L338-L342">(WITH-DEFAULT DEFAULT CONTAINER)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="with-default-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L335-L337">(UNWRAP-INTO X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="unwrap-into-value"></a>
+<code>&forall; :A :B :C. (<a href="#unwrappable-class">UNWRAPPABLE</a> (<a href="#result-type"><code>RESULT</code></a> :A)) (<a href="#tryinto-class">TRYINTO</a> :B :C :A) &rArr; (:B &rarr; :C)</code>
+
+Same as `tryInto` followed by `unwrap`.
+
+
+
+***
+
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L343-L347">(WITH-DEFAULT DEFAULT CONTAINER)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="with-default-value"></a>
 <code>&forall; :A :B. <a href="#unwrappable-class">UNWRAPPABLE</a> :B &rArr; (:A &rarr; (:B :A) &rarr; :A)</code>
 
 Unwrap `container`, returning `default` on failure.
