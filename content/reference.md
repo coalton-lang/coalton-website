@@ -4244,7 +4244,7 @@ Whether or not the arrays are specialized depends on the underlying Lisp impleme
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A)</code>
 
 </details>
 
@@ -4254,7 +4254,7 @@ Whether or not the arrays are specialized depends on the underlying Lisp impleme
 
 ### Values
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L65-L68">(AREF V I)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="aref-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L71-L74">(AREF V I)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="aref-value"></a>
 <code>&forall; :A. ((<a href="#lisparray-type"><code>LISPARRAY</code></a> :A) &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; :A)</code>
 
 Read the `i`th value of the `LispArray` `v`.
@@ -4263,7 +4263,7 @@ Read the `i`th value of the `LispArray` `v`.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L59-L62">(LENGTH V)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="length-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L65-L68">(LENGTH V)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="length-value"></a>
 <code>&forall; :A. ((<a href="#lisparray-type"><code>LISPARRAY</code></a> :A) &rarr; <a href="#ufix-type"><code>UFIX</code></a>)</code>
 
 Return the length of the `LispArray` `v`.
@@ -4272,7 +4272,7 @@ Return the length of the `LispArray` `v`.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L35-L42">(MAKE N X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="make-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L41-L48">(MAKE N X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="make-value"></a>
 <code>&forall; :A. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; (<a href="#ufix-type"><code>UFIX</code></a> &rarr; :A &rarr; (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A))</code>
 
 Make a new `LispArray` of length `n` initialized to `x`.
@@ -4283,7 +4283,7 @@ If the type of `x` represents a specialized array
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L45-L56">(MAKE-UNINITIALIZED N)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="make-uninitialized-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L51-L62">(MAKE-UNINITIALIZED N)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="make-uninitialized-value"></a>
 <code>&forall; :A. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; (<a href="#ufix-type"><code>UFIX</code></a> &rarr; (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A))</code>
 
 Make a new LispArray of length `n` that can store elements of type `:t`.
@@ -4295,7 +4295,7 @@ WARNING: The consequences are undefined if an uninitialized element is read befo
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L71-L75">(SET! V I X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="set!-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L77-L81">(SET! V I X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="set!-value"></a>
 <code>&forall; :A. ((<a href="#lisparray-type"><code>LISPARRAY</code></a> :A) &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; :A &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
 
 Set the `i`th value of the `LispArray` `v` to `x`.
@@ -5130,7 +5130,7 @@ Methods:
 
 ### Types
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L30-L32">COMPLEX</a></code> <sup><sub>[TYPE]</sub></sup><a name="complex-type"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L36-L38">COMPLEX</a></code> <sup><sub>[TYPE]</sub></sup><a name="complex-type"></a>
 - <code>(%COMPLEX :A :A )</code>
 
 Complex number that may either have a native or constructed representation.
@@ -5149,7 +5149,7 @@ Complex number that may either have a native or constructed representation.
 - <code><a href="#elementary-class">ELEMENTARY</a> :A &rArr; <a href="#polar-class">POLAR</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
 - <code><a href="#elementary-class">ELEMENTARY</a> :A &rArr; <a href="#radical-class">RADICAL</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
 - <code><a href="#elementary-class">ELEMENTARY</a> :A &rArr; <a href="#trigonometric-class">TRIGONOMETRIC</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
 
 </details>
 
@@ -5159,7 +5159,7 @@ Complex number that may either have a native or constructed representation.
 
 ### Classes
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L40-L43">COMPLEX</a></code> <sup><sub>[CLASS]</sub></sup><a name="complex-class"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L53-L56">COMPLEX</a></code> <sup><sub>[CLASS]</sub></sup><a name="complex-class"></a>
 <code><a href="#num-class">NUM</a> :A &rArr; <a href="#complex-class">COMPLEX</a> :A</code>
 
 Methods:
@@ -5195,7 +5195,7 @@ Methods:
 
 ### Values
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L50-L52">(CONJUGATE N)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="conjugate-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L63-L65">(CONJUGATE N)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="conjugate-value"></a>
 <code>&forall; :A. <a href="#complex-class">COMPLEX</a> :A &rArr; ((<a href="#complex-type"><code>COMPLEX</code></a> :A) &rarr; (<a href="#complex-type"><code>COMPLEX</code></a> :A))</code>
 
 The complex conjugate.
@@ -5204,7 +5204,7 @@ The complex conjugate.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L55-L58">(SQUARE-MAGNITUDE A)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="square-magnitude-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L68-L71">(SQUARE-MAGNITUDE A)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="square-magnitude-value"></a>
 <code>&forall; :A. <a href="#complex-class">COMPLEX</a> :A &rArr; ((<a href="#complex-type"><code>COMPLEX</code></a> :A) &rarr; :A)</code>
 
 The length of a complex number.
@@ -5213,7 +5213,7 @@ The length of a complex number.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L61-L63">II</a></code> <sup><sub>[VALUE]</sub></sup><a name="ii-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L74-L76">II</a></code> <sup><sub>[VALUE]</sub></sup><a name="ii-value"></a>
 <code>&forall; :A. <a href="#complex-class">COMPLEX</a> :A &rArr; (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
 
 The complex unit i. (The double ii represents a blackboard-bold i.)
@@ -7507,7 +7507,7 @@ Methods:
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#hashtable-type"><code>HASHTABLE</code></a> :A :B)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#slice-type"><code>SLICE</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#vector-type"><code>VECTOR</code></a> :A)</code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#iterator-type"><code>ITERATOR</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tuple5-type"><code>TUPLE5</code></a> :A :B :C :D :E)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tuple4-type"><code>TUPLE4</code></a> :A :B :C :D)</code>
@@ -7515,7 +7515,7 @@ Methods:
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#cell-type"><code>CELL</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#dual-type"><code>DUAL</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#dyadic-type"><code>DYADIC</code></a></code>
-- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#quantization-type"><code>QUANTIZATION</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#hash-type"><code>HASH</code></a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tuple-type"><code>TUPLE</code></a> :A :B)</code>
