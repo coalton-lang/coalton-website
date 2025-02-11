@@ -4254,7 +4254,7 @@ Whether or not the arrays are specialized depends on the underlying Lisp impleme
 
 ### Values
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L71-L74">(AREF V I)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="aref-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L73-L76">(AREF V I)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="aref-value"></a>
 <code>&forall; :A. ((<a href="#lisparray-type"><code>LISPARRAY</code></a> :A) &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; :A)</code>
 
 Read the `i`th value of the `LispArray` `v`.
@@ -4263,7 +4263,7 @@ Read the `i`th value of the `LispArray` `v`.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L65-L68">(LENGTH V)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="length-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L66-L69">(LENGTH V)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="length-value"></a>
 <code>&forall; :A. ((<a href="#lisparray-type"><code>LISPARRAY</code></a> :A) &rarr; <a href="#ufix-type"><code>UFIX</code></a>)</code>
 
 Return the length of the `LispArray` `v`.
@@ -4295,7 +4295,7 @@ WARNING: The consequences are undefined if an uninitialized element is read befo
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L77-L81">(SET! V I X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="set!-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L80-L84">(SET! V I X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="set!-value"></a>
 <code>&forall; :A. ((<a href="#lisparray-type"><code>LISPARRAY</code></a> :A) &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; :A &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
 
 Set the `i`th value of the `LispArray` `v` to `x`.
