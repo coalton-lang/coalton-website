@@ -1319,7 +1319,7 @@ Deposits a byte of size `size` into a bitstring at a position `position`.
 
 ### Values
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/builtin.lisp#L56-L60">(BOOLEAN-AND X Y)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="boolean-and-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/builtin.lisp#L61-L64">(BOOLEAN-AND X Y)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="boolean-and-value"></a>
 <code>(<a href="#boolean-type"><code>BOOLEAN</code></a> &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a> &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Are both `x` and `y` true? Note that this is a *function* which means both `x` and `y` will be evaluated. Use the `and` macro for short-circuiting behavior.
@@ -1328,7 +1328,7 @@ Are both `x` and `y` true? Note that this is a *function* which means both `x` a
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/builtin.lisp#L42-L46">(BOOLEAN-NOT X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="boolean-not-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/builtin.lisp#L47-L50">(BOOLEAN-NOT X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="boolean-not-value"></a>
 <code>(<a href="#boolean-type"><code>BOOLEAN</code></a> &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 The logical negation of `x`. Is `x` false?
@@ -1337,7 +1337,7 @@ The logical negation of `x`. Is `x` false?
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/builtin.lisp#L49-L53">(BOOLEAN-OR X Y)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="boolean-or-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/builtin.lisp#L54-L57">(BOOLEAN-OR X Y)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="boolean-or-value"></a>
 <code>(<a href="#boolean-type"><code>BOOLEAN</code></a> &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a> &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Is either `x` or `y` true? Note that this is a *function* which means both `x` and `y` will be evaluated. Use the `or` macro for short-circuiting behavior.
@@ -1346,7 +1346,7 @@ Is either `x` or `y` true? Note that this is a *function* which means both `x` a
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/builtin.lisp#L63-L67">(BOOLEAN-XOR X Y)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="boolean-xor-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/builtin.lisp#L68-L72">(BOOLEAN-XOR X Y)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="boolean-xor-value"></a>
 <code>(<a href="#boolean-type"><code>BOOLEAN</code></a> &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a> &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Are `x` or `y` true, but not both?
@@ -1355,7 +1355,7 @@ Are `x` or `y` true, but not both?
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/builtin.lisp#L33-L35">(NOT)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="not-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/builtin.lisp#L35-L37">(NOT X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="not-value"></a>
 <code>(<a href="#boolean-type"><code>BOOLEAN</code></a> &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Synonym for `boolean-not`.
@@ -1373,7 +1373,7 @@ A function which can be used in place of any value, throwing an error at runtime
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/builtin.lisp#L37-L39">(XOR)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="xor-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/builtin.lisp#L41-L43">(XOR X Y)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="xor-value"></a>
 <code>(<a href="#boolean-type"><code>BOOLEAN</code></a> &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a> &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Synonym for `boolean-xor`.
