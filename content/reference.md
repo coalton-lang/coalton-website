@@ -4944,7 +4944,7 @@ Methods:
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L91-L96">TRANSFINITE</a></code> <sup><sub>[CLASS]</sub></sup><a name="transfinite-class"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L92-L97">TRANSFINITE</a></code> <sup><sub>[CLASS]</sub></sup><a name="transfinite-class"></a>
 <code><a href="#transfinite-class">TRANSFINITE</a> :A</code>
 
 
@@ -4970,7 +4970,7 @@ Methods:
 
 ### Values
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L166-L168">(1+ NUM)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="1+-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L176-L178">(1+ NUM)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="1+-value"></a>
 <code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; (:A &rarr; :A)</code>
 
 Increment `num`.
@@ -4979,7 +4979,7 @@ Increment `num`.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L171-L173">(1- NUM)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="1--value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L182-L184">(1- NUM)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="1--value"></a>
 <code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; (:A &rarr; :A)</code>
 
 Decrement `num`.
@@ -4988,7 +4988,7 @@ Decrement `num`.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L147-L151">(ABS X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="abs-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L154-L158">(ABS X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="abs-value"></a>
 <code>&forall; :A. (<a href="#ord-class">ORD</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; (:A &rarr; :A)</code>
 
 Absolute value of `x`.
@@ -4997,7 +4997,7 @@ Absolute value of `x`.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L161-L163">(ASH X N)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="ash-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L170-L172">(ASH X N)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="ash-value"></a>
 <code>(<a href="#integer-type"><code>INTEGER</code></a> &rarr; <a href="#integer-type"><code>INTEGER</code></a> &rarr; <a href="#integer-type"><code>INTEGER</code></a>)</code>
 
 Compute the "arithmetic shift" of `x` by `n`. 
@@ -5006,7 +5006,7 @@ Compute the "arithmetic shift" of `x` by `n`.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L99-L101">(FINITE? X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="finite?-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L100-L102">(FINITE? X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="finite?-value"></a>
 <code>&forall; :A. <a href="#transfinite-class">TRANSFINITE</a> :A &rArr; (:A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Neither infinite or NaN.
@@ -5015,7 +5015,7 @@ Neither infinite or NaN.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L142-L144">(NEGATE X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="negate-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L148-L150">(NEGATE X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="negate-value"></a>
 <code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; (:A &rarr; :A)</code>
 
 The negation, or additive inverse, of `x`.
@@ -5024,7 +5024,7 @@ The negation, or additive inverse, of `x`.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L181-L183">(NEGATIVE? X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="negative?-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L194-L196">(NEGATIVE? X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="negative?-value"></a>
 <code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Is `x` negative?
@@ -5033,7 +5033,7 @@ Is `x` negative?
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L191-L193">(NONNEGATIVE? X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="nonnegative?-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L206-L208">(NONNEGATIVE? X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="nonnegative?-value"></a>
 <code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Is `x` not negative?
@@ -5042,7 +5042,7 @@ Is `x` not negative?
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L186-L188">(NONPOSITIVE? X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="nonpositive?-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L200-L202">(NONPOSITIVE? X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="nonpositive?-value"></a>
 <code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Is `x` not positive?
@@ -5051,7 +5051,7 @@ Is `x` not positive?
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L201-L203">(NONZERO? X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="nonzero?-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L218-L220">(NONZERO? X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="nonzero?-value"></a>
 <code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; (:A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Is `x` not zero?
@@ -5060,7 +5060,7 @@ Is `x` not zero?
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L176-L178">(POSITIVE? X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="positive?-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L188-L190">(POSITIVE? X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="positive?-value"></a>
 <code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Is `x` positive?
@@ -5069,7 +5069,7 @@ Is `x` positive?
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L154-L158">(SIGN X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="sign-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L162-L166">(SIGN X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="sign-value"></a>
 <code>&forall; :A :B. (<a href="#ord-class">ORD</a> :A) (<a href="#num-class">NUM</a> :A) (<a href="#num-class">NUM</a> :B) &rArr; (:A &rarr; :B)</code>
 
 The sign of `x`, where `(sign 0) = 1`.
@@ -5078,7 +5078,7 @@ The sign of `x`, where `(sign 0) = 1`.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L196-L198">(ZERO? X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="zero?-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L212-L214">(ZERO? X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="zero?-value"></a>
 <code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; (:A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Is `x` zero?
@@ -5087,7 +5087,7 @@ Is `x` zero?
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L104-L105">NEGATIVE-INFINITY</a></code> <sup><sub>[VALUE]</sub></sup><a name="negative-infinity-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L105-L106">NEGATIVE-INFINITY</a></code> <sup><sub>[VALUE]</sub></sup><a name="negative-infinity-value"></a>
 <code>&forall; :A. (<a href="#transfinite-class">TRANSFINITE</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; :A</code>
 
 
@@ -5195,7 +5195,7 @@ Methods:
 
 ### Values
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L63-L65">(CONJUGATE N)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="conjugate-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L65-L67">(CONJUGATE N)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="conjugate-value"></a>
 <code>&forall; :A. <a href="#complex-class">COMPLEX</a> :A &rArr; ((<a href="#complex-type"><code>COMPLEX</code></a> :A) &rarr; (<a href="#complex-type"><code>COMPLEX</code></a> :A))</code>
 
 The complex conjugate.
@@ -5204,7 +5204,7 @@ The complex conjugate.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L68-L71">(SQUARE-MAGNITUDE A)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="square-magnitude-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L71-L74">(SQUARE-MAGNITUDE A)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="square-magnitude-value"></a>
 <code>&forall; :A. <a href="#complex-class">COMPLEX</a> :A &rArr; ((<a href="#complex-type"><code>COMPLEX</code></a> :A) &rarr; :A)</code>
 
 The length of a complex number.
@@ -5213,7 +5213,7 @@ The length of a complex number.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L74-L76">II</a></code> <sup><sub>[VALUE]</sub></sup><a name="ii-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L77-L79">II</a></code> <sup><sub>[VALUE]</sub></sup><a name="ii-value"></a>
 <code>&forall; :A. <a href="#complex-class">COMPLEX</a> :A &rArr; (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
 
 The complex unit i. (The double ii represents a blackboard-bold i.)
