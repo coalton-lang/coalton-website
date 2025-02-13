@@ -175,7 +175,6 @@ A ratio of integers always in reduced form.
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#complex-class">COMPLEX</a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#dyadic-type"><code>DYADIC</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
@@ -209,7 +208,6 @@ Signed 16-bit integer capable of storing values in `[-32768, 32767]`. Uses `(sig
 - <code><a href="#%filebyte-class">%FILEBYTE</a> <a href="#i16-type"><code>I16</code></a></code>
 - <code><a href="#bits-class">BITS</a> <a href="#i16-type"><code>I16</code></a></code>
 - <code><a href="#bounded-class">BOUNDED</a> <a href="#i16-type"><code>I16</code></a></code>
-- <code><a href="#complex-class">COMPLEX</a> <a href="#i16-type"><code>I16</code></a></code>
 - <code><a href="#default-class">DEFAULT</a> <a href="#i16-type"><code>I16</code></a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#i16-type"><code>I16</code></a></code>
 - <code><a href="#file-class">FILE</a> <a href="#i16-type"><code>I16</code></a></code>
@@ -260,7 +258,6 @@ Signed 32-bit integer capable of storing values in `[-2147483648, 2147483647]`. 
 - <code><a href="#%filebyte-class">%FILEBYTE</a> <a href="#i32-type"><code>I32</code></a></code>
 - <code><a href="#bits-class">BITS</a> <a href="#i32-type"><code>I32</code></a></code>
 - <code><a href="#bounded-class">BOUNDED</a> <a href="#i32-type"><code>I32</code></a></code>
-- <code><a href="#complex-class">COMPLEX</a> <a href="#i32-type"><code>I32</code></a></code>
 - <code><a href="#default-class">DEFAULT</a> <a href="#i32-type"><code>I32</code></a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#i32-type"><code>I32</code></a></code>
 - <code><a href="#file-class">FILE</a> <a href="#i32-type"><code>I32</code></a></code>
@@ -314,7 +311,6 @@ Signed 64-bit integer capable of storing values in `[-9223372036854775808, 92233
 - <code><a href="#%filebyte-class">%FILEBYTE</a> <a href="#i64-type"><code>I64</code></a></code>
 - <code><a href="#bits-class">BITS</a> <a href="#i64-type"><code>I64</code></a></code>
 - <code><a href="#bounded-class">BOUNDED</a> <a href="#i64-type"><code>I64</code></a></code>
-- <code><a href="#complex-class">COMPLEX</a> <a href="#i64-type"><code>I64</code></a></code>
 - <code><a href="#default-class">DEFAULT</a> <a href="#i64-type"><code>I64</code></a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#i64-type"><code>I64</code></a></code>
 - <code><a href="#file-class">FILE</a> <a href="#i64-type"><code>I64</code></a></code>
@@ -368,7 +364,6 @@ Signed 8-bit integer capable of storing values in `[-128, 127]`. Uses `(signed-b
 - <code><a href="#%filebyte-class">%FILEBYTE</a> <a href="#i8-type"><code>I8</code></a></code>
 - <code><a href="#bits-class">BITS</a> <a href="#i8-type"><code>I8</code></a></code>
 - <code><a href="#bounded-class">BOUNDED</a> <a href="#i8-type"><code>I8</code></a></code>
-- <code><a href="#complex-class">COMPLEX</a> <a href="#i8-type"><code>I8</code></a></code>
 - <code><a href="#default-class">DEFAULT</a> <a href="#i8-type"><code>I8</code></a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#i8-type"><code>I8</code></a></code>
 - <code><a href="#file-class">FILE</a> <a href="#i8-type"><code>I8</code></a></code>
@@ -422,7 +417,6 @@ Non-allocating tagged integer; range is platform-dependent. Does not error on ov
 - <code><a href="#%filebyte-class">%FILEBYTE</a> <a href="#ifix-type"><code>IFIX</code></a></code>
 - <code><a href="#bits-class">BITS</a> <a href="#ifix-type"><code>IFIX</code></a></code>
 - <code><a href="#bounded-class">BOUNDED</a> <a href="#ifix-type"><code>IFIX</code></a></code>
-- <code><a href="#complex-class">COMPLEX</a> <a href="#ifix-type"><code>IFIX</code></a></code>
 - <code><a href="#default-class">DEFAULT</a> <a href="#ifix-type"><code>IFIX</code></a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#ifix-type"><code>IFIX</code></a></code>
 - <code><a href="#file-class">FILE</a> <a href="#ifix-type"><code>IFIX</code></a></code>
@@ -474,7 +468,6 @@ Unbound integer. Uses `integer`.
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#integer-type"><code>INTEGER</code></a></code>
-- <code><a href="#complex-class">COMPLEX</a> <a href="#integer-type"><code>INTEGER</code></a></code>
 - <code><a href="#default-class">DEFAULT</a> <a href="#integer-type"><code>INTEGER</code></a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#big-float-type"><code>BIG-FLOAT</code></a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
@@ -748,7 +741,6 @@ Unsigned 16-bit integer capable of storing values in `[0, 65535]`. Uses `(unsign
 - <code><a href="#%filebyte-class">%FILEBYTE</a> <a href="#u16-type"><code>U16</code></a></code>
 - <code><a href="#bits-class">BITS</a> <a href="#u16-type"><code>U16</code></a></code>
 - <code><a href="#bounded-class">BOUNDED</a> <a href="#u16-type"><code>U16</code></a></code>
-- <code><a href="#complex-class">COMPLEX</a> <a href="#u16-type"><code>U16</code></a></code>
 - <code><a href="#default-class">DEFAULT</a> <a href="#u16-type"><code>U16</code></a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#u16-type"><code>U16</code></a></code>
 - <code><a href="#file-class">FILE</a> <a href="#u16-type"><code>U16</code></a></code>
@@ -799,7 +791,6 @@ Unsigned 32-bit integer capable of storing values in `[0, 4294967295]`. Uses `(u
 - <code><a href="#%filebyte-class">%FILEBYTE</a> <a href="#u32-type"><code>U32</code></a></code>
 - <code><a href="#bits-class">BITS</a> <a href="#u32-type"><code>U32</code></a></code>
 - <code><a href="#bounded-class">BOUNDED</a> <a href="#u32-type"><code>U32</code></a></code>
-- <code><a href="#complex-class">COMPLEX</a> <a href="#u32-type"><code>U32</code></a></code>
 - <code><a href="#default-class">DEFAULT</a> <a href="#u32-type"><code>U32</code></a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#u32-type"><code>U32</code></a></code>
 - <code><a href="#file-class">FILE</a> <a href="#u32-type"><code>U32</code></a></code>
@@ -853,7 +844,6 @@ Unsigned 64-bit integer capable of storing values in `[0, 18446744073709551615]`
 - <code><a href="#%filebyte-class">%FILEBYTE</a> <a href="#u64-type"><code>U64</code></a></code>
 - <code><a href="#bits-class">BITS</a> <a href="#u64-type"><code>U64</code></a></code>
 - <code><a href="#bounded-class">BOUNDED</a> <a href="#u64-type"><code>U64</code></a></code>
-- <code><a href="#complex-class">COMPLEX</a> <a href="#u64-type"><code>U64</code></a></code>
 - <code><a href="#default-class">DEFAULT</a> <a href="#u64-type"><code>U64</code></a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#u64-type"><code>U64</code></a></code>
 - <code><a href="#file-class">FILE</a> <a href="#u64-type"><code>U64</code></a></code>
@@ -907,7 +897,6 @@ Unsigned 8-bit integer capable of storing values in `[0, 255]`. Uses `(unsigned-
 - <code><a href="#%filebyte-class">%FILEBYTE</a> <a href="#u8-type"><code>U8</code></a></code>
 - <code><a href="#bits-class">BITS</a> <a href="#u8-type"><code>U8</code></a></code>
 - <code><a href="#bounded-class">BOUNDED</a> <a href="#u8-type"><code>U8</code></a></code>
-- <code><a href="#complex-class">COMPLEX</a> <a href="#u8-type"><code>U8</code></a></code>
 - <code><a href="#default-class">DEFAULT</a> <a href="#u8-type"><code>U8</code></a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#u8-type"><code>U8</code></a></code>
 - <code><a href="#file-class">FILE</a> <a href="#u8-type"><code>U8</code></a></code>
@@ -961,7 +950,6 @@ Non-allocating tagged non-negative integer; range is platform-dependent. Uses `(
 - <code><a href="#%filebyte-class">%FILEBYTE</a> <a href="#ufix-type"><code>UFIX</code></a></code>
 - <code><a href="#bits-class">BITS</a> <a href="#ufix-type"><code>UFIX</code></a></code>
 - <code><a href="#bounded-class">BOUNDED</a> <a href="#ufix-type"><code>UFIX</code></a></code>
-- <code><a href="#complex-class">COMPLEX</a> <a href="#ufix-type"><code>UFIX</code></a></code>
 - <code><a href="#default-class">DEFAULT</a> <a href="#ufix-type"><code>UFIX</code></a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#ufix-type"><code>UFIX</code></a></code>
 - <code><a href="#file-class">FILE</a> <a href="#ufix-type"><code>UFIX</code></a></code>
@@ -4233,7 +4221,7 @@ Yields nothing; stops immediately
 
 ### Types
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L27-L32">LISPARRAY</a></code> <sup><sub>[TYPE]</sub></sup><a name="lisparray-type"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L28-L33">LISPARRAY</a></code> <sup><sub>[TYPE]</sub></sup><a name="lisparray-type"></a>
 
 A one-dimensional, non-resizable array of elements.
 
@@ -4254,7 +4242,7 @@ Whether or not the arrays are specialized depends on the underlying Lisp impleme
 
 ### Values
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L73-L76">(AREF V I)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="aref-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L74-L77">(AREF V I)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="aref-value"></a>
 <code>&forall; :A. ((<a href="#lisparray-type"><code>LISPARRAY</code></a> :A) &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; :A)</code>
 
 Read the `i`th value of the `LispArray` `v`.
@@ -4263,7 +4251,7 @@ Read the `i`th value of the `LispArray` `v`.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L66-L69">(LENGTH V)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="length-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L67-L70">(LENGTH V)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="length-value"></a>
 <code>&forall; :A. ((<a href="#lisparray-type"><code>LISPARRAY</code></a> :A) &rarr; <a href="#ufix-type"><code>UFIX</code></a>)</code>
 
 Return the length of the `LispArray` `v`.
@@ -4272,7 +4260,7 @@ Return the length of the `LispArray` `v`.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L41-L48">(MAKE N X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="make-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L42-L49">(MAKE N X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="make-value"></a>
 <code>&forall; :A. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; (<a href="#ufix-type"><code>UFIX</code></a> &rarr; :A &rarr; (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A))</code>
 
 Make a new `LispArray` of length `n` initialized to `x`.
@@ -4283,7 +4271,7 @@ If the type of `x` represents a specialized array
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L51-L62">(MAKE-UNINITIALIZED N)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="make-uninitialized-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L52-L63">(MAKE-UNINITIALIZED N)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="make-uninitialized-value"></a>
 <code>&forall; :A. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; (<a href="#ufix-type"><code>UFIX</code></a> &rarr; (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A))</code>
 
 Make a new LispArray of length `n` that can store elements of type `:t`.
@@ -4295,7 +4283,7 @@ WARNING: The consequences are undefined if an uninitialized element is read befo
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L80-L84">(SET! V I X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="set!-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L81-L85">(SET! V I X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="set!-value"></a>
 <code>&forall; :A. ((<a href="#lisparray-type"><code>LISPARRAY</code></a> :A) &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; :A &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
 
 Set the `i`th value of the `LispArray` `v` to `x`.
@@ -5171,20 +5159,8 @@ Methods:
 
 - <code><a href="#complex-class">COMPLEX</a> <a href="#creal-type"><code>CREAL</code></a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#big-float-type"><code>BIG-FLOAT</code></a></code>
-- <code><a href="#complex-class">COMPLEX</a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#double-float-type"><code>DOUBLE-FLOAT</code></a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#single-float-type"><code>SINGLE-FLOAT</code></a></code>
-- <code><a href="#complex-class">COMPLEX</a> <a href="#integer-type"><code>INTEGER</code></a></code>
-- <code><a href="#complex-class">COMPLEX</a> <a href="#ifix-type"><code>IFIX</code></a></code>
-- <code><a href="#complex-class">COMPLEX</a> <a href="#i64-type"><code>I64</code></a></code>
-- <code><a href="#complex-class">COMPLEX</a> <a href="#i32-type"><code>I32</code></a></code>
-- <code><a href="#complex-class">COMPLEX</a> <a href="#i16-type"><code>I16</code></a></code>
-- <code><a href="#complex-class">COMPLEX</a> <a href="#i8-type"><code>I8</code></a></code>
-- <code><a href="#complex-class">COMPLEX</a> <a href="#ufix-type"><code>UFIX</code></a></code>
-- <code><a href="#complex-class">COMPLEX</a> <a href="#u64-type"><code>U64</code></a></code>
-- <code><a href="#complex-class">COMPLEX</a> <a href="#u32-type"><code>U32</code></a></code>
-- <code><a href="#complex-class">COMPLEX</a> <a href="#u16-type"><code>U16</code></a></code>
-- <code><a href="#complex-class">COMPLEX</a> <a href="#u8-type"><code>U8</code></a></code>
 - <code><a href="#complex-class">COMPLEX</a> :A &rArr; <a href="#complex-class">COMPLEX</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
 
 </details>
