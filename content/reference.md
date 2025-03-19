@@ -199,7 +199,7 @@ A ratio of integers always in reduced form.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L59-L60">I16</a></code> <sup><sub>[TYPE]</sub></sup><a name="i16-type"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L64-L65">I16</a></code> <sup><sub>[TYPE]</sub></sup><a name="i16-type"></a>
 
 Signed 16-bit integer capable of storing values in `[-32768, 32767]`. Uses `(signed-byte 16)`.
 
@@ -249,7 +249,7 @@ Signed 16-bit integer capable of storing values in `[-32768, 32767]`. Uses `(sig
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L63-L64">I32</a></code> <sup><sub>[TYPE]</sub></sup><a name="i32-type"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L68-L69">I32</a></code> <sup><sub>[TYPE]</sub></sup><a name="i32-type"></a>
 
 Signed 32-bit integer capable of storing values in `[-2147483648, 2147483647]`. Uses `(signed-byte 32)`.
 
@@ -302,7 +302,7 @@ Signed 32-bit integer capable of storing values in `[-2147483648, 2147483647]`. 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L67-L68">I64</a></code> <sup><sub>[TYPE]</sub></sup><a name="i64-type"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L72-L73">I64</a></code> <sup><sub>[TYPE]</sub></sup><a name="i64-type"></a>
 
 Signed 64-bit integer capable of storing values in `[-9223372036854775808, 9223372036854775807]`. Uses `(signed-byte 64)`.
 
@@ -355,7 +355,7 @@ Signed 64-bit integer capable of storing values in `[-9223372036854775808, 92233
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L55-L56">I8</a></code> <sup><sub>[TYPE]</sub></sup><a name="i8-type"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L60-L61">I8</a></code> <sup><sub>[TYPE]</sub></sup><a name="i8-type"></a>
 
 Signed 8-bit integer capable of storing values in `[-128, 127]`. Uses `(signed-byte 8)`.
 
@@ -408,7 +408,7 @@ Signed 8-bit integer capable of storing values in `[-128, 127]`. Uses `(signed-b
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L71-L72">IFIX</a></code> <sup><sub>[TYPE]</sub></sup><a name="ifix-type"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L76-L77">IFIX</a></code> <sup><sub>[TYPE]</sub></sup><a name="ifix-type"></a>
 
 Non-allocating tagged integer; range is platform-dependent. Does not error on overflow. Uses `fixnum`.
 
@@ -732,7 +732,7 @@ String of characters represented by Common Lisp `string`.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L43-L44">U16</a></code> <sup><sub>[TYPE]</sub></sup><a name="u16-type"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L48-L49">U16</a></code> <sup><sub>[TYPE]</sub></sup><a name="u16-type"></a>
 
 Unsigned 16-bit integer capable of storing values in `[0, 65535]`. Uses `(unsigned-byte 16)`.
 
@@ -782,7 +782,7 @@ Unsigned 16-bit integer capable of storing values in `[0, 65535]`. Uses `(unsign
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L47-L48">U32</a></code> <sup><sub>[TYPE]</sub></sup><a name="u32-type"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L52-L53">U32</a></code> <sup><sub>[TYPE]</sub></sup><a name="u32-type"></a>
 
 Unsigned 32-bit integer capable of storing values in `[0, 4294967295]`. Uses `(unsigned-byte 32)`.
 
@@ -835,7 +835,7 @@ Unsigned 32-bit integer capable of storing values in `[0, 4294967295]`. Uses `(u
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L51-L52">U64</a></code> <sup><sub>[TYPE]</sub></sup><a name="u64-type"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L56-L57">U64</a></code> <sup><sub>[TYPE]</sub></sup><a name="u64-type"></a>
 
 Unsigned 64-bit integer capable of storing values in `[0, 18446744073709551615]`. Uses `(unsigned-byte 64)`.
 
@@ -888,7 +888,7 @@ Unsigned 64-bit integer capable of storing values in `[0, 18446744073709551615]`
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L39-L40">U8</a></code> <sup><sub>[TYPE]</sub></sup><a name="u8-type"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L44-L45">U8</a></code> <sup><sub>[TYPE]</sub></sup><a name="u8-type"></a>
 
 Unsigned 8-bit integer capable of storing values in `[0, 255]`. Uses `(unsigned-byte 8)`.
 
@@ -941,7 +941,7 @@ Unsigned 8-bit integer capable of storing values in `[0, 255]`. Uses `(unsigned-
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L75-L76">UFIX</a></code> <sup><sub>[TYPE]</sub></sup><a name="ufix-type"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L80-L81">UFIX</a></code> <sup><sub>[TYPE]</sub></sup><a name="ufix-type"></a>
 
 Non-allocating tagged non-negative integer; range is platform-dependent. Uses `(and fixnum unsigned-byte)`.
 
@@ -1007,7 +1007,7 @@ Non-allocating tagged non-negative integer; range is platform-dependent. Uses `(
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L14-L14">VOID</a></code> <sup><sub>[TYPE]</sub></sup><a name="void-type"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L18-L18">VOID</a></code> <sup><sub>[TYPE]</sub></sup><a name="void-type"></a>
 <details>
 <summary>Instances</summary>
 
@@ -1021,31 +1021,31 @@ Non-allocating tagged non-negative integer; range is platform-dependent. Uses `(
 
 ### Values
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L29-L31">(CONS X XS)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="cons-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L34-L36">(CONS X XS)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="cons-value"></a>
 <code>&forall; :A. (:A &rarr; (<a href="#list-type"><code>LIST</code></a> :A) &rarr; (<a href="#list-type"><code>LIST</code></a> :A))</code>
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L21-L21">FALSE</a></code> <sup><sub>[VALUE]</sub></sup><a name="false-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L25-L25">FALSE</a></code> <sup><sub>[VALUE]</sub></sup><a name="false-value"></a>
 <code><a href="#boolean-type"><code>BOOLEAN</code></a></code>
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L34-L36">NIL</a></code> <sup><sub>[VALUE]</sub></sup><a name="nil-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L39-L41">NIL</a></code> <sup><sub>[VALUE]</sub></sup><a name="nil-value"></a>
 <code>&forall; :A. (<a href="#list-type"><code>LIST</code></a> :A)</code>
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L18-L18">TRUE</a></code> <sup><sub>[VALUE]</sub></sup><a name="true-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L22-L22">TRUE</a></code> <sup><sub>[VALUE]</sub></sup><a name="true-value"></a>
 <code><a href="#boolean-type"><code>BOOLEAN</code></a></code>
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L25-L25">UNIT</a></code> <sup><sub>[VALUE]</sub></sup><a name="unit-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L29-L29">UNIT</a></code> <sup><sub>[VALUE]</sub></sup><a name="unit-value"></a>
 <code><a href="#unit-type"><code>UNIT</code></a></code>
 
 
