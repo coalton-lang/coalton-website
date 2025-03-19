@@ -534,6 +534,7 @@ Homogeneous list of objects represented as a Common Lisp `list`.
 - <code><a href="#fromiterator-class">FROMITERATOR</a> (<a href="#list-type"><code>LIST</code></a> :A) :A</code>
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#list-type"><code>LIST</code></a></code>
 - <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#hash-class">HASH</a> (<a href="#list-type"><code>LIST</code></a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A) (<a href="#list-type"><code>LIST</code></a> :A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#list-type"><code>LIST</code></a> :A) (<a href="#vector-type"><code>VECTOR</code></a> :A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#list-type"><code>LIST</code></a> <a href="#char-type"><code>CHAR</code></a>) <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#into-class">INTO</a> (<a href="#optional-type"><code>OPTIONAL</code></a> :A) (<a href="#list-type"><code>LIST</code></a> :A)</code>
@@ -547,6 +548,8 @@ Homogeneous list of objects represented as a Common Lisp `list`.
 - <code><a href="#monoid-class">MONOID</a> (<a href="#list-type"><code>LIST</code></a> :A)</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#ord-class">ORD</a> (<a href="#list-type"><code>LIST</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#list-type"><code>LIST</code></a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#list-type"><code>LIST</code></a> :A) (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#iso-class">ISO</a> (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A) (<a href="#list-type"><code>LIST</code></a> :A)</code>
 - <code><a href="#semigroup-class">SEMIGROUP</a> (<a href="#list-type"><code>LIST</code></a> :A)</code>
 - <code><a href="#traversable-class">TRAVERSABLE</a> <a href="#list-type"><code>LIST</code></a></code>
 
@@ -1953,6 +1956,7 @@ Methods:
 - <code><a href="#foldable-class">FOLDABLE</a> <a href="#slice-type"><code>SLICE</code></a></code>
 - <code><a href="#foldable-class">FOLDABLE</a> <a href="#vector-type"><code>VECTOR</code></a></code>
 - <code><a href="#foldable-class">FOLDABLE</a> <a href="#list-type"><code>LIST</code></a></code>
+- <code><a href="#foldable-class">FOLDABLE</a> <a href="#lisparray-type"><code>LISPARRAY</code></a></code>
 
 </details>
 
@@ -2096,6 +2100,8 @@ Methods:
 - <code><a href="#into-class">INTO</a> (<a href="#vector-type"><code>VECTOR</code></a> :A) (<a href="#list-type"><code>LIST</code></a> :A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#list-type"><code>LIST</code></a> :A) (<a href="#vector-type"><code>VECTOR</code></a> :A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#optional-type"><code>OPTIONAL</code></a> :A) (<a href="#list-type"><code>LIST</code></a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A) (<a href="#list-type"><code>LIST</code></a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#list-type"><code>LIST</code></a> :A) (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#optional-type"><code>OPTIONAL</code></a> :A) (<a href="#result-type"><code>RESULT</code></a> <a href="#unit-type"><code>UNIT</code></a> :A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#result-type"><code>RESULT</code></a> :A :B) (<a href="#optional-type"><code>OPTIONAL</code></a> :B)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#tuple-type"><code>TUPLE</code></a> :A :B) (<a href="#tuple-type"><code>TUPLE</code></a> :B :A)</code>
@@ -2179,6 +2185,7 @@ Methods:
 - <code><a href="#iso-class">ISO</a> (<a href="#slice-type"><code>SLICE</code></a> :A) (<a href="#vector-type"><code>VECTOR</code></a> :A)</code>
 - <code><a href="#iso-class">ISO</a> (<a href="#list-type"><code>LIST</code></a> <a href="#char-type"><code>CHAR</code></a>) <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#iso-class">ISO</a> (<a href="#vector-type"><code>VECTOR</code></a> :A) (<a href="#list-type"><code>LIST</code></a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#iso-class">ISO</a> (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A) (<a href="#list-type"><code>LIST</code></a> :A)</code>
 - <code><a href="#iso-class">ISO</a> (<a href="#result-type"><code>RESULT</code></a> <a href="#unit-type"><code>UNIT</code></a> :A) (<a href="#optional-type"><code>OPTIONAL</code></a> :A)</code>
 - <code><a href="#iso-class">ISO</a> (<a href="#tuple-type"><code>TUPLE</code></a> :A :B) (<a href="#tuple-type"><code>TUPLE</code></a> :B :A)</code>
 - <code><a href="#iso-class">ISO</a> :A :A</code>
@@ -4224,7 +4231,7 @@ Yields nothing; stops immediately
 
 ### Types
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L28-L33">LISPARRAY</a></code> <sup><sub>[TYPE]</sub></sup><a name="lisparray-type"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L31-L36">LISPARRAY</a></code> <sup><sub>[TYPE]</sub></sup><a name="lisparray-type"></a>
 
 A one-dimensional, non-resizable array of elements.
 
@@ -4235,6 +4242,10 @@ Whether or not the arrays are specialized depends on the underlying Lisp impleme
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#foldable-class">FOLDABLE</a> <a href="#lisparray-type"><code>LISPARRAY</code></a></code>
+- <code><a href="#into-class">INTO</a> (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A) (<a href="#list-type"><code>LIST</code></a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#list-type"><code>LIST</code></a> :A) (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#iso-class">ISO</a> (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A) (<a href="#list-type"><code>LIST</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A)</code>
 
 </details>
@@ -4245,7 +4256,7 @@ Whether or not the arrays are specialized depends on the underlying Lisp impleme
 
 ### Values
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L74-L77">(AREF V I)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="aref-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L77-L80">(AREF V I)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="aref-value"></a>
 <code>&forall; :A. ((<a href="#lisparray-type"><code>LISPARRAY</code></a> :A) &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; :A)</code>
 
 Read the `i`th value of the `LispArray` `v`.
@@ -4254,7 +4265,16 @@ Read the `i`th value of the `LispArray` `v`.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L67-L70">(LENGTH V)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="length-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L92-L95">(COPY V)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="copy-value"></a>
+<code>&forall; :A. ((<a href="#lisparray-type"><code>LISPARRAY</code></a> :A) &rarr; (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A))</code>
+
+Make a deep copy of the `LispArray` `v`.
+
+
+
+***
+
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L70-L73">(LENGTH V)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="length-value"></a>
 <code>&forall; :A. ((<a href="#lisparray-type"><code>LISPARRAY</code></a> :A) &rarr; <a href="#ufix-type"><code>UFIX</code></a>)</code>
 
 Return the length of the `LispArray` `v`.
@@ -4263,7 +4283,7 @@ Return the length of the `LispArray` `v`.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L42-L49">(MAKE N X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="make-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L45-L52">(MAKE N X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="make-value"></a>
 <code>&forall; :A. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; (<a href="#ufix-type"><code>UFIX</code></a> &rarr; :A &rarr; (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A))</code>
 
 Make a new `LispArray` of length `n` initialized to `x`.
@@ -4274,7 +4294,7 @@ If the type of `x` represents a specialized array
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L52-L63">(MAKE-UNINITIALIZED N)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="make-uninitialized-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L55-L66">(MAKE-UNINITIALIZED N)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="make-uninitialized-value"></a>
 <code>&forall; :A. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; (<a href="#ufix-type"><code>UFIX</code></a> &rarr; (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A))</code>
 
 Make a new LispArray of length `n` that can store elements of type `:t`.
@@ -4286,7 +4306,7 @@ WARNING: The consequences are undefined if an uninitialized element is read befo
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L81-L85">(SET! V I X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="set!-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L84-L88">(SET! V I X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="set!-value"></a>
 <code>&forall; :A. ((<a href="#lisparray-type"><code>LISPARRAY</code></a> :A) &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; :A &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
 
 Set the `i`th value of the `LispArray` `v` to `x`.
