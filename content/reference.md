@@ -5963,7 +5963,7 @@ Methods:
 
 ### Values
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.lisp#L82-L84">(EVEN? N)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="even?-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.lisp#L83-L85">(EVEN? N)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="even?-value"></a>
 <code>&forall; :A. <a href="#integral-class">INTEGRAL</a> :A &rArr; (:A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Is N even?
@@ -5972,7 +5972,7 @@ Is N even?
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.lisp#L125-L128">(GCD A B)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="gcd-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.lisp#L126-L129">(GCD A B)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="gcd-value"></a>
 <code>&forall; :A. (<a href="#remainder-class">REMAINDER</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; :A &rarr; :A)</code>
 
 The greatest common divisor of A and B.
@@ -5981,7 +5981,7 @@ The greatest common divisor of A and B.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.lisp#L150-L166">(ILOG B X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="ilog-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.lisp#L151-L167">(ILOG B X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="ilog-value"></a>
 <code>&forall; :A. <a href="#integral-class">INTEGRAL</a> :A &rArr; (:A &rarr; :A &rarr; :A)</code>
 
 The floor of the logarithm with base B > 1 of X >= 1.
@@ -5990,7 +5990,7 @@ The floor of the logarithm with base B > 1 of X >= 1.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.lisp#L67-L69">(INTEGRAL-&gt;NUM N)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="integral->num-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.lisp#L68-L70">(INTEGRAL-&gt;NUM N)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="integral->num-value"></a>
 <code>&forall; :A :B. (<a href="#integral-class">INTEGRAL</a> :A) (<a href="#num-class">NUM</a> :B) &rArr; (:A &rarr; :B)</code>
 
 Converts any Integral N into any Num.
@@ -5999,7 +5999,7 @@ Converts any Integral N into any Num.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.lisp#L169-L180">(ISQRT X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="isqrt-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.lisp#L170-L181">(ISQRT X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="isqrt-value"></a>
 <code>&forall; :A. <a href="#integral-class">INTEGRAL</a> :A &rArr; (:A &rarr; :A)</code>
 
 The floor of the square root of N > 0.
@@ -6008,7 +6008,7 @@ The floor of the square root of N > 0.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.lisp#L131-L135">(LCM A B)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="lcm-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.lisp#L132-L136">(LCM A B)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="lcm-value"></a>
 <code>&forall; :A. (<a href="#remainder-class">REMAINDER</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; :A &rarr; :A)</code>
 
 The least common multiple of A and B.
@@ -6017,7 +6017,7 @@ The least common multiple of A and B.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.lisp#L77-L79">(LSH X N)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="lsh-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.lisp#L78-L80">(LSH X N)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="lsh-value"></a>
 <code>&forall; :A :B. (<a href="#integral-class">INTEGRAL</a> :B) (<a href="#bits-class">BITS</a> :A) &rArr; (:A &rarr; :B &rarr; :A)</code>
 
 Left shift X by N
@@ -6026,7 +6026,7 @@ Left shift X by N
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.lisp#L87-L89">(ODD? N)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="odd?-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.lisp#L88-L90">(ODD? N)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="odd?-value"></a>
 <code>&forall; :A. <a href="#integral-class">INTEGRAL</a> :A &rArr; (:A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Is N odd?
@@ -6035,7 +6035,7 @@ Is N odd?
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.lisp#L72-L74">(RSH X N)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="rsh-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.lisp#L73-L75">(RSH X N)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="rsh-value"></a>
 <code>&forall; :A :B. (<a href="#integral-class">INTEGRAL</a> :B) (<a href="#bits-class">BITS</a> :A) &rArr; (:A &rarr; :B &rarr; :A)</code>
 
 Right shift X by N
@@ -6044,7 +6044,7 @@ Right shift X by N
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.lisp#L92-L115">(^ BASE POWER)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="^-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.lisp#L93-L116">(^ BASE POWER)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="^-value"></a>
 <code>&forall; :A :B. (<a href="#num-class">NUM</a> :A) (<a href="#integral-class">INTEGRAL</a> :B) &rArr; (:A &rarr; :B &rarr; :A)</code>
 
 Exponentiate BASE to a non-negative POWER.
@@ -6053,7 +6053,7 @@ Exponentiate BASE to a non-negative POWER.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.lisp#L118-L122">(^^ BASE POWER)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="^^-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.lisp#L119-L123">(^^ BASE POWER)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="^^-value"></a>
 <code>&forall; :A :B. (<a href="#reciprocable-class">RECIPROCABLE</a> :A) (<a href="#integral-class">INTEGRAL</a> :B) &rArr; (:A &rarr; :B &rarr; :A)</code>
 
 Exponentiate BASE to a signed POWER.
