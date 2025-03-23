@@ -618,6 +618,7 @@ String of characters represented by Common Lisp `string`.
 - <code><a href="#fromiterator-class">FROMITERATOR</a> <a href="#string-type"><code>STRING</code></a> <a href="#char-type"><code>CHAR</code></a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#into-class">INTO</a> (<a href="#list-type"><code>LIST</code></a> <a href="#char-type"><code>CHAR</code></a>) <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#into-class">INTO</a> (<a href="#vector-type"><code>VECTOR</code></a> <a href="#char-type"><code>CHAR</code></a>) <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#into-class">INTO</a> :A <a href="#string-type"><code>STRING</code></a> &rArr; <a href="#into-class">INTO</a> (<a href="#cell-type"><code>CELL</code></a> :A) <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#char-type"><code>CHAR</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#double-float-type"><code>DOUBLE-FLOAT</code></a> <a href="#string-type"><code>STRING</code></a></code>
@@ -631,6 +632,7 @@ String of characters represented by Common Lisp `string`.
 - <code><a href="#into-class">INTO</a> <a href="#pathname-type"><code>PATHNAME</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#single-float-type"><code>SINGLE-FLOAT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#string-type"><code>STRING</code></a> (<a href="#list-type"><code>LIST</code></a> <a href="#char-type"><code>CHAR</code></a>)</code>
+- <code><a href="#into-class">INTO</a> <a href="#string-type"><code>STRING</code></a> (<a href="#vector-type"><code>VECTOR</code></a> <a href="#char-type"><code>CHAR</code></a>)</code>
 - <code><a href="#into-class">INTO</a> <a href="#string-type"><code>STRING</code></a> <a href="#pathname-type"><code>PATHNAME</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#string-type"><code>STRING</code></a></code>
@@ -2094,8 +2096,10 @@ Methods:
 - <code><a href="#into-class">INTO</a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#into-class">INTO</a> (<a href="#vector-type"><code>VECTOR</code></a> <a href="#char-type"><code>CHAR</code></a>) <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#into-class">INTO</a> (<a href="#list-type"><code>LIST</code></a> <a href="#char-type"><code>CHAR</code></a>) <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#char-type"><code>CHAR</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#string-type"><code>STRING</code></a> (<a href="#vector-type"><code>VECTOR</code></a> <a href="#char-type"><code>CHAR</code></a>)</code>
 - <code><a href="#into-class">INTO</a> <a href="#string-type"><code>STRING</code></a> (<a href="#list-type"><code>LIST</code></a> <a href="#char-type"><code>CHAR</code></a>)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#vector-type"><code>VECTOR</code></a> :A) (<a href="#list-type"><code>LIST</code></a> :A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#list-type"><code>LIST</code></a> :A) (<a href="#vector-type"><code>VECTOR</code></a> :A)</code>
@@ -7843,6 +7847,8 @@ Returns the runtime representation of the type of the given value.
 - <code><a href="#into-class">INTO</a> (<a href="#slice-type"><code>SLICE</code></a> :A) (<a href="#vector-type"><code>VECTOR</code></a> :A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#vector-type"><code>VECTOR</code></a> :A) (<a href="#list-type"><code>LIST</code></a> :A)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#vector-type"><code>VECTOR</code></a> :A) (<a href="#slice-type"><code>SLICE</code></a> :A)</code>
+- <code><a href="#into-class">INTO</a> (<a href="#vector-type"><code>VECTOR</code></a> <a href="#char-type"><code>CHAR</code></a>) <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#string-type"><code>STRING</code></a> (<a href="#vector-type"><code>VECTOR</code></a> <a href="#char-type"><code>CHAR</code></a>)</code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#vector-type"><code>VECTOR</code></a> :A) :A</code>
 - <code><a href="#iso-class">ISO</a> (<a href="#slice-type"><code>SLICE</code></a> :A) (<a href="#vector-type"><code>VECTOR</code></a> :A)</code>
 - <code><a href="#iso-class">ISO</a> (<a href="#vector-type"><code>VECTOR</code></a> :A) (<a href="#list-type"><code>LIST</code></a> :A)</code>
