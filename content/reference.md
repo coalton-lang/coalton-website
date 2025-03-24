@@ -153,6 +153,7 @@ Double precision floating point number. Uses `double-float`.
 - <code><a href="#rational-class">RATIONAL</a> <a href="#double-float-type"><code>DOUBLE-FLOAT</code></a></code>
 - <code><a href="#real-class">REAL</a> <a href="#double-float-type"><code>DOUBLE-FLOAT</code></a></code>
 - <code><a href="#reciprocable-class">RECIPROCABLE</a> <a href="#double-float-type"><code>DOUBLE-FLOAT</code></a></code>
+- <code><a href="#remainder-class">REMAINDER</a> <a href="#double-float-type"><code>DOUBLE-FLOAT</code></a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#double-float-type"><code>DOUBLE-FLOAT</code></a></code>
 - <code><a href="#transfinite-class">TRANSFINITE</a> <a href="#double-float-type"><code>DOUBLE-FLOAT</code></a></code>
 - <code><a href="#trigonometric-class">TRIGONOMETRIC</a> <a href="#double-float-type"><code>DOUBLE-FLOAT</code></a></code>
@@ -588,6 +589,7 @@ Single precision floating point number. Uses `single-float`.
 - <code><a href="#rational-class">RATIONAL</a> <a href="#single-float-type"><code>SINGLE-FLOAT</code></a></code>
 - <code><a href="#real-class">REAL</a> <a href="#single-float-type"><code>SINGLE-FLOAT</code></a></code>
 - <code><a href="#reciprocable-class">RECIPROCABLE</a> <a href="#single-float-type"><code>SINGLE-FLOAT</code></a></code>
+- <code><a href="#remainder-class">REMAINDER</a> <a href="#single-float-type"><code>SINGLE-FLOAT</code></a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#single-float-type"><code>SINGLE-FLOAT</code></a></code>
 - <code><a href="#transfinite-class">TRANSFINITE</a> <a href="#single-float-type"><code>SINGLE-FLOAT</code></a></code>
 - <code><a href="#trigonometric-class">TRIGONOMETRIC</a> <a href="#single-float-type"><code>SINGLE-FLOAT</code></a></code>
@@ -5956,6 +5958,8 @@ Methods:
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#remainder-class">REMAINDER</a> <a href="#double-float-type"><code>DOUBLE-FLOAT</code></a></code>
+- <code><a href="#remainder-class">REMAINDER</a> <a href="#single-float-type"><code>SINGLE-FLOAT</code></a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#ufix-type"><code>UFIX</code></a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#u64-type"><code>U64</code></a></code>
