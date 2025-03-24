@@ -2255,6 +2255,7 @@ Methods:
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#monoid-class">MONOID</a> (<a href="#seq-type"><code>SEQ</code></a> :A)</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#monoid-class">MONOID</a> (<a href="#tree-type"><code>TREE</code></a> :A)</code>
 - <code><a href="#monoid-class">MONOID</a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#monoid-class">MONOID</a> (<a href="#vector-type"><code>VECTOR</code></a> :A)</code>
 - <code><a href="#monoid-class">MONOID</a> (<a href="#list-type"><code>LIST</code></a> :A)</code>
 - <code><a href="#monoid-class">MONOID</a> :A &rArr; <a href="#monoid-class">MONOID</a> (<a href="#result-type"><code>RESULT</code></a> :B :A)</code>
 - <code><a href="#monoid-class">MONOID</a> :A &rArr; <a href="#monoid-class">MONOID</a> (<a href="#optional-type"><code>OPTIONAL</code></a> :A)</code>
@@ -7861,6 +7862,7 @@ Returns the runtime representation of the type of the given value.
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#vector-type"><code>VECTOR</code></a> :A) :A</code>
 - <code><a href="#iso-class">ISO</a> (<a href="#slice-type"><code>SLICE</code></a> :A) (<a href="#vector-type"><code>VECTOR</code></a> :A)</code>
 - <code><a href="#iso-class">ISO</a> (<a href="#vector-type"><code>VECTOR</code></a> :A) (<a href="#list-type"><code>LIST</code></a> :A)</code>
+- <code><a href="#monoid-class">MONOID</a> (<a href="#vector-type"><code>VECTOR</code></a> :A)</code>
 - <code><a href="#randomaccess-class">RANDOMACCESS</a> (<a href="#vector-type"><code>VECTOR</code></a> :A) :A</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#vector-type"><code>VECTOR</code></a> :A)</code>
 - <code><a href="#semigroup-class">SEMIGROUP</a> (<a href="#vector-type"><code>VECTOR</code></a> :A)</code>
