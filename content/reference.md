@@ -25,6 +25,7 @@ identifier: Reference
 - <a href="#coalton-library/file-package"><code>COALTON-LIBRARY/FILE</code></a>
 - <a href="#coalton-library/functions-package"><code>COALTON-LIBRARY/FUNCTIONS</code></a>
 - <a href="#coalton-library/hash-package"><code>COALTON-LIBRARY/HASH</code></a>
+- <a href="#coalton-library/hashmap-package"><code>COALTON-LIBRARY/HASHMAP</code></a>
 - <a href="#coalton-library/hashtable-package"><code>COALTON-LIBRARY/HASHTABLE</code></a>
 - <a href="#coalton-library/iterator-package"><code>COALTON-LIBRARY/ITERATOR</code></a>
 - <a href="#coalton-library/lisparray-package"><code>COALTON-LIBRARY/LISPARRAY</code></a>
@@ -1749,9 +1750,11 @@ A heterogeneous collection of items.
 - <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) &rArr; <a href="#hash-class">HASH</a> (<a href="#tuple-type"><code>TUPLE</code></a> :A :B)</code>
 - <code>(<a href="#ord-class">ORD</a> :A) (<a href="#ord-class">ORD</a> :B) &rArr; <a href="#ord-class">ORD</a> (<a href="#tuple-type"><code>TUPLE</code></a> :A :B)</code>
 - <code><a href="#bifunctor-class">BIFUNCTOR</a> <a href="#tuple-type"><code>TUPLE</code></a></code>
+- <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#hashmap-type"><code>HASHMAP</code></a> :A :B) (<a href="#tuple-type"><code>TUPLE</code></a> :A :B)</code>
 - <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#hashtable-type"><code>HASHTABLE</code></a> :A :B) (<a href="#tuple-type"><code>TUPLE</code></a> :A :B)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#mappair-type"><code>MAPPAIR</code></a> :A :B) (<a href="#tuple-type"><code>TUPLE</code></a> :A :B)</code>
 - <code><a href="#into-class">INTO</a> (<a href="#tuple-type"><code>TUPLE</code></a> :A :B) (<a href="#tuple-type"><code>TUPLE</code></a> :B :A)</code>
+- <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#hashmap-type"><code>HASHMAP</code></a> :A :B) (<a href="#tuple-type"><code>TUPLE</code></a> :A :B)</code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#hashtable-type"><code>HASHTABLE</code></a> :A :B) (<a href="#tuple-type"><code>TUPLE</code></a> :A :B)</code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#map-type"><code>MAP</code></a> :A :B) (<a href="#tuple-type"><code>TUPLE</code></a> :A :B)</code>
 - <code><a href="#iso-class">ISO</a> (<a href="#tuple-type"><code>TUPLE</code></a> :A :B) (<a href="#tuple-type"><code>TUPLE</code></a> :B :A)</code>
@@ -1898,6 +1901,7 @@ Methods:
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#tree-type"><code>TREE</code></a> :A)</code>
 - <code><a href="#eq-class">EQ</a> <a href="#color-type"><code>COLOR</code></a></code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#queue-type"><code>QUEUE</code></a> :A)</code>
+- <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) &rArr; <a href="#eq-class">EQ</a> (<a href="#hashmap-type"><code>HASHMAP</code></a> :A :B)</code>
 - <code>(<a href="#hash-class">HASH</a> :A) (<a href="#eq-class">EQ</a> :B) &rArr; <a href="#eq-class">EQ</a> (<a href="#hashtable-type"><code>HASHTABLE</code></a> :A :B)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#slice-type"><code>SLICE</code></a> :A)</code>
 - <code><a href="#eq-class">EQ</a> <a href="#string-type"><code>STRING</code></a></code>
@@ -2013,6 +2017,7 @@ Methods:
 
 - <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) &rArr; <a href="#hash-class">HASH</a> (<a href="#map-type"><code>MAP</code></a> :A :B)</code>
 - <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#hash-class">HASH</a> (<a href="#tree-type"><code>TREE</code></a> :A)</code>
+- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) &rArr; <a href="#hash-class">HASH</a> (<a href="#hashmap-type"><code>HASHMAP</code></a> :A :B)</code>
 - <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) &rArr; <a href="#hash-class">HASH</a> (<a href="#hashtable-type"><code>HASHTABLE</code></a> :A :B)</code>
 - <code><a href="#hash-class">HASH</a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#char-type"><code>CHAR</code></a></code>
@@ -3546,6 +3551,106 @@ Take a function with two currying parameters and enable their input as a single 
 
 ***
 
+# Package `COALTON-LIBRARY/HASHMAP`<a name="coalton-library/hashmap-package"></a>
+
+### Structs
+
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L51-L53">HASHMAP :A :B</a></code> <sup><sub>[STRUCT]</sub></sup><a name="hashmap-type"></a>
+- <code>ROOT :: (COALTON-LIBRARY/HASHMAP::HMNODE :A :B)</code>
+
+Immutable mapping using hash.  Implemented as hash array mapped trie.
+
+<details>
+<summary>Instances</summary>
+
+- <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) &rArr; <a href="#eq-class">EQ</a> (<a href="#hashmap-type"><code>HASHMAP</code></a> :A :B)</code>
+- <code>(<a href="#hash-class">HASH</a> :A) (<a href="#hash-class">HASH</a> :B) &rArr; <a href="#hash-class">HASH</a> (<a href="#hashmap-type"><code>HASHMAP</code></a> :A :B)</code>
+- <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#hashmap-type"><code>HASHMAP</code></a> :A :B) (<a href="#tuple-type"><code>TUPLE</code></a> :A :B)</code>
+- <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#hashmap-type"><code>HASHMAP</code></a> :A :B) (<a href="#tuple-type"><code>TUPLE</code></a> :A :B)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#hashmap-type"><code>HASHMAP</code></a> :A :B)</code>
+
+</details>
+
+
+
+***
+
+### Values
+
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L283-L292">(COUNT HM)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="count-value"></a>
+<code>&forall; :A :B. ((<a href="#hashmap-type"><code>HASHMAP</code></a> :A :B) &rarr; <a href="#integer-type"><code>INTEGER</code></a>)</code>
+
+Returns the number of entries in HM.
+
+
+
+***
+
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L273-L277">(EMPTY? HM)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="empty?-value"></a>
+<code>&forall; :A :B. ((<a href="#hashmap-type"><code>HASHMAP</code></a> :A :B) &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
+
+Returns True if a hashmap HM is empty, False if not.
+
+
+
+***
+
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L296-L317">(GET HM KEY)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="get-value"></a>
+<code>&forall; :A :B. <a href="#hash-class">HASH</a> :A &rArr; ((<a href="#hashmap-type"><code>HASHMAP</code></a> :A :B) &rarr; :A &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> :B))</code>
+
+Returns a value associated with KEY in the hashmap HM.
+
+
+
+***
+
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L322-L361">(INSERT HM KEY VAL)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="insert-value"></a>
+<code>&forall; :A :B. <a href="#hash-class">HASH</a> :A &rArr; ((<a href="#hashmap-type"><code>HASHMAP</code></a> :A :B) &rarr; :A &rarr; :B &rarr; (<a href="#hashmap-type"><code>HASHMAP</code></a> :A :B))</code>
+
+Returns a hashmap that has a new entry of (KEY, VAL) added to HM.  If HM
+containes an entry with KEY, the new hashmap replaces it for the new entry.
+
+
+
+***
+
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L469-L471">(KEYS HM)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="keys-value"></a>
+<code>&forall; :A :B. <a href="#hash-class">HASH</a> :A &rArr; ((<a href="#hashmap-type"><code>HASHMAP</code></a> :A :B) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A))</code>
+
+Returns an interator to iterate over all the keys in a hashmap hm.
+
+
+
+***
+
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L380-L420">(REMOVE HM KEY)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="remove-value"></a>
+<code>&forall; :A :B. <a href="#hash-class">HASH</a> :A &rArr; ((<a href="#hashmap-type"><code>HASHMAP</code></a> :A :B) &rarr; :A &rarr; (<a href="#hashmap-type"><code>HASHMAP</code></a> :A :B))</code>
+
+Returns a hashmap that is identical to HM except the entry with KEY is
+removed.  If HM does not contain an entry with KEY, HM is returned as is.
+
+
+
+***
+
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L475-L477">(VALUES HM)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="values-value"></a>
+<code>&forall; :A :B. <a href="#hash-class">HASH</a> :A &rArr; ((<a href="#hashmap-type"><code>HASHMAP</code></a> :A :B) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :B))</code>
+
+Returns an interator to iterate over all the values in a hashmap hm.
+
+
+
+***
+
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L267-L269">EMPTY</a></code> <sup><sub>[VALUE]</sub></sup><a name="empty-value"></a>
+<code>&forall; :A :B. (<a href="#hashmap-type"><code>HASHMAP</code></a> :A :B)</code>
+
+An empty HashMap
+
+
+
+***
+
 # Package `COALTON-LIBRARY/HASHTABLE`<a name="coalton-library/hashtable-package"></a>
 
 ### Types
@@ -3698,6 +3803,7 @@ Methods:
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#map-type"><code>MAP</code></a> :A :B) (<a href="#tuple-type"><code>TUPLE</code></a> :A :B)</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#tree-type"><code>TREE</code></a> :A) :A</code>
 - <code><a href="#fromiterator-class">FROMITERATOR</a> (<a href="#queue-type"><code>QUEUE</code></a> :A) :A</code>
+- <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#hashmap-type"><code>HASHMAP</code></a> :A :B) (<a href="#tuple-type"><code>TUPLE</code></a> :A :B)</code>
 - <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#hashtable-type"><code>HASHTABLE</code></a> :A :B) (<a href="#tuple-type"><code>TUPLE</code></a> :A :B)</code>
 - <code><a href="#fromiterator-class">FROMITERATOR</a> (<a href="#slice-type"><code>SLICE</code></a> :A) :A</code>
 - <code><a href="#fromiterator-class">FROMITERATOR</a> <a href="#string-type"><code>STRING</code></a> <a href="#char-type"><code>CHAR</code></a></code>
@@ -3729,6 +3835,7 @@ Methods:
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#map-type"><code>MAP</code></a> :A :B) (<a href="#tuple-type"><code>TUPLE</code></a> :A :B)</code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#tree-type"><code>TREE</code></a> :A) :A</code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#queue-type"><code>QUEUE</code></a> :A) :A</code>
+- <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#hashmap-type"><code>HASHMAP</code></a> :A :B) (<a href="#tuple-type"><code>TUPLE</code></a> :A :B)</code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#hashtable-type"><code>HASHTABLE</code></a> :A :B) (<a href="#tuple-type"><code>TUPLE</code></a> :A :B)</code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#slice-type"><code>SLICE</code></a> :A) :A</code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> <a href="#string-type"><code>STRING</code></a> <a href="#char-type"><code>CHAR</code></a></code>
@@ -7760,6 +7867,9 @@ Methods:
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#color-type"><code>COLOR</code></a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#st-type"><code>ST</code></a> :A :B)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#queue-type"><code>QUEUE</code></a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#hashmap-type"><code>HASHMAP</code></a> :A :B)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#hmnode-type"><code>HMNODE</code></a> :A :B)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#hmentry-type"><code>HMENTRY</code></a> :A :B)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#hashtable-type"><code>HASHTABLE</code></a> :A :B)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#slice-type"><code>SLICE</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#vector-type"><code>VECTOR</code></a> :A)</code>
