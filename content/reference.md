@@ -3594,12 +3594,11 @@ Take a function with two currying parameters and enable their input as a single 
 
 # Package `COALTON-LIBRARY/HASHMAP`<a name="coalton-library/hashmap-package"></a>
 
-### Structs
+### Types
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L51-L53">HASHMAP :A :B</a></code> <sup><sub>[STRUCT]</sub></sup><a name="hashmap-type"></a>
-- <code>ROOT :: (COALTON-LIBRARY/HASHMAP::HMNODE :A :B)</code>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L57-L59">HASHMAP</a></code> <sup><sub>[TYPE]</sub></sup><a name="hashmap-type"></a>
 
-Immutable mapping using hash.  Implemented as hash array mapped trie.
+Immutable map (also known as a dictionary or dict) using hashes. Implemented as a hash array mapped trie data structure.
 
 <details>
 <summary>Instances</summary>
@@ -3618,7 +3617,7 @@ Immutable mapping using hash.  Implemented as hash array mapped trie.
 
 ### Values
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L283-L292">(COUNT HM)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="count-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L291-L300">(COUNT HM)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="count-value"></a>
 <code>&forall; :A :B. ((<a href="#hashmap-type"><code>HASHMAP</code></a> :A :B) &rarr; <a href="#integer-type"><code>INTEGER</code></a>)</code>
 
 Returns the number of entries in HM.
@@ -3627,7 +3626,7 @@ Returns the number of entries in HM.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L273-L277">(EMPTY? HM)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="empty?-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L281-L285">(EMPTY? HM)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="empty?-value"></a>
 <code>&forall; :A :B. ((<a href="#hashmap-type"><code>HASHMAP</code></a> :A :B) &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Returns True if a hashmap HM is empty, False if not.
@@ -3636,7 +3635,7 @@ Returns True if a hashmap HM is empty, False if not.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L296-L317">(GET HM KEY)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="get-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L304-L325">(GET HM KEY)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="get-value"></a>
 <code>&forall; :A :B. <a href="#hash-class">HASH</a> :A &rArr; ((<a href="#hashmap-type"><code>HASHMAP</code></a> :A :B) &rarr; :A &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> :B))</code>
 
 Returns a value associated with KEY in the hashmap HM.
@@ -3645,7 +3644,7 @@ Returns a value associated with KEY in the hashmap HM.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L322-L361">(INSERT HM KEY VAL)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="insert-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L330-L369">(INSERT HM KEY VAL)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="insert-value"></a>
 <code>&forall; :A :B. <a href="#hash-class">HASH</a> :A &rArr; ((<a href="#hashmap-type"><code>HASHMAP</code></a> :A :B) &rarr; :A &rarr; :B &rarr; (<a href="#hashmap-type"><code>HASHMAP</code></a> :A :B))</code>
 
 Returns a hashmap that has a new entry of (KEY, VAL) added to HM.  If HM
@@ -3655,7 +3654,7 @@ containes an entry with KEY, the new hashmap replaces it for the new entry.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L469-L471">(KEYS HM)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="keys-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L477-L479">(KEYS HM)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="keys-value"></a>
 <code>&forall; :A :B. <a href="#hash-class">HASH</a> :A &rArr; ((<a href="#hashmap-type"><code>HASHMAP</code></a> :A :B) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A))</code>
 
 Returns an interator to iterate over all the keys in a hashmap hm.
@@ -3664,7 +3663,7 @@ Returns an interator to iterate over all the keys in a hashmap hm.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L380-L420">(REMOVE HM KEY)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="remove-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L388-L428">(REMOVE HM KEY)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="remove-value"></a>
 <code>&forall; :A :B. <a href="#hash-class">HASH</a> :A &rArr; ((<a href="#hashmap-type"><code>HASHMAP</code></a> :A :B) &rarr; :A &rarr; (<a href="#hashmap-type"><code>HASHMAP</code></a> :A :B))</code>
 
 Returns a hashmap that is identical to HM except the entry with KEY is
@@ -3674,7 +3673,7 @@ removed.  If HM does not contain an entry with KEY, HM is returned as is.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L475-L477">(VALUES HM)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="values-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L483-L485">(VALUES HM)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="values-value"></a>
 <code>&forall; :A :B. <a href="#hash-class">HASH</a> :A &rArr; ((<a href="#hashmap-type"><code>HASHMAP</code></a> :A :B) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :B))</code>
 
 Returns an interator to iterate over all the values in a hashmap hm.
@@ -3683,7 +3682,7 @@ Returns an interator to iterate over all the values in a hashmap hm.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L267-L269">EMPTY</a></code> <sup><sub>[VALUE]</sub></sup><a name="empty-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L275-L277">EMPTY</a></code> <sup><sub>[VALUE]</sub></sup><a name="empty-value"></a>
 <code>&forall; :A :B. (<a href="#hashmap-type"><code>HASHMAP</code></a> :A :B)</code>
 
 An empty HashMap
