@@ -6,6 +6,8 @@ math: true
 
 By [Elias Lawson-Fox](https://github.com/eliaslfox), [Aidan Nyquist](https://github.com/aijony), and [Robert Smith](https://twitter.com/stylewarning)
 
+*Updated July 1, 2025 by Robert Smith.*
+
 {{< toc >}}
 
 ## Introduction: Coalton and the quilc compiler
@@ -230,25 +232,17 @@ The `Alg` type can implement the `Eq` type class (which demands we implement equ
 
 ```lisp
   (define-instance (Eq Alg)
-    (define (== a b)
-      (match (Tuple a b)
-        ((Tuple (Alg a1 a2) (Alg b1 b2))
-         (and (== a1 b1) (== a2 b2))))))
+    (define (== (Alg a1 a2) (Alg b1 b2))
+      (and (== a1 b1) (== a2 b2))))
 
   (define-instance (Num Alg)
-    (define (+ a b)
-      (match (Tuple a b)
-        ((Tuple (Alg a1 a2) (Alg b1 b2))
-         (Alg (+ a1 b1) (+ a2 b2)))))
-    (define (- a b)
-      (match (Tuple a b)
-        ((Tuple (Alg a1 a2) (Alg b1 b2))
-         (Alg (- a1 b1) (- a2 b2)))))
-    (define (* a b)
-      (match (Tuple a b)
-        ((Tuple (Alg a1 a2) (Alg b1 b2))
-         (Alg (+ (* a1 b1) (* 2 (* a2 b2)))
-                 (+ (* a1 b2) (* a2 b1))))))
+    (define (+ (Alg a1 a2) (Alg b1 b2))
+      (Alg (+ a1 b1) (+ a2 b2)))
+    (define (- (Alg a1 a2) (Alg b1 b2))
+      (Alg (- a1 b1) (- a2 b2)))
+    (define (* (Alg a1 a2) (Alg b1 b2))
+      (Alg (+ (* a1 b1) (* 2 (* a2 b2)))
+              (+ (* a1 b2) (* a2 b1))))
     (define (fromInt n)
       (Alg n 0)))
 ```
@@ -282,9 +276,8 @@ Since `Alg` implements `fromInt`, the integer syntax $n$ in a place where `Alg` 
 As is to be expected at this point, functions on `Alg` are inferred appropriately. For example, consider this function which conjugates a number, i.e., flips the sign of the $\sqrt{2}$ part:
 
 ```lisp
-(define (algebraic-conjugate x)
-  (match x
-    ((Alg a b) (Alg a (negate b)))))
+(define (algebraic-conjugate (Alg a b))
+  (Alg a (negate b)))
 ```
 
 We can see that Coalton has properly inferred the type:
@@ -309,24 +302,21 @@ One can imagine how we could do the same for vector spaces, inner product spaces
 We've implemented one number system, but we can endow Coalton further with an understanding of how to convert out of this representation. As a simple example, we can instruct Coalton on how to convert, when possible, an `Alg` into a `Double-Float`:
 
 ```lisp
-(define-instance (TryInto Alg Double-Float)
-  (define (tryInto x)
-    (match x
-      ((Alg a b)
-       ;; An Integer may fail to convert to a Double-Float
-       (match (Tuple (tryInto a) (tryInto b))
-         ((Tuple (Ok a) (Ok b))
-          (Ok (+ a (* b (math:sqrt 2.0d0)))))
-         (_ (Err "Can't represent an Alg as a Double-Float")))))))
+(define-instance (TryInto Alg Double-Float String)
+  (define (tryInto (Alg a b))
+    (match (Tuple (tryInto a) (tryInto b))
+      ((Tuple (Ok a) (Ok b))
+       (Ok (+ a (* b (math:sqrt 2.0d0)))))
+      (_ (Err "Can't represent an Alg as a Double-Float")))))
 ```
 
 Whenever we need a double-float, we can safely get one by calling `tryInto` on our `Alg` object, and matching the `Ok` case if it succeeded, or the `Err` case if it failed. In this first example, we successfully convert $1+2\sqrt{2}$ into a float $3.828\ldots$ without otherwise being explicit about the conversion. (It figured it out since the other branch returns a `Double-Float`-related value, and both branches must have types that unify.)
 
 ```lisp
 COALTON-USER> (coalton
-                 (match (tryInto (Alg 1 2))
-                   ((Ok f) f)
-                   ((Err _) (the Double-Float math:nan))))
+                (match (tryInto (Alg 1 2))
+                  ((Ok f) f)
+                  ((Err _) (the Double-Float math:nan))))
 3.8284271247461903d0
 ```
 
