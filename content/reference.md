@@ -1742,8 +1742,6 @@ Represents something that may have failed.
 ### Structs
 
 #### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L71-L74">TUPLE :A :B</a></code> <sup><sub>[STRUCT]</sub></sup><a name="tuple-type"></a>
-- <code>FIRST :: :A</code>
-- <code>SECOND :: :B</code>
 
 A heterogeneous collection of items.
 
@@ -5451,8 +5449,6 @@ References:
 ### Structs
 
 #### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dual.lisp#L78-L85">DUAL :A</a></code> <sup><sub>[STRUCT]</sub></sup><a name="dual-type"></a>
-- <code>PRIMAL-PART :: :A</code><br/>The primal part.
-- <code>DUAL-PART :: :A</code><br/>The dual part.
 
 Representation of a dual number in the form `a + bε` where `a` and `b` are real numbers and `ε` satisfies `ε^2 = 0` and `ε != 0`.
 
@@ -5927,10 +5923,6 @@ The following list of identities describe the theory of hyperdual numbers.
 ### Structs
 
 #### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L161-L177">HYPERDUAL :A</a></code> <sup><sub>[STRUCT]</sub></sup><a name="hyperdual-type"></a>
-- <code>A :: :A</code><br/>The primal part.
-- <code>B :: :A</code><br/>The coefficient of `ε₁`.
-- <code>C :: :A</code><br/>The coefficient of `ε₂`.
-- <code>D :: :A</code><br/>The coefficient of `ε₁ε₂`.
 
 Representation of a hyperdual number in the form `a + bε₁ + cε₂ + dε₁ε₂` where `a`, `b`, `c`, and `d` are real numbers and `ε₁` and `ε₂` satisfy `εᵢ² = 0` and `ε₁ε₂ != 0`.
 
@@ -6232,11 +6224,6 @@ Exponentiate BASE to a signed POWER.
 ### Structs
 
 #### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L224-L235">QUANTIZATION :A</a></code> <sup><sub>[STRUCT]</sub></sup><a name="quantization-type"></a>
-- <code>VALUE :: :A</code><br/>A value of type `:a`.
-- <code>FLOOR :: COALTON:INTEGER</code><br/>The greatest integer less than or equal to a particular value.
-- <code>FLOOR-REM :: :A</code><br/>The remainder of the floor operation as type `:a`.
-- <code>CEILING :: COALTON:INTEGER</code><br/>The least integer greater than or equal to a particular value.
-- <code>CEILING-REM :: :A</code><br/>The remainder of the ceiling operation as type `:a`.
 
 Represents an integer quantization of `:a`.
 
@@ -7791,9 +7778,6 @@ Condition for lisp error handling. Uses `cl:condition`.
 ### Structs
 
 #### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/system.lisp#L145-L152">METEREDRESULT :A</a></code> <sup><sub>[STRUCT]</sub></sup><a name="meteredresult-type"></a>
-- <code>RESULT :: :A</code><br/>The result of the function.
-- <code>TIME-ELAPSED :: COALTON:INTEGER</code><br/>The real time elapsed running the function (in internal time units).
-- <code>BYTES-CONSED :: (COALTON-LIBRARY/CLASSES:OPTIONAL COALTON:INTEGER)</code><br/>The number of bytes consed during the run.
 
 Function output with space and timing metedata.
 
@@ -8015,7 +7999,7 @@ The number of internal time units per second. This is implementation specific.
 
 ### Structs
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp#L37-L40">TUPLE3 :A :B :C</a></code> <sup><sub>[STRUCT]</sub></sup><a name="tuple3-type"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp#L42-L45">TUPLE3 :A :B :C</a></code> <sup><sub>[STRUCT]</sub></sup><a name="tuple3-type"></a>
 - <code>FIRST :: :A</code>
 - <code>SECOND :: :B</code>
 - <code>THIRD :: :C</code>
@@ -8033,7 +8017,7 @@ The number of internal time units per second. This is implementation specific.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp#L42-L46">TUPLE4 :A :B :C :D</a></code> <sup><sub>[STRUCT]</sub></sup><a name="tuple4-type"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp#L47-L51">TUPLE4 :A :B :C :D</a></code> <sup><sub>[STRUCT]</sub></sup><a name="tuple4-type"></a>
 - <code>FIRST :: :A</code>
 - <code>SECOND :: :B</code>
 - <code>THIRD :: :C</code>
@@ -8052,7 +8036,7 @@ The number of internal time units per second. This is implementation specific.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp#L48-L53">TUPLE5 :A :B :C :D :E</a></code> <sup><sub>[STRUCT]</sub></sup><a name="tuple5-type"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp#L53-L58">TUPLE5 :A :B :C :D :E</a></code> <sup><sub>[STRUCT]</sub></sup><a name="tuple5-type"></a>
 - <code>FIRST :: :A</code>
 - <code>SECOND :: :B</code>
 - <code>THIRD :: :C</code>
@@ -8074,7 +8058,7 @@ The number of internal time units per second. This is implementation specific.
 
 ### Values
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp#L28-L30">(FST (TUPLE A _))</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="fst-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp#L33-L35">(FST (TUPLE A _))</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="fst-value"></a>
 <code>&forall; :A :B. ((<a href="#tuple-type"><code>TUPLE</code></a> :A :B) &rarr; :A)</code>
 
 Get the first element of a tuple.
@@ -8083,7 +8067,7 @@ Get the first element of a tuple.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp#L33-L35">(SND (TUPLE _ B))</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="snd-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp#L38-L40">(SND (TUPLE _ B))</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="snd-value"></a>
 <code>&forall; :A :B. ((<a href="#tuple-type"><code>TUPLE</code></a> :A :B) &rarr; :B)</code>
 
 Get the second element of a tuple.
