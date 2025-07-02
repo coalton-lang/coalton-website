@@ -188,6 +188,17 @@ A ratio of integers always in reduced form.
 - <code><a href="#into-class">INTO</a> <a href="#fraction-type"><code>FRACTION</code></a> <a href="#big-float-type"><code>BIG-FLOAT</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#fraction-type"><code>FRACTION</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#fraction-type"><code>FRACTION</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i64-type"><code>I64</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u64-type"><code>U64</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type"><code>U8</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#num-class">NUM</a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#fraction-type"><code>FRACTION</code></a></code>
@@ -222,6 +233,7 @@ Signed 16-bit integer capable of storing values in `[-32768, 32767]`. Uses `(sig
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#i16-type"><code>I16</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#double-float-type"><code>DOUBLE-FLOAT</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#i32-type"><code>I32</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#i64-type"><code>I64</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#ifix-type"><code>IFIX</code></a></code>
@@ -273,6 +285,7 @@ Signed 32-bit integer capable of storing values in `[-2147483648, 2147483647]`. 
 - <code><a href="#into-class">INTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#i32-type"><code>I32</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#double-float-type"><code>DOUBLE-FLOAT</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#i64-type"><code>I64</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#ifix-type"><code>IFIX</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#integer-type"><code>INTEGER</code></a></code>
@@ -326,6 +339,7 @@ Signed 64-bit integer capable of storing values in `[-9223372036854775808, 92233
 - <code><a href="#into-class">INTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#i64-type"><code>I64</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#i64-type"><code>I64</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i64-type"><code>I64</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i64-type"><code>I64</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i64-type"><code>I64</code></a> <a href="#integer-type"><code>INTEGER</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i64-type"><code>I64</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#i64-type"><code>I64</code></a></code>
@@ -378,6 +392,7 @@ Signed 8-bit integer capable of storing values in `[-128, 127]`. Uses `(signed-b
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#i8-type"><code>I8</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#double-float-type"><code>DOUBLE-FLOAT</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#i16-type"><code>I16</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#i32-type"><code>I32</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#i64-type"><code>I64</code></a></code>
@@ -433,6 +448,7 @@ Non-allocating tagged integer; range is platform-dependent. Does not error on ov
 - <code><a href="#into-class">INTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#ifix-type"><code>IFIX</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#ifix-type"><code>IFIX</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#i64-type"><code>I64</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#integer-type"><code>INTEGER</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#string-type"><code>STRING</code></a></code>
@@ -492,6 +508,7 @@ Unbound integer. Uses `integer`.
 - <code><a href="#into-class">INTO</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#big-float-type"><code>BIG-FLOAT</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#dyadic-type"><code>DYADIC</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#integer-type"><code>INTEGER</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#integer-type"><code>INTEGER</code></a></code>
@@ -761,6 +778,7 @@ Unsigned 16-bit integer capable of storing values in `[0, 65535]`. Uses `(unsign
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#u16-type"><code>U16</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#double-float-type"><code>DOUBLE-FLOAT</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#i32-type"><code>I32</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#i64-type"><code>I64</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#ifix-type"><code>IFIX</code></a></code>
@@ -812,6 +830,7 @@ Unsigned 32-bit integer capable of storing values in `[0, 4294967295]`. Uses `(u
 - <code><a href="#into-class">INTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#u32-type"><code>U32</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#double-float-type"><code>DOUBLE-FLOAT</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#i64-type"><code>I64</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#ifix-type"><code>IFIX</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#integer-type"><code>INTEGER</code></a></code>
@@ -865,6 +884,7 @@ Unsigned 64-bit integer capable of storing values in `[0, 18446744073709551615]`
 - <code><a href="#into-class">INTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#u64-type"><code>U64</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#u64-type"><code>U64</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u64-type"><code>U64</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u64-type"><code>U64</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u64-type"><code>U64</code></a> <a href="#integer-type"><code>INTEGER</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u64-type"><code>U64</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type"><code>U8</code></a> <a href="#u64-type"><code>U64</code></a></code>
@@ -917,6 +937,7 @@ Unsigned 8-bit integer capable of storing values in `[0, 255]`. Uses `(unsigned-
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#u8-type"><code>U8</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type"><code>U8</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type"><code>U8</code></a> <a href="#double-float-type"><code>DOUBLE-FLOAT</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type"><code>U8</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type"><code>U8</code></a> <a href="#i16-type"><code>I16</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type"><code>U8</code></a> <a href="#i32-type"><code>I32</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type"><code>U8</code></a> <a href="#i64-type"><code>I64</code></a></code>
@@ -972,6 +993,7 @@ Non-allocating tagged non-negative integer; range is platform-dependent. Uses `(
 - <code><a href="#into-class">INTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#ufix-type"><code>UFIX</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type"><code>U8</code></a> <a href="#ufix-type"><code>UFIX</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#i64-type"><code>I64</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#ifix-type"><code>IFIX</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#integer-type"><code>INTEGER</code></a></code>
@@ -2136,6 +2158,17 @@ Methods:
 - <code><a href="#into-class">INTO</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#dyadic-type"><code>DYADIC</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#dyadic-type"><code>DYADIC</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#complex-class">COMPLEX</a> :A &rArr; <a href="#into-class">INTO</a> :A (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
+- <code><a href="#into-class">INTO</a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u64-type"><code>U64</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#u8-type"><code>U8</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i64-type"><code>I64</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#double-float-type"><code>DOUBLE-FLOAT</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#double-float-type"><code>DOUBLE-FLOAT</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#double-float-type"><code>DOUBLE-FLOAT</code></a></code>
