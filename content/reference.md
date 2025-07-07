@@ -1,17 +1,9 @@
 ---
 identifier: Reference
+layout: two-pane
 ---
 
-<style>
-@media only screen and (max-width: 1250px) {
-  .sidebar {
-    display: none;
-  }
-}
-</style>
-
-<div class="sidebar" style="height: 0; position: sticky; top: 10px">
-<div style="position: relative; right: 50%; width: 50%;">
+<aside class="sidebar">
 
 ### Reference
 - <a href="#coalton-package"><code>COALTON</code></a>
@@ -59,7 +51,9 @@ identifier: Reference
 - <a href="#coalton-library/tuple-package"><code>COALTON-LIBRARY/TUPLE</code></a>
 - <a href="#coalton-library/types-package"><code>COALTON-LIBRARY/TYPES</code></a>
 - <a href="#coalton-library/vector-package"><code>COALTON-LIBRARY/VECTOR</code></a>
-</div></div><div>
+
+</aside>
+<div class="main-content">
 
 # Package `COALTON`<a name="coalton-package"></a>
 
@@ -8596,4 +8590,4 @@ Create a new vector with `n` elements equal to `x`.
 
 ***
 
-</div></div></div>
+</div>
