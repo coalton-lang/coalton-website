@@ -1,59 +1,88 @@
 baseURL: https://coalton-lang.github.io/
 languageCode: en-us
 title: The Coalton Language
-theme: vanilla-bootstrap-hugo-theme
+theme: PaperMod
 #googleAnalytics: UA-123456789-1
 
 taxonomies:
   tag: tags
 
 permalinks:
-  post: /:filename/
+  post: /:contentbasename/
 
-# See https://feathericons.com/
-# The value of pre is the icon name
 menu:
-  nav:
-  - name: Home
-    pre: home
-    url: /
-    weight: 1
-  - name: Blog
-    pre: edit
-    url: /post/
-    weight: 2
-#  - name: Tags
-#    pre: tag
-#    url: /tags/
-#    weight: 3
-  - name: GitHub
-    pre: github
-    url: https://www.github.com/coalton-lang/coalton
-    weight: 3
-  - name: About
-    pre: smile
-    url: /about/
-    weight: 4
-  - name: Reference
-    identifier: Reference
-    pre: file-text
-    url: /reference/
-    weight: 5
-
-#  - name: RSS
-#    pre: rss
-#    url: /index.xml
-#    weight: 5
+  main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: 1
+    - identifier: blog
+      name: Blog
+      url: /post/
+      weight: 2
+    - identifier: github
+      name: GitHub
+      url: https://github.com/coalton-lang/coalton
+      weight: 3
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 4
+    - identifier: reference
+      name: Reference
+      url: /reference/
+      weight: 5
 
 params:
-  includeBootstrapJs: false
-  showActiveNav: true
-  containerMaxWidth: 700px
-  dateFormat: Jan 2, 2006
-  homeText: The Coalton Language
-  footerText: Copyright © 2018–2025 Coalton Developers. [source](https://github.com/coalton-lang/coalton-website) · [rss](/index.xml)
-  hideFooter: false
-#  katex: true
+  env: production
+  title: The Coalton Language
+  description: "A statically typed, functional programming language that compiles to Common Lisp"
+  keywords: [coalton, functional programming, lisp, static types]
+  DateFormat: "January 2, 2006"
+  defaultTheme: light
+  disableThemeToggle: true
+
+  ShowShareButtons: false
+  ShowPostNavLinks: false
+  ShowBreadCrumbs: false
+  ShowCodeCopyButtons: true
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  disableSpecial1stPost: true
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: false
+  tocopen: false
+  disableAnchoredHeadings: true
+
+  assets:
+    disableHLJS: true
+
+  label:
+    text: "Coalton"
+    icon: /favicon.ico
+    iconHeight: 35
+
+  profileMode:
+    enabled: false
+
+  cover:
+    hidden: true
+    hiddenInList: true
+    hiddenInSingle: true
+
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+  footerText: "Copyright © 2018–2025 Coalton Developers. [source](https://github.com/coalton-lang/coalton-website) · [rss](/index.xml)"
 
 markup:
   defaultMarkdownHandler: goldmark
