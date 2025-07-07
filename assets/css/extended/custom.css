@@ -3,6 +3,17 @@
   --single-main-width: 720px;
 }
 
+html {
+  overflow-y: auto;
+}
+
+.index-main {
+  height: calc(100vh - 175px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .main {
   display: flex;
   flex-direction: column;
