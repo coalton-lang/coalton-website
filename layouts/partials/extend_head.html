@@ -5,4 +5,10 @@
 {{- /* Enable math support for posts with math: true in frontmatter */ -}}
 {{- if .Params.math }}{{ partial "helpers/math.html" . }}{{ end }}
 
+{{- /* Reference page symbol search */ -}}
+{{- if and .File (eq .File.BaseFileName "reference") }}
+<link rel="stylesheet" href="/css/reference.css">
+<script defer src="/js/reference.js"></script>
+{{- end }}
+
 {{- /* Head custom content area end */ -}}

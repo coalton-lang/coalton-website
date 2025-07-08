@@ -6,6 +6,12 @@ layout: two-pane
 <aside class="sidebar">
 
 ### Reference
+
+<div class="symbol-search">
+  <input type="text" id="symbol-search-input" placeholder="Search symbols..." autocomplete="off">
+  <div class="search-results" id="search-results"></div>
+</div>
+
 - <a href="#coalton-package"><code>COALTON</code></a>
 - <a href="#coalton-library/big-float-package"><code>COALTON-LIBRARY/BIG-FLOAT</code></a>
 - <a href="#coalton-library/bits-package"><code>COALTON-LIBRARY/BITS</code></a>

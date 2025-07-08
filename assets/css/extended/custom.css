@@ -45,14 +45,6 @@ html {
   padding: 0 25px;
 }
 
-.post-two-pane .main-content > h1 {
-  margin-top: 0;
-}
-
-.post-two-pane .post-content .main-content h4 {
-  font-size: 18pt;
-}
-
 .sidebar {
   width: 320px;
   position: sticky;
