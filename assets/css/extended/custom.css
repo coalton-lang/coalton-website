@@ -1,5 +1,6 @@
 :root {
-  --main-width: 1024px;
+  --main-width: 1200px;
+  --nav-width: 1200px;
   --single-main-width: 720px;
 }
 
@@ -52,7 +53,7 @@ html {
 }
 
 .sidebar {
-  width: 300px;
+  width: 320px;
   position: sticky;
   top: 10px;
   max-height: calc(100vh - var(--header-height) + 50px);
@@ -72,12 +73,34 @@ html {
   margin: 0;
 }
 
+.post-two-pane .sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.post-two-pane a, .post-two-pane a code {
+  box-shadow: none !important;
+}
+
 @media only screen and (max-width: 1250px) {
+  :root {
+    --main-width: 1000px;
+    --nav-width: 1000px;
+  }
+  .post-two-pane .post-content {
+    width: 1000px;
+  }
+}
+@media only screen and (max-width: 1050px) {
   .sidebar {
     display: none;
   }
   .post-two-pane .post-content {
     width: auto;
-    max-width: 100vw;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .post-two-pane {
+    width: 100%;
   }
 }
