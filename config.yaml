@@ -61,9 +61,9 @@ params:
     disableHLJS: true
 
   label:
-    text: "Coalton"
-    icon: /favicon.ico
-    iconHeight: 35
+    text: " "
+    icon: /site-images/coalton-logotype-gray.svg
+    iconHeight: 24
 
   profileMode:
     enabled: false
