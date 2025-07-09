@@ -51,7 +51,6 @@ layout: two-pane
 - <a href="#coalton-library/tuple-package"><code>COALTON-LIBRARY/TUPLE</code></a>
 - <a href="#coalton-library/types-package"><code>COALTON-LIBRARY/TYPES</code></a>
 - <a href="#coalton-library/vector-package"><code>COALTON-LIBRARY/VECTOR</code></a>
-
 </aside>
 <div class="main-content">
 
