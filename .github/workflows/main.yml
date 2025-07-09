@@ -1,12 +1,10 @@
 name: CD
-on: 
+on:
   push:
-    branches:
-      - main
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
     steps:
       - name: Git checkout
         uses: actions/checkout@v2
@@ -27,6 +25,7 @@ jobs:
         run: hugo
 
       - name: Deploy
+        if: github.ref_name == 'main'
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.COALTON_WEBSITE_DEPLOY_TOKEN }}
