@@ -596,7 +596,6 @@ Represents something that may not have a value.
 - <code><a href="#monad-class">MONAD</a> <a href="#optional-type"><code>OPTIONAL</code></a></code>
 - <code><a href="#monadfail-class">MONADFAIL</a> <a href="#optional-type"><code>OPTIONAL</code></a></code>
 - <code><a href="#monoid-class">MONOID</a> :A &rArr; <a href="#monoid-class">MONOID</a> (<a href="#optional-type"><code>OPTIONAL</code></a> :A)</code>
-- <code><a href="#num-class">NUM</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#optional-type"><code>OPTIONAL</code></a> :A)</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#ord-class">ORD</a> (<a href="#optional-type"><code>OPTIONAL</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#optional-type"><code>OPTIONAL</code></a> :A)</code>
 - <code><a href="#semigroup-class">SEMIGROUP</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#optional-type"><code>OPTIONAL</code></a> :A)</code>
@@ -2390,7 +2389,6 @@ Methods:
 
 - <code><a href="#num-class">NUM</a> <a href="#creal-type"><code>CREAL</code></a></code>
 - <code><a href="#num-class">NUM</a> <a href="#big-float-type"><code>BIG-FLOAT</code></a></code>
-- <code><a href="#num-class">NUM</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#optional-type"><code>OPTIONAL</code></a> :A)</code>
 - <code><a href="#num-class">NUM</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#cell-type"><code>CELL</code></a> :A)</code>
 - <code><a href="#num-class">NUM</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#hyperdual-type"><code>HYPERDUAL</code></a> :A)</code>
 - <code><a href="#num-class">NUM</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#dual-type"><code>DUAL</code></a> :A)</code>
