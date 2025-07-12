@@ -86,6 +86,10 @@ Type constructor for function types.
 ***
 
 #### <code><a href="">BOOLEAN</a></code> <sup><sub>[TYPE]</sub></sup><a name="boolean-type"></a>
+- <code>FALSE</code> 
+  - Boolean `False`
+- <code>TRUE</code> 
+  - Boolean `True`
 
 Either true or false represented by `t` and `nil` respectively.
 
@@ -542,6 +546,10 @@ Unbound integer. Uses `integer`.
 ***
 
 #### <code><a href="">LIST</a></code> <sup><sub>[TYPE]</sub></sup><a name="list-type"></a>
+- <code>NIL</code> 
+  - `Nil` represents an empty `List`.
+- <code>(CONS :A (<a href="#list-type"><code>LIST</code></a> :A))</code>
+  - `Cons` represents a `List` containing a first element (`car`) and a nested `Cons` (`cdr`).
 
 Homogeneous list of objects represented as a Common Lisp `list`.
 
@@ -582,6 +590,10 @@ Homogeneous list of objects represented as a Common Lisp `list`.
 ***
 
 #### <code><a href="">OPTIONAL</a></code> <sup><sub>[TYPE]</sub></sup><a name="optional-type"></a>
+- <code>(SOME :A)</code>
+  - `Some` expresses the presence of a meaningful value.
+- <code>NONE</code> 
+  - `None` expresses the absence of a meaningful value.
 
 Represents something that may not have a value.
 
@@ -1060,6 +1072,8 @@ Non-allocating tagged non-negative integer; range is platform-dependent. Uses `(
 ***
 
 #### <code><a href="">UNIT</a></code> <sup><sub>[TYPE]</sub></sup><a name="unit-type"></a>
+- <code>UNIT</code> 
+  - `Unit` represents nullary parameters and return types.
 <details>
 <summary>Instances</summary>
 
@@ -1749,6 +1763,12 @@ Implementation dependent hash code.
 ***
 
 #### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L138-L142">ORD</a></code> <sup><sub>[TYPE]</sub></sup><a name="ord-type"></a>
+- <code>LT</code> 
+  - Less than
+- <code>GT</code> 
+  - Greater than
+- <code>EQ</code> 
+  - Equal to
 
 The result of an ordered comparison.
 
@@ -1766,6 +1786,8 @@ The result of an ordered comparison.
 ***
 
 #### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L76-L82">RESULT</a></code> <sup><sub>[TYPE]</sub></sup><a name="result-type"></a>
+- <code>(ERR :A)</code>
+- <code>(OK :B)</code>
 
 Represents something that may have failed.
 
@@ -3005,9 +3027,7 @@ Common Lisp makes a distinction between file and directory paths. Directory path
 ### Types
 
 #### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L144-L149">FILEERROR</a></code> <sup><sub>[TYPE]</sub></sup><a name="fileerror-type"></a>
-- <code>(PATHERROR <a href="#string-type"><code>STRING</code></a> <a href="#pathname-type"><code>PATHNAME</code></a> )</code>
-- <code>(LISPERROR <a href="#lispcondition-type"><code>LISPCONDITION</code></a> )</code>
-- <code>EOF</code>
+- <code>(FILEERROR <a href="#string-type"><code>STRING</code></a>)</code>
 
 Errors for file functions.
 
@@ -3039,6 +3059,10 @@ Represents a file stream, using `cl:file-stream`.
 ***
 
 #### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L358-L363">IFEXISTS</a></code> <sup><sub>[TYPE]</sub></sup><a name="ifexists-type"></a>
+- <code>SUPERSEDE</code> 
+- <code>OVERWRITE</code> 
+- <code>EERROR</code> 
+- <code>APPEND</code> 
 
 Possible options for opening a stream when the file exists.
 
@@ -3075,6 +3099,12 @@ Pathname object. Equivalent to `cl:pathname`
 ***
 
 #### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L365-L369">STREAMOPTIONS</a></code> <sup><sub>[TYPE]</sub></sup><a name="streamoptions-type"></a>
+- <code>(BIDIRECTIONAL <a href="#pathname-type"><code>PATHNAME</code></a> <a href="#ifexists-type"><code>IFEXISTS</code></a>)</code>
+  - Constructor for opening a bidirectional stream.
+- <code>(OUTPUT <a href="#pathname-type"><code>PATHNAME</code></a> <a href="#ifexists-type"><code>IFEXISTS</code></a>)</code>
+  - Constructor for opening an output stream.
+- <code>(INPUT <a href="#pathname-type"><code>PATHNAME</code></a>)</code>
+  - Constructor for opening an input stream
 
 A type for providing parameters for opening streams. StreamOptions take strings for pathnames, but they will error if they are not proper and appropriate pathnames.
 
@@ -3661,6 +3691,7 @@ Take a function with two currying parameters and enable their input as a single 
 ### Types
 
 #### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L57-L59">HASHMAP</a></code> <sup><sub>[TYPE]</sub></sup><a name="hashmap-type"></a>
+- <code>(HASHMAP (<a href="#hmnode-type"><code>HMNODE</code></a> :A :B))</code>
 
 Immutable map (also known as a dictionary or dict) using hashes. Implemented as a hash array mapped trie data structure.
 
@@ -3876,7 +3907,6 @@ Create a new empty hashtable with a given capacity
 ### Types
 
 #### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L85-L87">ITERATOR</a></code> <sup><sub>[TYPE]</sub></sup><a name="iterator-type"></a>
-- <code>(%ITERATOR (<a href="#unit-type"><code>UNIT</code></a> &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> :A)) (<a href="#optional-type"><code>OPTIONAL</code></a> <a href="#ufix-type"><code>UFIX</code></a>) )</code>
 
 A forward-moving pointer into an ordered sequence of :ELTs
 
@@ -5379,7 +5409,6 @@ Methods:
 ### Types
 
 #### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L36-L38">COMPLEX</a></code> <sup><sub>[TYPE]</sub></sup><a name="complex-type"></a>
-- <code>(%COMPLEX :A :A )</code>
 
 Complex number that may either have a native or constructed representation.
 
@@ -5567,6 +5596,7 @@ The primal (i.e., real) part of a dual number.
 ### Types
 
 #### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dyadic.lisp#L32-L34">DYADIC</a></code> <sup><sub>[TYPE]</sub></sup><a name="dyadic-type"></a>
+- <code>(DYADIC <a href="#integer-type"><code>INTEGER</code></a> <a href="#integer-type"><code>INTEGER</code></a>)</code>
 
 `(Dyadic n k)` represents the rational n*2^k.
 
@@ -6561,6 +6591,7 @@ Returns the integer closest/equal to `x` that is within `0` and `x`.
 ***
 
 #### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L35-L38">ENVT</a></code> <sup><sub>[TYPE]</sub></sup><a name="envt-type"></a>
+- <code>(ENVT (:A &rarr; (:B :C)))</code>
 
 A monadic computation that runs inside an :env environment.
 Equivalent to Haskell's ReaderT monad https://hackage.haskell.org/package/transformers-0.6.1.2/docs/Control-Monad-Trans-Reader.html
@@ -6668,6 +6699,8 @@ Retrieve the computation environment.
 ### Types
 
 #### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/free.lisp#L26-L31">FREE</a></code> <sup><sub>[TYPE]</sub></sup><a name="free-type"></a>
+- <code>(FREE (:A ((<a href="#free-type"><code>FREE</code></a> :A) :B)))</code>
+- <code>(VAL :C)</code>
 
 `Free :f` gives you a Monad instance for any `Functor :f`.
 
@@ -6715,6 +6748,7 @@ Lift a Functor into the Free Monad.
 ### Types
 
 #### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/identity.lisp#L19-L21">IDENTITY</a></code> <sup><sub>[TYPE]</sub></sup><a name="identity-type"></a>
+- <code>(IDENTITY :A)</code>
 
 A bare computation. Not useful on its own, but is useful for running Monad transformers in a bare context.
 
@@ -6745,6 +6779,7 @@ A bare computation. Not useful on its own, but is useful for running Monad trans
 ### Types
 
 #### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/optionalt.lisp#L23-L25">OPTIONALT</a></code> <sup><sub>[TYPE]</sub></sup><a name="optionalt-type"></a>
+- <code>(OPTIONALT (:A (<a href="#optional-type"><code>OPTIONAL</code></a> :B)))</code>
 
 A monadic computation that returns an Optional.
 
@@ -6783,6 +6818,7 @@ A monadic computation that returns an Optional.
 ### Types
 
 #### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/resultt.lisp#L27-L29">RESULTT</a></code> <sup><sub>[TYPE]</sub></sup><a name="resultt-type"></a>
+- <code>(RESULTT (:A (<a href="#result-type"><code>RESULT</code></a> :B :C)))</code>
 
 A monadic computation that returns a Result.
 
@@ -6832,6 +6868,7 @@ A monadic computation that returns a Result.
 ### Types
 
 #### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.lisp#L26-L29">ST</a></code> <sup><sub>[TYPE]</sub></sup><a name="st-type"></a>
+- <code>(ST (:A &rarr; (<a href="#tuple-type"><code>TUPLE</code></a> :A :B)))</code>
 
 A computation of a value which may affect the state.
 Represented as a closure from initial state to updated state and value.
@@ -6924,7 +6961,6 @@ Is X Some?
 ### Types
 
 #### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/ord-map.lisp#L66-L68">MAP</a></code> <sup><sub>[TYPE]</sub></sup><a name="map-type"></a>
-- <code>(%MAP (<a href="#tree-type"><code>TREE</code></a> (<a href="#mappair-type"><code>MAPPAIR</code></a> :A :B)) )</code>
 
 A red-black binary tree which associates each :KEY with a :VALUE, sorted by `<=>' on the keys and unique by `==' on the keys.
 
@@ -7093,8 +7129,8 @@ A Map containing no mappings.
 ### Types
 
 #### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/ord-tree.lisp#L80-L90">TREE</a></code> <sup><sub>[TYPE]</sub></sup><a name="tree-type"></a>
-- <code>DOUBLEBLACKEMPTY</code>
-- <code>(BRANCH <a href="#color-type"><code>COLOR</code></a> (<a href="#tree-type"><code>TREE</code></a> :A) :A (<a href="#tree-type"><code>TREE</code></a> :A) unexported; a tree with at least one element, and possibly children. (Branch clr less elt right). Every element of LESS is less than ELT, and every element of RIGHT is greater than ELT.)</code>
+- <code>EMPTY</code> 
+  - exported; an empty tree. considered black for the purpose of the invariants.
 
 A red-black balanced binary tree, sorted by `<=>` and unique by `==`.
 
@@ -7503,8 +7539,6 @@ Convert OPT to a Result, using FAILURE value if None.
 ### Types
 
 #### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.lisp#L58-L64">SEQ</a></code> <sup><sub>[TYPE]</sub></sup><a name="seq-type"></a>
-- <code>(RELAXEDNODE <a href="#ufix-type"><code>UFIX</code></a> <a href="#ufix-type"><code>UFIX</code></a> (<a href="#vector-type"><code>VECTOR</code></a> <a href="#ufix-type"><code>UFIX</code></a>) (<a href="#vector-type"><code>VECTOR</code></a> (<a href="#seq-type"><code>SEQ</code></a> :A)) )</code>
-- <code>(LEAFARRAY (<a href="#vector-type"><code>VECTOR</code></a> :B) )</code>
 <details>
 <summary>Instances</summary>
 
@@ -8163,6 +8197,7 @@ The runtime representation of a Coalton type as a lisp type.
 ***
 
 #### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/types.lisp#L22-L24">PROXY</a></code> <sup><sub>[TYPE]</sub></sup><a name="proxy-type"></a>
+- <code>PROXY</code> 
 
 Proxy holds no data, but has a phantom type parameter.
 
