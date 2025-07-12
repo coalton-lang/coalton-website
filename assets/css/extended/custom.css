@@ -11,9 +11,11 @@ html {
 
 .index-main {
   height: calc(100vh - 175px);
+  min-height: 380px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 25px;
 }
 
 .main {
@@ -27,7 +29,7 @@ html {
 }
 
 .post-single, .post-entry, .post-content {
-  width: var(--single-main-width);
+  max-width: var(--single-main-width);
   margin: inherit auto;
 }
 
