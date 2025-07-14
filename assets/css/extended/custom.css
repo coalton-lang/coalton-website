@@ -10,12 +10,14 @@ html {
 }
 
 .index-main {
+  max-width: var(--single-main-width);
   height: calc(100vh - 175px);
   min-height: 380px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 25px;
+  margin: 0 auto;
 }
 
 .main {
@@ -28,18 +30,24 @@ html {
   width: var(--single-main-width);
 }
 
-.post-single, .post-entry, .post-content {
+.post-single, .post-entry {
   max-width: var(--single-main-width);
   margin: inherit auto;
 }
 
+.post-header, .post-content {
+  width: 100%;
+}
 
 /*
  * Two pane layout
  */
 
-.post-two-pane .post-content {
+.post-two-pane {
   width: var(--main-width);
+}
+
+.post-two-pane .post-content {
   display: flex;
 }
 
@@ -82,7 +90,7 @@ html {
     --main-width: 1000px;
     --nav-width: 1000px;
   }
-  .post-two-pane .post-content {
+  .post-two-pane {
     width: 1000px;
   }
 }
@@ -90,12 +98,21 @@ html {
   .sidebar {
     display: none;
   }
-  .post-two-pane .post-content {
+  .post-two-pane {
     width: auto;
+  }
+  .post-two-pane .main-content {
+    padding: 0;
+  }
+  .page-header {
+    margin-top: 0;
   }
 }
 @media only screen and (max-width: 600px) {
-  .post-two-pane {
+  :root {
+    --header-height: 45px;
+  }
+  .post-two-pane, .post-single {
     width: 100%;
   }
 }
