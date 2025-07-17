@@ -4510,7 +4510,7 @@ Yields nothing; stops immediately
 
 ### Types
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L31-L36">LISPARRAY</a></code> <sup><sub>[TYPE]</sub></sup><a name="lisparray-type"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L32-L37">LISPARRAY</a></code> <sup><sub>[TYPE]</sub></sup><a name="lisparray-type"></a>
 
 A one-dimensional, non-resizable array of elements.
 
@@ -4525,6 +4525,7 @@ Whether or not the arrays are specialized depends on the underlying Lisp impleme
 - <code><a href="#into-class">INTO</a> (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A) (<a href="#list-type"><code>LIST</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#list-type"><code>LIST</code></a> :A) (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#iso-class">ISO</a> (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A) (<a href="#list-type"><code>LIST</code></a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#randomaccess-class">RANDOMACCESS</a> (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A) :A</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A)</code>
 
 </details>
@@ -4535,7 +4536,7 @@ Whether or not the arrays are specialized depends on the underlying Lisp impleme
 
 ### Values
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L77-L80">(AREF V I)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="aref-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L78-L81">(AREF V I)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="aref-value"></a>
 <code>&forall; :A. ((<a href="#lisparray-type"><code>LISPARRAY</code></a> :A) &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; :A)</code>
 
 Read the `i`th value of the `LispArray` `v`.
@@ -4544,7 +4545,7 @@ Read the `i`th value of the `LispArray` `v`.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L92-L95">(COPY V)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="copy-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L93-L96">(COPY V)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="copy-value"></a>
 <code>&forall; :A. ((<a href="#lisparray-type"><code>LISPARRAY</code></a> :A) &rarr; (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A))</code>
 
 Make a deep copy of the `LispArray` `v`.
@@ -4553,7 +4554,7 @@ Make a deep copy of the `LispArray` `v`.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L70-L73">(LENGTH V)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="length-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L71-L74">(LENGTH V)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="length-value"></a>
 <code>&forall; :A. ((<a href="#lisparray-type"><code>LISPARRAY</code></a> :A) &rarr; <a href="#ufix-type"><code>UFIX</code></a>)</code>
 
 Return the length of the `LispArray` `v`.
@@ -4562,7 +4563,7 @@ Return the length of the `LispArray` `v`.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L45-L52">(MAKE N X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="make-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L46-L53">(MAKE N X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="make-value"></a>
 <code>&forall; :A. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; (<a href="#ufix-type"><code>UFIX</code></a> &rarr; :A &rarr; (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A))</code>
 
 Make a new `LispArray` of length `n` initialized to `x`.
@@ -4573,7 +4574,7 @@ If the type of `x` represents a specialized array
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L55-L66">(MAKE-UNINITIALIZED N)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="make-uninitialized-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L56-L67">(MAKE-UNINITIALIZED N)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="make-uninitialized-value"></a>
 <code>&forall; :A. <a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; (<a href="#ufix-type"><code>UFIX</code></a> &rarr; (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A))</code>
 
 Make a new LispArray of length `n` that can store elements of type `:t`.
@@ -4585,7 +4586,7 @@ WARNING: The consequences are undefined if an uninitialized element is read befo
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L84-L88">(SET! V I X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="set!-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L85-L89">(SET! V I X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="set!-value"></a>
 <code>&forall; :A. ((<a href="#lisparray-type"><code>LISPARRAY</code></a> :A) &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; :A &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
 
 Set the `i`th value of the `LispArray` `v` to `x`.
@@ -7468,6 +7469,7 @@ Methods:
 <summary>Instances</summary>
 
 - <code><a href="#randomaccess-class">RANDOMACCESS</a> (<a href="#vector-type"><code>VECTOR</code></a> :A) :A</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#randomaccess-class">RANDOMACCESS</a> (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A) :A</code>
 
 </details>
 
