@@ -40,6 +40,7 @@ layout: two-pane
 - <a href="#coalton-library/math/real-package"><code>COALTON-LIBRARY/MATH/REAL</code></a>
 - <a href="#coalton-library/monad/environment-package"><code>COALTON-LIBRARY/MONAD/ENVIRONMENT</code></a>
 - <a href="#coalton-library/monad/free-package"><code>COALTON-LIBRARY/MONAD/FREE</code></a>
+- <a href="#coalton-library/monad/freet-package"><code>COALTON-LIBRARY/MONAD/FREET</code></a>
 - <a href="#coalton-library/monad/identity-package"><code>COALTON-LIBRARY/MONAD/IDENTITY</code></a>
 - <a href="#coalton-library/monad/optionalt-package"><code>COALTON-LIBRARY/MONAD/OPTIONALT</code></a>
 - <a href="#coalton-library/monad/resultt-package"><code>COALTON-LIBRARY/MONAD/RESULTT</code></a>
@@ -1903,6 +1904,7 @@ Methods:
 <details>
 <summary>Instances</summary>
 
+- <code>(<a href="#functor-class">FUNCTOR</a> :A) (<a href="#monad-class">MONAD</a> :B) &rArr; <a href="#applicative-class">APPLICATIVE</a> ((<a href="#freet-type"><code>FREET</code></a> :A) :B)</code>
 - <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#applicative-class">APPLICATIVE</a> (<a href="#free-type"><code>FREE</code></a> :A)</code>
 - <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#applicative-class">APPLICATIVE</a> (<a href="#optionalt-type"><code>OPTIONALT</code></a> :A)</code>
 - <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#applicative-class">APPLICATIVE</a> ((<a href="#resultt-type"><code>RESULTT</code></a> :B) :A)</code>
@@ -1932,6 +1934,7 @@ Methods:
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#bifunctor-class">BIFUNCTOR</a> (<a href="#freef-type"><code>FREEF</code></a> :A)</code>
 - <code><a href="#bifunctor-class">BIFUNCTOR</a> <a href="#result-type"><code>RESULT</code></a></code>
 - <code><a href="#bifunctor-class">BIFUNCTOR</a> <a href="#tuple-type"><code>TUPLE</code></a></code>
 
@@ -2090,6 +2093,8 @@ Methods:
 
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#seq-type"><code>SEQ</code></a></code>
 - <code><a href="#functor-class">FUNCTOR</a> (<a href="#ordmap-type"><code>ORDMAP</code></a> :A)</code>
+- <code>(<a href="#functor-class">FUNCTOR</a> :A) (<a href="#functor-class">FUNCTOR</a> :B) &rArr; <a href="#functor-class">FUNCTOR</a> ((<a href="#freet-type"><code>FREET</code></a> :A) :B)</code>
+- <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#functor-class">FUNCTOR</a> ((<a href="#freef-type"><code>FREEF</code></a> :A) :B)</code>
 - <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#functor-class">FUNCTOR</a> (<a href="#free-type"><code>FREE</code></a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#functor-class">FUNCTOR</a> (<a href="#optionalt-type"><code>OPTIONALT</code></a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#functor-class">FUNCTOR</a> ((<a href="#resultt-type"><code>RESULTT</code></a> :B) :A)</code>
@@ -2338,6 +2343,7 @@ Methods:
 <details>
 <summary>Instances</summary>
 
+- <code>(<a href="#functor-class">FUNCTOR</a> :A) (<a href="#monad-class">MONAD</a> :B) &rArr; <a href="#monad-class">MONAD</a> ((<a href="#freet-type"><code>FREET</code></a> :A) :B)</code>
 - <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#monad-class">MONAD</a> (<a href="#free-type"><code>FREE</code></a> :A)</code>
 - <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monad-class">MONAD</a> (<a href="#optionalt-type"><code>OPTIONALT</code></a> :A)</code>
 - <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monad-class">MONAD</a> ((<a href="#resultt-type"><code>RESULTT</code></a> :B) :A)</code>
@@ -2383,6 +2389,7 @@ Methods:
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#monadtransformer-class">MONADTRANSFORMER</a> (<a href="#freet-type"><code>FREET</code></a> :A)</code>
 - <code><a href="#monadtransformer-class">MONADTRANSFORMER</a> <a href="#optionalt-type"><code>OPTIONALT</code></a></code>
 - <code><a href="#monadtransformer-class">MONADTRANSFORMER</a> (<a href="#resultt-type"><code>RESULTT</code></a> :A)</code>
 - <code><a href="#monadtransformer-class">MONADTRANSFORMER</a> (<a href="#envt-type"><code>ENVT</code></a> :A)</code>
@@ -2571,6 +2578,8 @@ Methods:
 <details>
 <summary>Instances</summary>
 
+- <code>(<a href="#monad-class">MONAD</a> :A) (<a href="#traversable-class">TRAVERSABLE</a> :A) (<a href="#traversable-class">TRAVERSABLE</a> :B) &rArr; <a href="#traversable-class">TRAVERSABLE</a> ((<a href="#freet-type"><code>FREET</code></a> :B) :A)</code>
+- <code><a href="#traversable-class">TRAVERSABLE</a> :A &rArr; <a href="#traversable-class">TRAVERSABLE</a> ((<a href="#freef-type"><code>FREEF</code></a> :A) :B)</code>
 - <code><a href="#traversable-class">TRAVERSABLE</a> :A &rArr; <a href="#traversable-class">TRAVERSABLE</a> (<a href="#free-type"><code>FREE</code></a> :A)</code>
 - <code><a href="#traversable-class">TRAVERSABLE</a> <a href="#list-type"><code>LIST</code></a></code>
 - <code><a href="#traversable-class">TRAVERSABLE</a> (<a href="#result-type"><code>RESULT</code></a> :A)</code>
@@ -6721,7 +6730,7 @@ Retrieve the computation environment.
 
 ### Types
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/free.lisp#L26-L31">FREE</a></code> <sup><sub>[TYPE]</sub></sup><a name="free-type"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/free.lisp#L43-L48">FREE</a></code> <sup><sub>[TYPE]</sub></sup><a name="free-type"></a>
 - <code>(FREE (:A ((<a href="#free-type"><code>FREE</code></a> :A) :B)))</code>
 - <code>(VAL :C)</code>
 
@@ -6736,6 +6745,7 @@ References: [here](https://serokell.io/blog/introduction-to-free-monads) and [he
 - <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#applicative-class">APPLICATIVE</a> (<a href="#free-type"><code>FREE</code></a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#functor-class">FUNCTOR</a> (<a href="#free-type"><code>FREE</code></a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#monad-class">MONAD</a> (<a href="#free-type"><code>FREE</code></a> :A)</code>
+- <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#monadfree-class">MONADFREE</a> :A (<a href="#free-type"><code>FREE</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> ((<a href="#free-type"><code>FREE</code></a> :A) :B)</code>
 - <code><a href="#traversable-class">TRAVERSABLE</a> :A &rArr; <a href="#traversable-class">TRAVERSABLE</a> (<a href="#free-type"><code>FREE</code></a> :A)</code>
 
@@ -6745,9 +6755,32 @@ References: [here](https://serokell.io/blog/introduction-to-free-monads) and [he
 
 ***
 
+### Classes
+
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/free.lisp#L27-L30">MONADFREE</a></code> <sup><sub>[CLASS]</sub></sup><a name="monadfree-class"></a>
+<code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monadfree-class">MONADFREE</a> :B :A</code>
+
+
+A free monad is a monad, :m, which is capable of 'wrapping'
+around functors, and then 'unwrapping' them later using `>>=`.
+
+Methods:
+- <code>WRAP :: ((:A (:B :C)) &rarr; (:B :C))</code>
+<details>
+<summary>Instances</summary>
+
+- <code>(<a href="#functor-class">FUNCTOR</a> :A) (<a href="#monad-class">MONAD</a> :B) &rArr; <a href="#monadfree-class">MONADFREE</a> :A ((<a href="#freet-type"><code>FREET</code></a> :A) :B)</code>
+- <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#monadfree-class">MONADFREE</a> :A (<a href="#free-type"><code>FREE</code></a> :A)</code>
+
+</details>
+
+
+
+***
+
 ### Values
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/free.lisp#L43-L48">(FOLDFREE NAT FR)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="foldfree-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/free.lisp#L54-L59">(FOLDFREE NAT FR)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="foldfree-value"></a>
 <code>&forall; :A :B :C. <a href="#monad-class">MONAD</a> :C &rArr; (((:A ((<a href="#free-type"><code>FREE</code></a> :A) :B)) &rarr; (:C ((<a href="#free-type"><code>FREE</code></a> :A) :B))) &rarr; ((<a href="#free-type"><code>FREE</code></a> :A) :B) &rarr; (:C :B))</code>
 
 Given a natural transformation, induce a Monad homomorphism from a
@@ -6757,11 +6790,68 @@ free monad to a target monad.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/free.lisp#L34-L36">(LIFTF F)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="liftf-value"></a>
-<code>&forall; :A :B. <a href="#functor-class">FUNCTOR</a> :A &rArr; ((:A :B) &rarr; ((<a href="#free-type"><code>FREE</code></a> :A) :B))</code>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/free.lisp#L33-L35">(LIFTF F)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="liftf-value"></a>
+<code>&forall; :A :B :C. (<a href="#functor-class">FUNCTOR</a> :A) (<a href="#monadfree-class">MONADFREE</a> :A :C) &rArr; ((:A :B) &rarr; (:C :B))</code>
 
 Lift a Functor into the Free Monad.
 
+
+
+***
+
+# Package `COALTON-LIBRARY/MONAD/FREET`<a name="coalton-library/monad/freet-package"></a>
+
+### Types
+
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/freet.lisp#L39-L41">FREEF</a></code> <sup><sub>[TYPE]</sub></sup><a name="freef-type"></a>
+- <code>(FREEF (:A :B))</code>
+- <code>(VAL :C)</code>
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#bifunctor-class">BIFUNCTOR</a> (<a href="#freef-type"><code>FREEF</code></a> :A)</code>
+- <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#functor-class">FUNCTOR</a> ((<a href="#freef-type"><code>FREEF</code></a> :A) :B)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (((<a href="#freef-type"><code>FREEF</code></a> :A) :B) :C)</code>
+- <code><a href="#traversable-class">TRAVERSABLE</a> :A &rArr; <a href="#traversable-class">TRAVERSABLE</a> ((<a href="#freef-type"><code>FREEF</code></a> :A) :B)</code>
+
+</details>
+
+
+
+***
+
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/freet.lisp#L75-L77">FREET</a></code> <sup><sub>[TYPE]</sub></sup><a name="freet-type"></a>
+- <code>(FREET (:A (((<a href="#freef-type"><code>FREEF</code></a> :B) :C) (((<a href="#freet-type"><code>FREET</code></a> :B) :A) :C))))</code>
+
+`Free :f :m :a` gives you a Monad Transformer instance for any `Functor :f` and `Monad :m`.
+
+<details>
+<summary>Instances</summary>
+
+- <code>(<a href="#functor-class">FUNCTOR</a> :A) (<a href="#functor-class">FUNCTOR</a> :B) &rArr; <a href="#functor-class">FUNCTOR</a> ((<a href="#freet-type"><code>FREET</code></a> :A) :B)</code>
+- <code>(<a href="#functor-class">FUNCTOR</a> :A) (<a href="#monad-class">MONAD</a> :B) &rArr; <a href="#applicative-class">APPLICATIVE</a> ((<a href="#freet-type"><code>FREET</code></a> :A) :B)</code>
+- <code>(<a href="#functor-class">FUNCTOR</a> :A) (<a href="#monad-class">MONAD</a> :B) &rArr; <a href="#monad-class">MONAD</a> ((<a href="#freet-type"><code>FREET</code></a> :A) :B)</code>
+- <code>(<a href="#functor-class">FUNCTOR</a> :A) (<a href="#monad-class">MONAD</a> :B) &rArr; <a href="#monadfree-class">MONADFREE</a> :A ((<a href="#freet-type"><code>FREET</code></a> :A) :B)</code>
+- <code>(<a href="#monad-class">MONAD</a> :A) (<a href="#traversable-class">TRAVERSABLE</a> :A) (<a href="#traversable-class">TRAVERSABLE</a> :B) &rArr; <a href="#traversable-class">TRAVERSABLE</a> ((<a href="#freet-type"><code>FREET</code></a> :B) :A)</code>
+- <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#monadtransformer-class">MONADTRANSFORMER</a> (<a href="#freet-type"><code>FREET</code></a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (((<a href="#freet-type"><code>FREET</code></a> :A) :B) :C)</code>
+
+</details>
+
+
+
+***
+
+### Values
+
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/freet.lisp#L152-L160">(FOLD-FREET F (FREET M))</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="fold-freet-value"></a>
+<code>&forall; :A :B :C :D. (<a href="#monadtransformer-class">MONADTRANSFORMER</a> :D) (<a href="#monad-class">MONAD</a> (:D :B)) (<a href="#monad-class">MONAD</a> :B) &rArr; (((:A (((<a href="#freet-type"><code>FREET</code></a> :A) :B) :C)) &rarr; ((:D :B) (((<a href="#freet-type"><code>FREET</code></a> :A) :B) :C))) &rarr; (((<a href="#freet-type"><code>FREET</code></a> :A) :B) :C) &rarr; ((:D :B) :C))</code>
+
+
+***
+
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/freet.lisp#L80-L80">(RUN-FREET (FREET M))</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="run-freet-value"></a>
+<code>&forall; :A :B :C. ((((<a href="#freet-type"><code>FREET</code></a> :A) :B) :C) &rarr; (:B (((<a href="#freef-type"><code>FREEF</code></a> :A) :C) (((<a href="#freet-type"><code>FREET</code></a> :A) :B) :C))))</code>
 
 
 ***
@@ -8269,6 +8359,8 @@ Methods:
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#iteratorstacknode-type"><code>ITERATORSTACKNODE</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tree-type"><code>TREE</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#color-type"><code>COLOR</code></a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (((<a href="#freet-type"><code>FREET</code></a> :A) :B) :C)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (((<a href="#freef-type"><code>FREEF</code></a> :A) :B) :C)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> ((<a href="#free-type"><code>FREE</code></a> :A) :B)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> ((<a href="#optionalt-type"><code>OPTIONALT</code></a> :A) :B)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (((<a href="#resultt-type"><code>RESULTT</code></a> :A) :B) :C)</code>
