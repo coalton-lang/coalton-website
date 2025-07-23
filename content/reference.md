@@ -1899,8 +1899,8 @@ Methods:
 Types which are a functor which can embed pure expressions and sequence operations.
 
 Methods:
-- <code>PURE :: (:A &rarr; (:B :A))</code>
-- <code>LIFTA2 :: ((:C &rarr; :D &rarr; :E) &rarr; (:B :C) &rarr; (:B :D) &rarr; (:B :E))</code>
+- <code>PURE :: (:B &rarr; (:A :B))</code>
+- <code>LIFTA2 :: ((:C &rarr; :D &rarr; :E) &rarr; (:A :C) &rarr; (:A :D) &rarr; (:A :E))</code>
 <details>
 <summary>Instances</summary>
 
@@ -1930,7 +1930,7 @@ Methods:
 Types which take two type arguments and are functors on both.
 
 Methods:
-- <code>BIMAP :: ((:A &rarr; :B) &rarr; (:C &rarr; :D) &rarr; ((:E :A) :C) &rarr; ((:E :B) :D))</code>
+- <code>BIMAP :: ((:B &rarr; :C) &rarr; (:D &rarr; :E) &rarr; ((:A :B) :D) &rarr; ((:A :C) :E))</code>
 <details>
 <summary>Instances</summary>
 
@@ -2061,8 +2061,8 @@ Note: Eq only compares the primal component.
 Types which can be folded into a single element.
 
 Methods:
-- <code>FOLD :: ((:A &rarr; :B &rarr; :A) &rarr; :A &rarr; (:C :B) &rarr; :A)</code><br/>A left tail-recursive fold.
-- <code>FOLDR :: ((:D &rarr; :E &rarr; :E) &rarr; :E &rarr; (:C :D) &rarr; :E)</code><br/>A right non-tail-recursive fold.
+- <code>FOLD :: ((:B &rarr; :C &rarr; :B) &rarr; :B &rarr; (:A :C) &rarr; :B)</code><br/>A left tail-recursive fold.
+- <code>FOLDR :: ((:D &rarr; :E &rarr; :E) &rarr; :E &rarr; (:A :D) &rarr; :E)</code><br/>A right non-tail-recursive fold.
 <details>
 <summary>Instances</summary>
 
@@ -2087,7 +2087,7 @@ Methods:
 Types which can map an inner type where the mapping adheres to the identity and composition laws.
 
 Methods:
-- <code>MAP :: ((:A &rarr; :B) &rarr; (:C :A) &rarr; (:C :B))</code>
+- <code>MAP :: ((:B &rarr; :C) &rarr; (:A :B) &rarr; (:A :C))</code>
 <details>
 <summary>Instances</summary>
 
@@ -2385,7 +2385,7 @@ Types which are monads that wrap another monad, allowing you to use - for exampl
 together.
 
 Methods:
-- <code>LIFT :: <a href="#monad-class">MONAD</a> :A &rArr; ((:A :B) &rarr; ((:C :A) :B))</code>
+- <code>LIFT :: <a href="#monad-class">MONAD</a> :B &rArr; ((:B :C) &rarr; ((:A :B) :C))</code>
 <details>
 <summary>Instances</summary>
 
@@ -2574,7 +2574,7 @@ Methods:
 <code><a href="#traversable-class">TRAVERSABLE</a> :A</code>
 
 Methods:
-- <code>TRAVERSE :: <a href="#applicative-class">APPLICATIVE</a> :A &rArr; ((:B &rarr; (:A :C)) &rarr; (:D :B) &rarr; (:A (:D :C)))</code>
+- <code>TRAVERSE :: <a href="#applicative-class">APPLICATIVE</a> :B &rArr; ((:C &rarr; (:B :D)) &rarr; (:A :C) &rarr; (:B (:A :D)))</code>
 <details>
 <summary>Instances</summary>
 
@@ -2597,7 +2597,7 @@ Methods:
 `TRY-INTO` implies some elements of `:a` can be represented exactly by an element of `:b`, but sometimes not. If not, an error of type `:c` is returned.
 
 Methods:
-- <code>TRYINTO :: (:A &rarr; (<a href="#result-type"><code>RESULT</code></a> :B :C))</code>
+- <code>TRYINTO :: (:A &rarr; (<a href="#result-type"><code>RESULT</code></a> :C :B))</code>
 <details>
 <summary>Instances</summary>
 
@@ -2710,7 +2710,7 @@ Typical `fail` continuations are:
 - Signal an error.
 
 Methods:
-- <code>UNWRAP-OR-ELSE :: ((:A &rarr; :B) &rarr; (<a href="#unit-type"><code>UNIT</code></a> &rarr; :B) &rarr; (:C :A) &rarr; :B)</code>
+- <code>UNWRAP-OR-ELSE :: ((:B &rarr; :C) &rarr; (<a href="#unit-type"><code>UNIT</code></a> &rarr; :C) &rarr; (:A :B) &rarr; :C)</code>
 <details>
 <summary>Instances</summary>
 
@@ -3960,7 +3960,7 @@ A forward-moving pointer into an ordered sequence of :ELTs
 <code><a href="#fromiterator-class">FROMITERATOR</a> :A :B</code>
 
 Methods:
-- <code>COLLECT! :: ((<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; :B)</code>
+- <code>COLLECT! :: ((<a href="#iterator-type"><code>ITERATOR</code></a> :B) &rarr; :A)</code>
 <details>
 <summary>Instances</summary>
 
@@ -6765,7 +6765,7 @@ A free monad is a monad, :m, which is capable of 'wrapping'
 around functors, and then 'unwrapping' them later using `>>=`.
 
 Methods:
-- <code>WRAP :: ((:A (:B :C)) &rarr; (:B :C))</code>
+- <code>WRAP :: ((:B (:A :C)) &rarr; (:A :C))</code>
 <details>
 <summary>Instances</summary>
 
@@ -7549,12 +7549,12 @@ Establishes that `:f` is a random-access store of elements of type `:t`. The **s
 It is permitted for any of `make`, `unsafe-aref`, or `unsafe-set!` to error.
 
 Methods:
-- <code>MAKE :: (<a href="#ufix-type"><code>UFIX</code></a> &rarr; :A &rarr; :B)</code>
-- <code>LENGTH :: (:B &rarr; <a href="#ufix-type"><code>UFIX</code></a>)</code>
-- <code>READABLE? :: (:B &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
-- <code>WRITABLE? :: (:B &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
-- <code>UNSAFE-AREF :: (:B &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; :A)</code>
-- <code>UNSAFE-SET! :: (:B &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; :A &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
+- <code>MAKE :: (<a href="#ufix-type"><code>UFIX</code></a> &rarr; :B &rarr; :A)</code>
+- <code>LENGTH :: (:A &rarr; <a href="#ufix-type"><code>UFIX</code></a>)</code>
+- <code>READABLE? :: (:A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
+- <code>WRITABLE? :: (:A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
+- <code>UNSAFE-AREF :: (:A &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; :B)</code>
+- <code>UNSAFE-SET! :: (:A &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; :B &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
 <details>
 <summary>Instances</summary>
 
