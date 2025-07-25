@@ -1537,19 +1537,20 @@ Internally mutable cell
 
 ### Values
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.lisp#L108-L110">(DECREMENT! CEL)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="decrement!-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.lisp#L111-L114">(DECREMENT! CEL)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="decrement!-value"></a>
 <code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; ((<a href="#cell-type"><code>CELL</code></a> :A) &rarr; :A)</code>
 
-Subtract one from the contents of CEL, storing and returning the new value
+Subtract one from the contents of `cel`, storing and returning the new
+value.
 
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.lisp#L102-L104">(INCREMENT! CEL)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="increment!-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.lisp#L105-L107">(INCREMENT! CEL)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="increment!-value"></a>
 <code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; ((<a href="#cell-type"><code>CELL</code></a> :A) &rarr; :A)</code>
 
-Add one to the contents of CEL, storing and returning the new value
+Add one to the contents of `cel`, storing and returning the new value.
 
 
 
@@ -1558,25 +1559,25 @@ Add one to the contents of CEL, storing and returning the new value
 #### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.lisp#L46-L49">(NEW DATA)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="new-value"></a>
 <code>&forall; :A. (:A &rarr; (<a href="#cell-type"><code>CELL</code></a> :A))</code>
 
-Create a new mutable cell
+Create a new mutable cell containing `data`.
 
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.lisp#L91-L97">(POP! CEL)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="pop!-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.lisp#L94-L100">(POP! CEL)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="pop!-value"></a>
 <code>&forall; :A. ((<a href="#cell-type"><code>CELL</code></a> (<a href="#list-type"><code>LIST</code></a> :A)) &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> :A))</code>
 
-Remove and return the first element of the list in CEL.
+Remove and return the first element of the list in `cel`.
 
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.lisp#L86-L88">(PUSH! CEL NEW-ELT)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="push!-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.lisp#L89-L91">(PUSH! CEL NEW-ELT)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="push!-value"></a>
 <code>&forall; :A. ((<a href="#cell-type"><code>CELL</code></a> (<a href="#list-type"><code>LIST</code></a> :A)) &rarr; :A &rarr; (<a href="#list-type"><code>LIST</code></a> :A))</code>
 
-Push NEW-ELT onto the start of the list in CEL.
+Push `new-elt` onto the start of the list in `cel`.
 
 
 
@@ -1585,43 +1586,46 @@ Push NEW-ELT onto the start of the list in CEL.
 #### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.lisp#L53-L56">(READ CEL)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="read-value"></a>
 <code>&forall; :A. ((<a href="#cell-type"><code>CELL</code></a> :A) &rarr; :A)</code>
 
-Read the value of a mutable cell
+Read the value of a mutable cell `cel`.
 
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.lisp#L59-L64">(SWAP! CEL DATA)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="swap!-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.lisp#L59-L65">(SWAP! CEL DATA)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="swap!-value"></a>
 <code>&forall; :A. ((<a href="#cell-type"><code>CELL</code></a> :A) &rarr; :A &rarr; :A)</code>
 
-Replace the value of a mutable cell with a new value, then return the old value
+Replace the value of a mutable cell `cel` with a new value `data`,
+then return the old value.
 
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.lisp#L75-L77">(UPDATE! F CEL)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="update!-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.lisp#L77-L79">(UPDATE! F CEL)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="update!-value"></a>
 <code>&forall; :A. ((:A &rarr; :A) &rarr; (<a href="#cell-type"><code>CELL</code></a> :A) &rarr; :A)</code>
 
-Apply F to the contents of CEL, storing and returning the result
+Apply `f` to the contents of `cel`, storing and returning the result.
 
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.lisp#L80-L82">(UPDATE-SWAP! F CEL)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="update-swap!-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.lisp#L82-L85">(UPDATE-SWAP! F CEL)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="update-swap!-value"></a>
 <code>&forall; :A. ((:A &rarr; :A) &rarr; (<a href="#cell-type"><code>CELL</code></a> :A) &rarr; :A)</code>
 
-Apply F to the contents of CEL, swapping the result for the old value
+Apply `f` to the contents of `cel`, swapping the result for the old
+value.
 
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.lisp#L68-L71">(WRITE! CEL DATA)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="write!-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.lisp#L69-L73">(WRITE! CEL DATA)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="write!-value"></a>
 <code>&forall; :A. ((<a href="#cell-type"><code>CELL</code></a> :A) &rarr; :A &rarr; :A)</code>
 
-Set the value of a mutable cell, returning the new value
+Set the value of a mutable cell `cel` to `data`, returning the new
+value.
 
 
 
@@ -1631,55 +1635,55 @@ Set the value of a mutable cell, returning the new value
 
 ### Values
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/char.lisp#L71-L74">(ALPHA? C)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="alpha?-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/char.lisp#L73-L76">(ALPHA? C)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="alpha?-value"></a>
 <code>(<a href="#char-type"><code>CHAR</code></a> &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
-Is C an alphabetic character?
+Is `c` an alphabetic character?
 
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/char.lisp#L77-L82">(ASCII-ALPHA? C)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="ascii-alpha?-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/char.lisp#L79-L84">(ASCII-ALPHA? C)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="ascii-alpha?-value"></a>
 <code>(<a href="#char-type"><code>CHAR</code></a> &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
-Is C an ASCII alphabetic character?
+Is `c` an ASCII alphabetic character?
 
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/char.lisp#L97-L100">(ASCII-ALPHANUMERIC? C)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="ascii-alphanumeric?-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/char.lisp#L99-L102">(ASCII-ALPHANUMERIC? C)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="ascii-alphanumeric?-value"></a>
 <code>(<a href="#char-type"><code>CHAR</code></a> &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
-Is C an ASCII alphanumeric character?
+Is `c` an ASCII alphanumeric character?
 
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/char.lisp#L91-L94">(ASCII-DIGIT? C)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="ascii-digit?-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/char.lisp#L93-L96">(ASCII-DIGIT? C)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="ascii-digit?-value"></a>
 <code>(<a href="#char-type"><code>CHAR</code></a> &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
-Is C an ASCII digit character?
+Is `c` an ASCII digit character?
 
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/char.lisp#L122-L126">(ASCII-LOWERCASE? C)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="ascii-lowercase?-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/char.lisp#L124-L128">(ASCII-LOWERCASE? C)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="ascii-lowercase?-value"></a>
 <code>(<a href="#char-type"><code>CHAR</code></a> &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
-Is C an ASCII lowercase character?
+Is `c` an ASCII lowercase character?
 
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/char.lisp#L109-L113">(ASCII-UPPERCASE? C)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="ascii-uppercase?-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/char.lisp#L111-L115">(ASCII-UPPERCASE? C)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="ascii-uppercase?-value"></a>
 <code>(<a href="#char-type"><code>CHAR</code></a> &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
-Is C an ASCII uppercase character?
+Is `c` an ASCII uppercase character?
 
 
 
@@ -1694,7 +1698,7 @@ Convert a character to its ASCII representation.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/char.lisp#L50-L56">(CODE-CHAR CODE)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="code-char-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/char.lisp#L50-L57">(CODE-CHAR CODE)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="code-char-value"></a>
 <code>(<a href="#ufix-type"><code>UFIX</code></a> &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> <a href="#char-type"><code>CHAR</code></a>))</code>
 
 Convert a number to its ASCII character, returning None on failure.
@@ -1703,55 +1707,55 @@ Convert a number to its ASCII character, returning None on failure.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/char.lisp#L85-L88">(DIGIT? C)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="digit?-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/char.lisp#L87-L90">(DIGIT? C)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="digit?-value"></a>
 <code>(<a href="#char-type"><code>CHAR</code></a> &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
-Is C a digit character?
+Is `c` a digit character?
 
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/char.lisp#L135-L138">(DOWNCASE C)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="downcase-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/char.lisp#L137-L140">(DOWNCASE C)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="downcase-value"></a>
 <code>(<a href="#char-type"><code>CHAR</code></a> &rarr; <a href="#char-type"><code>CHAR</code></a>)</code>
 
-Returns the downcased version of C, returning C when there is none.
+Returns the downcased version of `c`, returning `c` when there is none.
 
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/char.lisp#L116-L119">(LOWERCASE? C)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="lowercase?-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/char.lisp#L118-L121">(LOWERCASE? C)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="lowercase?-value"></a>
 <code>(<a href="#char-type"><code>CHAR</code></a> &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
-Is C a lowercase character?
+Is `c` a lowercase character?
 
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/char.lisp#L141-L148">(RANGE START END)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="range-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/char.lisp#L143-L150">(RANGE START END)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="range-value"></a>
 <code>(<a href="#char-type"><code>CHAR</code></a> &rarr; <a href="#char-type"><code>CHAR</code></a> &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> <a href="#char-type"><code>CHAR</code></a>))</code>
 
-An inclusive range of characters from START to END by cl:char-code.
+An inclusive range of characters from `start` to `end` by `char-code`.
 
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/char.lisp#L129-L132">(UPCASE C)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="upcase-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/char.lisp#L131-L134">(UPCASE C)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="upcase-value"></a>
 <code>(<a href="#char-type"><code>CHAR</code></a> &rarr; <a href="#char-type"><code>CHAR</code></a>)</code>
 
-Returns the upcased version of C, returning C when there is none.
+Returns the upcased version of `c`, returning `c` when there is none.
 
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/char.lisp#L103-L106">(UPPERCASE? C)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="uppercase?-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/char.lisp#L105-L108">(UPPERCASE? C)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="uppercase?-value"></a>
 <code>(<a href="#char-type"><code>CHAR</code></a> &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
-Is C an uppercase character?
+Is `c` an uppercase character?
 
 
 
