@@ -2010,8 +2010,8 @@ Methods:
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#seq-type"><code>SEQ</code></a> :A)</code>
 - <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) &rArr; <a href="#eq-class">EQ</a> (<a href="#ordmap-type"><code>ORDMAP</code></a> :A :B)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#mappair-type"><code>MAPPAIR</code></a> :A :B)</code>
-- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#tree-type"><code>TREE</code></a> :A)</code>
 - <code><a href="#eq-class">EQ</a> <a href="#color-type"><code>COLOR</code></a></code>
+- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#tree-type"><code>TREE</code></a> :A)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#queue-type"><code>QUEUE</code></a> :A)</code>
 - <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) &rArr; <a href="#eq-class">EQ</a> (<a href="#hashmap-type"><code>HASHMAP</code></a> :A :B)</code>
 - <code>(<a href="#hash-class">HASH</a> :A) (<a href="#eq-class">EQ</a> :B) &rArr; <a href="#eq-class">EQ</a> (<a href="#hashtable-type"><code>HASHTABLE</code></a> :A :B)</code>
@@ -7245,7 +7245,7 @@ A OrdMap containing no mappings.
 
 ### Types
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L80-L90">TREE</a></code> <sup><sub>[TYPE]</sub></sup><a name="tree-type"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L72-L82">TREE</a></code> <sup><sub>[TYPE]</sub></sup><a name="tree-type"></a>
 - <code>EMPTY</code> 
   - exported; an empty tree. considered black for the purpose of the invariants.
 
@@ -7271,7 +7271,7 @@ A red-black balanced binary tree, sorted by `<=>` and unique by `==`.
 
 ### Values
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L490-L494">(COLLECT! ITER)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="collect!-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L482-L486">(COLLECT! ITER)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="collect!-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; (<a href="#tree-type"><code>TREE</code></a> :A))</code>
 
 Construct a Tree containing all the elements of ITER.
@@ -7282,7 +7282,7 @@ If ITER contains duplicates, later elements will overwrite earlier elements.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L474-L476">(DECREASING-ORDER)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="decreasing-order-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L466-L468">(DECREASING-ORDER)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="decreasing-order-value"></a>
 <code>&forall; :A. ((<a href="#tree-type"><code>TREE</code></a> :A) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A))</code>
 
 Iterate the elements of a tree, starting with the greatest by `<=>' and ending with the least.
@@ -7291,7 +7291,7 @@ Iterate the elements of a tree, starting with the greatest by `<=>' and ending w
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L458-L460">(INCREASING-ORDER)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="increasing-order-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L450-L452">(INCREASING-ORDER)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="increasing-order-value"></a>
 <code>&forall; :A. ((<a href="#tree-type"><code>TREE</code></a> :A) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A))</code>
 
 Iterate the elements of a tree, starting with the least by `<=>' and ending with the greatest.
@@ -7300,7 +7300,7 @@ Iterate the elements of a tree, starting with the least by `<=>' and ending with
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L276-L289">(INSERT TRE ELT)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="insert-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L268-L281">(INSERT TRE ELT)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="insert-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#tree-type"><code>TREE</code></a> :A) &rarr; :A &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> (<a href="#tree-type"><code>TREE</code></a> :A)))</code>
 
 Construct a new Tree like TRE but containing ELT. If TRE already had an element `==` to ELT, return None.
@@ -7309,7 +7309,7 @@ Construct a new Tree like TRE but containing ELT. If TRE already had an element 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L339-L345">(INSERT-OR-REPLACE TRE ELT)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="insert-or-replace-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L331-L337">(INSERT-OR-REPLACE TRE ELT)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="insert-or-replace-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#tree-type"><code>TREE</code></a> :A) &rarr; :A &rarr; (<a href="#tree-type"><code>TREE</code></a> :A))</code>
 
 Construct a new Tree like TRE but containing ELT.
@@ -7322,7 +7322,7 @@ Like `replace-or-insert`, but prioritizing insertion as a use case.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L125-L134">(LOOKUP HAYSTACK NEEDLE)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="lookup-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L117-L126">(LOOKUP HAYSTACK NEEDLE)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="lookup-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#tree-type"><code>TREE</code></a> :A) &rarr; :A &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> :A))</code>
 
 If HAYSTACK contains an element `==` to NEEDLE, return it.
@@ -7331,7 +7331,7 @@ If HAYSTACK contains an element `==` to NEEDLE, return it.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L500-L507">(MERGE A B)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="merge-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L492-L499">(MERGE A B)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="merge-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#tree-type"><code>TREE</code></a> :A) &rarr; (<a href="#tree-type"><code>TREE</code></a> :A) &rarr; (<a href="#tree-type"><code>TREE</code></a> :A))</code>
 
 Construct a Tree containing all the elements of both A and B.
@@ -7343,7 +7343,7 @@ B'. Which one is chosen for the result is undefined.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L351-L354">(REMOVE TRE ELT)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="remove-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L343-L346">(REMOVE TRE ELT)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="remove-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#tree-type"><code>TREE</code></a> :A) &rarr; :A &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> (<a href="#tree-type"><code>TREE</code></a> :A)))</code>
 
 Construct a new Tree like TRE but without an element `==' to ELT. Return None if TRE does not contain an element `==` to ELT.
@@ -7352,7 +7352,7 @@ Construct a new Tree like TRE but without an element `==' to ELT. Return None if
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L292-L310">(REPLACE TRE ELT)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="replace-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L284-L302">(REPLACE TRE ELT)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="replace-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#tree-type"><code>TREE</code></a> :A) &rarr; :A &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> (<a href="#tuple-type"><code>TUPLE</code></a> (<a href="#tree-type"><code>TREE</code></a> :A) :A)))</code>
 
 Construct a new Tree like TRE but with ELT replacing an old element `==` to ELT.
@@ -7365,7 +7365,7 @@ If TRE did not have an element `==' to ELT, return None.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L313-L336">(REPLACE-OR-INSERT TRE ELT)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="replace-or-insert-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L305-L328">(REPLACE-OR-INSERT TRE ELT)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="replace-or-insert-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#tree-type"><code>TREE</code></a> :A) &rarr; :A &rarr; (<a href="#tuple-type"><code>TUPLE</code></a> (<a href="#tree-type"><code>TREE</code></a> :A) (<a href="#optional-type"><code>OPTIONAL</code></a> :A)))</code>
 
 Construct a new Tree like TRE but containing ELT.
@@ -8217,7 +8217,7 @@ The number of internal time units per second. This is implementation specific.
 
 ### Structs
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp#L42-L45">TUPLE3 :A :B :C</a></code> <sup><sub>[STRUCT]</sub></sup><a name="tuple3-type"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp#L43-L46">TUPLE3 :A :B :C</a></code> <sup><sub>[STRUCT]</sub></sup><a name="tuple3-type"></a>
 - <code>FIRST :: :A</code>
 - <code>SECOND :: :B</code>
 - <code>THIRD :: :C</code>
@@ -8235,7 +8235,7 @@ The number of internal time units per second. This is implementation specific.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp#L47-L51">TUPLE4 :A :B :C :D</a></code> <sup><sub>[STRUCT]</sub></sup><a name="tuple4-type"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp#L49-L53">TUPLE4 :A :B :C :D</a></code> <sup><sub>[STRUCT]</sub></sup><a name="tuple4-type"></a>
 - <code>FIRST :: :A</code>
 - <code>SECOND :: :B</code>
 - <code>THIRD :: :C</code>
@@ -8254,7 +8254,7 @@ The number of internal time units per second. This is implementation specific.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp#L53-L58">TUPLE5 :A :B :C :D :E</a></code> <sup><sub>[STRUCT]</sub></sup><a name="tuple5-type"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp#L56-L61">TUPLE5 :A :B :C :D :E</a></code> <sup><sub>[STRUCT]</sub></sup><a name="tuple5-type"></a>
 - <code>FIRST :: :A</code>
 - <code>SECOND :: :B</code>
 - <code>THIRD :: :C</code>
