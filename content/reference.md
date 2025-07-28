@@ -3709,13 +3709,13 @@ Take a function with two currying parameters and enable their input as a single 
 
 ### Values
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/hash.lisp#L23-L38">(COMBINE-HASHES LHS RHS)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="combine-hashes-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/hash.lisp#L41-L43">(COMBINE-HASHES LHS RHS)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="combine-hashes-value"></a>
 <code>(<a href="#hash-type"><code>HASH</code></a> &rarr; <a href="#hash-type"><code>HASH</code></a> &rarr; <a href="#hash-type"><code>HASH</code></a>)</code>
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/hash.lisp#L41-L43">(COMBINE-HASHES-ORDER-INDEPENDENT LHS RHS)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="combine-hashes-order-independent-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/hash.lisp#L46-L48">(COMBINE-HASHES-ORDER-INDEPENDENT LHS RHS)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="combine-hashes-order-independent-value"></a>
 <code>(<a href="#hash-type"><code>HASH</code></a> &rarr; <a href="#hash-type"><code>HASH</code></a> &rarr; <a href="#hash-type"><code>HASH</code></a>)</code>
 
 
