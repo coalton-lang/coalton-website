@@ -5507,16 +5507,16 @@ The complex conjugate.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L71-L74">(SQUARE-MAGNITUDE A)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="square-magnitude-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L71-L75">(SQUARE-MAGNITUDE A)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="square-magnitude-value"></a>
 <code>&forall; :A. <a href="#complex-class">COMPLEX</a> :A &rArr; ((<a href="#complex-type"><code>COMPLEX</code></a> :A) &rarr; :A)</code>
 
-The length of a complex number.
+The squared length of a complex number, i.e. re(a)^2 + im(a)^2.
 
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L77-L79">II</a></code> <sup><sub>[VALUE]</sub></sup><a name="ii-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L78-L80">II</a></code> <sup><sub>[VALUE]</sub></sup><a name="ii-value"></a>
 <code>&forall; :A. <a href="#complex-class">COMPLEX</a> :A &rArr; (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
 
 The complex unit i. (The double ii represents a blackboard-bold i.)
