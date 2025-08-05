@@ -5565,9 +5565,10 @@ defined $f$, we have:
 
 $$
 \begin{align*}
-f(4 + \varepsilon) &= 3(4 + \varepsilon) + 2 \\
-                    &= 3\cdot 4 + 3\varepsilon + 2 \\
-                    &= 14 + 3\varepsilon.
+f(4 + \varepsilon)
+&= 3(4 + \varepsilon) + 2 \\\\
+&= 3\cdot 4 + 3\varepsilon + 2 \\\\
+&= 14 + 3\varepsilon.
 \end{align*}
 $$
 
@@ -5594,7 +5595,7 @@ References:
 
 ### Structs
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dual.lisp#L80-L88">DUAL :A</a></code> <sup><sub>[STRUCT]</sub></sup><a name="dual-type"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dual.lisp#L81-L89">DUAL :A</a></code> <sup><sub>[STRUCT]</sub></sup><a name="dual-type"></a>
 
 Representation of a dual number in the form $a + b\varepsilon$ where
 $a$ and $b$ are real numbers and $\varepsilon$ satisfies
@@ -5627,7 +5628,7 @@ Note: Ord only compares the primal component.
 
 ### Values
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dual.lisp#L96-L98">(DUAL-PART (DUAL _ D))</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="dual-part-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dual.lisp#L97-L99">(DUAL-PART (DUAL _ D))</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="dual-part-value"></a>
 <code>&forall; :A. ((<a href="#dual-type"><code>DUAL</code></a> :A) &rarr; :A)</code>
 
 The dual (i.e., derivative) part of a dual number.
@@ -5636,7 +5637,7 @@ The dual (i.e., derivative) part of a dual number.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dual.lisp#L91-L93">(PRIMAL-PART (DUAL P _))</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="primal-part-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dual.lisp#L92-L94">(PRIMAL-PART (DUAL P _))</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="primal-part-value"></a>
 <code>&forall; :A. ((<a href="#dual-type"><code>DUAL</code></a> :A) &rarr; :A)</code>
 
 The primal (i.e., real) part of a dual number.
