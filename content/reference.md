@@ -1198,7 +1198,7 @@ Right associative compose operator. Creates a new functions that will run the
 functions right to left when applied. This is the same as the `nest` macro without supplying
 the value. The composition is thus the same order as `compose`.
 
-`(.< f g h)` creates the function `(fn (x) (f (g (h x))))
+`(.< f g h)` creates the function `(fn (x) (f (g (h x))))`.
 
 
 
@@ -1210,7 +1210,7 @@ Left associative compose operator. Creates a new functions that will run the
 functions left to right when applied. This is the same as the `pipe` macro without supplying
 the value. The composition is thus the reverse order of `compose`.
 
-`(.> f g h)` creates the function `(fn (x) (h (g (f x))))
+`(.> f g h)` creates the function `(fn (x) (h (g (f x))))`.
 
 
 
@@ -1242,10 +1242,10 @@ Note that this may copy the object or allocate memory.
 
 #### <a href="#coalton-assert-macro"><code>ASSERT (DATUM &amp;OPTIONAL (FORMAT-STRING &quot;&quot;) &amp;REST FORMAT-DATA)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-assert-macro"></a>
 
-Signal an error unless DATUM is `True`.
+Signal an error unless `datum` is `True`.
 
-If the assertion fails, the signaled error will apply the FORMAT-DATA
-to the FORMAT-STRING via `cl:format` to produce an error message.
+If the assertion fails, the signaled error will apply the `format-data`
+to the `format-string` via `cl:format` to produce an error message.
 
 
 
@@ -1253,7 +1253,8 @@ to the FORMAT-STRING via `cl:format` to produce an error message.
 
 #### <a href="#coalton-make-list-macro"><code>MAKE-LIST (&amp;REST FORMS)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-make-list-macro"></a>
 
-Create a heterogeneous Coalton `List` of objects.
+Create a heterogeneous Coalton `List` of objects. This macro is
+deprecated; use `coalton-library/list:make`.
 
 
 
@@ -1263,7 +1264,7 @@ Create a heterogeneous Coalton `List` of objects.
 
 A syntactic convenience for function application. Transform
 
-    (NEST f g h x)
+    (nest f g h x)
 
 to
 
@@ -1277,7 +1278,7 @@ to
 
 A syntactic convenience for function application, sometimes called a "threading macro". Transform
 
-    (PIPE x h g f)
+    (pipe x h g f)
 
 to
 
