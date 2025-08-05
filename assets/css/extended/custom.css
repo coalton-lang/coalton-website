@@ -91,6 +91,10 @@ html {
   color: black;
 }
 
+.post-two-pane .post-content a:hover {
+  text-decoration: underline;
+}
+
 @media only screen and (max-width: 1250px) {
   :root {
     --main-width: 1000px;
