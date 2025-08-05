@@ -4,7 +4,6 @@ summary: 'The Coalton standard library reference.'
 math: true
 layout: two-pane
 ---
-
 <aside class="sidebar">
 
 ### Reference
@@ -62,7 +61,6 @@ layout: two-pane
 - <a href="#coalton-library/vector-package"><code>COALTON-LIBRARY/VECTOR</code></a>
 </aside>
 <div class="main-content">
-
 # Package `COALTON`<a name="coalton-package"></a>
 
 
@@ -5448,9 +5446,14 @@ Methods:
 
 ### Types
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L37-L41">COMPLEX</a></code> <sup><sub>[TYPE]</sub></sup><a name="complex-type"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L37-L46">COMPLEX</a></code> <sup><sub>[TYPE]</sub></sup><a name="complex-type"></a>
 
-Complex number that may either have a native or constructed
+A complex number with a real and imaginary component.
+
+This object does not have any public constructors. Instead, use the
+function `complex` of the `ComplexComponent` type class.
+
+A `Complex` object may either have a native or constructed
 representation. See the `ComplexComponent` type class for allowed
 component types.
 
@@ -5476,11 +5479,12 @@ component types.
 
 ### Classes
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L56-L60">COMPLEXCOMPONENT</a></code> <sup><sub>[CLASS]</sub></sup><a name="complexcomponent-class"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L61-L66">COMPLEXCOMPONENT</a></code> <sup><sub>[CLASS]</sub></sup><a name="complexcomponent-class"></a>
 <code><a href="#num-class">NUM</a> :A &rArr; <a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A</code>
 
 
-A type class for describing complex component types.
+A type class for describing complex component types. This type class
+also encodes the construction and projection of `Complex` data types.
 
 Methods:
 - <code>COMPLEX :: (:A &rarr; :A &rarr; (<a href="#complex-type"><code>COMPLEX</code></a> :A))</code>
@@ -5505,28 +5509,29 @@ Methods:
 
 ### Values
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L69-L71">(CONJUGATE N)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="conjugate-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L75-L77">(CONJUGATE Z)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="conjugate-value"></a>
 <code>&forall; :A. <a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A &rArr; ((<a href="#complex-type"><code>COMPLEX</code></a> :A) &rarr; (<a href="#complex-type"><code>COMPLEX</code></a> :A))</code>
 
-The complex conjugate.
+The complex conjugate. If $z=a+bi$ then the conjugate $bar z=a-bi$.
 
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L75-L79">(SQUARE-MAGNITUDE A)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="square-magnitude-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L81-L86">(SQUARE-MAGNITUDE Z)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="square-magnitude-value"></a>
 <code>&forall; :A. <a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A &rArr; ((<a href="#complex-type"><code>COMPLEX</code></a> :A) &rarr; :A)</code>
 
-The squared length of a complex number, i.e. re(a)^2 + im(a)^2.
+The squared length of a complex number:
+$$\vert z\vert^2=(\operatorname{Re} z)^2+(\operatorname{Im} z)^2.$$
 
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L82-L84">II</a></code> <sup><sub>[VALUE]</sub></sup><a name="ii-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L89-L93">II</a></code> <sup><sub>[VALUE]</sub></sup><a name="ii-value"></a>
 <code>&forall; :A. <a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A &rArr; (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
 
-The complex unit i. (The double ii represents a blackboard-bold i.)
+The complex unit $i=\sqrt{-1}$. (The double `ii` represents a blackboard-bold 𝕚.)
 
 
 
