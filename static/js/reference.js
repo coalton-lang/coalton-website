@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const symbolElements = mainContent.querySelectorAll('h4');
 
     symbolElements.forEach(element => {
-      const codeElement = element.querySelector('code a');
+      const codeElement = element.querySelector('a code');
       const typeElement = element.querySelector('sup sub');
 
       if (codeElement) {
