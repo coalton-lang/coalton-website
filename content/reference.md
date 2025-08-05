@@ -3136,7 +3136,7 @@ Computes an approximation of the bits of a given
 non-negative integer `k`, return an integer $a$ with
 
 $$
-\vert a\cdot 2^{-\mathtt{k}} - \mathtt{x}\vert leq 2^{-\mathtt{k}}.
+\vert a\cdot 2^{-\mathtt{k}} - \mathtt{x}\vert \leq 2^{-\mathtt{k}}.
 $$
 
 See `rational` or `rationalize` to produce a rational approximation of
