@@ -5512,7 +5512,7 @@ Methods:
 #### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L75-L77">(CONJUGATE Z)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="conjugate-value"></a>
 <code>&forall; :A. <a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A &rArr; ((<a href="#complex-type"><code>COMPLEX</code></a> :A) &rarr; (<a href="#complex-type"><code>COMPLEX</code></a> :A))</code>
 
-The complex conjugate. If $z=a+bi$ then the conjugate $bar z=a-bi$.
+The complex conjugate. If $z=a+bi$ then the conjugate $\bar z=a-bi$.
 
 
 
@@ -5528,10 +5528,11 @@ $$\vert z\vert^2=(\operatorname{Re} z)^2+(\operatorname{Im} z)^2.$$
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L89-L93">II</a></code> <sup><sub>[VALUE]</sub></sup><a name="ii-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L89-L94">II</a></code> <sup><sub>[VALUE]</sub></sup><a name="ii-value"></a>
 <code>&forall; :A. <a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A &rArr; (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
 
-The complex unit $i=\sqrt{-1}$. (The double `ii` represents a blackboard-bold 𝕚.)
+The complex unit $i=\sqrt{-1}$. (The double `ii` represents a
+blackboard-bold 𝕚.)
 
 
 
@@ -5542,37 +5543,39 @@ The complex unit $i=\sqrt{-1}$. (The double `ii` represents a blackboard-bold �
 
 
 Dual numbers are a hypercomplex number system [1]. A dual number has
-the form `a + bε` where `a` and `b` are real numbers and `ε` is a
-symbol that satisfies `ε^2 = 0` and `ε != 0`. The value `a` is often
-called the *primal part* and the value `b` is often called the *dual
-part*. One application of dual numbers is automatic differentiation;
-an example taken from [2] is as follows.
+the form $a + b\varepsilon$ where $a$ and $b$ are real numbers and
+$\varepsilon$ is a symbol that satisfies $\varepsilon^2=0$ and
+$\varepsilon\neq 0$. The value $a$ is often called the *primal part*
+and the value $b$ is often called the *dual part*. One application of
+dual numbers is automatic differentiation; an example taken from [2]
+is as follows.
 
-Consider the function `f(x) = 3x+2` and you want to calculate `f(4)`
-and `f'(4)`. By the usual rules of differentiation, we know `f'(x) = 3`
- and thus `(f(4), f'(4)) = (14, 3)`. We seek to recover this with
+Consider the function $f(x) = 3x+2$ and you want to calculate $f(4)$
+and $f'(4)$. By the usual rules of differentiation, we know $f'(x) =
+3$ and thus $(f(4), f'(4)) = (14, 3)$. We seek to recover this with
 dual numbers.
 
 With dual numbers, we can calculate
 
-```
-f(a) + f'(a)ε
-```
+$$f(a) + f'(a)\varepsilon$$
 
-by taking a real-valued function `f` and evaluating as if it were a
-dual-valued function at the point `a + ε`. Thus, for the defined `f`,
-we have:
+by taking a real-valued function $f$ and evaluating as if it were a
+dual-valued function at the point $a + \varepsilon$. Thus, for the
+defined $f$, we have:
 
-```
-f(4 + ε) = 3(4 + ε) + 2
-         = 3*4 + 3ε + 2
-         = 14 + 3ε.
-```
+$$
+\begin{align}
+f(4 + \varepsilon) &= 3(4 + \varepsilon) + 2 \\
+                    &= 3\cdot 4 + 3\varepsilon + 2 \\
+                    &= 14 + 3\varepsilon.
+\end{align}
+$$
 
-In this result, the primal `14` is the value of `f(4)` and the dual is
-the value of of `f'(4)`.
+In this result, the primal $14$ is the value of $f(4)$ and the dual is
+the value of of $f'(4)$.
 
-Haskell has an automatic differentiation library and you can find it here [3].
+Haskell has an automatic differentiation library and you can find it
+here [3].
 
 Limitations:
 
@@ -5591,11 +5594,14 @@ References:
 
 ### Structs
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dual.lisp#L78-L85">DUAL :A</a></code> <sup><sub>[STRUCT]</sub></sup><a name="dual-type"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dual.lisp#L80-L88">DUAL :A</a></code> <sup><sub>[STRUCT]</sub></sup><a name="dual-type"></a>
 
-Representation of a dual number in the form `a + bε` where `a` and `b` are real numbers and `ε` satisfies `ε^2 = 0` and `ε != 0`.
+Representation of a dual number in the form $a + b\varepsilon$ where
+$a$ and $b$ are real numbers and $\varepsilon$ satisfies
+$\varepsilon^2 = 0$ and $\varepsilon \neq 0$.
 
-Note: `Eq`, and `Ord` and `Hash` only make use of the primal component.
+Note: `Eq`, and `Ord` and `Hash` only make use of the primal
+component.
 
 <details>
 <summary>Instances</summary>
@@ -5621,7 +5627,7 @@ Note: Ord only compares the primal component.
 
 ### Values
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dual.lisp#L91-L95">(DUAL-PART (DUAL _ D))</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="dual-part-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dual.lisp#L96-L98">(DUAL-PART (DUAL _ D))</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="dual-part-value"></a>
 <code>&forall; :A. ((<a href="#dual-type"><code>DUAL</code></a> :A) &rarr; :A)</code>
 
 The dual (i.e., derivative) part of a dual number.
@@ -5630,7 +5636,7 @@ The dual (i.e., derivative) part of a dual number.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dual.lisp#L86-L90">(PRIMAL-PART (DUAL P _))</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="primal-part-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dual.lisp#L91-L93">(PRIMAL-PART (DUAL P _))</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="primal-part-value"></a>
 <code>&forall; :A. ((<a href="#dual-type"><code>DUAL</code></a> :A) &rarr; :A)</code>
 
 The primal (i.e., real) part of a dual number.
