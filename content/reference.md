@@ -149,7 +149,7 @@ Single-precision floating point number (32-bits in size). Represented by a Commo
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#complex-class">COMPLEX</a> <a href="#f32-type"><code>F32</code></a></code>
+- <code><a href="#complexcomponent-class">COMPLEXCOMPONENT</a> <a href="#f32-type"><code>F32</code></a></code>
 - <code><a href="#default-class">DEFAULT</a> <a href="#f32-type"><code>F32</code></a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#f32-type"><code>F32</code></a></code>
 - <code><a href="#elementary-class">ELEMENTARY</a> <a href="#f32-type"><code>F32</code></a></code>
@@ -197,7 +197,7 @@ Double-precision floating point number (64 bits in size). Represented by a Commo
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#complex-class">COMPLEX</a> <a href="#f64-type"><code>F64</code></a></code>
+- <code><a href="#complexcomponent-class">COMPLEXCOMPONENT</a> <a href="#f64-type"><code>F64</code></a></code>
 - <code><a href="#default-class">DEFAULT</a> <a href="#f64-type"><code>F64</code></a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#f64-type"><code>F64</code></a></code>
 - <code><a href="#elementary-class">ELEMENTARY</a> <a href="#f64-type"><code>F64</code></a></code>
@@ -245,7 +245,7 @@ A ratio of integers always in reduced form. Represented by a Common Lisp `ration
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#complex-class">COMPLEX</a> <a href="#fraction-type"><code>FRACTION</code></a></code>
+- <code><a href="#complexcomponent-class">COMPLEXCOMPONENT</a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#dyadic-type"><code>DYADIC</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
@@ -555,7 +555,7 @@ Unbound integer. Represented by a Common Lisp `integer`.
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#integer-type"><code>INTEGER</code></a></code>
-- <code><a href="#complex-class">COMPLEX</a> <a href="#integer-type"><code>INTEGER</code></a></code>
+- <code><a href="#complexcomponent-class">COMPLEXCOMPONENT</a> <a href="#integer-type"><code>INTEGER</code></a></code>
 - <code><a href="#default-class">DEFAULT</a> <a href="#integer-type"><code>INTEGER</code></a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#big-float-type"><code>BIG-FLOAT</code></a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
@@ -1202,7 +1202,7 @@ An arbitrary (but fixed) precision floating point number.
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#complex-class">COMPLEX</a> <a href="#big-float-type"><code>BIG-FLOAT</code></a></code>
+- <code><a href="#complexcomponent-class">COMPLEXCOMPONENT</a> <a href="#big-float-type"><code>BIG-FLOAT</code></a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#big-float-type"><code>BIG-FLOAT</code></a></code>
 - <code><a href="#elementary-class">ELEMENTARY</a> <a href="#big-float-type"><code>BIG-FLOAT</code></a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#big-float-type"><code>BIG-FLOAT</code></a></code>
@@ -2036,7 +2036,7 @@ Methods:
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#dual-type"><code>DUAL</code></a> :A)</code>  
 Note: Eq only compares the primal component.
 - <code><a href="#eq-class">EQ</a> <a href="#dyadic-type"><code>DYADIC</code></a></code>
-- <code><a href="#complex-class">COMPLEX</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
+- <code><a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
 - <code><a href="#eq-class">EQ</a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#f64-type"><code>F64</code></a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#f32-type"><code>F32</code></a></code>
@@ -2199,7 +2199,7 @@ Methods:
 - <code><a href="#into-class">INTO</a> <a href="#fraction-type"><code>FRACTION</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#f64-type"><code>F64</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#f32-type"><code>F32</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
-- <code>(<a href="#complex-class">COMPLEX</a> :A) (<a href="#into-class">INTO</a> :A <a href="#creal-type"><code>CREAL</code></a>) &rArr; <a href="#into-class">INTO</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A) (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#creal-type"><code>CREAL</code></a>)</code>
+- <code>(<a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A) (<a href="#into-class">INTO</a> :A <a href="#creal-type"><code>CREAL</code></a>) &rArr; <a href="#into-class">INTO</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A) (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#creal-type"><code>CREAL</code></a>)</code>
 - <code><a href="#into-class">INTO</a> <a href="#f64-type"><code>F64</code></a> <a href="#big-float-type"><code>BIG-FLOAT</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#f32-type"><code>F32</code></a> <a href="#big-float-type"><code>BIG-FLOAT</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#fraction-type"><code>FRACTION</code></a> <a href="#big-float-type"><code>BIG-FLOAT</code></a></code>
@@ -2242,11 +2242,11 @@ Methods:
 - <code><a href="#into-class">INTO</a> :A <a href="#string-type"><code>STRING</code></a> &rArr; <a href="#into-class">INTO</a> (<a href="#cell-type"><code>CELL</code></a> :A) <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#into-class">INTO</a> (<a href="#cell-type"><code>CELL</code></a> :A) :A</code>
 - <code><a href="#into-class">INTO</a> :A (<a href="#cell-type"><code>CELL</code></a> :A)</code>
-- <code>(<a href="#complex-class">COMPLEX</a> :A) (<a href="#into-class">INTO</a> :A (<a href="#hyperdual-type"><code>HYPERDUAL</code></a> :A)) &rArr; <a href="#into-class">INTO</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A) (<a href="#complex-type"><code>COMPLEX</code></a> (<a href="#hyperdual-type"><code>HYPERDUAL</code></a> :A))</code>
+- <code>(<a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A) (<a href="#into-class">INTO</a> :A (<a href="#hyperdual-type"><code>HYPERDUAL</code></a> :A)) &rArr; <a href="#into-class">INTO</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A) (<a href="#complex-type"><code>COMPLEX</code></a> (<a href="#hyperdual-type"><code>HYPERDUAL</code></a> :A))</code>
 - <code><a href="#num-class">NUM</a> :A &rArr; <a href="#into-class">INTO</a> :A (<a href="#hyperdual-type"><code>HYPERDUAL</code></a> :A)</code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#dyadic-type"><code>DYADIC</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#dyadic-type"><code>DYADIC</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
-- <code><a href="#complex-class">COMPLEX</a> :A &rArr; <a href="#into-class">INTO</a> :A (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
+- <code><a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A &rArr; <a href="#into-class">INTO</a> :A (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
 - <code><a href="#into-class">INTO</a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u64-type"><code>U64</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
@@ -2456,7 +2456,7 @@ Methods:
 - <code><a href="#num-class">NUM</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#hyperdual-type"><code>HYPERDUAL</code></a> :A)</code>
 - <code><a href="#num-class">NUM</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#dual-type"><code>DUAL</code></a> :A)</code>
 - <code><a href="#num-class">NUM</a> <a href="#dyadic-type"><code>DYADIC</code></a></code>
-- <code><a href="#complex-class">COMPLEX</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
+- <code><a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
 - <code><a href="#num-class">NUM</a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#num-class">NUM</a> <a href="#f64-type"><code>F64</code></a></code>
 - <code><a href="#num-class">NUM</a> <a href="#f32-type"><code>F32</code></a></code>
@@ -2937,7 +2937,7 @@ Unwrap `container`, returning `default` on failure.
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#complex-class">COMPLEX</a> <a href="#creal-type"><code>CREAL</code></a></code>
+- <code><a href="#complexcomponent-class">COMPLEXCOMPONENT</a> <a href="#creal-type"><code>CREAL</code></a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
 - <code><a href="#elementary-class">ELEMENTARY</a> <a href="#creal-type"><code>CREAL</code></a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#creal-type"><code>CREAL</code></a></code>
@@ -5252,7 +5252,7 @@ Methods:
 - <code><a href="#reciprocable-class">RECIPROCABLE</a> <a href="#big-float-type"><code>BIG-FLOAT</code></a></code>
 - <code><a href="#reciprocable-class">RECIPROCABLE</a> :A &rArr; <a href="#reciprocable-class">RECIPROCABLE</a> (<a href="#hyperdual-type"><code>HYPERDUAL</code></a> :A)</code>
 - <code><a href="#reciprocable-class">RECIPROCABLE</a> :A &rArr; <a href="#reciprocable-class">RECIPROCABLE</a> (<a href="#dual-type"><code>DUAL</code></a> :A)</code>
-- <code>(<a href="#complex-class">COMPLEX</a> :A) (<a href="#reciprocable-class">RECIPROCABLE</a> :A) &rArr; <a href="#reciprocable-class">RECIPROCABLE</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
+- <code>(<a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A) (<a href="#reciprocable-class">RECIPROCABLE</a> :A) &rArr; <a href="#reciprocable-class">RECIPROCABLE</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
 - <code><a href="#reciprocable-class">RECIPROCABLE</a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#reciprocable-class">RECIPROCABLE</a> <a href="#f64-type"><code>F64</code></a></code>
 - <code><a href="#reciprocable-class">RECIPROCABLE</a> <a href="#f32-type"><code>F32</code></a></code>
@@ -5449,23 +5449,22 @@ Methods:
 
 ### Types
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L36-L38">COMPLEX</a></code> <sup><sub>[TYPE]</sub></sup><a name="complex-type"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L37-L41">COMPLEX</a></code> <sup><sub>[TYPE]</sub></sup><a name="complex-type"></a>
 
-Complex number that may either have a native or constructed representation.
+Complex number that may either have a native or constructed
+representation. See the `ComplexComponent` type class for allowed
+component types.
 
 <details>
 <summary>Instances</summary>
 
-- <code>(<a href="#complex-class">COMPLEX</a> :A) (<a href="#into-class">INTO</a> :A (<a href="#hyperdual-type"><code>HYPERDUAL</code></a> :A)) &rArr; <a href="#into-class">INTO</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A) (<a href="#complex-type"><code>COMPLEX</code></a> (<a href="#hyperdual-type"><code>HYPERDUAL</code></a> :A))</code>
-- <code>(<a href="#complex-class">COMPLEX</a> :A) (<a href="#into-class">INTO</a> :A <a href="#creal-type"><code>CREAL</code></a>) &rArr; <a href="#into-class">INTO</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A) (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#creal-type"><code>CREAL</code></a>)</code>
-- <code>(<a href="#complex-class">COMPLEX</a> :A) (<a href="#reciprocable-class">RECIPROCABLE</a> :A) &rArr; <a href="#reciprocable-class">RECIPROCABLE</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
-- <code><a href="#complex-class">COMPLEX</a> :A &rArr; <a href="#complex-class">COMPLEX</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
-- <code><a href="#complex-class">COMPLEX</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
-- <code><a href="#complex-class">COMPLEX</a> :A &rArr; <a href="#into-class">INTO</a> :A (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
-- <code><a href="#complex-class">COMPLEX</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
-- <code><a href="#elementary-class">ELEMENTARY</a> :A &rArr; <a href="#elementary-class">ELEMENTARY</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
+- <code>(<a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A) (<a href="#into-class">INTO</a> :A (<a href="#hyperdual-type"><code>HYPERDUAL</code></a> :A)) &rArr; <a href="#into-class">INTO</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A) (<a href="#complex-type"><code>COMPLEX</code></a> (<a href="#hyperdual-type"><code>HYPERDUAL</code></a> :A))</code>
+- <code>(<a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A) (<a href="#into-class">INTO</a> :A <a href="#creal-type"><code>CREAL</code></a>) &rArr; <a href="#into-class">INTO</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A) (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#creal-type"><code>CREAL</code></a>)</code>
+- <code>(<a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A) (<a href="#reciprocable-class">RECIPROCABLE</a> :A) &rArr; <a href="#reciprocable-class">RECIPROCABLE</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
+- <code><a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
+- <code><a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A &rArr; <a href="#into-class">INTO</a> :A (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
+- <code><a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
 - <code><a href="#elementary-class">ELEMENTARY</a> :A &rArr; <a href="#exponentiable-class">EXPONENTIABLE</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
-- <code><a href="#elementary-class">ELEMENTARY</a> :A &rArr; <a href="#polar-class">POLAR</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
 - <code><a href="#elementary-class">ELEMENTARY</a> :A &rArr; <a href="#radical-class">RADICAL</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
 - <code><a href="#elementary-class">ELEMENTARY</a> :A &rArr; <a href="#trigonometric-class">TRIGONOMETRIC</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
@@ -5478,8 +5477,11 @@ Complex number that may either have a native or constructed representation.
 
 ### Classes
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L53-L56">COMPLEX</a></code> <sup><sub>[CLASS]</sub></sup><a name="complex-class"></a>
-<code><a href="#num-class">NUM</a> :A &rArr; <a href="#complex-class">COMPLEX</a> :A</code>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L56-L60">COMPLEXCOMPONENT</a></code> <sup><sub>[CLASS]</sub></sup><a name="complexcomponent-class"></a>
+<code><a href="#num-class">NUM</a> :A &rArr; <a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A</code>
+
+
+A type class for describing complex component types.
 
 Methods:
 - <code>COMPLEX :: (:A &rarr; :A &rarr; (<a href="#complex-type"><code>COMPLEX</code></a> :A))</code>
@@ -5488,14 +5490,13 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#complex-class">COMPLEX</a> <a href="#creal-type"><code>CREAL</code></a></code>
-- <code><a href="#complex-class">COMPLEX</a> <a href="#big-float-type"><code>BIG-FLOAT</code></a></code>
-- <code><a href="#complex-class">COMPLEX</a> :A &rArr; <a href="#complex-class">COMPLEX</a> (<a href="#hyperdual-type"><code>HYPERDUAL</code></a> :A)</code>
-- <code><a href="#complex-class">COMPLEX</a> <a href="#integer-type"><code>INTEGER</code></a></code>
-- <code><a href="#complex-class">COMPLEX</a> <a href="#fraction-type"><code>FRACTION</code></a></code>
-- <code><a href="#complex-class">COMPLEX</a> <a href="#f64-type"><code>F64</code></a></code>
-- <code><a href="#complex-class">COMPLEX</a> <a href="#f32-type"><code>F32</code></a></code>
-- <code><a href="#complex-class">COMPLEX</a> :A &rArr; <a href="#complex-class">COMPLEX</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
+- <code><a href="#complexcomponent-class">COMPLEXCOMPONENT</a> <a href="#creal-type"><code>CREAL</code></a></code>
+- <code><a href="#complexcomponent-class">COMPLEXCOMPONENT</a> <a href="#big-float-type"><code>BIG-FLOAT</code></a></code>
+- <code><a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A &rArr; <a href="#complexcomponent-class">COMPLEXCOMPONENT</a> (<a href="#hyperdual-type"><code>HYPERDUAL</code></a> :A)</code>
+- <code><a href="#complexcomponent-class">COMPLEXCOMPONENT</a> <a href="#integer-type"><code>INTEGER</code></a></code>
+- <code><a href="#complexcomponent-class">COMPLEXCOMPONENT</a> <a href="#fraction-type"><code>FRACTION</code></a></code>
+- <code><a href="#complexcomponent-class">COMPLEXCOMPONENT</a> <a href="#f64-type"><code>F64</code></a></code>
+- <code><a href="#complexcomponent-class">COMPLEXCOMPONENT</a> <a href="#f32-type"><code>F32</code></a></code>
 
 </details>
 
@@ -5505,8 +5506,8 @@ Methods:
 
 ### Values
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L65-L67">(CONJUGATE N)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="conjugate-value"></a>
-<code>&forall; :A. <a href="#complex-class">COMPLEX</a> :A &rArr; ((<a href="#complex-type"><code>COMPLEX</code></a> :A) &rarr; (<a href="#complex-type"><code>COMPLEX</code></a> :A))</code>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L69-L71">(CONJUGATE N)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="conjugate-value"></a>
+<code>&forall; :A. <a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A &rArr; ((<a href="#complex-type"><code>COMPLEX</code></a> :A) &rarr; (<a href="#complex-type"><code>COMPLEX</code></a> :A))</code>
 
 The complex conjugate.
 
@@ -5514,8 +5515,8 @@ The complex conjugate.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L71-L75">(SQUARE-MAGNITUDE A)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="square-magnitude-value"></a>
-<code>&forall; :A. <a href="#complex-class">COMPLEX</a> :A &rArr; ((<a href="#complex-type"><code>COMPLEX</code></a> :A) &rarr; :A)</code>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L75-L79">(SQUARE-MAGNITUDE A)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="square-magnitude-value"></a>
+<code>&forall; :A. <a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A &rArr; ((<a href="#complex-type"><code>COMPLEX</code></a> :A) &rarr; :A)</code>
 
 The squared length of a complex number, i.e. re(a)^2 + im(a)^2.
 
@@ -5523,8 +5524,8 @@ The squared length of a complex number, i.e. re(a)^2 + im(a)^2.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L78-L80">II</a></code> <sup><sub>[VALUE]</sub></sup><a name="ii-value"></a>
-<code>&forall; :A. <a href="#complex-class">COMPLEX</a> :A &rArr; (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L82-L84">II</a></code> <sup><sub>[VALUE]</sub></sup><a name="ii-value"></a>
+<code>&forall; :A. <a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A &rArr; (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
 
 The complex unit i. (The double ii represents a blackboard-bold i.)
 
@@ -5704,7 +5705,7 @@ Finds the simplest dyadic given an integer
 
 ### Classes
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L119-L123">ELEMENTARY</a></code> <sup><sub>[CLASS]</sub></sup><a name="elementary-class"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L121-L125">ELEMENTARY</a></code> <sup><sub>[CLASS]</sub></sup><a name="elementary-class"></a>
 <code>(<a href="#reciprocable-class">RECIPROCABLE</a> :A) (<a href="#polar-class">POLAR</a> :A) (<a href="#trigonometric-class">TRIGONOMETRIC</a> :A) (<a href="#exponentiable-class">EXPONENTIABLE</a> :A) (<a href="#radical-class">RADICAL</a> :A) &rArr; <a href="#elementary-class">ELEMENTARY</a> :A</code>
 
 
@@ -5716,7 +5717,6 @@ Methods:
 
 - <code><a href="#elementary-class">ELEMENTARY</a> <a href="#creal-type"><code>CREAL</code></a></code>
 - <code><a href="#elementary-class">ELEMENTARY</a> <a href="#big-float-type"><code>BIG-FLOAT</code></a></code>
-- <code><a href="#elementary-class">ELEMENTARY</a> :A &rArr; <a href="#elementary-class">ELEMENTARY</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
 - <code><a href="#elementary-class">ELEMENTARY</a> <a href="#f64-type"><code>F64</code></a></code>
 - <code><a href="#elementary-class">ELEMENTARY</a> <a href="#f32-type"><code>F32</code></a></code>
 
@@ -5761,9 +5761,11 @@ Methods:
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L92-L100">POLAR</a></code> <sup><sub>[CLASS]</sub></sup><a name="polar-class"></a>
-<code>(<a href="#complex-class">COMPLEX</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; <a href="#polar-class">POLAR</a> :A</code>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L92-L102">POLAR</a></code> <sup><sub>[CLASS]</sub></sup><a name="polar-class"></a>
+<code>(<a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; <a href="#polar-class">POLAR</a> :A</code>
 
+
+This type class includes `ComplexComponent` types that admit a magnitude and phase.
 
 For a complex number `z = (complex x y)`, the following identities hold:
 
@@ -5780,7 +5782,6 @@ Methods:
 
 - <code><a href="#polar-class">POLAR</a> <a href="#creal-type"><code>CREAL</code></a></code>
 - <code><a href="#polar-class">POLAR</a> <a href="#big-float-type"><code>BIG-FLOAT</code></a></code>
-- <code><a href="#elementary-class">ELEMENTARY</a> :A &rArr; <a href="#polar-class">POLAR</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
 - <code><a href="#polar-class">POLAR</a> <a href="#f64-type"><code>F64</code></a></code>
 - <code><a href="#polar-class">POLAR</a> <a href="#f32-type"><code>F32</code></a></code>
 
@@ -5851,13 +5852,13 @@ Methods:
 
 ### Values
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L144-L145">(ACOSH X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="acosh-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L146-L147">(ACOSH X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="acosh-value"></a>
 <code>&forall; :A. <a href="#elementary-class">ELEMENTARY</a> :A &rArr; (:A &rarr; :A)</code>
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L140-L141">(ASINH X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="asinh-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L142-L143">(ASINH X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="asinh-value"></a>
 <code>&forall; :A. <a href="#elementary-class">ELEMENTARY</a> :A &rArr; (:A &rarr; :A)</code>
 
 
@@ -5873,14 +5874,14 @@ as (atan (/ y x)) when defined and accounting for the quadrant of the (x,y).
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L148-L149">(ATANH X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="atanh-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L150-L151">(ATANH X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="atanh-value"></a>
 <code>&forall; :A. <a href="#elementary-class">ELEMENTARY</a> :A &rArr; (:A &rarr; :A)</code>
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L110-L117">(CIS Z)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="cis-value"></a>
-<code>&forall; :A. (<a href="#trigonometric-class">TRIGONOMETRIC</a> :A) (<a href="#complex-class">COMPLEX</a> :A) &rArr; (:A &rarr; (<a href="#complex-type"><code>COMPLEX</code></a> :A))</code>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L112-L119">(CIS Z)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="cis-value"></a>
+<code>&forall; :A. (<a href="#trigonometric-class">TRIGONOMETRIC</a> :A) (<a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A) &rArr; (:A &rarr; (<a href="#complex-type"><code>COMPLEX</code></a> :A))</code>
 
 A point on the complex unit circle:
 
@@ -5893,16 +5894,16 @@ A point on the complex unit circle:
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L132-L133">(COSH X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="cosh-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L134-L135">(COSH X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="cosh-value"></a>
 <code>&forall; :A. <a href="#elementary-class">ELEMENTARY</a> :A &rArr; (:A &rarr; :A)</code>
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L102-L107">(MAGNITUDE Z)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="magnitude-value"></a>
-<code>&forall; :A. (<a href="#radical-class">RADICAL</a> :A) (<a href="#complex-class">COMPLEX</a> :A) &rArr; ((<a href="#complex-type"><code>COMPLEX</code></a> :A) &rarr; :A)</code>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L104-L109">(MAGNITUDE Z)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="magnitude-value"></a>
+<code>&forall; :A. (<a href="#radical-class">RADICAL</a> :A) (<a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A) &rArr; ((<a href="#complex-type"><code>COMPLEX</code></a> :A) &rarr; :A)</code>
 
-For `z = x + yi`,
+The magnitude of a complex number. For `z = x + yi`,
 
 
     (magnitude z) = (sqrt (+ (^ x 2) (^ y 2)))
@@ -5920,13 +5921,13 @@ Computes the sine and cosine of X.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L128-L129">(SINH X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="sinh-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L130-L131">(SINH X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="sinh-value"></a>
 <code>&forall; :A. <a href="#elementary-class">ELEMENTARY</a> :A &rArr; (:A &rarr; :A)</code>
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L136-L137">(TANH X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="tanh-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L138-L139">(TANH X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="tanh-value"></a>
 <code>&forall; :A. <a href="#elementary-class">ELEMENTARY</a> :A &rArr; (:A &rarr; :A)</code>
 
 
@@ -6073,7 +6074,7 @@ Note: `Eq`, and `Ord` and `Hash` only make use of the primal component.
 - <code>(<a href="#exponentiable-class">EXPONENTIABLE</a> :A) (<a href="#reciprocable-class">RECIPROCABLE</a> :A) &rArr; <a href="#exponentiable-class">EXPONENTIABLE</a> (<a href="#hyperdual-type"><code>HYPERDUAL</code></a> :A)</code>
 - <code>(<a href="#radical-class">RADICAL</a> :A) (<a href="#reciprocable-class">RECIPROCABLE</a> :A) (<a href="#exponentiable-class">EXPONENTIABLE</a> :A) &rArr; <a href="#radical-class">RADICAL</a> (<a href="#hyperdual-type"><code>HYPERDUAL</code></a> :A)</code>
 - <code>(<a href="#trigonometric-class">TRIGONOMETRIC</a> :A) (<a href="#reciprocable-class">RECIPROCABLE</a> :A) (<a href="#radical-class">RADICAL</a> :A) &rArr; <a href="#trigonometric-class">TRIGONOMETRIC</a> (<a href="#hyperdual-type"><code>HYPERDUAL</code></a> :A)</code>
-- <code><a href="#complex-class">COMPLEX</a> :A &rArr; <a href="#complex-class">COMPLEX</a> (<a href="#hyperdual-type"><code>HYPERDUAL</code></a> :A)</code>
+- <code><a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A &rArr; <a href="#complexcomponent-class">COMPLEXCOMPONENT</a> (<a href="#hyperdual-type"><code>HYPERDUAL</code></a> :A)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#hyperdual-type"><code>HYPERDUAL</code></a> :A)</code>
 - <code><a href="#hash-class">HASH</a> :A &rArr; <a href="#hash-class">HASH</a> (<a href="#hyperdual-type"><code>HYPERDUAL</code></a> :A)</code>
 - <code><a href="#num-class">NUM</a> :A &rArr; <a href="#into-class">INTO</a> :A (<a href="#hyperdual-type"><code>HYPERDUAL</code></a> :A)</code>
