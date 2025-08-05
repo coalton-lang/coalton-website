@@ -5653,7 +5653,7 @@ The primal (i.e., real) part of a dual number.
 #### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dyadic.lisp#L32-L34">DYADIC</a></code> <sup><sub>[TYPE]</sub></sup><a name="dyadic-type"></a>
 - <code>(DYADIC <a href="#integer-type"><code>INTEGER</code></a> <a href="#integer-type"><code>INTEGER</code></a>)</code>
 
-`(Dyadic n k)` represents the rational n*2^k.
+`(Dyadic n k)` represents the rational $\mathtt{n}\cdot 2^{\mathtt{k}}$.
 
 <details>
 <summary>Instances</summary>
@@ -5676,37 +5676,37 @@ The primal (i.e., real) part of a dual number.
 
 ### Values
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dyadic.lisp#L152-L155">(SCALE X J)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="scale-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dyadic.lisp#L155-L158">(SCALE X J)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="scale-value"></a>
 <code>(<a href="#dyadic-type"><code>DYADIC</code></a> &rarr; <a href="#integer-type"><code>INTEGER</code></a> &rarr; <a href="#dyadic-type"><code>DYADIC</code></a>)</code>
 
-Scales the exponent of a dyadic X by J.
+Scales a dyadic `x` by $2^{\mathtt{k}}$.
 
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dyadic.lisp#L158-L165">(SHIFT K A)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="shift-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dyadic.lisp#L161-L168">(SHIFT K A)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="shift-value"></a>
 <code>(<a href="#ufix-type"><code>UFIX</code></a> &rarr; <a href="#dyadic-type"><code>DYADIC</code></a> &rarr; <a href="#dyadic-type"><code>DYADIC</code></a>)</code>
 
-Shift dyadic A to its floor with K+1 bits of precision.
+Shift dyadic `a` to its floor with $\mathtt{k}+1$ bits of precision.
 
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dyadic.lisp#L97-L101">(SIMPLIFY D)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="simplify-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dyadic.lisp#L99-L103">(SIMPLIFY D)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="simplify-value"></a>
 <code>(<a href="#dyadic-type"><code>DYADIC</code></a> &rarr; <a href="#dyadic-type"><code>DYADIC</code></a>)</code>
 
-Simplifies a Dyadic by maximizing the absolute value of the exponent.
+Simplifies a dyadic by maximizing the absolute value of the exponent.
 
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dyadic.lisp#L86-L95">(SIMPLIFY-INTEGER N)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="simplify-integer-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dyadic.lisp#L88-L97">(SIMPLIFY-INTEGER N)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="simplify-integer-value"></a>
 <code>(<a href="#integer-type"><code>INTEGER</code></a> &rarr; <a href="#dyadic-type"><code>DYADIC</code></a>)</code>
 
-Finds the simplest dyadic given an integer
+Finds the simplest dyadic given an integer.
 
 
 
@@ -5716,7 +5716,7 @@ Finds the simplest dyadic given an integer
 
 ### Classes
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L121-L125">ELEMENTARY</a></code> <sup><sub>[CLASS]</sub></sup><a name="elementary-class"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L122-L126">ELEMENTARY</a></code> <sup><sub>[CLASS]</sub></sup><a name="elementary-class"></a>
 <code>(<a href="#reciprocable-class">RECIPROCABLE</a> :A) (<a href="#polar-class">POLAR</a> :A) (<a href="#trigonometric-class">TRIGONOMETRIC</a> :A) (<a href="#exponentiable-class">EXPONENTIABLE</a> :A) (<a href="#radical-class">RADICAL</a> :A) &rArr; <a href="#elementary-class">ELEMENTARY</a> :A</code>
 
 
@@ -5737,7 +5737,7 @@ Methods:
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L71-L83">EXPONENTIABLE</a></code> <sup><sub>[CLASS]</sub></sup><a name="exponentiable-class"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L72-L84">EXPONENTIABLE</a></code> <sup><sub>[CLASS]</sub></sup><a name="exponentiable-class"></a>
 <code><a href="#exponentiable-class">EXPONENTIABLE</a> :A</code>
 
 
@@ -5772,7 +5772,7 @@ Methods:
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L92-L102">POLAR</a></code> <sup><sub>[CLASS]</sub></sup><a name="polar-class"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L93-L103">POLAR</a></code> <sup><sub>[CLASS]</sub></sup><a name="polar-class"></a>
 <code>(<a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; <a href="#polar-class">POLAR</a> :A</code>
 
 
@@ -5802,7 +5802,7 @@ Methods:
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L85-L90">RADICAL</a></code> <sup><sub>[CLASS]</sub></sup><a name="radical-class"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L86-L91">RADICAL</a></code> <sup><sub>[CLASS]</sub></sup><a name="radical-class"></a>
 <code><a href="#radical-class">RADICAL</a> :A</code>
 
 
@@ -5863,35 +5863,36 @@ Methods:
 
 ### Values
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L146-L147">(ACOSH X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="acosh-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L147-L148">(ACOSH X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="acosh-value"></a>
 <code>&forall; :A. <a href="#elementary-class">ELEMENTARY</a> :A &rArr; (:A &rarr; :A)</code>
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L142-L143">(ASINH X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="asinh-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L143-L144">(ASINH X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="asinh-value"></a>
 <code>&forall; :A. <a href="#elementary-class">ELEMENTARY</a> :A &rArr; (:A &rarr; :A)</code>
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L60-L69">(ATAN2 Y X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="atan2-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L60-L70">(ATAN2 Y X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="atan2-value"></a>
 <code>&forall; :A. (<a href="#ord-class">ORD</a> :A) (<a href="#trigonometric-class">TRIGONOMETRIC</a> :A) (<a href="#reciprocable-class">RECIPROCABLE</a> :A) &rArr; (:A &rarr; :A &rarr; :A)</code>
 
-Computes the two-argument arctangent of y and x, which is roughly the same
-as (atan (/ y x)) when defined and accounting for the quadrant of the (x,y).
+Computes the two-argument arctangent of `y` and `x`, which is roughly the same
+as `(atan (/ y x))` when defined and accounting for the quadrant of
+the point $(\mathtt{x},\mathtt{y})$.
 
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L150-L151">(ATANH X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="atanh-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L151-L152">(ATANH X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="atanh-value"></a>
 <code>&forall; :A. <a href="#elementary-class">ELEMENTARY</a> :A &rArr; (:A &rarr; :A)</code>
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L112-L119">(CIS Z)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="cis-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L113-L120">(CIS Z)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="cis-value"></a>
 <code>&forall; :A. (<a href="#trigonometric-class">TRIGONOMETRIC</a> :A) (<a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A) &rArr; (:A &rarr; (<a href="#complex-type"><code>COMPLEX</code></a> :A))</code>
 
 A point on the complex unit circle:
@@ -5905,13 +5906,13 @@ A point on the complex unit circle:
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L134-L135">(COSH X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="cosh-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L135-L136">(COSH X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="cosh-value"></a>
 <code>&forall; :A. <a href="#elementary-class">ELEMENTARY</a> :A &rArr; (:A &rarr; :A)</code>
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L104-L109">(MAGNITUDE Z)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="magnitude-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L105-L110">(MAGNITUDE Z)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="magnitude-value"></a>
 <code>&forall; :A. (<a href="#radical-class">RADICAL</a> :A) (<a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A) &rArr; ((<a href="#complex-type"><code>COMPLEX</code></a> :A) &rarr; :A)</code>
 
 The magnitude of a complex number. For `z = x + yi`,
@@ -5932,13 +5933,13 @@ Computes the sine and cosine of X.
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L130-L131">(SINH X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="sinh-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L131-L132">(SINH X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="sinh-value"></a>
 <code>&forall; :A. <a href="#elementary-class">ELEMENTARY</a> :A &rArr; (:A &rarr; :A)</code>
 
 
 ***
 
-#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L138-L139">(TANH X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="tanh-value"></a>
+#### <code><a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L139-L140">(TANH X)</a></code> <sup><sub>[FUNCTION]</sub></sup><a name="tanh-value"></a>
 <code>&forall; :A. <a href="#elementary-class">ELEMENTARY</a> :A &rArr; (:A &rarr; :A)</code>
 
 
