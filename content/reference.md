@@ -3128,14 +3128,16 @@ Unwrap `container`, returning `default` on failure.
 
 ### Values
 
-#### <a href="#approx-value"><code>(APPROX X K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L292-L302">src</a></sub></sup><a name="approx-value"></a>
+#### <a href="#approx-value"><code>(APPROX X K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L296-L308">src</a></sub></sup><a name="approx-value"></a>
 <code>(<a href="#creal-type"><code>CREAL</code></a> &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; <a href="#integer-type"><code>INTEGER</code></a>)</code>
 
 Computes an approximation of the bits of a given
-`CReal`. Specifically, given an object of type `CReal` `X` and a
-non-negative integer `K`, return an integer `A` with
+`CReal`. Specifically, given an object of type `CReal` `x` and a
+non-negative integer `k`, return an integer $a$ with
 
-    |A*2^(-k) - X| <= 2^(-K).
+$$
+\vert a\cdot 2^{-\mathtt{k}} - \mathtt{x}\vert leq 2^{-\mathtt{k}}.
+$$
 
 See `rational` or `rationalize` to produce a rational approximation of
 `CReal`.
@@ -3144,45 +3146,53 @@ See `rational` or `rationalize` to produce a rational approximation of
 
 ***
 
-#### <a href="#comparison-threshold-value"><code>(COMPARISON-THRESHOLD _)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L47-L52">src</a></sub></sup><a name="comparison-threshold-value"></a>
+#### <a href="#comparison-threshold-value"><code>(COMPARISON-THRESHOLD _)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L47-L56">src</a></sub></sup><a name="comparison-threshold-value"></a>
 <code>&forall; :A. (:A &rarr; <a href="#ufix-type"><code>UFIX</code></a>)</code>
 
-Returns the current `CReal` comparison threshold measured as a number of bits after the 'decimal' point.
+Returns the current `CReal` comparison threshold measured as a number
+of bits after the 'decimal' point.
 
-This threshold is used to ensure `Eq` and `Ord` instances terminate. (In general computable real arithmetic is undecidable.) Note that if the production of a `CReal` depends on comparison, *there is no guarantee that the `CReal` will be accurate to any precision*.
+This threshold is used to ensure `Eq` and `Ord` instances
+terminate. (In general, computable real arithmetic is undecidable.)
+Note that if the production of a `CReal` depends on comparison, *there
+is no guarantee that the `CReal` will be accurate to any precision*.
 
 
 
 ***
 
-#### <a href="#cr-print-value"><code>(CR-PRINT X K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L330-L333">src</a></sub></sup><a name="cr-print-value"></a>
+#### <a href="#cr-print-value"><code>(CR-PRINT X K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L340-L343">src</a></sub></sup><a name="cr-print-value"></a>
 <code>(<a href="#creal-type"><code>CREAL</code></a> &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
-Prints a real `R` up to `K` bits of precision.
+Prints a real `x` up to `k` bits of precision.
 
 
 
 ***
 
-#### <a href="#rational-approx-value"><code>(RATIONAL-APPROX X K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L305-L310">src</a></sub></sup><a name="rational-approx-value"></a>
+#### <a href="#rational-approx-value"><code>(RATIONAL-APPROX X K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L311-L318">src</a></sub></sup><a name="rational-approx-value"></a>
 <code>(<a href="#creal-type"><code>CREAL</code></a> &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; <a href="#fraction-type"><code>FRACTION</code></a>)</code>
 
-Produce a rational approximation of `X` called `R` such that
+Produce a rational approximation of `x` called $r$ such that
 
-    |R - X| < 2^(-K).
+$$
+\vert r - \mathtt{x} \vert < 2^{-\mathtt{k}}.
+$$
 
 
 
 ***
 
-#### <a href="#rationalize-value"><code>(RATIONALIZE X K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L313-L321">src</a></sub></sup><a name="rationalize-value"></a>
+#### <a href="#rationalize-value"><code>(RATIONALIZE X K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L321-L331">src</a></sub></sup><a name="rationalize-value"></a>
 <code>(<a href="#creal-type"><code>CREAL</code></a> &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; <a href="#fraction-type"><code>FRACTION</code></a>)</code>
 
-Produce a rational approximation of `X` called `R` such that
+Produce a rational approximation of `x` called $r$ such that
 
-    |R - X| < 2^(-K),
+$$
+\vert r - \mathtt{x} \vert < 2^{-\mathtt{k}},
+$$
 
-taking into account the maximum precision specified by `K` to return
+taking into account the maximum precision specified by `k` to return
 the simplest possible such approximation.
 
 
