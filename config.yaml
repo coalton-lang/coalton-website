@@ -35,7 +35,7 @@ menu:
 
 params:
   env: production
-  title: The Coalton Language
+  title: The Coalton Programming Language
   description: "A statically typed, functional programming language that compiles to Common Lisp"
   keywords: [coalton, functional programming, lisp, static types]
   DateFormat: "January 2, 2006"
