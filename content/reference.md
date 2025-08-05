@@ -242,6 +242,7 @@ A ratio of integers always in reduced form. Represented by a Common Lisp `ration
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#complex-class">COMPLEX</a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#dyadic-type"><code>DYADIC</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
@@ -551,6 +552,7 @@ Unbound integer. Represented by a Common Lisp `integer`.
 <summary>Instances</summary>
 
 - <code><a href="#bits-class">BITS</a> <a href="#integer-type"><code>INTEGER</code></a></code>
+- <code><a href="#complex-class">COMPLEX</a> <a href="#integer-type"><code>INTEGER</code></a></code>
 - <code><a href="#default-class">DEFAULT</a> <a href="#integer-type"><code>INTEGER</code></a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#big-float-type"><code>BIG-FLOAT</code></a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
@@ -5486,6 +5488,8 @@ Methods:
 - <code><a href="#complex-class">COMPLEX</a> <a href="#creal-type"><code>CREAL</code></a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#big-float-type"><code>BIG-FLOAT</code></a></code>
 - <code><a href="#complex-class">COMPLEX</a> :A &rArr; <a href="#complex-class">COMPLEX</a> (<a href="#hyperdual-type"><code>HYPERDUAL</code></a> :A)</code>
+- <code><a href="#complex-class">COMPLEX</a> <a href="#integer-type"><code>INTEGER</code></a></code>
+- <code><a href="#complex-class">COMPLEX</a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#f64-type"><code>F64</code></a></code>
 - <code><a href="#complex-class">COMPLEX</a> <a href="#f32-type"><code>F32</code></a></code>
 - <code><a href="#complex-class">COMPLEX</a> :A &rArr; <a href="#complex-class">COMPLEX</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
