@@ -3,6 +3,7 @@
   --nav-width: 1200px;
   --single-main-width: 720px;
   --header-height: 65px;
+  --code-block-bg: whitesmoke;
 }
 
 html {
@@ -38,6 +39,7 @@ html {
 .post-header, .post-content {
   width: 100%;
 }
+
 
 /*
  * Two pane layout
@@ -83,6 +85,10 @@ html {
 
 .post-two-pane a, .post-two-pane a code {
   box-shadow: none !important;
+}
+
+.post-two-pane .post-content pre code {
+  color: black;
 }
 
 @media only screen and (max-width: 1250px) {
