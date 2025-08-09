@@ -56,6 +56,7 @@ layout: two-pane
 - <a href="#coalton-library/seq-package"><code>COALTON-LIBRARY/SEQ</code></a>
 - <a href="#coalton-library/slice-package"><code>COALTON-LIBRARY/SLICE</code></a>
 - <a href="#coalton-library/string-package"><code>COALTON-LIBRARY/STRING</code></a>
+- <a href="#coalton-library/symbol-package"><code>COALTON-LIBRARY/SYMBOL</code></a>
 - <a href="#coalton-library/system-package"><code>COALTON-LIBRARY/SYSTEM</code></a>
 - <a href="#coalton-library/tuple-package"><code>COALTON-LIBRARY/TUPLE</code></a>
 - <a href="#coalton-library/types-package"><code>COALTON-LIBRARY/TYPES</code></a>
@@ -2144,6 +2145,7 @@ Methods:
 - <code><a href="#default-class">DEFAULT</a> <a href="#i16-type"><code>I16</code></a></code>
 - <code><a href="#default-class">DEFAULT</a> <a href="#u8-type"><code>U8</code></a></code>
 - <code><a href="#default-class">DEFAULT</a> <a href="#i8-type"><code>I8</code></a></code>
+- <code><a href="#default-class">DEFAULT</a> <a href="#symbol-type"><code>SYMBOL</code></a></code>
 - <code><a href="#default-class">DEFAULT</a> <a href="#boolean-type"><code>BOOLEAN</code></a></code>
 - <code><a href="#default-class">DEFAULT</a> <a href="#hash-type"><code>HASH</code></a></code>
 
@@ -2206,6 +2208,7 @@ Note: Eq only compares the primal component.
 - <code><a href="#eq-class">EQ</a> <a href="#ufix-type"><code>UFIX</code></a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#ifix-type"><code>IFIX</code></a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#integer-type"><code>INTEGER</code></a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#symbol-type"><code>SYMBOL</code></a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#boolean-type"><code>BOOLEAN</code></a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#hash-type"><code>HASH</code></a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#ord-type"><code>ORD</code></a></code>
@@ -8363,6 +8366,88 @@ Return true if the first argument appears as a substring within the second argum
 
 ***
 
+# Package `COALTON-LIBRARY/SYMBOL`<a name="coalton-library/symbol-package"></a>
+
+
+An interface to Common Lisp symbols.
+
+### Types
+
+#### <a href="#symbol-type"><code>SYMBOL</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/symbol.lisp#L29-L30">src</a></sub></sup><a name="symbol-type"></a>
+
+A Common Lisp symbol.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#default-class">DEFAULT</a> <a href="#symbol-type"><code>SYMBOL</code></a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#symbol-type"><code>SYMBOL</code></a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#symbol-type"><code>SYMBOL</code></a></code>
+
+</details>
+
+
+
+***
+
+### Values
+
+#### <a href="#gensym-value"><code>(GENSYM _)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/symbol.lisp#L71-L74">src</a></sub></sup><a name="gensym-value"></a>
+<code>(<a href="#unit-type"><code>UNIT</code></a> &rarr; <a href="#symbol-type"><code>SYMBOL</code></a>)</code>
+
+Make an uninterned symbol as by `cl:gensym`.
+
+
+
+***
+
+#### <a href="#keyword?-value"><code>(KEYWORD? S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/symbol.lisp#L48-L51">src</a></sub></sup><a name="keyword?-value"></a>
+<code>(<a href="#symbol-type"><code>SYMBOL</code></a> &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
+
+Is the symbol `s` a Common Lisp keyword?
+
+
+
+***
+
+#### <a href="#make-keyword-value"><code>(MAKE-KEYWORD S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/symbol.lisp#L55-L60">src</a></sub></sup><a name="make-keyword-value"></a>
+<code>(<a href="#string-type"><code>STRING</code></a> &rarr; <a href="#symbol-type"><code>SYMBOL</code></a>)</code>
+
+Find or make a keyword named `s`.
+
+**WARNING**: This function interns a new symbol. It will not get garbage collected. Use with caution.
+
+
+
+***
+
+#### <a href="#make-symbol-value"><code>(MAKE-SYMBOL S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/symbol.lisp#L64-L67">src</a></sub></sup><a name="make-symbol-value"></a>
+<code>(<a href="#string-type"><code>STRING</code></a> &rarr; <a href="#symbol-type"><code>SYMBOL</code></a>)</code>
+
+Make an uninterned symbol with the name `s`.
+
+
+
+***
+
+#### <a href="#symbol-name-value"><code>(SYMBOL-NAME S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/symbol.lisp#L34-L37">src</a></sub></sup><a name="symbol-name-value"></a>
+<code>(<a href="#symbol-type"><code>SYMBOL</code></a> &rarr; <a href="#string-type"><code>STRING</code></a>)</code>
+
+Return the name of the symbol `s`.
+
+
+
+***
+
+#### <a href="#uninterned?-value"><code>(UNINTERNED? S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/symbol.lisp#L41-L44">src</a></sub></sup><a name="uninterned?-value"></a>
+<code>(<a href="#symbol-type"><code>SYMBOL</code></a> &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
+
+Is the symbol `s` uninterned?
+
+
+
+***
+
 # Package `COALTON-LIBRARY/SYSTEM`<a name="coalton-library/system-package"></a>
 
 ### Types
@@ -8780,6 +8865,7 @@ Methods:
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#dyadic-type"><code>DYADIC</code></a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#quantization-type"><code>QUANTIZATION</code></a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#symbol-type"><code>SYMBOL</code></a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tuple-type"><code>TUPLE</code></a> :A :B)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#ord-type"><code>ORD</code></a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#hash-type"><code>HASH</code></a></code>
