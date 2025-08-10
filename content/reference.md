@@ -1131,6 +1131,33 @@ The "unit" type whose only member is the value `Unit`.
 
 ***
 
+#### <a href="#inline-value"><code>(INLINE APPLICATION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/&lt;macroexpansion&gt;#L1-L1">src</a></sub></sup><a name="inline-value"></a>
+<code>&forall; :A. (:A &rarr; :A)</code>
+
+Try to inline `application'.
+
+
+
+***
+
+#### <a href="#likely-value"><code>(LIKELY PREDICATE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/&lt;macroexpansion&gt;#L1-L1">src</a></sub></sup><a name="likely-value"></a>
+<code>(<a href="#boolean-type"><code>BOOLEAN</code></a> &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
+
+Hint to the compiler that `predicate' is likely `True'.
+
+
+
+***
+
+#### <a href="#noinline-value"><code>(NOINLINE APPLICATION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/&lt;macroexpansion&gt;#L1-L1">src</a></sub></sup><a name="noinline-value"></a>
+<code>&forall; :A. (:A &rarr; :A)</code>
+
+Prevent `application' from being inlined.
+
+
+
+***
+
 #### <a href="#some-value"><code>(SOME X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L52-L64">src</a></sub></sup><a name="some-value"></a>
 <code>&forall; :A. (:A &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> :A))</code>
 
@@ -1144,6 +1171,15 @@ matching, as in the following example.
     value)
   (_ (error "Oh, no!")))
 ```
+
+
+
+***
+
+#### <a href="#unlikely-value"><code>(UNLIKELY PREDICATE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/&lt;macroexpansion&gt;#L1-L1">src</a></sub></sup><a name="unlikely-value"></a>
+<code>(<a href="#boolean-type"><code>BOOLEAN</code></a> &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
+
+Hint to the compiler that `predicate' is likely `False'.
 
 
 
