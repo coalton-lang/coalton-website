@@ -89,6 +89,58 @@ Type constructor for function types.
 
 ***
 
+#### <a href="#bit-type"><code>BIT</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L82-L83">src</a></sub></sup><a name="bit-type"></a>
+
+A single bit, equal to 0 or 1. Uses `cl:bit`.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#bits-class">BITS</a> <a href="#bit-type"><code>BIT</code></a></code>
+- <code><a href="#bounded-class">BOUNDED</a> <a href="#bit-type"><code>BIT</code></a></code>
+- <code><a href="#default-class">DEFAULT</a> <a href="#bit-type"><code>BIT</code></a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#bit-type"><code>BIT</code></a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#bit-type"><code>BIT</code></a></code>
+- <code><a href="#integral-class">INTEGRAL</a> <a href="#bit-type"><code>BIT</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#f32-type"><code>F32</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#f64-type"><code>F64</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#i16-type"><code>I16</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#i32-type"><code>I32</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#i64-type"><code>I64</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#i8-type"><code>I8</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#ifix-type"><code>IFIX</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#integer-type"><code>INTEGER</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#u16-type"><code>U16</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#u32-type"><code>U32</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#u64-type"><code>U64</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#u8-type"><code>U8</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#ufix-type"><code>UFIX</code></a></code>
+- <code><a href="#num-class">NUM</a> <a href="#bit-type"><code>BIT</code></a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#bit-type"><code>BIT</code></a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#bit-type"><code>BIT</code></a></code>
+- <code><a href="#rational-class">RATIONAL</a> <a href="#bit-type"><code>BIT</code></a></code>
+- <code><a href="#real-class">REAL</a> <a href="#bit-type"><code>BIT</code></a></code>
+- <code><a href="#remainder-class">REMAINDER</a> <a href="#bit-type"><code>BIT</code></a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#bit-type"><code>BIT</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#i64-type"><code>I64</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#u64-type"><code>U64</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#u8-type"><code>U8</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
+
+</details>
+
+
+
+***
+
 #### <a href="#boolean-type"><code>BOOLEAN</code></a> <sup><sub>[TYPE]</sub></sup><a name="boolean-type"></a>
 - <code>FALSE</code> 
   - Boolean `False`
@@ -134,7 +186,7 @@ A character represented by a Common Lisp `character`.
 
 ***
 
-#### <a href="#double-float-type"><code>DOUBLE-FLOAT</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L124-L125">src</a></sub></sup><a name="double-float-type"></a>
+#### <a href="#double-float-type"><code>DOUBLE-FLOAT</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L128-L129">src</a></sub></sup><a name="double-float-type"></a>
 
 Deprecated name for F64. This is provided for backward compatibility.
 
@@ -156,6 +208,7 @@ Single-precision floating point number (32-bits in size). Represented by a Commo
 - <code><a href="#eq-class">EQ</a> <a href="#f32-type"><code>F32</code></a></code>
 - <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#f32-type"><code>F32</code></a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#f32-type"><code>F32</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#f32-type"><code>F32</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#f32-type"><code>F32</code></a> <a href="#big-float-type"><code>BIG-FLOAT</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#f32-type"><code>F32</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#f32-type"><code>F32</code></a> <a href="#string-type"><code>STRING</code></a></code>
@@ -204,6 +257,7 @@ Double-precision floating point number (64 bits in size). Represented by a Commo
 - <code><a href="#eq-class">EQ</a> <a href="#f64-type"><code>F64</code></a></code>
 - <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#f64-type"><code>F64</code></a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#f64-type"><code>F64</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#f64-type"><code>F64</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#f64-type"><code>F64</code></a> <a href="#big-float-type"><code>BIG-FLOAT</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#f64-type"><code>F64</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#f64-type"><code>F64</code></a> <a href="#string-type"><code>STRING</code></a></code>
@@ -248,6 +302,7 @@ A ratio of integers always in reduced form. Represented by a Common Lisp `ration
 - <code><a href="#complexcomponent-class">COMPLEXCOMPONENT</a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#fraction-type"><code>FRACTION</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#dyadic-type"><code>DYADIC</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#fraction-type"><code>FRACTION</code></a> <a href="#big-float-type"><code>BIG-FLOAT</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#fraction-type"><code>FRACTION</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
@@ -280,7 +335,7 @@ A ratio of integers always in reduced form. Represented by a Common Lisp `ration
 
 ***
 
-#### <a href="#i16-type"><code>I16</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L102-L103">src</a></sub></sup><a name="i16-type"></a>
+#### <a href="#i16-type"><code>I16</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L106-L107">src</a></sub></sup><a name="i16-type"></a>
 
 Signed 16-bit integer capable of storing values in `[-32768, 32767]`. Uses `(signed-byte 16)`.
 
@@ -295,6 +350,7 @@ Signed 16-bit integer capable of storing values in `[-32768, 32767]`. Uses `(sig
 - <code><a href="#file-class">FILE</a> <a href="#i16-type"><code>I16</code></a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#i16-type"><code>I16</code></a></code>
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#i16-type"><code>I16</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#i16-type"><code>I16</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#f32-type"><code>F32</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#f64-type"><code>F64</code></a></code>
@@ -310,6 +366,7 @@ Signed 16-bit integer capable of storing values in `[-32768, 32767]`. Uses `(sig
 - <code><a href="#ord-class">ORD</a> <a href="#i16-type"><code>I16</code></a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#i16-type"><code>I16</code></a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#i16-type"><code>I16</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#i8-type"><code>I8</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#u16-type"><code>U16</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#u32-type"><code>U32</code></a> <a href="#string-type"><code>STRING</code></a></code>
@@ -331,7 +388,7 @@ Signed 16-bit integer capable of storing values in `[-32768, 32767]`. Uses `(sig
 
 ***
 
-#### <a href="#i32-type"><code>I32</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L106-L107">src</a></sub></sup><a name="i32-type"></a>
+#### <a href="#i32-type"><code>I32</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L110-L111">src</a></sub></sup><a name="i32-type"></a>
 
 Signed 32-bit integer capable of storing values in `[-2147483648, 2147483647]`. Uses `(signed-byte 32)`.
 
@@ -346,6 +403,7 @@ Signed 32-bit integer capable of storing values in `[-2147483648, 2147483647]`. 
 - <code><a href="#file-class">FILE</a> <a href="#i32-type"><code>I32</code></a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#i32-type"><code>I32</code></a></code>
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#i32-type"><code>I32</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#i32-type"><code>I32</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#i32-type"><code>I32</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#f64-type"><code>F64</code></a></code>
@@ -364,6 +422,7 @@ Signed 32-bit integer capable of storing values in `[-2147483648, 2147483647]`. 
 - <code><a href="#real-class">REAL</a> <a href="#i32-type"><code>I32</code></a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#i32-type"><code>I32</code></a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#i32-type"><code>I32</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#f32-type"><code>F32</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#i16-type"><code>I16</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#i8-type"><code>I8</code></a> <a href="#string-type"><code>STRING</code></a></code>
@@ -385,7 +444,7 @@ Signed 32-bit integer capable of storing values in `[-2147483648, 2147483647]`. 
 
 ***
 
-#### <a href="#i64-type"><code>I64</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L110-L111">src</a></sub></sup><a name="i64-type"></a>
+#### <a href="#i64-type"><code>I64</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L114-L115">src</a></sub></sup><a name="i64-type"></a>
 
 Signed 64-bit integer capable of storing values in `[-9223372036854775808, 9223372036854775807]`. Uses `(signed-byte 64)`.
 
@@ -400,6 +459,7 @@ Signed 64-bit integer capable of storing values in `[-9223372036854775808, 92233
 - <code><a href="#file-class">FILE</a> <a href="#i64-type"><code>I64</code></a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#i64-type"><code>I64</code></a></code>
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#i64-type"><code>I64</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#i64-type"><code>I64</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#i64-type"><code>I64</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#i64-type"><code>I64</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i64-type"><code>I64</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
@@ -419,6 +479,7 @@ Signed 64-bit integer capable of storing values in `[-9223372036854775808, 92233
 - <code><a href="#real-class">REAL</a> <a href="#i64-type"><code>I64</code></a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#i64-type"><code>I64</code></a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#i64-type"><code>I64</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#i64-type"><code>I64</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i64-type"><code>I64</code></a> <a href="#f32-type"><code>F32</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i64-type"><code>I64</code></a> <a href="#f64-type"><code>F64</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i64-type"><code>I64</code></a> <a href="#i16-type"><code>I16</code></a> <a href="#string-type"><code>STRING</code></a></code>
@@ -439,7 +500,7 @@ Signed 64-bit integer capable of storing values in `[-9223372036854775808, 92233
 
 ***
 
-#### <a href="#i8-type"><code>I8</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L98-L99">src</a></sub></sup><a name="i8-type"></a>
+#### <a href="#i8-type"><code>I8</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L102-L103">src</a></sub></sup><a name="i8-type"></a>
 
 Signed 8-bit integer capable of storing values in `[-128, 127]`. Uses `(signed-byte 8)`.
 
@@ -454,6 +515,7 @@ Signed 8-bit integer capable of storing values in `[-128, 127]`. Uses `(signed-b
 - <code><a href="#file-class">FILE</a> <a href="#i8-type"><code>I8</code></a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#i8-type"><code>I8</code></a></code>
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#i8-type"><code>I8</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#i8-type"><code>I8</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#f32-type"><code>F32</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#f64-type"><code>F64</code></a></code>
@@ -474,6 +536,7 @@ Signed 8-bit integer capable of storing values in `[-128, 127]`. Uses `(signed-b
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#i8-type"><code>I8</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#i8-type"><code>I8</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i64-type"><code>I64</code></a> <a href="#i8-type"><code>I8</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#u16-type"><code>U16</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#u32-type"><code>U32</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#u64-type"><code>U64</code></a> <a href="#string-type"><code>STRING</code></a></code>
@@ -493,7 +556,7 @@ Signed 8-bit integer capable of storing values in `[-128, 127]`. Uses `(signed-b
 
 ***
 
-#### <a href="#ifix-type"><code>IFIX</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L114-L115">src</a></sub></sup><a name="ifix-type"></a>
+#### <a href="#ifix-type"><code>IFIX</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L118-L119">src</a></sub></sup><a name="ifix-type"></a>
 
 Non-allocating tagged integer; range is platform-dependent. Does not error on overflow. Uses `fixnum`.
 
@@ -508,6 +571,7 @@ Non-allocating tagged integer; range is platform-dependent. Does not error on ov
 - <code><a href="#file-class">FILE</a> <a href="#ifix-type"><code>IFIX</code></a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#ifix-type"><code>IFIX</code></a></code>
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#ifix-type"><code>IFIX</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#ifix-type"><code>IFIX</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#ifix-type"><code>IFIX</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#ifix-type"><code>IFIX</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#ifix-type"><code>IFIX</code></a></code>
@@ -528,6 +592,7 @@ Non-allocating tagged integer; range is platform-dependent. Does not error on ov
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#ifix-type"><code>IFIX</code></a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#ifix-type"><code>IFIX</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i64-type"><code>I64</code></a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#f32-type"><code>F32</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#f64-type"><code>F64</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#i16-type"><code>I16</code></a> <a href="#string-type"><code>STRING</code></a></code>
@@ -565,6 +630,7 @@ Unbound integer. Represented by a Common Lisp `integer`.
 - <code><a href="#eq-class">EQ</a> <a href="#integer-type"><code>INTEGER</code></a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#integer-type"><code>INTEGER</code></a></code>
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#integer-type"><code>INTEGER</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#integer-type"><code>INTEGER</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#integer-type"><code>INTEGER</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#integer-type"><code>INTEGER</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i64-type"><code>I64</code></a> <a href="#integer-type"><code>INTEGER</code></a></code>
@@ -587,6 +653,7 @@ Unbound integer. Represented by a Common Lisp `integer`.
 - <code><a href="#real-class">REAL</a> <a href="#integer-type"><code>INTEGER</code></a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#integer-type"><code>INTEGER</code></a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#integer-type"><code>INTEGER</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#f32-type"><code>F32</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#f64-type"><code>F64</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#i16-type"><code>I16</code></a> <a href="#string-type"><code>STRING</code></a></code>
@@ -687,7 +754,7 @@ A type that allows indicating the presence or absence of a value. The underlying
 
 ***
 
-#### <a href="#single-float-type"><code>SINGLE-FLOAT</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L121-L122">src</a></sub></sup><a name="single-float-type"></a>
+#### <a href="#single-float-type"><code>SINGLE-FLOAT</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L125-L126">src</a></sub></sup><a name="single-float-type"></a>
 
 Deprecated name for F32. This is provided for backward compatibility.
 
@@ -737,12 +804,14 @@ String of characters. Represented by Common Lisp `string`.
 - <code><a href="#signalable-class">SIGNALABLE</a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#f32-type"><code>F32</code></a> <a href="#fraction-type"><code>FRACTION</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#f64-type"><code>F64</code></a> <a href="#fraction-type"><code>FRACTION</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#i8-type"><code>I8</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#u16-type"><code>U16</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#u32-type"><code>U32</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#u64-type"><code>U64</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#u8-type"><code>U8</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#f32-type"><code>F32</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#i16-type"><code>I16</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#i8-type"><code>I8</code></a> <a href="#string-type"><code>STRING</code></a></code>
@@ -751,6 +820,7 @@ String of characters. Represented by Common Lisp `string`.
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#u64-type"><code>U64</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#u8-type"><code>U8</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#i64-type"><code>I64</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i64-type"><code>I64</code></a> <a href="#f32-type"><code>F32</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i64-type"><code>I64</code></a> <a href="#f64-type"><code>F64</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i64-type"><code>I64</code></a> <a href="#i16-type"><code>I16</code></a> <a href="#string-type"><code>STRING</code></a></code>
@@ -762,11 +832,13 @@ String of characters. Represented by Common Lisp `string`.
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i64-type"><code>I64</code></a> <a href="#u64-type"><code>U64</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i64-type"><code>I64</code></a> <a href="#u8-type"><code>U8</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i64-type"><code>I64</code></a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#u16-type"><code>U16</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#u32-type"><code>U32</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#u64-type"><code>U64</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#u8-type"><code>U8</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#f32-type"><code>F32</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#f64-type"><code>F64</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#i16-type"><code>I16</code></a> <a href="#string-type"><code>STRING</code></a></code>
@@ -777,6 +849,7 @@ String of characters. Represented by Common Lisp `string`.
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#u64-type"><code>U64</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#u8-type"><code>U8</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#f32-type"><code>F32</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#f64-type"><code>F64</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#i16-type"><code>I16</code></a> <a href="#string-type"><code>STRING</code></a></code>
@@ -790,15 +863,18 @@ String of characters. Represented by Common Lisp `string`.
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#u8-type"><code>U8</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#string-type"><code>STRING</code></a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#i16-type"><code>I16</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#i8-type"><code>I8</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#u8-type"><code>U8</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#f32-type"><code>F32</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#i16-type"><code>I16</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#i32-type"><code>I32</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#i8-type"><code>I8</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#u16-type"><code>U16</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#u8-type"><code>U8</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#u64-type"><code>U64</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u64-type"><code>U64</code></a> <a href="#f32-type"><code>F32</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u64-type"><code>U64</code></a> <a href="#f64-type"><code>F64</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u64-type"><code>U64</code></a> <a href="#i16-type"><code>I16</code></a> <a href="#string-type"><code>STRING</code></a></code>
@@ -810,7 +886,9 @@ String of characters. Represented by Common Lisp `string`.
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u64-type"><code>U64</code></a> <a href="#u32-type"><code>U32</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u64-type"><code>U64</code></a> <a href="#u8-type"><code>U8</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u64-type"><code>U64</code></a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#u8-type"><code>U8</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u8-type"><code>U8</code></a> <a href="#i8-type"><code>I8</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#f32-type"><code>F32</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#f64-type"><code>F64</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#i16-type"><code>I16</code></a> <a href="#string-type"><code>STRING</code></a></code>
@@ -826,7 +904,7 @@ String of characters. Represented by Common Lisp `string`.
 
 ***
 
-#### <a href="#u16-type"><code>U16</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L86-L87">src</a></sub></sup><a name="u16-type"></a>
+#### <a href="#u16-type"><code>U16</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L90-L91">src</a></sub></sup><a name="u16-type"></a>
 
 Unsigned 16-bit integer capable of storing values in `[0, 65535]`. Uses `(unsigned-byte 16)`.
 
@@ -841,6 +919,7 @@ Unsigned 16-bit integer capable of storing values in `[0, 65535]`. Uses `(unsign
 - <code><a href="#file-class">FILE</a> <a href="#u16-type"><code>U16</code></a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#u16-type"><code>U16</code></a></code>
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#u16-type"><code>U16</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#u16-type"><code>U16</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#f32-type"><code>F32</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#f64-type"><code>F64</code></a></code>
@@ -864,6 +943,7 @@ Unsigned 16-bit integer capable of storing values in `[0, 65535]`. Uses `(unsign
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#u16-type"><code>U16</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#u16-type"><code>U16</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#u16-type"><code>U16</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#i16-type"><code>I16</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#i8-type"><code>I8</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#u8-type"><code>U8</code></a> <a href="#string-type"><code>STRING</code></a></code>
@@ -877,7 +957,7 @@ Unsigned 16-bit integer capable of storing values in `[0, 65535]`. Uses `(unsign
 
 ***
 
-#### <a href="#u32-type"><code>U32</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L90-L91">src</a></sub></sup><a name="u32-type"></a>
+#### <a href="#u32-type"><code>U32</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L94-L95">src</a></sub></sup><a name="u32-type"></a>
 
 Unsigned 32-bit integer capable of storing values in `[0, 4294967295]`. Uses `(unsigned-byte 32)`.
 
@@ -892,6 +972,7 @@ Unsigned 32-bit integer capable of storing values in `[0, 4294967295]`. Uses `(u
 - <code><a href="#file-class">FILE</a> <a href="#u32-type"><code>U32</code></a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#u32-type"><code>U32</code></a></code>
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#u32-type"><code>U32</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#u32-type"><code>U32</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#u32-type"><code>U32</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#f64-type"><code>F64</code></a></code>
@@ -916,6 +997,7 @@ Unsigned 32-bit integer capable of storing values in `[0, 4294967295]`. Uses `(u
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#u32-type"><code>U32</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#u32-type"><code>U32</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#u32-type"><code>U32</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#f32-type"><code>F32</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#i16-type"><code>I16</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#i32-type"><code>I32</code></a> <a href="#string-type"><code>STRING</code></a></code>
@@ -931,7 +1013,7 @@ Unsigned 32-bit integer capable of storing values in `[0, 4294967295]`. Uses `(u
 
 ***
 
-#### <a href="#u64-type"><code>U64</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L94-L95">src</a></sub></sup><a name="u64-type"></a>
+#### <a href="#u64-type"><code>U64</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L98-L99">src</a></sub></sup><a name="u64-type"></a>
 
 Unsigned 64-bit integer capable of storing values in `[0, 18446744073709551615]`. Uses `(unsigned-byte 64)`.
 
@@ -946,6 +1028,7 @@ Unsigned 64-bit integer capable of storing values in `[0, 18446744073709551615]`
 - <code><a href="#file-class">FILE</a> <a href="#u64-type"><code>U64</code></a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#u64-type"><code>U64</code></a></code>
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#u64-type"><code>U64</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#u64-type"><code>U64</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#u64-type"><code>U64</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#u64-type"><code>U64</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u64-type"><code>U64</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
@@ -967,6 +1050,7 @@ Unsigned 64-bit integer capable of storing values in `[0, 18446744073709551615]`
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#u64-type"><code>U64</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#u64-type"><code>U64</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#u64-type"><code>U64</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#u64-type"><code>U64</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u64-type"><code>U64</code></a> <a href="#f32-type"><code>F32</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u64-type"><code>U64</code></a> <a href="#f64-type"><code>F64</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u64-type"><code>U64</code></a> <a href="#i16-type"><code>I16</code></a> <a href="#string-type"><code>STRING</code></a></code>
@@ -985,7 +1069,7 @@ Unsigned 64-bit integer capable of storing values in `[0, 18446744073709551615]`
 
 ***
 
-#### <a href="#u8-type"><code>U8</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L82-L83">src</a></sub></sup><a name="u8-type"></a>
+#### <a href="#u8-type"><code>U8</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L86-L87">src</a></sub></sup><a name="u8-type"></a>
 
 Unsigned 8-bit integer capable of storing values in `[0, 255]`. Uses `(unsigned-byte 8)`.
 
@@ -1000,6 +1084,7 @@ Unsigned 8-bit integer capable of storing values in `[0, 255]`. Uses `(unsigned-
 - <code><a href="#file-class">FILE</a> <a href="#u8-type"><code>U8</code></a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#u8-type"><code>U8</code></a></code>
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#u8-type"><code>U8</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#u8-type"><code>U8</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type"><code>U8</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type"><code>U8</code></a> <a href="#f32-type"><code>F32</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type"><code>U8</code></a> <a href="#f64-type"><code>F64</code></a></code>
@@ -1030,6 +1115,7 @@ Unsigned 8-bit integer capable of storing values in `[0, 255]`. Uses `(unsigned-
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#u8-type"><code>U8</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#u8-type"><code>U8</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u64-type"><code>U64</code></a> <a href="#u8-type"><code>U8</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#u8-type"><code>U8</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u8-type"><code>U8</code></a> <a href="#i8-type"><code>I8</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#u8-type"><code>U8</code></a> <a href="#string-type"><code>STRING</code></a></code>
 
@@ -1039,7 +1125,7 @@ Unsigned 8-bit integer capable of storing values in `[0, 255]`. Uses `(unsigned-
 
 ***
 
-#### <a href="#ufix-type"><code>UFIX</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L118-L119">src</a></sub></sup><a name="ufix-type"></a>
+#### <a href="#ufix-type"><code>UFIX</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/primitive-types.lisp#L122-L123">src</a></sub></sup><a name="ufix-type"></a>
 
 Non-allocating tagged non-negative integer; range is platform-dependent. Uses `(and fixnum unsigned-byte)`.
 
@@ -1054,6 +1140,7 @@ Non-allocating tagged non-negative integer; range is platform-dependent. Uses `(
 - <code><a href="#file-class">FILE</a> <a href="#ufix-type"><code>UFIX</code></a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#ufix-type"><code>UFIX</code></a></code>
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#ufix-type"><code>UFIX</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#ufix-type"><code>UFIX</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#ufix-type"><code>UFIX</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#ufix-type"><code>UFIX</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type"><code>U8</code></a> <a href="#ufix-type"><code>UFIX</code></a></code>
@@ -1078,6 +1165,7 @@ Non-allocating tagged non-negative integer; range is platform-dependent. Uses `(
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u64-type"><code>U64</code></a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#f32-type"><code>F32</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#f64-type"><code>F64</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#i16-type"><code>I16</code></a> <a href="#string-type"><code>STRING</code></a></code>
@@ -1595,6 +1683,7 @@ Methods:
 - <code><a href="#bits-class">BITS</a> <a href="#u32-type"><code>U32</code></a></code>
 - <code><a href="#bits-class">BITS</a> <a href="#u16-type"><code>U16</code></a></code>
 - <code><a href="#bits-class">BITS</a> <a href="#u8-type"><code>U8</code></a></code>
+- <code><a href="#bits-class">BITS</a> <a href="#bit-type"><code>BIT</code></a></code>
 - <code><a href="#bits-class">BITS</a> <a href="#ifix-type"><code>IFIX</code></a></code>
 - <code><a href="#bits-class">BITS</a> <a href="#i64-type"><code>I64</code></a></code>
 - <code><a href="#bits-class">BITS</a> <a href="#i32-type"><code>I32</code></a></code>
@@ -2183,6 +2272,7 @@ Methods:
 - <code><a href="#default-class">DEFAULT</a> <a href="#i16-type"><code>I16</code></a></code>
 - <code><a href="#default-class">DEFAULT</a> <a href="#u8-type"><code>U8</code></a></code>
 - <code><a href="#default-class">DEFAULT</a> <a href="#i8-type"><code>I8</code></a></code>
+- <code><a href="#default-class">DEFAULT</a> <a href="#bit-type"><code>BIT</code></a></code>
 - <code><a href="#default-class">DEFAULT</a> <a href="#symbol-type"><code>SYMBOL</code></a></code>
 - <code><a href="#default-class">DEFAULT</a> <a href="#boolean-type"><code>BOOLEAN</code></a></code>
 - <code><a href="#default-class">DEFAULT</a> <a href="#hash-type"><code>HASH</code></a></code>
@@ -2243,6 +2333,7 @@ Note: Eq only compares the primal component.
 - <code><a href="#eq-class">EQ</a> <a href="#i16-type"><code>I16</code></a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#u8-type"><code>U8</code></a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#i8-type"><code>I8</code></a></code>
+- <code><a href="#eq-class">EQ</a> <a href="#bit-type"><code>BIT</code></a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#ufix-type"><code>UFIX</code></a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#ifix-type"><code>IFIX</code></a></code>
 - <code><a href="#eq-class">EQ</a> <a href="#integer-type"><code>INTEGER</code></a></code>
@@ -2356,6 +2447,7 @@ Note: Hash only considers the primal component in order to be consistent with Eq
 - <code><a href="#hash-class">HASH</a> <a href="#u32-type"><code>U32</code></a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#u16-type"><code>U16</code></a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#u8-type"><code>U8</code></a></code>
+- <code><a href="#hash-class">HASH</a> <a href="#bit-type"><code>BIT</code></a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#i64-type"><code>I64</code></a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#i32-type"><code>I32</code></a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#i16-type"><code>I16</code></a></code>
@@ -2448,6 +2540,7 @@ Methods:
 - <code><a href="#into-class">INTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type"><code>U8</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i64-type"><code>I64</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
@@ -2460,10 +2553,12 @@ Methods:
 - <code><a href="#into-class">INTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#f64-type"><code>F64</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#f64-type"><code>F64</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type"><code>U8</code></a> <a href="#f64-type"><code>F64</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#f64-type"><code>F64</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#f32-type"><code>F32</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#f32-type"><code>F32</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#f32-type"><code>F32</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type"><code>U8</code></a> <a href="#f32-type"><code>F32</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#f32-type"><code>F32</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#integer-type"><code>INTEGER</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#i64-type"><code>I64</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#integer-type"><code>INTEGER</code></a></code>
@@ -2505,6 +2600,17 @@ Methods:
 - <code><a href="#into-class">INTO</a> <a href="#u8-type"><code>U8</code></a> <a href="#u32-type"><code>U32</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type"><code>U8</code></a> <a href="#i16-type"><code>I16</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u8-type"><code>U8</code></a> <a href="#u16-type"><code>U16</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#integer-type"><code>INTEGER</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#ifix-type"><code>IFIX</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#ufix-type"><code>UFIX</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#i64-type"><code>I64</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#u64-type"><code>U64</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#i32-type"><code>I32</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#u32-type"><code>U32</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#i16-type"><code>I16</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#u16-type"><code>U16</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#i8-type"><code>I8</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#u8-type"><code>U8</code></a></code>
 - <code><a href="#into-class">INTO</a> :A :A</code>
 
 </details>
@@ -2657,6 +2763,7 @@ Methods:
 - <code><a href="#num-class">NUM</a> <a href="#f64-type"><code>F64</code></a></code>
 - <code><a href="#num-class">NUM</a> <a href="#f32-type"><code>F32</code></a></code>
 - <code><a href="#num-class">NUM</a> <a href="#ufix-type"><code>UFIX</code></a></code>
+- <code><a href="#num-class">NUM</a> <a href="#bit-type"><code>BIT</code></a></code>
 - <code><a href="#num-class">NUM</a> <a href="#u64-type"><code>U64</code></a></code>
 - <code><a href="#num-class">NUM</a> <a href="#u32-type"><code>U32</code></a></code>
 - <code><a href="#num-class">NUM</a> <a href="#u16-type"><code>U16</code></a></code>
@@ -2711,6 +2818,7 @@ Note: Ord only compares the primal component.
 - <code><a href="#ord-class">ORD</a> <a href="#i16-type"><code>I16</code></a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#u8-type"><code>U8</code></a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#i8-type"><code>I8</code></a></code>
+- <code><a href="#ord-class">ORD</a> <a href="#bit-type"><code>BIT</code></a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#ufix-type"><code>UFIX</code></a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#ifix-type"><code>IFIX</code></a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#integer-type"><code>INTEGER</code></a></code>
@@ -2829,6 +2937,7 @@ Methods:
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#u16-type"><code>U16</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#i8-type"><code>I8</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#u8-type"><code>U8</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#u64-type"><code>U64</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#i32-type"><code>I32</code></a> <a href="#string-type"><code>STRING</code></a></code>
@@ -2837,12 +2946,14 @@ Methods:
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#u16-type"><code>U16</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#i8-type"><code>I8</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#u8-type"><code>U8</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#i32-type"><code>I32</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#u32-type"><code>U32</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#i16-type"><code>I16</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#u16-type"><code>U16</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#i8-type"><code>I8</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#u8-type"><code>U8</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i64-type"><code>I64</code></a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i64-type"><code>I64</code></a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i64-type"><code>I64</code></a> <a href="#u64-type"><code>U64</code></a> <a href="#string-type"><code>STRING</code></a></code>
@@ -2852,6 +2963,7 @@ Methods:
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i64-type"><code>I64</code></a> <a href="#u16-type"><code>U16</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i64-type"><code>I64</code></a> <a href="#i8-type"><code>I8</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i64-type"><code>I64</code></a> <a href="#u8-type"><code>U8</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#i64-type"><code>I64</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u64-type"><code>U64</code></a> <a href="#ifix-type"><code>IFIX</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u64-type"><code>U64</code></a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u64-type"><code>U64</code></a> <a href="#i64-type"><code>I64</code></a> <a href="#string-type"><code>STRING</code></a></code>
@@ -2861,6 +2973,7 @@ Methods:
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u64-type"><code>U64</code></a> <a href="#u16-type"><code>U16</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u64-type"><code>U64</code></a> <a href="#i8-type"><code>I8</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u64-type"><code>U64</code></a> <a href="#u8-type"><code>U8</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#u64-type"><code>U64</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#u64-type"><code>U64</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#u32-type"><code>U32</code></a> <a href="#string-type"><code>STRING</code></a></code>
@@ -2868,26 +2981,32 @@ Methods:
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#u16-type"><code>U16</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#i8-type"><code>I8</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#u8-type"><code>U8</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#i32-type"><code>I32</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#i16-type"><code>I16</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#u16-type"><code>U16</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#i8-type"><code>I8</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#u8-type"><code>U8</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#u64-type"><code>U64</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#u32-type"><code>U32</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#u16-type"><code>U16</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#i8-type"><code>I8</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#u8-type"><code>U8</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#i16-type"><code>I16</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#i8-type"><code>I8</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#u8-type"><code>U8</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#u16-type"><code>U16</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#u64-type"><code>U64</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#u32-type"><code>U32</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#u16-type"><code>U16</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#u8-type"><code>U8</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#u8-type"><code>U8</code></a> <a href="#i8-type"><code>I8</code></a> <a href="#string-type"><code>STRING</code></a></code>
+- <code><a href="#tryinto-class">TRYINTO</a> <a href="#u8-type"><code>U8</code></a> <a href="#bit-type"><code>BIT</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#f64-type"><code>F64</code></a> <a href="#fraction-type"><code>FRACTION</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#f32-type"><code>F32</code></a> <a href="#fraction-type"><code>FRACTION</code></a> <a href="#string-type"><code>STRING</code></a></code>
 
@@ -5824,6 +5943,7 @@ Methods:
 - <code><a href="#bounded-class">BOUNDED</a> <a href="#u16-type"><code>U16</code></a></code>
 - <code><a href="#bounded-class">BOUNDED</a> <a href="#i8-type"><code>I8</code></a></code>
 - <code><a href="#bounded-class">BOUNDED</a> <a href="#u8-type"><code>U8</code></a></code>
+- <code><a href="#bounded-class">BOUNDED</a> <a href="#bit-type"><code>BIT</code></a></code>
 
 </details>
 
@@ -6603,6 +6723,7 @@ Methods:
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#u32-type"><code>U32</code></a></code>
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#u16-type"><code>U16</code></a></code>
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#u8-type"><code>U8</code></a></code>
+- <code><a href="#integral-class">INTEGRAL</a> <a href="#bit-type"><code>BIT</code></a></code>
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#ifix-type"><code>IFIX</code></a></code>
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#i64-type"><code>I64</code></a></code>
 - <code><a href="#integral-class">INTEGRAL</a> <a href="#i32-type"><code>I32</code></a></code>
@@ -6646,6 +6767,7 @@ Methods:
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#u32-type"><code>U32</code></a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#u16-type"><code>U16</code></a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#u8-type"><code>U8</code></a></code>
+- <code><a href="#remainder-class">REMAINDER</a> <a href="#bit-type"><code>BIT</code></a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#ifix-type"><code>IFIX</code></a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#i64-type"><code>I64</code></a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#i32-type"><code>I32</code></a></code>
@@ -6764,7 +6886,7 @@ Exponentiate BASE to a signed POWER.
 
 ### Structs
 
-#### <a href="#quantization-type"><code>QUANTIZATION :A</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L224-L235">src</a></sub></sup><a name="quantization-type"></a>
+#### <a href="#quantization-type"><code>QUANTIZATION :A</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L225-L236">src</a></sub></sup><a name="quantization-type"></a>
 
 Represents an integer quantization of `:a`.
 
@@ -6825,6 +6947,7 @@ Methods:
 - <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#u64-type"><code>U64</code></a></code>
 - <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#u32-type"><code>U32</code></a></code>
 - <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#u8-type"><code>U8</code></a></code>
+- <code><a href="#quantizable-class">QUANTIZABLE</a> <a href="#bit-type"><code>BIT</code></a></code>
 
 </details>
 
@@ -6868,6 +6991,7 @@ Methods:
 - <code><a href="#rational-class">RATIONAL</a> <a href="#u64-type"><code>U64</code></a></code>
 - <code><a href="#rational-class">RATIONAL</a> <a href="#u32-type"><code>U32</code></a></code>
 - <code><a href="#rational-class">RATIONAL</a> <a href="#u8-type"><code>U8</code></a></code>
+- <code><a href="#rational-class">RATIONAL</a> <a href="#bit-type"><code>BIT</code></a></code>
 
 </details>
 
@@ -6901,6 +7025,7 @@ Methods:
 - <code><a href="#real-class">REAL</a> <a href="#u64-type"><code>U64</code></a></code>
 - <code><a href="#real-class">REAL</a> <a href="#u32-type"><code>U32</code></a></code>
 - <code><a href="#real-class">REAL</a> <a href="#u8-type"><code>U8</code></a></code>
+- <code><a href="#real-class">REAL</a> <a href="#bit-type"><code>BIT</code></a></code>
 
 </details>
 
@@ -6910,7 +7035,7 @@ Methods:
 
 ### Values
 
-#### <a href="#ceiling/-value"><code>(CEILING/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L285-L287">src</a></sub></sup><a name="ceiling/-value"></a>
+#### <a href="#ceiling/-value"><code>(CEILING/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L286-L288">src</a></sub></sup><a name="ceiling/-value"></a>
 <code>(<a href="#integer-type"><code>INTEGER</code></a> &rarr; <a href="#integer-type"><code>INTEGER</code></a> &rarr; <a href="#integer-type"><code>INTEGER</code></a>)</code>
 
 Divide two integers and compute the ceiling of the quotient.
@@ -6919,7 +7044,7 @@ Divide two integers and compute the ceiling of the quotient.
 
 ***
 
-#### <a href="#exact/-value"><code>(EXACT/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L267-L269">src</a></sub></sup><a name="exact/-value"></a>
+#### <a href="#exact/-value"><code>(EXACT/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L268-L270">src</a></sub></sup><a name="exact/-value"></a>
 <code>(<a href="#integer-type"><code>INTEGER</code></a> &rarr; <a href="#integer-type"><code>INTEGER</code></a> &rarr; <a href="#fraction-type"><code>FRACTION</code></a>)</code>
 
 Exactly divide two integers and produce a fraction.
@@ -6928,7 +7053,7 @@ Exactly divide two integers and produce a fraction.
 
 ***
 
-#### <a href="#floor/-value"><code>(FLOOR/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L280-L282">src</a></sub></sup><a name="floor/-value"></a>
+#### <a href="#floor/-value"><code>(FLOOR/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L281-L283">src</a></sub></sup><a name="floor/-value"></a>
 <code>(<a href="#integer-type"><code>INTEGER</code></a> &rarr; <a href="#integer-type"><code>INTEGER</code></a> &rarr; <a href="#integer-type"><code>INTEGER</code></a>)</code>
 
 Divide two integers and compute the floor of the quotient.
@@ -6937,7 +7062,7 @@ Divide two integers and compute the floor of the quotient.
 
 ***
 
-#### <a href="#fromfrac-value"><code>(FROMFRAC Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L295-L301">src</a></sub></sup><a name="fromfrac-value"></a>
+#### <a href="#fromfrac-value"><code>(FROMFRAC Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L296-L302">src</a></sub></sup><a name="fromfrac-value"></a>
 <code>&forall; :A. <a href="#dividable-class">DIVIDABLE</a> <a href="#integer-type"><code>INTEGER</code></a> :A &rArr; (<a href="#fraction-type"><code>FRACTION</code></a> &rarr; :A)</code>
 
 Converts a fraction to a target type.
@@ -6950,7 +7075,7 @@ This conversion may result in loss of fidelity.
 
 ***
 
-#### <a href="#inexact/-value"><code>(INEXACT/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L273-L277">src</a></sub></sup><a name="inexact/-value"></a>
+#### <a href="#inexact/-value"><code>(INEXACT/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L274-L278">src</a></sub></sup><a name="inexact/-value"></a>
 <code>(<a href="#integer-type"><code>INTEGER</code></a> &rarr; <a href="#integer-type"><code>INTEGER</code></a> &rarr; <a href="#f64-type"><code>F64</code></a>)</code>
 
 Compute the quotient of integers as a double-precision float.
@@ -6961,7 +7086,7 @@ Note: This does *not* divide double-float arguments.
 
 ***
 
-#### <a href="#quantize-value"><code>(QUANTIZE X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L238-L246">src</a></sub></sup><a name="quantize-value"></a>
+#### <a href="#quantize-value"><code>(QUANTIZE X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L239-L247">src</a></sub></sup><a name="quantize-value"></a>
 <code>&forall; :A. <a href="#real-class">REAL</a> :A &rArr; (:A &rarr; (<a href="#quantization-type"><code>QUANTIZATION</code></a> :A))</code>
 
 Given X, (QUANTIZE X) will return the least integer greater or equal to X,
@@ -6981,7 +7106,7 @@ Return the nearest integer to X, with ties breaking towards even numbers.
 
 ***
 
-#### <a href="#round-half-down-value"><code>(ROUND-HALF-DOWN X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L254-L256">src</a></sub></sup><a name="round-half-down-value"></a>
+#### <a href="#round-half-down-value"><code>(ROUND-HALF-DOWN X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L255-L257">src</a></sub></sup><a name="round-half-down-value"></a>
 <code>&forall; :A. (<a href="#quantizable-class">QUANTIZABLE</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; (:A &rarr; <a href="#integer-type"><code>INTEGER</code></a>)</code>
 
 Return the nearest integer to X, with ties breaking toward positive infinity.
@@ -6990,7 +7115,7 @@ Return the nearest integer to X, with ties breaking toward positive infinity.
 
 ***
 
-#### <a href="#round-half-up-value"><code>(ROUND-HALF-UP X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L249-L251">src</a></sub></sup><a name="round-half-up-value"></a>
+#### <a href="#round-half-up-value"><code>(ROUND-HALF-UP X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L250-L252">src</a></sub></sup><a name="round-half-up-value"></a>
 <code>&forall; :A. (<a href="#quantizable-class">QUANTIZABLE</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; (:A &rarr; <a href="#integer-type"><code>INTEGER</code></a>)</code>
 
 Return the nearest integer to X, with ties breaking toward positive infinity.
@@ -6999,7 +7124,7 @@ Return the nearest integer to X, with ties breaking toward positive infinity.
 
 ***
 
-#### <a href="#round/-value"><code>(ROUND/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L290-L292">src</a></sub></sup><a name="round/-value"></a>
+#### <a href="#round/-value"><code>(ROUND/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L291-L293">src</a></sub></sup><a name="round/-value"></a>
 <code>(<a href="#integer-type"><code>INTEGER</code></a> &rarr; <a href="#integer-type"><code>INTEGER</code></a> &rarr; <a href="#integer-type"><code>INTEGER</code></a>)</code>
 
 Divide two integers and round the quotient.
@@ -7008,7 +7133,7 @@ Divide two integers and round the quotient.
 
 ***
 
-#### <a href="#safe/-value"><code>(SAFE/ X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L259-L263">src</a></sub></sup><a name="safe/-value"></a>
+#### <a href="#safe/-value"><code>(SAFE/ X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L260-L264">src</a></sub></sup><a name="safe/-value"></a>
 <code>&forall; :A :B. (<a href="#num-class">NUM</a> :A) (<a href="#dividable-class">DIVIDABLE</a> :A :B) &rArr; (:A &rarr; :A &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> :B))</code>
 
 Safely divide X by Y, returning None if Y is zero.
@@ -8918,6 +9043,7 @@ Methods:
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#u32-type"><code>U32</code></a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#u16-type"><code>U16</code></a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#u8-type"><code>U8</code></a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#bit-type"><code>BIT</code></a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#void-type"><code>VOID</code></a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#proxy-type"><code>PROXY</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#lisptype-type"><code>LISPTYPE</code></a></code>
