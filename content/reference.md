@@ -73,7 +73,7 @@ Public interface to COALTON.
 
 #### <a href="#arrow-type"><code>ARROW</code></a> <sup><sub>[TYPE]</sub></sup><a name="arrow-type"></a>
 
-Type constructor for function types.
+A named constructor for function types. `Arrow :a :b` is equivalent to `:a -> :b`.
 
 <details>
 <summary>Instances</summary>
@@ -147,7 +147,7 @@ A single bit, equal to 0 or 1. Uses `cl:bit`.
 - <code>TRUE</code> 
   - Boolean `True`
 
-Either true or false represented by `t` and `nil` respectively.
+Either true or false, internally represented by `cl:t` and `cl:nil` respectively.
 
 <details>
 <summary>Instances</summary>
@@ -166,7 +166,7 @@ Either true or false represented by `t` and `nil` respectively.
 
 #### <a href="#char-type"><code>CHAR</code></a> <sup><sub>[TYPE]</sub></sup><a name="char-type"></a>
 
-A character represented by a Common Lisp `character`.
+A character represented by a Common Lisp `cl:character`.
 
 <details>
 <summary>Instances</summary>
@@ -196,7 +196,7 @@ Deprecated name for F64. This is provided for backward compatibility.
 
 #### <a href="#f32-type"><code>F32</code></a> <sup><sub>[TYPE]</sub></sup><a name="f32-type"></a>
 
-Single-precision floating point number (32-bits in size). Represented by a Common Lisp `single-float`.
+Single-precision floating point number (32 bits in size). Represented by a Common Lisp `cl:single-float`.
 
 <details>
 <summary>Instances</summary>
@@ -245,7 +245,7 @@ Single-precision floating point number (32-bits in size). Represented by a Commo
 
 #### <a href="#f64-type"><code>F64</code></a> <sup><sub>[TYPE]</sub></sup><a name="f64-type"></a>
 
-Double-precision floating point number (64 bits in size). Represented by a Common Lisp `double-float`.
+Double-precision floating point number (64 bits in size). Represented by a Common Lisp `cl:double-float`.
 
 <details>
 <summary>Instances</summary>
@@ -294,7 +294,7 @@ Double-precision floating point number (64 bits in size). Represented by a Commo
 
 #### <a href="#fraction-type"><code>FRACTION</code></a> <sup><sub>[TYPE]</sub></sup><a name="fraction-type"></a>
 
-A ratio of integers always in reduced form. Represented by a Common Lisp `rational`.
+A ratio of integers always in reduced form. Represented by a Common Lisp `cl:rational`.
 
 <details>
 <summary>Instances</summary>
@@ -614,7 +614,7 @@ Non-allocating tagged integer; range is platform-dependent. Does not error on ov
 
 #### <a href="#integer-type"><code>INTEGER</code></a> <sup><sub>[TYPE]</sub></sup><a name="integer-type"></a>
 
-Unbound integer. Represented by a Common Lisp `integer`.
+Integer of unbounded size. Represented by a Common Lisp `cl:integer`.
 
 <details>
 <summary>Instances</summary>
@@ -680,7 +680,7 @@ Unbound integer. Represented by a Common Lisp `integer`.
 - <code>(CONS :A (<a href="#list-type"><code>LIST</code></a> :A))</code>
   - `Cons` represents a `List` containing a first element (`car`) and a nested `Cons` (`cdr`).
 
-Homogeneous list of objects. Represented as a typical Common Lisp chain of conses (or `nil`).
+Homogeneous list of objects. Represented as a typical Common Lisp chain of `cl:cons` (or `cl:nil`).
 
 <details>
 <summary>Instances</summary>
@@ -764,7 +764,7 @@ Deprecated name for F32. This is provided for backward compatibility.
 
 #### <a href="#string-type"><code>STRING</code></a> <sup><sub>[TYPE]</sub></sup><a name="string-type"></a>
 
-String of characters. Represented by Common Lisp `string`.
+String of characters. Represented by Common Lisp `cl:string`.
 
 <details>
 <summary>Instances</summary>
