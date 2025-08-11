@@ -1131,28 +1131,30 @@ The "unit" type whose only member is the value `Unit`.
 
 ***
 
-#### <a href="#inline-value"><code>(INLINE APPLICATION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/&lt;macroexpansion&gt;#L1-L1">src</a></sub></sup><a name="inline-value"></a>
+#### <a href="#inline-value"><code>(INLINE APPLICATION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/&lt;macroexpansion&gt;#L1-L2">src</a></sub></sup><a name="inline-value"></a>
 <code>&forall; :A. (:A &rarr; :A)</code>
 
-Try to inline `application'.
+Try to inline `application`. It will only attempt to inline
+`application` written syntactically as a function application.
 
 
 
 ***
 
-#### <a href="#likely-value"><code>(LIKELY PREDICATE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/&lt;macroexpansion&gt;#L1-L1">src</a></sub></sup><a name="likely-value"></a>
+#### <a href="#likely-value"><code>(LIKELY PREDICATE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/&lt;macroexpansion&gt;#L3-L3">src</a></sub></sup><a name="likely-value"></a>
 <code>(<a href="#boolean-type"><code>BOOLEAN</code></a> &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
-Hint to the compiler that `predicate' is likely `True'.
+Hint to the compiler that `predicate` is likely `True`.
 
 
 
 ***
 
-#### <a href="#noinline-value"><code>(NOINLINE APPLICATION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/&lt;macroexpansion&gt;#L1-L1">src</a></sub></sup><a name="noinline-value"></a>
+#### <a href="#noinline-value"><code>(NOINLINE APPLICATION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/&lt;macroexpansion&gt;#L2-L3">src</a></sub></sup><a name="noinline-value"></a>
 <code>&forall; :A. (:A &rarr; :A)</code>
 
-Prevent `application' from being inlined.
+Prevent `application` from being inlined. It will prevent
+inlining when the argument is syntactically a function application.
 
 
 
@@ -1176,10 +1178,10 @@ matching, as in the following example.
 
 ***
 
-#### <a href="#unlikely-value"><code>(UNLIKELY PREDICATE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/&lt;macroexpansion&gt;#L1-L1">src</a></sub></sup><a name="unlikely-value"></a>
+#### <a href="#unlikely-value"><code>(UNLIKELY PREDICATE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/&lt;macroexpansion&gt;#L3-L3">src</a></sub></sup><a name="unlikely-value"></a>
 <code>(<a href="#boolean-type"><code>BOOLEAN</code></a> &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
-Hint to the compiler that `predicate' is likely `False'.
+Hint to the compiler that `predicate` is likely `False`.
 
 
 
