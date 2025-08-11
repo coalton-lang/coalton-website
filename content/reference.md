@@ -1191,7 +1191,6 @@ The "unit" type whose only member is the value `Unit`.
 <summary>Instances</summary>
 
 - <code><a href="#eq-class">EQ</a> <a href="#unit-type"><code>UNIT</code></a></code>
-- <code><a href="#intoiterator-class">INTOITERATOR</a> <a href="#unit-type"><code>UNIT</code></a> :A</code>
 
 </details>
 
@@ -4017,7 +4016,7 @@ Writes elements of an vector of type `:a` to a stream of type `:a`.
 
 ### Values
 
-#### <a href="#/=-value"><code>(/= A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L155-L157">src</a></sub></sup><a name="/=-value"></a>
+#### <a href="#/=-value"><code>(/= A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L187-L189">src</a></sub></sup><a name="/=-value"></a>
 <code>&forall; :A. <a href="#eq-class">EQ</a> :A &rArr; (:A &rarr; :A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Is `a` not equal to `b`?
@@ -4026,7 +4025,7 @@ Is `a` not equal to `b`?
 
 ***
 
-#### <a href="#asum-value"><code>(ASUM XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L149-L151">src</a></sub></sup><a name="asum-value"></a>
+#### <a href="#asum-value"><code>(ASUM XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L181-L183">src</a></sub></sup><a name="asum-value"></a>
 <code>&forall; :A :B :C. (<a href="#alternative-class">ALTERNATIVE</a> :B) (<a href="#foldable-class">FOLDABLE</a> :A) &rArr; ((:A (:B :C)) &rarr; (:B :C))</code>
 
 Fold over a list using `alt`.
@@ -4035,7 +4034,7 @@ Fold over a list using `alt`.
 
 ***
 
-#### <a href="#bracket-value"><code>(BRACKET INIT EXIT BODY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L192-L201">src</a></sub></sup><a name="bracket-value"></a>
+#### <a href="#bracket-value"><code>(BRACKET INIT EXIT BODY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L226-L235">src</a></sub></sup><a name="bracket-value"></a>
 <code>&forall; :A :B :C :D. <a href="#monad-class">MONAD</a> :A &rArr; ((:A :B) &rarr; (:B &rarr; (:A :C)) &rarr; (:B &rarr; (:A :D)) &rarr; (:A :D))</code>
 
 Bracket takes an initial state, performs a body of operations, and then forces a safe exit.
@@ -4048,7 +4047,7 @@ Modeled after Haskell: https://wiki.haskell.org/Bracket_pattern
 
 ***
 
-#### <a href="#complement-value"><code>(COMPLEMENT F X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L118-L120">src</a></sub></sup><a name="complement-value"></a>
+#### <a href="#complement-value"><code>(COMPLEMENT F X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L148-L150">src</a></sub></sup><a name="complement-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>) &rarr; :A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Compute the complement of a unary Boolean function.
@@ -4057,7 +4056,7 @@ Compute the complement of a unary Boolean function.
 
 ***
 
-#### <a href="#compose-value"><code>(COMPOSE F G X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L102-L104">src</a></sub></sup><a name="compose-value"></a>
+#### <a href="#compose-value"><code>(COMPOSE F G X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L104-L106">src</a></sub></sup><a name="compose-value"></a>
 <code>&forall; :A :B :C. ((:A &rarr; :B) &rarr; (:C &rarr; :A) &rarr; :C &rarr; :B)</code>
 
 Equivalent to `(f (g x))`.
@@ -4066,7 +4065,7 @@ Equivalent to `(f (g x))`.
 
 ***
 
-#### <a href="#conjoin-value"><code>(CONJOIN F G X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L107-L109">src</a></sub></sup><a name="conjoin-value"></a>
+#### <a href="#conjoin-value"><code>(CONJOIN F G X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L111-L113">src</a></sub></sup><a name="conjoin-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>) &rarr; (:A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>) &rarr; :A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Compute the conjunction of two unary Boolean functions.
@@ -4075,7 +4074,7 @@ Compute the conjunction of two unary Boolean functions.
 
 ***
 
-#### <a href="#const-value"><code>(CONST A _B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L85-L87">src</a></sub></sup><a name="const-value"></a>
+#### <a href="#const-value"><code>(CONST A _B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L87-L89">src</a></sub></sup><a name="const-value"></a>
 <code>&forall; :A :B. (:A &rarr; :B &rarr; :A)</code>
 
 A function that always returns its first argument.
@@ -4084,7 +4083,7 @@ A function that always returns its first argument.
 
 ***
 
-#### <a href="#curry-value"><code>(CURRY FUNC LEFT RIGHT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L123-L125">src</a></sub></sup><a name="curry-value"></a>
+#### <a href="#curry-value"><code>(CURRY FUNC LEFT RIGHT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L153-L155">src</a></sub></sup><a name="curry-value"></a>
 <code>&forall; :A :B :C. (((<a href="#tuple-type"><code>TUPLE</code></a> :A :B) &rarr; :C) &rarr; :A &rarr; :B &rarr; :C)</code>
 
 Take a function whose input is a tuple and enable curried application of the left and right parameters, equivalent to `(func (Tuple left right))`.
@@ -4093,7 +4092,7 @@ Take a function whose input is a tuple and enable curried application of the lef
 
 ***
 
-#### <a href="#disjoin-value"><code>(DISJOIN F G X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L112-L114">src</a></sub></sup><a name="disjoin-value"></a>
+#### <a href="#disjoin-value"><code>(DISJOIN F G X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L116-L118">src</a></sub></sup><a name="disjoin-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>) &rarr; (:A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>) &rarr; :A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Compute the disjunction of two unary Boolean functions.
@@ -4102,7 +4101,7 @@ Compute the disjunction of two unary Boolean functions.
 
 ***
 
-#### <a href="#fix-value"><code>(FIX F N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L66-L75">src</a></sub></sup><a name="fix-value"></a>
+#### <a href="#fix-value"><code>(FIX F N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L68-L77">src</a></sub></sup><a name="fix-value"></a>
 <code>&forall; :A :B. (((:A &rarr; :B) &rarr; :A &rarr; :B) &rarr; :A &rarr; :B)</code>
 
 Compute the fixed point of a unary function. This is equivalent to the Y-combinator of the lambda calculus. This combinator allows recursion without specific assignment of names. For example, the factorial function can be written
@@ -4118,7 +4117,7 @@ Compute the fixed point of a unary function. This is equivalent to the Y-combina
 
 ***
 
-#### <a href="#flip-value"><code>(FLIP F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L91-L93">src</a></sub></sup><a name="flip-value"></a>
+#### <a href="#flip-value"><code>(FLIP F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L93-L95">src</a></sub></sup><a name="flip-value"></a>
 <code>&forall; :A :B :C. ((:A &rarr; :B &rarr; :C) &rarr; :B &rarr; :A &rarr; :C)</code>
 
 Returns a function that takes its arguments in reverse order.
@@ -4127,7 +4126,7 @@ Returns a function that takes its arguments in reverse order.
 
 ***
 
-#### <a href="#id-value"><code>(ID X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L79-L81">src</a></sub></sup><a name="id-value"></a>
+#### <a href="#id-value"><code>(ID X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L81-L83">src</a></sub></sup><a name="id-value"></a>
 <code>&forall; :A. (:A &rarr; :A)</code>
 
 A function that always returns its argument.
@@ -4136,7 +4135,7 @@ A function that always returns its argument.
 
 ***
 
-#### <a href="#msum-value"><code>(MSUM XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L144-L146">src</a></sub></sup><a name="msum-value"></a>
+#### <a href="#msum-value"><code>(MSUM XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L176-L178">src</a></sub></sup><a name="msum-value"></a>
 <code>&forall; :A :B. (<a href="#monoid-class">MONOID</a> :B) (<a href="#foldable-class">FOLDABLE</a> :A) &rArr; ((:A :B) &rarr; :B)</code>
 
 Fold over a list using `<>`.
@@ -4145,7 +4144,7 @@ Fold over a list using `<>`.
 
 ***
 
-#### <a href="#pair-with-value"><code>(PAIR-WITH FUNC LEFT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L135-L137">src</a></sub></sup><a name="pair-with-value"></a>
+#### <a href="#pair-with-value"><code>(PAIR-WITH FUNC LEFT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L165-L167">src</a></sub></sup><a name="pair-with-value"></a>
 <code>&forall; :A :B. ((:A &rarr; :B) &rarr; :A &rarr; (<a href="#tuple-type"><code>TUPLE</code></a> :A :B))</code>
 
 Create a `Tuple` of the form `(Tuple left (func left))`.
@@ -4154,7 +4153,7 @@ Create a `Tuple` of the form `(Tuple left (func left))`.
 
 ***
 
-#### <a href="#print-value"><code>(PRINT ITEM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L51-L53">src</a></sub></sup><a name="print-value"></a>
+#### <a href="#print-value"><code>(PRINT ITEM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L53-L55">src</a></sub></sup><a name="print-value"></a>
 <code>&forall; :A. <a href="#into-class">INTO</a> :A <a href="#string-type"><code>STRING</code></a> &rArr; (:A &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
 
 Print the String representation of `item` to `cl:*standard-output*`.
@@ -4163,7 +4162,7 @@ Print the String representation of `item` to `cl:*standard-output*`.
 
 ***
 
-#### <a href="#reduce-value"><code>(REDUCE F Y XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L96-L98">src</a></sub></sup><a name="reduce-value"></a>
+#### <a href="#reduce-value"><code>(REDUCE F Y XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L98-L100">src</a></sub></sup><a name="reduce-value"></a>
 <code>&forall; :A :B :C. <a href="#foldable-class">FOLDABLE</a> :C &rArr; ((:A &rarr; :B &rarr; :B) &rarr; :B &rarr; (:C :A) &rarr; :B)</code>
 
 The same as `fold` but with the argument order swapped to match `cl:reduce`
@@ -4172,7 +4171,7 @@ The same as `fold` but with the argument order swapped to match `cl:reduce`
 
 ***
 
-#### <a href="#trace-value"><code>(TRACE STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L37-L41">src</a></sub></sup><a name="trace-value"></a>
+#### <a href="#trace-value"><code>(TRACE STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L39-L43">src</a></sub></sup><a name="trace-value"></a>
 <code>(<a href="#string-type"><code>STRING</code></a> &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
 
 Print a line to `cl:*standard-output*`.
@@ -4181,7 +4180,7 @@ Print a line to `cl:*standard-output*`.
 
 ***
 
-#### <a href="#traceobject-value"><code>(TRACEOBJECT STR ITEM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L44-L48">src</a></sub></sup><a name="traceobject-value"></a>
+#### <a href="#traceobject-value"><code>(TRACEOBJECT STR ITEM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L46-L50">src</a></sub></sup><a name="traceobject-value"></a>
 <code>&forall; :A. (<a href="#string-type"><code>STRING</code></a> &rarr; :A &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
 
 Print a line to `cl:*standard-output*` in the form "{STR}: {ITEM}".
@@ -4190,7 +4189,7 @@ Print a line to `cl:*standard-output*` in the form "{STR}: {ITEM}".
 
 ***
 
-#### <a href="#uncurry-value"><code>(UNCURRY FUNC TPL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L128-L132">src</a></sub></sup><a name="uncurry-value"></a>
+#### <a href="#uncurry-value"><code>(UNCURRY FUNC TPL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L158-L162">src</a></sub></sup><a name="uncurry-value"></a>
 <code>&forall; :A :B :C. ((:A &rarr; :B &rarr; :C) &rarr; (<a href="#tuple-type"><code>TUPLE</code></a> :A :B) &rarr; :C)</code>
 
 Take a function with two currying parameters and enable their input as a single `Tuple`.
@@ -4199,8 +4198,38 @@ Take a function with two currying parameters and enable their input as a single 
 
 ***
 
-#### <a href="#unsafe-pointer-eq?-value"><code>(UNSAFE-POINTER-EQ? A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L57-L59">src</a></sub></sup><a name="unsafe-pointer-eq?-value"></a>
+#### <a href="#unsafe-pointer-eq?-value"><code>(UNSAFE-POINTER-EQ? A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L59-L61">src</a></sub></sup><a name="unsafe-pointer-eq?-value"></a>
 <code>&forall; :A. (:A &rarr; :A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
+
+
+***
+
+### Macros
+
+#### <a href="#coalton-library-functions-conjoin*-macro"><code>CONJOIN* (&amp;REST PREDICATES)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-library-functions-conjoin*-macro"></a>
+
+Compute the conjuction of `predicates`.
+
+For example, the following expressions are equivalent.
+
+`(conjoin* f g h)`
+
+`(fn (x) (and (f x) (g x) (h x)))`
+
+
+
+***
+
+#### <a href="#coalton-library-functions-disjoin*-macro"><code>DISJOIN* (&amp;REST PREDICATES)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-library-functions-disjoin*-macro"></a>
+
+Compute the disjunction of `predicates`.
+
+For example, the following expressions are equivalent.
+
+`(disjoin* f g h)`
+
+`(fn (x) (or (f x) (g x) (h x)))`
+
 
 
 ***
@@ -4460,7 +4489,7 @@ A forward-moving pointer into an ordered sequence of :ELTs
 
 ### Classes
 
-#### <a href="#fromiterator-class"><code>FROMITERATOR</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L659-L660">src</a></sub></sup><a name="fromiterator-class"></a>
+#### <a href="#fromiterator-class"><code>FROMITERATOR</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L655-L656">src</a></sub></sup><a name="fromiterator-class"></a>
 <code><a href="#fromiterator-class">FROMITERATOR</a> :A :B</code>
 
 Methods:
@@ -4512,7 +4541,6 @@ Methods:
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#list-type"><code>LIST</code></a> :A) :A</code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#result-type"><code>RESULT</code></a> :A :B) :B</code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#optional-type"><code>OPTIONAL</code></a> :A) :A</code>
-- <code><a href="#intoiterator-class">INTOITERATOR</a> <a href="#unit-type"><code>UNIT</code></a> :A</code>
 - <code><a href="#intoiterator-class">INTOITERATOR</a> (<a href="#iterator-type"><code>ITERATOR</code></a> :A) :A</code>
 
 </details>
@@ -4523,7 +4551,7 @@ Methods:
 
 ### Values
 
-#### <a href="#and!-value"><code>(AND! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L485-L496">src</a></sub></sup><a name="and!-value"></a>
+#### <a href="#and!-value"><code>(AND! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L481-L492">src</a></sub></sup><a name="and!-value"></a>
 <code>((<a href="#iterator-type"><code>ITERATOR</code></a> <a href="#boolean-type"><code>BOOLEAN</code></a>) &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Returns True if all iterator elements are True. May not consume the entire iterator. Returns True on an empty iterator.
@@ -4532,7 +4560,7 @@ Returns True if all iterator elements are True. May not consume the entire itera
 
 ***
 
-#### <a href="#any!-value"><code>(ANY! GOOD? ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L615-L621">src</a></sub></sup><a name="any!-value"></a>
+#### <a href="#any!-value"><code>(ANY! GOOD? ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L611-L617">src</a></sub></sup><a name="any!-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Return `True` as soon as any element of ITER is GOOD?, or `False` if none of them are.
@@ -4543,7 +4571,7 @@ Returns `False` if ITER is empty.
 
 ***
 
-#### <a href="#chain!-value"><code>(CHAIN! ITER1 ITER2)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L424-L435">src</a></sub></sup><a name="chain!-value"></a>
+#### <a href="#chain!-value"><code>(CHAIN! ITER1 ITER2)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L420-L431">src</a></sub></sup><a name="chain!-value"></a>
 <code>&forall; :A. ((<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A))</code>
 
 Yield all the elements of ITER1 followed by all the elements from ITER2.
@@ -4552,7 +4580,7 @@ Yield all the elements of ITER1 followed by all the elements from ITER2.
 
 ***
 
-#### <a href="#count!-value"><code>(COUNT! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L517-L521">src</a></sub></sup><a name="count!-value"></a>
+#### <a href="#count!-value"><code>(COUNT! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L513-L517">src</a></sub></sup><a name="count!-value"></a>
 <code>&forall; :A. ((<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; <a href="#ufix-type"><code>UFIX</code></a>)</code>
 
 Return the number of elements in ITER.
@@ -4563,7 +4591,7 @@ afterwards, ITER will be exhausted.
 
 ***
 
-#### <a href="#count-forever-value"><code>(COUNT-FOREVER _)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L252-L256">src</a></sub></sup><a name="count-forever-value"></a>
+#### <a href="#count-forever-value"><code>(COUNT-FOREVER _)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L248-L252">src</a></sub></sup><a name="count-forever-value"></a>
 <code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (<a href="#unit-type"><code>UNIT</code></a> &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A))</code>
 
 An infinite iterator which starts at 0 and counts upwards by 1.
@@ -4572,7 +4600,7 @@ An infinite iterator which starts at 0 and counts upwards by 1.
 
 ***
 
-#### <a href="#down-from-value"><code>(DOWN-FROM LIMIT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L247-L249">src</a></sub></sup><a name="down-from-value"></a>
+#### <a href="#down-from-value"><code>(DOWN-FROM LIMIT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L243-L245">src</a></sub></sup><a name="down-from-value"></a>
 <code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A))</code>
 
 An iterator which begins below the provided limit and counts down through and including zero.
@@ -4581,7 +4609,7 @@ An iterator which begins below the provided limit and counts down through and in
 
 ***
 
-#### <a href="#elementwise-hash!-value"><code>(ELEMENTWISE-HASH! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L644-L653">src</a></sub></sup><a name="elementwise-hash!-value"></a>
+#### <a href="#elementwise-hash!-value"><code>(ELEMENTWISE-HASH! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L640-L649">src</a></sub></sup><a name="elementwise-hash!-value"></a>
 <code>&forall; :A. <a href="#hash-class">HASH</a> :A &rArr; ((<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; <a href="#hash-type"><code>HASH</code></a>)</code>
 
 Hash an iterator by combining the hashes of all its elements.
@@ -4592,7 +4620,7 @@ The empty iterator will hash as 0.
 
 ***
 
-#### <a href="#elementwise-match!-value"><code>(ELEMENTWISE-MATCH! SAME? LEFT RIGHT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L624-L633">src</a></sub></sup><a name="elementwise-match!-value"></a>
+#### <a href="#elementwise-match!-value"><code>(ELEMENTWISE-MATCH! SAME? LEFT RIGHT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L620-L629">src</a></sub></sup><a name="elementwise-match!-value"></a>
 <code>&forall; :A. ((:A &rarr; :A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Are LEFT and RIGHT elementwise-identical under SAME?
@@ -4604,7 +4632,7 @@ same length.
 
 ***
 
-#### <a href="#elementwise==!-value"><code>(ELEMENTWISE==!)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L636-L641">src</a></sub></sup><a name="elementwise==!-value"></a>
+#### <a href="#elementwise==!-value"><code>(ELEMENTWISE==!)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L632-L637">src</a></sub></sup><a name="elementwise==!-value"></a>
 <code>&forall; :A. <a href="#eq-class">EQ</a> :A &rArr; ((<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Is every element of the first iterator `==' to the corresponding element of the second?
@@ -4616,7 +4644,7 @@ the Nth element of the second iterator.
 
 ***
 
-#### <a href="#enumerate!-value"><code>(ENUMERATE! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L351-L353">src</a></sub></sup><a name="enumerate!-value"></a>
+#### <a href="#enumerate!-value"><code>(ENUMERATE! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L347-L349">src</a></sub></sup><a name="enumerate!-value"></a>
 <code>&forall; :A. ((<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> (<a href="#tuple-type"><code>TUPLE</code></a> <a href="#ufix-type"><code>UFIX</code></a> :A)))</code>
 
 Pair successive zero-based incides with elements from ITER
@@ -4625,7 +4653,7 @@ Pair successive zero-based incides with elements from ITER
 
 ***
 
-#### <a href="#every!-value"><code>(EVERY! GOOD? ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L606-L612">src</a></sub></sup><a name="every!-value"></a>
+#### <a href="#every!-value"><code>(EVERY! GOOD? ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L602-L608">src</a></sub></sup><a name="every!-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Return `True` if every element of ITER is GOOD?, or `False` as soon as any element is not GOOD?.
@@ -4636,7 +4664,7 @@ Returns `True` if ITER is empty.
 
 ***
 
-#### <a href="#filter!-value"><code>(FILTER! KEEP? ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L356-L364">src</a></sub></sup><a name="filter!-value"></a>
+#### <a href="#filter!-value"><code>(FILTER! KEEP? ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L352-L360">src</a></sub></sup><a name="filter!-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A))</code>
 
 Return an iterator over the elements from ITER for which KEEP?returns true.
@@ -4645,7 +4673,7 @@ Return an iterator over the elements from ITER for which KEEP?returns true.
 
 ***
 
-#### <a href="#filter-map!-value"><code>(FILTER-MAP! F ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L367-L380">src</a></sub></sup><a name="filter-map!-value"></a>
+#### <a href="#filter-map!-value"><code>(FILTER-MAP! F ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L363-L376">src</a></sub></sup><a name="filter-map!-value"></a>
 <code>&forall; :A :B. ((:A &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> :B)) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :B))</code>
 
 Map an iterator, retaining only the elements where F returns SOME.
@@ -4654,7 +4682,7 @@ Map an iterator, retaining only the elements where F returns SOME.
 
 ***
 
-#### <a href="#find!-value"><code>(FIND! THIS? ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L532-L538">src</a></sub></sup><a name="find!-value"></a>
+#### <a href="#find!-value"><code>(FIND! THIS? ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L528-L534">src</a></sub></sup><a name="find!-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> :A))</code>
 
 Return the first element of ITER for which THIS? returns `True`, or `None` if no element matches.
@@ -4663,7 +4691,7 @@ Return the first element of ITER for which THIS? returns `True`, or `None` if no
 
 ***
 
-#### <a href="#find-map!-value"><code>(FIND-MAP! F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L541-L543">src</a></sub></sup><a name="find-map!-value"></a>
+#### <a href="#find-map!-value"><code>(FIND-MAP! F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L537-L539">src</a></sub></sup><a name="find-map!-value"></a>
 <code>&forall; :A :B. ((:A &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> :B)) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> :B))</code>
 
 Return the first element of (map F ITER) for which F returns `Some`.
@@ -4672,7 +4700,7 @@ Return the first element of (map F ITER) for which F returns `Some`.
 
 ***
 
-#### <a href="#flat-map!-value"><code>(FLAT-MAP! FUNC ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L455-L457">src</a></sub></sup><a name="flat-map!-value"></a>
+#### <a href="#flat-map!-value"><code>(FLAT-MAP! FUNC ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L451-L453">src</a></sub></sup><a name="flat-map!-value"></a>
 <code>&forall; :A :B. ((:A &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :B)) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :B))</code>
 
 Flatten! wrapped around map.
@@ -4681,7 +4709,7 @@ Flatten! wrapped around map.
 
 ***
 
-#### <a href="#flatten!-value"><code>(FLATTEN! ITERS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L438-L452">src</a></sub></sup><a name="flatten!-value"></a>
+#### <a href="#flatten!-value"><code>(FLATTEN! ITERS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L434-L448">src</a></sub></sup><a name="flatten!-value"></a>
 <code>&forall; :A. ((<a href="#iterator-type"><code>ITERATOR</code></a> (<a href="#iterator-type"><code>ITERATOR</code></a> :A)) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A))</code>
 
 Yield all the elements from each of the ITERS in order.
@@ -4702,7 +4730,7 @@ STATE, using INIT as the first STATE.
 
 ***
 
-#### <a href="#for-each!-value"><code>(FOR-EACH! THUNK ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L524-L529">src</a></sub></sup><a name="for-each!-value"></a>
+#### <a href="#for-each!-value"><code>(FOR-EACH! THUNK ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L520-L525">src</a></sub></sup><a name="for-each!-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#unit-type"><code>UNIT</code></a>) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
 
 Call THUNK on each element of ITER in order for side effects.
@@ -4712,7 +4740,7 @@ Discard values returned by THUNK.
 
 ***
 
-#### <a href="#index-of!-value"><code>(INDEX-OF! THIS? ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L546-L552">src</a></sub></sup><a name="index-of!-value"></a>
+#### <a href="#index-of!-value"><code>(INDEX-OF! THIS? ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L542-L548">src</a></sub></sup><a name="index-of!-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> <a href="#ufix-type"><code>UFIX</code></a>))</code>
 
 Return the zero-based index of the first element of ITER for which THIS? is `True`, or `None` if no element matches.
@@ -4721,7 +4749,7 @@ Return the zero-based index of the first element of ITER for which THIS? is `Tru
 
 ***
 
-#### <a href="#interleave!-value"><code>(INTERLEAVE! LEFT RIGHT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L310-L329">src</a></sub></sup><a name="interleave!-value"></a>
+#### <a href="#interleave!-value"><code>(INTERLEAVE! LEFT RIGHT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L306-L325">src</a></sub></sup><a name="interleave!-value"></a>
 <code>&forall; :A. ((<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A))</code>
 
 Return an interator of interleaved elements from LEFT and RIGHT which terminates as soon as both LEFT and RIGHT do.
@@ -4733,7 +4761,7 @@ interleaving. (interleave empty ITER) is equivalent to (id ITER).
 
 ***
 
-#### <a href="#last!-value"><code>(LAST! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L480-L482">src</a></sub></sup><a name="last!-value"></a>
+#### <a href="#last!-value"><code>(LAST! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L476-L478">src</a></sub></sup><a name="last!-value"></a>
 <code>&forall; :A. ((<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> :A))</code>
 
 Yields the last element of ITER, completely consuming it.
@@ -4742,7 +4770,7 @@ Yields the last element of ITER, completely consuming it.
 
 ***
 
-#### <a href="#map-while!-value"><code>(MAP-WHILE! F ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L383-L403">src</a></sub></sup><a name="map-while!-value"></a>
+#### <a href="#map-while!-value"><code>(MAP-WHILE! F ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L379-L399">src</a></sub></sup><a name="map-while!-value"></a>
 <code>&forall; :A :B. ((:A &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> :B)) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :B))</code>
 
 Map an iterator, stopping early if F returns NONE.
@@ -4751,7 +4779,7 @@ Map an iterator, stopping early if F returns NONE.
 
 ***
 
-#### <a href="#max!-value"><code>(MAX! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L569-L571">src</a></sub></sup><a name="max!-value"></a>
+#### <a href="#max!-value"><code>(MAX! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L565-L567">src</a></sub></sup><a name="max!-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> :A))</code>
 
 Return the most-positive element of ITER, or `None` if ITER is empty.
@@ -4760,7 +4788,7 @@ Return the most-positive element of ITER, or `None` if ITER is empty.
 
 ***
 
-#### <a href="#maximize-by!-value"><code>(MAXIMIZE-BY! F ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L592-L596">src</a></sub></sup><a name="maximize-by!-value"></a>
+#### <a href="#maximize-by!-value"><code>(MAXIMIZE-BY! F ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L588-L592">src</a></sub></sup><a name="maximize-by!-value"></a>
 <code>&forall; :A :B. <a href="#ord-class">ORD</a> :B &rArr; ((:A &rarr; :B) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> :A))</code>
 
 For a function F, which maps the iterator, return the element of ITER where (F ELT) is the most-positive.
@@ -4771,7 +4799,7 @@ Return `None' if ITER is empty.
 
 ***
 
-#### <a href="#mconcat!-value"><code>(MCONCAT! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L460-L462">src</a></sub></sup><a name="mconcat!-value"></a>
+#### <a href="#mconcat!-value"><code>(MCONCAT! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L456-L458">src</a></sub></sup><a name="mconcat!-value"></a>
 <code>&forall; :A. <a href="#monoid-class">MONOID</a> :A &rArr; ((<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; :A)</code>
 
 Fold an iterator of monoids into a single element.
@@ -4780,7 +4808,7 @@ Fold an iterator of monoids into a single element.
 
 ***
 
-#### <a href="#mconcatmap!-value"><code>(MCONCATMAP! FUNC ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L465-L467">src</a></sub></sup><a name="mconcatmap!-value"></a>
+#### <a href="#mconcatmap!-value"><code>(MCONCATMAP! FUNC ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L461-L463">src</a></sub></sup><a name="mconcatmap!-value"></a>
 <code>&forall; :A :B. <a href="#monoid-class">MONOID</a> :B &rArr; ((:A &rarr; :B) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; :B)</code>
 
 Map an iterator to an iterator of monoids, and then fold that iterator into a single element.
@@ -4789,7 +4817,7 @@ Map an iterator to an iterator of monoids, and then fold that iterator into a si
 
 ***
 
-#### <a href="#min!-value"><code>(MIN! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L574-L576">src</a></sub></sup><a name="min!-value"></a>
+#### <a href="#min!-value"><code>(MIN! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L570-L572">src</a></sub></sup><a name="min!-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> :A))</code>
 
 Return the most-negative element of ITER, or `None` if ITER is empty.
@@ -4798,7 +4826,7 @@ Return the most-negative element of ITER, or `None` if ITER is empty.
 
 ***
 
-#### <a href="#minimize-by!-value"><code>(MINIMIZE-BY! F ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L599-L603">src</a></sub></sup><a name="minimize-by!-value"></a>
+#### <a href="#minimize-by!-value"><code>(MINIMIZE-BY! F ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L595-L599">src</a></sub></sup><a name="minimize-by!-value"></a>
 <code>&forall; :A :B. <a href="#ord-class">ORD</a> :B &rArr; ((:A &rarr; :B) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> :A))</code>
 
 For a function F, which maps the iterator, return the element of ITER where (F ELT) is the most-negative.
@@ -4830,7 +4858,7 @@ most of the operators defined on iterators call `next!` internally, or create ne
 
 ***
 
-#### <a href="#once-value"><code>(ONCE ITEM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L272-L281">src</a></sub></sup><a name="once-value"></a>
+#### <a href="#once-value"><code>(ONCE ITEM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L268-L277">src</a></sub></sup><a name="once-value"></a>
 <code>&forall; :A. (:A &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A))</code>
 
 Yield `item` once.
@@ -4839,7 +4867,7 @@ Yield `item` once.
 
 ***
 
-#### <a href="#optimize!-value"><code>(OPTIMIZE! BETTER? ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L555-L566">src</a></sub></sup><a name="optimize!-value"></a>
+#### <a href="#optimize!-value"><code>(OPTIMIZE! BETTER? ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L551-L562">src</a></sub></sup><a name="optimize!-value"></a>
 <code>&forall; :A. ((:A &rarr; :A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> :A))</code>
 
 For an order BETTER? which returns `True` if its first argument is better than its second argument, return the best element of ITER.
@@ -4850,7 +4878,7 @@ Return `None` if ITER is empty.
 
 ***
 
-#### <a href="#optimize-by!-value"><code>(OPTIMIZE-BY! BETTER? F ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L582-L589">src</a></sub></sup><a name="optimize-by!-value"></a>
+#### <a href="#optimize-by!-value"><code>(OPTIMIZE-BY! BETTER? F ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L578-L585">src</a></sub></sup><a name="optimize-by!-value"></a>
 <code>&forall; :A :B. ((:A &rarr; :A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>) &rarr; (:B &rarr; :A) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :B) &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> :B))</code>
 
 For an order BETTER? which returns `True` if its first argument is better than its second argument, return the element of ITER where (F ELT) is the best.
@@ -4861,7 +4889,7 @@ Return `None` if ITER is empty.
 
 ***
 
-#### <a href="#or!-value"><code>(OR! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L499-L509">src</a></sub></sup><a name="or!-value"></a>
+#### <a href="#or!-value"><code>(OR! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L495-L505">src</a></sub></sup><a name="or!-value"></a>
 <code>((<a href="#iterator-type"><code>ITERATOR</code></a> <a href="#boolean-type"><code>BOOLEAN</code></a>) &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Returns True if any iterator elements are True. May not consume the entire iterator. Returns False on an empty iterator.
@@ -4870,7 +4898,7 @@ Returns True if any iterator elements are True. May not consume the entire itera
 
 ***
 
-#### <a href="#pair-with!-value"><code>(PAIR-WITH! FUNC KEYS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L470-L473">src</a></sub></sup><a name="pair-with!-value"></a>
+#### <a href="#pair-with!-value"><code>(PAIR-WITH! FUNC KEYS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L466-L469">src</a></sub></sup><a name="pair-with!-value"></a>
 <code>&forall; :A :B. ((:A &rarr; :B) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> (<a href="#tuple-type"><code>TUPLE</code></a> :A :B)))</code>
 
 Returns an iterator over tuples whose FSTs are elements from KEYS, and whose SNDs are the results of applying FUNC to those KEYS.
@@ -4879,7 +4907,7 @@ Returns an iterator over tuples whose FSTs are elements from KEYS, and whose SND
 
 ***
 
-#### <a href="#range-decreasing-value"><code>(RANGE-DECREASING STEP START END)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L210-L244">src</a></sub></sup><a name="range-decreasing-value"></a>
+#### <a href="#range-decreasing-value"><code>(RANGE-DECREASING STEP START END)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L206-L240">src</a></sub></sup><a name="range-decreasing-value"></a>
 <code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; :A &rarr; :A &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A))</code>
 
 A range which begins below START and counts down through and including END by STEP.
@@ -4890,7 +4918,7 @@ Equivalent to reversing `range-increasing`
 
 ***
 
-#### <a href="#range-increasing-value"><code>(RANGE-INCREASING STEP START END)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L174-L182">src</a></sub></sup><a name="range-increasing-value"></a>
+#### <a href="#range-increasing-value"><code>(RANGE-INCREASING STEP START END)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L170-L178">src</a></sub></sup><a name="range-increasing-value"></a>
 <code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; :A &rarr; :A &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A))</code>
 
 An iterator which begins at START and yields successive elements spaced by STEP, stopping before END.
@@ -4899,7 +4927,7 @@ An iterator which begins at START and yields successive elements spaced by STEP,
 
 ***
 
-#### <a href="#recursive-iter-value"><code>(RECURSIVE-ITER SUCC DONE? START)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L155-L167">src</a></sub></sup><a name="recursive-iter-value"></a>
+#### <a href="#recursive-iter-value"><code>(RECURSIVE-ITER SUCC DONE? START)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L151-L163">src</a></sub></sup><a name="recursive-iter-value"></a>
 <code>&forall; :A. ((:A &rarr; :A) &rarr; (:A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>) &rarr; :A &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A))</code>
 
 An iterator which yields first START, then (SUCC START), then (SUCC (SUCC START)), and so on, stopping as soon as such a value is `done?`.
@@ -4920,7 +4948,7 @@ Yield unique elements from ITER in order of first appearance.
 
 ***
 
-#### <a href="#repeat-value"><code>(REPEAT ITEM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L259-L264">src</a></sub></sup><a name="repeat-value"></a>
+#### <a href="#repeat-value"><code>(REPEAT ITEM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L255-L260">src</a></sub></sup><a name="repeat-value"></a>
 <code>&forall; :A. (:A &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A))</code>
 
 Yield ITEM over and over, infinitely.
@@ -4929,7 +4957,7 @@ Yield ITEM over and over, infinitely.
 
 ***
 
-#### <a href="#repeat-for-value"><code>(REPEAT-FOR ITEM COUNT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L267-L269">src</a></sub></sup><a name="repeat-for-value"></a>
+#### <a href="#repeat-for-value"><code>(REPEAT-FOR ITEM COUNT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L263-L265">src</a></sub></sup><a name="repeat-for-value"></a>
 <code>&forall; :A. (:A &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A))</code>
 
 Yield ITEM COUNT times, then stop.
@@ -4944,7 +4972,7 @@ Yield ITEM COUNT times, then stop.
 
 ***
 
-#### <a href="#sum!-value"><code>(SUM! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L512-L514">src</a></sub></sup><a name="sum!-value"></a>
+#### <a href="#sum!-value"><code>(SUM! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L508-L510">src</a></sub></sup><a name="sum!-value"></a>
 <code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; ((<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; :A)</code>
 
 Add together all the elements of ITER.
@@ -4953,7 +4981,7 @@ Add together all the elements of ITER.
 
 ***
 
-#### <a href="#take!-value"><code>(TAKE! COUNT ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L417-L421">src</a></sub></sup><a name="take!-value"></a>
+#### <a href="#take!-value"><code>(TAKE! COUNT ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L413-L417">src</a></sub></sup><a name="take!-value"></a>
 <code>&forall; :A. (<a href="#ufix-type"><code>UFIX</code></a> &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A))</code>
 
 An `Iterator` which yields at most COUNT elements from ITER.
@@ -4962,13 +4990,13 @@ An `Iterator` which yields at most COUNT elements from ITER.
 
 ***
 
-#### <a href="#unwrapped!-value"><code>(UNWRAPPED! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L406-L414">src</a></sub></sup><a name="unwrapped!-value"></a>
+#### <a href="#unwrapped!-value"><code>(UNWRAPPED! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L402-L410">src</a></sub></sup><a name="unwrapped!-value"></a>
 <code>&forall; :A :B. <a href="#unwrappable-class">UNWRAPPABLE</a> :A &rArr; ((<a href="#iterator-type"><code>ITERATOR</code></a> (:A :B)) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :B))</code>
 
 
 ***
 
-#### <a href="#up-through-value"><code>(UP-THROUGH LIMIT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L190-L192">src</a></sub></sup><a name="up-through-value"></a>
+#### <a href="#up-through-value"><code>(UP-THROUGH LIMIT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L186-L188">src</a></sub></sup><a name="up-through-value"></a>
 <code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A))</code>
 
 An iterator which begins at zero and counts up through and including LIMIT.
@@ -4977,7 +5005,7 @@ An iterator which begins at zero and counts up through and including LIMIT.
 
 ***
 
-#### <a href="#up-to-value"><code>(UP-TO LIMIT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L185-L187">src</a></sub></sup><a name="up-to-value"></a>
+#### <a href="#up-to-value"><code>(UP-TO LIMIT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L181-L183">src</a></sub></sup><a name="up-to-value"></a>
 <code>&forall; :A. (<a href="#num-class">NUM</a> :A) (<a href="#ord-class">ORD</a> :A) &rArr; (:A &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A))</code>
 
 An iterator which begins at zero and counts up to, but not including, LIMIT.
@@ -4992,7 +5020,7 @@ An iterator which begins at zero and counts up to, but not including, LIMIT.
 
 ***
 
-#### <a href="#zip!-value"><code>(ZIP!)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L346-L348">src</a></sub></sup><a name="zip!-value"></a>
+#### <a href="#zip!-value"><code>(ZIP!)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L342-L344">src</a></sub></sup><a name="zip!-value"></a>
 <code>&forall; :A :B. ((<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :B) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> (<a href="#tuple-type"><code>TUPLE</code></a> :A :B)))</code>
 
 Return an iterator of tuples contining elements from two iterators.
@@ -5001,7 +5029,7 @@ Return an iterator of tuples contining elements from two iterators.
 
 ***
 
-#### <a href="#zip-with!-value"><code>(ZIP-WITH! F LEFT RIGHT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L332-L343">src</a></sub></sup><a name="zip-with!-value"></a>
+#### <a href="#zip-with!-value"><code>(ZIP-WITH! F LEFT RIGHT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L328-L339">src</a></sub></sup><a name="zip-with!-value"></a>
 <code>&forall; :A :B :C. ((:A &rarr; :B &rarr; :C) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :A) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :B) &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> :C))</code>
 
 Return an iterator of elements from LEFT and RIGHT which terminates as soon as either LEFT or RIGHT does.
