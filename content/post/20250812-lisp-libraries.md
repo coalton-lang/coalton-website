@@ -60,7 +60,7 @@ We will want to set up a Lisp project as usual with a `.asd` and all. In particu
    ;; our exports to appear
    ))
 
-(in-package #:coalton-local-time)
+(in-package #:coalton-time)
 
 (named-readtables:in-readtable coalton:coalton)
 
