@@ -5140,19 +5140,19 @@ Set the `i`th value of the `LispArray` `v` to `x`.
 
 ### Values
 
-#### <a href="#all-value"><code>(ALL F XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L619-L626">src</a></sub></sup><a name="all-value"></a>
+#### <a href="#all-value"><code>(ALL F? XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L619-L626">src</a></sub></sup><a name="all-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>) &rarr; (<a href="#list-type"><code>LIST</code></a> :A) &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
-Returns TRUE if every element in XS matches F.
+Returns `True` if every element in `xs` matches `f?`.
 
 
 
 ***
 
-#### <a href="#any-value"><code>(ANY F L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L629-L636">src</a></sub></sup><a name="any-value"></a>
+#### <a href="#any-value"><code>(ANY F? L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L629-L636">src</a></sub></sup><a name="any-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>) &rarr; (<a href="#list-type"><code>LIST</code></a> :A) &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
-Returns TRUE if at least one element in XS matches F.
+Returns `True` if at least one element in `xs` matches `f?`.
 
 
 
@@ -5185,25 +5185,25 @@ Return the traditional cdr of a list.
 
 ***
 
-#### <a href="#combs-value"><code>(COMBS L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L651-L659">src</a></sub></sup><a name="combs-value"></a>
+#### <a href="#combs-value"><code>(COMBS L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L652-L660">src</a></sub></sup><a name="combs-value"></a>
 <code>&forall; :A. ((<a href="#list-type"><code>LIST</code></a> :A) &rarr; (<a href="#list-type"><code>LIST</code></a> (<a href="#list-type"><code>LIST</code></a> :A)))</code>
 
-Compute a list of all combinations of elements of L. This function is sometimes goes by the name "power set" or "subsets".
+Compute a list of all combinations of elements of `l`. This function is sometimes goes by the name "power set" or "subsets".
 
-The ordering of elements of L is preserved in the ordering of elements in each list produced by `(COMBS L)`.
+The ordering of elements of `l` is preserved in the ordering of elements in each list produced by this function.
 
 
 
 ***
 
-#### <a href="#combsof-value"><code>(COMBSOF N L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L662-L675">src</a></sub></sup><a name="combsof-value"></a>
+#### <a href="#combsof-value"><code>(COMBSOF N L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L663-L676">src</a></sub></sup><a name="combsof-value"></a>
 <code>&forall; :A. (<a href="#ufix-type"><code>UFIX</code></a> &rarr; (<a href="#list-type"><code>LIST</code></a> :A) &rarr; (<a href="#list-type"><code>LIST</code></a> (<a href="#list-type"><code>LIST</code></a> :A)))</code>
 
-Produce a list of size-N subsets of L.
+Produce a list of size-N subsets of `l`.
 
-The ordering of elements of L is preserved in the ordering of elements in each list produced by `(COMBSOF N L)`.
+The ordering of elements of `l` is preserved in the ordering of elements in each list produced by `(combsOf n l)`.
 
-This function is equivalent to all size-N elements of `(COMBS L)`.
+This function is equivalent to all size-`n` elements of `(combs l)`.
 
 
 
@@ -5359,10 +5359,10 @@ Generic version of insert
 #### <a href="#insertions-value"><code>(INSERTIONS A L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L524-L533">src</a></sub></sup><a name="insertions-value"></a>
 <code>&forall; :A. (:A &rarr; (<a href="#list-type"><code>LIST</code></a> :A) &rarr; (<a href="#list-type"><code>LIST</code></a> (<a href="#list-type"><code>LIST</code></a> :A)))</code>
 
-Produce a list of copies of L, each with A inserted at a possible position.
+Produce a list of copies of `l`, each with A inserted at a possible position.
 
     (insertions 0 (make-list 1 2))
-    => ((0 1 2) (1 0 2) (1 2 0))
+    ;; => ((0 1 2) (1 0 2) (1 2 0))
 
 
 
@@ -5372,7 +5372,7 @@ Produce a list of copies of L, each with A inserted at a possible position.
 #### <a href="#intercalate-value"><code>(INTERCALATE XS XSS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L519-L521">src</a></sub></sup><a name="intercalate-value"></a>
 <code>&forall; :A. ((<a href="#list-type"><code>LIST</code></a> :A) &rarr; (<a href="#list-type"><code>LIST</code></a> (<a href="#list-type"><code>LIST</code></a> :A)) &rarr; (<a href="#list-type"><code>LIST</code></a> :A))</code>
 
-Intersperses XS into XSS and then concatenates the result.
+Intersperse `xs` into `xss` and then concatenate the result.
 
 
 
@@ -5390,7 +5390,7 @@ Returns elements which occur in both lists. Does not return duplicates and does 
 #### <a href="#intersperse-value"><code>(INTERSPERSE E XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L512-L516">src</a></sub></sup><a name="intersperse-value"></a>
 <code>&forall; :A. (:A &rarr; (<a href="#list-type"><code>LIST</code></a> :A) &rarr; (<a href="#list-type"><code>LIST</code></a> :A))</code>
 
-Returns a new list where every other element is E.
+Returns a new list by inserting `e` between every element of `xs`.
 
 
 
@@ -5426,7 +5426,7 @@ Returns the value of the first (key, value) tuple in XS where the key matches E.
 #### <a href="#maximum-value"><code>(MAXIMUM L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L599-L601">src</a></sub></sup><a name="maximum-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#list-type"><code>LIST</code></a> :A) &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> :A))</code>
 
-Returns a greatest element of a list, or None.
+Returns a greatest element of a list, or `None`.
 
 
 
@@ -5444,7 +5444,7 @@ Returns true if any element of XS is equal to E.
 #### <a href="#minimum-value"><code>(MINIMUM L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L604-L606">src</a></sub></sup><a name="minimum-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#list-type"><code>LIST</code></a> :A) &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> :A))</code>
 
-Returns a least element of a list, or None.
+Returns a least element of a list, or `None`.
 
 
 
@@ -5495,7 +5495,7 @@ Splits a list into two new lists. The first list contains elements matching pred
 
 ***
 
-#### <a href="#perms-value"><code>(PERMS L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L646-L648">src</a></sub></sup><a name="perms-value"></a>
+#### <a href="#perms-value"><code>(PERMS L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L647-L649">src</a></sub></sup><a name="perms-value"></a>
 <code>&forall; :A. ((<a href="#list-type"><code>LIST</code></a> :A) &rarr; (<a href="#list-type"><code>LIST</code></a> (<a href="#list-type"><code>LIST</code></a> :A)))</code>
 
 Produce all permutations of the list L.
@@ -5507,7 +5507,7 @@ Produce all permutations of the list L.
 #### <a href="#product-value"><code>(PRODUCT XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L614-L616">src</a></sub></sup><a name="product-value"></a>
 <code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; ((<a href="#list-type"><code>LIST</code></a> :A) &rarr; :A)</code>
 
-Returns the product of XS
+Returns the product of `xs`.
 
 
 
@@ -5595,7 +5595,7 @@ Is `xs` a list containing exactly one element?
 #### <a href="#sort-value"><code>(SORT XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L499-L501">src</a></sub></sup><a name="sort-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#list-type"><code>LIST</code></a> :A) &rarr; (<a href="#list-type"><code>LIST</code></a> :A))</code>
 
-Performs a sort of XS.
+Sort `xs`.
 
 
 
@@ -5604,14 +5604,17 @@ Performs a sort of XS.
 #### <a href="#sortby-value"><code>(SORTBY CMP XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L504-L509">src</a></sub></sup><a name="sortby-value"></a>
 <code>&forall; :A. ((:A &rarr; :A &rarr; <a href="#ord-type"><code>ORD</code></a>) &rarr; (<a href="#list-type"><code>LIST</code></a> :A) &rarr; (<a href="#list-type"><code>LIST</code></a> :A))</code>
 
-Generic version of sort
+Sort `xs` by a custom comparison function `cmp`.
 
 
 
 ***
 
-#### <a href="#split-value"><code>(SPLIT C STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L639-L643">src</a></sub></sup><a name="split-value"></a>
+#### <a href="#split-value"><code>(SPLIT C STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L639-L644">src</a></sub></sup><a name="split-value"></a>
 <code>(<a href="#char-type"><code>CHAR</code></a> &rarr; <a href="#string-type"><code>STRING</code></a> &rarr; (<a href="#list-type"><code>LIST</code></a> <a href="#string-type"><code>STRING</code></a>))</code>
+
+Split a string `str` into a list of substrings by the character `c`.
+
 
 
 ***
@@ -5619,7 +5622,7 @@ Generic version of sort
 #### <a href="#sum-value"><code>(SUM XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L609-L611">src</a></sub></sup><a name="sum-value"></a>
 <code>&forall; :A. <a href="#num-class">NUM</a> :A &rArr; ((<a href="#list-type"><code>LIST</code></a> :A) &rarr; :A)</code>
 
-Returns the sum of XS
+Returns the sum of `xs`.
 
 
 
