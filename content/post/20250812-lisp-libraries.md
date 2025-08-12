@@ -7,7 +7,7 @@ math: false
 By [Robert Smith](https://twitter.com/stylewarning)
 
 
-*We discuss how we can make an efficient, type-safe interface to existing libraries written in Common Lisp so that they can be used in other Coalton code.*
+*We discuss how we can make an efficient, type-safe interface to existing libraries written in Common Lisp so that they can be used in Coalton code.*
 
 {{< toc >}}
 
