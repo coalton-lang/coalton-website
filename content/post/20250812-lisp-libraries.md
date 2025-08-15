@@ -168,7 +168,7 @@ Another issue is that our `make-timestamp` function will need to take some integ
 
 This means that, yes, a Coalton `Integer` is safe to pass to Lisp, and it will be represented as we expect as a `cl:integer`.
 
-With those facts under our belt, we can write our construxtor.
+With those facts under our belt, we can write our constructor.
 
 ```
 (inline)
