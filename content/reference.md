@@ -8441,7 +8441,7 @@ Set the element at index `idx` in `s` to `item`.
 
 ### Values
 
-#### <a href="#chars-value"><code>(CHARS STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L142-L144">src</a></sub></sup><a name="chars-value"></a>
+#### <a href="#chars-value"><code>(CHARS STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L144-L146">src</a></sub></sup><a name="chars-value"></a>
 <code>(<a href="#string-type"><code>STRING</code></a> &rarr; (<a href="#iterator-type"><code>ITERATOR</code></a> <a href="#char-type"><code>CHAR</code></a>))</code>
 
 Returns an iterator over the characters in `str`.
@@ -8450,7 +8450,7 @@ Returns an iterator over the characters in `str`.
 
 ***
 
-#### <a href="#concat-value"><code>(CONCAT STR1 STR2)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L52-L55">src</a></sub></sup><a name="concat-value"></a>
+#### <a href="#concat-value"><code>(CONCAT STR1 STR2)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L54-L57">src</a></sub></sup><a name="concat-value"></a>
 <code>(<a href="#string-type"><code>STRING</code></a> &rarr; <a href="#string-type"><code>STRING</code></a> &rarr; <a href="#string-type"><code>STRING</code></a>)</code>
 
 Concatenate STR1 and STR2 together, returning a new string.
@@ -8459,7 +8459,16 @@ Concatenate STR1 and STR2 together, returning a new string.
 
 ***
 
-#### <a href="#length-value"><code>(LENGTH STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L63-L66">src</a></sub></sup><a name="length-value"></a>
+#### <a href="#downcase-value"><code>(DOWNCASE STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L155-L158">src</a></sub></sup><a name="downcase-value"></a>
+<code>(<a href="#string-type"><code>STRING</code></a> &rarr; <a href="#string-type"><code>STRING</code></a>)</code>
+
+Returns a new string with lowercase characters.
+
+
+
+***
+
+#### <a href="#length-value"><code>(LENGTH STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L65-L68">src</a></sub></sup><a name="length-value"></a>
 <code>(<a href="#string-type"><code>STRING</code></a> &rarr; <a href="#ufix-type"><code>UFIX</code></a>)</code>
 
 The length of a string STR.
@@ -8468,7 +8477,7 @@ The length of a string STR.
 
 ***
 
-#### <a href="#parse-int-value"><code>(PARSE-INT STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L104-L110">src</a></sub></sup><a name="parse-int-value"></a>
+#### <a href="#parse-int-value"><code>(PARSE-INT STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L106-L112">src</a></sub></sup><a name="parse-int-value"></a>
 <code>(<a href="#string-type"><code>STRING</code></a> &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> <a href="#integer-type"><code>INTEGER</code></a>))</code>
 
 Parse the integer in string `str`.
@@ -8477,7 +8486,7 @@ Parse the integer in string `str`.
 
 ***
 
-#### <a href="#ref-value"><code>(REF STR IDX)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L119-L123">src</a></sub></sup><a name="ref-value"></a>
+#### <a href="#ref-value"><code>(REF STR IDX)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L121-L125">src</a></sub></sup><a name="ref-value"></a>
 <code>(<a href="#string-type"><code>STRING</code></a> &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> <a href="#char-type"><code>CHAR</code></a>))</code>
 
 Return the `idx`th character of `str`.
@@ -8486,7 +8495,7 @@ Return the `idx`th character of `str`.
 
 ***
 
-#### <a href="#ref-unchecked-value"><code>(REF-UNCHECKED STR IDX)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L113-L116">src</a></sub></sup><a name="ref-unchecked-value"></a>
+#### <a href="#ref-unchecked-value"><code>(REF-UNCHECKED STR IDX)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L115-L118">src</a></sub></sup><a name="ref-unchecked-value"></a>
 <code>(<a href="#string-type"><code>STRING</code></a> &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; <a href="#char-type"><code>CHAR</code></a>)</code>
 
 Return the `idx`th character of `str`. This function is partial.
@@ -8495,7 +8504,7 @@ Return the `idx`th character of `str`. This function is partial.
 
 ***
 
-#### <a href="#reverse-value"><code>(REVERSE S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L58-L60">src</a></sub></sup><a name="reverse-value"></a>
+#### <a href="#reverse-value"><code>(REVERSE S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L60-L62">src</a></sub></sup><a name="reverse-value"></a>
 <code>(<a href="#string-type"><code>STRING</code></a> &rarr; <a href="#string-type"><code>STRING</code></a>)</code>
 
 Reverse a string.
@@ -8504,7 +8513,7 @@ Reverse a string.
 
 ***
 
-#### <a href="#split-value"><code>(SPLIT N STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L77-L80">src</a></sub></sup><a name="split-value"></a>
+#### <a href="#split-value"><code>(SPLIT N STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L79-L82">src</a></sub></sup><a name="split-value"></a>
 <code>(<a href="#ufix-type"><code>UFIX</code></a> &rarr; <a href="#string-type"><code>STRING</code></a> &rarr; (<a href="#tuple-type"><code>TUPLE</code></a> <a href="#string-type"><code>STRING</code></a> <a href="#string-type"><code>STRING</code></a>))</code>
 
 Splits a string into a head and tail at the nth index.
@@ -8513,7 +8522,7 @@ Splits a string into a head and tail at the nth index.
 
 ***
 
-#### <a href="#strip-prefix-value"><code>(STRIP-PREFIX PREFIX STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L83-L90">src</a></sub></sup><a name="strip-prefix-value"></a>
+#### <a href="#strip-prefix-value"><code>(STRIP-PREFIX PREFIX STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L85-L92">src</a></sub></sup><a name="strip-prefix-value"></a>
 <code>(<a href="#string-type"><code>STRING</code></a> &rarr; <a href="#string-type"><code>STRING</code></a> &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> <a href="#string-type"><code>STRING</code></a>))</code>
 
 Returns a string without a give prefix, or `None` if the string
@@ -8523,7 +8532,7 @@ does not have that suffix.
 
 ***
 
-#### <a href="#strip-suffix-value"><code>(STRIP-SUFFIX SUFFIX STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L93-L101">src</a></sub></sup><a name="strip-suffix-value"></a>
+#### <a href="#strip-suffix-value"><code>(STRIP-SUFFIX SUFFIX STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L95-L103">src</a></sub></sup><a name="strip-suffix-value"></a>
 <code>(<a href="#string-type"><code>STRING</code></a> &rarr; <a href="#string-type"><code>STRING</code></a> &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> <a href="#string-type"><code>STRING</code></a>))</code>
 
 Returns a string without a give suffix, or `None` if the string
@@ -8533,7 +8542,7 @@ does not have that suffix.
 
 ***
 
-#### <a href="#substring-value"><code>(SUBSTRING STR START END)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L69-L74">src</a></sub></sup><a name="substring-value"></a>
+#### <a href="#substring-value"><code>(SUBSTRING STR START END)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L71-L76">src</a></sub></sup><a name="substring-value"></a>
 <code>(<a href="#string-type"><code>STRING</code></a> &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; <a href="#string-type"><code>STRING</code></a>)</code>
 
 Compute a substring of a string bounded by given indices.
@@ -8542,7 +8551,7 @@ Compute a substring of a string bounded by given indices.
 
 ***
 
-#### <a href="#substring-index-value"><code>(SUBSTRING-INDEX SMALL BIG)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L126-L131">src</a></sub></sup><a name="substring-index-value"></a>
+#### <a href="#substring-index-value"><code>(SUBSTRING-INDEX SMALL BIG)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L128-L133">src</a></sub></sup><a name="substring-index-value"></a>
 <code>(<a href="#string-type"><code>STRING</code></a> &rarr; <a href="#string-type"><code>STRING</code></a> &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> <a href="#ufix-type"><code>UFIX</code></a>))</code>
 
 If the first argument appears as a substring within the second argument, return the starting index into the second argument.
@@ -8551,10 +8560,19 @@ If the first argument appears as a substring within the second argument, return 
 
 ***
 
-#### <a href="#substring?-value"><code>(SUBSTRING? SMALL BIG)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L134-L139">src</a></sub></sup><a name="substring?-value"></a>
+#### <a href="#substring?-value"><code>(SUBSTRING? SMALL BIG)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L136-L141">src</a></sub></sup><a name="substring?-value"></a>
 <code>(<a href="#string-type"><code>STRING</code></a> &rarr; <a href="#string-type"><code>STRING</code></a> &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Return true if the first argument appears as a substring within the second argument.
+
+
+
+***
+
+#### <a href="#upcase-value"><code>(UPCASE STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L149-L152">src</a></sub></sup><a name="upcase-value"></a>
+<code>(<a href="#string-type"><code>STRING</code></a> &rarr; <a href="#string-type"><code>STRING</code></a>)</code>
+
+Returns a new string with uppercase characters.
 
 
 
