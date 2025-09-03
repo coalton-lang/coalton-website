@@ -79,3 +79,25 @@
 .post-two-pane .post-content .main-content h4 {
   font-size: 18pt;
 }
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - var(--header-height) + 50px);
+}
+
+.sidebar-header {
+  flex-shrink: 0;
+  border-bottom: 1px solid #eee;
+}
+
+.sidebar-content {
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.sidebar-content ul {
+  margin: 0;
+  padding: 0;
+}
