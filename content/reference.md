@@ -5,6 +5,7 @@ math: true
 layout: two-pane
 ---
 <aside class="sidebar">
+<div class="sidebar-header">
 
 ### Reference
 
@@ -12,6 +13,8 @@ layout: two-pane
   <input type="text" id="symbol-search-input" placeholder="Search symbols..." autocomplete="off">
   <div class="search-results" id="search-results"></div>
 </div>
+</div>
+<div class="sidebar-content">
 
 - <a href="#coalton-package"><code>COALTON</code></a>
 - <a href="#coalton-library/big-float-package"><code>COALTON-LIBRARY/BIG-FLOAT</code></a>
@@ -61,6 +64,7 @@ layout: two-pane
 - <a href="#coalton-library/tuple-package"><code>COALTON-LIBRARY/TUPLE</code></a>
 - <a href="#coalton-library/types-package"><code>COALTON-LIBRARY/TYPES</code></a>
 - <a href="#coalton-library/vector-package"><code>COALTON-LIBRARY/VECTOR</code></a>
+</div>
 </aside>
 <div class="main-content">
 
