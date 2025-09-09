@@ -1479,19 +1479,24 @@ A coalton package for performing FFTs.
 
 ### Classes
 
-#### <a href="#cyclicgroup-class"><code>CYCLICGROUP</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L138-L142">src</a></sub></sup><a name="cyclicgroup-class"></a>
-<code><a href="#cyclicgroup-class">CYCLICGROUP</a> :A</code>
+#### <a href="#fftcyclicgroup-class"><code>FFTCYCLICGROUP</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L147-L156">src</a></sub></sup><a name="fftcyclicgroup-class"></a>
+<code><a href="#fftcyclicgroup-class">FFTCYCLICGROUP</a> :A</code>
+
+
+A class of types, each of which is a mathematical cyclic group.
+
+These are types which are valid elements for a collection which may undergo a discrete Fourier transform. Examples include complex floating-point numbers and finite (modular) integers.
 
 Methods:
 - <code>CYCLIC-ADD-IDENTITY :: :A</code>
 - <code>CYCLIC-ADD :: (:A &rarr; :A &rarr; :A)</code>
 - <code>CYCLIC-ADD-INVERSE :: (:A &rarr; :A)</code>
-- <code>CYCLIC-NTH-GENERATOR :: (<a href="#ufix-type"><code>UFIX</code></a> &rarr; :A)</code>
+- <code>CYCLIC-NTH-GENERATOR :: (<a href="#ufix-type"><code>UFIX</code></a> &rarr; :A)</code><br/>A function which returns a primitive `n`th root of unity.
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#cyclicgroup-class">CYCLICGROUP</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f64-type"><code>F64</code></a>)</code>
-- <code><a href="#cyclicgroup-class">CYCLICGROUP</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f32-type"><code>F32</code></a>)</code>
+- <code><a href="#fftcyclicgroup-class">FFTCYCLICGROUP</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f64-type"><code>F64</code></a>)</code>
+- <code><a href="#fftcyclicgroup-class">FFTCYCLICGROUP</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f32-type"><code>F32</code></a>)</code>
 
 </details>
 
@@ -1499,16 +1504,21 @@ Methods:
 
 ***
 
-#### <a href="#field-class"><code>FIELD</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L131-L132">src</a></sub></sup><a name="field-class"></a>
-<code><a href="#ring-class">RING</a> :A &rArr; <a href="#field-class">FIELD</a> :A</code>
+#### <a href="#fftfield-class"><code>FFTFIELD</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L137-L141">src</a></sub></sup><a name="fftfield-class"></a>
+<code><a href="#fftring-class">FFTRING</a> :A &rArr; <a href="#fftfield-class">FFTFIELD</a> :A</code>
+
+
+A class of types, each of which is a mathematical field.
+
+These are types which are valid elements for a collection which may undergo a discrete Fourier transform. Examples include complex floating-point numbers and finite (modular) integers.
 
 Methods:
 - <code>MULTIPLY-INVERSE :: (:A &rarr; :A)</code>
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#field-class">FIELD</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f64-type"><code>F64</code></a>)</code>
-- <code><a href="#field-class">FIELD</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f32-type"><code>F32</code></a>)</code>
+- <code><a href="#fftfield-class">FFTFIELD</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f64-type"><code>F64</code></a>)</code>
+- <code><a href="#fftfield-class">FFTFIELD</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f32-type"><code>F32</code></a>)</code>
 
 </details>
 
@@ -1516,8 +1526,13 @@ Methods:
 
 ***
 
-#### <a href="#group-class"><code>GROUP</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L118-L121">src</a></sub></sup><a name="group-class"></a>
-<code><a href="#group-class">GROUP</a> :A</code>
+#### <a href="#fftgroup-class"><code>FFTGROUP</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L118-L124">src</a></sub></sup><a name="fftgroup-class"></a>
+<code><a href="#fftgroup-class">FFTGROUP</a> :A</code>
+
+
+A class of types, each of which is a mathematical group.
+
+These are types which are valid elements for a collection which may undergo a discrete Fourier transform. Examples include complex floating-point numbers and finite (modular) integers.
 
 Methods:
 - <code>ADD-IDENTITY :: :A</code>
@@ -1526,8 +1541,8 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#group-class">GROUP</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f64-type"><code>F64</code></a>)</code>
-- <code><a href="#group-class">GROUP</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f32-type"><code>F32</code></a>)</code>
+- <code><a href="#fftgroup-class">FFTGROUP</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f64-type"><code>F64</code></a>)</code>
+- <code><a href="#fftgroup-class">FFTGROUP</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f32-type"><code>F32</code></a>)</code>
 
 </details>
 
@@ -1535,8 +1550,13 @@ Methods:
 
 ***
 
-#### <a href="#ring-class"><code>RING</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L127-L129">src</a></sub></sup><a name="ring-class"></a>
-<code><a href="#group-class">GROUP</a> :A &rArr; <a href="#ring-class">RING</a> :A</code>
+#### <a href="#fftring-class"><code>FFTRING</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L130-L135">src</a></sub></sup><a name="fftring-class"></a>
+<code><a href="#fftgroup-class">FFTGROUP</a> :A &rArr; <a href="#fftring-class">FFTRING</a> :A</code>
+
+
+A class of types, each of which is a mathematical ring.
+
+These are types which are valid elements for a collection which may undergo a discrete Fourier transform. Examples include complex floating-point numbers and finite (modular) integers.
 
 Methods:
 - <code>MULTIPLY-IDENTITY :: :A</code>
@@ -1544,8 +1564,8 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#ring-class">RING</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f64-type"><code>F64</code></a>)</code>
-- <code><a href="#ring-class">RING</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f32-type"><code>F32</code></a>)</code>
+- <code><a href="#fftring-class">FFTRING</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f64-type"><code>F64</code></a>)</code>
+- <code><a href="#fftring-class">FFTRING</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f32-type"><code>F32</code></a>)</code>
 
 </details>
 
@@ -1555,8 +1575,8 @@ Methods:
 
 ### Values
 
-#### <a href="#dif-fft-raw-value"><code>(DIF-FFT-RAW DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L210-L223">src</a></sub></sup><a name="dif-fft-raw-value"></a>
-<code>&forall; :A :B :C. (<a href="#randomaccess-class">RANDOMACCESS</a> :B :A) (<a href="#randomaccess-class">RANDOMACCESS</a> :C :A) (<a href="#ring-class">RING</a> :A) (<a href="#cyclicgroup-class">CYCLICGROUP</a> :A) &rArr; (:B &rarr; :C &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
+#### <a href="#dif-fft-raw-value"><code>(DIF-FFT-RAW DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L224-L237">src</a></sub></sup><a name="dif-fft-raw-value"></a>
+<code>&forall; :A :B :C. (<a href="#randomaccess-class">RANDOMACCESS</a> :B :A) (<a href="#randomaccess-class">RANDOMACCESS</a> :C :A) (<a href="#fftring-class">FFTRING</a> :A) (<a href="#fftcyclicgroup-class">FFTCYCLICGROUP</a> :A) &rArr; (:B &rarr; :C &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
 
 A decimation-in-frequency fast fourier transform, reading from `src` and writing to `dst`.
 
@@ -1568,8 +1588,8 @@ Normalization: none
 
 ***
 
-#### <a href="#dif-ifft-raw-value"><code>(DIF-IFFT-RAW DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L230-L243">src</a></sub></sup><a name="dif-ifft-raw-value"></a>
-<code>&forall; :A :B :C. (<a href="#randomaccess-class">RANDOMACCESS</a> :B :A) (<a href="#randomaccess-class">RANDOMACCESS</a> :C :A) (<a href="#ring-class">RING</a> :A) (<a href="#cyclicgroup-class">CYCLICGROUP</a> :A) &rArr; (:B &rarr; :C &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
+#### <a href="#dif-ifft-raw-value"><code>(DIF-IFFT-RAW DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L244-L257">src</a></sub></sup><a name="dif-ifft-raw-value"></a>
+<code>&forall; :A :B :C. (<a href="#randomaccess-class">RANDOMACCESS</a> :B :A) (<a href="#randomaccess-class">RANDOMACCESS</a> :C :A) (<a href="#fftring-class">FFTRING</a> :A) (<a href="#fftcyclicgroup-class">FFTCYCLICGROUP</a> :A) &rArr; (:B &rarr; :C &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
 
 A decimation-in-frequency inverse fast fourier transform, reading from `src` and writing to `dst`.
 
@@ -1581,8 +1601,8 @@ Normalization: none
 
 ***
 
-#### <a href="#dit-fft-raw-value"><code>(DIT-FFT-RAW DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L314-L328">src</a></sub></sup><a name="dit-fft-raw-value"></a>
-<code>&forall; :A :B :C. (<a href="#randomaccess-class">RANDOMACCESS</a> :B :A) (<a href="#randomaccess-class">RANDOMACCESS</a> :C :A) (<a href="#ring-class">RING</a> :A) (<a href="#cyclicgroup-class">CYCLICGROUP</a> :A) &rArr; (:B &rarr; :C &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
+#### <a href="#dit-fft-raw-value"><code>(DIT-FFT-RAW DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L328-L342">src</a></sub></sup><a name="dit-fft-raw-value"></a>
+<code>&forall; :A :B :C. (<a href="#randomaccess-class">RANDOMACCESS</a> :B :A) (<a href="#randomaccess-class">RANDOMACCESS</a> :C :A) (<a href="#fftring-class">FFTRING</a> :A) (<a href="#fftcyclicgroup-class">FFTCYCLICGROUP</a> :A) &rArr; (:B &rarr; :C &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
 
 A decimation-in-time fast fourier transform, reading from `src` and writing to `dst`.
 
@@ -1594,8 +1614,8 @@ Normalization: none
 
 ***
 
-#### <a href="#dit-ifft-raw-value"><code>(DIT-IFFT-RAW DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L335-L349">src</a></sub></sup><a name="dit-ifft-raw-value"></a>
-<code>&forall; :A :B :C. (<a href="#randomaccess-class">RANDOMACCESS</a> :B :A) (<a href="#randomaccess-class">RANDOMACCESS</a> :C :A) (<a href="#ring-class">RING</a> :A) (<a href="#cyclicgroup-class">CYCLICGROUP</a> :A) &rArr; (:B &rarr; :C &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
+#### <a href="#dit-ifft-raw-value"><code>(DIT-IFFT-RAW DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L349-L363">src</a></sub></sup><a name="dit-ifft-raw-value"></a>
+<code>&forall; :A :B :C. (<a href="#randomaccess-class">RANDOMACCESS</a> :B :A) (<a href="#randomaccess-class">RANDOMACCESS</a> :C :A) (<a href="#fftring-class">FFTRING</a> :A) (<a href="#fftcyclicgroup-class">FFTCYCLICGROUP</a> :A) &rArr; (:B &rarr; :C &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
 
 A decimation-in-time inverse fast fourier transform, reading from `src` and writing to `dst`.
 
@@ -1607,14 +1627,14 @@ Normalization: none
 
 ***
 
-#### <a href="#divide-value"><code>(DIVIDE X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L135-L136">src</a></sub></sup><a name="divide-value"></a>
-<code>&forall; :A. <a href="#field-class">FIELD</a> :A &rArr; (:A &rarr; :A &rarr; :A)</code>
+#### <a href="#divide-value"><code>(DIVIDE X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L144-L145">src</a></sub></sup><a name="divide-value"></a>
+<code>&forall; :A. <a href="#fftfield-class">FFTFIELD</a> :A &rArr; (:A &rarr; :A &rarr; :A)</code>
 
 
 ***
 
-#### <a href="#fft-value"><code>(FFT STORAGE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L432-L444">src</a></sub></sup><a name="fft-value"></a>
-<code>&forall; :A :B :C. (<a href="#randomaccess-class">RANDOMACCESS</a> :B :A) (<a href="#randomaccess-class">RANDOMACCESS</a> :C :A) (<a href="#ring-class">RING</a> :A) (<a href="#cyclicgroup-class">CYCLICGROUP</a> :A) &rArr; (:B &rarr; :C)</code>
+#### <a href="#fft-value"><code>(FFT STORAGE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L446-L458">src</a></sub></sup><a name="fft-value"></a>
+<code>&forall; :A :B :C. (<a href="#randomaccess-class">RANDOMACCESS</a> :B :A) (<a href="#randomaccess-class">RANDOMACCESS</a> :C :A) (<a href="#fftring-class">FFTRING</a> :A) (<a href="#fftcyclicgroup-class">FFTCYCLICGROUP</a> :A) &rArr; (:B &rarr; :C)</code>
 
 Perform a fast Fourier transform on the data in `storage`.
 
@@ -1622,8 +1642,8 @@ Perform a fast Fourier transform on the data in `storage`.
 
 ***
 
-#### <a href="#fft!-value"><code>(FFT! STORAGE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L358-L369">src</a></sub></sup><a name="fft!-value"></a>
-<code>&forall; :A :B. (<a href="#randomaccess-class">RANDOMACCESS</a> :B :A) (<a href="#ring-class">RING</a> :A) (<a href="#cyclicgroup-class">CYCLICGROUP</a> :A) &rArr; (:B &rarr; :B)</code>
+#### <a href="#fft!-value"><code>(FFT! STORAGE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L372-L383">src</a></sub></sup><a name="fft!-value"></a>
+<code>&forall; :A :B. (<a href="#randomaccess-class">RANDOMACCESS</a> :B :A) (<a href="#fftring-class">FFTRING</a> :A) (<a href="#fftcyclicgroup-class">FFTCYCLICGROUP</a> :A) &rArr; (:B &rarr; :B)</code>
 
 Perform an in-place fast Fourier transform on `storage`.
 
@@ -1631,8 +1651,8 @@ Perform an in-place fast Fourier transform on `storage`.
 
 ***
 
-#### <a href="#fft-into!-value"><code>(FFT-INTO! DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L394-L406">src</a></sub></sup><a name="fft-into!-value"></a>
-<code>&forall; :A :B :C. (<a href="#randomaccess-class">RANDOMACCESS</a> :C :A) (<a href="#randomaccess-class">RANDOMACCESS</a> :B :A) (<a href="#ring-class">RING</a> :A) (<a href="#cyclicgroup-class">CYCLICGROUP</a> :A) &rArr; (:B &rarr; :C &rarr; :B)</code>
+#### <a href="#fft-into!-value"><code>(FFT-INTO! DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L408-L420">src</a></sub></sup><a name="fft-into!-value"></a>
+<code>&forall; :A :B :C. (<a href="#randomaccess-class">RANDOMACCESS</a> :C :A) (<a href="#randomaccess-class">RANDOMACCESS</a> :B :A) (<a href="#fftring-class">FFTRING</a> :A) (<a href="#fftcyclicgroup-class">FFTCYCLICGROUP</a> :A) &rArr; (:B &rarr; :C &rarr; :B)</code>
 
 Perform a fast Fourier transform of `src`, writing the result to `dst`. If `dst` is longer than `src`, then remaining elements of `dst` are left unmutated.
 
@@ -1640,8 +1660,8 @@ Perform a fast Fourier transform of `src`, writing the result to `dst`. If `dst`
 
 ***
 
-#### <a href="#ifft-value"><code>(IFFT STORAGE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L449-L465">src</a></sub></sup><a name="ifft-value"></a>
-<code>&forall; :A :B :C. (<a href="#randomaccess-class">RANDOMACCESS</a> :B :A) (<a href="#randomaccess-class">RANDOMACCESS</a> :C :A) (<a href="#field-class">FIELD</a> :A) (<a href="#cyclicgroup-class">CYCLICGROUP</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; (:B &rarr; :C)</code>
+#### <a href="#ifft-value"><code>(IFFT STORAGE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L463-L479">src</a></sub></sup><a name="ifft-value"></a>
+<code>&forall; :A :B :C. (<a href="#randomaccess-class">RANDOMACCESS</a> :B :A) (<a href="#randomaccess-class">RANDOMACCESS</a> :C :A) (<a href="#fftfield-class">FFTFIELD</a> :A) (<a href="#fftcyclicgroup-class">FFTCYCLICGROUP</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; (:B &rarr; :C)</code>
 
 Perform an inverse fast Fourier transform on the data in `storage`.
 
@@ -1649,8 +1669,8 @@ Perform an inverse fast Fourier transform on the data in `storage`.
 
 ***
 
-#### <a href="#ifft!-value"><code>(IFFT! STORAGE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L374-L389">src</a></sub></sup><a name="ifft!-value"></a>
-<code>&forall; :A :B. (<a href="#randomaccess-class">RANDOMACCESS</a> :B :A) (<a href="#field-class">FIELD</a> :A) (<a href="#cyclicgroup-class">CYCLICGROUP</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; (:B &rarr; :B)</code>
+#### <a href="#ifft!-value"><code>(IFFT! STORAGE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L388-L403">src</a></sub></sup><a name="ifft!-value"></a>
+<code>&forall; :A :B. (<a href="#randomaccess-class">RANDOMACCESS</a> :B :A) (<a href="#fftfield-class">FFTFIELD</a> :A) (<a href="#fftcyclicgroup-class">FFTCYCLICGROUP</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; (:B &rarr; :B)</code>
 
 Perform an in-place inverse fast Fourier transform on `storage`.
 
@@ -1658,8 +1678,8 @@ Perform an in-place inverse fast Fourier transform on `storage`.
 
 ***
 
-#### <a href="#ifft-into!-value"><code>(IFFT-INTO! DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L411-L427">src</a></sub></sup><a name="ifft-into!-value"></a>
-<code>&forall; :A :B :C. (<a href="#randomaccess-class">RANDOMACCESS</a> :C :A) (<a href="#randomaccess-class">RANDOMACCESS</a> :B :A) (<a href="#field-class">FIELD</a> :A) (<a href="#cyclicgroup-class">CYCLICGROUP</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; (:B &rarr; :C &rarr; :B)</code>
+#### <a href="#ifft-into!-value"><code>(IFFT-INTO! DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L425-L441">src</a></sub></sup><a name="ifft-into!-value"></a>
+<code>&forall; :A :B :C. (<a href="#randomaccess-class">RANDOMACCESS</a> :C :A) (<a href="#randomaccess-class">RANDOMACCESS</a> :B :A) (<a href="#fftfield-class">FFTFIELD</a> :A) (<a href="#fftcyclicgroup-class">FFTCYCLICGROUP</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; (:B &rarr; :C &rarr; :B)</code>
 
 Perform an inverse fast Fourier transform of `src`, writing the result to `dst`. If `dst` is longer than `src`, then remaining elements of `dst` are left unmutated.
 
@@ -1667,8 +1687,8 @@ Perform an inverse fast Fourier transform of `src`, writing the result to `dst`.
 
 ***
 
-#### <a href="#subtract-value"><code>(SUBTRACT X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L124-L125">src</a></sub></sup><a name="subtract-value"></a>
-<code>&forall; :A. <a href="#group-class">GROUP</a> :A &rArr; (:A &rarr; :A &rarr; :A)</code>
+#### <a href="#subtract-value"><code>(SUBTRACT X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L127-L128">src</a></sub></sup><a name="subtract-value"></a>
+<code>&forall; :A. <a href="#fftgroup-class">FFTGROUP</a> :A &rArr; (:A &rarr; :A &rarr; :A)</code>
 
 
 ***
@@ -6241,17 +6261,17 @@ component types.
 - <code><a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
 - <code><a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A &rArr; <a href="#into-class">INTO</a> :A (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
 - <code><a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
-- <code><a href="#cyclicgroup-class">CYCLICGROUP</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f64-type"><code>F64</code></a>)</code>
-- <code><a href="#cyclicgroup-class">CYCLICGROUP</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f32-type"><code>F32</code></a>)</code>
 - <code><a href="#elementary-class">ELEMENTARY</a> :A &rArr; <a href="#exponentiable-class">EXPONENTIABLE</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
 - <code><a href="#elementary-class">ELEMENTARY</a> :A &rArr; <a href="#radical-class">RADICAL</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
 - <code><a href="#elementary-class">ELEMENTARY</a> :A &rArr; <a href="#trigonometric-class">TRIGONOMETRIC</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
-- <code><a href="#field-class">FIELD</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f64-type"><code>F64</code></a>)</code>
-- <code><a href="#field-class">FIELD</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f32-type"><code>F32</code></a>)</code>
-- <code><a href="#group-class">GROUP</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f64-type"><code>F64</code></a>)</code>
-- <code><a href="#group-class">GROUP</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f32-type"><code>F32</code></a>)</code>
-- <code><a href="#ring-class">RING</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f64-type"><code>F64</code></a>)</code>
-- <code><a href="#ring-class">RING</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f32-type"><code>F32</code></a>)</code>
+- <code><a href="#fftcyclicgroup-class">FFTCYCLICGROUP</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f64-type"><code>F64</code></a>)</code>
+- <code><a href="#fftcyclicgroup-class">FFTCYCLICGROUP</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f32-type"><code>F32</code></a>)</code>
+- <code><a href="#fftfield-class">FFTFIELD</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f64-type"><code>F64</code></a>)</code>
+- <code><a href="#fftfield-class">FFTFIELD</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f32-type"><code>F32</code></a>)</code>
+- <code><a href="#fftgroup-class">FFTGROUP</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f64-type"><code>F64</code></a>)</code>
+- <code><a href="#fftgroup-class">FFTGROUP</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f32-type"><code>F32</code></a>)</code>
+- <code><a href="#fftring-class">FFTRING</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f64-type"><code>F64</code></a>)</code>
+- <code><a href="#fftring-class">FFTRING</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f32-type"><code>F32</code></a>)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
 
 </details>
