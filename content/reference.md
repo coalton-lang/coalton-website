@@ -17,6 +17,7 @@ layout: two-pane
 <div class="sidebar-content">
 
 - <a href="#coalton-package"><code>COALTON</code></a>
+- <a href="#coalton-library/algorithms/fft-package"><code>COALTON-LIBRARY/ALGORITHMS/FFT</code></a>
 - <a href="#coalton-library/big-float-package"><code>COALTON-LIBRARY/BIG-FLOAT</code></a>
 - <a href="#coalton-library/bits-package"><code>COALTON-LIBRARY/BITS</code></a>
 - <a href="#coalton-library/builtin-package"><code>COALTON-LIBRARY/BUILTIN</code></a>
@@ -940,6 +941,7 @@ Unsigned 16-bit integer capable of storing values in `[0, 65535]`. Uses `(unsign
 - <code><a href="#num-class">NUM</a> <a href="#u16-type"><code>U16</code></a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#u16-type"><code>U16</code></a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#u16-type"><code>U16</code></a></code>
+- <code><a href="#reversebits-class">REVERSEBITS</a> <a href="#u16-type"><code>U16</code></a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#u16-type"><code>U16</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#u16-type"><code>U16</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#u16-type"><code>U16</code></a> <a href="#string-type"><code>STRING</code></a></code>
@@ -994,6 +996,7 @@ Unsigned 32-bit integer capable of storing values in `[0, 4294967295]`. Uses `(u
 - <code><a href="#rational-class">RATIONAL</a> <a href="#u32-type"><code>U32</code></a></code>
 - <code><a href="#real-class">REAL</a> <a href="#u32-type"><code>U32</code></a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#u32-type"><code>U32</code></a></code>
+- <code><a href="#reversebits-class">REVERSEBITS</a> <a href="#u32-type"><code>U32</code></a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#u32-type"><code>U32</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#u32-type"><code>U32</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#u32-type"><code>U32</code></a> <a href="#string-type"><code>STRING</code></a></code>
@@ -1047,6 +1050,7 @@ Unsigned 64-bit integer capable of storing values in `[0, 18446744073709551615]`
 - <code><a href="#rational-class">RATIONAL</a> <a href="#u64-type"><code>U64</code></a></code>
 - <code><a href="#real-class">REAL</a> <a href="#u64-type"><code>U64</code></a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#u64-type"><code>U64</code></a></code>
+- <code><a href="#reversebits-class">REVERSEBITS</a> <a href="#u64-type"><code>U64</code></a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#u64-type"><code>U64</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#u64-type"><code>U64</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#u64-type"><code>U64</code></a> <a href="#string-type"><code>STRING</code></a></code>
@@ -1109,6 +1113,7 @@ Unsigned 8-bit integer capable of storing values in `[0, 255]`. Uses `(unsigned-
 - <code><a href="#rational-class">RATIONAL</a> <a href="#u8-type"><code>U8</code></a></code>
 - <code><a href="#real-class">REAL</a> <a href="#u8-type"><code>U8</code></a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#u8-type"><code>U8</code></a></code>
+- <code><a href="#reversebits-class">REVERSEBITS</a> <a href="#u8-type"><code>U8</code></a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#u8-type"><code>U8</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#u8-type"><code>U8</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#u8-type"><code>U8</code></a> <a href="#string-type"><code>STRING</code></a></code>
@@ -1161,6 +1166,7 @@ Non-allocating tagged non-negative integer; range is platform-dependent. Uses `(
 - <code><a href="#rational-class">RATIONAL</a> <a href="#ufix-type"><code>UFIX</code></a></code>
 - <code><a href="#real-class">REAL</a> <a href="#ufix-type"><code>UFIX</code></a></code>
 - <code><a href="#remainder-class">REMAINDER</a> <a href="#ufix-type"><code>UFIX</code></a></code>
+- <code><a href="#reversebits-class">REVERSEBITS</a> <a href="#ufix-type"><code>UFIX</code></a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#ufix-type"><code>UFIX</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#tryinto-class">TRYINTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#ufix-type"><code>UFIX</code></a> <a href="#string-type"><code>STRING</code></a></code>
@@ -1466,6 +1472,207 @@ Note that this may copy the object or allocate memory.
 
 ***
 
+# Package `COALTON-LIBRARY/ALGORITHMS/FFT`<a name="coalton-library/algorithms/fft-package"></a>
+
+
+A coalton package for performing FFTs.
+
+### Classes
+
+#### <a href="#cyclicgroup-class"><code>CYCLICGROUP</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L138-L142">src</a></sub></sup><a name="cyclicgroup-class"></a>
+<code><a href="#cyclicgroup-class">CYCLICGROUP</a> :A</code>
+
+Methods:
+- <code>CYCLIC-ADD-IDENTITY :: :A</code>
+- <code>CYCLIC-ADD :: (:A &rarr; :A &rarr; :A)</code>
+- <code>CYCLIC-ADD-INVERSE :: (:A &rarr; :A)</code>
+- <code>CYCLIC-NTH-GENERATOR :: (<a href="#ufix-type"><code>UFIX</code></a> &rarr; :A)</code>
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#cyclicgroup-class">CYCLICGROUP</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f64-type"><code>F64</code></a>)</code>
+- <code><a href="#cyclicgroup-class">CYCLICGROUP</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f32-type"><code>F32</code></a>)</code>
+
+</details>
+
+
+
+***
+
+#### <a href="#field-class"><code>FIELD</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L131-L132">src</a></sub></sup><a name="field-class"></a>
+<code><a href="#ring-class">RING</a> :A &rArr; <a href="#field-class">FIELD</a> :A</code>
+
+Methods:
+- <code>MULTIPLY-INVERSE :: (:A &rarr; :A)</code>
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#field-class">FIELD</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f64-type"><code>F64</code></a>)</code>
+- <code><a href="#field-class">FIELD</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f32-type"><code>F32</code></a>)</code>
+
+</details>
+
+
+
+***
+
+#### <a href="#group-class"><code>GROUP</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L118-L121">src</a></sub></sup><a name="group-class"></a>
+<code><a href="#group-class">GROUP</a> :A</code>
+
+Methods:
+- <code>ADD-IDENTITY :: :A</code>
+- <code>ADD :: (:A &rarr; :A &rarr; :A)</code>
+- <code>ADD-INVERSE :: (:A &rarr; :A)</code>
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#group-class">GROUP</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f64-type"><code>F64</code></a>)</code>
+- <code><a href="#group-class">GROUP</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f32-type"><code>F32</code></a>)</code>
+
+</details>
+
+
+
+***
+
+#### <a href="#ring-class"><code>RING</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L127-L129">src</a></sub></sup><a name="ring-class"></a>
+<code><a href="#group-class">GROUP</a> :A &rArr; <a href="#ring-class">RING</a> :A</code>
+
+Methods:
+- <code>MULTIPLY-IDENTITY :: :A</code>
+- <code>MULTIPLY :: (:A &rarr; :A &rarr; :A)</code>
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#ring-class">RING</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f64-type"><code>F64</code></a>)</code>
+- <code><a href="#ring-class">RING</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f32-type"><code>F32</code></a>)</code>
+
+</details>
+
+
+
+***
+
+### Values
+
+#### <a href="#dif-fft-raw-value"><code>(DIF-FFT-RAW DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L210-L223">src</a></sub></sup><a name="dif-fft-raw-value"></a>
+<code>&forall; :A :B :C. (<a href="#randomaccess-class">RANDOMACCESS</a> :B :A) (<a href="#randomaccess-class">RANDOMACCESS</a> :C :A) (<a href="#ring-class">RING</a> :A) (<a href="#cyclicgroup-class">CYCLICGROUP</a> :A) &rArr; (:B &rarr; :C &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
+
+A decimation-in-frequency fast fourier transform, reading from `src` and writing to `dst`.
+
+Input: natural order
+Output: bit-reversed order
+Normalization: none
+
+
+
+***
+
+#### <a href="#dif-ifft-raw-value"><code>(DIF-IFFT-RAW DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L230-L243">src</a></sub></sup><a name="dif-ifft-raw-value"></a>
+<code>&forall; :A :B :C. (<a href="#randomaccess-class">RANDOMACCESS</a> :B :A) (<a href="#randomaccess-class">RANDOMACCESS</a> :C :A) (<a href="#ring-class">RING</a> :A) (<a href="#cyclicgroup-class">CYCLICGROUP</a> :A) &rArr; (:B &rarr; :C &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
+
+A decimation-in-frequency inverse fast fourier transform, reading from `src` and writing to `dst`.
+
+Input: natural order
+Output: bit-reversed order
+Normalization: none
+
+
+
+***
+
+#### <a href="#dit-fft-raw-value"><code>(DIT-FFT-RAW DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L314-L328">src</a></sub></sup><a name="dit-fft-raw-value"></a>
+<code>&forall; :A :B :C. (<a href="#randomaccess-class">RANDOMACCESS</a> :B :A) (<a href="#randomaccess-class">RANDOMACCESS</a> :C :A) (<a href="#ring-class">RING</a> :A) (<a href="#cyclicgroup-class">CYCLICGROUP</a> :A) &rArr; (:B &rarr; :C &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
+
+A decimation-in-time fast fourier transform, reading from `src` and writing to `dst`.
+
+Input: bit-reversed order
+Output: natural order
+Normalization: none
+
+
+
+***
+
+#### <a href="#dit-ifft-raw-value"><code>(DIT-IFFT-RAW DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L335-L349">src</a></sub></sup><a name="dit-ifft-raw-value"></a>
+<code>&forall; :A :B :C. (<a href="#randomaccess-class">RANDOMACCESS</a> :B :A) (<a href="#randomaccess-class">RANDOMACCESS</a> :C :A) (<a href="#ring-class">RING</a> :A) (<a href="#cyclicgroup-class">CYCLICGROUP</a> :A) &rArr; (:B &rarr; :C &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
+
+A decimation-in-time inverse fast fourier transform, reading from `src` and writing to `dst`.
+
+Input: bit-reversed order
+Output: natural order
+Normalization: none
+
+
+
+***
+
+#### <a href="#divide-value"><code>(DIVIDE X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L135-L136">src</a></sub></sup><a name="divide-value"></a>
+<code>&forall; :A. <a href="#field-class">FIELD</a> :A &rArr; (:A &rarr; :A &rarr; :A)</code>
+
+
+***
+
+#### <a href="#fft-value"><code>(FFT STORAGE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L432-L444">src</a></sub></sup><a name="fft-value"></a>
+<code>&forall; :A :B :C. (<a href="#randomaccess-class">RANDOMACCESS</a> :B :A) (<a href="#randomaccess-class">RANDOMACCESS</a> :C :A) (<a href="#ring-class">RING</a> :A) (<a href="#cyclicgroup-class">CYCLICGROUP</a> :A) &rArr; (:B &rarr; :C)</code>
+
+Perform a fast Fourier transform on the data in `storage`.
+
+
+
+***
+
+#### <a href="#fft!-value"><code>(FFT! STORAGE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L358-L369">src</a></sub></sup><a name="fft!-value"></a>
+<code>&forall; :A :B. (<a href="#randomaccess-class">RANDOMACCESS</a> :B :A) (<a href="#ring-class">RING</a> :A) (<a href="#cyclicgroup-class">CYCLICGROUP</a> :A) &rArr; (:B &rarr; :B)</code>
+
+Perform an in-place fast Fourier transform on `storage`.
+
+
+
+***
+
+#### <a href="#fft-into!-value"><code>(FFT-INTO! DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L394-L406">src</a></sub></sup><a name="fft-into!-value"></a>
+<code>&forall; :A :B :C. (<a href="#randomaccess-class">RANDOMACCESS</a> :C :A) (<a href="#randomaccess-class">RANDOMACCESS</a> :B :A) (<a href="#ring-class">RING</a> :A) (<a href="#cyclicgroup-class">CYCLICGROUP</a> :A) &rArr; (:B &rarr; :C &rarr; :B)</code>
+
+Perform a fast Fourier transform of `src`, writing the result to `dst`. If `dst` is longer than `src`, then remaining elements of `dst` are left unmutated.
+
+
+
+***
+
+#### <a href="#ifft-value"><code>(IFFT STORAGE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L449-L465">src</a></sub></sup><a name="ifft-value"></a>
+<code>&forall; :A :B :C. (<a href="#randomaccess-class">RANDOMACCESS</a> :B :A) (<a href="#randomaccess-class">RANDOMACCESS</a> :C :A) (<a href="#field-class">FIELD</a> :A) (<a href="#cyclicgroup-class">CYCLICGROUP</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; (:B &rarr; :C)</code>
+
+Perform an inverse fast Fourier transform on the data in `storage`.
+
+
+
+***
+
+#### <a href="#ifft!-value"><code>(IFFT! STORAGE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L374-L389">src</a></sub></sup><a name="ifft!-value"></a>
+<code>&forall; :A :B. (<a href="#randomaccess-class">RANDOMACCESS</a> :B :A) (<a href="#field-class">FIELD</a> :A) (<a href="#cyclicgroup-class">CYCLICGROUP</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; (:B &rarr; :B)</code>
+
+Perform an in-place inverse fast Fourier transform on `storage`.
+
+
+
+***
+
+#### <a href="#ifft-into!-value"><code>(IFFT-INTO! DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L411-L427">src</a></sub></sup><a name="ifft-into!-value"></a>
+<code>&forall; :A :B :C. (<a href="#randomaccess-class">RANDOMACCESS</a> :C :A) (<a href="#randomaccess-class">RANDOMACCESS</a> :B :A) (<a href="#field-class">FIELD</a> :A) (<a href="#cyclicgroup-class">CYCLICGROUP</a> :A) (<a href="#num-class">NUM</a> :A) &rArr; (:B &rarr; :C &rarr; :B)</code>
+
+Perform an inverse fast Fourier transform of `src`, writing the result to `dst`. If `dst` is longer than `src`, then remaining elements of `dst` are left unmutated.
+
+
+
+***
+
+#### <a href="#subtract-value"><code>(SUBTRACT X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L124-L125">src</a></sub></sup><a name="subtract-value"></a>
+<code>&forall; :A. <a href="#group-class">GROUP</a> :A &rArr; (:A &rarr; :A &rarr; :A)</code>
+
+
+***
+
 # Package `COALTON-LIBRARY/BIG-FLOAT`<a name="coalton-library/big-float-package"></a>
 
 ### Types
@@ -1666,7 +1873,7 @@ RouND toward Zero.
 
 ### Classes
 
-#### <a href="#bits-class"><code>BITS</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/bits.lisp#L30-L41">src</a></sub></sup><a name="bits-class"></a>
+#### <a href="#bits-class"><code>BITS</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/bits.lisp#L36-L47">src</a></sub></sup><a name="bits-class"></a>
 <code><a href="#num-class">NUM</a> :A &rArr; <a href="#bits-class">BITS</a> :A</code>
 
 
@@ -1700,9 +1907,33 @@ Methods:
 
 ***
 
+#### <a href="#reversebits-class"><code>REVERSEBITS</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/bits.lisp#L63-L70">src</a></sub></sup><a name="reversebits-class"></a>
+<code><a href="#reversebits-class">REVERSEBITS</a> :A</code>
+
+
+A type class for number types that support bit reversal.
+
+Methods:
+- <code>REVERSE-BITS :: (:A &rarr; :A)</code><br/>Reverse the bits of `x`.
+- <code>REVERSE-N-BITS :: (<a href="#ufix-type"><code>UFIX</code></a> &rarr; :A &rarr; :A)</code><br/>Reverse the first `n` bits of `x` and set the rest to 0.
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#reversebits-class">REVERSEBITS</a> <a href="#u64-type"><code>U64</code></a></code>
+- <code><a href="#reversebits-class">REVERSEBITS</a> <a href="#ufix-type"><code>UFIX</code></a></code>
+- <code><a href="#reversebits-class">REVERSEBITS</a> <a href="#u32-type"><code>U32</code></a></code>
+- <code><a href="#reversebits-class">REVERSEBITS</a> <a href="#u16-type"><code>U16</code></a></code>
+- <code><a href="#reversebits-class">REVERSEBITS</a> <a href="#u8-type"><code>U8</code></a></code>
+
+</details>
+
+
+
+***
+
 ### Values
 
-#### <a href="#dpb-value"><code>(DPB NEWBYTE SIZE POSITION BITSTRING)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/bits.lisp#L44-L47">src</a></sub></sup><a name="dpb-value"></a>
+#### <a href="#dpb-value"><code>(DPB NEWBYTE SIZE POSITION BITSTRING)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/bits.lisp#L50-L53">src</a></sub></sup><a name="dpb-value"></a>
 <code>&forall; :A. <a href="#bits-class">BITS</a> :A &rArr; (:A &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; :A &rarr; :A)</code>
 
 Deposits a byte `newbyte` of size `size` into a bitstring `bitstring` at a position `position`.
@@ -1711,7 +1942,7 @@ Deposits a byte `newbyte` of size `size` into a bitstring `bitstring` at a posit
 
 ***
 
-#### <a href="#ldb-value"><code>(LDB SIZE POSITION BITSTRING)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/bits.lisp#L50-L53">src</a></sub></sup><a name="ldb-value"></a>
+#### <a href="#ldb-value"><code>(LDB SIZE POSITION BITSTRING)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/bits.lisp#L56-L59">src</a></sub></sup><a name="ldb-value"></a>
 <code>&forall; :A. <a href="#bits-class">BITS</a> :A &rArr; (<a href="#ufix-type"><code>UFIX</code></a> &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; :A &rarr; :A)</code>
 
 Deposits a byte of size `size` into a bitstring at a position `position`.
@@ -6010,9 +6241,17 @@ component types.
 - <code><a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
 - <code><a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A &rArr; <a href="#into-class">INTO</a> :A (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
 - <code><a href="#complexcomponent-class">COMPLEXCOMPONENT</a> :A &rArr; <a href="#num-class">NUM</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
+- <code><a href="#cyclicgroup-class">CYCLICGROUP</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f64-type"><code>F64</code></a>)</code>
+- <code><a href="#cyclicgroup-class">CYCLICGROUP</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f32-type"><code>F32</code></a>)</code>
 - <code><a href="#elementary-class">ELEMENTARY</a> :A &rArr; <a href="#exponentiable-class">EXPONENTIABLE</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
 - <code><a href="#elementary-class">ELEMENTARY</a> :A &rArr; <a href="#radical-class">RADICAL</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
 - <code><a href="#elementary-class">ELEMENTARY</a> :A &rArr; <a href="#trigonometric-class">TRIGONOMETRIC</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
+- <code><a href="#field-class">FIELD</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f64-type"><code>F64</code></a>)</code>
+- <code><a href="#field-class">FIELD</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f32-type"><code>F32</code></a>)</code>
+- <code><a href="#group-class">GROUP</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f64-type"><code>F64</code></a>)</code>
+- <code><a href="#group-class">GROUP</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f32-type"><code>F32</code></a>)</code>
+- <code><a href="#ring-class">RING</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f64-type"><code>F64</code></a>)</code>
+- <code><a href="#ring-class">RING</a> (<a href="#complex-type"><code>COMPLEX</code></a> <a href="#f32-type"><code>F32</code></a>)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#complex-type"><code>COMPLEX</code></a> :A)</code>
 
 </details>
@@ -8125,7 +8364,7 @@ Push `item` onto the end of `q`.
 
 ### Classes
 
-#### <a href="#randomaccess-class"><code>RANDOMACCESS</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/randomaccess.lisp#L36-L45">src</a></sub></sup><a name="randomaccess-class"></a>
+#### <a href="#randomaccess-class"><code>RANDOMACCESS</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/randomaccess.lisp#L39-L49">src</a></sub></sup><a name="randomaccess-class"></a>
 <code><a href="#randomaccess-class">RANDOMACCESS</a> :A :B</code>
 
 
@@ -8135,6 +8374,7 @@ It is permitted for any of `make`, `unsafe-aref`, or `unsafe-set!` to error.
 
 Methods:
 - <code>MAKE :: (<a href="#ufix-type"><code>UFIX</code></a> &rarr; :B &rarr; :A)</code>
+- <code>MAKE-UNINITIALIZED :: (<a href="#ufix-type"><code>UFIX</code></a> &rarr; :A)</code>
 - <code>LENGTH :: (:A &rarr; <a href="#ufix-type"><code>UFIX</code></a>)</code>
 - <code>READABLE? :: (:A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 - <code>WRITABLE? :: (:A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
@@ -8154,7 +8394,7 @@ Methods:
 
 ### Values
 
-#### <a href="#aref-value"><code>(AREF STORAGE INDEX)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/randomaccess.lisp#L50-L56">src</a></sub></sup><a name="aref-value"></a>
+#### <a href="#aref-value"><code>(AREF STORAGE INDEX)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/randomaccess.lisp#L55-L60">src</a></sub></sup><a name="aref-value"></a>
 <code>&forall; :A :B. <a href="#randomaccess-class">RANDOMACCESS</a> :A :B &rArr; (:A &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> :B))</code>
 
 Read the element at `index` of the random-access storage `storage`. Return `None` if the read is out-of-bounds or not permitted.
@@ -8163,10 +8403,28 @@ Read the element at `index` of the random-access storage `storage`. Return `None
 
 ***
 
-#### <a href="#set!-value"><code>(SET! STORAGE INDEX VALUE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/randomaccess.lisp#L59-L65">src</a></sub></sup><a name="set!-value"></a>
+#### <a href="#rotate!-value"><code>(ROTATE! STORAGE INDEX1 INDEX2)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/randomaccess.lisp#L79-L87">src</a></sub></sup><a name="rotate!-value"></a>
+<code>&forall; :A :B. <a href="#randomaccess-class">RANDOMACCESS</a> :B :A &rArr; (:B &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> <a href="#unit-type"><code>UNIT</code></a>))</code>
+
+Rotate the elements at indices `index1` and `index2` of the random-access storage `storage`. Return `None` if the indices are out-of-bounds or if reading from or writing to `storage` is not permitted.
+
+
+
+***
+
+#### <a href="#set!-value"><code>(SET! STORAGE INDEX VALUE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/randomaccess.lisp#L63-L68">src</a></sub></sup><a name="set!-value"></a>
 <code>&forall; :A :B. <a href="#randomaccess-class">RANDOMACCESS</a> :A :B &rArr; (:A &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; :B &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> <a href="#unit-type"><code>UNIT</code></a>))</code>
 
 Write the element `value` at `index` of the random-access storage `storage`. Return `None` if the write is out-of-bounds or not permitted.
+
+
+
+***
+
+#### <a href="#unsafe-rotate!-value"><code>(UNSAFE-ROTATE! STORAGE INDEX1 INDEX2)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/randomaccess.lisp#L71-L76">src</a></sub></sup><a name="unsafe-rotate!-value"></a>
+<code>&forall; :A :B. <a href="#randomaccess-class">RANDOMACCESS</a> :B :A &rArr; (:B &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
+
+Rotate the elements at indices `index1` and `index2` of the random-access storage `storage`.
 
 
 
