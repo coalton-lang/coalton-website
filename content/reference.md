@@ -9437,7 +9437,7 @@ Returns the runtime representation of the type of the given value.
 
 ### Types
 
-#### <a href="#vector-type"><code>VECTOR</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L62-L62">src</a></sub></sup><a name="vector-type"></a>
+#### <a href="#vector-type"><code>VECTOR</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L64-L64">src</a></sub></sup><a name="vector-type"></a>
 <details>
 <summary>Instances</summary>
 
@@ -9470,7 +9470,7 @@ Returns the runtime representation of the type of the given value.
 
 ### Values
 
-#### <a href="#append-value"><code>(APPEND V1 V2)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L224-L229">src</a></sub></sup><a name="append-value"></a>
+#### <a href="#append-value"><code>(APPEND V1 V2)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L251-L256">src</a></sub></sup><a name="append-value"></a>
 <code>&forall; :A. ((<a href="#vector-type"><code>VECTOR</code></a> :A) &rarr; (<a href="#vector-type"><code>VECTOR</code></a> :A) &rarr; (<a href="#vector-type"><code>VECTOR</code></a> :A))</code>
 
 Create a new vector containing the elements of `v1` followed by the elements of `v2`.
@@ -9479,7 +9479,7 @@ Create a new vector containing the elements of `v1` followed by the elements of 
 
 ***
 
-#### <a href="#capacity-value"><code>(CAPACITY V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L99-L102">src</a></sub></sup><a name="capacity-value"></a>
+#### <a href="#capacity-value"><code>(CAPACITY V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L113-L116">src</a></sub></sup><a name="capacity-value"></a>
 <code>&forall; :A. ((<a href="#vector-type"><code>VECTOR</code></a> :A) &rarr; <a href="#ufix-type"><code>UFIX</code></a>)</code>
 
 Returns the number of elements that `v` can store without resizing.
@@ -9488,7 +9488,7 @@ Returns the number of elements that `v` can store without resizing.
 
 ***
 
-#### <a href="#clear!-value"><code>(CLEAR! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L137-L139">src</a></sub></sup><a name="clear!-value"></a>
+#### <a href="#clear!-value"><code>(CLEAR! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L164-L166">src</a></sub></sup><a name="clear!-value"></a>
 <code>&forall; :A. ((<a href="#vector-type"><code>VECTOR</code></a> :A) &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
 
 Set the capacity of `v` to `0`.
@@ -9497,7 +9497,7 @@ Set the capacity of `v` to `0`.
 
 ***
 
-#### <a href="#copy-value"><code>(COPY V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L118-L123">src</a></sub></sup><a name="copy-value"></a>
+#### <a href="#copy-value"><code>(COPY V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L132-L137">src</a></sub></sup><a name="copy-value"></a>
 <code>&forall; :A. ((<a href="#vector-type"><code>VECTOR</code></a> :A) &rarr; (<a href="#vector-type"><code>VECTOR</code></a> :A))</code>
 
 Return a new vector containing the same elements as `v`.
@@ -9506,7 +9506,7 @@ Return a new vector containing the same elements as `v`.
 
 ***
 
-#### <a href="#empty?-value"><code>(EMPTY? V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L106-L108">src</a></sub></sup><a name="empty?-value"></a>
+#### <a href="#empty?-value"><code>(EMPTY? V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L120-L122">src</a></sub></sup><a name="empty?-value"></a>
 <code>&forall; :A. ((<a href="#vector-type"><code>VECTOR</code></a> :A) &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Is `v` empty?
@@ -9515,7 +9515,7 @@ Is `v` empty?
 
 ***
 
-#### <a href="#extend!-value"><code>(EXTEND! VEC ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L280-L296">src</a></sub></sup><a name="extend!-value"></a>
+#### <a href="#extend!-value"><code>(EXTEND! VEC ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L307-L323">src</a></sub></sup><a name="extend!-value"></a>
 <code>&forall; :A :B. <a href="#intoiterator-class">INTOITERATOR</a> :B :A &rArr; ((<a href="#vector-type"><code>VECTOR</code></a> :A) &rarr; :B &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
 
 Push every element in `iter` to the end of `vec`.
@@ -9524,7 +9524,7 @@ Push every element in `iter` to the end of `vec`.
 
 ***
 
-#### <a href="#find-elem-value"><code>(FIND-ELEM E V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L209-L221">src</a></sub></sup><a name="find-elem-value"></a>
+#### <a href="#find-elem-value"><code>(FIND-ELEM E V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L236-L248">src</a></sub></sup><a name="find-elem-value"></a>
 <code>&forall; :A. <a href="#eq-class">EQ</a> :A &rArr; (:A &rarr; (<a href="#vector-type"><code>VECTOR</code></a> :A) &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> <a href="#ufix-type"><code>UFIX</code></a>))</code>
 
 Find the index of element `e` in `v`.
@@ -9533,7 +9533,7 @@ Find the index of element `e` in `v`.
 
 ***
 
-#### <a href="#head-value"><code>(HEAD V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L186-L188">src</a></sub></sup><a name="head-value"></a>
+#### <a href="#head-value"><code>(HEAD V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L213-L215">src</a></sub></sup><a name="head-value"></a>
 <code>&forall; :A. ((<a href="#vector-type"><code>VECTOR</code></a> :A) &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> :A))</code>
 
 Return the first item of `v`.
@@ -9542,7 +9542,7 @@ Return the first item of `v`.
 
 ***
 
-#### <a href="#head-unsafe-value"><code>(HEAD-UNSAFE V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L192-L194">src</a></sub></sup><a name="head-unsafe-value"></a>
+#### <a href="#head-unsafe-value"><code>(HEAD-UNSAFE V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L219-L221">src</a></sub></sup><a name="head-unsafe-value"></a>
 <code>&forall; :A. ((<a href="#vector-type"><code>VECTOR</code></a> :A) &rarr; :A)</code>
 
 Return the first item of `v` without first checking if `v` is empty.
@@ -9551,7 +9551,7 @@ Return the first item of `v` without first checking if `v` is empty.
 
 ***
 
-#### <a href="#index-value"><code>(INDEX INDEX V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L163-L167">src</a></sub></sup><a name="index-value"></a>
+#### <a href="#index-value"><code>(INDEX INDEX V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L190-L194">src</a></sub></sup><a name="index-value"></a>
 <code>&forall; :A. (<a href="#ufix-type"><code>UFIX</code></a> &rarr; (<a href="#vector-type"><code>VECTOR</code></a> :A) &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> :A))</code>
 
 Return the `index`th element of `v`.
@@ -9560,7 +9560,7 @@ Return the `index`th element of `v`.
 
 ***
 
-#### <a href="#index-unsafe-value"><code>(INDEX-UNSAFE IDX V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L171-L174">src</a></sub></sup><a name="index-unsafe-value"></a>
+#### <a href="#index-unsafe-value"><code>(INDEX-UNSAFE IDX V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L198-L201">src</a></sub></sup><a name="index-unsafe-value"></a>
 <code>&forall; :A. (<a href="#ufix-type"><code>UFIX</code></a> &rarr; (<a href="#vector-type"><code>VECTOR</code></a> :A) &rarr; :A)</code>
 
 Return the `idx`th element of `v` without checking if the element exists.
@@ -9569,7 +9569,7 @@ Return the `idx`th element of `v` without checking if the element exists.
 
 ***
 
-#### <a href="#last-value"><code>(LAST V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L197-L201">src</a></sub></sup><a name="last-value"></a>
+#### <a href="#last-value"><code>(LAST V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L224-L228">src</a></sub></sup><a name="last-value"></a>
 <code>&forall; :A. ((<a href="#vector-type"><code>VECTOR</code></a> :A) &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> :A))</code>
 
 Return the last element of `v`.
@@ -9578,7 +9578,7 @@ Return the last element of `v`.
 
 ***
 
-#### <a href="#last-unsafe-value"><code>(LAST-UNSAFE V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L204-L206">src</a></sub></sup><a name="last-unsafe-value"></a>
+#### <a href="#last-unsafe-value"><code>(LAST-UNSAFE V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L231-L233">src</a></sub></sup><a name="last-unsafe-value"></a>
 <code>&forall; :A. ((<a href="#vector-type"><code>VECTOR</code></a> :A) &rarr; :A)</code>
 
 Return the last element of `v` without first checking if `v` is empty.
@@ -9587,7 +9587,7 @@ Return the last element of `v` without first checking if `v` is empty.
 
 ***
 
-#### <a href="#length-value"><code>(LENGTH V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L92-L95">src</a></sub></sup><a name="length-value"></a>
+#### <a href="#length-value"><code>(LENGTH V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L94-L97">src</a></sub></sup><a name="length-value"></a>
 <code>&forall; :A. ((<a href="#vector-type"><code>VECTOR</code></a> :A) &rarr; <a href="#ufix-type"><code>UFIX</code></a>)</code>
 
 Returns the length of `v`.
@@ -9596,7 +9596,7 @@ Returns the length of `v`.
 
 ***
 
-#### <a href="#new-value"><code>(NEW _)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L66-L68">src</a></sub></sup><a name="new-value"></a>
+#### <a href="#new-value"><code>(NEW _)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L68-L70">src</a></sub></sup><a name="new-value"></a>
 <code>&forall; :A. (<a href="#unit-type"><code>UNIT</code></a> &rarr; (<a href="#vector-type"><code>VECTOR</code></a> :A))</code>
 
 Create a new empty vector
@@ -9605,7 +9605,7 @@ Create a new empty vector
 
 ***
 
-#### <a href="#pop!-value"><code>(POP! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L149-L153">src</a></sub></sup><a name="pop!-value"></a>
+#### <a href="#pop!-value"><code>(POP! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L176-L180">src</a></sub></sup><a name="pop!-value"></a>
 <code>&forall; :A. ((<a href="#vector-type"><code>VECTOR</code></a> :A) &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> :A))</code>
 
 Remove and return the last item of `v`.
@@ -9614,7 +9614,7 @@ Remove and return the last item of `v`.
 
 ***
 
-#### <a href="#pop-unsafe!-value"><code>(POP-UNSAFE! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L157-L160">src</a></sub></sup><a name="pop-unsafe!-value"></a>
+#### <a href="#pop-unsafe!-value"><code>(POP-UNSAFE! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L184-L187">src</a></sub></sup><a name="pop-unsafe!-value"></a>
 <code>&forall; :A. ((<a href="#vector-type"><code>VECTOR</code></a> :A) &rarr; :A)</code>
 
 Remove and return the last item of `v` without checking if the vector is empty.
@@ -9623,7 +9623,7 @@ Remove and return the last item of `v` without checking if the vector is empty.
 
 ***
 
-#### <a href="#push!-value"><code>(PUSH! ITEM V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L143-L146">src</a></sub></sup><a name="push!-value"></a>
+#### <a href="#push!-value"><code>(PUSH! ITEM V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L170-L173">src</a></sub></sup><a name="push!-value"></a>
 <code>&forall; :A. (:A &rarr; (<a href="#vector-type"><code>VECTOR</code></a> :A) &rarr; <a href="#ufix-type"><code>UFIX</code></a>)</code>
 
 Append `item` to `v` and resize `v` if necessary, returning the index of the new item.
@@ -9632,7 +9632,18 @@ Append `item` to `v` and resize `v` if necessary, returning the index of the new
 
 ***
 
-#### <a href="#reverse-value"><code>(REVERSE V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L238-L244">src</a></sub></sup><a name="reverse-value"></a>
+#### <a href="#resect!-value"><code>(RESECT! V START END)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L151-L160">src</a></sub></sup><a name="resect!-value"></a>
+<code>&forall; :A. ((<a href="#vector-type"><code>VECTOR</code></a> :A) &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
+
+Destructively kills a subsequence in a vector bounded by given indices.
+
+`start` index is inclusive and `end` index is exclusive.
+
+
+
+***
+
+#### <a href="#reverse-value"><code>(REVERSE V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L265-L271">src</a></sub></sup><a name="reverse-value"></a>
 <code>&forall; :A. ((<a href="#vector-type"><code>VECTOR</code></a> :A) &rarr; (<a href="#vector-type"><code>VECTOR</code></a> :A))</code>
 
 Returns a fresh vector with the elements of vector `v` in reverse order.  The original vector isn't modified.
@@ -9641,7 +9652,7 @@ Returns a fresh vector with the elements of vector `v` in reverse order.  The or
 
 ***
 
-#### <a href="#reverse!-value"><code>(REVERSE! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L232-L235">src</a></sub></sup><a name="reverse!-value"></a>
+#### <a href="#reverse!-value"><code>(REVERSE! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L259-L262">src</a></sub></sup><a name="reverse!-value"></a>
 <code>&forall; :A. ((<a href="#vector-type"><code>VECTOR</code></a> :A) &rarr; (<a href="#vector-type"><code>VECTOR</code></a> :A))</code>
 
 Returns a vector with the elements of vector `v` in reverse order.  The original vector may be destroyed to produce the result.
@@ -9650,7 +9661,7 @@ Returns a vector with the elements of vector `v` in reverse order.  The original
 
 ***
 
-#### <a href="#set!-value"><code>(SET! IDX ITEM V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L178-L182">src</a></sub></sup><a name="set!-value"></a>
+#### <a href="#set!-value"><code>(SET! IDX ITEM V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L205-L209">src</a></sub></sup><a name="set!-value"></a>
 <code>&forall; :A. (<a href="#ufix-type"><code>UFIX</code></a> &rarr; :A &rarr; (<a href="#vector-type"><code>VECTOR</code></a> :A) &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
 
 Set the `idx`th element of `v` to `item`. This function left intentionally unsafe because it does not have a return value to check.
@@ -9659,7 +9670,7 @@ Set the `idx`th element of `v` to `item`. This function left intentionally unsaf
 
 ***
 
-#### <a href="#set-capacity!-value"><code>(SET-CAPACITY! NEW-CAPACITY V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L126-L133">src</a></sub></sup><a name="set-capacity!-value"></a>
+#### <a href="#set-capacity!-value"><code>(SET-CAPACITY! NEW-CAPACITY V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L140-L147">src</a></sub></sup><a name="set-capacity!-value"></a>
 <code>&forall; :A. (<a href="#ufix-type"><code>UFIX</code></a> &rarr; (<a href="#vector-type"><code>VECTOR</code></a> :A) &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
 
 Set the capacity of `v` to `new-capacity`. Setting the capacity to lower then the length will remove elements from the end.
@@ -9668,7 +9679,7 @@ Set the capacity of `v` to `new-capacity`. Setting the capacity to lower then th
 
 ***
 
-#### <a href="#singleton-value"><code>(SINGLETON X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L86-L88">src</a></sub></sup><a name="singleton-value"></a>
+#### <a href="#singleton-value"><code>(SINGLETON X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L88-L90">src</a></sub></sup><a name="singleton-value"></a>
 <code>&forall; :A. (:A &rarr; (<a href="#vector-type"><code>VECTOR</code></a> :A))</code>
 
 Create a new vector with a single element equal to `x`
@@ -9677,7 +9688,7 @@ Create a new vector with a single element equal to `x`
 
 ***
 
-#### <a href="#singleton?-value"><code>(SINGLETON? V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L112-L114">src</a></sub></sup><a name="singleton?-value"></a>
+#### <a href="#singleton?-value"><code>(SINGLETON? V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L126-L128">src</a></sub></sup><a name="singleton?-value"></a>
 <code>&forall; :A. ((<a href="#vector-type"><code>VECTOR</code></a> :A) &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Is `v` a singleton?
@@ -9686,7 +9697,7 @@ Is `v` a singleton?
 
 ***
 
-#### <a href="#sort!-value"><code>(SORT! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L275-L277">src</a></sub></sup><a name="sort!-value"></a>
+#### <a href="#sort!-value"><code>(SORT! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L302-L304">src</a></sub></sup><a name="sort!-value"></a>
 <code>&forall; :A. <a href="#ord-class">ORD</a> :A &rArr; ((<a href="#vector-type"><code>VECTOR</code></a> :A) &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
 
 Sort a vector in-place in ascending order.
@@ -9695,7 +9706,7 @@ Sort a vector in-place in ascending order.
 
 ***
 
-#### <a href="#sort-by!-value"><code>(SORT-BY! F V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L264-L271">src</a></sub></sup><a name="sort-by!-value"></a>
+#### <a href="#sort-by!-value"><code>(SORT-BY! F V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L291-L298">src</a></sub></sup><a name="sort-by!-value"></a>
 <code>&forall; :A. ((:A &rarr; :A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>) &rarr; (<a href="#vector-type"><code>VECTOR</code></a> :A) &rarr; <a href="#unit-type"><code>UNIT</code></a>)</code>
 
 Sort a vector in-place with predicate function `f`.
@@ -9704,7 +9715,18 @@ Sort a vector in-place with predicate function `f`.
 
 ***
 
-#### <a href="#swap-remove!-value"><code>(SWAP-REMOVE! IDX VEC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L247-L251">src</a></sub></sup><a name="swap-remove!-value"></a>
+#### <a href="#subseq-value"><code>(SUBSEQ V START END)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L101-L109">src</a></sub></sup><a name="subseq-value"></a>
+<code>&forall; :A. ((<a href="#vector-type"><code>VECTOR</code></a> :A) &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; (<a href="#vector-type"><code>VECTOR</code></a> :A))</code>
+
+Compute a subseq of a vector bounded by given indices.
+
+`start` index is inclusive and `end` index is exclusive.
+
+
+
+***
+
+#### <a href="#swap-remove!-value"><code>(SWAP-REMOVE! IDX VEC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L274-L278">src</a></sub></sup><a name="swap-remove!-value"></a>
 <code>&forall; :A. (<a href="#ufix-type"><code>UFIX</code></a> &rarr; (<a href="#vector-type"><code>VECTOR</code></a> :A) &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> :A))</code>
 
 Remove the element `idx` from `vec` and replace it with the last element in `vec`. Then return the removed element.
@@ -9713,7 +9735,7 @@ Remove the element `idx` from `vec` and replace it with the last element in `vec
 
 ***
 
-#### <a href="#swap-remove-unsafe!-value"><code>(SWAP-REMOVE-UNSAFE! IDX VEC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L254-L261">src</a></sub></sup><a name="swap-remove-unsafe!-value"></a>
+#### <a href="#swap-remove-unsafe!-value"><code>(SWAP-REMOVE-UNSAFE! IDX VEC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L281-L288">src</a></sub></sup><a name="swap-remove-unsafe!-value"></a>
 <code>&forall; :A. (<a href="#ufix-type"><code>UFIX</code></a> &rarr; (<a href="#vector-type"><code>VECTOR</code></a> :A) &rarr; :A)</code>
 
 Remove the element `idx` from `vec` and replace it with the last element in `vec` without bounds checking. Then return the removed element.
@@ -9722,7 +9744,7 @@ Remove the element `idx` from `vec` and replace it with the last element in `vec
 
 ***
 
-#### <a href="#with-capacity-value"><code>(WITH-CAPACITY N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L72-L75">src</a></sub></sup><a name="with-capacity-value"></a>
+#### <a href="#with-capacity-value"><code>(WITH-CAPACITY N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L74-L77">src</a></sub></sup><a name="with-capacity-value"></a>
 <code>&forall; :A. (<a href="#ufix-type"><code>UFIX</code></a> &rarr; (<a href="#vector-type"><code>VECTOR</code></a> :A))</code>
 
 Create a new vector with `n` elements preallocated.
@@ -9731,7 +9753,7 @@ Create a new vector with `n` elements preallocated.
 
 ***
 
-#### <a href="#with-initial-element-value"><code>(WITH-INITIAL-ELEMENT N X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L78-L82">src</a></sub></sup><a name="with-initial-element-value"></a>
+#### <a href="#with-initial-element-value"><code>(WITH-INITIAL-ELEMENT N X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L80-L84">src</a></sub></sup><a name="with-initial-element-value"></a>
 <code>&forall; :A. (<a href="#ufix-type"><code>UFIX</code></a> &rarr; :A &rarr; (<a href="#vector-type"><code>VECTOR</code></a> :A))</code>
 
 Create a new vector with `n` elements equal to `x`.
