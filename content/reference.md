@@ -7815,7 +7815,7 @@ A monadic computation that returns a Result.
 
 ### Types
 
-#### <a href="#st-type"><code>ST</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.lisp#L26-L29">src</a></sub></sup><a name="st-type"></a>
+#### <a href="#st-type"><code>ST</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.lisp#L29-L32">src</a></sub></sup><a name="st-type"></a>
 - <code>(ST (:A &rarr; (<a href="#tuple-type"><code>TUPLE</code></a> :A :B)))</code>
 
 A computation of a value which may affect the state.
@@ -7837,7 +7837,7 @@ Represented as a closure from initial state to updated state and value.
 
 ### Values
 
-#### <a href="#modify-value"><code>(MODIFY STATEF)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.lisp#L53-L57">src</a></sub></sup><a name="modify-value"></a>
+#### <a href="#modify-value"><code>(MODIFY FS-&gt;S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.lisp#L56-L59">src</a></sub></sup><a name="modify-value"></a>
 <code>&forall; :A. ((:A &rarr; :A) &rarr; (<a href="#st-type"><code>ST</code></a> :A <a href="#unit-type"><code>UNIT</code></a>))</code>
 
 Modify the state in a StatefulComputation, discarding the old state.
@@ -7846,16 +7846,34 @@ Modify the state in a StatefulComputation, discarding the old state.
 
 ***
 
-#### <a href="#put-value"><code>(PUT STATE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.lisp#L33-L35">src</a></sub></sup><a name="put-value"></a>
-<code>&forall; :A. (:A &rarr; (<a href="#st-type"><code>ST</code></a> :A <a href="#unit-type"><code>UNIT</code></a>))</code>
+#### <a href="#modify-get-value"><code>(MODIFY-GET FS-&gt;S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.lisp#L63-L67">src</a></sub></sup><a name="modify-get-value"></a>
+<code>&forall; :A. ((:A &rarr; :A) &rarr; (<a href="#st-type"><code>ST</code></a> :A :A))</code>
 
-A StatefulComputation with state set to be given state. The returned value is Unit.
+Modify the state in a StatefulComputation, discarding the old state. Return the new state.
 
 
 
 ***
 
-#### <a href="#run-value"><code>(RUN SC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.lisp#L45-L49">src</a></sub></sup><a name="run-value"></a>
+#### <a href="#modify-swap-value"><code>(MODIFY-SWAP FS-&gt;S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.lisp#L77-L80">src</a></sub></sup><a name="modify-swap-value"></a>
+<code>&forall; :A. ((:A &rarr; :A) &rarr; (<a href="#st-type"><code>ST</code></a> :A :A))</code>
+
+Modify the state in a StatefulComputation, returning the old state.
+
+
+
+***
+
+#### <a href="#put-value"><code>(PUT STATE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.lisp#L36-L38">src</a></sub></sup><a name="put-value"></a>
+<code>&forall; :A. (:A &rarr; (<a href="#st-type"><code>ST</code></a> :A <a href="#unit-type"><code>UNIT</code></a>))</code>
+
+A StatefulComputation with state set to be the given state. The returned value is Unit.
+
+
+
+***
+
+#### <a href="#run-value"><code>(RUN SC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.lisp#L48-L52">src</a></sub></sup><a name="run-value"></a>
 <code>&forall; :A :B. ((<a href="#st-type"><code>ST</code></a> :A :B) &rarr; :A &rarr; (<a href="#tuple-type"><code>TUPLE</code></a> :A :B))</code>
 
 Runs a StatefulComputation to produce a final updated state and value given an initial state
@@ -7864,7 +7882,16 @@ Runs a StatefulComputation to produce a final updated state and value given an i
 
 ***
 
-#### <a href="#get-value"><code>GET</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.lisp#L39-L41">src</a></sub></sup><a name="get-value"></a>
+#### <a href="#swap-value"><code>(SWAP STATE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.lisp#L71-L73">src</a></sub></sup><a name="swap-value"></a>
+<code>&forall; :A. (:A &rarr; (<a href="#st-type"><code>ST</code></a> :A :A))</code>
+
+A StatefulComputation with state set to be the given state. The old state is returned.
+
+
+
+***
+
+#### <a href="#get-value"><code>GET</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.lisp#L42-L44">src</a></sub></sup><a name="get-value"></a>
 <code>&forall; :A. (<a href="#st-type"><code>ST</code></a> :A :A)</code>
 
 A StatefulComputation which returns the current state as the value.
