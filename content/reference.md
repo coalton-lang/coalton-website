@@ -751,6 +751,7 @@ A type that allows indicating the presence or absence of a value. The underlying
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#ord-class">ORD</a> (<a href="#optional-type"><code>OPTIONAL</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#optional-type"><code>OPTIONAL</code></a> :A)</code>
 - <code><a href="#semigroup-class">SEMIGROUP</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#optional-type"><code>OPTIONAL</code></a> :A)</code>
+- <code><a href="#traversable-class">TRAVERSABLE</a> <a href="#optional-type"><code>OPTIONAL</code></a></code>
 - <code><a href="#unwrappable-class">UNWRAPPABLE</a> <a href="#optional-type"><code>OPTIONAL</code></a></code>
 
 </details>
@@ -3150,6 +3151,7 @@ Methods:
 - <code><a href="#traversable-class">TRAVERSABLE</a> :A &rArr; <a href="#traversable-class">TRAVERSABLE</a> (<a href="#free-type"><code>FREE</code></a> :A)</code>
 - <code><a href="#traversable-class">TRAVERSABLE</a> <a href="#list-type"><code>LIST</code></a></code>
 - <code><a href="#traversable-class">TRAVERSABLE</a> (<a href="#result-type"><code>RESULT</code></a> :A)</code>
+- <code><a href="#traversable-class">TRAVERSABLE</a> <a href="#optional-type"><code>OPTIONAL</code></a></code>
 
 </details>
 
