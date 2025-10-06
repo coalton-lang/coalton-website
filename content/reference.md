@@ -44,6 +44,7 @@ layout: two-pane
 - <a href="#coalton-library/math/hyperdual-package"><code>COALTON-LIBRARY/MATH/HYPERDUAL</code></a>
 - <a href="#coalton-library/math/integral-package"><code>COALTON-LIBRARY/MATH/INTEGRAL</code></a>
 - <a href="#coalton-library/math/real-package"><code>COALTON-LIBRARY/MATH/REAL</code></a>
+- <a href="#coalton-library/monad/classes-package"><code>COALTON-LIBRARY/MONAD/CLASSES</code></a>
 - <a href="#coalton-library/monad/environment-package"><code>COALTON-LIBRARY/MONAD/ENVIRONMENT</code></a>
 - <a href="#coalton-library/monad/free-package"><code>COALTON-LIBRARY/MONAD/FREE</code></a>
 - <a href="#coalton-library/monad/freet-package"><code>COALTON-LIBRARY/MONAD/FREET</code></a>
@@ -51,6 +52,7 @@ layout: two-pane
 - <a href="#coalton-library/monad/optionalt-package"><code>COALTON-LIBRARY/MONAD/OPTIONALT</code></a>
 - <a href="#coalton-library/monad/resultt-package"><code>COALTON-LIBRARY/MONAD/RESULTT</code></a>
 - <a href="#coalton-library/monad/state-package"><code>COALTON-LIBRARY/MONAD/STATE</code></a>
+- <a href="#coalton-library/monad/statet-package"><code>COALTON-LIBRARY/MONAD/STATET</code></a>
 - <a href="#coalton-library/optional-package"><code>COALTON-LIBRARY/OPTIONAL</code></a>
 - <a href="#coalton-library/ordmap-package"><code>COALTON-LIBRARY/ORDMAP</code></a>
 - <a href="#coalton-library/ordtree-package"><code>COALTON-LIBRARY/ORDTREE</code></a>
@@ -2456,6 +2458,7 @@ Methods:
 - <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#applicative-class">APPLICATIVE</a> (<a href="#optionalt-type"><code>OPTIONALT</code></a> :A)</code>
 - <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#applicative-class">APPLICATIVE</a> ((<a href="#resultt-type"><code>RESULTT</code></a> :B) :A)</code>
 - <code><a href="#applicative-class">APPLICATIVE</a> :A &rArr; <a href="#applicative-class">APPLICATIVE</a> ((<a href="#envt-type"><code>ENVT</code></a> :B) :A)</code>
+- <code><a href="#applicative-class">APPLICATIVE</a> :A &rArr; <a href="#applicative-class">APPLICATIVE</a> ((<a href="#statet-type"><code>STATET</code></a> :B) :A)</code>
 - <code><a href="#applicative-class">APPLICATIVE</a> (<a href="#st-type"><code>ST</code></a> :A)</code>
 - <code><a href="#applicative-class">APPLICATIVE</a> <a href="#identity-type"><code>IDENTITY</code></a></code>
 - <code><a href="#applicative-class">APPLICATIVE</a> <a href="#list-type"><code>LIST</code></a></code>
@@ -2650,6 +2653,7 @@ Methods:
 - <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#functor-class">FUNCTOR</a> (<a href="#optionalt-type"><code>OPTIONALT</code></a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#functor-class">FUNCTOR</a> ((<a href="#resultt-type"><code>RESULTT</code></a> :B) :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#functor-class">FUNCTOR</a> ((<a href="#envt-type"><code>ENVT</code></a> :B) :A)</code>
+- <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#functor-class">FUNCTOR</a> ((<a href="#statet-type"><code>STATET</code></a> :B) :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> (<a href="#st-type"><code>ST</code></a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#identity-type"><code>IDENTITY</code></a></code>
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#queue-type"><code>QUEUE</code></a></code>
@@ -2914,6 +2918,7 @@ Methods:
 - <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monad-class">MONAD</a> (<a href="#optionalt-type"><code>OPTIONALT</code></a> :A)</code>
 - <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monad-class">MONAD</a> ((<a href="#resultt-type"><code>RESULTT</code></a> :B) :A)</code>
 - <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monad-class">MONAD</a> ((<a href="#envt-type"><code>ENVT</code></a> :B) :A)</code>
+- <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monad-class">MONAD</a> ((<a href="#statet-type"><code>STATET</code></a> :B) :A)</code>
 - <code><a href="#monad-class">MONAD</a> (<a href="#st-type"><code>ST</code></a> :A)</code>
 - <code><a href="#monad-class">MONAD</a> <a href="#identity-type"><code>IDENTITY</code></a></code>
 - <code><a href="#monad-class">MONAD</a> <a href="#list-type"><code>LIST</code></a></code>
@@ -2959,6 +2964,7 @@ Methods:
 - <code><a href="#monadtransformer-class">MONADTRANSFORMER</a> <a href="#optionalt-type"><code>OPTIONALT</code></a></code>
 - <code><a href="#monadtransformer-class">MONADTRANSFORMER</a> (<a href="#resultt-type"><code>RESULTT</code></a> :A)</code>
 - <code><a href="#monadtransformer-class">MONADTRANSFORMER</a> (<a href="#envt-type"><code>ENVT</code></a> :A)</code>
+- <code><a href="#monadtransformer-class">MONADTRANSFORMER</a> (<a href="#statet-type"><code>STATET</code></a> :A)</code>
 
 </details>
 
@@ -7450,16 +7456,64 @@ Returns the integer closest/equal to `x` that is within `0` and `x`.
 
 ***
 
-# Package `COALTON-LIBRARY/MONAD/ENVIRONMENT`<a name="coalton-library/monad/environment-package"></a>
+# Package `COALTON-LIBRARY/MONAD/CLASSES`<a name="coalton-library/monad/classes-package"></a>
 
-### Types
+### Classes
 
-#### <a href="#env-type"><code>ENV</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L40-L40">src</a></sub></sup><a name="env-type"></a>
+#### <a href="#monadenvironment-class"><code>MONADENVIRONMENT</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/classes.lisp#L26-L36">src</a></sub></sup><a name="monadenvironment-class"></a>
+<code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monadenvironment-class">MONADENVIRONMENT</a> :B :A</code>
+
+
+A monad capable of a function in a computation environment.
+
+Methods:
+- <code>ASK :: (:A :B)</code><br/>Retrieves the computation environment.
+- <code>LOCAL :: ((:B &rarr; :B) &rarr; (:A :C) &rarr; (:A :C))</code><br/>Run a computation in a modified environment.
+- <code>ASKS :: ((:B &rarr; :D) &rarr; (:A :D))</code><br/>Retrieve an aspect of the computation environment.
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monadenvironment-class">MONADENVIRONMENT</a> :B ((<a href="#envt-type"><code>ENVT</code></a> :B) :A)</code>
+- <code><a href="#monadenvironment-class">MONADENVIRONMENT</a> :A :B &rArr; <a href="#monadenvironment-class">MONADENVIRONMENT</a> :A ((<a href="#statet-type"><code>STATET</code></a> :C) :B)</code>
+
+</details>
+
 
 
 ***
 
-#### <a href="#envt-type"><code>ENVT</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L35-L38">src</a></sub></sup><a name="envt-type"></a>
+#### <a href="#monadstate-class"><code>MONADSTATE</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/classes.lisp#L38-L48">src</a></sub></sup><a name="monadstate-class"></a>
+<code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monadstate-class">MONADSTATE</a> :B :A</code>
+
+
+A monad capable of tracking state in a computation.
+
+Methods:
+- <code>GET :: (:A :B)</code><br/>Retrieve the computation state.
+- <code>PUT :: (:B &rarr; (:A <a href="#unit-type"><code>UNIT</code></a>))</code><br/>Set the state to a given value.
+- <code>MODIFY :: ((:B &rarr; :B) &rarr; (:A <a href="#unit-type"><code>UNIT</code></a>))</code><br/>Modify the computation state, discarding the old state.
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#monadstate-class">MONADSTATE</a> :A :B &rArr; <a href="#monadstate-class">MONADSTATE</a> :A ((<a href="#envt-type"><code>ENVT</code></a> :C) :B)</code>
+- <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monadstate-class">MONADSTATE</a> :B ((<a href="#statet-type"><code>STATET</code></a> :B) :A)</code>
+
+</details>
+
+
+
+***
+
+# Package `COALTON-LIBRARY/MONAD/ENVIRONMENT`<a name="coalton-library/monad/environment-package"></a>
+
+### Types
+
+#### <a href="#env-type"><code>ENV</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L47-L47">src</a></sub></sup><a name="env-type"></a>
+
+
+***
+
+#### <a href="#envt-type"><code>ENVT</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L42-L45">src</a></sub></sup><a name="envt-type"></a>
 - <code>(ENVT (:A &rarr; (:B :C)))</code>
 
 A monadic computation that runs inside an :env environment.
@@ -7472,6 +7526,7 @@ Equivalent to Haskell's ReaderT monad https://hackage.haskell.org/package/transf
 - <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#functor-class">FUNCTOR</a> ((<a href="#envt-type"><code>ENVT</code></a> :B) :A)</code>
 - <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monad-class">MONAD</a> ((<a href="#envt-type"><code>ENVT</code></a> :B) :A)</code>
 - <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monadenvironment-class">MONADENVIRONMENT</a> :B ((<a href="#envt-type"><code>ENVT</code></a> :B) :A)</code>
+- <code><a href="#monadstate-class">MONADSTATE</a> :A :B &rArr; <a href="#monadstate-class">MONADSTATE</a> :A ((<a href="#envt-type"><code>ENVT</code></a> :C) :B)</code>
 - <code><a href="#monadtransformer-class">MONADTRANSFORMER</a> (<a href="#envt-type"><code>ENVT</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (((<a href="#envt-type"><code>ENVT</code></a> :A) :B) :C)</code>
 
@@ -7481,32 +7536,9 @@ Equivalent to Haskell's ReaderT monad https://hackage.haskell.org/package/transf
 
 ***
 
-### Classes
-
-#### <a href="#monadenvironment-class"><code>MONADENVIRONMENT</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L78-L88">src</a></sub></sup><a name="monadenvironment-class"></a>
-<code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monadenvironment-class">MONADENVIRONMENT</a> :B :A</code>
-
-
-A monad capable of a function in a computation environment.
-
-Methods:
-- <code>ASK :: (:A :B)</code><br/>Retrieves the computation environment.
-- <code>LOCAL :: ((:B &rarr; :B) &rarr; (:A :B) &rarr; (:A :B))</code><br/>Run a computation in a modified environment.
-- <code>ASKS :: ((:B &rarr; :C) &rarr; (:A :C))</code><br/>Retrieve an aspect of the computation environment.
-<details>
-<summary>Instances</summary>
-
-- <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monadenvironment-class">MONADENVIRONMENT</a> :B ((<a href="#envt-type"><code>ENVT</code></a> :B) :A)</code>
-
-</details>
-
-
-
-***
-
 ### Values
 
-#### <a href="#asks-envt-value"><code>(ASKS-ENVT FENV-&gt;A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L57-L60">src</a></sub></sup><a name="asks-envt-value"></a>
+#### <a href="#asks-envt-value"><code>(ASKS-ENVT FENV-&gt;A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L64-L67">src</a></sub></sup><a name="asks-envt-value"></a>
 <code>&forall; :A :B :C. <a href="#applicative-class">APPLICATIVE</a> :C &rArr; ((:A &rarr; :B) &rarr; (((<a href="#envt-type"><code>ENVT</code></a> :A) :C) :B))</code>
 
 Retrieve an aspect of the computation environment.
@@ -7515,13 +7547,13 @@ Retrieve an aspect of the computation environment.
 
 ***
 
-#### <a href="#lift-envt-value"><code>(LIFT-ENVT M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L103-L104">src</a></sub></sup><a name="lift-envt-value"></a>
+#### <a href="#lift-envt-value"><code>(LIFT-ENVT M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L94-L95">src</a></sub></sup><a name="lift-envt-value"></a>
 <code>&forall; :A :B :C. ((:A :B) &rarr; (((<a href="#envt-type"><code>ENVT</code></a> :C) :A) :B))</code>
 
 
 ***
 
-#### <a href="#local-envt-value"><code>(LOCAL-ENVT FENV (ENVT FENV-&gt;A))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L44-L47">src</a></sub></sup><a name="local-envt-value"></a>
+#### <a href="#local-envt-value"><code>(LOCAL-ENVT FENV (ENVT FENV-&gt;A))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L51-L54">src</a></sub></sup><a name="local-envt-value"></a>
 <code>&forall; :A :B :C. ((:A &rarr; :A) &rarr; (((<a href="#envt-type"><code>ENVT</code></a> :A) :B) :C) &rarr; (((<a href="#envt-type"><code>ENVT</code></a> :A) :B) :C))</code>
 
 Run a computation in a modified environment.
@@ -7530,13 +7562,13 @@ Run a computation in a modified environment.
 
 ***
 
-#### <a href="#map-envt-value"><code>(MAP-ENVT FMA-&gt;NB (ENVT FENV-&gt;MA))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L97-L99">src</a></sub></sup><a name="map-envt-value"></a>
+#### <a href="#map-envt-value"><code>(MAP-ENVT FMA-&gt;NB (ENVT FENV-&gt;MA))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L88-L90">src</a></sub></sup><a name="map-envt-value"></a>
 <code>&forall; :A :B :C :D :E. (((:A :B) &rarr; (:C :D)) &rarr; (((<a href="#envt-type"><code>ENVT</code></a> :E) :A) :B) &rarr; (((<a href="#envt-type"><code>ENVT</code></a> :E) :C) :D))</code>
 
 
 ***
 
-#### <a href="#run-env-value"><code>(RUN-ENV ENV-COMPUTATION ENV)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L70-L72">src</a></sub></sup><a name="run-env-value"></a>
+#### <a href="#run-env-value"><code>(RUN-ENV ENV-COMPUTATION ENV)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L77-L79">src</a></sub></sup><a name="run-env-value"></a>
 <code>&forall; :A :B. ((((<a href="#envt-type"><code>ENVT</code></a> :A) <a href="#identity-type"><code>IDENTITY</code></a>) :B) &rarr; :A &rarr; :B)</code>
 
 Run a Env inside an environment.
@@ -7545,7 +7577,7 @@ Run a Env inside an environment.
 
 ***
 
-#### <a href="#run-envt-value"><code>(RUN-ENVT (ENVT FENV-&gt;VAL) ENV)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L64-L66">src</a></sub></sup><a name="run-envt-value"></a>
+#### <a href="#run-envt-value"><code>(RUN-ENVT (ENVT FENV-&gt;VAL) ENV)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L71-L73">src</a></sub></sup><a name="run-envt-value"></a>
 <code>&forall; :A :B :C. ((((<a href="#envt-type"><code>ENVT</code></a> :A) :B) :C) &rarr; :A &rarr; (:B :C))</code>
 
 Run a EnvT inside an environment.
@@ -7554,7 +7586,7 @@ Run a EnvT inside an environment.
 
 ***
 
-#### <a href="#ask-envt-value"><code>ASK-ENVT</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L51-L53">src</a></sub></sup><a name="ask-envt-value"></a>
+#### <a href="#ask-envt-value"><code>ASK-ENVT</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L58-L60">src</a></sub></sup><a name="ask-envt-value"></a>
 <code>&forall; :A :B. <a href="#monad-class">MONAD</a> :B &rArr; (((<a href="#envt-type"><code>ENVT</code></a> :A) :B) :A)</code>
 
 Retrieve the computation environment.
@@ -7897,6 +7929,85 @@ A StatefulComputation with state set to be the given state. The old state is ret
 <code>&forall; :A. (<a href="#st-type"><code>ST</code></a> :A :A)</code>
 
 A StatefulComputation which returns the current state as the value.
+
+
+
+***
+
+# Package `COALTON-LIBRARY/MONAD/STATET`<a name="coalton-library/monad/statet-package"></a>
+
+### Types
+
+#### <a href="#statet-type"><code>STATET</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/statet.lisp#L38-L40">src</a></sub></sup><a name="statet-type"></a>
+- <code>(STATET (:A &rarr; (:B (<a href="#tuple-type"><code>TUPLE</code></a> :A :C))))</code>
+
+A monadic computation that tracks state of type :s.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#applicative-class">APPLICATIVE</a> :A &rArr; <a href="#applicative-class">APPLICATIVE</a> ((<a href="#statet-type"><code>STATET</code></a> :B) :A)</code>
+- <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#functor-class">FUNCTOR</a> ((<a href="#statet-type"><code>STATET</code></a> :B) :A)</code>
+- <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monad-class">MONAD</a> ((<a href="#statet-type"><code>STATET</code></a> :B) :A)</code>
+- <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monadstate-class">MONADSTATE</a> :B ((<a href="#statet-type"><code>STATET</code></a> :B) :A)</code>
+- <code><a href="#monadenvironment-class">MONADENVIRONMENT</a> :A :B &rArr; <a href="#monadenvironment-class">MONADENVIRONMENT</a> :A ((<a href="#statet-type"><code>STATET</code></a> :C) :B)</code>
+- <code><a href="#monadtransformer-class">MONADTRANSFORMER</a> (<a href="#statet-type"><code>STATET</code></a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (((<a href="#statet-type"><code>STATET</code></a> :A) :B) :C)</code>
+
+</details>
+
+
+
+***
+
+### Values
+
+#### <a href="#lift-statet-value"><code>(LIFT-STATET M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/statet.lisp#L81-L86">src</a></sub></sup><a name="lift-statet-value"></a>
+<code>&forall; :A :B :C. <a href="#functor-class">FUNCTOR</a> :A &rArr; ((:A :B) &rarr; (((<a href="#statet-type"><code>STATET</code></a> :C) :A) :B))</code>
+
+Lift a stateless computation into a stateful context.
+
+
+
+***
+
+#### <a href="#map-statet-value"><code>(MAP-STATET FMA-&gt;NB (STATET FS-&gt;MSA))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/statet.lisp#L74-L77">src</a></sub></sup><a name="map-statet-value"></a>
+<code>&forall; :A :B :C :D :E. (((:A (<a href="#tuple-type"><code>TUPLE</code></a> :B :C)) &rarr; (:D (<a href="#tuple-type"><code>TUPLE</code></a> :B :E))) &rarr; (((<a href="#statet-type"><code>STATET</code></a> :B) :A) :C) &rarr; (((<a href="#statet-type"><code>STATET</code></a> :B) :D) :E))</code>
+
+Map the return value, the final state, and the execution context.
+
+
+
+***
+
+#### <a href="#modify-statet-value"><code>(MODIFY-STATET FS-&gt;S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/statet.lisp#L62-L66">src</a></sub></sup><a name="modify-statet-value"></a>
+<code>&forall; :A :B. <a href="#applicative-class">APPLICATIVE</a> :B &rArr; ((:A &rarr; :A) &rarr; (((<a href="#statet-type"><code>STATET</code></a> :A) :B) <a href="#unit-type"><code>UNIT</code></a>))</code>
+
+Modify the computation state, discarding the old state.
+
+
+
+***
+
+#### <a href="#put-statet-value"><code>(PUT-STATET STATE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/statet.lisp#L44-L46">src</a></sub></sup><a name="put-statet-value"></a>
+<code>&forall; :A :B. <a href="#applicative-class">APPLICATIVE</a> :B &rArr; (:A &rarr; (((<a href="#statet-type"><code>STATET</code></a> :A) :B) <a href="#unit-type"><code>UNIT</code></a>))</code>
+
+A stateful computation with state set to the given state. The returned value is Unit.
+
+
+
+***
+
+#### <a href="#run-statet-value"><code>(RUN-STATET (STATET FS-&gt;MSA) S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/statet.lisp#L57-L58">src</a></sub></sup><a name="run-statet-value"></a>
+<code>&forall; :A :B :C. <a href="#applicative-class">APPLICATIVE</a> :B &rArr; ((((<a href="#statet-type"><code>STATET</code></a> :A) :B) :C) &rarr; :A &rarr; (:B (<a href="#tuple-type"><code>TUPLE</code></a> :A :C)))</code>
+
+
+***
+
+#### <a href="#get-statet-value"><code>GET-STATET</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/statet.lisp#L50-L53">src</a></sub></sup><a name="get-statet-value"></a>
+<code>&forall; :A :B. <a href="#applicative-class">APPLICATIVE</a> :B &rArr; (((<a href="#statet-type"><code>STATET</code></a> :A) :B) :A)</code>
+
+A stateful computation which returns the current state as the value.
 
 
 
@@ -9370,6 +9481,7 @@ Methods:
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> ((<a href="#optionalt-type"><code>OPTIONALT</code></a> :A) :B)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (((<a href="#resultt-type"><code>RESULTT</code></a> :A) :B) :C)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (((<a href="#envt-type"><code>ENVT</code></a> :A) :B) :C)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (((<a href="#statet-type"><code>STATET</code></a> :A) :B) :C)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#st-type"><code>ST</code></a> :A :B)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#identity-type"><code>IDENTITY</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#queue-type"><code>QUEUE</code></a> :A)</code>
