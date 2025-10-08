@@ -7473,6 +7473,8 @@ Methods:
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#monadenvironment-class">MONADENVIRONMENT</a> :A :B &rArr; <a href="#monadenvironment-class">MONADENVIRONMENT</a> :A (<a href="#optionalt-type"><code>OPTIONALT</code></a> :B)</code>
+- <code><a href="#monadenvironment-class">MONADENVIRONMENT</a> :A :B &rArr; <a href="#monadenvironment-class">MONADENVIRONMENT</a> :A ((<a href="#resultt-type"><code>RESULTT</code></a> :C) :B)</code>
 - <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monadenvironment-class">MONADENVIRONMENT</a> :B ((<a href="#envt-type"><code>ENVT</code></a> :B) :A)</code>
 - <code><a href="#monadenvironment-class">MONADENVIRONMENT</a> :A :B &rArr; <a href="#monadenvironment-class">MONADENVIRONMENT</a> :A ((<a href="#statet-type"><code>STATET</code></a> :C) :B)</code>
 
@@ -7495,6 +7497,8 @@ Methods:
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#monadstate-class">MONADSTATE</a> :A :B &rArr; <a href="#monadstate-class">MONADSTATE</a> :A (<a href="#optionalt-type"><code>OPTIONALT</code></a> :B)</code>
+- <code><a href="#monadstate-class">MONADSTATE</a> :A :B &rArr; <a href="#monadstate-class">MONADSTATE</a> :A ((<a href="#resultt-type"><code>RESULTT</code></a> :C) :B)</code>
 - <code><a href="#monadstate-class">MONADSTATE</a> :A :B &rArr; <a href="#monadstate-class">MONADSTATE</a> :A ((<a href="#envt-type"><code>ENVT</code></a> :C) :B)</code>
 - <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monadstate-class">MONADSTATE</a> :B ((<a href="#statet-type"><code>STATET</code></a> :B) :A)</code>
 
@@ -7760,7 +7764,7 @@ A bare computation. Not useful on its own, but is useful for running Monad trans
 
 ### Types
 
-#### <a href="#optionalt-type"><code>OPTIONALT</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/optionalt.lisp#L23-L25">src</a></sub></sup><a name="optionalt-type"></a>
+#### <a href="#optionalt-type"><code>OPTIONALT</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/optionalt.lisp#L24-L26">src</a></sub></sup><a name="optionalt-type"></a>
 - <code>(OPTIONALT (:A (<a href="#optional-type"><code>OPTIONAL</code></a> :B)))</code>
 
 A monadic computation that returns an Optional.
@@ -7772,6 +7776,8 @@ A monadic computation that returns an Optional.
 - <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#alternative-class">ALTERNATIVE</a> (<a href="#optionalt-type"><code>OPTIONALT</code></a> :A)</code>
 - <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#applicative-class">APPLICATIVE</a> (<a href="#optionalt-type"><code>OPTIONALT</code></a> :A)</code>
 - <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monad-class">MONAD</a> (<a href="#optionalt-type"><code>OPTIONALT</code></a> :A)</code>
+- <code><a href="#monadenvironment-class">MONADENVIRONMENT</a> :A :B &rArr; <a href="#monadenvironment-class">MONADENVIRONMENT</a> :A (<a href="#optionalt-type"><code>OPTIONALT</code></a> :B)</code>
+- <code><a href="#monadstate-class">MONADSTATE</a> :A :B &rArr; <a href="#monadstate-class">MONADSTATE</a> :A (<a href="#optionalt-type"><code>OPTIONALT</code></a> :B)</code>
 - <code><a href="#monadtransformer-class">MONADTRANSFORMER</a> <a href="#optionalt-type"><code>OPTIONALT</code></a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> ((<a href="#optionalt-type"><code>OPTIONALT</code></a> :A) :B)</code>
 
@@ -7783,13 +7789,13 @@ A monadic computation that returns an Optional.
 
 ### Values
 
-#### <a href="#map-optionalt-value"><code>(MAP-OPTIONALT F (OPTIONALT M))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/optionalt.lisp#L36-L37">src</a></sub></sup><a name="map-optionalt-value"></a>
+#### <a href="#map-optionalt-value"><code>(MAP-OPTIONALT F (OPTIONALT M))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/optionalt.lisp#L37-L38">src</a></sub></sup><a name="map-optionalt-value"></a>
 <code>&forall; :A :B :C :D. (((:A (<a href="#optional-type"><code>OPTIONAL</code></a> :B)) &rarr; (:C (<a href="#optional-type"><code>OPTIONAL</code></a> :D))) &rarr; ((<a href="#optionalt-type"><code>OPTIONALT</code></a> :A) :B) &rarr; ((<a href="#optionalt-type"><code>OPTIONALT</code></a> :C) :D))</code>
 
 
 ***
 
-#### <a href="#run-optionalt-value"><code>(RUN-OPTIONALT (OPTIONALT M))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/optionalt.lisp#L29-L30">src</a></sub></sup><a name="run-optionalt-value"></a>
+#### <a href="#run-optionalt-value"><code>(RUN-OPTIONALT (OPTIONALT M))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/optionalt.lisp#L30-L31">src</a></sub></sup><a name="run-optionalt-value"></a>
 <code>&forall; :A :B. (((<a href="#optionalt-type"><code>OPTIONALT</code></a> :A) :B) &rarr; (:A (<a href="#optional-type"><code>OPTIONAL</code></a> :B)))</code>
 
 
@@ -7799,7 +7805,7 @@ A monadic computation that returns an Optional.
 
 ### Types
 
-#### <a href="#resultt-type"><code>RESULTT</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/resultt.lisp#L27-L29">src</a></sub></sup><a name="resultt-type"></a>
+#### <a href="#resultt-type"><code>RESULTT</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/resultt.lisp#L28-L30">src</a></sub></sup><a name="resultt-type"></a>
 - <code>(RESULTT (:A (<a href="#result-type"><code>RESULT</code></a> :B :C)))</code>
 
 A monadic computation that returns a Result.
@@ -7810,6 +7816,8 @@ A monadic computation that returns a Result.
 - <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#functor-class">FUNCTOR</a> ((<a href="#resultt-type"><code>RESULTT</code></a> :B) :A)</code>
 - <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#applicative-class">APPLICATIVE</a> ((<a href="#resultt-type"><code>RESULTT</code></a> :B) :A)</code>
 - <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monad-class">MONAD</a> ((<a href="#resultt-type"><code>RESULTT</code></a> :B) :A)</code>
+- <code><a href="#monadenvironment-class">MONADENVIRONMENT</a> :A :B &rArr; <a href="#monadenvironment-class">MONADENVIRONMENT</a> :A ((<a href="#resultt-type"><code>RESULTT</code></a> :C) :B)</code>
+- <code><a href="#monadstate-class">MONADSTATE</a> :A :B &rArr; <a href="#monadstate-class">MONADSTATE</a> :A ((<a href="#resultt-type"><code>RESULTT</code></a> :C) :B)</code>
 - <code><a href="#monadtransformer-class">MONADTRANSFORMER</a> (<a href="#resultt-type"><code>RESULTT</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (((<a href="#resultt-type"><code>RESULTT</code></a> :A) :B) :C)</code>
 
@@ -7821,25 +7829,25 @@ A monadic computation that returns a Result.
 
 ### Values
 
-#### <a href="#err-ift-value"><code>(ERR-IFT PASSED FAILURE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/resultt.lisp#L49-L50">src</a></sub></sup><a name="err-ift-value"></a>
+#### <a href="#err-ift-value"><code>(ERR-IFT PASSED FAILURE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/resultt.lisp#L50-L51">src</a></sub></sup><a name="err-ift-value"></a>
 <code>&forall; :A :B. <a href="#monad-class">MONAD</a> :B &rArr; (<a href="#boolean-type"><code>BOOLEAN</code></a> &rarr; :A &rarr; (((<a href="#resultt-type"><code>RESULTT</code></a> :A) :B) <a href="#unit-type"><code>UNIT</code></a>))</code>
 
 
 ***
 
-#### <a href="#map-errt-value"><code>(MAP-ERRT FERR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/resultt.lisp#L45-L45">src</a></sub></sup><a name="map-errt-value"></a>
+#### <a href="#map-errt-value"><code>(MAP-ERRT FERR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/resultt.lisp#L46-L46">src</a></sub></sup><a name="map-errt-value"></a>
 <code>&forall; :A :B :C :D. <a href="#functor-class">FUNCTOR</a> :C &rArr; ((:A &rarr; :B) &rarr; (((<a href="#resultt-type"><code>RESULTT</code></a> :A) :C) :D) &rarr; (((<a href="#resultt-type"><code>RESULTT</code></a> :B) :C) :D))</code>
 
 
 ***
 
-#### <a href="#map-resultt-value"><code>(MAP-RESULTT F (RESULTT M))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/resultt.lisp#L40-L41">src</a></sub></sup><a name="map-resultt-value"></a>
+#### <a href="#map-resultt-value"><code>(MAP-RESULTT F (RESULTT M))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/resultt.lisp#L41-L42">src</a></sub></sup><a name="map-resultt-value"></a>
 <code>&forall; :A :B :C :D :E :F. (((:A (<a href="#result-type"><code>RESULT</code></a> :B :C)) &rarr; (:D (<a href="#result-type"><code>RESULT</code></a> :E :F))) &rarr; (((<a href="#resultt-type"><code>RESULTT</code></a> :B) :A) :C) &rarr; (((<a href="#resultt-type"><code>RESULTT</code></a> :E) :D) :F))</code>
 
 
 ***
 
-#### <a href="#run-resultt-value"><code>(RUN-RESULTT (RESULTT M))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/resultt.lisp#L33-L34">src</a></sub></sup><a name="run-resultt-value"></a>
+#### <a href="#run-resultt-value"><code>(RUN-RESULTT (RESULTT M))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/resultt.lisp#L34-L35">src</a></sub></sup><a name="run-resultt-value"></a>
 <code>&forall; :A :B :C. ((((<a href="#resultt-type"><code>RESULTT</code></a> :A) :B) :C) &rarr; (:B (<a href="#result-type"><code>RESULT</code></a> :A :C)))</code>
 
 
