@@ -2458,6 +2458,7 @@ Methods:
 - <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#applicative-class">APPLICATIVE</a> (<a href="#optionalt-type"><code>OPTIONALT</code></a> :A)</code>
 - <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#applicative-class">APPLICATIVE</a> ((<a href="#resultt-type"><code>RESULTT</code></a> :B) :A)</code>
 - <code><a href="#applicative-class">APPLICATIVE</a> :A &rArr; <a href="#applicative-class">APPLICATIVE</a> ((<a href="#envt-type"><code>ENVT</code></a> :B) :A)</code>
+- <code><a href="#applicative-class">APPLICATIVE</a> (<a href="#env-type"><code>ENV</code></a> :A)</code>
 - <code><a href="#applicative-class">APPLICATIVE</a> :A &rArr; <a href="#applicative-class">APPLICATIVE</a> ((<a href="#statet-type"><code>STATET</code></a> :B) :A)</code>
 - <code><a href="#applicative-class">APPLICATIVE</a> (<a href="#st-type"><code>ST</code></a> :A)</code>
 - <code><a href="#applicative-class">APPLICATIVE</a> <a href="#identity-type"><code>IDENTITY</code></a></code>
@@ -2653,6 +2654,7 @@ Methods:
 - <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#functor-class">FUNCTOR</a> (<a href="#optionalt-type"><code>OPTIONALT</code></a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#functor-class">FUNCTOR</a> ((<a href="#resultt-type"><code>RESULTT</code></a> :B) :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#functor-class">FUNCTOR</a> ((<a href="#envt-type"><code>ENVT</code></a> :B) :A)</code>
+- <code><a href="#functor-class">FUNCTOR</a> (<a href="#env-type"><code>ENV</code></a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#functor-class">FUNCTOR</a> ((<a href="#statet-type"><code>STATET</code></a> :B) :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> (<a href="#st-type"><code>ST</code></a> :A)</code>
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#identity-type"><code>IDENTITY</code></a></code>
@@ -2918,6 +2920,7 @@ Methods:
 - <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monad-class">MONAD</a> (<a href="#optionalt-type"><code>OPTIONALT</code></a> :A)</code>
 - <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monad-class">MONAD</a> ((<a href="#resultt-type"><code>RESULTT</code></a> :B) :A)</code>
 - <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monad-class">MONAD</a> ((<a href="#envt-type"><code>ENVT</code></a> :B) :A)</code>
+- <code><a href="#monad-class">MONAD</a> (<a href="#env-type"><code>ENV</code></a> :A)</code>
 - <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monad-class">MONAD</a> ((<a href="#statet-type"><code>STATET</code></a> :B) :A)</code>
 - <code><a href="#monad-class">MONAD</a> (<a href="#st-type"><code>ST</code></a> :A)</code>
 - <code><a href="#monad-class">MONAD</a> <a href="#identity-type"><code>IDENTITY</code></a></code>
@@ -7476,6 +7479,7 @@ Methods:
 - <code><a href="#monadenvironment-class">MONADENVIRONMENT</a> :A :B &rArr; <a href="#monadenvironment-class">MONADENVIRONMENT</a> :A (<a href="#optionalt-type"><code>OPTIONALT</code></a> :B)</code>
 - <code><a href="#monadenvironment-class">MONADENVIRONMENT</a> :A :B &rArr; <a href="#monadenvironment-class">MONADENVIRONMENT</a> :A ((<a href="#resultt-type"><code>RESULTT</code></a> :C) :B)</code>
 - <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monadenvironment-class">MONADENVIRONMENT</a> :B ((<a href="#envt-type"><code>ENVT</code></a> :B) :A)</code>
+- <code><a href="#monadenvironment-class">MONADENVIRONMENT</a> :A (<a href="#env-type"><code>ENV</code></a> :A)</code>
 - <code><a href="#monadenvironment-class">MONADENVIRONMENT</a> :A :B &rArr; <a href="#monadenvironment-class">MONADENVIRONMENT</a> :A ((<a href="#statet-type"><code>STATET</code></a> :C) :B)</code>
 
 </details>
@@ -7512,12 +7516,27 @@ Methods:
 
 ### Types
 
-#### <a href="#env-type"><code>ENV</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L47-L47">src</a></sub></sup><a name="env-type"></a>
+#### <a href="#env-type"><code>ENV</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L49-L51">src</a></sub></sup><a name="env-type"></a>
+- <code>(ENV (:A &rarr; :B))</code>
+
+A computation that runs inside an :env environment.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#applicative-class">APPLICATIVE</a> (<a href="#env-type"><code>ENV</code></a> :A)</code>
+- <code><a href="#functor-class">FUNCTOR</a> (<a href="#env-type"><code>ENV</code></a> :A)</code>
+- <code><a href="#monad-class">MONAD</a> (<a href="#env-type"><code>ENV</code></a> :A)</code>
+- <code><a href="#monadenvironment-class">MONADENVIRONMENT</a> :A (<a href="#env-type"><code>ENV</code></a> :A)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#env-type"><code>ENV</code></a> :A :B)</code>
+
+</details>
+
 
 
 ***
 
-#### <a href="#envt-type"><code>ENVT</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L42-L45">src</a></sub></sup><a name="envt-type"></a>
+#### <a href="#envt-type"><code>ENVT</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L117-L120">src</a></sub></sup><a name="envt-type"></a>
 - <code>(ENVT (:A &rarr; (:B :C)))</code>
 
 A monadic computation that runs inside an :env environment.
@@ -7542,7 +7561,16 @@ Equivalent to Haskell's ReaderT monad https://hackage.haskell.org/package/transf
 
 ### Values
 
-#### <a href="#asks-envt-value"><code>(ASKS-ENVT FENV-&gt;A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L64-L67">src</a></sub></sup><a name="asks-envt-value"></a>
+#### <a href="#asks-env-value"><code>(ASKS-ENV FENV-&gt;A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L73-L76">src</a></sub></sup><a name="asks-env-value"></a>
+<code>&forall; :A :B. ((:A &rarr; :B) &rarr; (<a href="#env-type"><code>ENV</code></a> :A :B))</code>
+
+Retrieve an aspect of the computation environment.
+
+
+
+***
+
+#### <a href="#asks-envt-value"><code>(ASKS-ENVT FENV-&gt;A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L137-L140">src</a></sub></sup><a name="asks-envt-value"></a>
 <code>&forall; :A :B :C. <a href="#applicative-class">APPLICATIVE</a> :C &rArr; ((:A &rarr; :B) &rarr; (((<a href="#envt-type"><code>ENVT</code></a> :A) :C) :B))</code>
 
 Retrieve an aspect of the computation environment.
@@ -7551,13 +7579,19 @@ Retrieve an aspect of the computation environment.
 
 ***
 
-#### <a href="#lift-envt-value"><code>(LIFT-ENVT M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L94-L95">src</a></sub></sup><a name="lift-envt-value"></a>
+#### <a href="#lift-envt-value"><code>(LIFT-ENVT M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L161-L162">src</a></sub></sup><a name="lift-envt-value"></a>
 <code>&forall; :A :B :C. ((:A :B) &rarr; (((<a href="#envt-type"><code>ENVT</code></a> :C) :A) :B))</code>
 
 
 ***
 
-#### <a href="#local-envt-value"><code>(LOCAL-ENVT FENV (ENVT FENV-&gt;A))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L51-L54">src</a></sub></sup><a name="local-envt-value"></a>
+#### <a href="#local-env-value"><code>(LOCAL-ENV FENV MENV)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L61-L63">src</a></sub></sup><a name="local-env-value"></a>
+<code>&forall; :A :B. ((:A &rarr; :A) &rarr; (<a href="#env-type"><code>ENV</code></a> :A :B) &rarr; (<a href="#env-type"><code>ENV</code></a> :A :B))</code>
+
+
+***
+
+#### <a href="#local-envt-value"><code>(LOCAL-ENVT FENV (ENVT FENV-&gt;A))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L124-L127">src</a></sub></sup><a name="local-envt-value"></a>
 <code>&forall; :A :B :C. ((:A &rarr; :A) &rarr; (((<a href="#envt-type"><code>ENVT</code></a> :A) :B) :C) &rarr; (((<a href="#envt-type"><code>ENVT</code></a> :A) :B) :C))</code>
 
 Run a computation in a modified environment.
@@ -7566,14 +7600,14 @@ Run a computation in a modified environment.
 
 ***
 
-#### <a href="#map-envt-value"><code>(MAP-ENVT FMA-&gt;NB (ENVT FENV-&gt;MA))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L88-L90">src</a></sub></sup><a name="map-envt-value"></a>
+#### <a href="#map-envt-value"><code>(MAP-ENVT FMA-&gt;NB (ENVT FENV-&gt;MA))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L155-L157">src</a></sub></sup><a name="map-envt-value"></a>
 <code>&forall; :A :B :C :D :E. (((:A :B) &rarr; (:C :D)) &rarr; (((<a href="#envt-type"><code>ENVT</code></a> :E) :A) :B) &rarr; (((<a href="#envt-type"><code>ENVT</code></a> :E) :C) :D))</code>
 
 
 ***
 
-#### <a href="#run-env-value"><code>(RUN-ENV ENV-COMPUTATION ENV)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L77-L79">src</a></sub></sup><a name="run-env-value"></a>
-<code>&forall; :A :B. ((((<a href="#envt-type"><code>ENVT</code></a> :A) <a href="#identity-type"><code>IDENTITY</code></a>) :B) &rarr; :A &rarr; :B)</code>
+#### <a href="#run-env-value"><code>(RUN-ENV (ENV ENV-COMPUTATION) ENV)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L55-L57">src</a></sub></sup><a name="run-env-value"></a>
+<code>&forall; :A :B. ((<a href="#env-type"><code>ENV</code></a> :A :B) &rarr; :A &rarr; :B)</code>
 
 Run a Env inside an environment.
 
@@ -7581,7 +7615,7 @@ Run a Env inside an environment.
 
 ***
 
-#### <a href="#run-envt-value"><code>(RUN-ENVT (ENVT FENV-&gt;VAL) ENV)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L71-L73">src</a></sub></sup><a name="run-envt-value"></a>
+#### <a href="#run-envt-value"><code>(RUN-ENVT (ENVT FENV-&gt;VAL) ENV)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L144-L146">src</a></sub></sup><a name="run-envt-value"></a>
 <code>&forall; :A :B :C. ((((<a href="#envt-type"><code>ENVT</code></a> :A) :B) :C) &rarr; :A &rarr; (:B :C))</code>
 
 Run a EnvT inside an environment.
@@ -7590,7 +7624,16 @@ Run a EnvT inside an environment.
 
 ***
 
-#### <a href="#ask-envt-value"><code>ASK-ENVT</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L58-L60">src</a></sub></sup><a name="ask-envt-value"></a>
+#### <a href="#ask-env-value"><code>ASK-ENV</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L67-L69">src</a></sub></sup><a name="ask-env-value"></a>
+<code>&forall; :A. (<a href="#env-type"><code>ENV</code></a> :A :A)</code>
+
+Retrieve the computation environment.
+
+
+
+***
+
+#### <a href="#ask-envt-value"><code>ASK-ENVT</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L131-L133">src</a></sub></sup><a name="ask-envt-value"></a>
 <code>&forall; :A :B. <a href="#monad-class">MONAD</a> :B &rArr; (((<a href="#envt-type"><code>ENVT</code></a> :A) :B) :A)</code>
 
 Retrieve the computation environment.
@@ -9489,6 +9532,7 @@ Methods:
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> ((<a href="#optionalt-type"><code>OPTIONALT</code></a> :A) :B)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (((<a href="#resultt-type"><code>RESULTT</code></a> :A) :B) :C)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (((<a href="#envt-type"><code>ENVT</code></a> :A) :B) :C)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#env-type"><code>ENV</code></a> :A :B)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (((<a href="#statet-type"><code>STATET</code></a> :A) :B) :C)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#st-type"><code>ST</code></a> :A :B)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#identity-type"><code>IDENTITY</code></a> :A)</code>
