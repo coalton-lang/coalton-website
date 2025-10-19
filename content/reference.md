@@ -2569,6 +2569,7 @@ Methods:
 - <code><a href="#eq-class">EQ</a> <a href="#char-type"><code>CHAR</code></a></code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#vector-type"><code>VECTOR</code></a> :A)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#list-type"><code>LIST</code></a> :A)</code>
+- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A)</code>
 - <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) &rArr; <a href="#eq-class">EQ</a> (<a href="#result-type"><code>RESULT</code></a> :A :B)</code>
 - <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#optional-type"><code>OPTIONAL</code></a> :A)</code>
 - <code>(<a href="#eq-class">EQ</a> :A) (<a href="#eq-class">EQ</a> :B) (<a href="#eq-class">EQ</a> :C) (<a href="#eq-class">EQ</a> :D) (<a href="#eq-class">EQ</a> :E) &rArr; <a href="#eq-class">EQ</a> (<a href="#tuple5-type"><code>TUPLE5</code></a> :A :B :C :D :E)</code>
@@ -5331,6 +5332,7 @@ Whether or not the arrays are specialized depends on the underlying Lisp impleme
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#eq-class">EQ</a> :A &rArr; <a href="#eq-class">EQ</a> (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A)</code>
 - <code><a href="#foldable-class">FOLDABLE</a> <a href="#lisparray-type"><code>LISPARRAY</code></a></code>
 - <code><a href="#into-class">INTO</a> (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A) (<a href="#list-type"><code>LIST</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#list-type"><code>LIST</code></a> :A) (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A)</code>
