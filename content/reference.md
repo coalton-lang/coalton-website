@@ -7648,7 +7648,7 @@ Retrieve the computation environment.
 
 ### Types
 
-#### <a href="#free-type"><code>FREE</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/free.lisp#L43-L48">src</a></sub></sup><a name="free-type"></a>
+#### <a href="#free-type"><code>FREE</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/free.lisp#L44-L49">src</a></sub></sup><a name="free-type"></a>
 - <code>(FREE (:A ((<a href="#free-type"><code>FREE</code></a> :A) :B)))</code>
 - <code>(VAL :C)</code>
 
@@ -7675,7 +7675,7 @@ References: [here](https://serokell.io/blog/introduction-to-free-monads) and [he
 
 ### Classes
 
-#### <a href="#monadfree-class"><code>MONADFREE</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/free.lisp#L27-L30">src</a></sub></sup><a name="monadfree-class"></a>
+#### <a href="#monadfree-class"><code>MONADFREE</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/free.lisp#L28-L31">src</a></sub></sup><a name="monadfree-class"></a>
 <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monadfree-class">MONADFREE</a> :B :A</code>
 
 
@@ -7698,7 +7698,7 @@ Methods:
 
 ### Values
 
-#### <a href="#foldfree-value"><code>(FOLDFREE NAT FR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/free.lisp#L54-L59">src</a></sub></sup><a name="foldfree-value"></a>
+#### <a href="#foldfree-value"><code>(FOLDFREE NAT FR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/free.lisp#L55-L60">src</a></sub></sup><a name="foldfree-value"></a>
 <code>&forall; :A :B :C. <a href="#monad-class">MONAD</a> :C &rArr; (((:A ((<a href="#free-type"><code>FREE</code></a> :A) :B)) &rarr; (:C ((<a href="#free-type"><code>FREE</code></a> :A) :B))) &rarr; ((<a href="#free-type"><code>FREE</code></a> :A) :B) &rarr; (:C :B))</code>
 
 Given a natural transformation, induce a Monad homomorphism from a
@@ -7708,10 +7708,22 @@ free monad to a target monad.
 
 ***
 
-#### <a href="#liftf-value"><code>(LIFTF F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/free.lisp#L33-L35">src</a></sub></sup><a name="liftf-value"></a>
+#### <a href="#liftf-value"><code>(LIFTF F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/free.lisp#L34-L36">src</a></sub></sup><a name="liftf-value"></a>
 <code>&forall; :A :B :C. (<a href="#functor-class">FUNCTOR</a> :A) (<a href="#monadfree-class">MONADFREE</a> :A :C) &rArr; ((:A :B) &rarr; (:C :B))</code>
 
 Lift a Functor into the Free Monad.
+
+
+
+***
+
+#### <a href="#run-free-value"><code>(RUN-FREE TRANSF OP)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/free.lisp#L63-L72">src</a></sub></sup><a name="run-free-value"></a>
+<code>&forall; :A :B. <a href="#functor-class">FUNCTOR</a> :A &rArr; (((:A ((<a href="#free-type"><code>FREE</code></a> :A) :B)) &rarr; ((<a href="#free-type"><code>FREE</code></a> :A) :B)) &rarr; ((<a href="#free-type"><code>FREE</code></a> :A) :B) &rarr; :B)</code>
+
+Run a free monad with a function that unwraps a single layer of the functor
+`f` at a time.
+
+References: [here](https://github.com/purescript/purescript-free/blob/v5.1.0/src/Control/Monad/Free.purs#L167)
 
 
 
