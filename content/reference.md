@@ -25,6 +25,9 @@ layout: two-pane
 - <a href="#coalton-library/char-package"><code>COALTON-LIBRARY/CHAR</code></a>
 - <a href="#coalton-library/classes-package"><code>COALTON-LIBRARY/CLASSES</code></a>
 - <a href="#coalton-library/computable-reals-package"><code>COALTON-LIBRARY/COMPUTABLE-REALS</code></a>
+- <a href="#coalton-library/experimental/do-control-core-package"><code>COALTON-LIBRARY/EXPERIMENTAL/DO-CONTROL-CORE</code></a>
+- <a href="#coalton-library/experimental/do-control-loops-package"><code>COALTON-LIBRARY/EXPERIMENTAL/DO-CONTROL-LOOPS</code></a>
+- <a href="#coalton-library/experimental/do-control-loops-adv-package"><code>COALTON-LIBRARY/EXPERIMENTAL/DO-CONTROL-LOOPS-ADV</code></a>
 - <a href="#coalton-library/experimental/loops-package"><code>COALTON-LIBRARY/EXPERIMENTAL/LOOPS</code></a>
 - <a href="#coalton-library/file-package"><code>COALTON-LIBRARY/FILE</code></a>
 - <a href="#coalton-library/functions-package"><code>COALTON-LIBRARY/FUNCTIONS</code></a>
@@ -164,6 +167,7 @@ Either true or false, internally represented by `cl:t` and `cl:nil` respectively
 - <code><a href="#hash-class">HASH</a> <a href="#boolean-type"><code>BOOLEAN</code></a></code>
 - <code><a href="#ord-class">ORD</a> <a href="#boolean-type"><code>BOOLEAN</code></a></code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#boolean-type"><code>BOOLEAN</code></a></code>
+- <code><a href="#terminator-class">TERMINATOR</a> <a href="#boolean-type"><code>BOOLEAN</code></a></code>
 
 </details>
 
@@ -717,7 +721,9 @@ Homogeneous list of objects. Represented as a typical Common Lisp chain of `cl:c
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#into-class">INTO</a> (<a href="#list-type"><code>LIST</code></a> :A) (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> :A &rArr; <a href="#iso-class">ISO</a> (<a href="#lisparray-type"><code>LISPARRAY</code></a> :A) (<a href="#list-type"><code>LIST</code></a> :A)</code>
 - <code><a href="#semigroup-class">SEMIGROUP</a> (<a href="#list-type"><code>LIST</code></a> :A)</code>
+- <code><a href="#terminator-class">TERMINATOR</a> (<a href="#list-type"><code>LIST</code></a> :A)</code>
 - <code><a href="#traversable-class">TRAVERSABLE</a> <a href="#list-type"><code>LIST</code></a></code>
+- <code><a href="#yielder-class">YIELDER</a> <a href="#list-type"><code>LIST</code></a></code>
 
 </details>
 
@@ -753,8 +759,10 @@ A type that allows indicating the presence or absence of a value. The underlying
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#ord-class">ORD</a> (<a href="#optional-type"><code>OPTIONAL</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#optional-type"><code>OPTIONAL</code></a> :A)</code>
 - <code><a href="#semigroup-class">SEMIGROUP</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#optional-type"><code>OPTIONAL</code></a> :A)</code>
+- <code><a href="#terminator-class">TERMINATOR</a> (<a href="#optional-type"><code>OPTIONAL</code></a> :A)</code>
 - <code><a href="#traversable-class">TRAVERSABLE</a> <a href="#optional-type"><code>OPTIONAL</code></a></code>
 - <code><a href="#unwrappable-class">UNWRAPPABLE</a> <a href="#optional-type"><code>OPTIONAL</code></a></code>
+- <code><a href="#yielder-class">YIELDER</a> <a href="#optional-type"><code>OPTIONAL</code></a></code>
 
 </details>
 
@@ -2377,8 +2385,10 @@ Represents something that may have failed.
 - <code><a href="#monoid-class">MONOID</a> :A &rArr; <a href="#monoid-class">MONOID</a> (<a href="#result-type"><code>RESULT</code></a> :B :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#result-type"><code>RESULT</code></a> :A :B)</code>
 - <code><a href="#semigroup-class">SEMIGROUP</a> :A &rArr; <a href="#semigroup-class">SEMIGROUP</a> (<a href="#result-type"><code>RESULT</code></a> :B :A)</code>
+- <code><a href="#terminator-class">TERMINATOR</a> (<a href="#result-type"><code>RESULT</code></a> :A :B)</code>
 - <code><a href="#traversable-class">TRAVERSABLE</a> (<a href="#result-type"><code>RESULT</code></a> :A)</code>
 - <code><a href="#unwrappable-class">UNWRAPPABLE</a> (<a href="#result-type"><code>RESULT</code></a> :A)</code>
+- <code><a href="#yielder-class">YIELDER</a> (<a href="#result-type"><code>RESULT</code></a> :A)</code>
 
 </details>
 
@@ -2453,6 +2463,7 @@ Methods:
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#applicative-class">APPLICATIVE</a> (<a href="#loopt-type"><code>LOOPT</code></a> :A)</code>
 - <code>(<a href="#functor-class">FUNCTOR</a> :A) (<a href="#monad-class">MONAD</a> :B) &rArr; <a href="#applicative-class">APPLICATIVE</a> ((<a href="#freet-type"><code>FREET</code></a> :A) :B)</code>
 - <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#applicative-class">APPLICATIVE</a> (<a href="#free-type"><code>FREE</code></a> :A)</code>
 - <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#applicative-class">APPLICATIVE</a> (<a href="#optionalt-type"><code>OPTIONALT</code></a> :A)</code>
@@ -2649,6 +2660,7 @@ Methods:
 
 - <code><a href="#functor-class">FUNCTOR</a> <a href="#seq-type"><code>SEQ</code></a></code>
 - <code><a href="#functor-class">FUNCTOR</a> (<a href="#ordmap-type"><code>ORDMAP</code></a> :A)</code>
+- <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#functor-class">FUNCTOR</a> (<a href="#loopt-type"><code>LOOPT</code></a> :A)</code>
 - <code>(<a href="#functor-class">FUNCTOR</a> :A) (<a href="#functor-class">FUNCTOR</a> :B) &rArr; <a href="#functor-class">FUNCTOR</a> ((<a href="#freet-type"><code>FREET</code></a> :A) :B)</code>
 - <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#functor-class">FUNCTOR</a> ((<a href="#freef-type"><code>FREEF</code></a> :A) :B)</code>
 - <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#functor-class">FUNCTOR</a> (<a href="#free-type"><code>FREE</code></a> :A)</code>
@@ -2916,6 +2928,7 @@ Methods:
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monad-class">MONAD</a> (<a href="#loopt-type"><code>LOOPT</code></a> :A)</code>
 - <code>(<a href="#functor-class">FUNCTOR</a> :A) (<a href="#monad-class">MONAD</a> :B) &rArr; <a href="#monad-class">MONAD</a> ((<a href="#freet-type"><code>FREET</code></a> :A) :B)</code>
 - <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#monad-class">MONAD</a> (<a href="#free-type"><code>FREE</code></a> :A)</code>
 - <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monad-class">MONAD</a> (<a href="#optionalt-type"><code>OPTIONALT</code></a> :A)</code>
@@ -2964,6 +2977,7 @@ Methods:
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#monadtransformer-class">MONADTRANSFORMER</a> <a href="#loopt-type"><code>LOOPT</code></a></code>
 - <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#monadtransformer-class">MONADTRANSFORMER</a> (<a href="#freet-type"><code>FREET</code></a> :A)</code>
 - <code><a href="#monadtransformer-class">MONADTRANSFORMER</a> <a href="#optionalt-type"><code>OPTIONALT</code></a></code>
 - <code><a href="#monadtransformer-class">MONADTRANSFORMER</a> (<a href="#resultt-type"><code>RESULTT</code></a> :A)</code>
@@ -3632,6 +3646,294 @@ the simplest possible such approximation.
 Sets the global `CReal` comparison threshold to k bits after the 'decimal' point.
 
 See `comparison-threshold` for more details.
+
+
+
+***
+
+# Package `COALTON-LIBRARY/EXPERIMENTAL/DO-CONTROL-CORE`<a name="coalton-library/experimental/do-control-core-package"></a>
+
+### Values
+
+#### <a href="#flatmap-success-value"><code>(FLATMAP-SUCCESS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.lisp#L207-L207">src</a></sub></sup><a name="flatmap-success-value"></a>
+<code>&forall; :A :B :C :D. (<a href="#monad-class">MONAD</a> :C) (<a href="#yielder-class">YIELDER</a> :A) &rArr; ((:A :B) &rarr; (:B &rarr; (:C (:A :D))) &rarr; (:C (:A :D)))</code>
+
+
+***
+
+#### <a href="#flatmap-successm-value"><code>(FLATMAP-SUCCESSM MVAL? F-&gt;MVAL?B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.lisp#L211-L216">src</a></sub></sup><a name="flatmap-successm-value"></a>
+<code>&forall; :A :B :C :D. (<a href="#monad-class">MONAD</a> :A) (<a href="#yielder-class">YIELDER</a> :B) &rArr; ((:A (:B :C)) &rarr; (:C &rarr; (:A (:B :D))) &rarr; (:A (:B :D)))</code>
+
+Evaluate MVAL?, and if the result yields a value, then flatmap F->MVAL?B
+over the value.
+
+
+
+***
+
+#### <a href="#if*-value"><code>(IF* VAL? M-TRUE M-FALSE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.lisp#L155-L160">src</a></sub></sup><a name="if*-value"></a>
+<code>&forall; :A :B :C. (<a href="#monad-class">MONAD</a> :B) (<a href="#terminator-class">TERMINATOR</a> :A) &rArr; (:A &rarr; (:B :C) &rarr; (:B :C) &rarr; (:B :C))</code>
+
+Choose between M-TRUE and M-FALSE based on VAL?. If (ended? VAL?) is true, run M-TRUE,
+else run M-FALSE.
+
+
+
+***
+
+#### <a href="#if-val-value"><code>(IF-VAL VAL? F-MVAL M-NONE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.lisp#L164-L170">src</a></sub></sup><a name="if-val-value"></a>
+<code>&forall; :A :B :C :D. (<a href="#monad-class">MONAD</a> :C) (<a href="#yielder-class">YIELDER</a> :A) &rArr; ((:A :B) &rarr; (:B &rarr; (:C :D)) &rarr; (:C :D) &rarr; (:C :D))</code>
+
+If VAL? yields a value, apply F-MVAL to it. Otherwise, run M-NONE.
+
+
+
+***
+
+#### <a href="#if-valm-value"><code>(IF-VALM MVAL? F-MVAL M-NONE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.lisp#L184-L189">src</a></sub></sup><a name="if-valm-value"></a>
+<code>&forall; :A :B :C :D. (<a href="#monad-class">MONAD</a> :A) (<a href="#yielder-class">YIELDER</a> :B) &rArr; ((:A (:B :C)) &rarr; (:C &rarr; (:A :D)) &rarr; (:A :D) &rarr; (:A :D))</code>
+
+Evaluate MVAL? and dispatch to F-MVAL if the result yields a value.
+Otherwise evaluate M-NONE.
+
+
+
+***
+
+#### <a href="#if-val_-value"><code>(IF-VAL_ VAL? F-MVAL M-NONE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.lisp#L174-L180">src</a></sub></sup><a name="if-val_-value"></a>
+<code>&forall; :A :B :C :D :E. (<a href="#monad-class">MONAD</a> :C) (<a href="#yielder-class">YIELDER</a> :A) &rArr; ((:A :B) &rarr; (:B &rarr; (:C :D)) &rarr; (:C :E) &rarr; (:C <a href="#unit-type"><code>UNIT</code></a>))</code>
+
+Like if-val, but discards the branch result and returns Unit.
+
+
+
+***
+
+#### <a href="#map-success-value"><code>(MAP-SUCCESS VAL? F-&gt;MB)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.lisp#L193-L195">src</a></sub></sup><a name="map-success-value"></a>
+<code>&forall; :A :B :C :D. (<a href="#monad-class">MONAD</a> :C) (<a href="#yielder-class">YIELDER</a> :A) &rArr; ((:A :B) &rarr; (:B &rarr; (:C :D)) &rarr; (:C (:A :D)))</code>
+
+Map F->MB over the successful/available value(s) of VAL? within the monad.
+
+
+
+***
+
+#### <a href="#map-successm-value"><code>(MAP-SUCCESSM MVAL? F-&gt;MB)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.lisp#L199-L203">src</a></sub></sup><a name="map-successm-value"></a>
+<code>&forall; :A :B :C :D. (<a href="#monad-class">MONAD</a> :A) (<a href="#yielder-class">YIELDER</a> :B) &rArr; ((:A (:B :C)) &rarr; (:C &rarr; (:A :D)) &rarr; (:A (:B :D)))</code>
+
+Evaluate MVAL? and map F->MB over the successful value(s) from inside the monad.
+
+
+
+***
+
+#### <a href="#when-val-value"><code>(WHEN-VAL VAL? F-&gt;M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.lisp#L135-L143">src</a></sub></sup><a name="when-val-value"></a>
+<code>&forall; :A :B :C :D. (<a href="#monad-class">MONAD</a> :C) (<a href="#yielder-class">YIELDER</a> :A) &rArr; ((:A :B) &rarr; (:B &rarr; (:C :D)) &rarr; (:C <a href="#unit-type"><code>UNIT</code></a>))</code>
+
+If VAL? yields a value, apply F->M to it. If not, do nothing. Always returns Unit.
+
+
+
+***
+
+#### <a href="#when-valm-value"><code>(WHEN-VALM MVAL? F-&gt;M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.lisp#L147-L151">src</a></sub></sup><a name="when-valm-value"></a>
+<code>&forall; :A :B :C :D. (<a href="#monad-class">MONAD</a> :A) (<a href="#yielder-class">YIELDER</a> :B) &rArr; ((:A (:B :C)) &rarr; (:C &rarr; (:A :D)) &rarr; (:A <a href="#unit-type"><code>UNIT</code></a>))</code>
+
+Evaluate MVAL?, and if it yields, run F->M on the value. Otherwise, do nothing.
+
+
+
+***
+
+#### <a href="#whenm-value"><code>(WHENM MTERM? MOP)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.lisp#L127-L131">src</a></sub></sup><a name="whenm-value"></a>
+<code>&forall; :A :B :C. (<a href="#monad-class">MONAD</a> :A) (<a href="#terminator-class">TERMINATOR</a> :B) &rArr; ((:A :B) &rarr; (:A :C) &rarr; (:A <a href="#unit-type"><code>UNIT</code></a>))</code>
+
+Evaluate MTERM?, and if it indicates completion, run MOP, or do nothing.
+
+
+
+***
+
+#### <a href="#when_-value"><code>(WHEN_ TERM? M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.lisp#L118-L123">src</a></sub></sup><a name="when_-value"></a>
+<code>&forall; :A :B :C. (<a href="#monad-class">MONAD</a> :B) (<a href="#terminator-class">TERMINATOR</a> :A) &rArr; (:A &rarr; (:B :C) &rarr; (:B <a href="#unit-type"><code>UNIT</code></a>))</code>
+
+Run the monadic operation M when the terminator TERM? indicates completion,
+or do nothing.
+
+
+
+***
+
+# Package `COALTON-LIBRARY/EXPERIMENTAL/DO-CONTROL-LOOPS`<a name="coalton-library/experimental/do-control-loops-package"></a>
+
+### Values
+
+#### <a href="#collect-val-value"><code>(COLLECT-VAL M-OPERATION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.lisp#L54-L64">src</a></sub></sup><a name="collect-val-value"></a>
+<code>&forall; :A :B :C. (<a href="#monad-class">MONAD</a> :A) (<a href="#yielder-class">YIELDER</a> :B) &rArr; ((:A (:B :C)) &rarr; (:A (<a href="#list-type"><code>LIST</code></a> :C)))</code>
+
+Repeatedly run M-OPERATION, collecting each yielded value into a list until
+no value is yielded.
+
+
+
+***
+
+#### <a href="#foreach-value"><code>(FOREACH INTO-ITR FA-&gt;M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.lisp#L67-L76">src</a></sub></sup><a name="foreach-value"></a>
+<code>&forall; :A :B :C :D. (<a href="#monad-class">MONAD</a> :C) (<a href="#intoiterator-class">INTOITERATOR</a> :A :B) &rArr; (:A &rarr; (:B &rarr; (:C :D)) &rarr; (:C <a href="#unit-type"><code>UNIT</code></a>))</code>
+
+Apply FA->M to each element produced by INTO-ITR and run the resulting monadic action.
+Discards the return values and returns Unit.
+
+
+
+***
+
+#### <a href="#loop-times-value"><code>(LOOP-TIMES N M-OPERATION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.lisp#L42-L50">src</a></sub></sup><a name="loop-times-value"></a>
+<code>&forall; :A :B. <a href="#monad-class">MONAD</a> :A &rArr; (<a href="#ufix-type"><code>UFIX</code></a> &rarr; (<a href="#ufix-type"><code>UFIX</code></a> &rarr; (:A :B)) &rarr; (:A <a href="#unit-type"><code>UNIT</code></a>))</code>
+
+Repeat M-OPERATION N times. Passes the current index (starting at 0) to
+M-OPERATION. Returns Unit.
+
+
+
+***
+
+#### <a href="#loop-while-value"><code>(LOOP-WHILE M-OPERATION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.lisp#L33-L39">src</a></sub></sup><a name="loop-while-value"></a>
+<code>&forall; :A :B. (<a href="#monad-class">MONAD</a> :A) (<a href="#terminator-class">TERMINATOR</a> :B) &rArr; ((:A :B) &rarr; (:A <a href="#unit-type"><code>UNIT</code></a>))</code>
+
+Repeat M-OPERATION until it returns a terminated value. Returns Unit.
+
+
+
+***
+
+# Package `COALTON-LIBRARY/EXPERIMENTAL/DO-CONTROL-LOOPS-ADV`<a name="coalton-library/experimental/do-control-loops-adv-package"></a>
+
+### Types
+
+#### <a href="#loopt-type"><code>LOOPT</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.lisp#L78-L79">src</a></sub></sup><a name="loopt-type"></a>
+- <code>(LOOPT (:A (<a href="#step-type"><code>STEP</code></a> :B)))</code>
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#functor-class">FUNCTOR</a> :A &rArr; <a href="#functor-class">FUNCTOR</a> (<a href="#loopt-type"><code>LOOPT</code></a> :A)</code>
+- <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#applicative-class">APPLICATIVE</a> (<a href="#loopt-type"><code>LOOPT</code></a> :A)</code>
+- <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monad-class">MONAD</a> (<a href="#loopt-type"><code>LOOPT</code></a> :A)</code>
+- <code><a href="#monadenvironment-class">MONADENVIRONMENT</a> :A :B &rArr; <a href="#monadenvironment-class">MONADENVIRONMENT</a> :A (<a href="#loopt-type"><code>LOOPT</code></a> :B)</code>
+- <code><a href="#monadstate-class">MONADSTATE</a> :A :B &rArr; <a href="#monadstate-class">MONADSTATE</a> :A (<a href="#loopt-type"><code>LOOPT</code></a> :B)</code>
+- <code><a href="#monadtransformer-class">MONADTRANSFORMER</a> <a href="#loopt-type"><code>LOOPT</code></a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> ((<a href="#loopt-type"><code>LOOPT</code></a> :A) :B)</code>
+
+</details>
+
+
+
+***
+
+### Values
+
+#### <a href="#collect-value"><code>(COLLECT BODY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.lisp#L229-L239">src</a></sub></sup><a name="collect-value"></a>
+<code>&forall; :A :B. <a href="#monad-class">MONAD</a> :A &rArr; (((<a href="#loopt-type"><code>LOOPT</code></a> :A) :B) &rarr; (:A (<a href="#list-type"><code>LIST</code></a> :B)))</code>
+
+Run BODY in a loop, collecting each value it produces into a list in encounter order.
+Stops when BODY breaks. Continues skip the rest of the iteration. Returns the collected list.
+
+
+
+***
+
+#### <a href="#collect-val-value"><code>(COLLECT-VAL BODY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.lisp#L242-L257">src</a></sub></sup><a name="collect-val-value"></a>
+<code>&forall; :A :B :C. (<a href="#monad-class">MONAD</a> :A) (<a href="#yielder-class">YIELDER</a> :B) &rArr; (((<a href="#loopt-type"><code>LOOPT</code></a> :A) (:B :C)) &rarr; (:A (<a href="#list-type"><code>LIST</code></a> :C)))</code>
+
+Run BODY in a loop, adding each available value it yields to a list.
+Stops when BODY yields no value or breaks. Continue skips the rest of the iteration.
+Returns the collected list.
+
+
+
+***
+
+#### <a href="#foreach-value"><code>(FOREACH LST FA-&gt;LPT-M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.lisp#L260-L271">src</a></sub></sup><a name="foreach-value"></a>
+<code>&forall; :A :B :C. <a href="#monad-class">MONAD</a> :B &rArr; ((<a href="#list-type"><code>LIST</code></a> :A) &rarr; (:A &rarr; ((<a href="#loopt-type"><code>LOOPT</code></a> :B) :C)) &rarr; (:B <a href="#unit-type"><code>UNIT</code></a>))</code>
+
+For each element of LST, run FA->LPT-M on it. Break stops the iteration.
+Continue skips to the next element. Discards return values and returns Unit.
+
+
+
+***
+
+#### <a href="#loop-do-while-value"><code>(LOOP-DO-WHILE M-TERM? BODY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.lisp#L201-L212">src</a></sub></sup><a name="loop-do-while-value"></a>
+<code>&forall; :A :B :C. (<a href="#monad-class">MONAD</a> :A) (<a href="#terminator-class">TERMINATOR</a> :B) &rArr; ((:A :B) &rarr; ((<a href="#loopt-type"><code>LOOPT</code></a> :A) :C) &rarr; (:A <a href="#unit-type"><code>UNIT</code></a>))</code>
+
+Before each iteration, evaluate M-TERM?. If it indicates completion, stop; otherwise run BODY.
+Respects break and continue within BODY. Returns Unit.
+
+
+
+***
+
+#### <a href="#loop-times-value"><code>(LOOP-TIMES N BODY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.lisp#L215-L226">src</a></sub></sup><a name="loop-times-value"></a>
+<code>&forall; :A :B. <a href="#monad-class">MONAD</a> :A &rArr; (<a href="#ufix-type"><code>UFIX</code></a> &rarr; (<a href="#ufix-type"><code>UFIX</code></a> &rarr; ((<a href="#loopt-type"><code>LOOPT</code></a> :A) :B)) &rarr; (:A <a href="#unit-type"><code>UNIT</code></a>))</code>
+
+Repeat BODY N times. Passes the current index (starting at 0) to BODY.
+Returns Unit.
+
+
+
+***
+
+#### <a href="#loop-while-value"><code>(LOOP-WHILE BODY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.lisp#L188-L198">src</a></sub></sup><a name="loop-while-value"></a>
+<code>&forall; :A :B. (<a href="#monad-class">MONAD</a> :A) (<a href="#terminator-class">TERMINATOR</a> :B) &rArr; (((<a href="#loopt-type"><code>LOOPT</code></a> :A) :B) &rarr; (:A <a href="#unit-type"><code>UNIT</code></a>))</code>
+
+Run BODY repeatedly until it returns a terminated value. Returns Unit.
+
+
+
+***
+
+#### <a href="#loop_-value"><code>(LOOP_ BODY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.lisp#L179-L185">src</a></sub></sup><a name="loop_-value"></a>
+<code>&forall; :A :B. <a href="#monad-class">MONAD</a> :A &rArr; (((<a href="#loopt-type"><code>LOOPT</code></a> :A) :B) &rarr; (:A <a href="#unit-type"><code>UNIT</code></a>))</code>
+
+Run BODY forever, until it signals a break. Any produced values are ignored. Returns Unit.
+
+
+
+***
+
+#### <a href="#once-value"><code>(ONCE LP-M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.lisp#L275-L280">src</a></sub></sup><a name="once-value"></a>
+<code>&forall; :A :B. <a href="#monad-class">MONAD</a> :A &rArr; (((<a href="#loopt-type"><code>LOOPT</code></a> :A) :B) &rarr; (:A <a href="#unit-type"><code>UNIT</code></a>))</code>
+
+Run an operation exactly once. Continue or break will both immediately end
+execution in the operation. Returns Unit.
+
+
+
+***
+
+#### <a href="#unwrap-loop-value"><code>(UNWRAP-LOOP (LOOPT M-STP))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.lisp#L83-L86">src</a></sub></sup><a name="unwrap-loop-value"></a>
+<code>&forall; :A :B. (((<a href="#loopt-type"><code>LOOPT</code></a> :A) :B) &rarr; (:A (<a href="#step-type"><code>STEP</code></a> :B)))</code>
+
+Advance a LoopT computation by one step, returning whether it asked to continue,
+break, or produced a value.
+
+
+
+***
+
+#### <a href="#break-loop-value"><code>BREAK-LOOP</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.lisp#L90-L92">src</a></sub></sup><a name="break-loop-value"></a>
+<code>&forall; :A :B. <a href="#monad-class">MONAD</a> :A &rArr; ((<a href="#loopt-type"><code>LOOPT</code></a> :A) :B)</code>
+
+Signal that the loop should terminate immediately.
+
+
+
+***
+
+#### <a href="#continue-loop-value"><code>CONTINUE-LOOP</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.lisp#L96-L98">src</a></sub></sup><a name="continue-loop-value"></a>
+<code>&forall; :A :B. <a href="#monad-class">MONAD</a> :A &rArr; ((<a href="#loopt-type"><code>LOOPT</code></a> :A) :B)</code>
+
+Signal that the current iteration should be skipped and the loop should continue.
 
 
 
@@ -7478,6 +7780,7 @@ Methods:
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#monadenvironment-class">MONADENVIRONMENT</a> :A :B &rArr; <a href="#monadenvironment-class">MONADENVIRONMENT</a> :A (<a href="#loopt-type"><code>LOOPT</code></a> :B)</code>
 - <code><a href="#monadenvironment-class">MONADENVIRONMENT</a> :A :B &rArr; <a href="#monadenvironment-class">MONADENVIRONMENT</a> :A (<a href="#optionalt-type"><code>OPTIONALT</code></a> :B)</code>
 - <code><a href="#monadenvironment-class">MONADENVIRONMENT</a> :A :B &rArr; <a href="#monadenvironment-class">MONADENVIRONMENT</a> :A ((<a href="#resultt-type"><code>RESULTT</code></a> :C) :B)</code>
 - <code><a href="#monad-class">MONAD</a> :A &rArr; <a href="#monadenvironment-class">MONADENVIRONMENT</a> :B ((<a href="#envt-type"><code>ENVT</code></a> :B) :A)</code>
@@ -7503,6 +7806,7 @@ Methods:
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#monadstate-class">MONADSTATE</a> :A :B &rArr; <a href="#monadstate-class">MONADSTATE</a> :A (<a href="#loopt-type"><code>LOOPT</code></a> :B)</code>
 - <code><a href="#monadstate-class">MONADSTATE</a> :A :B &rArr; <a href="#monadstate-class">MONADSTATE</a> :A (<a href="#optionalt-type"><code>OPTIONALT</code></a> :B)</code>
 - <code><a href="#monadstate-class">MONADSTATE</a> :A :B &rArr; <a href="#monadstate-class">MONADSTATE</a> :A ((<a href="#resultt-type"><code>RESULTT</code></a> :C) :B)</code>
 - <code><a href="#monadstate-class">MONADSTATE</a> :A :B &rArr; <a href="#monadstate-class">MONADSTATE</a> :A ((<a href="#envt-type"><code>ENVT</code></a> :C) :B)</code>
@@ -7862,7 +8166,7 @@ A monadic computation that returns an Optional.
 
 ### Types
 
-#### <a href="#resultt-type"><code>RESULTT</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/resultt.lisp#L28-L30">src</a></sub></sup><a name="resultt-type"></a>
+#### <a href="#resultt-type"><code>RESULTT</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/resultt.lisp#L30-L32">src</a></sub></sup><a name="resultt-type"></a>
 - <code>(RESULTT (:A (<a href="#result-type"><code>RESULT</code></a> :B :C)))</code>
 
 A monadic computation that returns a Result.
@@ -7886,25 +8190,46 @@ A monadic computation that returns a Result.
 
 ### Values
 
-#### <a href="#err-ift-value"><code>(ERR-IFT PASSED FAILURE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/resultt.lisp#L50-L51">src</a></sub></sup><a name="err-ift-value"></a>
-<code>&forall; :A :B. <a href="#monad-class">MONAD</a> :B &rArr; (<a href="#boolean-type"><code>BOOLEAN</code></a> &rarr; :A &rarr; (((<a href="#resultt-type"><code>RESULTT</code></a> :A) :B) <a href="#unit-type"><code>UNIT</code></a>))</code>
+#### <a href="#err-ifm-value"><code>(ERR-IFM FAILED? FAILURE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/resultt.lisp#L66-L68">src</a></sub></sup><a name="err-ifm-value"></a>
+<code>&forall; :A :B. <a href="#monad-class">MONAD</a> :B &rArr; (<a href="#boolean-type"><code>BOOLEAN</code></a> &rarr; :A &rarr; (:B (<a href="#result-type"><code>RESULT</code></a> :A <a href="#unit-type"><code>UNIT</code></a>)))</code>
+
+Fail with FAILURE inside :m if FAILED? is True.
+
 
 
 ***
 
-#### <a href="#map-errt-value"><code>(MAP-ERRT FERR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/resultt.lisp#L46-L46">src</a></sub></sup><a name="map-errt-value"></a>
+#### <a href="#err-ift-value"><code>(ERR-IFT FAILED? FAILURE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/resultt.lisp#L60-L62">src</a></sub></sup><a name="err-ift-value"></a>
+<code>&forall; :A :B. <a href="#monad-class">MONAD</a> :B &rArr; (<a href="#boolean-type"><code>BOOLEAN</code></a> &rarr; :A &rarr; (((<a href="#resultt-type"><code>RESULTT</code></a> :A) :B) <a href="#unit-type"><code>UNIT</code></a>))</code>
+
+Fail with FAILURE if FAILED? is True.
+
+
+
+***
+
+#### <a href="#map-errm-value"><code>(MAP-ERRM FERR M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/resultt.lisp#L48-L52">src</a></sub></sup><a name="map-errm-value"></a>
+<code>&forall; :A :B :C :D. <a href="#monad-class">MONAD</a> :C &rArr; ((:A &rarr; :B) &rarr; (:C (<a href="#result-type"><code>RESULT</code></a> :A :D)) &rarr; (:C (<a href="#result-type"><code>RESULT</code></a> :B :D)))</code>
+
+Map FERR over the error value of a Result contained in M.
+
+
+
+***
+
+#### <a href="#map-errt-value"><code>(MAP-ERRT FERR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/resultt.lisp#L56-L56">src</a></sub></sup><a name="map-errt-value"></a>
 <code>&forall; :A :B :C :D. <a href="#functor-class">FUNCTOR</a> :C &rArr; ((:A &rarr; :B) &rarr; (((<a href="#resultt-type"><code>RESULTT</code></a> :A) :C) :D) &rarr; (((<a href="#resultt-type"><code>RESULTT</code></a> :B) :C) :D))</code>
 
 
 ***
 
-#### <a href="#map-resultt-value"><code>(MAP-RESULTT F (RESULTT M))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/resultt.lisp#L41-L42">src</a></sub></sup><a name="map-resultt-value"></a>
+#### <a href="#map-resultt-value"><code>(MAP-RESULTT F (RESULTT M))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/resultt.lisp#L43-L44">src</a></sub></sup><a name="map-resultt-value"></a>
 <code>&forall; :A :B :C :D :E :F. (((:A (<a href="#result-type"><code>RESULT</code></a> :B :C)) &rarr; (:D (<a href="#result-type"><code>RESULT</code></a> :E :F))) &rarr; (((<a href="#resultt-type"><code>RESULTT</code></a> :B) :A) :C) &rarr; (((<a href="#resultt-type"><code>RESULTT</code></a> :E) :D) :F))</code>
 
 
 ***
 
-#### <a href="#run-resultt-value"><code>(RUN-RESULTT (RESULTT M))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/resultt.lisp#L34-L35">src</a></sub></sup><a name="run-resultt-value"></a>
+#### <a href="#run-resultt-value"><code>(RUN-RESULTT (RESULTT M))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/resultt.lisp#L36-L37">src</a></sub></sup><a name="run-resultt-value"></a>
 <code>&forall; :A :B :C. ((((<a href="#resultt-type"><code>RESULTT</code></a> :A) :B) :C) &rarr; (:B (<a href="#result-type"><code>RESULT</code></a> :A :C)))</code>
 
 
@@ -8717,7 +9042,7 @@ Rotate the elements at indices `index1` and `index2` of the random-access storag
 
 ### Values
 
-#### <a href="#err-if-value"><code>(ERR-IF FAILED? FAILURE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L32-L36">src</a></sub></sup><a name="err-if-value"></a>
+#### <a href="#err-if-value"><code>(ERR-IF FAILED? FAILURE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L33-L37">src</a></sub></sup><a name="err-if-value"></a>
 <code>&forall; :A. (<a href="#boolean-type"><code>BOOLEAN</code></a> &rarr; :A &rarr; (<a href="#result-type"><code>RESULT</code></a> :A <a href="#unit-type"><code>UNIT</code></a>))</code>
 
 Fail with FAILURE value if FAILED? is True.
@@ -8726,7 +9051,7 @@ Fail with FAILURE value if FAILED? is True.
 
 ***
 
-#### <a href="#err?-value"><code>(ERR? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L53-L57">src</a></sub></sup><a name="err?-value"></a>
+#### <a href="#err?-value"><code>(ERR? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L54-L58">src</a></sub></sup><a name="err?-value"></a>
 <code>&forall; :A :B. ((<a href="#result-type"><code>RESULT</code></a> :A :B) &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Returns TRUE if X is ERR
@@ -8735,13 +9060,13 @@ Returns TRUE if X is ERR
 
 ***
 
-#### <a href="#flatten-value"><code>(FLATTEN X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L67-L70">src</a></sub></sup><a name="flatten-value"></a>
+#### <a href="#flatten-value"><code>(FLATTEN X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L74-L77">src</a></sub></sup><a name="flatten-value"></a>
 <code>&forall; :A. ((<a href="#result-type"><code>RESULT</code></a> :A :A) &rarr; :A)</code>
 
 
 ***
 
-#### <a href="#map-err-value"><code>(MAP-ERR F X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L60-L64">src</a></sub></sup><a name="map-err-value"></a>
+#### <a href="#map-err-value"><code>(MAP-ERR F X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L67-L71">src</a></sub></sup><a name="map-err-value"></a>
 <code>&forall; :A :B :C. ((:A &rarr; :B) &rarr; (<a href="#result-type"><code>RESULT</code></a> :A :C) &rarr; (<a href="#result-type"><code>RESULT</code></a> :B :C))</code>
 
 Map over the ERR case
@@ -8750,13 +9075,13 @@ Map over the ERR case
 
 ***
 
-#### <a href="#ok-or-error-value"><code>(OK-OR-ERROR RES)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L73-L76">src</a></sub></sup><a name="ok-or-error-value"></a>
+#### <a href="#ok-or-error-value"><code>(OK-OR-ERROR RES)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L80-L83">src</a></sub></sup><a name="ok-or-error-value"></a>
 <code>&forall; :A :B. <a href="#signalable-class">SIGNALABLE</a> :A &rArr; ((<a href="#result-type"><code>RESULT</code></a> :A :B) &rarr; :B)</code>
 
 
 ***
 
-#### <a href="#ok?-value"><code>(OK? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L46-L50">src</a></sub></sup><a name="ok?-value"></a>
+#### <a href="#ok?-value"><code>(OK? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L47-L51">src</a></sub></sup><a name="ok?-value"></a>
 <code>&forall; :A :B. ((<a href="#result-type"><code>RESULT</code></a> :A :B) &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Returns TRUE if X is OK
@@ -8765,7 +9090,16 @@ Returns TRUE if X is OK
 
 ***
 
-#### <a href="#opt->result-value"><code>(OPT-&gt;RESULT FAILURE OPT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L39-L43">src</a></sub></sup><a name="opt->result-value"></a>
+#### <a href="#okm-value"><code>(OKM F-A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L62-L64">src</a></sub></sup><a name="okm-value"></a>
+<code>&forall; :A :B :C. <a href="#functor-class">FUNCTOR</a> :A &rArr; ((:A :B) &rarr; (:A (<a href="#result-type"><code>RESULT</code></a> :C :B)))</code>
+
+Wrap a value inside F-A inside of 'Ok'.
+
+
+
+***
+
+#### <a href="#opt->result-value"><code>(OPT-&gt;RESULT FAILURE OPT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L40-L44">src</a></sub></sup><a name="opt->result-value"></a>
 <code>&forall; :A :B. (:A &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> :B) &rarr; (<a href="#result-type"><code>RESULT</code></a> :A :B))</code>
 
 Convert OPT to a Result, using FAILURE value if None.
@@ -9595,6 +9929,8 @@ Methods:
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#iteratorstacknode-type"><code>ITERATORSTACKNODE</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tree-type"><code>TREE</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> <a href="#color-type"><code>COLOR</code></a></code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> ((<a href="#loopt-type"><code>LOOPT</code></a> :A) :B)</code>
+- <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#step-type"><code>STEP</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (((<a href="#freet-type"><code>FREET</code></a> :A) :B) :C)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (((<a href="#freef-type"><code>FREEF</code></a> :A) :B) :C)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> ((<a href="#free-type"><code>FREE</code></a> :A) :B)</code>
