@@ -3768,7 +3768,7 @@ or do nothing.
 
 ### Values
 
-#### <a href="#collect-val-value"><code>(COLLECT-VAL M-OPERATION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.lisp#L54-L64">src</a></sub></sup><a name="collect-val-value"></a>
+#### <a href="#collect-val-value"><code>(COLLECT-VAL M-OPERATION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.lisp#L70-L80">src</a></sub></sup><a name="collect-val-value"></a>
 <code>&forall; :A :B :C. (<a href="#monad-class">MONAD</a> :A) (<a href="#yielder-class">YIELDER</a> :B) &rArr; ((:A (:B :C)) &rarr; (:A (<a href="#list-type"><code>LIST</code></a> :C)))</code>
 
 Repeatedly run M-OPERATION, collecting each yielded value into a list until
@@ -3778,7 +3778,7 @@ no value is yielded.
 
 ***
 
-#### <a href="#foreach-value"><code>(FOREACH INTO-ITR FA-&gt;M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.lisp#L67-L76">src</a></sub></sup><a name="foreach-value"></a>
+#### <a href="#foreach-value"><code>(FOREACH INTO-ITR FA-&gt;M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.lisp#L83-L92">src</a></sub></sup><a name="foreach-value"></a>
 <code>&forall; :A :B :C :D. (<a href="#monad-class">MONAD</a> :C) (<a href="#intoiterator-class">INTOITERATOR</a> :A :B) &rArr; (:A &rarr; (:B &rarr; (:C :D)) &rarr; (:C <a href="#unit-type"><code>UNIT</code></a>))</code>
 
 Apply FA->M to each element produced by INTO-ITR and run the resulting monadic action.
@@ -3788,7 +3788,7 @@ Discards the return values and returns Unit.
 
 ***
 
-#### <a href="#loop-times-value"><code>(LOOP-TIMES N M-OPERATION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.lisp#L42-L50">src</a></sub></sup><a name="loop-times-value"></a>
+#### <a href="#loop-times-value"><code>(LOOP-TIMES N M-OPERATION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.lisp#L58-L66">src</a></sub></sup><a name="loop-times-value"></a>
 <code>&forall; :A :B. <a href="#monad-class">MONAD</a> :A &rArr; (<a href="#ufix-type"><code>UFIX</code></a> &rarr; (<a href="#ufix-type"><code>UFIX</code></a> &rarr; (:A :B)) &rarr; (:A <a href="#unit-type"><code>UNIT</code></a>))</code>
 
 Repeat M-OPERATION N times. Passes the current index (starting at 0) to
@@ -3798,10 +3798,20 @@ M-OPERATION. Returns Unit.
 
 ***
 
-#### <a href="#loop-while-value"><code>(LOOP-WHILE M-OPERATION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.lisp#L33-L39">src</a></sub></sup><a name="loop-while-value"></a>
+#### <a href="#loop-while-value"><code>(LOOP-WHILE M-OPERATION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.lisp#L35-L41">src</a></sub></sup><a name="loop-while-value"></a>
 <code>&forall; :A :B. (<a href="#monad-class">MONAD</a> :A) (<a href="#terminator-class">TERMINATOR</a> :B) &rArr; ((:A :B) &rarr; (:A <a href="#unit-type"><code>UNIT</code></a>))</code>
 
 Repeat M-OPERATION until it returns a terminated value. Returns Unit.
+
+
+
+***
+
+#### <a href="#loop-while-valm-value"><code>(LOOP-WHILE-VALM M-OPERATION F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.lisp#L44-L55">src</a></sub></sup><a name="loop-while-valm-value"></a>
+<code>&forall; :A :B :C :D. (<a href="#monad-class">MONAD</a> :A) (<a href="#yielder-class">YIELDER</a> :B) &rArr; ((:A (:B :C)) &rarr; (:C &rarr; (:A :D)) &rarr; (:A <a href="#unit-type"><code>UNIT</code></a>))</code>
+
+Repeat M-OPERATION while it yields a value, running the yielded value applied to F.
+Returns Unit.
 
 
 
@@ -4129,7 +4139,7 @@ Common Lisp makes a distinction between file and directory paths. Directory path
 
 ### Types
 
-#### <a href="#fileerror-type"><code>FILEERROR</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L147-L152">src</a></sub></sup><a name="fileerror-type"></a>
+#### <a href="#fileerror-type"><code>FILEERROR</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L148-L153">src</a></sub></sup><a name="fileerror-type"></a>
 - <code>(PATHERROR <a href="#string-type"><code>STRING</code></a> <a href="#pathname-type"><code>PATHNAME</code></a>)</code>
 - <code>(LISPERROR <a href="#lispcondition-type"><code>LISPCONDITION</code></a>)</code>
 - <code>(FILEERROR <a href="#string-type"><code>STRING</code></a>)</code>
@@ -4149,7 +4159,7 @@ Errors for file functions.
 
 ***
 
-#### <a href="#filestream-type"><code>FILESTREAM</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L357-L358">src</a></sub></sup><a name="filestream-type"></a>
+#### <a href="#filestream-type"><code>FILESTREAM</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L358-L359">src</a></sub></sup><a name="filestream-type"></a>
 
 Represents a file stream, using `cl:file-stream`.
 
@@ -4164,7 +4174,7 @@ Represents a file stream, using `cl:file-stream`.
 
 ***
 
-#### <a href="#ifexists-type"><code>IFEXISTS</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L361-L366">src</a></sub></sup><a name="ifexists-type"></a>
+#### <a href="#ifexists-type"><code>IFEXISTS</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L362-L367">src</a></sub></sup><a name="ifexists-type"></a>
 - <code>SUPERSEDE</code> 
 - <code>OVERWRITE</code> 
 - <code>EERROR</code> 
@@ -4183,7 +4193,7 @@ Possible options for opening a stream when the file exists.
 
 ***
 
-#### <a href="#pathname-type"><code>PATHNAME</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L118-L119">src</a></sub></sup><a name="pathname-type"></a>
+#### <a href="#pathname-type"><code>PATHNAME</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L119-L120">src</a></sub></sup><a name="pathname-type"></a>
 
 Pathname object. Equivalent to `cl:pathname`
 
@@ -4204,7 +4214,7 @@ Pathname object. Equivalent to `cl:pathname`
 
 ***
 
-#### <a href="#streamoptions-type"><code>STREAMOPTIONS</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L368-L372">src</a></sub></sup><a name="streamoptions-type"></a>
+#### <a href="#streamoptions-type"><code>STREAMOPTIONS</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L369-L373">src</a></sub></sup><a name="streamoptions-type"></a>
 - <code>(BIDIRECTIONAL <a href="#pathname-type"><code>PATHNAME</code></a> <a href="#ifexists-type"><code>IFEXISTS</code></a>)</code>
   - Constructor for opening a bidirectional stream.
 - <code>(OUTPUT <a href="#pathname-type"><code>PATHNAME</code></a> <a href="#ifexists-type"><code>IFEXISTS</code></a>)</code>
@@ -4227,7 +4237,7 @@ A type for providing parameters for opening streams. StreamOptions take strings 
 
 ### Classes
 
-#### <a href="#file-class"><code>FILE</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L507-L511">src</a></sub></sup><a name="file-class"></a>
+#### <a href="#file-class"><code>FILE</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L516-L520">src</a></sub></sup><a name="file-class"></a>
 <code><a href="#file-class">FILE</a> :A</code>
 
 
@@ -4260,7 +4270,7 @@ Methods:
 
 ### Values
 
-#### <a href="#abort-value"><code>(ABORT STREAM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L439-L442">src</a></sub></sup><a name="abort-value"></a>
+#### <a href="#abort-value"><code>(ABORT STREAM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L440-L443">src</a></sub></sup><a name="abort-value"></a>
 <code>&forall; :A :B. ((<a href="#filestream-type"><code>FILESTREAM</code></a> :A) &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> :B))</code>
 
 Closes a FileStream and aborts all operations..
@@ -4269,7 +4279,7 @@ Closes a FileStream and aborts all operations..
 
 ***
 
-#### <a href="#append-to-file!-value"><code>(APPEND-TO-FILE! PATH DATA)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L706-L710">src</a></sub></sup><a name="append-to-file!-value"></a>
+#### <a href="#append-to-file!-value"><code>(APPEND-TO-FILE! PATH DATA)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L715-L719">src</a></sub></sup><a name="append-to-file!-value"></a>
 <code>&forall; :A :B. (<a href="#runtimerepr-class">RUNTIMEREPR</a> :B) (<a href="#into-class">INTO</a> :A <a href="#pathname-type"><code>PATHNAME</code></a>) (<a href="#file-class">FILE</a> :B) &rArr; (:A &rarr; (<a href="#vector-type"><code>VECTOR</code></a> :B) &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> <a href="#unit-type"><code>UNIT</code></a>))</code>
 
 Opens and appends a file with data of type :a.
@@ -4278,7 +4288,7 @@ Opens and appends a file with data of type :a.
 
 ***
 
-#### <a href="#close-value"><code>(CLOSE STREAM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L433-L436">src</a></sub></sup><a name="close-value"></a>
+#### <a href="#close-value"><code>(CLOSE STREAM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L434-L437">src</a></sub></sup><a name="close-value"></a>
 <code>&forall; :A :B. ((<a href="#filestream-type"><code>FILESTREAM</code></a> :A) &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> :B))</code>
 
 Closes a FileStream.
@@ -4287,7 +4297,7 @@ Closes a FileStream.
 
 ***
 
-#### <a href="#copy!-value"><code>(COPY! INPUT OUTPUT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L332-L340">src</a></sub></sup><a name="copy!-value"></a>
+#### <a href="#copy!-value"><code>(COPY! INPUT OUTPUT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L333-L341">src</a></sub></sup><a name="copy!-value"></a>
 <code>&forall; :A :B. (<a href="#into-class">INTO</a> :A <a href="#pathname-type"><code>PATHNAME</code></a>) (<a href="#into-class">INTO</a> :B <a href="#pathname-type"><code>PATHNAME</code></a>) &rArr; (:A &rarr; :B &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> <a href="#unit-type"><code>UNIT</code></a>))</code>
 
 Copies a file to a new location.
@@ -4296,7 +4306,7 @@ Copies a file to a new location.
 
 ***
 
-#### <a href="#create-directory!-value"><code>(CREATE-DIRECTORY! PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L266-L271">src</a></sub></sup><a name="create-directory!-value"></a>
+#### <a href="#create-directory!-value"><code>(CREATE-DIRECTORY! PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L267-L272">src</a></sub></sup><a name="create-directory!-value"></a>
 <code>&forall; :A. <a href="#into-class">INTO</a> :A <a href="#pathname-type"><code>PATHNAME</code></a> &rArr; (:A &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> <a href="#pathname-type"><code>PATHNAME</code></a>))</code>
 
 This is equivalent to `mkdir -p`. Creates a directory and its parents. The pathname must be a valid directory pathname.
@@ -4305,7 +4315,7 @@ This is equivalent to `mkdir -p`. Creates a directory and its parents. The pathn
 
 ***
 
-#### <a href="#create-temp-directory!-value"><code>(CREATE-TEMP-DIRECTORY! _)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L660-L662">src</a></sub></sup><a name="create-temp-directory!-value"></a>
+#### <a href="#create-temp-directory!-value"><code>(CREATE-TEMP-DIRECTORY! _)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L669-L671">src</a></sub></sup><a name="create-temp-directory!-value"></a>
 <code>(<a href="#unit-type"><code>UNIT</code></a> &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> <a href="#pathname-type"><code>PATHNAME</code></a>))</code>
 
 This configures a default temporary directory for use.
@@ -4314,7 +4324,7 @@ This configures a default temporary directory for use.
 
 ***
 
-#### <a href="#create-temp-file!-value"><code>(CREATE-TEMP-FILE! FILE-EXT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L665-L671">src</a></sub></sup><a name="create-temp-file!-value"></a>
+#### <a href="#create-temp-file!-value"><code>(CREATE-TEMP-FILE! FILE-EXT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L674-L680">src</a></sub></sup><a name="create-temp-file!-value"></a>
 <code>(<a href="#string-type"><code>STRING</code></a> &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> <a href="#pathname-type"><code>PATHNAME</code></a>))</code>
 
 This configures a default temporary file for use.
@@ -4323,7 +4333,7 @@ This configures a default temporary file for use.
 
 ***
 
-#### <a href="#delete-file!-value"><code>(DELETE-FILE! PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L343-L348">src</a></sub></sup><a name="delete-file!-value"></a>
+#### <a href="#delete-file!-value"><code>(DELETE-FILE! PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L344-L349">src</a></sub></sup><a name="delete-file!-value"></a>
 <code>&forall; :A. <a href="#into-class">INTO</a> :A <a href="#pathname-type"><code>PATHNAME</code></a> &rArr; (:A &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> <a href="#unit-type"><code>UNIT</code></a>))</code>
 
 Deletes a given file if the file exists.
@@ -4332,7 +4342,7 @@ Deletes a given file if the file exists.
 
 ***
 
-#### <a href="#directory-exists?-value"><code>(DIRECTORY-EXISTS? PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L219-L225">src</a></sub></sup><a name="directory-exists?-value"></a>
+#### <a href="#directory-exists?-value"><code>(DIRECTORY-EXISTS? PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L220-L226">src</a></sub></sup><a name="directory-exists?-value"></a>
 <code>&forall; :A. <a href="#into-class">INTO</a> :A <a href="#pathname-type"><code>PATHNAME</code></a> &rArr; (:A &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> <a href="#boolean-type"><code>BOOLEAN</code></a>))</code>
 
 Returns True if a pathname names a directory that exists.
@@ -4341,7 +4351,7 @@ Returns True if a pathname names a directory that exists.
 
 ***
 
-#### <a href="#directory-files-value"><code>(DIRECTORY-FILES PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L276-L281">src</a></sub></sup><a name="directory-files-value"></a>
+#### <a href="#directory-files-value"><code>(DIRECTORY-FILES PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L277-L282">src</a></sub></sup><a name="directory-files-value"></a>
 <code>&forall; :A. <a href="#into-class">INTO</a> :A <a href="#pathname-type"><code>PATHNAME</code></a> &rArr; (:A &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> (<a href="#list-type"><code>LIST</code></a> <a href="#pathname-type"><code>PATHNAME</code></a>)))</code>
 
 Returns all files within the directory. Returns an error if the pathname is not a directory pathname.
@@ -4350,7 +4360,7 @@ Returns all files within the directory. Returns an error if the pathname is not 
 
 ***
 
-#### <a href="#directory-pathname?-value"><code>(DIRECTORY-PATHNAME? PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L186-L190">src</a></sub></sup><a name="directory-pathname?-value"></a>
+#### <a href="#directory-pathname?-value"><code>(DIRECTORY-PATHNAME? PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L187-L191">src</a></sub></sup><a name="directory-pathname?-value"></a>
 <code>&forall; :A. <a href="#into-class">INTO</a> :A <a href="#pathname-type"><code>PATHNAME</code></a> &rArr; (:A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Returns True if a pathname has no file component.
@@ -4359,7 +4369,7 @@ Returns True if a pathname has no file component.
 
 ***
 
-#### <a href="#empty?-value"><code>(EMPTY? PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L296-L301">src</a></sub></sup><a name="empty?-value"></a>
+#### <a href="#empty?-value"><code>(EMPTY? PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L297-L302">src</a></sub></sup><a name="empty?-value"></a>
 <code>&forall; :A. <a href="#into-class">INTO</a> :A <a href="#pathname-type"><code>PATHNAME</code></a> &rArr; (:A &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> <a href="#boolean-type"><code>BOOLEAN</code></a>))</code>
 
 Checks whether a directory is empty.
@@ -4368,7 +4378,7 @@ Checks whether a directory is empty.
 
 ***
 
-#### <a href="#exists?-value"><code>(EXISTS? PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L200-L204">src</a></sub></sup><a name="exists?-value"></a>
+#### <a href="#exists?-value"><code>(EXISTS? PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L201-L205">src</a></sub></sup><a name="exists?-value"></a>
 <code>&forall; :A. <a href="#into-class">INTO</a> :A <a href="#pathname-type"><code>PATHNAME</code></a> &rArr; (:A &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> <a href="#boolean-type"><code>BOOLEAN</code></a>))</code>
 
 Returns whether a file or directory exists.
@@ -4377,7 +4387,7 @@ Returns whether a file or directory exists.
 
 ***
 
-#### <a href="#file-exists?-value"><code>(FILE-EXISTS? PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L228-L236">src</a></sub></sup><a name="file-exists?-value"></a>
+#### <a href="#file-exists?-value"><code>(FILE-EXISTS? PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L229-L237">src</a></sub></sup><a name="file-exists?-value"></a>
 <code>&forall; :A. <a href="#into-class">INTO</a> :A <a href="#pathname-type"><code>PATHNAME</code></a> &rArr; (:A &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> <a href="#boolean-type"><code>BOOLEAN</code></a>))</code>
 
 Returns True if a pathname names a file that exists.
@@ -4386,7 +4396,7 @@ Returns True if a pathname names a file that exists.
 
 ***
 
-#### <a href="#file-pathname?-value"><code>(FILE-PATHNAME? PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L193-L197">src</a></sub></sup><a name="file-pathname?-value"></a>
+#### <a href="#file-pathname?-value"><code>(FILE-PATHNAME? PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L194-L198">src</a></sub></sup><a name="file-pathname?-value"></a>
 <code>&forall; :A. <a href="#into-class">INTO</a> :A <a href="#pathname-type"><code>PATHNAME</code></a> &rArr; (:A &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Returns True if a pathname has a file component.
@@ -4395,7 +4405,7 @@ Returns True if a pathname has a file component.
 
 ***
 
-#### <a href="#file-position-value"><code>(FILE-POSITION STREAM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L482-L485">src</a></sub></sup><a name="file-position-value"></a>
+#### <a href="#file-position-value"><code>(FILE-POSITION STREAM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L491-L494">src</a></sub></sup><a name="file-position-value"></a>
 <code>&forall; :A. ((<a href="#filestream-type"><code>FILESTREAM</code></a> :A) &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> <a href="#ufix-type"><code>UFIX</code></a>))</code>
 
 Finds the file-position of a file stream.
@@ -4404,7 +4414,7 @@ Finds the file-position of a file stream.
 
 ***
 
-#### <a href="#flush-value"><code>(FLUSH STREAM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L476-L479">src</a></sub></sup><a name="flush-value"></a>
+#### <a href="#flush-value"><code>(FLUSH STREAM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L485-L488">src</a></sub></sup><a name="flush-value"></a>
 <code>&forall; :A :B. ((<a href="#filestream-type"><code>FILESTREAM</code></a> :A) &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> :B))</code>
 
 Blocks until `stream` has been flushed. Calls `cl:finish-output`.
@@ -4413,7 +4423,7 @@ Blocks until `stream` has been flushed. Calls `cl:finish-output`.
 
 ***
 
-#### <a href="#merge-value"><code>(MERGE PATH1 PATH2)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L245-L252">src</a></sub></sup><a name="merge-value"></a>
+#### <a href="#merge-value"><code>(MERGE PATH1 PATH2)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L246-L253">src</a></sub></sup><a name="merge-value"></a>
 <code>&forall; :A :B. (<a href="#into-class">INTO</a> :A <a href="#pathname-type"><code>PATHNAME</code></a>) (<a href="#into-class">INTO</a> :B <a href="#pathname-type"><code>PATHNAME</code></a>) &rArr; (:A &rarr; :B &rarr; <a href="#pathname-type"><code>PATHNAME</code></a>)</code>
 
 Merges two pathnames together. The directory pathname should be the first argument.
@@ -4422,7 +4432,7 @@ Merges two pathnames together. The directory pathname should be the first argume
 
 ***
 
-#### <a href="#read-char-value"><code>(READ-CHAR STREAM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L445-L450">src</a></sub></sup><a name="read-char-value"></a>
+#### <a href="#read-char-value"><code>(READ-CHAR STREAM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L446-L451">src</a></sub></sup><a name="read-char-value"></a>
 <code>((<a href="#filestream-type"><code>FILESTREAM</code></a> <a href="#char-type"><code>CHAR</code></a>) &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> <a href="#char-type"><code>CHAR</code></a>))</code>
 
 Reads a character from an FileStream.
@@ -4431,7 +4441,7 @@ Reads a character from an FileStream.
 
 ***
 
-#### <a href="#read-file-lines-value"><code>(READ-FILE-LINES PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L732-L736">src</a></sub></sup><a name="read-file-lines-value"></a>
+#### <a href="#read-file-lines-value"><code>(READ-FILE-LINES PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L741-L745">src</a></sub></sup><a name="read-file-lines-value"></a>
 <code>&forall; :A. <a href="#into-class">INTO</a> :A <a href="#pathname-type"><code>PATHNAME</code></a> &rArr; (:A &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> (<a href="#list-type"><code>LIST</code></a> <a href="#string-type"><code>STRING</code></a>)))</code>
 
 Reads a file into lines, given a pathname or string.
@@ -4440,7 +4450,7 @@ Reads a file into lines, given a pathname or string.
 
 ***
 
-#### <a href="#read-file-to-string-value"><code>(READ-FILE-TO-STRING PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L725-L729">src</a></sub></sup><a name="read-file-to-string-value"></a>
+#### <a href="#read-file-to-string-value"><code>(READ-FILE-TO-STRING PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L734-L738">src</a></sub></sup><a name="read-file-to-string-value"></a>
 <code>&forall; :A. <a href="#into-class">INTO</a> :A <a href="#pathname-type"><code>PATHNAME</code></a> &rArr; (:A &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> <a href="#string-type"><code>STRING</code></a>))</code>
 
 Reads a file into a string, given a pathname string.
@@ -4449,7 +4459,7 @@ Reads a file into a string, given a pathname string.
 
 ***
 
-#### <a href="#read-file-to-vector-value"><code>(READ-FILE-TO-VECTOR STREAM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L586-L595">src</a></sub></sup><a name="read-file-to-vector-value"></a>
+#### <a href="#read-file-to-vector-value"><code>(READ-FILE-TO-VECTOR STREAM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L595-L604">src</a></sub></sup><a name="read-file-to-vector-value"></a>
 <code>&forall; :A. <a href="#file-class">FILE</a> :A &rArr; ((<a href="#filestream-type"><code>FILESTREAM</code></a> :A) &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> (<a href="#vector-type"><code>VECTOR</code></a> :A)))</code>
 
 Reads a file into a vector of type `:a`.
@@ -4458,7 +4468,16 @@ Reads a file into a vector of type `:a`.
 
 ***
 
-#### <a href="#read-vector-value"><code>(READ-VECTOR STREAM CHUNK-SIZE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L572-L580">src</a></sub></sup><a name="read-vector-value"></a>
+#### <a href="#read-line-value"><code>(READ-LINE STREAM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L454-L459">src</a></sub></sup><a name="read-line-value"></a>
+<code>((<a href="#filestream-type"><code>FILESTREAM</code></a> <a href="#char-type"><code>CHAR</code></a>) &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> <a href="#string-type"><code>STRING</code></a>))</code>
+
+Reads a line of characters from a FileStream.
+
+
+
+***
+
+#### <a href="#read-vector-value"><code>(READ-VECTOR STREAM CHUNK-SIZE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L581-L589">src</a></sub></sup><a name="read-vector-value"></a>
 <code>&forall; :A. <a href="#file-class">FILE</a> :A &rArr; ((<a href="#filestream-type"><code>FILESTREAM</code></a> :A) &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> (<a href="#vector-type"><code>VECTOR</code></a> :A)))</code>
 
 Reads a chunk of a file into a vector of type `:a`.
@@ -4467,7 +4486,7 @@ Reads a chunk of a file into a vector of type `:a`.
 
 ***
 
-#### <a href="#remove-directory!-value"><code>(REMOVE-DIRECTORY! PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L304-L308">src</a></sub></sup><a name="remove-directory!-value"></a>
+#### <a href="#remove-directory!-value"><code>(REMOVE-DIRECTORY! PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L305-L309">src</a></sub></sup><a name="remove-directory!-value"></a>
 <code>&forall; :A. <a href="#into-class">INTO</a> :A <a href="#pathname-type"><code>PATHNAME</code></a> &rArr; (:A &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> :A))</code>
 
 Deletes an empty directory.
@@ -4476,7 +4495,7 @@ Deletes an empty directory.
 
 ***
 
-#### <a href="#remove-directory-recursive!-value"><code>(REMOVE-DIRECTORY-RECURSIVE! PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L311-L316">src</a></sub></sup><a name="remove-directory-recursive!-value"></a>
+#### <a href="#remove-directory-recursive!-value"><code>(REMOVE-DIRECTORY-RECURSIVE! PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L312-L317">src</a></sub></sup><a name="remove-directory-recursive!-value"></a>
 <code>&forall; :A. <a href="#into-class">INTO</a> :A <a href="#pathname-type"><code>PATHNAME</code></a> &rArr; (:A &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> <a href="#unit-type"><code>UNIT</code></a>))</code>
 
 Deletes a target directory recursively. Equivalent to `rm -r`. Errors if the path is not a directory.
@@ -4485,7 +4504,7 @@ Deletes a target directory recursively. Equivalent to `rm -r`. Errors if the pat
 
 ***
 
-#### <a href="#set-file-position-value"><code>(SET-FILE-POSITION STREAM I)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L488-L491">src</a></sub></sup><a name="set-file-position-value"></a>
+#### <a href="#set-file-position-value"><code>(SET-FILE-POSITION STREAM I)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L497-L500">src</a></sub></sup><a name="set-file-position-value"></a>
 <code>&forall; :A. ((<a href="#filestream-type"><code>FILESTREAM</code></a> :A) &rarr; <a href="#ufix-type"><code>UFIX</code></a> &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> <a href="#unit-type"><code>UNIT</code></a>))</code>
 
 Sets the file position of a file stream.
@@ -4494,7 +4513,7 @@ Sets the file position of a file stream.
 
 ***
 
-#### <a href="#subdirectories-value"><code>(SUBDIRECTORIES PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L284-L289">src</a></sub></sup><a name="subdirectories-value"></a>
+#### <a href="#subdirectories-value"><code>(SUBDIRECTORIES PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L285-L290">src</a></sub></sup><a name="subdirectories-value"></a>
 <code>&forall; :A. <a href="#into-class">INTO</a> :A <a href="#pathname-type"><code>PATHNAME</code></a> &rArr; (:A &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> (<a href="#list-type"><code>LIST</code></a> <a href="#pathname-type"><code>PATHNAME</code></a>)))</code>
 
 Returns all subdirectories within the directory. Returns an error if the pathname is not a directory pathname.
@@ -4503,7 +4522,7 @@ Returns all subdirectories within the directory. Returns an error if the pathnam
 
 ***
 
-#### <a href="#system-relative-pathname-value"><code>(SYSTEM-RELATIVE-PATHNAME SYSTEM-NAME NAME)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L319-L323">src</a></sub></sup><a name="system-relative-pathname-value"></a>
+#### <a href="#system-relative-pathname-value"><code>(SYSTEM-RELATIVE-PATHNAME SYSTEM-NAME NAME)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L320-L324">src</a></sub></sup><a name="system-relative-pathname-value"></a>
 <code>&forall; :A. <a href="#into-class">INTO</a> :A <a href="#string-type"><code>STRING</code></a> &rArr; (:A &rarr; <a href="#string-type"><code>STRING</code></a> &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> <a href="#pathname-type"><code>PATHNAME</code></a>))</code>
 
 Generates a system-relative-pathname for a given filename or path. This is a wrapper for `asdf:system-relative-pathname`. `Name` will likely be an empty string unless a subdirectory or filename is specified.
@@ -4512,7 +4531,7 @@ Generates a system-relative-pathname for a given filename or path. This is a wra
 
 ***
 
-#### <a href="#with-open-file-value"><code>(WITH-OPEN-FILE STREAM-OPTIONS THUNK)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L561-L565">src</a></sub></sup><a name="with-open-file-value"></a>
+#### <a href="#with-open-file-value"><code>(WITH-OPEN-FILE STREAM-OPTIONS THUNK)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L570-L574">src</a></sub></sup><a name="with-open-file-value"></a>
 <code>&forall; :A :B. <a href="#file-class">FILE</a> :A &rArr; (<a href="#streamoptions-type"><code>STREAMOPTIONS</code></a> &rarr; ((<a href="#filestream-type"><code>FILESTREAM</code></a> :A) &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> :B)) &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> :B))</code>
 
 Opens a file stream, performs `thunk` on it, then closes the stream.
@@ -4521,7 +4540,7 @@ Opens a file stream, performs `thunk` on it, then closes the stream.
 
 ***
 
-#### <a href="#with-temp-directory-value"><code>(WITH-TEMP-DIRECTORY THUNK)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L687-L692">src</a></sub></sup><a name="with-temp-directory-value"></a>
+#### <a href="#with-temp-directory-value"><code>(WITH-TEMP-DIRECTORY THUNK)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L696-L701">src</a></sub></sup><a name="with-temp-directory-value"></a>
 <code>&forall; :A. ((<a href="#pathname-type"><code>PATHNAME</code></a> &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> :A)) &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> :A))</code>
 
 Performs an operation `thunk` inside a temporary directory.
@@ -4530,7 +4549,7 @@ Performs an operation `thunk` inside a temporary directory.
 
 ***
 
-#### <a href="#with-temp-file-value"><code>(WITH-TEMP-FILE FILE-TYPE THUNK)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L677-L684">src</a></sub></sup><a name="with-temp-file-value"></a>
+#### <a href="#with-temp-file-value"><code>(WITH-TEMP-FILE FILE-TYPE THUNK)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L686-L693">src</a></sub></sup><a name="with-temp-file-value"></a>
 <code>&forall; :A :B. <a href="#file-class">FILE</a> :A &rArr; (<a href="#string-type"><code>STRING</code></a> &rarr; ((<a href="#filestream-type"><code>FILESTREAM</code></a> :A) &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> :B)) &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> :B))</code>
 
 Performs an operation `thunk` on a temporary file. File type extensions need to include `.`, like ".txt".
@@ -4539,7 +4558,7 @@ Performs an operation `thunk` on a temporary file. File type extensions need to 
 
 ***
 
-#### <a href="#write-char-value"><code>(WRITE-CHAR STREAM DATA)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L453-L456">src</a></sub></sup><a name="write-char-value"></a>
+#### <a href="#write-char-value"><code>(WRITE-CHAR STREAM DATA)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L462-L465">src</a></sub></sup><a name="write-char-value"></a>
 <code>((<a href="#filestream-type"><code>FILESTREAM</code></a> <a href="#char-type"><code>CHAR</code></a>) &rarr; <a href="#char-type"><code>CHAR</code></a> &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> <a href="#unit-type"><code>UNIT</code></a>))</code>
 
 Writes a `Char` to the stream.
@@ -4548,7 +4567,7 @@ Writes a `Char` to the stream.
 
 ***
 
-#### <a href="#write-line-value"><code>(WRITE-LINE STREAM S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L613-L616">src</a></sub></sup><a name="write-line-value"></a>
+#### <a href="#write-line-value"><code>(WRITE-LINE STREAM S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L622-L625">src</a></sub></sup><a name="write-line-value"></a>
 <code>((<a href="#filestream-type"><code>FILESTREAM</code></a> <a href="#char-type"><code>CHAR</code></a>) &rarr; <a href="#string-type"><code>STRING</code></a> &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> <a href="#unit-type"><code>UNIT</code></a>))</code>
 
 Writes a string with an appended newline to a filestream of type Char.
@@ -4557,7 +4576,7 @@ Writes a string with an appended newline to a filestream of type Char.
 
 ***
 
-#### <a href="#write-string-value"><code>(WRITE-STRING FS S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L608-L610">src</a></sub></sup><a name="write-string-value"></a>
+#### <a href="#write-string-value"><code>(WRITE-STRING FS S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L617-L619">src</a></sub></sup><a name="write-string-value"></a>
 <code>((<a href="#filestream-type"><code>FILESTREAM</code></a> <a href="#char-type"><code>CHAR</code></a>) &rarr; <a href="#string-type"><code>STRING</code></a> &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> <a href="#unit-type"><code>UNIT</code></a>))</code>
 
 Writes a `string` to a FileStream of type Char.
@@ -4566,7 +4585,7 @@ Writes a `string` to a FileStream of type Char.
 
 ***
 
-#### <a href="#write-to-file!-value"><code>(WRITE-TO-FILE! PATH DATA)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L718-L722">src</a></sub></sup><a name="write-to-file!-value"></a>
+#### <a href="#write-to-file!-value"><code>(WRITE-TO-FILE! PATH DATA)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L727-L731">src</a></sub></sup><a name="write-to-file!-value"></a>
 <code>&forall; :A :B. (<a href="#runtimerepr-class">RUNTIMEREPR</a> :B) (<a href="#into-class">INTO</a> :A <a href="#pathname-type"><code>PATHNAME</code></a>) (<a href="#file-class">FILE</a> :B) &rArr; (:A &rarr; (<a href="#vector-type"><code>VECTOR</code></a> :B) &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> <a href="#unit-type"><code>UNIT</code></a>))</code>
 
 Opens and writes to a file with data of type :a. Supersedes existing data on the file.
@@ -4575,7 +4594,7 @@ Opens and writes to a file with data of type :a. Supersedes existing data on the
 
 ***
 
-#### <a href="#write-vector-value"><code>(WRITE-VECTOR STREAM V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L601-L605">src</a></sub></sup><a name="write-vector-value"></a>
+#### <a href="#write-vector-value"><code>(WRITE-VECTOR STREAM V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L610-L614">src</a></sub></sup><a name="write-vector-value"></a>
 <code>&forall; :A. (<a href="#runtimerepr-class">RUNTIMEREPR</a> :A) (<a href="#file-class">FILE</a> :A) &rArr; ((<a href="#filestream-type"><code>FILESTREAM</code></a> :A) &rarr; (<a href="#vector-type"><code>VECTOR</code></a> :A) &rarr; (<a href="#result-type"><code>RESULT</code></a> <a href="#fileerror-type"><code>FILEERROR</code></a> <a href="#unit-type"><code>UNIT</code></a>))</code>
 
 Writes elements of an vector of type `:a` to a stream of type `:a`.
@@ -8328,7 +8347,7 @@ A StatefulComputation which returns the current state as the value.
 
 ### Types
 
-#### <a href="#statet-type"><code>STATET</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/statet.lisp#L38-L40">src</a></sub></sup><a name="statet-type"></a>
+#### <a href="#statet-type"><code>STATET</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/statet.lisp#L41-L43">src</a></sub></sup><a name="statet-type"></a>
 - <code>(STATET (:A &rarr; (:B (<a href="#tuple-type"><code>TUPLE</code></a> :A :C))))</code>
 
 A monadic computation that tracks state of type :s.
@@ -8352,7 +8371,7 @@ A monadic computation that tracks state of type :s.
 
 ### Values
 
-#### <a href="#lift-statet-value"><code>(LIFT-STATET M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/statet.lisp#L81-L86">src</a></sub></sup><a name="lift-statet-value"></a>
+#### <a href="#lift-statet-value"><code>(LIFT-STATET M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/statet.lisp#L90-L95">src</a></sub></sup><a name="lift-statet-value"></a>
 <code>&forall; :A :B :C. <a href="#functor-class">FUNCTOR</a> :A &rArr; ((:A :B) &rarr; (((<a href="#statet-type"><code>STATET</code></a> :C) :A) :B))</code>
 
 Lift a stateless computation into a stateful context.
@@ -8361,7 +8380,7 @@ Lift a stateless computation into a stateful context.
 
 ***
 
-#### <a href="#map-statet-value"><code>(MAP-STATET FMA-&gt;NB (STATET FS-&gt;MSA))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/statet.lisp#L74-L77">src</a></sub></sup><a name="map-statet-value"></a>
+#### <a href="#map-statet-value"><code>(MAP-STATET FMA-&gt;NB (STATET FS-&gt;MSA))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/statet.lisp#L83-L86">src</a></sub></sup><a name="map-statet-value"></a>
 <code>&forall; :A :B :C :D :E. (((:A (<a href="#tuple-type"><code>TUPLE</code></a> :B :C)) &rarr; (:D (<a href="#tuple-type"><code>TUPLE</code></a> :B :E))) &rarr; (((<a href="#statet-type"><code>STATET</code></a> :B) :A) :C) &rarr; (((<a href="#statet-type"><code>STATET</code></a> :B) :D) :E))</code>
 
 Map the return value, the final state, and the execution context.
@@ -8370,7 +8389,7 @@ Map the return value, the final state, and the execution context.
 
 ***
 
-#### <a href="#modify-statet-value"><code>(MODIFY-STATET FS-&gt;S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/statet.lisp#L62-L66">src</a></sub></sup><a name="modify-statet-value"></a>
+#### <a href="#modify-statet-value"><code>(MODIFY-STATET FS-&gt;S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/statet.lisp#L71-L75">src</a></sub></sup><a name="modify-statet-value"></a>
 <code>&forall; :A :B. <a href="#applicative-class">APPLICATIVE</a> :B &rArr; ((:A &rarr; :A) &rarr; (((<a href="#statet-type"><code>STATET</code></a> :A) :B) <a href="#unit-type"><code>UNIT</code></a>))</code>
 
 Modify the computation state, discarding the old state.
@@ -8379,7 +8398,7 @@ Modify the computation state, discarding the old state.
 
 ***
 
-#### <a href="#put-statet-value"><code>(PUT-STATET STATE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/statet.lisp#L44-L46">src</a></sub></sup><a name="put-statet-value"></a>
+#### <a href="#put-statet-value"><code>(PUT-STATET STATE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/statet.lisp#L47-L49">src</a></sub></sup><a name="put-statet-value"></a>
 <code>&forall; :A :B. <a href="#applicative-class">APPLICATIVE</a> :B &rArr; (:A &rarr; (((<a href="#statet-type"><code>STATET</code></a> :A) :B) <a href="#unit-type"><code>UNIT</code></a>))</code>
 
 A stateful computation with state set to the given state. The returned value is Unit.
@@ -8388,13 +8407,22 @@ A stateful computation with state set to the given state. The returned value is 
 
 ***
 
-#### <a href="#run-statet-value"><code>(RUN-STATET (STATET FS-&gt;MSA) S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/statet.lisp#L57-L58">src</a></sub></sup><a name="run-statet-value"></a>
+#### <a href="#run-statet-value"><code>(RUN-STATET (STATET FS-&gt;MSA) S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/statet.lisp#L60-L61">src</a></sub></sup><a name="run-statet-value"></a>
 <code>&forall; :A :B :C. <a href="#applicative-class">APPLICATIVE</a> :B &rArr; ((((<a href="#statet-type"><code>STATET</code></a> :A) :B) :C) &rarr; :A &rarr; (:B (<a href="#tuple-type"><code>TUPLE</code></a> :A :C)))</code>
 
 
 ***
 
-#### <a href="#get-statet-value"><code>GET-STATET</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/statet.lisp#L50-L53">src</a></sub></sup><a name="get-statet-value"></a>
+#### <a href="#run-statet_-value"><code>(RUN-STATET_ ST-OP S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/statet.lisp#L65-L67">src</a></sub></sup><a name="run-statet_-value"></a>
+<code>&forall; :A :B :C. <a href="#applicative-class">APPLICATIVE</a> :B &rArr; ((((<a href="#statet-type"><code>STATET</code></a> :A) :B) :C) &rarr; :A &rarr; (:B :C))</code>
+
+Run ST-OP, discarding the state and returning the result.
+
+
+
+***
+
+#### <a href="#get-statet-value"><code>GET-STATET</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/statet.lisp#L53-L56">src</a></sub></sup><a name="get-statet-value"></a>
 <code>&forall; :A :B. <a href="#applicative-class">APPLICATIVE</a> :B &rArr; (((<a href="#statet-type"><code>STATET</code></a> :A) :B) :A)</code>
 
 A stateful computation which returns the current state as the value.
@@ -9042,7 +9070,7 @@ Rotate the elements at indices `index1` and `index2` of the random-access storag
 
 ### Values
 
-#### <a href="#err-if-value"><code>(ERR-IF FAILED? FAILURE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L33-L37">src</a></sub></sup><a name="err-if-value"></a>
+#### <a href="#err-if-value"><code>(ERR-IF FAILED? FAILURE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L34-L38">src</a></sub></sup><a name="err-if-value"></a>
 <code>&forall; :A. (<a href="#boolean-type"><code>BOOLEAN</code></a> &rarr; :A &rarr; (<a href="#result-type"><code>RESULT</code></a> :A <a href="#unit-type"><code>UNIT</code></a>))</code>
 
 Fail with FAILURE value if FAILED? is True.
@@ -9051,7 +9079,7 @@ Fail with FAILURE value if FAILED? is True.
 
 ***
 
-#### <a href="#err?-value"><code>(ERR? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L54-L58">src</a></sub></sup><a name="err?-value"></a>
+#### <a href="#err?-value"><code>(ERR? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L55-L59">src</a></sub></sup><a name="err?-value"></a>
 <code>&forall; :A :B. ((<a href="#result-type"><code>RESULT</code></a> :A :B) &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Returns TRUE if X is ERR
@@ -9060,13 +9088,13 @@ Returns TRUE if X is ERR
 
 ***
 
-#### <a href="#flatten-value"><code>(FLATTEN X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L74-L77">src</a></sub></sup><a name="flatten-value"></a>
+#### <a href="#flatten-value"><code>(FLATTEN X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L82-L85">src</a></sub></sup><a name="flatten-value"></a>
 <code>&forall; :A. ((<a href="#result-type"><code>RESULT</code></a> :A :A) &rarr; :A)</code>
 
 
 ***
 
-#### <a href="#map-err-value"><code>(MAP-ERR F X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L67-L71">src</a></sub></sup><a name="map-err-value"></a>
+#### <a href="#map-err-value"><code>(MAP-ERR F X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L68-L72">src</a></sub></sup><a name="map-err-value"></a>
 <code>&forall; :A :B :C. ((:A &rarr; :B) &rarr; (<a href="#result-type"><code>RESULT</code></a> :A :C) &rarr; (<a href="#result-type"><code>RESULT</code></a> :B :C))</code>
 
 Map over the ERR case
@@ -9075,13 +9103,22 @@ Map over the ERR case
 
 ***
 
-#### <a href="#ok-or-error-value"><code>(OK-OR-ERROR RES)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L80-L83">src</a></sub></sup><a name="ok-or-error-value"></a>
+#### <a href="#ok-or-def-value"><code>(OK-OR-DEF DEF RES)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L75-L79">src</a></sub></sup><a name="ok-or-def-value"></a>
+<code>&forall; :A :B. (:A &rarr; (<a href="#result-type"><code>RESULT</code></a> :B :A) &rarr; :A)</code>
+
+Take value in RES if it is OK, or DEF if it is ERR.
+
+
+
+***
+
+#### <a href="#ok-or-error-value"><code>(OK-OR-ERROR RES)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L88-L91">src</a></sub></sup><a name="ok-or-error-value"></a>
 <code>&forall; :A :B. <a href="#signalable-class">SIGNALABLE</a> :A &rArr; ((<a href="#result-type"><code>RESULT</code></a> :A :B) &rarr; :B)</code>
 
 
 ***
 
-#### <a href="#ok?-value"><code>(OK? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L47-L51">src</a></sub></sup><a name="ok?-value"></a>
+#### <a href="#ok?-value"><code>(OK? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L48-L52">src</a></sub></sup><a name="ok?-value"></a>
 <code>&forall; :A :B. ((<a href="#result-type"><code>RESULT</code></a> :A :B) &rarr; <a href="#boolean-type"><code>BOOLEAN</code></a>)</code>
 
 Returns TRUE if X is OK
@@ -9090,7 +9127,7 @@ Returns TRUE if X is OK
 
 ***
 
-#### <a href="#okm-value"><code>(OKM F-A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L62-L64">src</a></sub></sup><a name="okm-value"></a>
+#### <a href="#okm-value"><code>(OKM F-A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L63-L65">src</a></sub></sup><a name="okm-value"></a>
 <code>&forall; :A :B :C. <a href="#functor-class">FUNCTOR</a> :A &rArr; ((:A :B) &rarr; (:A (<a href="#result-type"><code>RESULT</code></a> :C :B)))</code>
 
 Wrap a value inside F-A inside of 'Ok'.
@@ -9099,7 +9136,7 @@ Wrap a value inside F-A inside of 'Ok'.
 
 ***
 
-#### <a href="#opt->result-value"><code>(OPT-&gt;RESULT FAILURE OPT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L40-L44">src</a></sub></sup><a name="opt->result-value"></a>
+#### <a href="#opt->result-value"><code>(OPT-&gt;RESULT FAILURE OPT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L41-L45">src</a></sub></sup><a name="opt->result-value"></a>
 <code>&forall; :A :B. (:A &rarr; (<a href="#optional-type"><code>OPTIONAL</code></a> :B) &rarr; (<a href="#result-type"><code>RESULT</code></a> :A :B))</code>
 
 Convert OPT to a Result, using FAILURE value if None.
