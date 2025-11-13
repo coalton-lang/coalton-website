@@ -8056,7 +8056,7 @@ References: [here](https://github.com/purescript/purescript-free/blob/v5.1.0/src
 
 ### Types
 
-#### <a href="#freef-type"><code>FREEF</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/freet.lisp#L39-L41">src</a></sub></sup><a name="freef-type"></a>
+#### <a href="#freef-type"><code>FREEF</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/freet.lisp#L40-L42">src</a></sub></sup><a name="freef-type"></a>
 - <code>(FREEF (:A :B))</code>
 - <code>(VAL :C)</code>
 <details>
@@ -8073,7 +8073,7 @@ References: [here](https://github.com/purescript/purescript-free/blob/v5.1.0/src
 
 ***
 
-#### <a href="#freet-type"><code>FREET</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/freet.lisp#L75-L77">src</a></sub></sup><a name="freet-type"></a>
+#### <a href="#freet-type"><code>FREET</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/freet.lisp#L76-L78">src</a></sub></sup><a name="freet-type"></a>
 - <code>(FREET (:A (((<a href="#freef-type"><code>FREEF</code></a> :B) :C) (((<a href="#freet-type"><code>FREET</code></a> :B) :A) :C))))</code>
 
 `Free :f :m :a` gives you a Monad Transformer instance for any `Functor :f` and `Monad :m`.
@@ -8097,14 +8097,29 @@ References: [here](https://github.com/purescript/purescript-free/blob/v5.1.0/src
 
 ### Values
 
-#### <a href="#fold-freet-value"><code>(FOLD-FREET F (FREET M))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/freet.lisp#L152-L160">src</a></sub></sup><a name="fold-freet-value"></a>
+#### <a href="#fold-freet-value"><code>(FOLD-FREET F (FREET M))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/freet.lisp#L173-L181">src</a></sub></sup><a name="fold-freet-value"></a>
 <code>&forall; :A :B :C :D. (<a href="#monadtransformer-class">MONADTRANSFORMER</a> :D) (<a href="#monad-class">MONAD</a> (:D :B)) (<a href="#monad-class">MONAD</a> :B) &rArr; (((:A (((<a href="#freet-type"><code>FREET</code></a> :A) :B) :C)) &rarr; ((:D :B) (((<a href="#freet-type"><code>FREET</code></a> :A) :B) :C))) &rarr; (((<a href="#freet-type"><code>FREET</code></a> :A) :B) :C) &rarr; ((:D :B) :C))</code>
 
 
 ***
 
-#### <a href="#run-freet-value"><code>(RUN-FREET (FREET M))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/freet.lisp#L80-L80">src</a></sub></sup><a name="run-freet-value"></a>
+#### <a href="#run-freet-value"><code>(RUN-FREET TRANSF OP)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/freet.lisp#L92-L101">src</a></sub></sup><a name="run-freet-value"></a>
+<code>&forall; :A :B :C. <a href="#monad-class">MONAD</a> :B &rArr; (((:A (((<a href="#freet-type"><code>FREET</code></a> :A) :B) :C)) &rarr; (((<a href="#freet-type"><code>FREET</code></a> :A) :B) :C)) &rarr; (((<a href="#freet-type"><code>FREET</code></a> :A) :B) :C) &rarr; (:B :C))</code>
+
+Run a free monad transformer with a function that unwraps a single layer of the
+functor `f` at a time.
+
+
+
+***
+
+#### <a href="#unwrap-freet-value"><code>(UNWRAP-FREET (FREET M))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/freet.lisp#L82-L86">src</a></sub></sup><a name="unwrap-freet-value"></a>
 <code>&forall; :A :B :C. ((((<a href="#freet-type"><code>FREET</code></a> :A) :B) :C) &rarr; (:B (((<a href="#freef-type"><code>FREEF</code></a> :A) :C) (((<a href="#freet-type"><code>FREET</code></a> :A) :B) :C))))</code>
+
+Unwrap one layer of the the free monad transformer, returning a value of the base
+monad containing a FreeF (which can either contain VAL, a pure value, or FREEF, another
+wrapped layer of the free monad transformer).
+
 
 
 ***
