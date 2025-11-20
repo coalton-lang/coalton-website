@@ -2420,6 +2420,7 @@ A heterogeneous collection of items.
 - <code><a href="#iso-class">ISO</a> (<a href="#tuple-type"><code>TUPLE</code></a> :A :B) (<a href="#tuple-type"><code>TUPLE</code></a> :B :A)</code>
 - <code><a href="#ord-class">ORD</a> :A &rArr; <a href="#fromiterator-class">FROMITERATOR</a> (<a href="#ordmap-type"><code>ORDMAP</code></a> :A :B) (<a href="#tuple-type"><code>TUPLE</code></a> :A :B)</code>
 - <code><a href="#runtimerepr-class">RUNTIMEREPR</a> (<a href="#tuple-type"><code>TUPLE</code></a> :A :B)</code>
+- <code><a href="#traversable-class">TRAVERSABLE</a> (<a href="#tuple-type"><code>TUPLE</code></a> :A)</code>
 
 </details>
 
@@ -3176,6 +3177,7 @@ Methods:
 - <code><a href="#traversable-class">TRAVERSABLE</a> <a href="#list-type"><code>LIST</code></a></code>
 - <code><a href="#traversable-class">TRAVERSABLE</a> (<a href="#result-type"><code>RESULT</code></a> :A)</code>
 - <code><a href="#traversable-class">TRAVERSABLE</a> <a href="#optional-type"><code>OPTIONAL</code></a></code>
+- <code><a href="#traversable-class">TRAVERSABLE</a> (<a href="#tuple-type"><code>TUPLE</code></a> :A)</code>
 
 </details>
 
@@ -9835,7 +9837,7 @@ The number of internal time units per second. This is implementation specific.
 
 ### Structs
 
-#### <a href="#tuple3-type"><code>TUPLE3 :A :B :C</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp#L43-L46">src</a></sub></sup><a name="tuple3-type"></a>
+#### <a href="#tuple3-type"><code>TUPLE3 :A :B :C</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp#L56-L59">src</a></sub></sup><a name="tuple3-type"></a>
 - <code>FIRST :: :A</code>
 - <code>SECOND :: :B</code>
 - <code>THIRD :: :C</code>
@@ -9853,7 +9855,7 @@ The number of internal time units per second. This is implementation specific.
 
 ***
 
-#### <a href="#tuple4-type"><code>TUPLE4 :A :B :C :D</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp#L49-L53">src</a></sub></sup><a name="tuple4-type"></a>
+#### <a href="#tuple4-type"><code>TUPLE4 :A :B :C :D</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp#L74-L78">src</a></sub></sup><a name="tuple4-type"></a>
 - <code>FIRST :: :A</code>
 - <code>SECOND :: :B</code>
 - <code>THIRD :: :C</code>
@@ -9872,7 +9874,7 @@ The number of internal time units per second. This is implementation specific.
 
 ***
 
-#### <a href="#tuple5-type"><code>TUPLE5 :A :B :C :D :E</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp#L56-L61">src</a></sub></sup><a name="tuple5-type"></a>
+#### <a href="#tuple5-type"><code>TUPLE5 :A :B :C :D :E</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp#L94-L99">src</a></sub></sup><a name="tuple5-type"></a>
 - <code>FIRST :: :A</code>
 - <code>SECOND :: :B</code>
 - <code>THIRD :: :C</code>
@@ -9894,7 +9896,7 @@ The number of internal time units per second. This is implementation specific.
 
 ### Values
 
-#### <a href="#fst-value"><code>(FST (TUPLE A _))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp#L33-L35">src</a></sub></sup><a name="fst-value"></a>
+#### <a href="#fst-value"><code>(FST (TUPLE A _))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp#L37-L39">src</a></sub></sup><a name="fst-value"></a>
 <code>&forall; :A :B. ((<a href="#tuple-type"><code>TUPLE</code></a> :A :B) &rarr; :A)</code>
 
 Get the first element of a tuple.
@@ -9903,7 +9905,47 @@ Get the first element of a tuple.
 
 ***
 
-#### <a href="#snd-value"><code>(SND (TUPLE _ B))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp#L38-L40">src</a></sub></sup><a name="snd-value"></a>
+#### <a href="#sequence-tuple-value"><code>(SEQUENCE-TUPLE (TUPLE A? B?))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp#L47-L53">src</a></sub></sup><a name="sequence-tuple-value"></a>
+<code>&forall; :A :B :C. <a href="#monad-class">MONAD</a> :A &rArr; ((<a href="#tuple-type"><code>TUPLE</code></a> (:A :B) (:A :C)) &rarr; (:A (<a href="#tuple-type"><code>TUPLE</code></a> :B :C)))</code>
+
+Flatten a Tuple of wrapped-values. Particularly useful for types like
+(Tuple (Optional :a) (Optional :b)), etc.
+
+
+
+***
+
+#### <a href="#sequence-tuple3-value"><code>(SEQUENCE-TUPLE3 (TUPLE3 A? B? C?))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp#L64-L71">src</a></sub></sup><a name="sequence-tuple3-value"></a>
+<code>&forall; :A :B :C :D. <a href="#monad-class">MONAD</a> :A &rArr; ((<a href="#tuple3-type"><code>TUPLE3</code></a> (:A :B) (:A :C) (:A :D)) &rarr; (:A (<a href="#tuple3-type"><code>TUPLE3</code></a> :B :C :D)))</code>
+
+Flatten a Tuple of wrapped-values. Particularly useful for types like
+(Tuple (Optional :a) (Optional :b)), etc.
+
+
+
+***
+
+#### <a href="#sequence-tuple4-value"><code>(SEQUENCE-TUPLE4 (TUPLE4 A? B? C? D?))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp#L83-L91">src</a></sub></sup><a name="sequence-tuple4-value"></a>
+<code>&forall; :A :B :C :D :E. <a href="#monad-class">MONAD</a> :A &rArr; ((<a href="#tuple4-type"><code>TUPLE4</code></a> (:A :B) (:A :C) (:A :D) (:A :E)) &rarr; (:A (<a href="#tuple4-type"><code>TUPLE4</code></a> :B :C :D :E)))</code>
+
+Flatten a Tuple of wrapped-values. Particularly useful for types like
+(Tuple (Optional :a) (Optional :b)), etc.
+
+
+
+***
+
+#### <a href="#sequence-tuple5-value"><code>(SEQUENCE-TUPLE5 (TUPLE5 A? B? C? D? E?))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp#L104-L113">src</a></sub></sup><a name="sequence-tuple5-value"></a>
+<code>&forall; :A :B :C :D :E :F. <a href="#monad-class">MONAD</a> :A &rArr; ((<a href="#tuple5-type"><code>TUPLE5</code></a> (:A :B) (:A :C) (:A :D) (:A :E) (:A :F)) &rarr; (:A (<a href="#tuple5-type"><code>TUPLE5</code></a> :B :C :D :E :F)))</code>
+
+Flatten a Tuple of wrapped-values. Particularly useful for types like
+(Tuple (Optional :a) (Optional :b)), etc.
+
+
+
+***
+
+#### <a href="#snd-value"><code>(SND (TUPLE _ B))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp#L42-L44">src</a></sub></sup><a name="snd-value"></a>
 <code>&forall; :A :B. ((<a href="#tuple-type"><code>TUPLE</code></a> :A :B) &rarr; :B)</code>
 
 Get the second element of a tuple.
