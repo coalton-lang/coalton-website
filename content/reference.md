@@ -222,6 +222,7 @@ Single-precision floating point number (32 bits in size). Represented by a Commo
 - <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#f32-type"><code>F32</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#f32-type"><code>F32</code></a> <a href="#big-float-type"><code>BIG-FLOAT</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#f32-type"><code>F32</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#f32-type"><code>F32</code></a> <a href="#f64-type"><code>F64</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#f32-type"><code>F32</code></a> <a href="#string-type"><code>STRING</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#f32-type"><code>F32</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#f32-type"><code>F32</code></a></code>
@@ -269,6 +270,7 @@ Double-precision floating point number (64 bits in size). Represented by a Commo
 - <code><a href="#exponentiable-class">EXPONENTIABLE</a> <a href="#f64-type"><code>F64</code></a></code>
 - <code><a href="#hash-class">HASH</a> <a href="#f64-type"><code>F64</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#bit-type"><code>BIT</code></a> <a href="#f64-type"><code>F64</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#f32-type"><code>F32</code></a> <a href="#f64-type"><code>F64</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#f64-type"><code>F64</code></a> <a href="#big-float-type"><code>BIG-FLOAT</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#f64-type"><code>F64</code></a> <a href="#creal-type"><code>CREAL</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#f64-type"><code>F64</code></a> <a href="#string-type"><code>STRING</code></a></code>
@@ -2822,6 +2824,7 @@ Methods:
 - <code><a href="#into-class">INTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i8-type"><code>I8</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#integer-type"><code>INTEGER</code></a> <a href="#fraction-type"><code>FRACTION</code></a></code>
+- <code><a href="#into-class">INTO</a> <a href="#f32-type"><code>F32</code></a> <a href="#f64-type"><code>F64</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i32-type"><code>I32</code></a> <a href="#f64-type"><code>F64</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#u32-type"><code>U32</code></a> <a href="#f64-type"><code>F64</code></a></code>
 - <code><a href="#into-class">INTO</a> <a href="#i16-type"><code>I16</code></a> <a href="#f64-type"><code>F64</code></a></code>
