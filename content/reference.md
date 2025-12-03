@@ -2573,10 +2573,9 @@ Methods:
 - <code><a href="#eq-class">Eq</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#seq-type"><code>Seq</code></a> :A)</code>
 - <code>(<a href="#eq-class">Eq</a> :A) (<a href="#eq-class">Eq</a> :B) &rArr; <a href="#eq-class">Eq</a> (<a href="#ordmap-type"><code>OrdMap</code></a> :A :B)</code>
 - <code><a href="#eq-class">Eq</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#mappair-type"><code>MapPair</code></a> :A :B)</code>
-- <code><a href="#eq-class">Eq</a> <a href="#color-type"><code>Color</code></a></code>
-- <code><a href="#eq-class">Eq</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#tree-type"><code>Tree</code></a> :A)</code>
+- <code><a href="#eq-class">Eq</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#ordtree-type"><code>OrdTree</code></a> :A)</code>
 - <code><a href="#eq-class">Eq</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#queue-type"><code>Queue</code></a> :A)</code>
-- <code>(<a href="#eq-class">Eq</a> :A) (<a href="#eq-class">Eq</a> :B) &rArr; <a href="#eq-class">Eq</a> (<a href="#hashmap-type"><code>HashMap</code></a> :A :B)</code>
+- <code>(<a href="#eq-class">Eq</a> :A) (<a href="#eq-class">Eq</a> :B) (<a href="#hash-class">Hash</a> :A) &rArr; <a href="#eq-class">Eq</a> (<a href="#hashmap-type"><code>HashMap</code></a> :A :B)</code>
 - <code>(<a href="#hash-class">Hash</a> :A) (<a href="#eq-class">Eq</a> :B) &rArr; <a href="#eq-class">Eq</a> (<a href="#hashtable-type"><code>Hashtable</code></a> :A :B)</code>
 - <code><a href="#eq-class">Eq</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#slice-type"><code>Slice</code></a> :A)</code>
 - <code><a href="#eq-class">Eq</a> <a href="#string-type"><code>String</code></a></code>
@@ -2636,7 +2635,7 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#foldable-class">Foldable</a> <a href="#tree-type"><code>Tree</code></a></code>
+- <code><a href="#foldable-class">Foldable</a> <a href="#ordtree-type"><code>OrdTree</code></a></code>
 - <code><a href="#foldable-class">Foldable</a> :A &rArr; <a href="#foldable-class">Foldable</a> (<a href="#free-type"><code>Free</code></a> :A)</code>
 - <code><a href="#foldable-class">Foldable</a> <a href="#queue-type"><code>Queue</code></a></code>
 - <code><a href="#foldable-class">Foldable</a> <a href="#slice-type"><code>Slice</code></a></code>
@@ -2675,6 +2674,7 @@ Methods:
 - <code><a href="#functor-class">Functor</a> (<a href="#st-type"><code>ST</code></a> :A)</code>
 - <code><a href="#functor-class">Functor</a> <a href="#identity-type"><code>Identity</code></a></code>
 - <code><a href="#functor-class">Functor</a> <a href="#queue-type"><code>Queue</code></a></code>
+- <code><a href="#functor-class">Functor</a> (<a href="#hashmap-type"><code>HashMap</code></a> :A)</code>
 - <code><a href="#functor-class">Functor</a> <a href="#vector-type"><code>Vector</code></a></code>
 - <code><a href="#functor-class">Functor</a> <a href="#list-type"><code>List</code></a></code>
 - <code><a href="#functor-class">Functor</a> (<a href="#result-type"><code>Result</code></a> :A)</code>
@@ -2703,7 +2703,7 @@ Methods:
 <summary>Instances</summary>
 
 - <code>(<a href="#hash-class">Hash</a> :A) (<a href="#hash-class">Hash</a> :B) &rArr; <a href="#hash-class">Hash</a> (<a href="#ordmap-type"><code>OrdMap</code></a> :A :B)</code>
-- <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#hash-class">Hash</a> (<a href="#tree-type"><code>Tree</code></a> :A)</code>
+- <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#hash-class">Hash</a> (<a href="#ordtree-type"><code>OrdTree</code></a> :A)</code>
 - <code>(<a href="#hash-class">Hash</a> :A) (<a href="#hash-class">Hash</a> :B) &rArr; <a href="#hash-class">Hash</a> (<a href="#hashmap-type"><code>HashMap</code></a> :A :B)</code>
 - <code>(<a href="#hash-class">Hash</a> :A) (<a href="#hash-class">Hash</a> :B) &rArr; <a href="#hash-class">Hash</a> (<a href="#hashtable-type"><code>Hashtable</code></a> :A :B)</code>
 - <code><a href="#hash-class">Hash</a> <a href="#string-type"><code>String</code></a></code>
@@ -3007,7 +3007,8 @@ Methods:
 
 - <code><a href="#monoid-class">Monoid</a> <a href="#pathname-type"><code>Pathname</code></a></code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#monoid-class">Monoid</a> (<a href="#seq-type"><code>Seq</code></a> :A)</code>
-- <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#monoid-class">Monoid</a> (<a href="#tree-type"><code>Tree</code></a> :A)</code>
+- <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#monoid-class">Monoid</a> (<a href="#ordmap-type"><code>OrdMap</code></a> :A :B)</code>
+- <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#monoid-class">Monoid</a> (<a href="#hashmap-type"><code>HashMap</code></a> :A :B)</code>
 - <code><a href="#monoid-class">Monoid</a> <a href="#string-type"><code>String</code></a></code>
 - <code><a href="#monoid-class">Monoid</a> (<a href="#vector-type"><code>Vector</code></a> :A)</code>
 - <code><a href="#monoid-class">Monoid</a> (<a href="#list-type"><code>List</code></a> :A)</code>
@@ -3129,8 +3130,8 @@ Methods:
 - <code><a href="#semigroup-class">Semigroup</a> <a href="#pathname-type"><code>Pathname</code></a></code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#semigroup-class">Semigroup</a> (<a href="#seq-type"><code>Seq</code></a> :A)</code>
 - <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#semigroup-class">Semigroup</a> (<a href="#ordmap-type"><code>OrdMap</code></a> :A :B)</code>
-- <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#semigroup-class">Semigroup</a> (<a href="#tree-type"><code>Tree</code></a> :A)</code>
 - <code><a href="#semigroup-class">Semigroup</a> (<a href="#queue-type"><code>Queue</code></a> :A)</code>
+- <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#semigroup-class">Semigroup</a> (<a href="#hashmap-type"><code>HashMap</code></a> :A :B)</code>
 - <code><a href="#semigroup-class">Semigroup</a> <a href="#string-type"><code>String</code></a></code>
 - <code><a href="#semigroup-class">Semigroup</a> (<a href="#vector-type"><code>Vector</code></a> :A)</code>
 - <code><a href="#semigroup-class">Semigroup</a> (<a href="#list-type"><code>List</code></a> :A)</code>
@@ -4850,7 +4851,7 @@ For example, the following expressions are equivalent.
 
 ### Types
 
-#### <a href="#hashmap-type"><code>HashMap</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L57-L59">src</a></sub></sup><a name="hashmap-type"></a>
+#### <a href="#hashmap-type"><code>HashMap</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L66-L68">src</a></sub></sup><a name="hashmap-type"></a>
 - <code>(HashMap (<a href="#hmnode-type"><code>HmNode</code></a> :A :B))</code>
 
 Immutable map (also known as a dictionary or dict) using hashes. Implemented as a hash array mapped trie data structure.
@@ -4858,9 +4859,12 @@ Immutable map (also known as a dictionary or dict) using hashes. Implemented as 
 <details>
 <summary>Instances</summary>
 
-- <code>(<a href="#eq-class">Eq</a> :A) (<a href="#eq-class">Eq</a> :B) &rArr; <a href="#eq-class">Eq</a> (<a href="#hashmap-type"><code>HashMap</code></a> :A :B)</code>
+- <code>(<a href="#eq-class">Eq</a> :A) (<a href="#eq-class">Eq</a> :B) (<a href="#hash-class">Hash</a> :A) &rArr; <a href="#eq-class">Eq</a> (<a href="#hashmap-type"><code>HashMap</code></a> :A :B)</code>
 - <code>(<a href="#hash-class">Hash</a> :A) (<a href="#hash-class">Hash</a> :B) &rArr; <a href="#hash-class">Hash</a> (<a href="#hashmap-type"><code>HashMap</code></a> :A :B)</code>
+- <code><a href="#functor-class">Functor</a> (<a href="#hashmap-type"><code>HashMap</code></a> :A)</code>
 - <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#hashmap-type"><code>HashMap</code></a> :A :B) (<a href="#tuple-type"><code>Tuple</code></a> :A :B)</code>
+- <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#monoid-class">Monoid</a> (<a href="#hashmap-type"><code>HashMap</code></a> :A :B)</code>
+- <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#semigroup-class">Semigroup</a> (<a href="#hashmap-type"><code>HashMap</code></a> :A :B)</code>
 - <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#hashmap-type"><code>HashMap</code></a> :A :B) (<a href="#tuple-type"><code>Tuple</code></a> :A :B)</code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#hashmap-type"><code>HashMap</code></a> :A :B)</code>
 
@@ -4872,7 +4876,17 @@ Immutable map (also known as a dictionary or dict) using hashes. Implemented as 
 
 ### Values
 
-#### <a href="#count-value"><code>(COUNT HM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L291-L300">src</a></sub></sup><a name="count-value"></a>
+#### <a href="#adjoin-value"><code>(ADJOIN HM KEY VAL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L490-L493">src</a></sub></sup><a name="adjoin-value"></a>
+<code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashmap-type"><code>HashMap</code></a> :A :B) &rarr; :A &rarr; :B &rarr; (<a href="#hashmap-type"><code>HashMap</code></a> :A :B))</code>
+
+Returns a hashmap that has a new entry of (`key`, `val`) added to `hm`.
+If `hm` alreay contains an entry with `key`, however, `hm` is returned as is.
+
+
+
+***
+
+#### <a href="#count-value"><code>(COUNT HM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L350-L359">src</a></sub></sup><a name="count-value"></a>
 <code>&forall; :A :B. ((<a href="#hashmap-type"><code>HashMap</code></a> :A :B) &rarr; <a href="#integer-type"><code>Integer</code></a>)</code>
 
 Returns the number of entries in HM.
@@ -4881,7 +4895,16 @@ Returns the number of entries in HM.
 
 ***
 
-#### <a href="#empty?-value"><code>(EMPTY? HM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L281-L285">src</a></sub></sup><a name="empty?-value"></a>
+#### <a href="#difference-value"><code>(DIFFERENCE A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L741-L743">src</a></sub></sup><a name="difference-value"></a>
+<code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashmap-type"><code>HashMap</code></a> :A :B) &rarr; (<a href="#hashmap-type"><code>HashMap</code></a> :A :B) &rarr; (<a href="#hashmap-type"><code>HashMap</code></a> :A :B))</code>
+
+Raturns a HashMap that contains mappings in `a` but not in `b`.
+
+
+
+***
+
+#### <a href="#empty?-value"><code>(EMPTY? HM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L340-L344">src</a></sub></sup><a name="empty?-value"></a>
 <code>&forall; :A :B. ((<a href="#hashmap-type"><code>HashMap</code></a> :A :B) &rarr; <a href="#boolean-type"><code>Boolean</code></a>)</code>
 
 Returns True if a hashmap HM is empty, False if not.
@@ -4890,17 +4913,37 @@ Returns True if a hashmap HM is empty, False if not.
 
 ***
 
-#### <a href="#insert-value"><code>(INSERT HM KEY VAL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L330-L369">src</a></sub></sup><a name="insert-value"></a>
-<code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashmap-type"><code>HashMap</code></a> :A :B) &rarr; :A &rarr; :B &rarr; (<a href="#hashmap-type"><code>HashMap</code></a> :A :B))</code>
+#### <a href="#entries-value"><code>(ENTRIES HM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L679-L681">src</a></sub></sup><a name="entries-value"></a>
+<code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashmap-type"><code>HashMap</code></a> :A :B) &rarr; (<a href="#iterator-type"><code>Iterator</code></a> (<a href="#tuple-type"><code>Tuple</code></a> :A :B)))</code>
 
-Returns a hashmap that has a new entry of (KEY, VAL) added to HM.  If HM
-containes an entry with KEY, the new hashmap replaces it for the new entry.
+Returns an interator to iterate over all entries in hashmap hm.
 
 
 
 ***
 
-#### <a href="#keys-value"><code>(KEYS HM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L477-L479">src</a></sub></sup><a name="keys-value"></a>
+#### <a href="#insert-value"><code>(INSERT HM KEY VAL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L482-L485">src</a></sub></sup><a name="insert-value"></a>
+<code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashmap-type"><code>HashMap</code></a> :A :B) &rarr; :A &rarr; :B &rarr; (<a href="#hashmap-type"><code>HashMap</code></a> :A :B))</code>
+
+Returns a hashmap that has a new entry of (KEY, VAL) added to HM.  If HM
+contains an entry with KEY, the new hashmap replaces it for the new entry.
+
+
+
+***
+
+#### <a href="#intersection-value"><code>(INTERSECTION A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L728-L738">src</a></sub></sup><a name="intersection-value"></a>
+<code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashmap-type"><code>HashMap</code></a> :A :B) &rarr; (<a href="#hashmap-type"><code>HashMap</code></a> :A :B) &rarr; (<a href="#hashmap-type"><code>HashMap</code></a> :A :B))</code>
+
+Construct a HashMap containing all the mappings whose key is in both A and B.
+
+The entries from A remains in the result.
+
+
+
+***
+
+#### <a href="#keys-value"><code>(KEYS HM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L667-L669">src</a></sub></sup><a name="keys-value"></a>
 <code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashmap-type"><code>HashMap</code></a> :A :B) &rarr; (<a href="#iterator-type"><code>Iterator</code></a> :A))</code>
 
 Returns an interator to iterate over all the keys in a hashmap hm.
@@ -4909,7 +4952,7 @@ Returns an interator to iterate over all the keys in a hashmap hm.
 
 ***
 
-#### <a href="#lookup-value"><code>(LOOKUP HM KEY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L304-L325">src</a></sub></sup><a name="lookup-value"></a>
+#### <a href="#lookup-value"><code>(LOOKUP HM KEY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L363-L384">src</a></sub></sup><a name="lookup-value"></a>
 <code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashmap-type"><code>HashMap</code></a> :A :B) &rarr; :A &rarr; (<a href="#optional-type"><code>Optional</code></a> :B))</code>
 
 Returns a value associated with KEY in the hashmap HM.
@@ -4918,7 +4961,7 @@ Returns a value associated with KEY in the hashmap HM.
 
 ***
 
-#### <a href="#remove-value"><code>(REMOVE HM KEY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L388-L428">src</a></sub></sup><a name="remove-value"></a>
+#### <a href="#remove-value"><code>(REMOVE HM KEY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L507-L517">src</a></sub></sup><a name="remove-value"></a>
 <code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashmap-type"><code>HashMap</code></a> :A :B) &rarr; :A &rarr; (<a href="#hashmap-type"><code>HashMap</code></a> :A :B))</code>
 
 Returns a hashmap that is identical to HM except the entry with KEY is
@@ -4928,7 +4971,37 @@ removed.  If HM does not contain an entry with KEY, HM is returned as is.
 
 ***
 
-#### <a href="#values-value"><code>(VALUES HM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L483-L485">src</a></sub></sup><a name="values-value"></a>
+#### <a href="#replace-value"><code>(REPLACE HM KEY VAL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L498-L502">src</a></sub></sup><a name="replace-value"></a>
+<code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashmap-type"><code>HashMap</code></a> :A :B) &rarr; :A &rarr; :B &rarr; (<a href="#hashmap-type"><code>HashMap</code></a> :A :B))</code>
+
+Returns a hashmap where the value associated with `key` is replaced
+with `val`.  If `hm` does not contain an entry with `key`, `hm` is
+ returned as is.
+
+
+
+***
+
+#### <a href="#union-value"><code>(UNION A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L719-L725">src</a></sub></sup><a name="union-value"></a>
+<code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashmap-type"><code>HashMap</code></a> :A :B) &rarr; (<a href="#hashmap-type"><code>HashMap</code></a> :A :B) &rarr; (<a href="#hashmap-type"><code>HashMap</code></a> :A :B))</code>
+
+Construct a HashMap containing all the mappings from A and B.
+
+If A and B contain mappings X -> A' and X -> B', the former mapping is kept.
+
+The operation is associative, but not commutative.
+
+
+
+***
+
+#### <a href="#update-value"><code>(UPDATE HM KEY F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L524-L600">src</a></sub></sup><a name="update-value"></a>
+<code>&forall; :A :B :C. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashmap-type"><code>HashMap</code></a> :A :B) &rarr; :A &rarr; ((<a href="#optional-type"><code>Optional</code></a> :B) &rarr; (<a href="#tuple-type"><code>Tuple</code></a> (<a href="#optional-type"><code>Optional</code></a> :B) :C)) &rarr; (<a href="#tuple-type"><code>Tuple</code></a> (<a href="#hashmap-type"><code>HashMap</code></a> :A :B) :C))</code>
+
+
+***
+
+#### <a href="#values-value"><code>(VALUES HM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L673-L675">src</a></sub></sup><a name="values-value"></a>
 <code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashmap-type"><code>HashMap</code></a> :A :B) &rarr; (<a href="#iterator-type"><code>Iterator</code></a> :B))</code>
 
 Returns an interator to iterate over all the values in a hashmap hm.
@@ -4937,7 +5010,17 @@ Returns an interator to iterate over all the values in a hashmap hm.
 
 ***
 
-#### <a href="#empty-value"><code>EMPTY</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L275-L277">src</a></sub></sup><a name="empty-value"></a>
+#### <a href="#xor-value"><code>(XOR A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L746-L756">src</a></sub></sup><a name="xor-value"></a>
+<code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashmap-type"><code>HashMap</code></a> :A :B) &rarr; (<a href="#hashmap-type"><code>HashMap</code></a> :A :B) &rarr; (<a href="#hashmap-type"><code>HashMap</code></a> :A :B))</code>
+
+Raturns a HashMap that contains mappings either in `a` or in `b`,
+but not in both.
+
+
+
+***
+
+#### <a href="#empty-value"><code>EMPTY</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L334-L336">src</a></sub></sup><a name="empty-value"></a>
 <code>&forall; :A :B. (<a href="#hashmap-type"><code>HashMap</code></a> :A :B)</code>
 
 An empty HashMap
@@ -5095,7 +5178,7 @@ Methods:
 
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#seq-type"><code>Seq</code></a> :A) :A</code>
 - <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#ordmap-type"><code>OrdMap</code></a> :A :B) (<a href="#tuple-type"><code>Tuple</code></a> :A :B)</code>
-- <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#tree-type"><code>Tree</code></a> :A) :A</code>
+- <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#ordtree-type"><code>OrdTree</code></a> :A) :A</code>
 - <code><a href="#fromiterator-class">FromIterator</a> (<a href="#queue-type"><code>Queue</code></a> :A) :A</code>
 - <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#hashmap-type"><code>HashMap</code></a> :A :B) (<a href="#tuple-type"><code>Tuple</code></a> :A :B)</code>
 - <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#hashtable-type"><code>Hashtable</code></a> :A :B) (<a href="#tuple-type"><code>Tuple</code></a> :A :B)</code>
@@ -5127,7 +5210,7 @@ Methods:
 
 - <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#seq-type"><code>Seq</code></a> :A) :A</code>
 - <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#ordmap-type"><code>OrdMap</code></a> :A :B) (<a href="#tuple-type"><code>Tuple</code></a> :A :B)</code>
-- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#tree-type"><code>Tree</code></a> :A) :A</code>
+- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#ordtree-type"><code>OrdTree</code></a> :A) :A</code>
 - <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#queue-type"><code>Queue</code></a> :A) :A</code>
 - <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#hashmap-type"><code>HashMap</code></a> :A :B) (<a href="#tuple-type"><code>Tuple</code></a> :A :B)</code>
 - <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#hashtable-type"><code>Hashtable</code></a> :A :B) (<a href="#tuple-type"><code>Tuple</code></a> :A :B)</code>
@@ -8486,9 +8569,9 @@ Is X Some?
 
 ### Types
 
-#### <a href="#ordmap-type"><code>OrdMap</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L69-L71">src</a></sub></sup><a name="ordmap-type"></a>
+#### <a href="#ordmap-type"><code>OrdMap</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L73-L75">src</a></sub></sup><a name="ordmap-type"></a>
 
-A red-black binary tree which associates each :KEY with a :VALUE, sorted by `<=>' on the keys and unique by `==' on the keys.
+A binary tree which associates each :KEY with a :VALUE, sorted by `<=>' on the keys and unique by `==' on the keys.
 
 <details>
 <summary>Instances</summary>
@@ -8498,6 +8581,7 @@ A red-black binary tree which associates each :KEY with a :VALUE, sorted by `<=>
 - <code><a href="#functor-class">Functor</a> (<a href="#ordmap-type"><code>OrdMap</code></a> :A)</code>
 - <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#ordmap-type"><code>OrdMap</code></a> :A :B) (<a href="#tuple-type"><code>Tuple</code></a> :A :B)</code>
 - <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#ordmap-type"><code>OrdMap</code></a> :A :B) (<a href="#tuple-type"><code>Tuple</code></a> :A :B)</code>
+- <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#monoid-class">Monoid</a> (<a href="#ordmap-type"><code>OrdMap</code></a> :A :B)</code>
 - <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#semigroup-class">Semigroup</a> (<a href="#ordmap-type"><code>OrdMap</code></a> :A :B)</code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#ordmap-type"><code>OrdMap</code></a> :A :B)</code>
 
@@ -8509,7 +8593,18 @@ A red-black binary tree which associates each :KEY with a :VALUE, sorted by `<=>
 
 ### Values
 
-#### <a href="#collect-value"><code>(COLLECT COLL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L198-L205">src</a></sub></sup><a name="collect-value"></a>
+#### <a href="#adjoin-value"><code>(ADJOIN MP K V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L137-L142">src</a></sub></sup><a name="adjoin-value"></a>
+<code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordmap-type"><code>OrdMap</code></a> :A :B) &rarr; :A &rarr; :B &rarr; (<a href="#ordmap-type"><code>OrdMap</code></a> :A :B))</code>
+
+Returns an OrdMap in which the key `k` is associated with `v` added
+to the `mp`, only when `mp` doesn't have an association with `k`.
+If `mp` already contains an association with `k`, `mp` is returned as is.
+
+
+
+***
+
+#### <a href="#collect-value"><code>(COLLECT COLL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L201-L208">src</a></sub></sup><a name="collect-value"></a>
 <code>&forall; :A :B :C. (<a href="#ord-class">Ord</a> :B) (<a href="#foldable-class">Foldable</a> :A) &rArr; ((:A (<a href="#tuple-type"><code>Tuple</code></a> :B :C)) &rarr; (<a href="#ordmap-type"><code>OrdMap</code></a> :B :C))</code>
 
 Construct a `OrdMap` containing all the `(key value)` pairs in `coll`.
@@ -8520,7 +8615,7 @@ If `coll` contains duplicate keys, later values will overwrite earlier values.
 
 ***
 
-#### <a href="#collect!-value"><code>(COLLECT! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L188-L195">src</a></sub></sup><a name="collect!-value"></a>
+#### <a href="#collect!-value"><code>(COLLECT! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L191-L198">src</a></sub></sup><a name="collect!-value"></a>
 <code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#iterator-type"><code>Iterator</code></a> (<a href="#tuple-type"><code>Tuple</code></a> :A :B)) &rarr; (<a href="#ordmap-type"><code>OrdMap</code></a> :A :B))</code>
 
 Construct a `OrdMap` containing all the `(key value)` pairs in `iter`.
@@ -8531,7 +8626,25 @@ If `iter` contains duplicate keys, later values will overwrite earlier values.
 
 ***
 
-#### <a href="#entries-value"><code>(ENTRIES MP)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L159-L162">src</a></sub></sup><a name="entries-value"></a>
+#### <a href="#difference-value"><code>(DIFFERENCE A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L275-L279">src</a></sub></sup><a name="difference-value"></a>
+<code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordmap-type"><code>OrdMap</code></a> :A :B) &rarr; (<a href="#ordmap-type"><code>OrdMap</code></a> :A :B) &rarr; (<a href="#ordmap-type"><code>OrdMap</code></a> :A :B))</code>
+
+Raturns an OrdMap that contains mappings in `a` but not in `b`.
+
+
+
+***
+
+#### <a href="#empty?-value"><code>(EMPTY? M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L84-L87">src</a></sub></sup><a name="empty?-value"></a>
+<code>&forall; :A :B. ((<a href="#ordmap-type"><code>OrdMap</code></a> :A :B) &rarr; <a href="#boolean-type"><code>Boolean</code></a>)</code>
+
+Returns True iff the given OrdMap is empty.
+
+
+
+***
+
+#### <a href="#entries-value"><code>(ENTRIES MP)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L162-L165">src</a></sub></sup><a name="entries-value"></a>
 <code>&forall; :A :B. ((<a href="#ordmap-type"><code>OrdMap</code></a> :A :B) &rarr; (<a href="#iterator-type"><code>Iterator</code></a> (<a href="#tuple-type"><code>Tuple</code></a> :A :B)))</code>
 
 Iterate over the (key value) pairs in MP, sorted by the keys in least-to-greatest order.
@@ -8540,29 +8653,27 @@ Iterate over the (key value) pairs in MP, sorted by the keys in least-to-greates
 
 ***
 
-#### <a href="#insert-value"><code>(INSERT MP K V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L116-L119">src</a></sub></sup><a name="insert-value"></a>
-<code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordmap-type"><code>OrdMap</code></a> :A :B) &rarr; :A &rarr; :B &rarr; (<a href="#optional-type"><code>Optional</code></a> (<a href="#ordmap-type"><code>OrdMap</code></a> :A :B)))</code>
-
-Associate K with V in MP. If MP already contains a mapping for K, return None.
-
-
-
-***
-
-#### <a href="#insert-or-replace-value"><code>(INSERT-OR-REPLACE MP K V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L143-L150">src</a></sub></sup><a name="insert-or-replace-value"></a>
+#### <a href="#insert-value"><code>(INSERT MP K V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L129-L133">src</a></sub></sup><a name="insert-value"></a>
 <code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordmap-type"><code>OrdMap</code></a> :A :B) &rarr; :A &rarr; :B &rarr; (<a href="#ordmap-type"><code>OrdMap</code></a> :A :B))</code>
 
-Update MP to associate K with V.
-
-If MP already contains a mapping for K, replace it and discard the old value.
-
-Like `replace-or-insert', but prioritizing insertion as a use case.
+Returns an OrdMap in which the key `k` is associated with `v` added
+to the `mp`.  If `mp` already contains mapping for `k`, it is replaced.
 
 
 
 ***
 
-#### <a href="#keys-value"><code>(KEYS MP)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L168-L171">src</a></sub></sup><a name="keys-value"></a>
+#### <a href="#intersection-value"><code>(INTERSECTION A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L267-L272">src</a></sub></sup><a name="intersection-value"></a>
+<code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordmap-type"><code>OrdMap</code></a> :A :B) &rarr; (<a href="#ordmap-type"><code>OrdMap</code></a> :A :B) &rarr; (<a href="#ordmap-type"><code>OrdMap</code></a> :A :B))</code>
+
+Construct an OrdMap contaning elements whose key appears in both `a` and `b`.
+The resulting values are from `a`.
+
+
+
+***
+
+#### <a href="#keys-value"><code>(KEYS MP)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L171-L174">src</a></sub></sup><a name="keys-value"></a>
 <code>&forall; :A :B. ((<a href="#ordmap-type"><code>OrdMap</code></a> :A :B) &rarr; (<a href="#iterator-type"><code>Iterator</code></a> :A))</code>
 
 Iterate over the keys in MP, sorted least-to-greatest.
@@ -8571,7 +8682,7 @@ Iterate over the keys in MP, sorted least-to-greatest.
 
 ***
 
-#### <a href="#lookup-value"><code>(LOOKUP MP K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L79-L82">src</a></sub></sup><a name="lookup-value"></a>
+#### <a href="#lookup-value"><code>(LOOKUP MP K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L91-L94">src</a></sub></sup><a name="lookup-value"></a>
 <code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordmap-type"><code>OrdMap</code></a> :A :B) &rarr; :A &rarr; (<a href="#optional-type"><code>Optional</code></a> :B))</code>
 
 Retrieve the value associated with K in MP, or None if MP does not contain K.
@@ -8580,7 +8691,7 @@ Retrieve the value associated with K in MP, or None if MP does not contain K.
 
 ***
 
-#### <a href="#lookup-neighbors-value"><code>(LOOKUP-NEIGHBORS MP K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L100-L113">src</a></sub></sup><a name="lookup-neighbors-value"></a>
+#### <a href="#lookup-neighbors-value"><code>(LOOKUP-NEIGHBORS MP K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L112-L125">src</a></sub></sup><a name="lookup-neighbors-value"></a>
 <code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordmap-type"><code>OrdMap</code></a> :A :B) &rarr; :A &rarr; (<a href="#tuple3-type"><code>Tuple3</code></a> (<a href="#optional-type"><code>Optional</code></a> (<a href="#tuple-type"><code>Tuple</code></a> :A :B)) (<a href="#optional-type"><code>Optional</code></a> (<a href="#tuple-type"><code>Tuple</code></a> :A :B)) (<a href="#optional-type"><code>Optional</code></a> (<a href="#tuple-type"><code>Tuple</code></a> :A :B))))</code>
 
 Returns elements LO, ON, and HI, such that LO has the closest
@@ -8592,7 +8703,7 @@ Any of these values can be None if there's no such entry.
 
 ***
 
-#### <a href="#max-key-entry-value"><code>(MAX-KEY-ENTRY MP)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L85-L88">src</a></sub></sup><a name="max-key-entry-value"></a>
+#### <a href="#max-key-entry-value"><code>(MAX-KEY-ENTRY MP)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L97-L100">src</a></sub></sup><a name="max-key-entry-value"></a>
 <code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordmap-type"><code>OrdMap</code></a> :A :B) &rarr; (<a href="#optional-type"><code>Optional</code></a> (<a href="#tuple-type"><code>Tuple</code></a> :A :B)))</code>
 
 Returns the entry (Tuple :key :value) with the maximum key in the map `mp`. If the map is empty, None is returned.
@@ -8601,21 +8712,7 @@ Returns the entry (Tuple :key :value) with the maximum key in the map `mp`. If t
 
 ***
 
-#### <a href="#merge-value"><code>(MERGE A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L233-L242">src</a></sub></sup><a name="merge-value"></a>
-<code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordmap-type"><code>OrdMap</code></a> :A :B) &rarr; (<a href="#ordmap-type"><code>OrdMap</code></a> :A :B) &rarr; (<a href="#ordmap-type"><code>OrdMap</code></a> :A :B))</code>
-
-Construct a Tree containing all the mappings of both A and B.
-
-If A and B contain mappings X -> A' and X -> B', it is undefined whether the result maps X to A' or B'.
-
-Because of the possibility that A and B will map the same X to different A' and B', this is not an associative
-operation, and therefore OrdMap cannot implement Monoid.
-
-
-
-***
-
-#### <a href="#min-key-entry-value"><code>(MIN-KEY-ENTRY MP)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L91-L94">src</a></sub></sup><a name="min-key-entry-value"></a>
+#### <a href="#min-key-entry-value"><code>(MIN-KEY-ENTRY MP)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L103-L106">src</a></sub></sup><a name="min-key-entry-value"></a>
 <code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordmap-type"><code>OrdMap</code></a> :A :B) &rarr; (<a href="#optional-type"><code>Optional</code></a> (<a href="#tuple-type"><code>Tuple</code></a> :A :B)))</code>
 
 Returns the entry (Tuple :key :value) with the minimum key in the map `mp`. If the map is empty, None is returned.
@@ -8624,45 +8721,68 @@ Returns the entry (Tuple :key :value) with the minimum key in the map `mp`. If t
 
 ***
 
-#### <a href="#remove-value"><code>(REMOVE MP K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L153-L156">src</a></sub></sup><a name="remove-value"></a>
-<code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordmap-type"><code>OrdMap</code></a> :A :B) &rarr; :A &rarr; (<a href="#optional-type"><code>Optional</code></a> (<a href="#ordmap-type"><code>OrdMap</code></a> :A :B)))</code>
+#### <a href="#remove-value"><code>(REMOVE MP K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L155-L159">src</a></sub></sup><a name="remove-value"></a>
+<code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordmap-type"><code>OrdMap</code></a> :A :B) &rarr; :A &rarr; (<a href="#ordmap-type"><code>OrdMap</code></a> :A :B))</code>
 
-Remove the mapping associated with K in MP. If K does not have a value in MP, return None.
-
-
-
-***
-
-#### <a href="#replace-value"><code>(REPLACE MP K V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L123-L130">src</a></sub></sup><a name="replace-value"></a>
-<code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordmap-type"><code>OrdMap</code></a> :A :B) &rarr; :A &rarr; :B &rarr; (<a href="#optional-type"><code>Optional</code></a> (<a href="#tuple-type"><code>Tuple</code></a> (<a href="#ordmap-type"><code>OrdMap</code></a> :A :B) :B)))</code>
-
-Change the association of K to V in MP. If MP did not already contain a mapping for K, return None.
+Returns an OrdMap in which the association with key 'k' is removed from
+`mp`.  If `mp` doesn't have an association with `k`, it is returned as is.
 
 
 
 ***
 
-#### <a href="#replace-or-insert-value"><code>(REPLACE-OR-INSERT MP K V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L134-L140">src</a></sub></sup><a name="replace-or-insert-value"></a>
-<code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordmap-type"><code>OrdMap</code></a> :A :B) &rarr; :A &rarr; :B &rarr; (<a href="#tuple-type"><code>Tuple</code></a> (<a href="#ordmap-type"><code>OrdMap</code></a> :A :B) (<a href="#optional-type"><code>Optional</code></a> :B)))</code>
+#### <a href="#replace-value"><code>(REPLACE MP K V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L146-L151">src</a></sub></sup><a name="replace-value"></a>
+<code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordmap-type"><code>OrdMap</code></a> :A :B) &rarr; :A &rarr; :B &rarr; (<a href="#ordmap-type"><code>OrdMap</code></a> :A :B))</code>
 
-Update MP to associate K with V.
-
-If MP already contains a mapping for K, replace it and return the old value.
-
-
-
-***
-
-#### <a href="#update-value"><code>(UPDATE FUNC MP KEY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L211-L230">src</a></sub></sup><a name="update-value"></a>
-<code>&forall; :A :B. <a href="#ord-class">Ord</a> :B &rArr; ((:A &rarr; :A) &rarr; (<a href="#ordmap-type"><code>OrdMap</code></a> :B :A) &rarr; :B &rarr; (<a href="#optional-type"><code>Optional</code></a> (<a href="#ordmap-type"><code>OrdMap</code></a> :B :A)))</code>
-
-Apply FUNC to the value corresponding to KEY in MP, returning a new `OrdMap' which maps KEY to the result of the function.
+Returns an OrdMap in which the key `k` is associated with `v` replaced
+from `mp`, when `mp` already has an association with `k`.
+If `mp` doesn't has an association with `k`, `mp` is returned as is.
 
 
 
 ***
 
-#### <a href="#values-value"><code>(VALUES MP)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L174-L177">src</a></sub></sup><a name="values-value"></a>
+#### <a href="#union-value"><code>(UNION A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L256-L264">src</a></sub></sup><a name="union-value"></a>
+<code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordmap-type"><code>OrdMap</code></a> :A :B) &rarr; (<a href="#ordmap-type"><code>OrdMap</code></a> :A :B) &rarr; (<a href="#ordmap-type"><code>OrdMap</code></a> :A :B))</code>
+
+Construct an OrdMap containing all the mappings of both A and B.
+
+If A and B contain mappings X -> A' and X -> B', the former mapping is kept.
+
+The operation is associative, but not commutative.
+
+
+
+***
+
+#### <a href="#update-value"><code>(UPDATE MP K F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L218-L252">src</a></sub></sup><a name="update-value"></a>
+<code>&forall; :A :B :C. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordmap-type"><code>OrdMap</code></a> :A :B) &rarr; :A &rarr; ((<a href="#optional-type"><code>Optional</code></a> :B) &rarr; (<a href="#tuple-type"><code>Tuple</code></a> (<a href="#optional-type"><code>Optional</code></a> :B) :C)) &rarr; (<a href="#tuple-type"><code>Tuple</code></a> (<a href="#ordmap-type"><code>OrdMap</code></a> :A :B) :C))</code>
+
+Lookup an association with `k` in `mp`.  If there's an entry, call `f`
+with its value wrapped with Some.  If there isn't an entry, call 'f' with
+None.  `f` must return a tuple of possible new value and an auxiliary
+result.
+If the fst of `f`'s return value is Some, its content is inserted into
+`mp` in association with `k`.   If the fst of `f`'s return value is None,
+an association with `k` in `mp` is removed.  A possibly updated mapping
+is returned as the fst element of the tuple.
+The auxiliary result from `f` is returnd as the snd result.
+
+This can be used for the caller to obtain the previous state along
+updated map.  For example, the following code inserts an entry (k, v)
+into mp, and obtain (Some v') or None in the second value of the
+result, where v' is the previous value associated with k.
+
+```
+(update mp k (Tuple v))
+```
+
+
+
+
+***
+
+#### <a href="#values-value"><code>(VALUES MP)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L177-L180">src</a></sub></sup><a name="values-value"></a>
 <code>&forall; :A :B. ((<a href="#ordmap-type"><code>OrdMap</code></a> :A :B) &rarr; (<a href="#iterator-type"><code>Iterator</code></a> :B))</code>
 
 Iterate over the values in MP, sorted by their corresponding keys in least-to-greatest order.
@@ -8671,7 +8791,17 @@ Iterate over the values in MP, sorted by their corresponding keys in least-to-gr
 
 ***
 
-#### <a href="#empty-value"><code>EMPTY</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L74-L76">src</a></sub></sup><a name="empty-value"></a>
+#### <a href="#xor-value"><code>(XOR A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L282-L287">src</a></sub></sup><a name="xor-value"></a>
+<code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordmap-type"><code>OrdMap</code></a> :A :B) &rarr; (<a href="#ordmap-type"><code>OrdMap</code></a> :A :B) &rarr; (<a href="#ordmap-type"><code>OrdMap</code></a> :A :B))</code>
+
+Raturns an OrdMap that contains mappings either in `a` or in `b`,
+but not in both.
+
+
+
+***
+
+#### <a href="#empty-value"><code>EMPTY</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L79-L81">src</a></sub></sup><a name="empty-value"></a>
 <code>&forall; :A :B. (<a href="#ordmap-type"><code>OrdMap</code></a> :A :B)</code>
 
 A OrdMap containing no mappings.
@@ -8684,23 +8814,21 @@ A OrdMap containing no mappings.
 
 ### Types
 
-#### <a href="#tree-type"><code>Tree</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L75-L85">src</a></sub></sup><a name="tree-type"></a>
+#### <a href="#ordtree-type"><code>OrdTree</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L46-L63">src</a></sub></sup><a name="ordtree-type"></a>
 - <code>Empty</code> 
-  - exported; an empty tree. considered black for the purpose of the invariants.
+  - exported; an empty tree.
 
-A red-black balanced binary tree, sorted by `<=>` and unique by `==`.
+A 1-2 brother tree, sorted by `<=>` and unique by `==`.
 
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#eq-class">Eq</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#tree-type"><code>Tree</code></a> :A)</code>
-- <code><a href="#foldable-class">Foldable</a> <a href="#tree-type"><code>Tree</code></a></code>
-- <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#hash-class">Hash</a> (<a href="#tree-type"><code>Tree</code></a> :A)</code>
-- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#tree-type"><code>Tree</code></a> :A) :A</code>
-- <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#tree-type"><code>Tree</code></a> :A) :A</code>
-- <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#monoid-class">Monoid</a> (<a href="#tree-type"><code>Tree</code></a> :A)</code>
-- <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#semigroup-class">Semigroup</a> (<a href="#tree-type"><code>Tree</code></a> :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#tree-type"><code>Tree</code></a> :A)</code>
+- <code><a href="#eq-class">Eq</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#ordtree-type"><code>OrdTree</code></a> :A)</code>
+- <code><a href="#foldable-class">Foldable</a> <a href="#ordtree-type"><code>OrdTree</code></a></code>
+- <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#hash-class">Hash</a> (<a href="#ordtree-type"><code>OrdTree</code></a> :A)</code>
+- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#ordtree-type"><code>OrdTree</code></a> :A) :A</code>
+- <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#ordtree-type"><code>OrdTree</code></a> :A) :A</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#ordtree-type"><code>OrdTree</code></a> :A)</code>
 
 </details>
 
@@ -8710,59 +8838,73 @@ A red-black balanced binary tree, sorted by `<=>` and unique by `==`.
 
 ### Values
 
-#### <a href="#collect!-value"><code>(COLLECT! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L531-L535">src</a></sub></sup><a name="collect!-value"></a>
-<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#iterator-type"><code>Iterator</code></a> :A) &rarr; (<a href="#tree-type"><code>Tree</code></a> :A))</code>
+#### <a href="#adjoin-value"><code>(ADJOIN T A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L236-L249">src</a></sub></sup><a name="adjoin-value"></a>
+<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordtree-type"><code>OrdTree</code></a> :A) &rarr; :A &rarr; (<a href="#ordtree-type"><code>OrdTree</code></a> :A))</code>
 
-Construct a Tree containing all the elements of ITER.
-
-If ITER contains duplicates, later elements will overwrite earlier elements.
-
-
-
-***
-
-#### <a href="#decreasing-order-value"><code>(DECREASING-ORDER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L515-L517">src</a></sub></sup><a name="decreasing-order-value"></a>
-<code>&forall; :A. ((<a href="#tree-type"><code>Tree</code></a> :A) &rarr; (<a href="#iterator-type"><code>Iterator</code></a> :A))</code>
-
-Iterate the elements of a tree, starting with the greatest by `<=>' and ending with the least.
+Returns an ordtree that has a new entry `a`.  If `t` already has an entry
+which is `==` to `a`, however, the original `t` is returned as is.
 
 
 
 ***
 
-#### <a href="#increasing-order-value"><code>(INCREASING-ORDER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L499-L501">src</a></sub></sup><a name="increasing-order-value"></a>
-<code>&forall; :A. ((<a href="#tree-type"><code>Tree</code></a> :A) &rarr; (<a href="#iterator-type"><code>Iterator</code></a> :A))</code>
+#### <a href="#decreasing-order-value"><code>(DECREASING-ORDER TRE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L406-L421">src</a></sub></sup><a name="decreasing-order-value"></a>
+<code>&forall; :A. ((<a href="#ordtree-type"><code>OrdTree</code></a> :A) &rarr; (<a href="#iterator-type"><code>Iterator</code></a> :A))</code>
 
-Iterate the elements of a tree, starting with the least by `<=>' and ending with the greatest.
-
-
-
-***
-
-#### <a href="#insert-value"><code>(INSERT TRE ELT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L317-L330">src</a></sub></sup><a name="insert-value"></a>
-<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#tree-type"><code>Tree</code></a> :A) &rarr; :A &rarr; (<a href="#optional-type"><code>Optional</code></a> (<a href="#tree-type"><code>Tree</code></a> :A)))</code>
-
-Construct a new Tree like TRE but containing ELT. If TRE already had an element `==` to ELT, return None.
+Returns an iterator that traverses elements in `tre` in decreasing order.
 
 
 
 ***
 
-#### <a href="#insert-or-replace-value"><code>(INSERT-OR-REPLACE TRE ELT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L380-L386">src</a></sub></sup><a name="insert-or-replace-value"></a>
-<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#tree-type"><code>Tree</code></a> :A) &rarr; :A &rarr; (<a href="#tree-type"><code>Tree</code></a> :A))</code>
+#### <a href="#difference-value"><code>(DIFFERENCE A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L508-L510">src</a></sub></sup><a name="difference-value"></a>
+<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordtree-type"><code>OrdTree</code></a> :A) &rarr; (<a href="#ordtree-type"><code>OrdTree</code></a> :A) &rarr; (<a href="#ordtree-type"><code>OrdTree</code></a> :A))</code>
 
-Construct a new Tree like TRE but containing ELT.
-
-If TRE already had an element `==` to ELT, remove it, replace it with ELT, and discard the removed value.
-
-Like `replace-or-insert`, but prioritizing insertion as a use case.
+Returns an OrdTree that contains elements in `a` but not in `b`.
 
 
 
 ***
 
-#### <a href="#lookup-value"><code>(LOOKUP HAYSTACK NEEDLE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L120-L129">src</a></sub></sup><a name="lookup-value"></a>
-<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#tree-type"><code>Tree</code></a> :A) &rarr; :A &rarr; (<a href="#optional-type"><code>Optional</code></a> :A))</code>
+#### <a href="#empty?-value"><code>(EMPTY? T)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L66-L69">src</a></sub></sup><a name="empty?-value"></a>
+<code>&forall; :A. ((<a href="#ordtree-type"><code>OrdTree</code></a> :A) &rarr; <a href="#boolean-type"><code>Boolean</code></a>)</code>
+
+
+***
+
+#### <a href="#increasing-order-value"><code>(INCREASING-ORDER TRE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L387-L403">src</a></sub></sup><a name="increasing-order-value"></a>
+<code>&forall; :A. ((<a href="#ordtree-type"><code>OrdTree</code></a> :A) &rarr; (<a href="#iterator-type"><code>Iterator</code></a> :A))</code>
+
+Returns an iterator that traverses elements in `tre` in increasing order.
+This is same as (iter:into-iter tre).
+
+
+
+***
+
+#### <a href="#insert-value"><code>(INSERT T A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L218-L232">src</a></sub></sup><a name="insert-value"></a>
+<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordtree-type"><code>OrdTree</code></a> :A) &rarr; :A &rarr; (<a href="#ordtree-type"><code>OrdTree</code></a> :A))</code>
+
+Returns an ordtree that has an new entry `a` added to `t`.  If `t` already
+has an entry which is `==` to `a`,  The new ordtree has `a` in place of the
+existing entry.
+
+
+
+***
+
+#### <a href="#intersection-value"><code>(INTERSECTION A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L496-L505">src</a></sub></sup><a name="intersection-value"></a>
+<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordtree-type"><code>OrdTree</code></a> :A) &rarr; (<a href="#ordtree-type"><code>OrdTree</code></a> :A) &rarr; (<a href="#ordtree-type"><code>OrdTree</code></a> :A))</code>
+
+Returns an OrdTree that contains elements that appear in both `a` and `b`.
+The resulting elements are from `a`.
+
+
+
+***
+
+#### <a href="#lookup-value"><code>(LOOKUP HAYSTACK NEEDLE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L101-L113">src</a></sub></sup><a name="lookup-value"></a>
+<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordtree-type"><code>OrdTree</code></a> :A) &rarr; :A &rarr; (<a href="#optional-type"><code>Optional</code></a> :A))</code>
 
 If HAYSTACK contains an element `==` to NEEDLE, return it.
 
@@ -8770,8 +8912,8 @@ If HAYSTACK contains an element `==` to NEEDLE, return it.
 
 ***
 
-#### <a href="#lookup-neighbors-value"><code>(LOOKUP-NEIGHBORS HAYSTACK NEEDLE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L153-L175">src</a></sub></sup><a name="lookup-neighbors-value"></a>
-<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#tree-type"><code>Tree</code></a> :A) &rarr; :A &rarr; (<a href="#tuple3-type"><code>Tuple3</code></a> (<a href="#optional-type"><code>Optional</code></a> :A) (<a href="#optional-type"><code>Optional</code></a> :A) (<a href="#optional-type"><code>Optional</code></a> :A)))</code>
+#### <a href="#lookup-neighbors-value"><code>(LOOKUP-NEIGHBORS HAYSTACK NEEDLE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L458-L481">src</a></sub></sup><a name="lookup-neighbors-value"></a>
+<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordtree-type"><code>OrdTree</code></a> :A) &rarr; :A &rarr; (<a href="#tuple3-type"><code>Tuple3</code></a> (<a href="#optional-type"><code>Optional</code></a> :A) (<a href="#optional-type"><code>Optional</code></a> :A) (<a href="#optional-type"><code>Optional</code></a> :A)))</code>
 
 Returns elements LO, ON, and HI, such that LO is the closest
 element that is strictly less than `needle`, ON is the element
@@ -8783,71 +8925,101 @@ if there's no such element.
 
 ***
 
-#### <a href="#max-element-value"><code>(MAX-ELEMENT TREE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L132-L138">src</a></sub></sup><a name="max-element-value"></a>
-<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#tree-type"><code>Tree</code></a> :A) &rarr; (<a href="#optional-type"><code>Optional</code></a> :A))</code>
+#### <a href="#max-element-value"><code>(MAX-ELEMENT TRE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L431-L439">src</a></sub></sup><a name="max-element-value"></a>
+<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordtree-type"><code>OrdTree</code></a> :A) &rarr; (<a href="#optional-type"><code>Optional</code></a> :A))</code>
 
-
-***
-
-#### <a href="#merge-value"><code>(MERGE A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L541-L548">src</a></sub></sup><a name="merge-value"></a>
-<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#tree-type"><code>Tree</code></a> :A) &rarr; (<a href="#tree-type"><code>Tree</code></a> :A) &rarr; (<a href="#tree-type"><code>Tree</code></a> :A))</code>
-
-Construct a Tree containing all the elements of both A and B.
-
-If A and B contain elements A' and B' respectively where (== A' B'), the result will contain either A' or
-B'. Which one is chosen for the result is undefined.
+Returns the maximum element in the tree, or None if the tree is empty.
 
 
 
 ***
 
-#### <a href="#min-element-value"><code>(MIN-ELEMENT TREE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L141-L147">src</a></sub></sup><a name="min-element-value"></a>
-<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#tree-type"><code>Tree</code></a> :A) &rarr; (<a href="#optional-type"><code>Optional</code></a> :A))</code>
+#### <a href="#min-element-value"><code>(MIN-ELEMENT TRE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L443-L451">src</a></sub></sup><a name="min-element-value"></a>
+<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordtree-type"><code>OrdTree</code></a> :A) &rarr; (<a href="#optional-type"><code>Optional</code></a> :A))</code>
 
-
-***
-
-#### <a href="#remove-value"><code>(REMOVE TRE ELT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L392-L395">src</a></sub></sup><a name="remove-value"></a>
-<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#tree-type"><code>Tree</code></a> :A) &rarr; :A &rarr; (<a href="#optional-type"><code>Optional</code></a> (<a href="#tree-type"><code>Tree</code></a> :A)))</code>
-
-Construct a new Tree like TRE but without an element `==' to ELT. Return None if TRE does not contain an element `==` to ELT.
+Returns the minimum element in the tree, or None if the tree is empty.
 
 
 
 ***
 
-#### <a href="#replace-value"><code>(REPLACE TRE ELT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L333-L351">src</a></sub></sup><a name="replace-value"></a>
-<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#tree-type"><code>Tree</code></a> :A) &rarr; :A &rarr; (<a href="#optional-type"><code>Optional</code></a> (<a href="#tuple-type"><code>Tuple</code></a> (<a href="#tree-type"><code>Tree</code></a> :A) :A)))</code>
+#### <a href="#remove-value"><code>(REMOVE T A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L271-L287">src</a></sub></sup><a name="remove-value"></a>
+<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordtree-type"><code>OrdTree</code></a> :A) &rarr; :A &rarr; (<a href="#ordtree-type"><code>OrdTree</code></a> :A))</code>
 
-Construct a new Tree like TRE but with ELT replacing an old element `==` to ELT.
-
-Return the new tree and the removed element.
-
-If TRE did not have an element `==' to ELT, return None.
+Returns an ordtree that is the same as `t` except that the entry
+which is `==` to `a` is removed.  If `t` does not have such an entry,
+`t` is returned as is.
 
 
 
 ***
 
-#### <a href="#replace-or-insert-value"><code>(REPLACE-OR-INSERT TRE ELT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L354-L377">src</a></sub></sup><a name="replace-or-insert-value"></a>
-<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#tree-type"><code>Tree</code></a> :A) &rarr; :A &rarr; (<a href="#tuple-type"><code>Tuple</code></a> (<a href="#tree-type"><code>Tree</code></a> :A) (<a href="#optional-type"><code>Optional</code></a> :A)))</code>
+#### <a href="#replace-value"><code>(REPLACE T A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L253-L267">src</a></sub></sup><a name="replace-value"></a>
+<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordtree-type"><code>OrdTree</code></a> :A) &rarr; :A &rarr; (<a href="#ordtree-type"><code>OrdTree</code></a> :A))</code>
 
-Construct a new Tree like TRE but containing ELT.
-
-If TRE already had an element `==` to ELT, remove it, replace it with ELT, and return the removed value
-alongside the new tree.
+Returns an ordtree that has an entry `a` only if `t` already has an
+entry which is `==` to `a`.  The original entry is replaced with the given
+`a`.  If `t` doesn't have an entry `==` to `a`, `t` is returned as is.
 
 
 
 ***
 
-### Macros
+#### <a href="#transform-elements-value"><code>(TRANSFORM-ELEMENTS F TRE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L370-L383">src</a></sub></sup><a name="transform-elements-value"></a>
+<code>&forall; :A :B. ((:A &rarr; :B) &rarr; (<a href="#ordtree-type"><code>OrdTree</code></a> :A) &rarr; (<a href="#ordtree-type"><code>OrdTree</code></a> :B))</code>
 
-#### <a href="#coalton-library-ordtree-make-macro"><code>MAKE (&amp;REST ELEMENTS)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-library-ordtree-make-macro"></a>
+Returns a tree whose element consists of the result of `f` applied to
+the original element, and isomorphic to the original tree.
 
-Construct a tree containing the `elements`.
+It is important that transforming keys with `f` does not change the order
+of the element.  If `f` violates the condition, the resulting tree isn't
+guaranteed to be consistent.
 
-e.g. `(tree:make 5 6 1 8 9)` returns a tree containing 1, 5, 6, 8, 9.
+We do not name this `map` because of this restriction.
+
+
+
+***
+
+#### <a href="#union-value"><code>(UNION A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L490-L493">src</a></sub></sup><a name="union-value"></a>
+<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordtree-type"><code>OrdTree</code></a> :A) &rarr; (<a href="#ordtree-type"><code>OrdTree</code></a> :A) &rarr; (<a href="#ordtree-type"><code>OrdTree</code></a> :A))</code>
+
+Returns an OrdTree that contains all the elements from `a` and `b`.
+If both OrdTrees has the same (`==`) element, the one from `a` is taken.
+
+
+
+***
+
+#### <a href="#update-value"><code>(UPDATE T A F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L306-L367">src</a></sub></sup><a name="update-value"></a>
+<code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordtree-type"><code>OrdTree</code></a> :A) &rarr; :A &rarr; ((<a href="#optional-type"><code>Optional</code></a> :A) &rarr; (<a href="#tuple-type"><code>Tuple</code></a> (<a href="#optional-type"><code>Optional</code></a> :A) :B)) &rarr; (<a href="#tuple-type"><code>Tuple</code></a> (<a href="#ordtree-type"><code>OrdTree</code></a> :A) :B))</code>
+
+Generic update.  Look for the element `a` in `t`.  If there's an entry,
+call `f` with the existing entry wrapped with Some.  If there isn't an entry,
+call `f` with None.  `f` must return a tuple of possible replacement entry,
+and an auxiliary result.
+
+If the entry doesn't exist in `t` and `f` returns `(Some elt)`, `elt` is
+inserted.  If the entry exists in `t` and `f` returns None, the element
+is removed.  If the entry exists in `t` and `f` returns `(Some elt)`, `elt`
+replaces the original entry.
+
+It is important that if `f` returns `(Some elt)`, `elt` must be still greater
+than the 'previous' element and less than the 'next' element in the tree,
+otherwise the returned tree would be inconsistent.
+If you use an ordtree to keep a set of keys, you don't really need to alter
+the existing entry.  It is useful if you define your own element type that
+carries extra info, though; see OrdMap implementation.
+
+
+
+***
+
+#### <a href="#xor-value"><code>(XOR A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L513-L523">src</a></sub></sup><a name="xor-value"></a>
+<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordtree-type"><code>OrdTree</code></a> :A) &rarr; (<a href="#ordtree-type"><code>OrdTree</code></a> :A) &rarr; (<a href="#ordtree-type"><code>OrdTree</code></a> :A))</code>
+
+Rdturns an OrdTree that contains elements either in `a` or in `b`,
+but not in both.
 
 
 
@@ -10023,9 +10195,7 @@ Methods:
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#seq-type"><code>Seq</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#ordmap-type"><code>OrdMap</code></a> :A :B)</code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#mappair-type"><code>MapPair</code></a> :A :B)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#iteratorstacknode-type"><code>IteratorStackNode</code></a> :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#tree-type"><code>Tree</code></a> :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> <a href="#color-type"><code>Color</code></a></code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#ordtree-type"><code>OrdTree</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> ((<a href="#loopt-type"><code>LoopT</code></a> :A) :B)</code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#step-type"><code>Step</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> (((<a href="#freet-type"><code>FreeT</code></a> :A) :B) :C)</code>
@@ -10039,6 +10209,7 @@ Methods:
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#st-type"><code>ST</code></a> :A :B)</code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#identity-type"><code>Identity</code></a> :A)</code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#queue-type"><code>Queue</code></a> :A)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> <a href="#insertionmode-type"><code>InsertionMode</code></a></code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#hashmap-type"><code>HashMap</code></a> :A :B)</code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#hmnode-type"><code>HmNode</code></a> :A :B)</code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#hmentry-type"><code>HmEntry</code></a> :A :B)</code>
