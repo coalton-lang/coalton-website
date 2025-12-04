@@ -7874,7 +7874,27 @@ Returns the integer closest/equal to `x` that is within `0` and `x`.
 
 ### Classes
 
-#### <a href="#monadenvironment-class"><code>MonadEnvironment</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/classes.lisp#L26-L36">src</a></sub></sup><a name="monadenvironment-class"></a>
+#### <a href="#liftto-class"><code>LiftTo</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/classes.lisp#L29-L31">src</a></sub></sup><a name="liftto-class"></a>
+<code>(<a href="#monad-class">Monad</a> :A) (<a href="#monad-class">Monad</a> :B) &rArr; <a href="#liftto-class">LiftTo</a> :A :B</code>
+
+
+A monad, :m, which can be lifted to :r. Typically because :m is a MonadTransformer or :m and :r are the same.
+
+Methods:
+- <code>LIFT-TO :: ((:A :C) &rarr; (:B :C))</code>
+<details>
+<summary>Instances</summary>
+
+- <code>(<a href="#monad-class">Monad</a> :A) (<a href="#monad-class">Monad</a> (:B :A)) (<a href="#monadtransformer-class">MonadTransformer</a> :B) &rArr; <a href="#liftto-class">LiftTo</a> :A (:B :A)</code>
+- <code><a href="#monad-class">Monad</a> :A &rArr; <a href="#liftto-class">LiftTo</a> :A :A</code>
+
+</details>
+
+
+
+***
+
+#### <a href="#monadenvironment-class"><code>MonadEnvironment</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/classes.lisp#L41-L51">src</a></sub></sup><a name="monadenvironment-class"></a>
 <code><a href="#monad-class">Monad</a> :A &rArr; <a href="#monadenvironment-class">MonadEnvironment</a> :B :A</code>
 
 
@@ -7900,7 +7920,7 @@ Methods:
 
 ***
 
-#### <a href="#monadstate-class"><code>MonadState</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/classes.lisp#L38-L48">src</a></sub></sup><a name="monadstate-class"></a>
+#### <a href="#monadstate-class"><code>MonadState</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/classes.lisp#L53-L63">src</a></sub></sup><a name="monadstate-class"></a>
 <code><a href="#monad-class">Monad</a> :A &rArr; <a href="#monadstate-class">MonadState</a> :B :A</code>
 
 
