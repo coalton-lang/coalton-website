@@ -5820,7 +5820,7 @@ Set the `i`th value of the `LispArray` `v` to `x`.
 
 ### Values
 
-#### <a href="#all-value"><code>(ALL F? XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L619-L626">src</a></sub></sup><a name="all-value"></a>
+#### <a href="#all-value"><code>(ALL F? XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L639-L646">src</a></sub></sup><a name="all-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type">Boolean</a>) &rarr; (<a href="#list-type">List</a> :A) &rarr; <a href="#boolean-type">Boolean</a>)</code>
 
 Returns `True` if every element in `xs` matches `f?`.
@@ -5829,7 +5829,7 @@ Returns `True` if every element in `xs` matches `f?`.
 
 ***
 
-#### <a href="#any-value"><code>(ANY F? L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L629-L636">src</a></sub></sup><a name="any-value"></a>
+#### <a href="#any-value"><code>(ANY F? L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L649-L656">src</a></sub></sup><a name="any-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type">Boolean</a>) &rarr; (<a href="#list-type">List</a> :A) &rarr; <a href="#boolean-type">Boolean</a>)</code>
 
 Returns `True` if at least one element in `xs` matches `f?`.
@@ -5838,7 +5838,7 @@ Returns `True` if at least one element in `xs` matches `f?`.
 
 ***
 
-#### <a href="#append-value"><code>(APPEND XS YS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L307-L309">src</a></sub></sup><a name="append-value"></a>
+#### <a href="#append-value"><code>(APPEND XS YS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L327-L329">src</a></sub></sup><a name="append-value"></a>
 <code>&forall; :A. ((<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> :A))</code>
 
 Appends two lists together and returns a new list.
@@ -5847,7 +5847,7 @@ Appends two lists together and returns a new list.
 
 ***
 
-#### <a href="#car-value"><code>(CAR X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L109-L113">src</a></sub></sup><a name="car-value"></a>
+#### <a href="#car-value"><code>(CAR X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L110-L114">src</a></sub></sup><a name="car-value"></a>
 <code>&forall; :A. ((<a href="#list-type">List</a> :A) &rarr; :A)</code>
 
 Return the traditional car of a list. This function is partial
@@ -5856,7 +5856,7 @@ Return the traditional car of a list. This function is partial
 
 ***
 
-#### <a href="#cdr-value"><code>(CDR XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L116-L120">src</a></sub></sup><a name="cdr-value"></a>
+#### <a href="#cdr-value"><code>(CDR XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L117-L121">src</a></sub></sup><a name="cdr-value"></a>
 <code>&forall; :A. ((<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> :A))</code>
 
 Return the traditional cdr of a list.
@@ -5865,7 +5865,7 @@ Return the traditional cdr of a list.
 
 ***
 
-#### <a href="#combs-value"><code>(COMBS L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L652-L660">src</a></sub></sup><a name="combs-value"></a>
+#### <a href="#combs-value"><code>(COMBS L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L664-L672">src</a></sub></sup><a name="combs-value"></a>
 <code>&forall; :A. ((<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> (<a href="#list-type">List</a> :A)))</code>
 
 Compute a list of all combinations of elements of `l`. This function is sometimes goes by the name "power set" or "subsets".
@@ -5876,7 +5876,7 @@ The ordering of elements of `l` is preserved in the ordering of elements in each
 
 ***
 
-#### <a href="#combsof-value"><code>(COMBSOF N L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L663-L676">src</a></sub></sup><a name="combsof-value"></a>
+#### <a href="#combsof-value"><code>(COMBSOF N L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L675-L688">src</a></sub></sup><a name="combsof-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFix</a> &rarr; (<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> (<a href="#list-type">List</a> :A)))</code>
 
 Produce a list of size-N subsets of `l`.
@@ -5889,7 +5889,7 @@ This function is equivalent to all size-`n` elements of `(combs l)`.
 
 ***
 
-#### <a href="#concat-value"><code>(CONCAT XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L313-L315">src</a></sub></sup><a name="concat-value"></a>
+#### <a href="#concat-value"><code>(CONCAT XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L333-L335">src</a></sub></sup><a name="concat-value"></a>
 <code>&forall; :A. ((<a href="#list-type">List</a> (<a href="#list-type">List</a> :A)) &rarr; (<a href="#list-type">List</a> :A))</code>
 
 Appends a list of lists together into a single new list.
@@ -5898,7 +5898,7 @@ Appends a list of lists together into a single new list.
 
 ***
 
-#### <a href="#concatmap-value"><code>(CONCATMAP F XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L319-L321">src</a></sub></sup><a name="concatmap-value"></a>
+#### <a href="#concatmap-value"><code>(CONCATMAP F XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L339-L341">src</a></sub></sup><a name="concatmap-value"></a>
 <code>&forall; :A :B. ((:A &rarr; (<a href="#list-type">List</a> :B)) &rarr; (<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> :B))</code>
 
 Apply F to each element in XS and concatenate the results.
@@ -5907,7 +5907,7 @@ Apply F to each element in XS and concatenate the results.
 
 ***
 
-#### <a href="#cons?-value"><code>(CONS? XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L144-L148">src</a></sub></sup><a name="cons?-value"></a>
+#### <a href="#cons?-value"><code>(CONS? XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L145-L149">src</a></sub></sup><a name="cons?-value"></a>
 <code>&forall; :A. ((<a href="#list-type">List</a> :A) &rarr; <a href="#boolean-type">Boolean</a>)</code>
 
 Returns TRUE if XS is a non-empty list.
@@ -5916,7 +5916,7 @@ Returns TRUE if XS is a non-empty list.
 
 ***
 
-#### <a href="#countby-value"><code>(COUNTBY F THINGS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L471-L478">src</a></sub></sup><a name="countby-value"></a>
+#### <a href="#countby-value"><code>(COUNTBY F THINGS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L491-L498">src</a></sub></sup><a name="countby-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type">Boolean</a>) &rarr; (<a href="#list-type">List</a> :A) &rarr; <a href="#ufix-type">UFix</a>)</code>
 
 Count the number of items in THINGS that satisfy the predicate F.
@@ -5925,7 +5925,7 @@ Count the number of items in THINGS that satisfy the predicate F.
 
 ***
 
-#### <a href="#difference-value"><code>(DIFFERENCE XS YS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L407-L409">src</a></sub></sup><a name="difference-value"></a>
+#### <a href="#difference-value"><code>(DIFFERENCE XS YS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L427-L429">src</a></sub></sup><a name="difference-value"></a>
 <code>&forall; :A. <a href="#eq-class">Eq</a> :A &rArr; ((<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> :A))</code>
 
 Returns a new list with the first occurence of each element in `ys` removed from `xs`.
@@ -5934,7 +5934,7 @@ Returns a new list with the first occurence of each element in `ys` removed from
 
 ***
 
-#### <a href="#drop-value"><code>(DROP N XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L190-L197">src</a></sub></sup><a name="drop-value"></a>
+#### <a href="#drop-value"><code>(DROP N XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L191-L198">src</a></sub></sup><a name="drop-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFix</a> &rarr; (<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> :A))</code>
 
 Returns a list with the first N elements removed.
@@ -5943,19 +5943,19 @@ Returns a list with the first N elements removed.
 
 ***
 
-#### <a href="#elemindex-value"><code>(ELEMINDEX X XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L268-L269">src</a></sub></sup><a name="elemindex-value"></a>
+#### <a href="#elemindex-value"><code>(ELEMINDEX X XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L288-L289">src</a></sub></sup><a name="elemindex-value"></a>
 <code>&forall; :A. <a href="#eq-class">Eq</a> :A &rArr; (:A &rarr; (<a href="#list-type">List</a> :A) &rarr; (<a href="#optional-type">Optional</a> <a href="#ufix-type">UFix</a>))</code>
 
 
 ***
 
-#### <a href="#equivalence-classes-value"><code>(EQUIVALENCE-CLASSES)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L581-L581">src</a></sub></sup><a name="equivalence-classes-value"></a>
+#### <a href="#equivalence-classes-value"><code>(EQUIVALENCE-CLASSES)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L601-L601">src</a></sub></sup><a name="equivalence-classes-value"></a>
 <code>&forall; :A. <a href="#eq-class">Eq</a> :A &rArr; ((<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> (<a href="#list-type">List</a> :A)))</code>
 
 
 ***
 
-#### <a href="#equivalence-classes-by-value"><code>(EQUIVALENCE-CLASSES-BY F L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L569-L578">src</a></sub></sup><a name="equivalence-classes-by-value"></a>
+#### <a href="#equivalence-classes-by-value"><code>(EQUIVALENCE-CLASSES-BY F L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L589-L598">src</a></sub></sup><a name="equivalence-classes-by-value"></a>
 <code>&forall; :A. ((:A &rarr; :A &rarr; <a href="#boolean-type">Boolean</a>) &rarr; (<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> (<a href="#list-type">List</a> :A)))</code>
 
 Break a list into a list of equivalence classes according to an equivalence relation.
@@ -5964,7 +5964,7 @@ Break a list into a list of equivalence classes according to an equivalence rela
 
 ***
 
-#### <a href="#filter-value"><code>(FILTER F XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L223-L232">src</a></sub></sup><a name="filter-value"></a>
+#### <a href="#filter-value"><code>(FILTER F XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L243-L252">src</a></sub></sup><a name="filter-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type">Boolean</a>) &rarr; (<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> :A))</code>
 
 Returns a new list containing every element of XS that matches the predicate function F in the same order.
@@ -5973,7 +5973,7 @@ Returns a new list containing every element of XS that matches the predicate fun
 
 ***
 
-#### <a href="#find-value"><code>(FIND F XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L213-L220">src</a></sub></sup><a name="find-value"></a>
+#### <a href="#find-value"><code>(FIND F XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L233-L240">src</a></sub></sup><a name="find-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type">Boolean</a>) &rarr; (<a href="#list-type">List</a> :A) &rarr; (<a href="#optional-type">Optional</a> :A))</code>
 
 Returns the first element in a list matching the predicate function F.
@@ -5982,7 +5982,7 @@ Returns the first element in a list matching the predicate function F.
 
 ***
 
-#### <a href="#findindex-value"><code>(FINDINDEX F XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L272-L281">src</a></sub></sup><a name="findindex-value"></a>
+#### <a href="#findindex-value"><code>(FINDINDEX F XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L292-L301">src</a></sub></sup><a name="findindex-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type">Boolean</a>) &rarr; (<a href="#list-type">List</a> :A) &rarr; (<a href="#optional-type">Optional</a> <a href="#ufix-type">UFix</a>))</code>
 
 Returns the index of the first element matching the predicate function F.
@@ -5991,7 +5991,7 @@ Returns the index of the first element matching the predicate function F.
 
 ***
 
-#### <a href="#head-value"><code>(HEAD L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L95-L99">src</a></sub></sup><a name="head-value"></a>
+#### <a href="#head-value"><code>(HEAD L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L96-L100">src</a></sub></sup><a name="head-value"></a>
 <code>&forall; :A. ((<a href="#list-type">List</a> :A) &rarr; (<a href="#optional-type">Optional</a> :A))</code>
 
 Returns the first element of a list.
@@ -6000,7 +6000,7 @@ Returns the first element of a list.
 
 ***
 
-#### <a href="#index-value"><code>(INDEX I XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L243-L250">src</a></sub></sup><a name="index-value"></a>
+#### <a href="#index-value"><code>(INDEX I XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L263-L270">src</a></sub></sup><a name="index-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFix</a> &rarr; (<a href="#list-type">List</a> :A) &rarr; (<a href="#optional-type">Optional</a> :A))</code>
 
 Returns the Ith element of a list.
@@ -6009,7 +6009,7 @@ Returns the Ith element of a list.
 
 ***
 
-#### <a href="#init-value"><code>(INIT L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L131-L134">src</a></sub></sup><a name="init-value"></a>
+#### <a href="#init-value"><code>(INIT L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L132-L135">src</a></sub></sup><a name="init-value"></a>
 <code>&forall; :A. ((<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> :A))</code>
 
 Returns every element except the last in a list.
@@ -6018,7 +6018,7 @@ Returns every element except the last in a list.
 
 ***
 
-#### <a href="#insert-value"><code>(INSERT E LS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L481-L483">src</a></sub></sup><a name="insert-value"></a>
+#### <a href="#insert-value"><code>(INSERT E LS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L501-L503">src</a></sub></sup><a name="insert-value"></a>
 <code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; (:A &rarr; (<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> :A))</code>
 
 Inserts an element into a list at the first place it is less than or equal to the next element.
@@ -6027,7 +6027,7 @@ Inserts an element into a list at the first place it is less than or equal to th
 
 ***
 
-#### <a href="#insertby-value"><code>(INSERTBY CMP X YS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L486-L496">src</a></sub></sup><a name="insertby-value"></a>
+#### <a href="#insertby-value"><code>(INSERTBY CMP X YS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L506-L516">src</a></sub></sup><a name="insertby-value"></a>
 <code>&forall; :A. ((:A &rarr; :A &rarr; <a href="#ord-type">Ord</a>) &rarr; :A &rarr; (<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> :A))</code>
 
 Generic version of insert
@@ -6036,7 +6036,7 @@ Generic version of insert
 
 ***
 
-#### <a href="#insertions-value"><code>(INSERTIONS A L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L524-L533">src</a></sub></sup><a name="insertions-value"></a>
+#### <a href="#insertions-value"><code>(INSERTIONS A L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L544-L553">src</a></sub></sup><a name="insertions-value"></a>
 <code>&forall; :A. (:A &rarr; (<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> (<a href="#list-type">List</a> :A)))</code>
 
 Produce a list of copies of `l`, each with A inserted at a possible position.
@@ -6049,7 +6049,7 @@ Produce a list of copies of `l`, each with A inserted at a possible position.
 
 ***
 
-#### <a href="#intercalate-value"><code>(INTERCALATE XS XSS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L519-L521">src</a></sub></sup><a name="intercalate-value"></a>
+#### <a href="#intercalate-value"><code>(INTERCALATE XS XSS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L539-L541">src</a></sub></sup><a name="intercalate-value"></a>
 <code>&forall; :A. ((<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> (<a href="#list-type">List</a> :A)) &rarr; (<a href="#list-type">List</a> :A))</code>
 
 Intersperse `xs` into `xss` and then concatenate the result.
@@ -6058,7 +6058,7 @@ Intersperse `xs` into `xss` and then concatenate the result.
 
 ***
 
-#### <a href="#intersection-value"><code>(INTERSECTION XS YS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L350-L359">src</a></sub></sup><a name="intersection-value"></a>
+#### <a href="#intersection-value"><code>(INTERSECTION XS YS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L370-L379">src</a></sub></sup><a name="intersection-value"></a>
 <code>&forall; :A. <a href="#eq-class">Eq</a> :A &rArr; ((<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> :A))</code>
 
 Returns elements which occur in both lists. Does not return duplicates and does not guarantee order.
@@ -6067,7 +6067,7 @@ Returns elements which occur in both lists. Does not return duplicates and does 
 
 ***
 
-#### <a href="#intersperse-value"><code>(INTERSPERSE E XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L512-L516">src</a></sub></sup><a name="intersperse-value"></a>
+#### <a href="#intersperse-value"><code>(INTERSPERSE E XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L532-L536">src</a></sub></sup><a name="intersperse-value"></a>
 <code>&forall; :A. (:A &rarr; (<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> :A))</code>
 
 Returns a new list by inserting `e` between every element of `xs`.
@@ -6076,7 +6076,7 @@ Returns a new list by inserting `e` between every element of `xs`.
 
 ***
 
-#### <a href="#last-value"><code>(LAST L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L123-L128">src</a></sub></sup><a name="last-value"></a>
+#### <a href="#last-value"><code>(LAST L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L124-L129">src</a></sub></sup><a name="last-value"></a>
 <code>&forall; :A. ((<a href="#list-type">List</a> :A) &rarr; (<a href="#optional-type">Optional</a> :A))</code>
 
 Returns the last element of a list.
@@ -6085,7 +6085,7 @@ Returns the last element of a list.
 
 ***
 
-#### <a href="#length-value"><code>(LENGTH L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L235-L240">src</a></sub></sup><a name="length-value"></a>
+#### <a href="#length-value"><code>(LENGTH L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L255-L260">src</a></sub></sup><a name="length-value"></a>
 <code>&forall; :A. ((<a href="#list-type">List</a> :A) &rarr; <a href="#ufix-type">UFix</a>)</code>
 
 Returns the length of a list.
@@ -6094,7 +6094,7 @@ Returns the length of a list.
 
 ***
 
-#### <a href="#lookup-value"><code>(LOOKUP E XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L362-L371">src</a></sub></sup><a name="lookup-value"></a>
+#### <a href="#lookup-value"><code>(LOOKUP E XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L382-L391">src</a></sub></sup><a name="lookup-value"></a>
 <code>&forall; :A :B. <a href="#eq-class">Eq</a> :A &rArr; (:A &rarr; (<a href="#list-type">List</a> (<a href="#tuple-type">Tuple</a> :A :B)) &rarr; (<a href="#optional-type">Optional</a> :B))</code>
 
 Returns the value of the first (key, value) tuple in XS where the key matches E.
@@ -6103,7 +6103,7 @@ Returns the value of the first (key, value) tuple in XS where the key matches E.
 
 ***
 
-#### <a href="#maximum-value"><code>(MAXIMUM L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L599-L601">src</a></sub></sup><a name="maximum-value"></a>
+#### <a href="#maximum-value"><code>(MAXIMUM L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L619-L621">src</a></sub></sup><a name="maximum-value"></a>
 <code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#list-type">List</a> :A) &rarr; (<a href="#optional-type">Optional</a> :A))</code>
 
 Returns a greatest element of a list, or `None`.
@@ -6112,7 +6112,7 @@ Returns a greatest element of a list, or `None`.
 
 ***
 
-#### <a href="#member-value"><code>(MEMBER E XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L324-L331">src</a></sub></sup><a name="member-value"></a>
+#### <a href="#member-value"><code>(MEMBER E XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L344-L351">src</a></sub></sup><a name="member-value"></a>
 <code>&forall; :A. <a href="#eq-class">Eq</a> :A &rArr; (:A &rarr; (<a href="#list-type">List</a> :A) &rarr; <a href="#boolean-type">Boolean</a>)</code>
 
 Returns true if any element of XS is equal to E.
@@ -6121,7 +6121,7 @@ Returns true if any element of XS is equal to E.
 
 ***
 
-#### <a href="#minimum-value"><code>(MINIMUM L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L604-L606">src</a></sub></sup><a name="minimum-value"></a>
+#### <a href="#minimum-value"><code>(MINIMUM L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L624-L626">src</a></sub></sup><a name="minimum-value"></a>
 <code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#list-type">List</a> :A) &rarr; (<a href="#optional-type">Optional</a> :A))</code>
 
 Returns a least element of a list, or `None`.
@@ -6130,7 +6130,7 @@ Returns a least element of a list, or `None`.
 
 ***
 
-#### <a href="#nth-value"><code>(NTH N L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L253-L255">src</a></sub></sup><a name="nth-value"></a>
+#### <a href="#nth-value"><code>(NTH N L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L273-L275">src</a></sub></sup><a name="nth-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFix</a> &rarr; (<a href="#list-type">List</a> :A) &rarr; :A)</code>
 
 Like INDEX, but errors if the index is not found.
@@ -6139,7 +6139,7 @@ Like INDEX, but errors if the index is not found.
 
 ***
 
-#### <a href="#nth-cdr-value"><code>(NTH-CDR N L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L258-L265">src</a></sub></sup><a name="nth-cdr-value"></a>
+#### <a href="#nth-cdr-value"><code>(NTH-CDR N L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L278-L285">src</a></sub></sup><a name="nth-cdr-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFix</a> &rarr; (<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> :A))</code>
 
 Returns the nth-cdr of a list.
@@ -6148,7 +6148,7 @@ Returns the nth-cdr of a list.
 
 ***
 
-#### <a href="#null?-value"><code>(NULL? XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L137-L141">src</a></sub></sup><a name="null?-value"></a>
+#### <a href="#null?-value"><code>(NULL? XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L138-L142">src</a></sub></sup><a name="null?-value"></a>
 <code>&forall; :A. ((<a href="#list-type">List</a> :A) &rarr; <a href="#boolean-type">Boolean</a>)</code>
 
 Returns TRUE if XS is an empty list.
@@ -6157,7 +6157,7 @@ Returns TRUE if XS is an empty list.
 
 ***
 
-#### <a href="#optimumby-value"><code>(OPTIMUMBY F XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L586-L596">src</a></sub></sup><a name="optimumby-value"></a>
+#### <a href="#optimumby-value"><code>(OPTIMUMBY F XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L606-L616">src</a></sub></sup><a name="optimumby-value"></a>
 <code>&forall; :A. ((:A &rarr; :A &rarr; <a href="#boolean-type">Boolean</a>) &rarr; (<a href="#list-type">List</a> :A) &rarr; (<a href="#optional-type">Optional</a> :A))</code>
 
 Returns an optimum according to a total order.
@@ -6166,7 +6166,7 @@ Returns an optimum according to a total order.
 
 ***
 
-#### <a href="#partition-value"><code>(PARTITION F XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L557-L566">src</a></sub></sup><a name="partition-value"></a>
+#### <a href="#partition-value"><code>(PARTITION F XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L577-L586">src</a></sub></sup><a name="partition-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type">Boolean</a>) &rarr; (<a href="#list-type">List</a> :A) &rarr; (<a href="#tuple-type">Tuple</a> (<a href="#list-type">List</a> :A) (<a href="#list-type">List</a> :A)))</code>
 
 Splits a list into two new lists. The first list contains elements matching predicate F.
@@ -6175,7 +6175,7 @@ Splits a list into two new lists. The first list contains elements matching pred
 
 ***
 
-#### <a href="#perms-value"><code>(PERMS L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L647-L649">src</a></sub></sup><a name="perms-value"></a>
+#### <a href="#perms-value"><code>(PERMS L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L659-L661">src</a></sub></sup><a name="perms-value"></a>
 <code>&forall; :A. ((<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> (<a href="#list-type">List</a> :A)))</code>
 
 Produce all permutations of the list L.
@@ -6184,7 +6184,7 @@ Produce all permutations of the list L.
 
 ***
 
-#### <a href="#product-value"><code>(PRODUCT XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L614-L616">src</a></sub></sup><a name="product-value"></a>
+#### <a href="#product-value"><code>(PRODUCT XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L634-L636">src</a></sub></sup><a name="product-value"></a>
 <code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; ((<a href="#list-type">List</a> :A) &rarr; :A)</code>
 
 Returns the product of `xs`.
@@ -6193,7 +6193,7 @@ Returns the product of `xs`.
 
 ***
 
-#### <a href="#range-value"><code>(RANGE START END)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L284-L299">src</a></sub></sup><a name="range-value"></a>
+#### <a href="#range-value"><code>(RANGE START END)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L304-L319">src</a></sub></sup><a name="range-value"></a>
 <code>&forall; :A. (<a href="#num-class">Num</a> :A) (<a href="#ord-class">Ord</a> :A) &rArr; (:A &rarr; :A &rarr; (<a href="#list-type">List</a> :A))</code>
 
 Returns a list containing the numbers from START to END inclusive, counting by 1.
@@ -6209,7 +6209,7 @@ Returns a list containing the numbers from START to END inclusive, counting by 1
 
 ***
 
-#### <a href="#remove-value"><code>(REMOVE X YS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L402-L404">src</a></sub></sup><a name="remove-value"></a>
+#### <a href="#remove-value"><code>(REMOVE X YS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L422-L424">src</a></sub></sup><a name="remove-value"></a>
 <code>&forall; :A. <a href="#eq-class">Eq</a> :A &rArr; (:A &rarr; (<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> :A))</code>
 
 Return a new list with the first element equal to `x` removed.
@@ -6218,7 +6218,7 @@ Return a new list with the first element equal to `x` removed.
 
 ***
 
-#### <a href="#remove-duplicates-value"><code>(REMOVE-DUPLICATES XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L383-L385">src</a></sub></sup><a name="remove-duplicates-value"></a>
+#### <a href="#remove-duplicates-value"><code>(REMOVE-DUPLICATES XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L403-L405">src</a></sub></sup><a name="remove-duplicates-value"></a>
 <code>&forall; :A. <a href="#eq-class">Eq</a> :A &rArr; ((<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> :A))</code>
 
 Returns a new list without duplicate elements.
@@ -6227,7 +6227,7 @@ Returns a new list without duplicate elements.
 
 ***
 
-#### <a href="#remove-if-value"><code>(REMOVE-IF PRED XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L397-L399">src</a></sub></sup><a name="remove-if-value"></a>
+#### <a href="#remove-if-value"><code>(REMOVE-IF PRED XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L417-L419">src</a></sub></sup><a name="remove-if-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type">Boolean</a>) &rarr; (<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> :A))</code>
 
 Return a new list with the first element for which PRED is `True` is removed.
@@ -6236,7 +6236,7 @@ Return a new list with the first element for which PRED is `True` is removed.
 
 ***
 
-#### <a href="#repeat-value"><code>(REPEAT N X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L163-L169">src</a></sub></sup><a name="repeat-value"></a>
+#### <a href="#repeat-value"><code>(REPEAT N X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L164-L170">src</a></sub></sup><a name="repeat-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFix</a> &rarr; :A &rarr; (<a href="#list-type">List</a> :A))</code>
 
 Returns a list with the same value repeated multiple times.
@@ -6245,7 +6245,7 @@ Returns a list with the same value repeated multiple times.
 
 ***
 
-#### <a href="#reverse-value"><code>(REVERSE XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L177-L180">src</a></sub></sup><a name="reverse-value"></a>
+#### <a href="#reverse-value"><code>(REVERSE XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L178-L181">src</a></sub></sup><a name="reverse-value"></a>
 <code>&forall; :A. ((<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> :A))</code>
 
 Returns a new list containing the same elements in reverse order.
@@ -6254,7 +6254,7 @@ Returns a new list containing the same elements in reverse order.
 
 ***
 
-#### <a href="#singleton-value"><code>(SINGLETON X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L151-L153">src</a></sub></sup><a name="singleton-value"></a>
+#### <a href="#singleton-value"><code>(SINGLETON X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L152-L154">src</a></sub></sup><a name="singleton-value"></a>
 <code>&forall; :A. (:A &rarr; (<a href="#list-type">List</a> :A))</code>
 
 Returns a list containing one element.
@@ -6263,7 +6263,7 @@ Returns a list containing one element.
 
 ***
 
-#### <a href="#singleton?-value"><code>(SINGLETON? XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L156-L160">src</a></sub></sup><a name="singleton?-value"></a>
+#### <a href="#singleton?-value"><code>(SINGLETON? XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L157-L161">src</a></sub></sup><a name="singleton?-value"></a>
 <code>&forall; :A. ((<a href="#list-type">List</a> :A) &rarr; <a href="#boolean-type">Boolean</a>)</code>
 
 Is `xs` a list containing exactly one element?
@@ -6272,7 +6272,7 @@ Is `xs` a list containing exactly one element?
 
 ***
 
-#### <a href="#sort-value"><code>(SORT XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L499-L501">src</a></sub></sup><a name="sort-value"></a>
+#### <a href="#sort-value"><code>(SORT XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L519-L521">src</a></sub></sup><a name="sort-value"></a>
 <code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> :A))</code>
 
 Sort `xs`.
@@ -6281,7 +6281,7 @@ Sort `xs`.
 
 ***
 
-#### <a href="#sortby-value"><code>(SORTBY CMP XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L504-L509">src</a></sub></sup><a name="sortby-value"></a>
+#### <a href="#sortby-value"><code>(SORTBY CMP XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L524-L529">src</a></sub></sup><a name="sortby-value"></a>
 <code>&forall; :A. ((:A &rarr; :A &rarr; <a href="#ord-type">Ord</a>) &rarr; (<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> :A))</code>
 
 Sort `xs` by a custom comparison function `cmp`.
@@ -6290,16 +6290,25 @@ Sort `xs` by a custom comparison function `cmp`.
 
 ***
 
-#### <a href="#split-value"><code>(SPLIT C STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L639-L644">src</a></sub></sup><a name="split-value"></a>
-<code>(<a href="#char-type">Char</a> &rarr; <a href="#string-type">String</a> &rarr; (<a href="#list-type">List</a> <a href="#string-type">String</a>))</code>
+#### <a href="#split-around-value"><code>(SPLIT-AROUND N XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L226-L230">src</a></sub></sup><a name="split-around-value"></a>
+<code>&forall; :A. (<a href="#ufix-type">UFix</a> &rarr; (<a href="#list-type">List</a> :A) &rarr; (<a href="#tuple3-type">Tuple3</a> (<a href="#list-type">List</a> :A) (<a href="#optional-type">Optional</a> :A) (<a href="#list-type">List</a> :A)))</code>
 
-Split a string `str` into a list of substrings by the character `c`.
+Splits a list around N into a Tuple of the first N elements, the element at index N, and a tail of all remaining elements. N must be a valid index.
 
 
 
 ***
 
-#### <a href="#sum-value"><code>(SUM XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L609-L611">src</a></sub></sup><a name="sum-value"></a>
+#### <a href="#split-at-value"><code>(SPLIT-AT N XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L214-L223">src</a></sub></sup><a name="split-at-value"></a>
+<code>&forall; :A. (<a href="#ufix-type">UFix</a> &rarr; (<a href="#list-type">List</a> :A) &rarr; (<a href="#tuple-type">Tuple</a> (<a href="#list-type">List</a> :A) (<a href="#list-type">List</a> :A)))</code>
+
+Splits a list into a Tuple of the first N elements and all remaining elements. The return value is equivalent to `(Tuple (take n xs) (drop n xs)`.
+
+
+
+***
+
+#### <a href="#sum-value"><code>(SUM XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L629-L631">src</a></sub></sup><a name="sum-value"></a>
 <code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; ((<a href="#list-type">List</a> :A) &rarr; :A)</code>
 
 Returns the sum of `xs`.
@@ -6308,7 +6317,7 @@ Returns the sum of `xs`.
 
 ***
 
-#### <a href="#tail-value"><code>(TAIL L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L102-L106">src</a></sub></sup><a name="tail-value"></a>
+#### <a href="#tail-value"><code>(TAIL L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L103-L107">src</a></sub></sup><a name="tail-value"></a>
 <code>&forall; :A. ((<a href="#list-type">List</a> :A) &rarr; (<a href="#optional-type">Optional</a> (<a href="#list-type">List</a> :A)))</code>
 
 Returns every element except the first in a list.
@@ -6317,7 +6326,7 @@ Returns every element except the first in a list.
 
 ***
 
-#### <a href="#take-value"><code>(TAKE N XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L200-L210">src</a></sub></sup><a name="take-value"></a>
+#### <a href="#take-value"><code>(TAKE N XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L201-L211">src</a></sub></sup><a name="take-value"></a>
 <code>&forall; :A. (<a href="#ufix-type">UFix</a> &rarr; (<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> :A))</code>
 
 Returns the first N elements of a list.
@@ -6326,7 +6335,7 @@ Returns the first N elements of a list.
 
 ***
 
-#### <a href="#transpose-value"><code>(TRANSPOSE XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L536-L554">src</a></sub></sup><a name="transpose-value"></a>
+#### <a href="#transpose-value"><code>(TRANSPOSE XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L556-L574">src</a></sub></sup><a name="transpose-value"></a>
 <code>&forall; :A. ((<a href="#list-type">List</a> (<a href="#list-type">List</a> :A)) &rarr; (<a href="#list-type">List</a> (<a href="#list-type">List</a> :A)))</code>
 
 Transposes a matrix represented by a list of lists.
@@ -6335,7 +6344,7 @@ Transposes a matrix represented by a list of lists.
 
 ***
 
-#### <a href="#union-value"><code>(UNION XS YS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L334-L347">src</a></sub></sup><a name="union-value"></a>
+#### <a href="#union-value"><code>(UNION XS YS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L354-L367">src</a></sub></sup><a name="union-value"></a>
 <code>&forall; :A. <a href="#eq-class">Eq</a> :A &rArr; ((<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> :A))</code>
 
 Returns a new list with the elements from both XS and YS and without duplicates.
@@ -6344,7 +6353,7 @@ Returns a new list with the elements from both XS and YS and without duplicates.
 
 ***
 
-#### <a href="#zip-value"><code>(ZIP XS YS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L466-L468">src</a></sub></sup><a name="zip-value"></a>
+#### <a href="#zip-value"><code>(ZIP XS YS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L486-L488">src</a></sub></sup><a name="zip-value"></a>
 <code>&forall; :A :B. ((<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> :B) &rarr; (<a href="#list-type">List</a> (<a href="#tuple-type">Tuple</a> :A :B)))</code>
 
 Builds a list of tuples with the elements of XS and YS.
@@ -6353,7 +6362,7 @@ Builds a list of tuples with the elements of XS and YS.
 
 ***
 
-#### <a href="#zipwith-value"><code>(ZIPWITH F XS YS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L412-L421">src</a></sub></sup><a name="zipwith-value"></a>
+#### <a href="#zipwith-value"><code>(ZIPWITH F XS YS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L432-L441">src</a></sub></sup><a name="zipwith-value"></a>
 <code>&forall; :A :B :C. ((:A &rarr; :B &rarr; :C) &rarr; (<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> :B) &rarr; (<a href="#list-type">List</a> :C))</code>
 
 Builds a new list by calling `f` with elements of `xs` and `ys`.
@@ -6362,7 +6371,7 @@ Builds a new list by calling `f` with elements of `xs` and `ys`.
 
 ***
 
-#### <a href="#zipwith3-value"><code>(ZIPWITH3 F XS YS ZS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L424-L434">src</a></sub></sup><a name="zipwith3-value"></a>
+#### <a href="#zipwith3-value"><code>(ZIPWITH3 F XS YS ZS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L444-L454">src</a></sub></sup><a name="zipwith3-value"></a>
 <code>&forall; :A :B :C :D. ((:A &rarr; :B &rarr; :C &rarr; :D) &rarr; (<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> :B) &rarr; (<a href="#list-type">List</a> :C) &rarr; (<a href="#list-type">List</a> :D))</code>
 
 Build a new list by calling F with elements of XS, YS and ZS
@@ -6371,7 +6380,7 @@ Build a new list by calling F with elements of XS, YS and ZS
 
 ***
 
-#### <a href="#zipwith4-value"><code>(ZIPWITH4 F AS BS CS DS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L437-L448">src</a></sub></sup><a name="zipwith4-value"></a>
+#### <a href="#zipwith4-value"><code>(ZIPWITH4 F AS BS CS DS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L457-L468">src</a></sub></sup><a name="zipwith4-value"></a>
 <code>&forall; :A :B :C :D :E. ((:A &rarr; :B &rarr; :C &rarr; :D &rarr; :E) &rarr; (<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> :B) &rarr; (<a href="#list-type">List</a> :C) &rarr; (<a href="#list-type">List</a> :D) &rarr; (<a href="#list-type">List</a> :E))</code>
 
 Build a new list by calling F with elements of AS, BS, CS and DS
@@ -6380,7 +6389,7 @@ Build a new list by calling F with elements of AS, BS, CS and DS
 
 ***
 
-#### <a href="#zipwith5-value"><code>(ZIPWITH5 F AS BS CS DS ES)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L451-L463">src</a></sub></sup><a name="zipwith5-value"></a>
+#### <a href="#zipwith5-value"><code>(ZIPWITH5 F AS BS CS DS ES)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L471-L483">src</a></sub></sup><a name="zipwith5-value"></a>
 <code>&forall; :A :B :C :D :E :F. ((:A &rarr; :B &rarr; :C &rarr; :D &rarr; :E &rarr; :F) &rarr; (<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> :B) &rarr; (<a href="#list-type">List</a> :C) &rarr; (<a href="#list-type">List</a> :D) &rarr; (<a href="#list-type">List</a> :E) &rarr; (<a href="#list-type">List</a> :F))</code>
 
 Build a new list by calling F with elements of AS, BS, CS, DS and ES
@@ -9569,7 +9578,7 @@ Set the element at index `idx` in `s` to `item`.
 
 ### Values
 
-#### <a href="#chars-value"><code>(CHARS STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L144-L146">src</a></sub></sup><a name="chars-value"></a>
+#### <a href="#chars-value"><code>(CHARS STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L153-L155">src</a></sub></sup><a name="chars-value"></a>
 <code>(<a href="#string-type">String</a> &rarr; (<a href="#iterator-type">Iterator</a> <a href="#char-type">Char</a>))</code>
 
 Returns an iterator over the characters in `str`.
@@ -9578,7 +9587,7 @@ Returns an iterator over the characters in `str`.
 
 ***
 
-#### <a href="#concat-value"><code>(CONCAT STR1 STR2)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L54-L57">src</a></sub></sup><a name="concat-value"></a>
+#### <a href="#concat-value"><code>(CONCAT STR1 STR2)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L55-L58">src</a></sub></sup><a name="concat-value"></a>
 <code>(<a href="#string-type">String</a> &rarr; <a href="#string-type">String</a> &rarr; <a href="#string-type">String</a>)</code>
 
 Concatenate STR1 and STR2 together, returning a new string.
@@ -9587,7 +9596,7 @@ Concatenate STR1 and STR2 together, returning a new string.
 
 ***
 
-#### <a href="#downcase-value"><code>(DOWNCASE STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L155-L158">src</a></sub></sup><a name="downcase-value"></a>
+#### <a href="#downcase-value"><code>(DOWNCASE STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L164-L167">src</a></sub></sup><a name="downcase-value"></a>
 <code>(<a href="#string-type">String</a> &rarr; <a href="#string-type">String</a>)</code>
 
 Returns a new string with lowercase characters.
@@ -9596,7 +9605,7 @@ Returns a new string with lowercase characters.
 
 ***
 
-#### <a href="#length-value"><code>(LENGTH STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L65-L68">src</a></sub></sup><a name="length-value"></a>
+#### <a href="#length-value"><code>(LENGTH STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L66-L69">src</a></sub></sup><a name="length-value"></a>
 <code>(<a href="#string-type">String</a> &rarr; <a href="#ufix-type">UFix</a>)</code>
 
 The length of a string STR.
@@ -9605,7 +9614,7 @@ The length of a string STR.
 
 ***
 
-#### <a href="#parse-int-value"><code>(PARSE-INT STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L106-L112">src</a></sub></sup><a name="parse-int-value"></a>
+#### <a href="#parse-int-value"><code>(PARSE-INT STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L115-L121">src</a></sub></sup><a name="parse-int-value"></a>
 <code>(<a href="#string-type">String</a> &rarr; (<a href="#optional-type">Optional</a> <a href="#integer-type">Integer</a>))</code>
 
 Parse the integer in string `str`.
@@ -9614,7 +9623,7 @@ Parse the integer in string `str`.
 
 ***
 
-#### <a href="#ref-value"><code>(REF STR IDX)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L121-L125">src</a></sub></sup><a name="ref-value"></a>
+#### <a href="#ref-value"><code>(REF STR IDX)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L130-L134">src</a></sub></sup><a name="ref-value"></a>
 <code>(<a href="#string-type">String</a> &rarr; <a href="#ufix-type">UFix</a> &rarr; (<a href="#optional-type">Optional</a> <a href="#char-type">Char</a>))</code>
 
 Return the `idx`th character of `str`.
@@ -9623,7 +9632,7 @@ Return the `idx`th character of `str`.
 
 ***
 
-#### <a href="#ref-unchecked-value"><code>(REF-UNCHECKED STR IDX)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L115-L118">src</a></sub></sup><a name="ref-unchecked-value"></a>
+#### <a href="#ref-unchecked-value"><code>(REF-UNCHECKED STR IDX)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L124-L127">src</a></sub></sup><a name="ref-unchecked-value"></a>
 <code>(<a href="#string-type">String</a> &rarr; <a href="#ufix-type">UFix</a> &rarr; <a href="#char-type">Char</a>)</code>
 
 Return the `idx`th character of `str`. This function is partial.
@@ -9632,7 +9641,7 @@ Return the `idx`th character of `str`. This function is partial.
 
 ***
 
-#### <a href="#reverse-value"><code>(REVERSE S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L60-L62">src</a></sub></sup><a name="reverse-value"></a>
+#### <a href="#reverse-value"><code>(REVERSE S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L61-L63">src</a></sub></sup><a name="reverse-value"></a>
 <code>(<a href="#string-type">String</a> &rarr; <a href="#string-type">String</a>)</code>
 
 Reverse a string.
@@ -9641,16 +9650,25 @@ Reverse a string.
 
 ***
 
-#### <a href="#split-value"><code>(SPLIT N STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L79-L82">src</a></sub></sup><a name="split-value"></a>
-<code>(<a href="#ufix-type">UFix</a> &rarr; <a href="#string-type">String</a> &rarr; (<a href="#tuple-type">Tuple</a> <a href="#string-type">String</a> <a href="#string-type">String</a>))</code>
+#### <a href="#split-value"><code>(SPLIT C STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L86-L91">src</a></sub></sup><a name="split-value"></a>
+<code>(<a href="#char-type">Char</a> &rarr; <a href="#string-type">String</a> &rarr; (<a href="#list-type">List</a> <a href="#string-type">String</a>))</code>
 
-Splits a string into a head and tail at the nth index.
+Split a string around the separator character `c`.
 
 
 
 ***
 
-#### <a href="#strip-prefix-value"><code>(STRIP-PREFIX PREFIX STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L85-L92">src</a></sub></sup><a name="strip-prefix-value"></a>
+#### <a href="#split-at-value"><code>(SPLIT-AT N STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L80-L83">src</a></sub></sup><a name="split-at-value"></a>
+<code>(<a href="#ufix-type">UFix</a> &rarr; <a href="#string-type">String</a> &rarr; (<a href="#tuple-type">Tuple</a> <a href="#string-type">String</a> <a href="#string-type">String</a>))</code>
+
+Splits a string into a substring of the first N characters and a substring of the remaining characters.
+
+
+
+***
+
+#### <a href="#strip-prefix-value"><code>(STRIP-PREFIX PREFIX STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L94-L101">src</a></sub></sup><a name="strip-prefix-value"></a>
 <code>(<a href="#string-type">String</a> &rarr; <a href="#string-type">String</a> &rarr; (<a href="#optional-type">Optional</a> <a href="#string-type">String</a>))</code>
 
 Returns a string without a give prefix, or `None` if the string
@@ -9660,7 +9678,7 @@ does not have that suffix.
 
 ***
 
-#### <a href="#strip-suffix-value"><code>(STRIP-SUFFIX SUFFIX STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L95-L103">src</a></sub></sup><a name="strip-suffix-value"></a>
+#### <a href="#strip-suffix-value"><code>(STRIP-SUFFIX SUFFIX STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L104-L112">src</a></sub></sup><a name="strip-suffix-value"></a>
 <code>(<a href="#string-type">String</a> &rarr; <a href="#string-type">String</a> &rarr; (<a href="#optional-type">Optional</a> <a href="#string-type">String</a>))</code>
 
 Returns a string without a give suffix, or `None` if the string
@@ -9670,7 +9688,7 @@ does not have that suffix.
 
 ***
 
-#### <a href="#substring-value"><code>(SUBSTRING STR START END)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L71-L76">src</a></sub></sup><a name="substring-value"></a>
+#### <a href="#substring-value"><code>(SUBSTRING STR START END)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L72-L77">src</a></sub></sup><a name="substring-value"></a>
 <code>(<a href="#string-type">String</a> &rarr; <a href="#ufix-type">UFix</a> &rarr; <a href="#ufix-type">UFix</a> &rarr; <a href="#string-type">String</a>)</code>
 
 Compute a substring of a string bounded by given indices.
@@ -9679,7 +9697,7 @@ Compute a substring of a string bounded by given indices.
 
 ***
 
-#### <a href="#substring-index-value"><code>(SUBSTRING-INDEX SMALL BIG)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L128-L133">src</a></sub></sup><a name="substring-index-value"></a>
+#### <a href="#substring-index-value"><code>(SUBSTRING-INDEX SMALL BIG)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L137-L142">src</a></sub></sup><a name="substring-index-value"></a>
 <code>(<a href="#string-type">String</a> &rarr; <a href="#string-type">String</a> &rarr; (<a href="#optional-type">Optional</a> <a href="#ufix-type">UFix</a>))</code>
 
 If the first argument appears as a substring within the second argument, return the starting index into the second argument.
@@ -9688,7 +9706,7 @@ If the first argument appears as a substring within the second argument, return 
 
 ***
 
-#### <a href="#substring?-value"><code>(SUBSTRING? SMALL BIG)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L136-L141">src</a></sub></sup><a name="substring?-value"></a>
+#### <a href="#substring?-value"><code>(SUBSTRING? SMALL BIG)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L145-L150">src</a></sub></sup><a name="substring?-value"></a>
 <code>(<a href="#string-type">String</a> &rarr; <a href="#string-type">String</a> &rarr; <a href="#boolean-type">Boolean</a>)</code>
 
 Return true if the first argument appears as a substring within the second argument.
@@ -9697,7 +9715,7 @@ Return true if the first argument appears as a substring within the second argum
 
 ***
 
-#### <a href="#upcase-value"><code>(UPCASE STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L149-L152">src</a></sub></sup><a name="upcase-value"></a>
+#### <a href="#upcase-value"><code>(UPCASE STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.lisp#L158-L161">src</a></sub></sup><a name="upcase-value"></a>
 <code>(<a href="#string-type">String</a> &rarr; <a href="#string-type">String</a>)</code>
 
 Returns a new string with uppercase characters.
