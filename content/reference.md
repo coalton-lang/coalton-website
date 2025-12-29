@@ -3774,7 +3774,7 @@ or do nothing.
 
 ### Values
 
-#### <a href="#collect-value"><code>(COLLECT INTO-ITR FA-&gt;M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.lisp#L85-L95">src</a></sub></sup><a name="collect-value"></a>
+#### <a href="#collect-value"><code>(COLLECT INTO-ITR FA-&gt;M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.lisp#L99-L109">src</a></sub></sup><a name="collect-value"></a>
 <code>&forall; :A :B :C :D. (<a href="#monad-class">Monad</a> :C) (<a href="#intoiterator-class">IntoIterator</a> :A :B) &rArr; (:A &rarr; (:B &rarr; (:C :D)) &rarr; (:C (<a href="#list-type">List</a> :D)))</code>
 
 Apply FA->M to each element produced by INTO-ITR and run the resulting monadic action.
@@ -3784,7 +3784,7 @@ Collect the results.
 
 ***
 
-#### <a href="#collect-val-value"><code>(COLLECT-VAL M-OPERATION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.lisp#L72-L82">src</a></sub></sup><a name="collect-val-value"></a>
+#### <a href="#collect-val-value"><code>(COLLECT-VAL M-OPERATION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.lisp#L86-L96">src</a></sub></sup><a name="collect-val-value"></a>
 <code>&forall; :A :B :C. (<a href="#monad-class">Monad</a> :A) (<a href="#yielder-class">Yielder</a> :B) &rArr; ((:A (:B :C)) &rarr; (:A (<a href="#list-type">List</a> :C)))</code>
 
 Repeatedly run M-OPERATION, collecting each yielded value into a list until
@@ -3794,7 +3794,7 @@ no value is yielded.
 
 ***
 
-#### <a href="#foreach-value"><code>(FOREACH INTO-ITR FA-&gt;M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.lisp#L98-L107">src</a></sub></sup><a name="foreach-value"></a>
+#### <a href="#foreach-value"><code>(FOREACH INTO-ITR FA-&gt;M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.lisp#L112-L121">src</a></sub></sup><a name="foreach-value"></a>
 <code>&forall; :A :B :C :D. (<a href="#monad-class">Monad</a> :C) (<a href="#intoiterator-class">IntoIterator</a> :A :B) &rArr; (:A &rarr; (:B &rarr; (:C :D)) &rarr; (:C <a href="#unit-type">Unit</a>))</code>
 
 Apply FA->M to each element produced by INTO-ITR and run the resulting monadic action.
@@ -3804,7 +3804,17 @@ Discards the return values and returns Unit.
 
 ***
 
-#### <a href="#loop-times-value"><code>(LOOP-TIMES N M-OPERATION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.lisp#L60-L68">src</a></sub></sup><a name="loop-times-value"></a>
+#### <a href="#loop-do-while-value"><code>(LOOP-DO-WHILE M-TERM? BODY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.lisp#L62-L71">src</a></sub></sup><a name="loop-do-while-value"></a>
+<code>&forall; :A :B :C. (<a href="#monad-class">Monad</a> :A) (<a href="#terminator-class">Terminator</a> :B) &rArr; ((:A :B) &rarr; (:A :C) &rarr; (:A <a href="#unit-type">Unit</a>))</code>
+
+Before each iteration, evaluate M-TERM?. If it indicates completion, stop; otherwise run BODY.
+Returns Unit.
+
+
+
+***
+
+#### <a href="#loop-times-value"><code>(LOOP-TIMES N M-OPERATION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.lisp#L74-L82">src</a></sub></sup><a name="loop-times-value"></a>
 <code>&forall; :A :B. <a href="#monad-class">Monad</a> :A &rArr; (<a href="#ufix-type">UFix</a> &rarr; (<a href="#ufix-type">UFix</a> &rarr; (:A :B)) &rarr; (:A <a href="#unit-type">Unit</a>))</code>
 
 Repeat M-OPERATION N times. Passes the current index (starting at 0) to
@@ -3814,7 +3824,7 @@ M-OPERATION. Returns Unit.
 
 ***
 
-#### <a href="#loop-while-value"><code>(LOOP-WHILE M-OPERATION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.lisp#L37-L43">src</a></sub></sup><a name="loop-while-value"></a>
+#### <a href="#loop-while-value"><code>(LOOP-WHILE M-OPERATION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.lisp#L39-L45">src</a></sub></sup><a name="loop-while-value"></a>
 <code>&forall; :A :B. (<a href="#monad-class">Monad</a> :A) (<a href="#terminator-class">Terminator</a> :B) &rArr; ((:A :B) &rarr; (:A <a href="#unit-type">Unit</a>))</code>
 
 Repeat M-OPERATION until it returns a terminated value. Returns Unit.
@@ -3823,7 +3833,7 @@ Repeat M-OPERATION until it returns a terminated value. Returns Unit.
 
 ***
 
-#### <a href="#loop-while-valm-value"><code>(LOOP-WHILE-VALM M-OPERATION F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.lisp#L46-L57">src</a></sub></sup><a name="loop-while-valm-value"></a>
+#### <a href="#loop-while-valm-value"><code>(LOOP-WHILE-VALM M-OPERATION F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.lisp#L48-L59">src</a></sub></sup><a name="loop-while-valm-value"></a>
 <code>&forall; :A :B :C :D. (<a href="#monad-class">Monad</a> :A) (<a href="#yielder-class">Yielder</a> :B) &rArr; ((:A (:B :C)) &rarr; (:C &rarr; (:A :D)) &rarr; (:A <a href="#unit-type">Unit</a>))</code>
 
 Repeat M-OPERATION while it yields a value, running the yielded value applied to F.
@@ -3839,6 +3849,15 @@ Returns Unit.
 
 Apply FA->M to each element produced by INTO-ITR and run the resulting monadic action.
 Collect the results.
+
+
+
+***
+
+#### <a href="#coalton-library-experimental-do-control-loops-do-loop-do-while-macro"><code>DO-LOOP-DO-WHILE (M-TERM? &amp;BODY BODY)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-library-experimental-do-control-loops-do-loop-do-while-macro"></a>
+
+Before each iteration, evaluate M-TERM?. If it indicates completion, stop; otherwise run BODY.
+Wraps BODY in a 'do' block. Returns Unit.
 
 
 
