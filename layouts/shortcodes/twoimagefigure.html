@@ -1,0 +1,21 @@
+{{ $src1 := .Get "src1" }}
+{{ $alt1 := .Get "alt1" }}
+{{ $src2 := .Get "src2" }}
+{{ $alt2 := .Get "alt2" }}
+{{ $title := .Get "title" }}
+
+<div>
+  <img class="img-responsive img-thumbnail"
+       width="30%"
+       src="{{ $src1 }}"
+       alt="{{ $alt1 }}"
+       decoding="async"/>
+  <img class="img-responsive img-thumbnail"
+       width="30%"
+       src="{{ $src2 }}"
+       alt="{{ $alt2 }}"
+       decoding="async"/>
+  <p>
+    <small>{{ $title }}</small>
+  </p>
+</div>
