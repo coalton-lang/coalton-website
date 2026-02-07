@@ -7690,7 +7690,7 @@ Exponentiate BASE to a signed POWER.
 
 ### Structs
 
-#### <a href="#quantization-type"><code>Quantization :A</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L225-L236">src</a></sub></sup><a name="quantization-type"></a>
+#### <a href="#quantization-type"><code>Quantization :A</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L223-L234">src</a></sub></sup><a name="quantization-type"></a>
 
 Represents an integer quantization of `:a`.
 
@@ -7839,7 +7839,7 @@ Methods:
 
 ### Values
 
-#### <a href="#ceiling/-value"><code>(CEILING/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L286-L288">src</a></sub></sup><a name="ceiling/-value"></a>
+#### <a href="#ceiling/-value"><code>(CEILING/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L284-L286">src</a></sub></sup><a name="ceiling/-value"></a>
 <code>(<a href="#integer-type">Integer</a> &rarr; <a href="#integer-type">Integer</a> &rarr; <a href="#integer-type">Integer</a>)</code>
 
 Divide two integers and compute the ceiling of the quotient.
@@ -7848,7 +7848,7 @@ Divide two integers and compute the ceiling of the quotient.
 
 ***
 
-#### <a href="#exact/-value"><code>(EXACT/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L268-L270">src</a></sub></sup><a name="exact/-value"></a>
+#### <a href="#exact/-value"><code>(EXACT/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L266-L268">src</a></sub></sup><a name="exact/-value"></a>
 <code>(<a href="#integer-type">Integer</a> &rarr; <a href="#integer-type">Integer</a> &rarr; <a href="#fraction-type">Fraction</a>)</code>
 
 Exactly divide two integers and produce a fraction.
@@ -7857,7 +7857,7 @@ Exactly divide two integers and produce a fraction.
 
 ***
 
-#### <a href="#floor/-value"><code>(FLOOR/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L281-L283">src</a></sub></sup><a name="floor/-value"></a>
+#### <a href="#floor/-value"><code>(FLOOR/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L279-L281">src</a></sub></sup><a name="floor/-value"></a>
 <code>(<a href="#integer-type">Integer</a> &rarr; <a href="#integer-type">Integer</a> &rarr; <a href="#integer-type">Integer</a>)</code>
 
 Divide two integers and compute the floor of the quotient.
@@ -7866,7 +7866,7 @@ Divide two integers and compute the floor of the quotient.
 
 ***
 
-#### <a href="#fromfrac-value"><code>(FROMFRAC Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L296-L302">src</a></sub></sup><a name="fromfrac-value"></a>
+#### <a href="#fromfrac-value"><code>(FROMFRAC Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L294-L300">src</a></sub></sup><a name="fromfrac-value"></a>
 <code>&forall; :A. <a href="#dividable-class">Dividable</a> <a href="#integer-type">Integer</a> :A &rArr; (<a href="#fraction-type">Fraction</a> &rarr; :A)</code>
 
 Converts a fraction to a target type.
@@ -7879,7 +7879,7 @@ This conversion may result in loss of fidelity.
 
 ***
 
-#### <a href="#inexact/-value"><code>(INEXACT/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L274-L278">src</a></sub></sup><a name="inexact/-value"></a>
+#### <a href="#inexact/-value"><code>(INEXACT/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L272-L276">src</a></sub></sup><a name="inexact/-value"></a>
 <code>(<a href="#integer-type">Integer</a> &rarr; <a href="#integer-type">Integer</a> &rarr; <a href="#f64-type">F64</a>)</code>
 
 Compute the quotient of integers as a double-precision float.
@@ -7890,7 +7890,7 @@ Note: This does *not* divide double-float arguments.
 
 ***
 
-#### <a href="#quantize-value"><code>(QUANTIZE X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L239-L247">src</a></sub></sup><a name="quantize-value"></a>
+#### <a href="#quantize-value"><code>(QUANTIZE X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L237-L245">src</a></sub></sup><a name="quantize-value"></a>
 <code>&forall; :A. <a href="#real-class">Real</a> :A &rArr; (:A &rarr; (<a href="#quantization-type">Quantization</a> :A))</code>
 
 Given X, (QUANTIZE X) will return the least integer greater or equal to X,
@@ -7910,7 +7910,7 @@ Return the nearest integer to X, with ties breaking towards even numbers.
 
 ***
 
-#### <a href="#round-half-down-value"><code>(ROUND-HALF-DOWN X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L255-L257">src</a></sub></sup><a name="round-half-down-value"></a>
+#### <a href="#round-half-down-value"><code>(ROUND-HALF-DOWN X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L253-L255">src</a></sub></sup><a name="round-half-down-value"></a>
 <code>&forall; :A. (<a href="#quantizable-class">Quantizable</a> :A) (<a href="#num-class">Num</a> :A) &rArr; (:A &rarr; <a href="#integer-type">Integer</a>)</code>
 
 Return the nearest integer to X, with ties breaking toward positive infinity.
@@ -7919,7 +7919,7 @@ Return the nearest integer to X, with ties breaking toward positive infinity.
 
 ***
 
-#### <a href="#round-half-up-value"><code>(ROUND-HALF-UP X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L250-L252">src</a></sub></sup><a name="round-half-up-value"></a>
+#### <a href="#round-half-up-value"><code>(ROUND-HALF-UP X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L248-L250">src</a></sub></sup><a name="round-half-up-value"></a>
 <code>&forall; :A. (<a href="#quantizable-class">Quantizable</a> :A) (<a href="#num-class">Num</a> :A) &rArr; (:A &rarr; <a href="#integer-type">Integer</a>)</code>
 
 Return the nearest integer to X, with ties breaking toward positive infinity.
@@ -7928,7 +7928,7 @@ Return the nearest integer to X, with ties breaking toward positive infinity.
 
 ***
 
-#### <a href="#round/-value"><code>(ROUND/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L291-L293">src</a></sub></sup><a name="round/-value"></a>
+#### <a href="#round/-value"><code>(ROUND/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L289-L291">src</a></sub></sup><a name="round/-value"></a>
 <code>(<a href="#integer-type">Integer</a> &rarr; <a href="#integer-type">Integer</a> &rarr; <a href="#integer-type">Integer</a>)</code>
 
 Divide two integers and round the quotient.
@@ -7937,7 +7937,7 @@ Divide two integers and round the quotient.
 
 ***
 
-#### <a href="#safe/-value"><code>(SAFE/ X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L260-L264">src</a></sub></sup><a name="safe/-value"></a>
+#### <a href="#safe/-value"><code>(SAFE/ X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L258-L262">src</a></sub></sup><a name="safe/-value"></a>
 <code>&forall; :A :B. (<a href="#num-class">Num</a> :A) (<a href="#dividable-class">Dividable</a> :A :B) &rArr; (:A &rarr; :A &rarr; (<a href="#optional-type">Optional</a> :B))</code>
 
 Safely divide X by Y, returning None if Y is zero.
