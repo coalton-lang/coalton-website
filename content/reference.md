@@ -17,59 +17,59 @@ layout: two-pane
 <div class="sidebar-content">
 
 - <a href="#coalton-package"><code>COALTON</code></a>
-- <a href="#coalton-library/algorithms/fft-package"><code>COALTON-LIBRARY/ALGORITHMS/FFT</code></a>
-- <a href="#coalton-library/big-float-package"><code>COALTON-LIBRARY/BIG-FLOAT</code></a>
-- <a href="#coalton-library/bits-package"><code>COALTON-LIBRARY/BITS</code></a>
-- <a href="#coalton-library/builtin-package"><code>COALTON-LIBRARY/BUILTIN</code></a>
-- <a href="#coalton-library/cell-package"><code>COALTON-LIBRARY/CELL</code></a>
-- <a href="#coalton-library/char-package"><code>COALTON-LIBRARY/CHAR</code></a>
-- <a href="#coalton-library/classes-package"><code>COALTON-LIBRARY/CLASSES</code></a>
-- <a href="#coalton-library/computable-reals-package"><code>COALTON-LIBRARY/COMPUTABLE-REALS</code></a>
-- <a href="#coalton-library/experimental/do-control-core-package"><code>COALTON-LIBRARY/EXPERIMENTAL/DO-CONTROL-CORE</code></a>
-- <a href="#coalton-library/experimental/do-control-loops-package"><code>COALTON-LIBRARY/EXPERIMENTAL/DO-CONTROL-LOOPS</code></a>
-- <a href="#coalton-library/experimental/do-control-loops-adv-package"><code>COALTON-LIBRARY/EXPERIMENTAL/DO-CONTROL-LOOPS-ADV</code></a>
-- <a href="#coalton-library/experimental/loops-package"><code>COALTON-LIBRARY/EXPERIMENTAL/LOOPS</code></a>
-- <a href="#coalton-library/file-package"><code>COALTON-LIBRARY/FILE</code></a>
-- <a href="#coalton-library/functions-package"><code>COALTON-LIBRARY/FUNCTIONS</code></a>
-- <a href="#coalton-library/hash-package"><code>COALTON-LIBRARY/HASH</code></a>
-- <a href="#coalton-library/hashmap-package"><code>COALTON-LIBRARY/HASHMAP</code></a>
-- <a href="#coalton-library/hashtable-package"><code>COALTON-LIBRARY/HASHTABLE</code></a>
-- <a href="#coalton-library/iterator-package"><code>COALTON-LIBRARY/ITERATOR</code></a>
-- <a href="#coalton-library/lisparray-package"><code>COALTON-LIBRARY/LISPARRAY</code></a>
-- <a href="#coalton-library/list-package"><code>COALTON-LIBRARY/LIST</code></a>
-- <a href="#coalton-library/math/arith-package"><code>COALTON-LIBRARY/MATH/ARITH</code></a>
-- <a href="#coalton-library/math/bounded-package"><code>COALTON-LIBRARY/MATH/BOUNDED</code></a>
-- <a href="#coalton-library/math/complex-package"><code>COALTON-LIBRARY/MATH/COMPLEX</code></a>
-- <a href="#coalton-library/math/dual-package"><code>COALTON-LIBRARY/MATH/DUAL</code></a>
-- <a href="#coalton-library/math/dyadic-package"><code>COALTON-LIBRARY/MATH/DYADIC</code></a>
-- <a href="#coalton-library/math/elementary-package"><code>COALTON-LIBRARY/MATH/ELEMENTARY</code></a>
-- <a href="#coalton-library/math/fraction-package"><code>COALTON-LIBRARY/MATH/FRACTION</code></a>
-- <a href="#coalton-library/math/hyperdual-package"><code>COALTON-LIBRARY/MATH/HYPERDUAL</code></a>
-- <a href="#coalton-library/math/integral-package"><code>COALTON-LIBRARY/MATH/INTEGRAL</code></a>
-- <a href="#coalton-library/math/real-package"><code>COALTON-LIBRARY/MATH/REAL</code></a>
-- <a href="#coalton-library/monad/classes-package"><code>COALTON-LIBRARY/MONAD/CLASSES</code></a>
-- <a href="#coalton-library/monad/environment-package"><code>COALTON-LIBRARY/MONAD/ENVIRONMENT</code></a>
-- <a href="#coalton-library/monad/free-package"><code>COALTON-LIBRARY/MONAD/FREE</code></a>
-- <a href="#coalton-library/monad/freet-package"><code>COALTON-LIBRARY/MONAD/FREET</code></a>
-- <a href="#coalton-library/monad/identity-package"><code>COALTON-LIBRARY/MONAD/IDENTITY</code></a>
-- <a href="#coalton-library/monad/optionalt-package"><code>COALTON-LIBRARY/MONAD/OPTIONALT</code></a>
-- <a href="#coalton-library/monad/resultt-package"><code>COALTON-LIBRARY/MONAD/RESULTT</code></a>
-- <a href="#coalton-library/monad/state-package"><code>COALTON-LIBRARY/MONAD/STATE</code></a>
-- <a href="#coalton-library/monad/statet-package"><code>COALTON-LIBRARY/MONAD/STATET</code></a>
-- <a href="#coalton-library/optional-package"><code>COALTON-LIBRARY/OPTIONAL</code></a>
-- <a href="#coalton-library/ordmap-package"><code>COALTON-LIBRARY/ORDMAP</code></a>
-- <a href="#coalton-library/ordtree-package"><code>COALTON-LIBRARY/ORDTREE</code></a>
-- <a href="#coalton-library/queue-package"><code>COALTON-LIBRARY/QUEUE</code></a>
-- <a href="#coalton-library/randomaccess-package"><code>COALTON-LIBRARY/RANDOMACCESS</code></a>
-- <a href="#coalton-library/result-package"><code>COALTON-LIBRARY/RESULT</code></a>
-- <a href="#coalton-library/seq-package"><code>COALTON-LIBRARY/SEQ</code></a>
-- <a href="#coalton-library/slice-package"><code>COALTON-LIBRARY/SLICE</code></a>
-- <a href="#coalton-library/string-package"><code>COALTON-LIBRARY/STRING</code></a>
-- <a href="#coalton-library/symbol-package"><code>COALTON-LIBRARY/SYMBOL</code></a>
-- <a href="#coalton-library/system-package"><code>COALTON-LIBRARY/SYSTEM</code></a>
-- <a href="#coalton-library/tuple-package"><code>COALTON-LIBRARY/TUPLE</code></a>
-- <a href="#coalton-library/types-package"><code>COALTON-LIBRARY/TYPES</code></a>
-- <a href="#coalton-library/vector-package"><code>COALTON-LIBRARY/VECTOR</code></a>
+- <a href="#coalton/algorithms/fft-package"><code>COALTON/ALGORITHMS/FFT</code></a>
+- <a href="#coalton/big-float-package"><code>COALTON/BIG-FLOAT</code></a>
+- <a href="#coalton/bits-package"><code>COALTON/BITS</code></a>
+- <a href="#coalton/builtin-package"><code>COALTON/BUILTIN</code></a>
+- <a href="#coalton/cell-package"><code>COALTON/CELL</code></a>
+- <a href="#coalton/char-package"><code>COALTON/CHAR</code></a>
+- <a href="#coalton/classes-package"><code>COALTON/CLASSES</code></a>
+- <a href="#coalton/computable-reals-package"><code>COALTON/COMPUTABLE-REALS</code></a>
+- <a href="#coalton/experimental/do-control-core-package"><code>COALTON/EXPERIMENTAL/DO-CONTROL-CORE</code></a>
+- <a href="#coalton/experimental/do-control-loops-package"><code>COALTON/EXPERIMENTAL/DO-CONTROL-LOOPS</code></a>
+- <a href="#coalton/experimental/do-control-loops-adv-package"><code>COALTON/EXPERIMENTAL/DO-CONTROL-LOOPS-ADV</code></a>
+- <a href="#coalton/experimental/loops-package"><code>COALTON/EXPERIMENTAL/LOOPS</code></a>
+- <a href="#coalton/file-package"><code>COALTON/FILE</code></a>
+- <a href="#coalton/functions-package"><code>COALTON/FUNCTIONS</code></a>
+- <a href="#coalton/hash-package"><code>COALTON/HASH</code></a>
+- <a href="#coalton/hashmap-package"><code>COALTON/HASHMAP</code></a>
+- <a href="#coalton/hashtable-package"><code>COALTON/HASHTABLE</code></a>
+- <a href="#coalton/iterator-package"><code>COALTON/ITERATOR</code></a>
+- <a href="#coalton/lisparray-package"><code>COALTON/LISPARRAY</code></a>
+- <a href="#coalton/list-package"><code>COALTON/LIST</code></a>
+- <a href="#coalton/math/arith-package"><code>COALTON/MATH/ARITH</code></a>
+- <a href="#coalton/math/bounded-package"><code>COALTON/MATH/BOUNDED</code></a>
+- <a href="#coalton/math/complex-package"><code>COALTON/MATH/COMPLEX</code></a>
+- <a href="#coalton/math/dual-package"><code>COALTON/MATH/DUAL</code></a>
+- <a href="#coalton/math/dyadic-package"><code>COALTON/MATH/DYADIC</code></a>
+- <a href="#coalton/math/elementary-package"><code>COALTON/MATH/ELEMENTARY</code></a>
+- <a href="#coalton/math/fraction-package"><code>COALTON/MATH/FRACTION</code></a>
+- <a href="#coalton/math/hyperdual-package"><code>COALTON/MATH/HYPERDUAL</code></a>
+- <a href="#coalton/math/integral-package"><code>COALTON/MATH/INTEGRAL</code></a>
+- <a href="#coalton/math/real-package"><code>COALTON/MATH/REAL</code></a>
+- <a href="#coalton/monad/classes-package"><code>COALTON/MONAD/CLASSES</code></a>
+- <a href="#coalton/monad/environment-package"><code>COALTON/MONAD/ENVIRONMENT</code></a>
+- <a href="#coalton/monad/free-package"><code>COALTON/MONAD/FREE</code></a>
+- <a href="#coalton/monad/freet-package"><code>COALTON/MONAD/FREET</code></a>
+- <a href="#coalton/monad/identity-package"><code>COALTON/MONAD/IDENTITY</code></a>
+- <a href="#coalton/monad/optionalt-package"><code>COALTON/MONAD/OPTIONALT</code></a>
+- <a href="#coalton/monad/resultt-package"><code>COALTON/MONAD/RESULTT</code></a>
+- <a href="#coalton/monad/state-package"><code>COALTON/MONAD/STATE</code></a>
+- <a href="#coalton/monad/statet-package"><code>COALTON/MONAD/STATET</code></a>
+- <a href="#coalton/optional-package"><code>COALTON/OPTIONAL</code></a>
+- <a href="#coalton/ordmap-package"><code>COALTON/ORDMAP</code></a>
+- <a href="#coalton/ordtree-package"><code>COALTON/ORDTREE</code></a>
+- <a href="#coalton/queue-package"><code>COALTON/QUEUE</code></a>
+- <a href="#coalton/randomaccess-package"><code>COALTON/RANDOMACCESS</code></a>
+- <a href="#coalton/result-package"><code>COALTON/RESULT</code></a>
+- <a href="#coalton/seq-package"><code>COALTON/SEQ</code></a>
+- <a href="#coalton/slice-package"><code>COALTON/SLICE</code></a>
+- <a href="#coalton/string-package"><code>COALTON/STRING</code></a>
+- <a href="#coalton/symbol-package"><code>COALTON/SYMBOL</code></a>
+- <a href="#coalton/system-package"><code>COALTON/SYSTEM</code></a>
+- <a href="#coalton/tuple-package"><code>COALTON/TUPLE</code></a>
+- <a href="#coalton/types-package"><code>COALTON/TYPES</code></a>
+- <a href="#coalton/vector-package"><code>COALTON/VECTOR</code></a>
 </div>
 </aside>
 <div class="main-content">
@@ -1403,7 +1403,7 @@ to the `format-string` via `cl:format` to produce an error message.
 #### <a href="#coalton-make-list-macro"><code>MAKE-LIST (&amp;REST FORMS)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-make-list-macro"></a>
 
 Create a heterogeneous Coalton `List` of objects. This macro is
-deprecated; use `coalton-library/list:make`.
+deprecated; use `coalton/list:make`.
 
 
 
@@ -1485,14 +1485,14 @@ Note that this may copy the object or allocate memory.
 
 ***
 
-# Package `COALTON-LIBRARY/ALGORITHMS/FFT`<a name="coalton-library/algorithms/fft-package"></a>
+# Package `COALTON/ALGORITHMS/FFT`<a name="coalton/algorithms/fft-package"></a>
 
 
 A coalton package for performing FFTs.
 
 ### Classes
 
-#### <a href="#fftcyclicgroup-class"><code>FFTCyclicGroup</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L147-L156">src</a></sub></sup><a name="fftcyclicgroup-class"></a>
+#### <a href="#fftcyclicgroup-class"><code>FFTCyclicGroup</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L149-L158">src</a></sub></sup><a name="fftcyclicgroup-class"></a>
 <code><a href="#fftcyclicgroup-class">FFTCyclicGroup</a> :A</code>
 
 
@@ -1517,7 +1517,7 @@ Methods:
 
 ***
 
-#### <a href="#fftfield-class"><code>FFTField</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L137-L141">src</a></sub></sup><a name="fftfield-class"></a>
+#### <a href="#fftfield-class"><code>FFTField</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L139-L143">src</a></sub></sup><a name="fftfield-class"></a>
 <code><a href="#fftring-class">FFTRing</a> :A &rArr; <a href="#fftfield-class">FFTField</a> :A</code>
 
 
@@ -1539,7 +1539,7 @@ Methods:
 
 ***
 
-#### <a href="#fftgroup-class"><code>FFTGroup</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L118-L124">src</a></sub></sup><a name="fftgroup-class"></a>
+#### <a href="#fftgroup-class"><code>FFTGroup</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L120-L126">src</a></sub></sup><a name="fftgroup-class"></a>
 <code><a href="#fftgroup-class">FFTGroup</a> :A</code>
 
 
@@ -1563,7 +1563,7 @@ Methods:
 
 ***
 
-#### <a href="#fftring-class"><code>FFTRing</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L130-L135">src</a></sub></sup><a name="fftring-class"></a>
+#### <a href="#fftring-class"><code>FFTRing</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L132-L137">src</a></sub></sup><a name="fftring-class"></a>
 <code><a href="#fftgroup-class">FFTGroup</a> :A &rArr; <a href="#fftring-class">FFTRing</a> :A</code>
 
 
@@ -1588,7 +1588,7 @@ Methods:
 
 ### Values
 
-#### <a href="#dif-fft-raw-value"><code>(DIF-FFT-RAW DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L224-L237">src</a></sub></sup><a name="dif-fft-raw-value"></a>
+#### <a href="#dif-fft-raw-value"><code>(DIF-FFT-RAW DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L226-L239">src</a></sub></sup><a name="dif-fft-raw-value"></a>
 <code>&forall; :A :B :C. (<a href="#randomaccess-class">RandomAccess</a> :B :A) (<a href="#randomaccess-class">RandomAccess</a> :C :A) (<a href="#fftring-class">FFTRing</a> :A) (<a href="#fftcyclicgroup-class">FFTCyclicGroup</a> :A) &rArr; (:B &rarr; :C &rarr; <a href="#unit-type">Unit</a>)</code>
 
 A decimation-in-frequency fast fourier transform, reading from `src` and writing to `dst`.
@@ -1601,7 +1601,7 @@ Normalization: none
 
 ***
 
-#### <a href="#dif-ifft-raw-value"><code>(DIF-IFFT-RAW DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L244-L257">src</a></sub></sup><a name="dif-ifft-raw-value"></a>
+#### <a href="#dif-ifft-raw-value"><code>(DIF-IFFT-RAW DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L246-L259">src</a></sub></sup><a name="dif-ifft-raw-value"></a>
 <code>&forall; :A :B :C. (<a href="#randomaccess-class">RandomAccess</a> :B :A) (<a href="#randomaccess-class">RandomAccess</a> :C :A) (<a href="#fftring-class">FFTRing</a> :A) (<a href="#fftcyclicgroup-class">FFTCyclicGroup</a> :A) &rArr; (:B &rarr; :C &rarr; <a href="#unit-type">Unit</a>)</code>
 
 A decimation-in-frequency inverse fast fourier transform, reading from `src` and writing to `dst`.
@@ -1614,7 +1614,7 @@ Normalization: none
 
 ***
 
-#### <a href="#dit-fft-raw-value"><code>(DIT-FFT-RAW DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L328-L342">src</a></sub></sup><a name="dit-fft-raw-value"></a>
+#### <a href="#dit-fft-raw-value"><code>(DIT-FFT-RAW DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L330-L344">src</a></sub></sup><a name="dit-fft-raw-value"></a>
 <code>&forall; :A :B :C. (<a href="#randomaccess-class">RandomAccess</a> :B :A) (<a href="#randomaccess-class">RandomAccess</a> :C :A) (<a href="#fftring-class">FFTRing</a> :A) (<a href="#fftcyclicgroup-class">FFTCyclicGroup</a> :A) &rArr; (:B &rarr; :C &rarr; <a href="#unit-type">Unit</a>)</code>
 
 A decimation-in-time fast fourier transform, reading from `src` and writing to `dst`.
@@ -1627,7 +1627,7 @@ Normalization: none
 
 ***
 
-#### <a href="#dit-ifft-raw-value"><code>(DIT-IFFT-RAW DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L349-L363">src</a></sub></sup><a name="dit-ifft-raw-value"></a>
+#### <a href="#dit-ifft-raw-value"><code>(DIT-IFFT-RAW DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L351-L365">src</a></sub></sup><a name="dit-ifft-raw-value"></a>
 <code>&forall; :A :B :C. (<a href="#randomaccess-class">RandomAccess</a> :B :A) (<a href="#randomaccess-class">RandomAccess</a> :C :A) (<a href="#fftring-class">FFTRing</a> :A) (<a href="#fftcyclicgroup-class">FFTCyclicGroup</a> :A) &rArr; (:B &rarr; :C &rarr; <a href="#unit-type">Unit</a>)</code>
 
 A decimation-in-time inverse fast fourier transform, reading from `src` and writing to `dst`.
@@ -1640,13 +1640,13 @@ Normalization: none
 
 ***
 
-#### <a href="#divide-value"><code>(DIVIDE X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L144-L145">src</a></sub></sup><a name="divide-value"></a>
+#### <a href="#divide-value"><code>(DIVIDE X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L146-L147">src</a></sub></sup><a name="divide-value"></a>
 <code>&forall; :A. <a href="#fftfield-class">FFTField</a> :A &rArr; (:A &rarr; :A &rarr; :A)</code>
 
 
 ***
 
-#### <a href="#fft-value"><code>(FFT STORAGE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L446-L458">src</a></sub></sup><a name="fft-value"></a>
+#### <a href="#fft-value"><code>(FFT STORAGE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L448-L460">src</a></sub></sup><a name="fft-value"></a>
 <code>&forall; :A :B :C. (<a href="#randomaccess-class">RandomAccess</a> :B :A) (<a href="#randomaccess-class">RandomAccess</a> :C :A) (<a href="#fftring-class">FFTRing</a> :A) (<a href="#fftcyclicgroup-class">FFTCyclicGroup</a> :A) &rArr; (:B &rarr; :C)</code>
 
 Perform a fast Fourier transform on the data in `storage`.
@@ -1655,7 +1655,7 @@ Perform a fast Fourier transform on the data in `storage`.
 
 ***
 
-#### <a href="#fft!-value"><code>(FFT! STORAGE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L372-L383">src</a></sub></sup><a name="fft!-value"></a>
+#### <a href="#fft!-value"><code>(FFT! STORAGE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L374-L385">src</a></sub></sup><a name="fft!-value"></a>
 <code>&forall; :A :B. (<a href="#randomaccess-class">RandomAccess</a> :B :A) (<a href="#fftring-class">FFTRing</a> :A) (<a href="#fftcyclicgroup-class">FFTCyclicGroup</a> :A) &rArr; (:B &rarr; :B)</code>
 
 Perform an in-place fast Fourier transform on `storage`.
@@ -1664,7 +1664,7 @@ Perform an in-place fast Fourier transform on `storage`.
 
 ***
 
-#### <a href="#fft-into!-value"><code>(FFT-INTO! DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L408-L420">src</a></sub></sup><a name="fft-into!-value"></a>
+#### <a href="#fft-into!-value"><code>(FFT-INTO! DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L410-L422">src</a></sub></sup><a name="fft-into!-value"></a>
 <code>&forall; :A :B :C. (<a href="#randomaccess-class">RandomAccess</a> :C :A) (<a href="#randomaccess-class">RandomAccess</a> :B :A) (<a href="#fftring-class">FFTRing</a> :A) (<a href="#fftcyclicgroup-class">FFTCyclicGroup</a> :A) &rArr; (:B &rarr; :C &rarr; :B)</code>
 
 Perform a fast Fourier transform of `src`, writing the result to `dst`. If `dst` is longer than `src`, then remaining elements of `dst` are left unmutated.
@@ -1673,7 +1673,7 @@ Perform a fast Fourier transform of `src`, writing the result to `dst`. If `dst`
 
 ***
 
-#### <a href="#ifft-value"><code>(IFFT STORAGE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L463-L479">src</a></sub></sup><a name="ifft-value"></a>
+#### <a href="#ifft-value"><code>(IFFT STORAGE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L465-L481">src</a></sub></sup><a name="ifft-value"></a>
 <code>&forall; :A :B :C. (<a href="#randomaccess-class">RandomAccess</a> :B :A) (<a href="#randomaccess-class">RandomAccess</a> :C :A) (<a href="#fftfield-class">FFTField</a> :A) (<a href="#fftcyclicgroup-class">FFTCyclicGroup</a> :A) (<a href="#num-class">Num</a> :A) &rArr; (:B &rarr; :C)</code>
 
 Perform an inverse fast Fourier transform on the data in `storage`.
@@ -1682,7 +1682,7 @@ Perform an inverse fast Fourier transform on the data in `storage`.
 
 ***
 
-#### <a href="#ifft!-value"><code>(IFFT! STORAGE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L388-L403">src</a></sub></sup><a name="ifft!-value"></a>
+#### <a href="#ifft!-value"><code>(IFFT! STORAGE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L390-L405">src</a></sub></sup><a name="ifft!-value"></a>
 <code>&forall; :A :B. (<a href="#randomaccess-class">RandomAccess</a> :B :A) (<a href="#fftfield-class">FFTField</a> :A) (<a href="#fftcyclicgroup-class">FFTCyclicGroup</a> :A) (<a href="#num-class">Num</a> :A) &rArr; (:B &rarr; :B)</code>
 
 Perform an in-place inverse fast Fourier transform on `storage`.
@@ -1691,7 +1691,7 @@ Perform an in-place inverse fast Fourier transform on `storage`.
 
 ***
 
-#### <a href="#ifft-into!-value"><code>(IFFT-INTO! DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L425-L441">src</a></sub></sup><a name="ifft-into!-value"></a>
+#### <a href="#ifft-into!-value"><code>(IFFT-INTO! DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L427-L443">src</a></sub></sup><a name="ifft-into!-value"></a>
 <code>&forall; :A :B :C. (<a href="#randomaccess-class">RandomAccess</a> :C :A) (<a href="#randomaccess-class">RandomAccess</a> :B :A) (<a href="#fftfield-class">FFTField</a> :A) (<a href="#fftcyclicgroup-class">FFTCyclicGroup</a> :A) (<a href="#num-class">Num</a> :A) &rArr; (:B &rarr; :C &rarr; :B)</code>
 
 Perform an inverse fast Fourier transform of `src`, writing the result to `dst`. If `dst` is longer than `src`, then remaining elements of `dst` are left unmutated.
@@ -1700,13 +1700,13 @@ Perform an inverse fast Fourier transform of `src`, writing the result to `dst`.
 
 ***
 
-#### <a href="#subtract-value"><code>(SUBTRACT X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L127-L128">src</a></sub></sup><a name="subtract-value"></a>
+#### <a href="#subtract-value"><code>(SUBTRACT X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L129-L130">src</a></sub></sup><a name="subtract-value"></a>
 <code>&forall; :A. <a href="#fftgroup-class">FFTGroup</a> :A &rArr; (:A &rarr; :A &rarr; :A)</code>
 
 
 ***
 
-# Package `COALTON-LIBRARY/BIG-FLOAT`<a name="coalton-library/big-float-package"></a>
+# Package `COALTON/BIG-FLOAT`<a name="coalton/big-float-package"></a>
 
 ### Types
 
@@ -1902,7 +1902,7 @@ RouND toward Zero.
 
 ***
 
-# Package `COALTON-LIBRARY/BITS`<a name="coalton-library/bits-package"></a>
+# Package `COALTON/BITS`<a name="coalton/bits-package"></a>
 
 ### Classes
 
@@ -1984,7 +1984,7 @@ Deposits a byte of size `size` into a bitstring at a position `position`.
 
 ***
 
-# Package `COALTON-LIBRARY/BUILTIN`<a name="coalton-library/builtin-package"></a>
+# Package `COALTON/BUILTIN`<a name="coalton/builtin-package"></a>
 
 ### Values
 
@@ -2053,7 +2053,7 @@ Synonym for `boolean-xor`.
 
 ### Macros
 
-#### <a href="#coalton-library-builtin-unreachable-macro"><code>UNREACHABLE (&amp;OPTIONAL (DATUM &quot;Unreachable&quot;) &amp;REST ARGUMENTS)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-library-builtin-unreachable-macro"></a>
+#### <a href="#coalton-builtin-unreachable-macro"><code>UNREACHABLE (&amp;OPTIONAL (DATUM &quot;Unreachable&quot;) &amp;REST ARGUMENTS)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-builtin-unreachable-macro"></a>
 
 Signal an error with CL format string DATUM and optional format arguments ARGUMENTS.
 
@@ -2061,7 +2061,7 @@ Signal an error with CL format string DATUM and optional format arguments ARGUME
 
 ***
 
-# Package `COALTON-LIBRARY/CELL`<a name="coalton-library/cell-package"></a>
+# Package `COALTON/CELL`<a name="coalton/cell-package"></a>
 
 ### Types
 
@@ -2186,7 +2186,7 @@ value.
 
 ***
 
-# Package `COALTON-LIBRARY/CHAR`<a name="coalton-library/char-package"></a>
+# Package `COALTON/CHAR`<a name="coalton/char-package"></a>
 
 ### Values
 
@@ -2316,7 +2316,7 @@ Is `c` an uppercase character?
 
 ***
 
-# Package `COALTON-LIBRARY/CLASSES`<a name="coalton-library/classes-package"></a>
+# Package `COALTON/CLASSES`<a name="coalton/classes-package"></a>
 
 ### Types
 
@@ -3530,11 +3530,11 @@ Unwrap `container`, returning `default` on failure.
 
 ***
 
-# Package `COALTON-LIBRARY/COMPUTABLE-REALS`<a name="coalton-library/computable-reals-package"></a>
+# Package `COALTON/COMPUTABLE-REALS`<a name="coalton/computable-reals-package"></a>
 
 ### Types
 
-#### <a href="#creal-type"><code>CReal</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L37-L37">src</a></sub></sup><a name="creal-type"></a>
+#### <a href="#creal-type"><code>CReal</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L38-L38">src</a></sub></sup><a name="creal-type"></a>
 <details>
 <summary>Instances</summary>
 
@@ -3575,7 +3575,7 @@ Unwrap `container`, returning `default` on failure.
 
 ### Values
 
-#### <a href="#approx-value"><code>(APPROX X K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L296-L308">src</a></sub></sup><a name="approx-value"></a>
+#### <a href="#approx-value"><code>(APPROX X K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L297-L309">src</a></sub></sup><a name="approx-value"></a>
 <code>(<a href="#creal-type">CReal</a> &rarr; <a href="#ufix-type">UFix</a> &rarr; <a href="#integer-type">Integer</a>)</code>
 
 Computes an approximation of the bits of a given
@@ -3593,7 +3593,7 @@ See `rational` or `rationalize` to produce a rational approximation of
 
 ***
 
-#### <a href="#comparison-threshold-value"><code>(COMPARISON-THRESHOLD _)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L47-L56">src</a></sub></sup><a name="comparison-threshold-value"></a>
+#### <a href="#comparison-threshold-value"><code>(COMPARISON-THRESHOLD _)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L48-L57">src</a></sub></sup><a name="comparison-threshold-value"></a>
 <code>&forall; :A. (:A &rarr; <a href="#ufix-type">UFix</a>)</code>
 
 Returns the current `CReal` comparison threshold measured as a number
@@ -3608,7 +3608,7 @@ is no guarantee that the `CReal` will be accurate to any precision*.
 
 ***
 
-#### <a href="#cr-print-value"><code>(CR-PRINT X K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L340-L343">src</a></sub></sup><a name="cr-print-value"></a>
+#### <a href="#cr-print-value"><code>(CR-PRINT X K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L341-L344">src</a></sub></sup><a name="cr-print-value"></a>
 <code>(<a href="#creal-type">CReal</a> &rarr; <a href="#ufix-type">UFix</a> &rarr; <a href="#boolean-type">Boolean</a>)</code>
 
 Prints a real `x` up to `k` bits of precision.
@@ -3617,7 +3617,7 @@ Prints a real `x` up to `k` bits of precision.
 
 ***
 
-#### <a href="#rational-approx-value"><code>(RATIONAL-APPROX X K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L311-L318">src</a></sub></sup><a name="rational-approx-value"></a>
+#### <a href="#rational-approx-value"><code>(RATIONAL-APPROX X K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L312-L319">src</a></sub></sup><a name="rational-approx-value"></a>
 <code>(<a href="#creal-type">CReal</a> &rarr; <a href="#ufix-type">UFix</a> &rarr; <a href="#fraction-type">Fraction</a>)</code>
 
 Produce a rational approximation of `x` called $r$ such that
@@ -3630,7 +3630,7 @@ $$
 
 ***
 
-#### <a href="#rationalize-value"><code>(RATIONALIZE X K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L321-L331">src</a></sub></sup><a name="rationalize-value"></a>
+#### <a href="#rationalize-value"><code>(RATIONALIZE X K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L322-L332">src</a></sub></sup><a name="rationalize-value"></a>
 <code>(<a href="#creal-type">CReal</a> &rarr; <a href="#ufix-type">UFix</a> &rarr; <a href="#fraction-type">Fraction</a>)</code>
 
 Produce a rational approximation of `x` called $r$ such that
@@ -3646,7 +3646,7 @@ the simplest possible such approximation.
 
 ***
 
-#### <a href="#set-comparison-threshold!-value"><code>(SET-COMPARISON-THRESHOLD! K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L39-L45">src</a></sub></sup><a name="set-comparison-threshold!-value"></a>
+#### <a href="#set-comparison-threshold!-value"><code>(SET-COMPARISON-THRESHOLD! K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L40-L46">src</a></sub></sup><a name="set-comparison-threshold!-value"></a>
 <code>&forall; :A. (:A &rarr; <a href="#unit-type">Unit</a>)</code>
 
 Sets the global `CReal` comparison threshold to k bits after the 'decimal' point.
@@ -3657,7 +3657,7 @@ See `comparison-threshold` for more details.
 
 ***
 
-# Package `COALTON-LIBRARY/EXPERIMENTAL/DO-CONTROL-CORE`<a name="coalton-library/experimental/do-control-core-package"></a>
+# Package `COALTON/EXPERIMENTAL/DO-CONTROL-CORE`<a name="coalton/experimental/do-control-core-package"></a>
 
 ### Values
 
@@ -3770,7 +3770,7 @@ or do nothing.
 
 ***
 
-# Package `COALTON-LIBRARY/EXPERIMENTAL/DO-CONTROL-LOOPS`<a name="coalton-library/experimental/do-control-loops-package"></a>
+# Package `COALTON/EXPERIMENTAL/DO-CONTROL-LOOPS`<a name="coalton/experimental/do-control-loops-package"></a>
 
 ### Values
 
@@ -3845,7 +3845,7 @@ Returns Unit.
 
 ### Macros
 
-#### <a href="#coalton-library-experimental-do-control-loops-do-collect-macro"><code>DO-COLLECT ((SYM INTO-ITR) &amp;BODY BODY)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-library-experimental-do-control-loops-do-collect-macro"></a>
+#### <a href="#coalton-experimental-do-control-loops-do-collect-macro"><code>DO-COLLECT ((SYM INTO-ITR) &amp;BODY BODY)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-experimental-do-control-loops-do-collect-macro"></a>
 
 Apply FA->M to each element produced by INTO-ITR and run the resulting monadic action.
 Collect the results.
@@ -3854,7 +3854,7 @@ Collect the results.
 
 ***
 
-#### <a href="#coalton-library-experimental-do-control-loops-do-loop-do-while-macro"><code>DO-LOOP-DO-WHILE (M-TERM? &amp;BODY BODY)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-library-experimental-do-control-loops-do-loop-do-while-macro"></a>
+#### <a href="#coalton-experimental-do-control-loops-do-loop-do-while-macro"><code>DO-LOOP-DO-WHILE (M-TERM? &amp;BODY BODY)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-experimental-do-control-loops-do-loop-do-while-macro"></a>
 
 Before each iteration, evaluate M-TERM?. If it indicates completion, stop; otherwise run BODY.
 Wraps BODY in a 'do' block. Returns Unit.
@@ -3863,7 +3863,7 @@ Wraps BODY in a 'do' block. Returns Unit.
 
 ***
 
-# Package `COALTON-LIBRARY/EXPERIMENTAL/DO-CONTROL-LOOPS-ADV`<a name="coalton-library/experimental/do-control-loops-adv-package"></a>
+# Package `COALTON/EXPERIMENTAL/DO-CONTROL-LOOPS-ADV`<a name="coalton/experimental/do-control-loops-adv-package"></a>
 
 ### Types
 
@@ -3995,7 +3995,7 @@ Signal that the current iteration should be skipped and the loop should continue
 
 ***
 
-# Package `COALTON-LIBRARY/EXPERIMENTAL/LOOPS`<a name="coalton-library/experimental/loops-package"></a>
+# Package `COALTON/EXPERIMENTAL/LOOPS`<a name="coalton/experimental/loops-package"></a>
 
 
 A Coalton package of loop macros.
@@ -4004,7 +4004,7 @@ Note: `(return)`, `(break)`, and `(continue)` do not work inside _any_ of these 
 
 ### Macros
 
-#### <a href="#coalton-library-experimental-loops-argbesttimes-macro"><code>ARGBESTTIMES ((VARIABLE COUNT BETTER?) &amp;BODY BODY)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-library-experimental-loops-argbesttimes-macro"></a>
+#### <a href="#coalton-experimental-loops-argbesttimes-macro"><code>ARGBESTTIMES ((VARIABLE COUNT BETTER?) &amp;BODY BODY)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-experimental-loops-argbesttimes-macro"></a>
 
 The `UFix` in [0, `count`) which, when `variable` is bound to it, results in the evaluation of `body` which is better than the same for the rest of the `UFix`s in [0, `count`).
 
@@ -4012,7 +4012,7 @@ The `UFix` in [0, `count`) which, when `variable` is bound to it, results in the
 
 ***
 
-#### <a href="#coalton-library-experimental-loops-besttimes-macro"><code>BESTTIMES ((VARIABLE COUNT BETTER?) &amp;BODY BODY)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-library-experimental-loops-besttimes-macro"></a>
+#### <a href="#coalton-experimental-loops-besttimes-macro"><code>BESTTIMES ((VARIABLE COUNT BETTER?) &amp;BODY BODY)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-experimental-loops-besttimes-macro"></a>
 
 The result of evaluating `body` with `variable` bound to a `UFix` in [0, `count`) that is `better?` than the result of evaluating `body` with `variable` bound to the rest of the `UFix`s in [0, `count`)..
 
@@ -4020,7 +4020,7 @@ The result of evaluating `body` with `variable` bound to a `UFix` in [0, `count`
 
 ***
 
-#### <a href="#coalton-library-experimental-loops-collecttimes-macro"><code>COLLECTTIMES ((VARIABLE COUNT) &amp;BODY BODY)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-library-experimental-loops-collecttimes-macro"></a>
+#### <a href="#coalton-experimental-loops-collecttimes-macro"><code>COLLECTTIMES ((VARIABLE COUNT) &amp;BODY BODY)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-experimental-loops-collecttimes-macro"></a>
 
 Collect the results of evaluating `body` for `variable` bound to every `UFix` in [0, `count`) as a `List`.
 
@@ -4028,7 +4028,7 @@ Collect the results of evaluating `body` for `variable` bound to every `UFix` in
 
 ***
 
-#### <a href="#coalton-library-experimental-loops-dolist-macro"><code>DOLIST ((VARIABLE LIS) &amp;BODY BODY)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-library-experimental-loops-dolist-macro"></a>
+#### <a href="#coalton-experimental-loops-dolist-macro"><code>DOLIST ((VARIABLE LIS) &amp;BODY BODY)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-experimental-loops-dolist-macro"></a>
 
 Perform `body` with `variable` bound to every element of `lis`.
 
@@ -4036,7 +4036,7 @@ Perform `body` with `variable` bound to every element of `lis`.
 
 ***
 
-#### <a href="#coalton-library-experimental-loops-dolist-enumerated-macro"><code>DOLIST-ENUMERATED ((INDEX-VARIABLE ELEMENT-VARIABLE LIS) &amp;BODY BODY)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-library-experimental-loops-dolist-enumerated-macro"></a>
+#### <a href="#coalton-experimental-loops-dolist-enumerated-macro"><code>DOLIST-ENUMERATED ((INDEX-VARIABLE ELEMENT-VARIABLE LIS) &amp;BODY BODY)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-experimental-loops-dolist-enumerated-macro"></a>
 
 Perform `body` with `element-variable` bound to the elements of `lis` and `index-variable` bound to their indices.
 
@@ -4044,7 +4044,7 @@ Perform `body` with `element-variable` bound to the elements of `lis` and `index
 
 ***
 
-#### <a href="#coalton-library-experimental-loops-dolists-macro"><code>DOLISTS (VARIABLES-AND-LISTS &amp;BODY BODY)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-library-experimental-loops-dolists-macro"></a>
+#### <a href="#coalton-experimental-loops-dolists-macro"><code>DOLISTS (VARIABLES-AND-LISTS &amp;BODY BODY)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-experimental-loops-dolists-macro"></a>
 
 Perform `body` with the variables bound to the elements of the lists. See the example below.
 
@@ -4066,7 +4066,7 @@ COALTON::UNIT/UNIT
 
 ***
 
-#### <a href="#coalton-library-experimental-loops-dorange-macro"><code>DORANGE ((VARIABLE START-OR-STOP &amp;OPTIONAL STOP STEP) &amp;BODY BODY)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-library-experimental-loops-dorange-macro"></a>
+#### <a href="#coalton-experimental-loops-dorange-macro"><code>DORANGE ((VARIABLE START-OR-STOP &amp;OPTIONAL STOP STEP) &amp;BODY BODY)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-experimental-loops-dorange-macro"></a>
 
 Perform `body` with `variable` bound to elements of a discrete range.
 
@@ -4117,7 +4117,7 @@ COALTON::UNIT/UNIT
 
 ***
 
-#### <a href="#coalton-library-experimental-loops-dotimes-macro"><code>DOTIMES ((VARIABLE COUNT) &amp;BODY BODY)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-library-experimental-loops-dotimes-macro"></a>
+#### <a href="#coalton-experimental-loops-dotimes-macro"><code>DOTIMES ((VARIABLE COUNT) &amp;BODY BODY)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-experimental-loops-dotimes-macro"></a>
 
 Perform `body` with `variable` bound to every `UFix` in [0, `count`) sequentially.
 
@@ -4125,7 +4125,7 @@ Perform `body` with `variable` bound to every `UFix` in [0, `count`) sequentiall
 
 ***
 
-#### <a href="#coalton-library-experimental-loops-everytimes-macro"><code>EVERYTIMES ((VARIABLE COUNT) &amp;BODY BODY)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-library-experimental-loops-everytimes-macro"></a>
+#### <a href="#coalton-experimental-loops-everytimes-macro"><code>EVERYTIMES ((VARIABLE COUNT) &amp;BODY BODY)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-experimental-loops-everytimes-macro"></a>
 
 Does `body` evaluate to `True` for `variable` bound to every `UFix` in [0, `count`). Returns `True` if `(zero? count)`.
 
@@ -4133,7 +4133,7 @@ Does `body` evaluate to `True` for `variable` bound to every `UFix` in [0, `coun
 
 ***
 
-#### <a href="#coalton-library-experimental-loops-prodtimes-macro"><code>PRODTIMES ((VARIABLE COUNT) &amp;BODY BODY)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-library-experimental-loops-prodtimes-macro"></a>
+#### <a href="#coalton-experimental-loops-prodtimes-macro"><code>PRODTIMES ((VARIABLE COUNT) &amp;BODY BODY)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-experimental-loops-prodtimes-macro"></a>
 
 The product of `body` for `variable` bount to every `UFix` in [0, `count`).
 
@@ -4141,7 +4141,7 @@ The product of `body` for `variable` bount to every `UFix` in [0, `count`).
 
 ***
 
-#### <a href="#coalton-library-experimental-loops-repeat-macro"><code>REPEAT ((COUNT) &amp;BODY BODY)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-library-experimental-loops-repeat-macro"></a>
+#### <a href="#coalton-experimental-loops-repeat-macro"><code>REPEAT ((COUNT) &amp;BODY BODY)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-experimental-loops-repeat-macro"></a>
 
 Perform `body` `count` times.
 
@@ -4149,7 +4149,7 @@ Perform `body` `count` times.
 
 ***
 
-#### <a href="#coalton-library-experimental-loops-sometimes-macro"><code>SOMETIMES ((VARIABLE COUNT) &amp;BODY BODY)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-library-experimental-loops-sometimes-macro"></a>
+#### <a href="#coalton-experimental-loops-sometimes-macro"><code>SOMETIMES ((VARIABLE COUNT) &amp;BODY BODY)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-experimental-loops-sometimes-macro"></a>
 
 Does `body` evaluate to `True` for `variable` bound to some `UFix` in [0, `count`). Returns `False` if `(zero? count)`.
 
@@ -4157,7 +4157,7 @@ Does `body` evaluate to `True` for `variable` bound to some `UFix` in [0, `count
 
 ***
 
-#### <a href="#coalton-library-experimental-loops-sumtimes-macro"><code>SUMTIMES ((VARIABLE COUNT) &amp;BODY BODY)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-library-experimental-loops-sumtimes-macro"></a>
+#### <a href="#coalton-experimental-loops-sumtimes-macro"><code>SUMTIMES ((VARIABLE COUNT) &amp;BODY BODY)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-experimental-loops-sumtimes-macro"></a>
 
 The sum of `body` for `variable` bount to every `UFix` in [0, `count`).
 
@@ -4165,7 +4165,7 @@ The sum of `body` for `variable` bount to every `UFix` in [0, `count`).
 
 ***
 
-# Package `COALTON-LIBRARY/FILE`<a name="coalton-library/file-package"></a>
+# Package `COALTON/FILE`<a name="coalton/file-package"></a>
 
 
 This is Coalton's library for directory utilities and file IO.
@@ -4649,7 +4649,7 @@ Writes elements of an vector of type `:a` to a stream of type `:a`.
 
 ***
 
-# Package `COALTON-LIBRARY/FUNCTIONS`<a name="coalton-library/functions-package"></a>
+# Package `COALTON/FUNCTIONS`<a name="coalton/functions-package"></a>
 
 ### Values
 
@@ -4843,7 +4843,7 @@ Take a function with two currying parameters and enable their input as a single 
 
 ### Macros
 
-#### <a href="#coalton-library-functions-conjoin*-macro"><code>CONJOIN* (&amp;REST PREDICATES)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-library-functions-conjoin*-macro"></a>
+#### <a href="#coalton-functions-conjoin*-macro"><code>CONJOIN* (&amp;REST PREDICATES)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-functions-conjoin*-macro"></a>
 
 Compute the conjuction of `predicates`.
 
@@ -4857,7 +4857,7 @@ For example, the following expressions are equivalent.
 
 ***
 
-#### <a href="#coalton-library-functions-disjoin*-macro"><code>DISJOIN* (&amp;REST PREDICATES)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-library-functions-disjoin*-macro"></a>
+#### <a href="#coalton-functions-disjoin*-macro"><code>DISJOIN* (&amp;REST PREDICATES)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-functions-disjoin*-macro"></a>
 
 Compute the disjunction of `predicates`.
 
@@ -4871,7 +4871,7 @@ For example, the following expressions are equivalent.
 
 ***
 
-# Package `COALTON-LIBRARY/HASH`<a name="coalton-library/hash-package"></a>
+# Package `COALTON/HASH`<a name="coalton/hash-package"></a>
 
 ### Values
 
@@ -4887,7 +4887,7 @@ For example, the following expressions are equivalent.
 
 ***
 
-# Package `COALTON-LIBRARY/HASHMAP`<a name="coalton-library/hashmap-package"></a>
+# Package `COALTON/HASHMAP`<a name="coalton/hashmap-package"></a>
 
 ### Types
 
@@ -5105,7 +5105,7 @@ An empty HashMap
 
 ***
 
-# Package `COALTON-LIBRARY/HASHTABLE`<a name="coalton-library/hashtable-package"></a>
+# Package `COALTON/HASHTABLE`<a name="coalton/hashtable-package"></a>
 
 ### Types
 
@@ -5221,7 +5221,7 @@ Create a new empty hashtable with a given capacity
 
 ***
 
-# Package `COALTON-LIBRARY/ITERATOR`<a name="coalton-library/iterator-package"></a>
+# Package `COALTON/ITERATOR`<a name="coalton/iterator-package"></a>
 
 ### Types
 
@@ -5802,7 +5802,7 @@ Yields nothing; stops immediately
 
 ***
 
-# Package `COALTON-LIBRARY/LISPARRAY`<a name="coalton-library/lisparray-package"></a>
+# Package `COALTON/LISPARRAY`<a name="coalton/lisparray-package"></a>
 
 ### Types
 
@@ -5892,7 +5892,7 @@ Set the `i`th value of the `LispArray` `v` to `x`.
 
 ***
 
-# Package `COALTON-LIBRARY/LIST`<a name="coalton-library/list-package"></a>
+# Package `COALTON/LIST`<a name="coalton/list-package"></a>
 
 ### Values
 
@@ -6476,7 +6476,7 @@ Build a new list by calling F with elements of AS, BS, CS, DS and ES
 
 ### Macros
 
-#### <a href="#coalton-library-list-make-macro"><code>MAKE (&amp;REST ELEMENTS)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-library-list-make-macro"></a>
+#### <a href="#coalton-list-make-macro"><code>MAKE (&amp;REST ELEMENTS)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-list-make-macro"></a>
 
 Make a homogeneous list of `elements`. Synonym for `coalton:make-list`.
 
@@ -6484,7 +6484,7 @@ Make a homogeneous list of `elements`. Synonym for `coalton:make-list`.
 
 ***
 
-# Package `COALTON-LIBRARY/MATH/ARITH`<a name="coalton-library/math/arith-package"></a>
+# Package `COALTON/MATH/ARITH`<a name="coalton/math/arith-package"></a>
 
 ### Classes
 
@@ -6713,7 +6713,7 @@ Is `x` zero?
 
 ***
 
-# Package `COALTON-LIBRARY/MATH/BOUNDED`<a name="coalton-library/math/bounded-package"></a>
+# Package `COALTON/MATH/BOUNDED`<a name="coalton/math/bounded-package"></a>
 
 ### Classes
 
@@ -6747,7 +6747,7 @@ Methods:
 
 ***
 
-# Package `COALTON-LIBRARY/MATH/COMPLEX`<a name="coalton-library/math/complex-package"></a>
+# Package `COALTON/MATH/COMPLEX`<a name="coalton/math/complex-package"></a>
 
 ### Types
 
@@ -6851,7 +6851,7 @@ blackboard-bold 𝕚.)
 
 ***
 
-# Package `COALTON-LIBRARY/MATH/DUAL`<a name="coalton-library/math/dual-package"></a>
+# Package `COALTON/MATH/DUAL`<a name="coalton/math/dual-package"></a>
 
 
 
@@ -6959,7 +6959,7 @@ The primal (i.e., real) part of a dual number.
 
 ***
 
-# Package `COALTON-LIBRARY/MATH/DYADIC`<a name="coalton-library/math/dyadic-package"></a>
+# Package `COALTON/MATH/DYADIC`<a name="coalton/math/dyadic-package"></a>
 
 ### Types
 
@@ -7025,7 +7025,7 @@ Finds the simplest dyadic given an integer.
 
 ***
 
-# Package `COALTON-LIBRARY/MATH/ELEMENTARY`<a name="coalton-library/math/elementary-package"></a>
+# Package `COALTON/MATH/ELEMENTARY`<a name="coalton/math/elementary-package"></a>
 
 ### Classes
 
@@ -7258,7 +7258,7 @@ Computes the sine and cosine of X.
 
 ***
 
-# Package `COALTON-LIBRARY/MATH/FRACTION`<a name="coalton-library/math/fraction-package"></a>
+# Package `COALTON/MATH/FRACTION`<a name="coalton/math/fraction-package"></a>
 
 ### Values
 
@@ -7286,7 +7286,7 @@ The numerator of a fraction.
 
 ***
 
-# Package `COALTON-LIBRARY/MATH/HYPERDUAL`<a name="coalton-library/math/hyperdual-package"></a>
+# Package `COALTON/MATH/HYPERDUAL`<a name="coalton/math/hyperdual-package"></a>
 
 
 An implementation of hyperdual numbers for second-order and
@@ -7506,7 +7506,7 @@ Compute ∂²f/∂y²(x, y).
 
 ***
 
-# Package `COALTON-LIBRARY/MATH/INTEGRAL`<a name="coalton-library/math/integral-package"></a>
+# Package `COALTON/MATH/INTEGRAL`<a name="coalton/math/integral-package"></a>
 
 ### Classes
 
@@ -7686,11 +7686,11 @@ Exponentiate BASE to a signed POWER.
 
 ***
 
-# Package `COALTON-LIBRARY/MATH/REAL`<a name="coalton-library/math/real-package"></a>
+# Package `COALTON/MATH/REAL`<a name="coalton/math/real-package"></a>
 
 ### Structs
 
-#### <a href="#quantization-type"><code>Quantization :A</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L225-L236">src</a></sub></sup><a name="quantization-type"></a>
+#### <a href="#quantization-type"><code>Quantization :A</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L223-L234">src</a></sub></sup><a name="quantization-type"></a>
 
 Represents an integer quantization of `:a`.
 
@@ -7839,7 +7839,7 @@ Methods:
 
 ### Values
 
-#### <a href="#ceiling/-value"><code>(CEILING/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L286-L288">src</a></sub></sup><a name="ceiling/-value"></a>
+#### <a href="#ceiling/-value"><code>(CEILING/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L284-L286">src</a></sub></sup><a name="ceiling/-value"></a>
 <code>(<a href="#integer-type">Integer</a> &rarr; <a href="#integer-type">Integer</a> &rarr; <a href="#integer-type">Integer</a>)</code>
 
 Divide two integers and compute the ceiling of the quotient.
@@ -7848,7 +7848,7 @@ Divide two integers and compute the ceiling of the quotient.
 
 ***
 
-#### <a href="#exact/-value"><code>(EXACT/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L268-L270">src</a></sub></sup><a name="exact/-value"></a>
+#### <a href="#exact/-value"><code>(EXACT/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L266-L268">src</a></sub></sup><a name="exact/-value"></a>
 <code>(<a href="#integer-type">Integer</a> &rarr; <a href="#integer-type">Integer</a> &rarr; <a href="#fraction-type">Fraction</a>)</code>
 
 Exactly divide two integers and produce a fraction.
@@ -7857,7 +7857,7 @@ Exactly divide two integers and produce a fraction.
 
 ***
 
-#### <a href="#floor/-value"><code>(FLOOR/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L281-L283">src</a></sub></sup><a name="floor/-value"></a>
+#### <a href="#floor/-value"><code>(FLOOR/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L279-L281">src</a></sub></sup><a name="floor/-value"></a>
 <code>(<a href="#integer-type">Integer</a> &rarr; <a href="#integer-type">Integer</a> &rarr; <a href="#integer-type">Integer</a>)</code>
 
 Divide two integers and compute the floor of the quotient.
@@ -7866,7 +7866,7 @@ Divide two integers and compute the floor of the quotient.
 
 ***
 
-#### <a href="#fromfrac-value"><code>(FROMFRAC Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L296-L302">src</a></sub></sup><a name="fromfrac-value"></a>
+#### <a href="#fromfrac-value"><code>(FROMFRAC Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L294-L300">src</a></sub></sup><a name="fromfrac-value"></a>
 <code>&forall; :A. <a href="#dividable-class">Dividable</a> <a href="#integer-type">Integer</a> :A &rArr; (<a href="#fraction-type">Fraction</a> &rarr; :A)</code>
 
 Converts a fraction to a target type.
@@ -7879,7 +7879,7 @@ This conversion may result in loss of fidelity.
 
 ***
 
-#### <a href="#inexact/-value"><code>(INEXACT/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L274-L278">src</a></sub></sup><a name="inexact/-value"></a>
+#### <a href="#inexact/-value"><code>(INEXACT/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L272-L276">src</a></sub></sup><a name="inexact/-value"></a>
 <code>(<a href="#integer-type">Integer</a> &rarr; <a href="#integer-type">Integer</a> &rarr; <a href="#f64-type">F64</a>)</code>
 
 Compute the quotient of integers as a double-precision float.
@@ -7890,7 +7890,7 @@ Note: This does *not* divide double-float arguments.
 
 ***
 
-#### <a href="#quantize-value"><code>(QUANTIZE X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L239-L247">src</a></sub></sup><a name="quantize-value"></a>
+#### <a href="#quantize-value"><code>(QUANTIZE X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L237-L245">src</a></sub></sup><a name="quantize-value"></a>
 <code>&forall; :A. <a href="#real-class">Real</a> :A &rArr; (:A &rarr; (<a href="#quantization-type">Quantization</a> :A))</code>
 
 Given X, (QUANTIZE X) will return the least integer greater or equal to X,
@@ -7910,7 +7910,7 @@ Return the nearest integer to X, with ties breaking towards even numbers.
 
 ***
 
-#### <a href="#round-half-down-value"><code>(ROUND-HALF-DOWN X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L255-L257">src</a></sub></sup><a name="round-half-down-value"></a>
+#### <a href="#round-half-down-value"><code>(ROUND-HALF-DOWN X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L253-L255">src</a></sub></sup><a name="round-half-down-value"></a>
 <code>&forall; :A. (<a href="#quantizable-class">Quantizable</a> :A) (<a href="#num-class">Num</a> :A) &rArr; (:A &rarr; <a href="#integer-type">Integer</a>)</code>
 
 Return the nearest integer to X, with ties breaking toward positive infinity.
@@ -7919,7 +7919,7 @@ Return the nearest integer to X, with ties breaking toward positive infinity.
 
 ***
 
-#### <a href="#round-half-up-value"><code>(ROUND-HALF-UP X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L250-L252">src</a></sub></sup><a name="round-half-up-value"></a>
+#### <a href="#round-half-up-value"><code>(ROUND-HALF-UP X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L248-L250">src</a></sub></sup><a name="round-half-up-value"></a>
 <code>&forall; :A. (<a href="#quantizable-class">Quantizable</a> :A) (<a href="#num-class">Num</a> :A) &rArr; (:A &rarr; <a href="#integer-type">Integer</a>)</code>
 
 Return the nearest integer to X, with ties breaking toward positive infinity.
@@ -7928,7 +7928,7 @@ Return the nearest integer to X, with ties breaking toward positive infinity.
 
 ***
 
-#### <a href="#round/-value"><code>(ROUND/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L291-L293">src</a></sub></sup><a name="round/-value"></a>
+#### <a href="#round/-value"><code>(ROUND/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L289-L291">src</a></sub></sup><a name="round/-value"></a>
 <code>(<a href="#integer-type">Integer</a> &rarr; <a href="#integer-type">Integer</a> &rarr; <a href="#integer-type">Integer</a>)</code>
 
 Divide two integers and round the quotient.
@@ -7937,7 +7937,7 @@ Divide two integers and round the quotient.
 
 ***
 
-#### <a href="#safe/-value"><code>(SAFE/ X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L260-L264">src</a></sub></sup><a name="safe/-value"></a>
+#### <a href="#safe/-value"><code>(SAFE/ X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L258-L262">src</a></sub></sup><a name="safe/-value"></a>
 <code>&forall; :A :B. (<a href="#num-class">Num</a> :A) (<a href="#dividable-class">Dividable</a> :A :B) &rArr; (:A &rarr; :A &rarr; (<a href="#optional-type">Optional</a> :B))</code>
 
 Safely divide X by Y, returning None if Y is zero.
@@ -7955,7 +7955,7 @@ Returns the integer closest/equal to `x` that is within `0` and `x`.
 
 ***
 
-# Package `COALTON-LIBRARY/MONAD/CLASSES`<a name="coalton-library/monad/classes-package"></a>
+# Package `COALTON/MONAD/CLASSES`<a name="coalton/monad/classes-package"></a>
 
 ### Classes
 
@@ -8030,7 +8030,7 @@ Methods:
 
 ***
 
-# Package `COALTON-LIBRARY/MONAD/ENVIRONMENT`<a name="coalton-library/monad/environment-package"></a>
+# Package `COALTON/MONAD/ENVIRONMENT`<a name="coalton/monad/environment-package"></a>
 
 ### Types
 
@@ -8160,7 +8160,7 @@ Retrieve the computation environment.
 
 ***
 
-# Package `COALTON-LIBRARY/MONAD/FREE`<a name="coalton-library/monad/free-package"></a>
+# Package `COALTON/MONAD/FREE`<a name="coalton/monad/free-package"></a>
 
 ### Types
 
@@ -8245,7 +8245,7 @@ References: [here](https://github.com/purescript/purescript-free/blob/v5.1.0/src
 
 ***
 
-# Package `COALTON-LIBRARY/MONAD/FREET`<a name="coalton-library/monad/freet-package"></a>
+# Package `COALTON/MONAD/FREET`<a name="coalton/monad/freet-package"></a>
 
 ### Types
 
@@ -8317,7 +8317,7 @@ wrapped layer of the free monad transformer).
 
 ***
 
-# Package `COALTON-LIBRARY/MONAD/IDENTITY`<a name="coalton-library/monad/identity-package"></a>
+# Package `COALTON/MONAD/IDENTITY`<a name="coalton/monad/identity-package"></a>
 
 ### Types
 
@@ -8348,7 +8348,7 @@ A bare computation. Not useful on its own, but is useful for running Monad trans
 
 ***
 
-# Package `COALTON-LIBRARY/MONAD/OPTIONALT`<a name="coalton-library/monad/optionalt-package"></a>
+# Package `COALTON/MONAD/OPTIONALT`<a name="coalton/monad/optionalt-package"></a>
 
 ### Types
 
@@ -8389,7 +8389,7 @@ A monadic computation that returns an Optional.
 
 ***
 
-# Package `COALTON-LIBRARY/MONAD/RESULTT`<a name="coalton-library/monad/resultt-package"></a>
+# Package `COALTON/MONAD/RESULTT`<a name="coalton/monad/resultt-package"></a>
 
 ### Types
 
@@ -8462,7 +8462,7 @@ Map FERR over the error value of a Result contained in M.
 
 ***
 
-# Package `COALTON-LIBRARY/MONAD/STATE`<a name="coalton-library/monad/state-package"></a>
+# Package `COALTON/MONAD/STATE`<a name="coalton/monad/state-package"></a>
 
 ### Types
 
@@ -8551,7 +8551,7 @@ A StatefulComputation which returns the current state as the value.
 
 ***
 
-# Package `COALTON-LIBRARY/MONAD/STATET`<a name="coalton-library/monad/statet-package"></a>
+# Package `COALTON/MONAD/STATET`<a name="coalton/monad/statet-package"></a>
 
 ### Types
 
@@ -8639,7 +8639,7 @@ A stateful computation which returns the current state as the value.
 
 ***
 
-# Package `COALTON-LIBRARY/OPTIONAL`<a name="coalton-library/optional-package"></a>
+# Package `COALTON/OPTIONAL`<a name="coalton/optional-package"></a>
 
 ### Values
 
@@ -8670,7 +8670,7 @@ Is X Some?
 
 ***
 
-# Package `COALTON-LIBRARY/ORDMAP`<a name="coalton-library/ordmap-package"></a>
+# Package `COALTON/ORDMAP`<a name="coalton/ordmap-package"></a>
 
 ### Types
 
@@ -8915,7 +8915,7 @@ A OrdMap containing no mappings.
 
 ***
 
-# Package `COALTON-LIBRARY/ORDTREE`<a name="coalton-library/ordtree-package"></a>
+# Package `COALTON/ORDTREE`<a name="coalton/ordtree-package"></a>
 
 ### Types
 
@@ -9130,7 +9130,7 @@ but not in both.
 
 ***
 
-# Package `COALTON-LIBRARY/QUEUE`<a name="coalton-library/queue-package"></a>
+# Package `COALTON/QUEUE`<a name="coalton/queue-package"></a>
 
 ### Types
 
@@ -9293,7 +9293,7 @@ Push `item` onto the end of `q`.
 
 ***
 
-# Package `COALTON-LIBRARY/RANDOMACCESS`<a name="coalton-library/randomaccess-package"></a>
+# Package `COALTON/RANDOMACCESS`<a name="coalton/randomaccess-package"></a>
 
 ### Classes
 
@@ -9363,7 +9363,7 @@ Rotate the elements at indices `index1` and `index2` of the random-access storag
 
 ***
 
-# Package `COALTON-LIBRARY/RESULT`<a name="coalton-library/result-package"></a>
+# Package `COALTON/RESULT`<a name="coalton/result-package"></a>
 
 ### Values
 
@@ -9442,7 +9442,7 @@ Convert OPT to a Result, using FAILURE value if None.
 
 ***
 
-# Package `COALTON-LIBRARY/SEQ`<a name="coalton-library/seq-package"></a>
+# Package `COALTON/SEQ`<a name="coalton/seq-package"></a>
 
 ### Types
 
@@ -9544,7 +9544,7 @@ Return the number of elements in the `seq`.
 
 ### Macros
 
-#### <a href="#coalton-library-seq-make-macro"><code>MAKE (&amp;REST ELEMS)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-library-seq-make-macro"></a>
+#### <a href="#coalton-seq-make-macro"><code>MAKE (&amp;REST ELEMS)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-seq-make-macro"></a>
 
 Create a new `Seq` containing `elems`.
 
@@ -9552,7 +9552,7 @@ Create a new `Seq` containing `elems`.
 
 ***
 
-# Package `COALTON-LIBRARY/SLICE`<a name="coalton-library/slice-package"></a>
+# Package `COALTON/SLICE`<a name="coalton/slice-package"></a>
 
 ### Types
 
@@ -9650,7 +9650,7 @@ Set the element at index `idx` in `s` to `item`.
 
 ***
 
-# Package `COALTON-LIBRARY/STRING`<a name="coalton-library/string-package"></a>
+# Package `COALTON/STRING`<a name="coalton/string-package"></a>
 
 ### Values
 
@@ -9800,7 +9800,7 @@ Returns a new string with uppercase characters.
 
 ***
 
-# Package `COALTON-LIBRARY/SYMBOL`<a name="coalton-library/symbol-package"></a>
+# Package `COALTON/SYMBOL`<a name="coalton/symbol-package"></a>
 
 
 An interface to Common Lisp symbols.
@@ -9882,7 +9882,7 @@ Is the symbol `s` uninterned?
 
 ***
 
-# Package `COALTON-LIBRARY/SYSTEM`<a name="coalton-library/system-package"></a>
+# Package `COALTON/SYSTEM`<a name="coalton/system-package"></a>
 
 ### Types
 
@@ -10122,7 +10122,7 @@ The number of internal time units per second. This is implementation specific.
 
 ***
 
-# Package `COALTON-LIBRARY/TUPLE`<a name="coalton-library/tuple-package"></a>
+# Package `COALTON/TUPLE`<a name="coalton/tuple-package"></a>
 
 ### Structs
 
@@ -10243,7 +10243,7 @@ Get the second element of a tuple.
 
 ***
 
-# Package `COALTON-LIBRARY/TYPES`<a name="coalton-library/types-package"></a>
+# Package `COALTON/TYPES`<a name="coalton/types-package"></a>
 
 ### Types
 
@@ -10413,7 +10413,7 @@ Returns the runtime representation of the type of the given value.
 
 ***
 
-# Package `COALTON-LIBRARY/VECTOR`<a name="coalton-library/vector-package"></a>
+# Package `COALTON/VECTOR`<a name="coalton/vector-package"></a>
 
 ### Types
 
@@ -10744,7 +10744,7 @@ Create a new vector with `n` elements equal to `x`.
 
 ### Macros
 
-#### <a href="#coalton-library-vector-make-macro"><code>MAKE (&amp;REST ELEMENTS)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-library-vector-make-macro"></a>
+#### <a href="#coalton-vector-make-macro"><code>MAKE (&amp;REST ELEMENTS)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-vector-make-macro"></a>
 
 Construct a `Vector' containing the ELEMENTS, in the order listed.
 
