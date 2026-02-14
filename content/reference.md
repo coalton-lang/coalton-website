@@ -2743,7 +2743,7 @@ Note: Hash only considers the primal component in order to be consistent with Eq
 <code><a href="#into-class">Into</a> :A :B</code>
 
 
-`INTO` imples *every* element of `:a` can be represented by an element of `:b`. This conversion might not be bijective (i.e., there may be elements in `:b` that don't correspond to any in `:a`).
+`INTO` implies *every* element of `:a` can be represented by an element of `:b`. This conversion might not be bijective (i.e., there may be elements in `:b` that don't correspond to any in `:a`).
 
 Methods:
 - <code>INTO :: (:A &rarr; :B)</code>
@@ -2901,7 +2901,7 @@ Methods:
 <code>(<a href="#into-class">Into</a> :A :B) (<a href="#into-class">Into</a> :B :A) &rArr; <a href="#iso-class">Iso</a> :A :B</code>
 
 
-Opting into this marker typeclass imples that the instances for `(Into :a :b)` and `(Into :b :a)` form a bijection.
+Opting into this marker typeclass implies that the instances for `(Into :a :b)` and `(Into :b :a)` form a bijection.
 
 Methods:
 <details>
@@ -3401,7 +3401,7 @@ Is `x` the default item of its type?
 #### <a href="#defaulting-unwrap-value"><code>(DEFAULTING-UNWRAP CONTAINER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L408-L412">src</a></sub></sup><a name="defaulting-unwrap-value"></a>
 <code>&forall; :A :B. (<a href="#unwrappable-class">Unwrappable</a> :A) (<a href="#default-class">Default</a> :B) &rArr; ((:A :B) &rarr; :B)</code>
 
-Unwrap an `unwrappable`, returning `(default)` of the wrapped type on failure. 
+Unwrap an `unwrappable`, returning `(default)` of the wrapped type on failure.
 
 
 
@@ -4014,7 +4014,7 @@ The `UFix` in [0, `count`) which, when `variable` is bound to it, results in the
 
 #### <a href="#coalton-experimental-loops-besttimes-macro"><code>BESTTIMES ((VARIABLE COUNT BETTER?) &amp;BODY BODY)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-experimental-loops-besttimes-macro"></a>
 
-The result of evaluating `body` with `variable` bound to a `UFix` in [0, `count`) that is `better?` than the result of evaluating `body` with `variable` bound to the rest of the `UFix`s in [0, `count`)..
+The result of evaluating `body` with `variable` bound to a `UFix` in [0, `count`) that is `better?` than the result of evaluating `body` with `variable` bound to the rest of the `UFix`s in [0, `count`).
 
 
 
@@ -4135,7 +4135,7 @@ Does `body` evaluate to `True` for `variable` bound to every `UFix` in [0, `coun
 
 #### <a href="#coalton-experimental-loops-prodtimes-macro"><code>PRODTIMES ((VARIABLE COUNT) &amp;BODY BODY)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-experimental-loops-prodtimes-macro"></a>
 
-The product of `body` for `variable` bount to every `UFix` in [0, `count`).
+The product of `body` for `variable` bound to every `UFix` in [0, `count`).
 
 
 
@@ -4159,7 +4159,7 @@ Does `body` evaluate to `True` for `variable` bound to some `UFix` in [0, `count
 
 #### <a href="#coalton-experimental-loops-sumtimes-macro"><code>SUMTIMES ((VARIABLE COUNT) &amp;BODY BODY)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-experimental-loops-sumtimes-macro"></a>
 
-The sum of `body` for `variable` bount to every `UFix` in [0, `count`).
+The sum of `body` for `variable` bound to every `UFix` in [0, `count`).
 
 
 
@@ -4938,7 +4938,7 @@ Returns the number of entries in HM.
 #### <a href="#difference-value"><code>(DIFFERENCE A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L769-L771">src</a></sub></sup><a name="difference-value"></a>
 <code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashmap-type">HashMap</a> :A :B) &rarr; (<a href="#hashmap-type">HashMap</a> :A :B) &rarr; (<a href="#hashmap-type">HashMap</a> :A :B))</code>
 
-Raturns a HashMap that contains mappings in `a` but not in `b`.
+Returns a HashMap that contains mappings in `a` but not in `b`.
 
 
 
@@ -4956,7 +4956,7 @@ Returns True if a hashmap HM is empty, False if not.
 #### <a href="#entries-value"><code>(ENTRIES HM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L707-L709">src</a></sub></sup><a name="entries-value"></a>
 <code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashmap-type">HashMap</a> :A :B) &rarr; (<a href="#iterator-type">Iterator</a> (<a href="#tuple-type">Tuple</a> :A :B)))</code>
 
-Returns an interator to iterate over all entries in hashmap hm.
+Returns an iterator over all entries in hashmap hm.
 
 
 
@@ -4986,7 +4986,7 @@ The entries from A remains in the result.
 #### <a href="#keys-value"><code>(KEYS HM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L695-L697">src</a></sub></sup><a name="keys-value"></a>
 <code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashmap-type">HashMap</a> :A :B) &rarr; (<a href="#iterator-type">Iterator</a> :A))</code>
 
-Returns an interator to iterate over all the keys in a hashmap hm.
+Returns an iterator over all the keys in a hashmap hm.
 
 
 
@@ -5080,7 +5080,7 @@ modified `HashMap`.
 #### <a href="#values-value"><code>(VALUES HM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L701-L703">src</a></sub></sup><a name="values-value"></a>
 <code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashmap-type">HashMap</a> :A :B) &rarr; (<a href="#iterator-type">Iterator</a> :B))</code>
 
-Returns an interator to iterate over all the values in a hashmap hm.
+Returns an iterator over all the values in a hashmap hm.
 
 
 
@@ -5089,7 +5089,7 @@ Returns an interator to iterate over all the values in a hashmap hm.
 #### <a href="#xor-value"><code>(XOR A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L774-L784">src</a></sub></sup><a name="xor-value"></a>
 <code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashmap-type">HashMap</a> :A :B) &rarr; (<a href="#hashmap-type">HashMap</a> :A :B) &rarr; (<a href="#hashmap-type">HashMap</a> :A :B))</code>
 
-Raturns a HashMap that contains mappings either in `a` or in `b`,
+Returns a HashMap that contains mappings either in `a` or in `b`,
 but not in both.
 
 
@@ -5422,7 +5422,7 @@ Returns `True` if ITER is empty.
 #### <a href="#filter!-value"><code>(FILTER! KEEP? ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L352-L360">src</a></sub></sup><a name="filter!-value"></a>
 <code>&forall; :A. ((:A &rarr; <a href="#boolean-type">Boolean</a>) &rarr; (<a href="#iterator-type">Iterator</a> :A) &rarr; (<a href="#iterator-type">Iterator</a> :A))</code>
 
-Return an iterator over the elements from ITER for which KEEP?returns true.
+Return an iterator over the elements from ITER for which KEEP? returns true.
 
 
 
@@ -5507,7 +5507,7 @@ Return the zero-based index of the first element of ITER for which THIS? is `Tru
 #### <a href="#interleave!-value"><code>(INTERLEAVE! LEFT RIGHT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L306-L325">src</a></sub></sup><a name="interleave!-value"></a>
 <code>&forall; :A. ((<a href="#iterator-type">Iterator</a> :A) &rarr; (<a href="#iterator-type">Iterator</a> :A) &rarr; (<a href="#iterator-type">Iterator</a> :A))</code>
 
-Return an interator of interleaved elements from LEFT and RIGHT which terminates as soon as both LEFT and RIGHT do.
+Return an iterator of interleaved elements from LEFT and RIGHT which terminates as soon as both LEFT and RIGHT do.
 
 If one iterator terminates before the other, elements from the longer iterator will be yielded without
 interleaving. (interleave empty ITER) is equivalent to (id ITER).
@@ -5926,7 +5926,7 @@ Appends two lists together and returns a new list.
 #### <a href="#car-value"><code>(CAR X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L110-L114">src</a></sub></sup><a name="car-value"></a>
 <code>&forall; :A. ((<a href="#list-type">List</a> :A) &rarr; :A)</code>
 
-Return the traditional car of a list. This function is partial
+Return the traditional car of a list. This function is partial.
 
 
 
@@ -5944,7 +5944,7 @@ Return the traditional cdr of a list.
 #### <a href="#combs-value"><code>(COMBS L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L664-L672">src</a></sub></sup><a name="combs-value"></a>
 <code>&forall; :A. ((<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> (<a href="#list-type">List</a> :A)))</code>
 
-Compute a list of all combinations of elements of `l`. This function is sometimes goes by the name "power set" or "subsets".
+Compute a list of all combinations of elements of `l`. This function sometimes goes by the name "power set" or "subsets".
 
 The ordering of elements of `l` is preserved in the ordering of elements in each list produced by this function.
 
@@ -6004,7 +6004,7 @@ Count the number of items in THINGS that satisfy the predicate F.
 #### <a href="#difference-value"><code>(DIFFERENCE XS YS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L427-L429">src</a></sub></sup><a name="difference-value"></a>
 <code>&forall; :A. <a href="#eq-class">Eq</a> :A &rArr; ((<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> :A) &rarr; (<a href="#list-type">List</a> :A))</code>
 
-Returns a new list with the first occurence of each element in `ys` removed from `xs`.
+Returns a new list with the first occurrence of each element in `ys` removed from `xs`.
 
 
 
@@ -6620,7 +6620,7 @@ Absolute value of `x`.
 #### <a href="#ash-value"><code>(ASH X N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L170-L172">src</a></sub></sup><a name="ash-value"></a>
 <code>(<a href="#integer-type">Integer</a> &rarr; <a href="#integer-type">Integer</a> &rarr; <a href="#integer-type">Integer</a>)</code>
 
-Compute the "arithmetic shift" of `x` by `n`. 
+Compute the "arithmetic shift" of `x` by `n`.
 
 
 
@@ -8734,7 +8734,7 @@ If `iter` contains duplicate keys, later values will overwrite earlier values.
 #### <a href="#difference-value"><code>(DIFFERENCE A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L275-L279">src</a></sub></sup><a name="difference-value"></a>
 <code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordmap-type">OrdMap</a> :A :B) &rarr; (<a href="#ordmap-type">OrdMap</a> :A :B) &rarr; (<a href="#ordmap-type">OrdMap</a> :A :B))</code>
 
-Raturns an OrdMap that contains mappings in `a` but not in `b`.
+Returns an OrdMap that contains mappings in `a` but not in `b`.
 
 
 
@@ -8899,7 +8899,7 @@ Iterate over the values in MP, sorted by their corresponding keys in least-to-gr
 #### <a href="#xor-value"><code>(XOR A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L282-L287">src</a></sub></sup><a name="xor-value"></a>
 <code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordmap-type">OrdMap</a> :A :B) &rarr; (<a href="#ordmap-type">OrdMap</a> :A :B) &rarr; (<a href="#ordmap-type">OrdMap</a> :A :B))</code>
 
-Raturns an OrdMap that contains mappings either in `a` or in `b`,
+Returns an OrdMap that contains mappings either in `a` or in `b`,
 but not in both.
 
 
@@ -9224,7 +9224,7 @@ Return the `index`th element of `q` without checking if the element exists.
 #### <a href="#items!-value"><code>(ITEMS! Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/queue.lisp#L192-L197">src</a></sub></sup><a name="items!-value"></a>
 <code>&forall; :A. ((<a href="#queue-type">Queue</a> :A) &rarr; (<a href="#iterator-type">Iterator</a> :A))</code>
 
-Returns an interator over the items of `q`, removing items as they are returned.
+Returns an iterator over the items of `q`, removing items as they are returned.
 
 
 
@@ -9617,7 +9617,7 @@ Divide `s` into a series of slices of length `size`. Will skip trailing elements
 #### <a href="#iter-sliding-value"><code>(ITER-SLIDING SIZE S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/slice.lisp#L102-L116">src</a></sub></sup><a name="iter-sliding-value"></a>
 <code>&forall; :A :B. <a href="#sliceable-class">Sliceable</a> (:A :B) &rArr; (<a href="#ufix-type">UFix</a> &rarr; (:A :B) &rarr; (<a href="#iterator-type">Iterator</a> (<a href="#slice-type">Slice</a> :B)))</code>
 
-Returns an iterator that yeilds a series of overlapping slices of length `size`.
+Returns an iterator that yields a series of overlapping slices of length `size`.
 
 
 
