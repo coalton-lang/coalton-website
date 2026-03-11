@@ -6841,7 +6841,7 @@ $$\vert z\vert^2=(\operatorname{Re} z)^2+(\operatorname{Im} z)^2.$$
 
 ***
 
-#### <a href="#ii-value"><code>II</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L89-L94">src</a></sub></sup><a name="ii-value"></a>
+#### <a href="#ii-value"><code>II</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L89-L92">src</a></sub></sup><a name="ii-value"></a>
 <code>&forall; :A. <a href="#complexcomponent-class">ComplexComponent</a> :A &rArr; (<a href="#complex-type">Complex</a> :A)</code>
 
 The complex unit $i=\sqrt{-1}$. (The double `ii` represents a
@@ -7387,7 +7387,7 @@ The following list of identities describe the theory of hyperdual numbers.
 
 ### Structs
 
-#### <a href="#hyperdual-type"><code>Hyperdual :A</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L161-L177">src</a></sub></sup><a name="hyperdual-type"></a>
+#### <a href="#hyperdual-type"><code>Hyperdual :A</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L137-L144">src</a></sub></sup><a name="hyperdual-type"></a>
 
 Representation of a hyperdual number in the form `a + bε₁ + cε₂ + dε₁ε₂` where `a`, `b`, `c`, and `d` are real numbers and `ε₁` and `ε₂` satisfy `εᵢ² = 0` and `ε₁ε₂ != 0`.
 
@@ -7416,7 +7416,7 @@ Note: `Eq`, and `Ord` and `Hash` only make use of the primal component.
 
 ### Values
 
-#### <a href="#d-x-value"><code>(D-X F X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L357-L358">src</a></sub></sup><a name="d-x-value"></a>
+#### <a href="#d-x-value"><code>(D-X F X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L327-L329">src</a></sub></sup><a name="d-x-value"></a>
 <code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A)) &rarr; :A &rarr; :A)</code>
 
 Compute f'(x).
@@ -7425,7 +7425,7 @@ Compute f'(x).
 
 ***
 
-#### <a href="#d-xx-value"><code>(D-XX F X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L360-L362">src</a></sub></sup><a name="d-xx-value"></a>
+#### <a href="#d-xx-value"><code>(D-XX F X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L332-L334">src</a></sub></sup><a name="d-xx-value"></a>
 <code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A)) &rarr; :A &rarr; :A)</code>
 
 Compute f''(x).
@@ -7434,7 +7434,7 @@ Compute f''(x).
 
 ***
 
-#### <a href="#gradient-value"><code>(GRADIENT F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L373-L378">src</a></sub></sup><a name="gradient-value"></a>
+#### <a href="#gradient-value"><code>(GRADIENT F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L347-L350">src</a></sub></sup><a name="gradient-value"></a>
 <code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A)) &rarr; :A &rarr; :A &rarr; (<a href="#list-type">List</a> :A))</code>
 
 Compute the gradient (∂f/∂x, ∂f/∂y) at the point (x, y).
@@ -7443,7 +7443,7 @@ Compute the gradient (∂f/∂x, ∂f/∂y) at the point (x, y).
 
 ***
 
-#### <a href="#hessian-value"><code>(HESSIAN F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L384-L384">src</a></sub></sup><a name="hessian-value"></a>
+#### <a href="#hessian-value"><code>(HESSIAN F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L373-L379">src</a></sub></sup><a name="hessian-value"></a>
 <code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A)) &rarr; :A &rarr; :A &rarr; (<a href="#list-type">List</a> :A))</code>
 
 Compute the flat Hessian (∂²f/∂x², ∂²f/∂x∂y, ∂²f/∂y∂x, ∂²f/∂y²) at the point (x, y).
@@ -7452,7 +7452,7 @@ Compute the flat Hessian (∂²f/∂x², ∂²f/∂x∂y, ∂²f/∂y∂x, ∂²
 
 ***
 
-#### <a href="#laplacian-value"><code>(LAPLACIAN F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L384-L384">src</a></sub></sup><a name="laplacian-value"></a>
+#### <a href="#laplacian-value"><code>(LAPLACIAN F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L368-L370">src</a></sub></sup><a name="laplacian-value"></a>
 <code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A)) &rarr; :A &rarr; :A &rarr; :A)</code>
 
 Compute the Laplacian ∂²f/∂x² + ∂²f/∂y² at the point (x, y).
@@ -7461,7 +7461,7 @@ Compute the Laplacian ∂²f/∂x² + ∂²f/∂y² at the point (x, y).
 
 ***
 
-#### <a href="#partial-x-value"><code>(PARTIAL-X F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L364-L367">src</a></sub></sup><a name="partial-x-value"></a>
+#### <a href="#partial-x-value"><code>(PARTIAL-X F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L337-L339">src</a></sub></sup><a name="partial-x-value"></a>
 <code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A)) &rarr; :A &rarr; :A &rarr; :A)</code>
 
 Compute ∂f/∂x(x, y).
@@ -7470,7 +7470,7 @@ Compute ∂f/∂x(x, y).
 
 ***
 
-#### <a href="#partial-xx-value"><code>(PARTIAL-XX F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L381-L384">src</a></sub></sup><a name="partial-xx-value"></a>
+#### <a href="#partial-xx-value"><code>(PARTIAL-XX F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L353-L355">src</a></sub></sup><a name="partial-xx-value"></a>
 <code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A)) &rarr; :A &rarr; :A &rarr; :A)</code>
 
 Compute ∂²f/∂x²(x, y).
@@ -7479,7 +7479,7 @@ Compute ∂²f/∂x²(x, y).
 
 ***
 
-#### <a href="#partial-xy-value"><code>(PARTIAL-XY F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L384-L384">src</a></sub></sup><a name="partial-xy-value"></a>
+#### <a href="#partial-xy-value"><code>(PARTIAL-XY F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L358-L360">src</a></sub></sup><a name="partial-xy-value"></a>
 <code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A)) &rarr; :A &rarr; :A &rarr; :A)</code>
 
 Compute ∂²f/∂x∂y(x, y).
@@ -7488,7 +7488,7 @@ Compute ∂²f/∂x∂y(x, y).
 
 ***
 
-#### <a href="#partial-y-value"><code>(PARTIAL-Y F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L369-L372">src</a></sub></sup><a name="partial-y-value"></a>
+#### <a href="#partial-y-value"><code>(PARTIAL-Y F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L342-L344">src</a></sub></sup><a name="partial-y-value"></a>
 <code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A)) &rarr; :A &rarr; :A &rarr; :A)</code>
 
 Compute ∂f/∂y(x, y).
@@ -7497,7 +7497,7 @@ Compute ∂f/∂y(x, y).
 
 ***
 
-#### <a href="#partial-yy-value"><code>(PARTIAL-YY F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L384-L384">src</a></sub></sup><a name="partial-yy-value"></a>
+#### <a href="#partial-yy-value"><code>(PARTIAL-YY F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L363-L365">src</a></sub></sup><a name="partial-yy-value"></a>
 <code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A)) &rarr; :A &rarr; :A &rarr; :A)</code>
 
 Compute ∂²f/∂y²(x, y).
