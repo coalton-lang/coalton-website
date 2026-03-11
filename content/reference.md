@@ -2590,7 +2590,7 @@ Methods:
 - <code>(<a href="#eq-class">Eq</a> :A) (<a href="#eq-class">Eq</a> :B) (<a href="#eq-class">Eq</a> :C) &rArr; <a href="#eq-class">Eq</a> (<a href="#tuple3-type">Tuple3</a> :A :B :C)</code>
 - <code>(<a href="#eq-class">Eq</a> :A) (<a href="#eq-class">Eq</a> :B) &rArr; <a href="#eq-class">Eq</a> (<a href="#tuple-type">Tuple</a> :A :B)</code>
 - <code><a href="#eq-class">Eq</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#cell-type">Cell</a> :A)</code>
-- <code><a href="#eq-class">Eq</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
+- <code><a href="#eq-class">Eq</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#  (+ (* b-type">  (+ (* b</a> :A)</code>
 - <code><a href="#eq-class">Eq</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#dual-type">Dual</a> :A)</code>  
 Note: Eq only compares the primal component.
 - <code><a href="#eq-class">Eq</a> <a href="#dyadic-type">Dyadic</a></code>
@@ -2713,7 +2713,7 @@ Methods:
 - <code>(<a href="#hash-class">Hash</a> :A) (<a href="#hash-class">Hash</a> :B) (<a href="#hash-class">Hash</a> :C) (<a href="#hash-class">Hash</a> :D) &rArr; <a href="#hash-class">Hash</a> (<a href="#tuple4-type">Tuple4</a> :A :B :C :D)</code>
 - <code>(<a href="#hash-class">Hash</a> :A) (<a href="#hash-class">Hash</a> :B) (<a href="#hash-class">Hash</a> :C) &rArr; <a href="#hash-class">Hash</a> (<a href="#tuple3-type">Tuple3</a> :A :B :C)</code>
 - <code>(<a href="#hash-class">Hash</a> :A) (<a href="#hash-class">Hash</a> :B) &rArr; <a href="#hash-class">Hash</a> (<a href="#tuple-type">Tuple</a> :A :B)</code>
-- <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#hash-class">Hash</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
+- <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#hash-class">Hash</a> (<a href="#  (+ (* b-type">  (+ (* b</a> :A)</code>
 - <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#hash-class">Hash</a> (<a href="#dual-type">Dual</a> :A)</code>  
 Note: Hash only considers the primal component in order to be consistent with Eq.
 - <code><a href="#hash-class">Hash</a> <a href="#f64-type">F64</a></code>
@@ -2807,8 +2807,8 @@ Methods:
 - <code><a href="#into-class">Into</a> :A <a href="#string-type">String</a> &rArr; <a href="#into-class">Into</a> (<a href="#cell-type">Cell</a> :A) <a href="#string-type">String</a></code>
 - <code><a href="#into-class">Into</a> (<a href="#cell-type">Cell</a> :A) :A</code>
 - <code><a href="#into-class">Into</a> :A (<a href="#cell-type">Cell</a> :A)</code>
-- <code>(<a href="#complexcomponent-class">ComplexComponent</a> :A) (<a href="#into-class">Into</a> :A (<a href="#hyperdual-type">Hyperdual</a> :A)) &rArr; <a href="#into-class">Into</a> (<a href="#complex-type">Complex</a> :A) (<a href="#complex-type">Complex</a> (<a href="#hyperdual-type">Hyperdual</a> :A))</code>
-- <code><a href="#num-class">Num</a> :A &rArr; <a href="#into-class">Into</a> :A (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
+- <code>(<a href="#complexcomponent-class">ComplexComponent</a> :A) (<a href="#into-class">Into</a> :A (<a href="#  (+ (* b-type">  (+ (* b</a> :A)) &rArr; <a href="#into-class">Into</a> (<a href="#complex-type">Complex</a> :A) (<a href="#complex-type">Complex</a> (<a href="#  (+ (* b-type">  (+ (* b</a> :A))</code>
+- <code><a href="#num-class">Num</a> :A &rArr; <a href="#into-class">Into</a> :A (<a href="#  (+ (* b-type">  (+ (* b</a> :A)</code>
 - <code><a href="#into-class">Into</a> <a href="#integer-type">Integer</a> <a href="#dyadic-type">Dyadic</a></code>
 - <code><a href="#into-class">Into</a> <a href="#dyadic-type">Dyadic</a> <a href="#fraction-type">Fraction</a></code>
 - <code><a href="#complexcomponent-class">ComplexComponent</a> :A &rArr; <a href="#into-class">Into</a> :A (<a href="#complex-type">Complex</a> :A)</code>
@@ -3039,7 +3039,7 @@ Methods:
 - <code><a href="#num-class">Num</a> <a href="#creal-type">CReal</a></code>
 - <code><a href="#num-class">Num</a> <a href="#big-float-type">Big-Float</a></code>
 - <code><a href="#num-class">Num</a> :A &rArr; <a href="#num-class">Num</a> (<a href="#cell-type">Cell</a> :A)</code>
-- <code><a href="#num-class">Num</a> :A &rArr; <a href="#num-class">Num</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
+- <code><a href="#num-class">Num</a> :A &rArr; <a href="#num-class">Num</a> (<a href="#  (+ (* b-type">  (+ (* b</a> :A)</code>
 - <code><a href="#num-class">Num</a> :A &rArr; <a href="#num-class">Num</a> (<a href="#dual-type">Dual</a> :A)</code>
 - <code><a href="#num-class">Num</a> <a href="#dyadic-type">Dyadic</a></code>
 - <code><a href="#complexcomponent-class">ComplexComponent</a> :A &rArr; <a href="#num-class">Num</a> (<a href="#complex-type">Complex</a> :A)</code>
@@ -3087,7 +3087,7 @@ Methods:
 - <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#ord-class">Ord</a> (<a href="#optional-type">Optional</a> :A)</code>
 - <code>(<a href="#ord-class">Ord</a> :A) (<a href="#ord-class">Ord</a> :B) &rArr; <a href="#ord-class">Ord</a> (<a href="#tuple-type">Tuple</a> :A :B)</code>
 - <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#ord-class">Ord</a> (<a href="#cell-type">Cell</a> :A)</code>
-- <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#ord-class">Ord</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
+- <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#ord-class">Ord</a> (<a href="#  (+ (* b-type">  (+ (* b</a> :A)</code>
 - <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#ord-class">Ord</a> (<a href="#dual-type">Dual</a> :A)</code>  
 Note: Ord only compares the primal component.
 - <code><a href="#ord-class">Ord</a> <a href="#dyadic-type">Dyadic</a></code>
@@ -6551,7 +6551,7 @@ Methods:
 
 - <code><a href="#reciprocable-class">Reciprocable</a> <a href="#creal-type">CReal</a></code>
 - <code><a href="#reciprocable-class">Reciprocable</a> <a href="#big-float-type">Big-Float</a></code>
-- <code><a href="#reciprocable-class">Reciprocable</a> :A &rArr; <a href="#reciprocable-class">Reciprocable</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
+- <code><a href="#reciprocable-class">Reciprocable</a> :A &rArr; <a href="#reciprocable-class">Reciprocable</a> (<a href="#  (+ (* b-type">  (+ (* b</a> :A)</code>
 - <code><a href="#reciprocable-class">Reciprocable</a> :A &rArr; <a href="#reciprocable-class">Reciprocable</a> (<a href="#dual-type">Dual</a> :A)</code>
 - <code>(<a href="#complexcomponent-class">ComplexComponent</a> :A) (<a href="#reciprocable-class">Reciprocable</a> :A) &rArr; <a href="#reciprocable-class">Reciprocable</a> (<a href="#complex-type">Complex</a> :A)</code>
 - <code><a href="#reciprocable-class">Reciprocable</a> <a href="#fraction-type">Fraction</a></code>
@@ -6765,7 +6765,7 @@ component types.
 <details>
 <summary>Instances</summary>
 
-- <code>(<a href="#complexcomponent-class">ComplexComponent</a> :A) (<a href="#into-class">Into</a> :A (<a href="#hyperdual-type">Hyperdual</a> :A)) &rArr; <a href="#into-class">Into</a> (<a href="#complex-type">Complex</a> :A) (<a href="#complex-type">Complex</a> (<a href="#hyperdual-type">Hyperdual</a> :A))</code>
+- <code>(<a href="#complexcomponent-class">ComplexComponent</a> :A) (<a href="#into-class">Into</a> :A (<a href="#  (+ (* b-type">  (+ (* b</a> :A)) &rArr; <a href="#into-class">Into</a> (<a href="#complex-type">Complex</a> :A) (<a href="#complex-type">Complex</a> (<a href="#  (+ (* b-type">  (+ (* b</a> :A))</code>
 - <code>(<a href="#complexcomponent-class">ComplexComponent</a> :A) (<a href="#into-class">Into</a> :A <a href="#creal-type">CReal</a>) &rArr; <a href="#into-class">Into</a> (<a href="#complex-type">Complex</a> :A) (<a href="#complex-type">Complex</a> <a href="#creal-type">CReal</a>)</code>
 - <code>(<a href="#complexcomponent-class">ComplexComponent</a> :A) (<a href="#reciprocable-class">Reciprocable</a> :A) &rArr; <a href="#reciprocable-class">Reciprocable</a> (<a href="#complex-type">Complex</a> :A)</code>
 - <code><a href="#complexcomponent-class">ComplexComponent</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#complex-type">Complex</a> :A)</code>
@@ -6808,7 +6808,7 @@ Methods:
 
 - <code><a href="#complexcomponent-class">ComplexComponent</a> <a href="#creal-type">CReal</a></code>
 - <code><a href="#complexcomponent-class">ComplexComponent</a> <a href="#big-float-type">Big-Float</a></code>
-- <code><a href="#complexcomponent-class">ComplexComponent</a> :A &rArr; <a href="#complexcomponent-class">ComplexComponent</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
+- <code><a href="#complexcomponent-class">ComplexComponent</a> :A &rArr; <a href="#complexcomponent-class">ComplexComponent</a> (<a href="#  (+ (* b-type">  (+ (* b</a> :A)</code>
 - <code><a href="#complexcomponent-class">ComplexComponent</a> <a href="#integer-type">Integer</a></code>
 - <code><a href="#complexcomponent-class">ComplexComponent</a> <a href="#fraction-type">Fraction</a></code>
 - <code><a href="#complexcomponent-class">ComplexComponent</a> <a href="#f64-type">F64</a></code>
@@ -6841,7 +6841,7 @@ $$\vert z\vert^2=(\operatorname{Re} z)^2+(\operatorname{Im} z)^2.$$
 
 ***
 
-#### <a href="#ii-value"><code>II</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L89-L94">src</a></sub></sup><a name="ii-value"></a>
+#### <a href="#ii-value"><code>II</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/complex.lisp#L89-L92">src</a></sub></sup><a name="ii-value"></a>
 <code>&forall; :A. <a href="#complexcomponent-class">ComplexComponent</a> :A &rArr; (<a href="#complex-type">Complex</a> :A)</code>
 
 The complex unit $i=\sqrt{-1}$. (The double `ii` represents a
@@ -7073,7 +7073,7 @@ Methods:
 
 - <code><a href="#exponentiable-class">Exponentiable</a> <a href="#creal-type">CReal</a></code>
 - <code><a href="#exponentiable-class">Exponentiable</a> <a href="#big-float-type">Big-Float</a></code>
-- <code>(<a href="#exponentiable-class">Exponentiable</a> :A) (<a href="#reciprocable-class">Reciprocable</a> :A) &rArr; <a href="#exponentiable-class">Exponentiable</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
+- <code>(<a href="#exponentiable-class">Exponentiable</a> :A) (<a href="#reciprocable-class">Reciprocable</a> :A) &rArr; <a href="#exponentiable-class">Exponentiable</a> (<a href="#  (+ (* b-type">  (+ (* b</a> :A)</code>
 - <code>(<a href="#num-class">Num</a> :A) (<a href="#exponentiable-class">Exponentiable</a> :A) (<a href="#reciprocable-class">Reciprocable</a> :A) &rArr; <a href="#exponentiable-class">Exponentiable</a> (<a href="#dual-type">Dual</a> :A)</code>
 - <code><a href="#elementary-class">Elementary</a> :A &rArr; <a href="#exponentiable-class">Exponentiable</a> (<a href="#complex-type">Complex</a> :A)</code>
 - <code><a href="#exponentiable-class">Exponentiable</a> <a href="#f64-type">F64</a></code>
@@ -7131,7 +7131,7 @@ Methods:
 
 - <code><a href="#radical-class">Radical</a> <a href="#creal-type">CReal</a></code>
 - <code><a href="#radical-class">Radical</a> <a href="#big-float-type">Big-Float</a></code>
-- <code>(<a href="#radical-class">Radical</a> :A) (<a href="#reciprocable-class">Reciprocable</a> :A) (<a href="#exponentiable-class">Exponentiable</a> :A) &rArr; <a href="#radical-class">Radical</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
+- <code>(<a href="#radical-class">Radical</a> :A) (<a href="#reciprocable-class">Reciprocable</a> :A) (<a href="#exponentiable-class">Exponentiable</a> :A) &rArr; <a href="#radical-class">Radical</a> (<a href="#  (+ (* b-type">  (+ (* b</a> :A)</code>
 - <code>(<a href="#num-class">Num</a> :A) (<a href="#radical-class">Radical</a> :A) (<a href="#reciprocable-class">Reciprocable</a> :A) (<a href="#exponentiable-class">Exponentiable</a> :A) &rArr; <a href="#radical-class">Radical</a> (<a href="#dual-type">Dual</a> :A)</code>
 - <code><a href="#elementary-class">Elementary</a> :A &rArr; <a href="#radical-class">Radical</a> (<a href="#complex-type">Complex</a> :A)</code>
 - <code><a href="#radical-class">Radical</a> <a href="#f64-type">F64</a></code>
@@ -7162,7 +7162,7 @@ Methods:
 
 - <code><a href="#trigonometric-class">Trigonometric</a> <a href="#creal-type">CReal</a></code>
 - <code><a href="#trigonometric-class">Trigonometric</a> <a href="#big-float-type">Big-Float</a></code>
-- <code>(<a href="#trigonometric-class">Trigonometric</a> :A) (<a href="#reciprocable-class">Reciprocable</a> :A) (<a href="#radical-class">Radical</a> :A) &rArr; <a href="#trigonometric-class">Trigonometric</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
+- <code>(<a href="#trigonometric-class">Trigonometric</a> :A) (<a href="#reciprocable-class">Reciprocable</a> :A) (<a href="#radical-class">Radical</a> :A) &rArr; <a href="#trigonometric-class">Trigonometric</a> (<a href="#  (+ (* b-type">  (+ (* b</a> :A)</code>
 - <code>(<a href="#num-class">Num</a> :A) (<a href="#trigonometric-class">Trigonometric</a> :A) (<a href="#reciprocable-class">Reciprocable</a> :A) (<a href="#radical-class">Radical</a> :A) &rArr; <a href="#trigonometric-class">Trigonometric</a> (<a href="#dual-type">Dual</a> :A)</code>
 - <code><a href="#elementary-class">Elementary</a> :A &rArr; <a href="#trigonometric-class">Trigonometric</a> (<a href="#complex-type">Complex</a> :A)</code>
 - <code><a href="#trigonometric-class">Trigonometric</a> <a href="#f64-type">F64</a></code>
@@ -7387,7 +7387,7 @@ The following list of identities describe the theory of hyperdual numbers.
 
 ### Structs
 
-#### <a href="#hyperdual-type"><code>Hyperdual :A</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L161-L177">src</a></sub></sup><a name="hyperdual-type"></a>
+#### <a href="#hyperdual-type"><code>  (+ (* b :A</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L137-L144">src</a></sub></sup><a name="hyperdual-type"></a>
 
 Representation of a hyperdual number in the form `a + bε₁ + cε₂ + dε₁ε₂` where `a`, `b`, `c`, and `d` are real numbers and `ε₁` and `ε₂` satisfy `εᵢ² = 0` and `ε₁ε₂ != 0`.
 
@@ -7396,17 +7396,17 @@ Note: `Eq`, and `Ord` and `Hash` only make use of the primal component.
 <details>
 <summary>Instances</summary>
 
-- <code>(<a href="#exponentiable-class">Exponentiable</a> :A) (<a href="#reciprocable-class">Reciprocable</a> :A) &rArr; <a href="#exponentiable-class">Exponentiable</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
-- <code>(<a href="#radical-class">Radical</a> :A) (<a href="#reciprocable-class">Reciprocable</a> :A) (<a href="#exponentiable-class">Exponentiable</a> :A) &rArr; <a href="#radical-class">Radical</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
-- <code>(<a href="#trigonometric-class">Trigonometric</a> :A) (<a href="#reciprocable-class">Reciprocable</a> :A) (<a href="#radical-class">Radical</a> :A) &rArr; <a href="#trigonometric-class">Trigonometric</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
-- <code><a href="#complexcomponent-class">ComplexComponent</a> :A &rArr; <a href="#complexcomponent-class">ComplexComponent</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
-- <code><a href="#eq-class">Eq</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
-- <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#hash-class">Hash</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
-- <code><a href="#num-class">Num</a> :A &rArr; <a href="#into-class">Into</a> :A (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
-- <code><a href="#num-class">Num</a> :A &rArr; <a href="#num-class">Num</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
-- <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#ord-class">Ord</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
-- <code><a href="#reciprocable-class">Reciprocable</a> :A &rArr; <a href="#reciprocable-class">Reciprocable</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
+- <code>(<a href="#exponentiable-class">Exponentiable</a> :A) (<a href="#reciprocable-class">Reciprocable</a> :A) &rArr; <a href="#exponentiable-class">Exponentiable</a> (<a href="#  (+ (* b-type">  (+ (* b</a> :A)</code>
+- <code>(<a href="#radical-class">Radical</a> :A) (<a href="#reciprocable-class">Reciprocable</a> :A) (<a href="#exponentiable-class">Exponentiable</a> :A) &rArr; <a href="#radical-class">Radical</a> (<a href="#  (+ (* b-type">  (+ (* b</a> :A)</code>
+- <code>(<a href="#trigonometric-class">Trigonometric</a> :A) (<a href="#reciprocable-class">Reciprocable</a> :A) (<a href="#radical-class">Radical</a> :A) &rArr; <a href="#trigonometric-class">Trigonometric</a> (<a href="#  (+ (* b-type">  (+ (* b</a> :A)</code>
+- <code><a href="#complexcomponent-class">ComplexComponent</a> :A &rArr; <a href="#complexcomponent-class">ComplexComponent</a> (<a href="#  (+ (* b-type">  (+ (* b</a> :A)</code>
+- <code><a href="#eq-class">Eq</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#  (+ (* b-type">  (+ (* b</a> :A)</code>
+- <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#hash-class">Hash</a> (<a href="#  (+ (* b-type">  (+ (* b</a> :A)</code>
+- <code><a href="#num-class">Num</a> :A &rArr; <a href="#into-class">Into</a> :A (<a href="#  (+ (* b-type">  (+ (* b</a> :A)</code>
+- <code><a href="#num-class">Num</a> :A &rArr; <a href="#num-class">Num</a> (<a href="#  (+ (* b-type">  (+ (* b</a> :A)</code>
+- <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#ord-class">Ord</a> (<a href="#  (+ (* b-type">  (+ (* b</a> :A)</code>
+- <code><a href="#reciprocable-class">Reciprocable</a> :A &rArr; <a href="#reciprocable-class">Reciprocable</a> (<a href="#  (+ (* b-type">  (+ (* b</a> :A)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#  (+ (* b-type">  (+ (* b</a> :A)</code>
 
 </details>
 
@@ -7416,8 +7416,8 @@ Note: `Eq`, and `Ord` and `Hash` only make use of the primal component.
 
 ### Values
 
-#### <a href="#d-x-value"><code>(D-X F X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L357-L358">src</a></sub></sup><a name="d-x-value"></a>
-<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A)) &rarr; :A &rarr; :A)</code>
+#### <a href="#d-x-value"><code>(D-X F X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L327-L329">src</a></sub></sup><a name="d-x-value"></a>
+<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#  (+ (* b-type">  (+ (* b</a> :A) &rarr; (<a href="#  (+ (* b-type">  (+ (* b</a> :A)) &rarr; :A &rarr; :A)</code>
 
 Compute f'(x).
 
@@ -7425,8 +7425,8 @@ Compute f'(x).
 
 ***
 
-#### <a href="#d-xx-value"><code>(D-XX F X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L360-L362">src</a></sub></sup><a name="d-xx-value"></a>
-<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A)) &rarr; :A &rarr; :A)</code>
+#### <a href="#d-xx-value"><code>(D-XX F X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L332-L334">src</a></sub></sup><a name="d-xx-value"></a>
+<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#  (+ (* b-type">  (+ (* b</a> :A) &rarr; (<a href="#  (+ (* b-type">  (+ (* b</a> :A)) &rarr; :A &rarr; :A)</code>
 
 Compute f''(x).
 
@@ -7434,8 +7434,8 @@ Compute f''(x).
 
 ***
 
-#### <a href="#gradient-value"><code>(GRADIENT F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L373-L378">src</a></sub></sup><a name="gradient-value"></a>
-<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A)) &rarr; :A &rarr; :A &rarr; (<a href="#list-type">List</a> :A))</code>
+#### <a href="#gradient-value"><code>(GRADIENT F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L347-L350">src</a></sub></sup><a name="gradient-value"></a>
+<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#  (+ (* b-type">  (+ (* b</a> :A) &rarr; (<a href="#  (+ (* b-type">  (+ (* b</a> :A) &rarr; (<a href="#  (+ (* b-type">  (+ (* b</a> :A)) &rarr; :A &rarr; :A &rarr; (<a href="#list-type">List</a> :A))</code>
 
 Compute the gradient (∂f/∂x, ∂f/∂y) at the point (x, y).
 
@@ -7443,8 +7443,8 @@ Compute the gradient (∂f/∂x, ∂f/∂y) at the point (x, y).
 
 ***
 
-#### <a href="#hessian-value"><code>(HESSIAN F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L384-L384">src</a></sub></sup><a name="hessian-value"></a>
-<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A)) &rarr; :A &rarr; :A &rarr; (<a href="#list-type">List</a> :A))</code>
+#### <a href="#hessian-value"><code>(HESSIAN F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L373-L379">src</a></sub></sup><a name="hessian-value"></a>
+<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#  (+ (* b-type">  (+ (* b</a> :A) &rarr; (<a href="#  (+ (* b-type">  (+ (* b</a> :A) &rarr; (<a href="#  (+ (* b-type">  (+ (* b</a> :A)) &rarr; :A &rarr; :A &rarr; (<a href="#list-type">List</a> :A))</code>
 
 Compute the flat Hessian (∂²f/∂x², ∂²f/∂x∂y, ∂²f/∂y∂x, ∂²f/∂y²) at the point (x, y).
 
@@ -7452,8 +7452,8 @@ Compute the flat Hessian (∂²f/∂x², ∂²f/∂x∂y, ∂²f/∂y∂x, ∂²
 
 ***
 
-#### <a href="#laplacian-value"><code>(LAPLACIAN F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L384-L384">src</a></sub></sup><a name="laplacian-value"></a>
-<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A)) &rarr; :A &rarr; :A &rarr; :A)</code>
+#### <a href="#laplacian-value"><code>(LAPLACIAN F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L368-L370">src</a></sub></sup><a name="laplacian-value"></a>
+<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#  (+ (* b-type">  (+ (* b</a> :A) &rarr; (<a href="#  (+ (* b-type">  (+ (* b</a> :A) &rarr; (<a href="#  (+ (* b-type">  (+ (* b</a> :A)) &rarr; :A &rarr; :A &rarr; :A)</code>
 
 Compute the Laplacian ∂²f/∂x² + ∂²f/∂y² at the point (x, y).
 
@@ -7461,8 +7461,8 @@ Compute the Laplacian ∂²f/∂x² + ∂²f/∂y² at the point (x, y).
 
 ***
 
-#### <a href="#partial-x-value"><code>(PARTIAL-X F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L364-L367">src</a></sub></sup><a name="partial-x-value"></a>
-<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A)) &rarr; :A &rarr; :A &rarr; :A)</code>
+#### <a href="#partial-x-value"><code>(PARTIAL-X F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L337-L339">src</a></sub></sup><a name="partial-x-value"></a>
+<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#  (+ (* b-type">  (+ (* b</a> :A) &rarr; (<a href="#  (+ (* b-type">  (+ (* b</a> :A) &rarr; (<a href="#  (+ (* b-type">  (+ (* b</a> :A)) &rarr; :A &rarr; :A &rarr; :A)</code>
 
 Compute ∂f/∂x(x, y).
 
@@ -7470,8 +7470,8 @@ Compute ∂f/∂x(x, y).
 
 ***
 
-#### <a href="#partial-xx-value"><code>(PARTIAL-XX F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L381-L384">src</a></sub></sup><a name="partial-xx-value"></a>
-<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A)) &rarr; :A &rarr; :A &rarr; :A)</code>
+#### <a href="#partial-xx-value"><code>(PARTIAL-XX F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L353-L355">src</a></sub></sup><a name="partial-xx-value"></a>
+<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#  (+ (* b-type">  (+ (* b</a> :A) &rarr; (<a href="#  (+ (* b-type">  (+ (* b</a> :A) &rarr; (<a href="#  (+ (* b-type">  (+ (* b</a> :A)) &rarr; :A &rarr; :A &rarr; :A)</code>
 
 Compute ∂²f/∂x²(x, y).
 
@@ -7479,8 +7479,8 @@ Compute ∂²f/∂x²(x, y).
 
 ***
 
-#### <a href="#partial-xy-value"><code>(PARTIAL-XY F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L384-L384">src</a></sub></sup><a name="partial-xy-value"></a>
-<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A)) &rarr; :A &rarr; :A &rarr; :A)</code>
+#### <a href="#partial-xy-value"><code>(PARTIAL-XY F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L358-L360">src</a></sub></sup><a name="partial-xy-value"></a>
+<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#  (+ (* b-type">  (+ (* b</a> :A) &rarr; (<a href="#  (+ (* b-type">  (+ (* b</a> :A) &rarr; (<a href="#  (+ (* b-type">  (+ (* b</a> :A)) &rarr; :A &rarr; :A &rarr; :A)</code>
 
 Compute ∂²f/∂x∂y(x, y).
 
@@ -7488,8 +7488,8 @@ Compute ∂²f/∂x∂y(x, y).
 
 ***
 
-#### <a href="#partial-y-value"><code>(PARTIAL-Y F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L369-L372">src</a></sub></sup><a name="partial-y-value"></a>
-<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A)) &rarr; :A &rarr; :A &rarr; :A)</code>
+#### <a href="#partial-y-value"><code>(PARTIAL-Y F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L342-L344">src</a></sub></sup><a name="partial-y-value"></a>
+<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#  (+ (* b-type">  (+ (* b</a> :A) &rarr; (<a href="#  (+ (* b-type">  (+ (* b</a> :A) &rarr; (<a href="#  (+ (* b-type">  (+ (* b</a> :A)) &rarr; :A &rarr; :A &rarr; :A)</code>
 
 Compute ∂f/∂y(x, y).
 
@@ -7497,8 +7497,8 @@ Compute ∂f/∂y(x, y).
 
 ***
 
-#### <a href="#partial-yy-value"><code>(PARTIAL-YY F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L384-L384">src</a></sub></sup><a name="partial-yy-value"></a>
-<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A)) &rarr; :A &rarr; :A &rarr; :A)</code>
+#### <a href="#partial-yy-value"><code>(PARTIAL-YY F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L363-L365">src</a></sub></sup><a name="partial-yy-value"></a>
+<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#  (+ (* b-type">  (+ (* b</a> :A) &rarr; (<a href="#  (+ (* b-type">  (+ (* b</a> :A) &rarr; (<a href="#  (+ (* b-type">  (+ (* b</a> :A)) &rarr; :A &rarr; :A &rarr; :A)</code>
 
 Compute ∂²f/∂y²(x, y).
 
@@ -10337,7 +10337,7 @@ Methods:
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#tuple4-type">Tuple4</a> :A :B :C :D)</code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#tuple3-type">Tuple3</a> :A :B :C)</code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#cell-type">Cell</a> :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#  (+ (* b-type">  (+ (* b</a> :A)</code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#dual-type">Dual</a> :A)</code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> <a href="#dyadic-type">Dyadic</a></code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#complex-type">Complex</a> :A)</code>
