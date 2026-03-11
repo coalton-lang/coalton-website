@@ -6590,7 +6590,7 @@ Methods:
 
 ### Values
 
-#### <a href="#1+-value"><code>(1+ NUM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L176-L178">src</a></sub></sup><a name="1+-value"></a>
+#### <a href="#1+-value"><code>(1+ NUM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L177-L179">src</a></sub></sup><a name="1+-value"></a>
 <code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (:A &rarr; :A)</code>
 
 Increment `num`.
@@ -6599,7 +6599,7 @@ Increment `num`.
 
 ***
 
-#### <a href="#1--value"><code>(1- NUM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L182-L184">src</a></sub></sup><a name="1--value"></a>
+#### <a href="#1--value"><code>(1- NUM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L183-L185">src</a></sub></sup><a name="1--value"></a>
 <code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (:A &rarr; :A)</code>
 
 Decrement `num`.
@@ -6617,7 +6617,7 @@ Absolute value of `x`.
 
 ***
 
-#### <a href="#ash-value"><code>(ASH X N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L170-L172">src</a></sub></sup><a name="ash-value"></a>
+#### <a href="#ash-value"><code>(ASH X N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L171-L173">src</a></sub></sup><a name="ash-value"></a>
 <code>(<a href="#integer-type">Integer</a> &rarr; <a href="#integer-type">Integer</a> &rarr; <a href="#integer-type">Integer</a>)</code>
 
 Compute the "arithmetic shift" of `x` by `n`.
@@ -6644,7 +6644,7 @@ The negation, or additive inverse, of `x`.
 
 ***
 
-#### <a href="#negative?-value"><code>(NEGATIVE? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L194-L196">src</a></sub></sup><a name="negative?-value"></a>
+#### <a href="#negative?-value"><code>(NEGATIVE? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L195-L197">src</a></sub></sup><a name="negative?-value"></a>
 <code>&forall; :A. (<a href="#num-class">Num</a> :A) (<a href="#ord-class">Ord</a> :A) &rArr; (:A &rarr; <a href="#boolean-type">Boolean</a>)</code>
 
 Is `x` negative?
@@ -6653,7 +6653,7 @@ Is `x` negative?
 
 ***
 
-#### <a href="#nonnegative?-value"><code>(NONNEGATIVE? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L206-L208">src</a></sub></sup><a name="nonnegative?-value"></a>
+#### <a href="#nonnegative?-value"><code>(NONNEGATIVE? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L207-L209">src</a></sub></sup><a name="nonnegative?-value"></a>
 <code>&forall; :A. (<a href="#num-class">Num</a> :A) (<a href="#ord-class">Ord</a> :A) &rArr; (:A &rarr; <a href="#boolean-type">Boolean</a>)</code>
 
 Is `x` not negative?
@@ -6662,7 +6662,7 @@ Is `x` not negative?
 
 ***
 
-#### <a href="#nonpositive?-value"><code>(NONPOSITIVE? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L200-L202">src</a></sub></sup><a name="nonpositive?-value"></a>
+#### <a href="#nonpositive?-value"><code>(NONPOSITIVE? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L201-L203">src</a></sub></sup><a name="nonpositive?-value"></a>
 <code>&forall; :A. (<a href="#num-class">Num</a> :A) (<a href="#ord-class">Ord</a> :A) &rArr; (:A &rarr; <a href="#boolean-type">Boolean</a>)</code>
 
 Is `x` not positive?
@@ -6671,7 +6671,7 @@ Is `x` not positive?
 
 ***
 
-#### <a href="#nonzero?-value"><code>(NONZERO? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L218-L220">src</a></sub></sup><a name="nonzero?-value"></a>
+#### <a href="#nonzero?-value"><code>(NONZERO? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L219-L221">src</a></sub></sup><a name="nonzero?-value"></a>
 <code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (:A &rarr; <a href="#boolean-type">Boolean</a>)</code>
 
 Is `x` not zero?
@@ -6680,7 +6680,7 @@ Is `x` not zero?
 
 ***
 
-#### <a href="#positive?-value"><code>(POSITIVE? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L188-L190">src</a></sub></sup><a name="positive?-value"></a>
+#### <a href="#positive?-value"><code>(POSITIVE? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L189-L191">src</a></sub></sup><a name="positive?-value"></a>
 <code>&forall; :A. (<a href="#num-class">Num</a> :A) (<a href="#ord-class">Ord</a> :A) &rArr; (:A &rarr; <a href="#boolean-type">Boolean</a>)</code>
 
 Is `x` positive?
@@ -6689,16 +6689,16 @@ Is `x` positive?
 
 ***
 
-#### <a href="#sign-value"><code>(SIGN X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L162-L166">src</a></sub></sup><a name="sign-value"></a>
+#### <a href="#sign-value"><code>(SIGN X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L162-L167">src</a></sub></sup><a name="sign-value"></a>
 <code>&forall; :A :B. (<a href="#ord-class">Ord</a> :A) (<a href="#num-class">Num</a> :A) (<a href="#num-class">Num</a> :B) &rArr; (:A &rarr; :B)</code>
 
-The sign of `x`, where `(sign 0) = 1`.
+The sign of `x`, where `(sign 0) = 0`.
 
 
 
 ***
 
-#### <a href="#zero?-value"><code>(ZERO? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L212-L214">src</a></sub></sup><a name="zero?-value"></a>
+#### <a href="#zero?-value"><code>(ZERO? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L213-L215">src</a></sub></sup><a name="zero?-value"></a>
 <code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (:A &rarr; <a href="#boolean-type">Boolean</a>)</code>
 
 Is `x` zero?
