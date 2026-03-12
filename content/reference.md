@@ -703,25 +703,25 @@ Homogeneous list of objects. Represented as a typical Common Lisp chain of `cl:c
 - <code><a href="#default-class">Default</a> (<a href="#list-type">List</a> :A)</code>
 - <code><a href="#eq-class">Eq</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#list-type">List</a> :A)</code>
 - <code><a href="#foldable-class">Foldable</a> <a href="#list-type">List</a></code>
-- <code><a href="#fromiterator-class">FromIterator</a> (<a href="#list-type">List</a> :A) :A</code>
+- <code><a href="#fromiterator-class">FromIterator</a> (<a href="#list-type">List</a> :ELT) :ELT</code>
 - <code><a href="#functor-class">Functor</a> <a href="#list-type">List</a></code>
 - <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#hash-class">Hash</a> (<a href="#list-type">List</a> :A)</code>
-- <code><a href="#into-class">Into</a> (<a href="#lisparray-type">LispArray</a> :A) (<a href="#list-type">List</a> :A)</code>
+- <code><a href="#into-class">Into</a> (<a href="#lisparray-type">LispArray</a> :T) (<a href="#list-type">List</a> :T)</code>
 - <code><a href="#into-class">Into</a> (<a href="#list-type">List</a> :A) (<a href="#vector-type">Vector</a> :A)</code>
 - <code><a href="#into-class">Into</a> (<a href="#list-type">List</a> <a href="#char-type">Char</a>) <a href="#string-type">String</a></code>
 - <code><a href="#into-class">Into</a> (<a href="#optional-type">Optional</a> :A) (<a href="#list-type">List</a> :A)</code>
 - <code><a href="#into-class">Into</a> (<a href="#seq-type">Seq</a> :A) (<a href="#list-type">List</a> :A)</code>
 - <code><a href="#into-class">Into</a> (<a href="#vector-type">Vector</a> :A) (<a href="#list-type">List</a> :A)</code>
 - <code><a href="#into-class">Into</a> <a href="#string-type">String</a> (<a href="#list-type">List</a> <a href="#char-type">Char</a>)</code>
-- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#list-type">List</a> :A) :A</code>
+- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#list-type">List</a> :ELT) :ELT</code>
 - <code><a href="#iso-class">Iso</a> (<a href="#list-type">List</a> <a href="#char-type">Char</a>) <a href="#string-type">String</a></code>
 - <code><a href="#iso-class">Iso</a> (<a href="#vector-type">Vector</a> :A) (<a href="#list-type">List</a> :A)</code>
 - <code><a href="#monad-class">Monad</a> <a href="#list-type">List</a></code>
 - <code><a href="#monoid-class">Monoid</a> (<a href="#list-type">List</a> :A)</code>
-- <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#ord-class">Ord</a> (<a href="#list-type">List</a> :A)</code>
+- <code><a href="#ord-class">Ord</a> :ELT &rArr; <a href="#ord-class">Ord</a> (<a href="#list-type">List</a> :ELT)</code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#list-type">List</a> :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#into-class">Into</a> (<a href="#list-type">List</a> :A) (<a href="#lisparray-type">LispArray</a> :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#iso-class">Iso</a> (<a href="#lisparray-type">LispArray</a> :A) (<a href="#list-type">List</a> :A)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> :T &rArr; <a href="#into-class">Into</a> (<a href="#list-type">List</a> :T) (<a href="#lisparray-type">LispArray</a> :T)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> :T &rArr; <a href="#iso-class">Iso</a> (<a href="#lisparray-type">LispArray</a> :T) (<a href="#list-type">List</a> :T)</code>
 - <code><a href="#semigroup-class">Semigroup</a> (<a href="#list-type">List</a> :A)</code>
 - <code><a href="#terminator-class">Terminator</a> (<a href="#list-type">List</a> :A)</code>
 - <code><a href="#traversable-class">Traversable</a> <a href="#list-type">List</a></code>
@@ -748,10 +748,10 @@ A type that allows indicating the presence or absence of a value. The underlying
 - <code><a href="#applicative-class">Applicative</a> <a href="#optional-type">Optional</a></code>
 - <code><a href="#default-class">Default</a> (<a href="#optional-type">Optional</a> :A)</code>
 - <code><a href="#eq-class">Eq</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#optional-type">Optional</a> :A)</code>
-- <code><a href="#fromiterator-class">FromIterator</a> :A :B &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#optional-type">Optional</a> :A) (<a href="#optional-type">Optional</a> :B)</code>
+- <code><a href="#fromiterator-class">FromIterator</a> :CONTAINER :ELT &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#optional-type">Optional</a> :CONTAINER) (<a href="#optional-type">Optional</a> :ELT)</code>
 - <code><a href="#functor-class">Functor</a> <a href="#optional-type">Optional</a></code>
 - <code><a href="#into-class">Into</a> (<a href="#optional-type">Optional</a> :A) (<a href="#list-type">List</a> :A)</code>
-- <code><a href="#into-class">Into</a> (<a href="#optional-type">Optional</a> :A) (<a href="#result-type">Result</a> <a href="#unit-type">Unit</a> :A)</code>
+- <code><a href="#into-class">Into</a> (<a href="#optional-type">Optional</a> :B) (<a href="#result-type">Result</a> <a href="#unit-type">Unit</a> :B)</code>
 - <code><a href="#into-class">Into</a> (<a href="#result-type">Result</a> :A :B) (<a href="#optional-type">Optional</a> :B)</code>
 - <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#optional-type">Optional</a> :A) :A</code>
 - <code><a href="#iso-class">Iso</a> (<a href="#result-type">Result</a> <a href="#unit-type">Unit</a> :A) (<a href="#optional-type">Optional</a> :A)</code>
@@ -1493,7 +1493,7 @@ A coalton package for performing FFTs.
 ### Classes
 
 #### <a href="#fftcyclicgroup-class"><code>FFTCyclicGroup</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L149-L158">src</a></sub></sup><a name="fftcyclicgroup-class"></a>
-<code><a href="#fftcyclicgroup-class">FFTCyclicGroup</a> :A</code>
+<code><a href="#fftcyclicgroup-class">FFTCyclicGroup</a> :T</code>
 
 
 A class of types, each of which is a mathematical cyclic group.
@@ -1501,10 +1501,10 @@ A class of types, each of which is a mathematical cyclic group.
 These are types which are valid elements for a collection which may undergo a discrete Fourier transform. Examples include complex floating-point numbers and finite (modular) integers.
 
 Methods:
-- <code>CYCLIC-ADD-IDENTITY :: :A</code>
-- <code>CYCLIC-ADD :: (:A &rarr; :A &rarr; :A)</code>
-- <code>CYCLIC-ADD-INVERSE :: (:A &rarr; :A)</code>
-- <code>CYCLIC-NTH-GENERATOR :: (<a href="#ufix-type">UFix</a> &rarr; :A)</code><br/>A function which returns a primitive `n`th root of unity.
+- <code>CYCLIC-ADD-IDENTITY :: :T</code>
+- <code>CYCLIC-ADD :: (:T &rarr; :T &rarr; :T)</code>
+- <code>CYCLIC-ADD-INVERSE :: (:T &rarr; :T)</code>
+- <code>CYCLIC-NTH-GENERATOR :: (<a href="#ufix-type">UFix</a> &rarr; :T)</code><br/>A function which returns a primitive `n`th root of unity.
 <details>
 <summary>Instances</summary>
 
@@ -1518,7 +1518,7 @@ Methods:
 ***
 
 #### <a href="#fftfield-class"><code>FFTField</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L139-L143">src</a></sub></sup><a name="fftfield-class"></a>
-<code><a href="#fftring-class">FFTRing</a> :A &rArr; <a href="#fftfield-class">FFTField</a> :A</code>
+<code><a href="#fftring-class">FFTRing</a> :T &rArr; <a href="#fftfield-class">FFTField</a> :T</code>
 
 
 A class of types, each of which is a mathematical field.
@@ -1526,7 +1526,7 @@ A class of types, each of which is a mathematical field.
 These are types which are valid elements for a collection which may undergo a discrete Fourier transform. Examples include complex floating-point numbers and finite (modular) integers.
 
 Methods:
-- <code>MULTIPLY-INVERSE :: (:A &rarr; :A)</code>
+- <code>MULTIPLY-INVERSE :: (:T &rarr; :T)</code>
 <details>
 <summary>Instances</summary>
 
@@ -1540,7 +1540,7 @@ Methods:
 ***
 
 #### <a href="#fftgroup-class"><code>FFTGroup</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L120-L126">src</a></sub></sup><a name="fftgroup-class"></a>
-<code><a href="#fftgroup-class">FFTGroup</a> :A</code>
+<code><a href="#fftgroup-class">FFTGroup</a> :T</code>
 
 
 A class of types, each of which is a mathematical group.
@@ -1548,9 +1548,9 @@ A class of types, each of which is a mathematical group.
 These are types which are valid elements for a collection which may undergo a discrete Fourier transform. Examples include complex floating-point numbers and finite (modular) integers.
 
 Methods:
-- <code>ADD-IDENTITY :: :A</code>
-- <code>ADD :: (:A &rarr; :A &rarr; :A)</code>
-- <code>ADD-INVERSE :: (:A &rarr; :A)</code>
+- <code>ADD-IDENTITY :: :T</code>
+- <code>ADD :: (:T &rarr; :T &rarr; :T)</code>
+- <code>ADD-INVERSE :: (:T &rarr; :T)</code>
 <details>
 <summary>Instances</summary>
 
@@ -1564,7 +1564,7 @@ Methods:
 ***
 
 #### <a href="#fftring-class"><code>FFTRing</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L132-L137">src</a></sub></sup><a name="fftring-class"></a>
-<code><a href="#fftgroup-class">FFTGroup</a> :A &rArr; <a href="#fftring-class">FFTRing</a> :A</code>
+<code><a href="#fftgroup-class">FFTGroup</a> :T &rArr; <a href="#fftring-class">FFTRing</a> :T</code>
 
 
 A class of types, each of which is a mathematical ring.
@@ -1572,8 +1572,8 @@ A class of types, each of which is a mathematical ring.
 These are types which are valid elements for a collection which may undergo a discrete Fourier transform. Examples include complex floating-point numbers and finite (modular) integers.
 
 Methods:
-- <code>MULTIPLY-IDENTITY :: :A</code>
-- <code>MULTIPLY :: (:A &rarr; :A &rarr; :A)</code>
+- <code>MULTIPLY-IDENTITY :: :T</code>
+- <code>MULTIPLY :: (:T &rarr; :T &rarr; :T)</code>
 <details>
 <summary>Instances</summary>
 
@@ -1589,7 +1589,7 @@ Methods:
 ### Values
 
 #### <a href="#dif-fft-raw-value"><code>(DIF-FFT-RAW DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L226-L239">src</a></sub></sup><a name="dif-fft-raw-value"></a>
-<code>&forall; :A :B :C. (<a href="#randomaccess-class">RandomAccess</a> :B :A) (<a href="#randomaccess-class">RandomAccess</a> :C :A) (<a href="#fftring-class">FFTRing</a> :A) (<a href="#fftcyclicgroup-class">FFTCyclicGroup</a> :A) &rArr; (:B &rarr; :C &rarr; <a href="#unit-type">Unit</a>)</code>
+<code>&forall; :T :C :D. (<a href="#randomaccess-class">RandomAccess</a> :C :T) (<a href="#randomaccess-class">RandomAccess</a> :D :T) (<a href="#fftring-class">FFTRing</a> :T) (<a href="#fftcyclicgroup-class">FFTCyclicGroup</a> :T) &rArr; (:C &rarr; :D &rarr; <a href="#unit-type">Unit</a>)</code>
 
 A decimation-in-frequency fast fourier transform, reading from `src` and writing to `dst`.
 
@@ -1602,7 +1602,7 @@ Normalization: none
 ***
 
 #### <a href="#dif-ifft-raw-value"><code>(DIF-IFFT-RAW DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L246-L259">src</a></sub></sup><a name="dif-ifft-raw-value"></a>
-<code>&forall; :A :B :C. (<a href="#randomaccess-class">RandomAccess</a> :B :A) (<a href="#randomaccess-class">RandomAccess</a> :C :A) (<a href="#fftring-class">FFTRing</a> :A) (<a href="#fftcyclicgroup-class">FFTCyclicGroup</a> :A) &rArr; (:B &rarr; :C &rarr; <a href="#unit-type">Unit</a>)</code>
+<code>&forall; :T :C :D. (<a href="#randomaccess-class">RandomAccess</a> :C :T) (<a href="#randomaccess-class">RandomAccess</a> :D :T) (<a href="#fftring-class">FFTRing</a> :T) (<a href="#fftcyclicgroup-class">FFTCyclicGroup</a> :T) &rArr; (:C &rarr; :D &rarr; <a href="#unit-type">Unit</a>)</code>
 
 A decimation-in-frequency inverse fast fourier transform, reading from `src` and writing to `dst`.
 
@@ -1615,7 +1615,7 @@ Normalization: none
 ***
 
 #### <a href="#dit-fft-raw-value"><code>(DIT-FFT-RAW DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L330-L344">src</a></sub></sup><a name="dit-fft-raw-value"></a>
-<code>&forall; :A :B :C. (<a href="#randomaccess-class">RandomAccess</a> :B :A) (<a href="#randomaccess-class">RandomAccess</a> :C :A) (<a href="#fftring-class">FFTRing</a> :A) (<a href="#fftcyclicgroup-class">FFTCyclicGroup</a> :A) &rArr; (:B &rarr; :C &rarr; <a href="#unit-type">Unit</a>)</code>
+<code>&forall; :T :C :D. (<a href="#randomaccess-class">RandomAccess</a> :C :T) (<a href="#randomaccess-class">RandomAccess</a> :D :T) (<a href="#fftring-class">FFTRing</a> :T) (<a href="#fftcyclicgroup-class">FFTCyclicGroup</a> :T) &rArr; (:C &rarr; :D &rarr; <a href="#unit-type">Unit</a>)</code>
 
 A decimation-in-time fast fourier transform, reading from `src` and writing to `dst`.
 
@@ -1628,7 +1628,7 @@ Normalization: none
 ***
 
 #### <a href="#dit-ifft-raw-value"><code>(DIT-IFFT-RAW DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L351-L365">src</a></sub></sup><a name="dit-ifft-raw-value"></a>
-<code>&forall; :A :B :C. (<a href="#randomaccess-class">RandomAccess</a> :B :A) (<a href="#randomaccess-class">RandomAccess</a> :C :A) (<a href="#fftring-class">FFTRing</a> :A) (<a href="#fftcyclicgroup-class">FFTCyclicGroup</a> :A) &rArr; (:B &rarr; :C &rarr; <a href="#unit-type">Unit</a>)</code>
+<code>&forall; :T :C :D. (<a href="#randomaccess-class">RandomAccess</a> :C :T) (<a href="#randomaccess-class">RandomAccess</a> :D :T) (<a href="#fftring-class">FFTRing</a> :T) (<a href="#fftcyclicgroup-class">FFTCyclicGroup</a> :T) &rArr; (:C &rarr; :D &rarr; <a href="#unit-type">Unit</a>)</code>
 
 A decimation-in-time inverse fast fourier transform, reading from `src` and writing to `dst`.
 
@@ -1641,13 +1641,13 @@ Normalization: none
 ***
 
 #### <a href="#divide-value"><code>(DIVIDE X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L146-L147">src</a></sub></sup><a name="divide-value"></a>
-<code>&forall; :A. <a href="#fftfield-class">FFTField</a> :A &rArr; (:A &rarr; :A &rarr; :A)</code>
+<code>&forall; :T. <a href="#fftfield-class">FFTField</a> :T &rArr; (:T &rarr; :T &rarr; :T)</code>
 
 
 ***
 
 #### <a href="#fft-value"><code>(FFT STORAGE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L448-L460">src</a></sub></sup><a name="fft-value"></a>
-<code>&forall; :A :B :C. (<a href="#randomaccess-class">RandomAccess</a> :B :A) (<a href="#randomaccess-class">RandomAccess</a> :C :A) (<a href="#fftring-class">FFTRing</a> :A) (<a href="#fftcyclicgroup-class">FFTCyclicGroup</a> :A) &rArr; (:B &rarr; :C)</code>
+<code>&forall; :T :C :D. (<a href="#randomaccess-class">RandomAccess</a> :C :T) (<a href="#randomaccess-class">RandomAccess</a> :D :T) (<a href="#fftring-class">FFTRing</a> :T) (<a href="#fftcyclicgroup-class">FFTCyclicGroup</a> :T) &rArr; (:C &rarr; :D)</code>
 
 Perform a fast Fourier transform on the data in `storage`.
 
@@ -1656,7 +1656,7 @@ Perform a fast Fourier transform on the data in `storage`.
 ***
 
 #### <a href="#fft!-value"><code>(FFT! STORAGE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L374-L385">src</a></sub></sup><a name="fft!-value"></a>
-<code>&forall; :A :B. (<a href="#randomaccess-class">RandomAccess</a> :B :A) (<a href="#fftring-class">FFTRing</a> :A) (<a href="#fftcyclicgroup-class">FFTCyclicGroup</a> :A) &rArr; (:B &rarr; :B)</code>
+<code>&forall; :T :C. (<a href="#randomaccess-class">RandomAccess</a> :C :T) (<a href="#fftring-class">FFTRing</a> :T) (<a href="#fftcyclicgroup-class">FFTCyclicGroup</a> :T) &rArr; (:C &rarr; :C)</code>
 
 Perform an in-place fast Fourier transform on `storage`.
 
@@ -1665,7 +1665,7 @@ Perform an in-place fast Fourier transform on `storage`.
 ***
 
 #### <a href="#fft-into!-value"><code>(FFT-INTO! DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L410-L422">src</a></sub></sup><a name="fft-into!-value"></a>
-<code>&forall; :A :B :C. (<a href="#randomaccess-class">RandomAccess</a> :C :A) (<a href="#randomaccess-class">RandomAccess</a> :B :A) (<a href="#fftring-class">FFTRing</a> :A) (<a href="#fftcyclicgroup-class">FFTCyclicGroup</a> :A) &rArr; (:B &rarr; :C &rarr; :B)</code>
+<code>&forall; :T :D :C. (<a href="#randomaccess-class">RandomAccess</a> :C :T) (<a href="#randomaccess-class">RandomAccess</a> :D :T) (<a href="#fftring-class">FFTRing</a> :T) (<a href="#fftcyclicgroup-class">FFTCyclicGroup</a> :T) &rArr; (:D &rarr; :C &rarr; :D)</code>
 
 Perform a fast Fourier transform of `src`, writing the result to `dst`. If `dst` is longer than `src`, then remaining elements of `dst` are left unmutated.
 
@@ -1674,7 +1674,7 @@ Perform a fast Fourier transform of `src`, writing the result to `dst`. If `dst`
 ***
 
 #### <a href="#ifft-value"><code>(IFFT STORAGE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L465-L481">src</a></sub></sup><a name="ifft-value"></a>
-<code>&forall; :A :B :C. (<a href="#randomaccess-class">RandomAccess</a> :B :A) (<a href="#randomaccess-class">RandomAccess</a> :C :A) (<a href="#fftfield-class">FFTField</a> :A) (<a href="#fftcyclicgroup-class">FFTCyclicGroup</a> :A) (<a href="#num-class">Num</a> :A) &rArr; (:B &rarr; :C)</code>
+<code>&forall; :T :C :D. (<a href="#randomaccess-class">RandomAccess</a> :C :T) (<a href="#randomaccess-class">RandomAccess</a> :D :T) (<a href="#fftfield-class">FFTField</a> :T) (<a href="#fftcyclicgroup-class">FFTCyclicGroup</a> :T) (<a href="#num-class">Num</a> :T) &rArr; (:C &rarr; :D)</code>
 
 Perform an inverse fast Fourier transform on the data in `storage`.
 
@@ -1683,7 +1683,7 @@ Perform an inverse fast Fourier transform on the data in `storage`.
 ***
 
 #### <a href="#ifft!-value"><code>(IFFT! STORAGE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L390-L405">src</a></sub></sup><a name="ifft!-value"></a>
-<code>&forall; :A :B. (<a href="#randomaccess-class">RandomAccess</a> :B :A) (<a href="#fftfield-class">FFTField</a> :A) (<a href="#fftcyclicgroup-class">FFTCyclicGroup</a> :A) (<a href="#num-class">Num</a> :A) &rArr; (:B &rarr; :B)</code>
+<code>&forall; :T :C. (<a href="#randomaccess-class">RandomAccess</a> :C :T) (<a href="#fftfield-class">FFTField</a> :T) (<a href="#fftcyclicgroup-class">FFTCyclicGroup</a> :T) (<a href="#num-class">Num</a> :T) &rArr; (:C &rarr; :C)</code>
 
 Perform an in-place inverse fast Fourier transform on `storage`.
 
@@ -1692,7 +1692,7 @@ Perform an in-place inverse fast Fourier transform on `storage`.
 ***
 
 #### <a href="#ifft-into!-value"><code>(IFFT-INTO! DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L427-L443">src</a></sub></sup><a name="ifft-into!-value"></a>
-<code>&forall; :A :B :C. (<a href="#randomaccess-class">RandomAccess</a> :C :A) (<a href="#randomaccess-class">RandomAccess</a> :B :A) (<a href="#fftfield-class">FFTField</a> :A) (<a href="#fftcyclicgroup-class">FFTCyclicGroup</a> :A) (<a href="#num-class">Num</a> :A) &rArr; (:B &rarr; :C &rarr; :B)</code>
+<code>&forall; :T :D :C. (<a href="#randomaccess-class">RandomAccess</a> :C :T) (<a href="#randomaccess-class">RandomAccess</a> :D :T) (<a href="#fftfield-class">FFTField</a> :T) (<a href="#fftcyclicgroup-class">FFTCyclicGroup</a> :T) (<a href="#num-class">Num</a> :T) &rArr; (:D &rarr; :C &rarr; :D)</code>
 
 Perform an inverse fast Fourier transform of `src`, writing the result to `dst`. If `dst` is longer than `src`, then remaining elements of `dst` are left unmutated.
 
@@ -1701,7 +1701,7 @@ Perform an inverse fast Fourier transform of `src`, writing the result to `dst`.
 ***
 
 #### <a href="#subtract-value"><code>(SUBTRACT X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L129-L130">src</a></sub></sup><a name="subtract-value"></a>
-<code>&forall; :A. <a href="#fftgroup-class">FFTGroup</a> :A &rArr; (:A &rarr; :A &rarr; :A)</code>
+<code>&forall; :T. <a href="#fftgroup-class">FFTGroup</a> :T &rArr; (:T &rarr; :T &rarr; :T)</code>
 
 
 ***
@@ -1907,17 +1907,17 @@ RouND toward Zero.
 ### Classes
 
 #### <a href="#bits-class"><code>Bits</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/bits.lisp#L36-L47">src</a></sub></sup><a name="bits-class"></a>
-<code><a href="#num-class">Num</a> :A &rArr; <a href="#bits-class">Bits</a> :A</code>
+<code><a href="#num-class">Num</a> :INT &rArr; <a href="#bits-class">Bits</a> :INT</code>
 
 
 Operations on the bits of twos-complement integers
 
 Methods:
-- <code>AND :: (:A &rarr; :A &rarr; :A)</code><br/>The bitwise logical `and` of two integers
-- <code>OR :: (:A &rarr; :A &rarr; :A)</code><br/>The bitwise logical `or` of two integers
-- <code>XOR :: (:A &rarr; :A &rarr; :A)</code><br/>The bitwise logical exclusive `or` of two integers
-- <code>NOT :: (:A &rarr; :A)</code><br/>The bitwise logical `not` of two integers
-- <code>SHIFT :: (<a href="#integer-type">Integer</a> &rarr; :A &rarr; :A)</code><br/>The arithmetic left-shift of an integer by an integer number of bits
+- <code>AND :: (:INT &rarr; :INT &rarr; :INT)</code><br/>The bitwise logical `and` of two integers
+- <code>OR :: (:INT &rarr; :INT &rarr; :INT)</code><br/>The bitwise logical `or` of two integers
+- <code>XOR :: (:INT &rarr; :INT &rarr; :INT)</code><br/>The bitwise logical exclusive `or` of two integers
+- <code>NOT :: (:INT &rarr; :INT)</code><br/>The bitwise logical `not` of two integers
+- <code>SHIFT :: (<a href="#integer-type">Integer</a> &rarr; :INT &rarr; :INT)</code><br/>The arithmetic left-shift of an integer by an integer number of bits
 <details>
 <summary>Instances</summary>
 
@@ -1941,14 +1941,14 @@ Methods:
 ***
 
 #### <a href="#reversebits-class"><code>ReverseBits</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/bits.lisp#L63-L70">src</a></sub></sup><a name="reversebits-class"></a>
-<code><a href="#reversebits-class">ReverseBits</a> :A</code>
+<code><a href="#reversebits-class">ReverseBits</a> :T</code>
 
 
 A type class for number types that support bit reversal.
 
 Methods:
-- <code>REVERSE-BITS :: (:A &rarr; :A)</code><br/>Reverse the bits of `x`.
-- <code>REVERSE-N-BITS :: (<a href="#ufix-type">UFix</a> &rarr; :A &rarr; :A)</code><br/>Reverse the first `n` bits of `x` and set the rest to 0.
+- <code>REVERSE-BITS :: (:T &rarr; :T)</code><br/>Reverse the bits of `x`.
+- <code>REVERSE-N-BITS :: (<a href="#ufix-type">UFix</a> &rarr; :T &rarr; :T)</code><br/>Reverse the first `n` bits of `x` and set the rest to 0.
 <details>
 <summary>Instances</summary>
 
@@ -2081,7 +2081,7 @@ Internally mutable cell
 - <code><a href="#into-class">Into</a> :A <a href="#string-type">String</a> &rArr; <a href="#into-class">Into</a> (<a href="#cell-type">Cell</a> :A) <a href="#string-type">String</a></code>
 - <code><a href="#num-class">Num</a> :A &rArr; <a href="#num-class">Num</a> (<a href="#cell-type">Cell</a> :A)</code>
 - <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#ord-class">Ord</a> (<a href="#cell-type">Cell</a> :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#cell-type">Cell</a> :A)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#cell-type">Cell</a> :|0|)</code>
 - <code><a href="#semigroup-class">Semigroup</a> :A &rArr; <a href="#semigroup-class">Semigroup</a> (<a href="#cell-type">Cell</a> :A)</code>
 
 </details>
@@ -2093,7 +2093,7 @@ Internally mutable cell
 ### Values
 
 #### <a href="#decrement!-value"><code>(DECREMENT! CEL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.lisp#L111-L114">src</a></sub></sup><a name="decrement!-value"></a>
-<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; ((<a href="#cell-type">Cell</a> :A) &rarr; :A)</code>
+<code>&forall; :COUNTER. <a href="#num-class">Num</a> :COUNTER &rArr; ((<a href="#cell-type">Cell</a> :COUNTER) &rarr; :COUNTER)</code>
 
 Subtract one from the contents of `cel`, storing and returning the new
 value.
@@ -2103,7 +2103,7 @@ value.
 ***
 
 #### <a href="#increment!-value"><code>(INCREMENT! CEL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.lisp#L105-L107">src</a></sub></sup><a name="increment!-value"></a>
-<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; ((<a href="#cell-type">Cell</a> :A) &rarr; :A)</code>
+<code>&forall; :COUNTER. <a href="#num-class">Num</a> :COUNTER &rArr; ((<a href="#cell-type">Cell</a> :COUNTER) &rarr; :COUNTER)</code>
 
 Add one to the contents of `cel`, storing and returning the new value.
 
@@ -2121,7 +2121,7 @@ Create a new mutable cell containing `data`.
 ***
 
 #### <a href="#pop!-value"><code>(POP! CEL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.lisp#L94-L100">src</a></sub></sup><a name="pop!-value"></a>
-<code>&forall; :A. ((<a href="#cell-type">Cell</a> (<a href="#list-type">List</a> :A)) &rarr; (<a href="#optional-type">Optional</a> :A))</code>
+<code>&forall; :ELT. ((<a href="#cell-type">Cell</a> (<a href="#list-type">List</a> :ELT)) &rarr; (<a href="#optional-type">Optional</a> :ELT))</code>
 
 Remove and return the first element of the list in `cel`.
 
@@ -2130,7 +2130,7 @@ Remove and return the first element of the list in `cel`.
 ***
 
 #### <a href="#push!-value"><code>(PUSH! CEL NEW-ELT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.lisp#L89-L91">src</a></sub></sup><a name="push!-value"></a>
-<code>&forall; :A. ((<a href="#cell-type">Cell</a> (<a href="#list-type">List</a> :A)) &rarr; :A &rarr; (<a href="#list-type">List</a> :A))</code>
+<code>&forall; :ELT. ((<a href="#cell-type">Cell</a> (<a href="#list-type">List</a> :ELT)) &rarr; :ELT &rarr; (<a href="#list-type">List</a> :ELT))</code>
 
 Push `new-elt` onto the start of the list in `cel`.
 
@@ -2377,20 +2377,20 @@ Represents something that may have failed.
 - <code>(<a href="#ord-class">Ord</a> :A) (<a href="#ord-class">Ord</a> :B) &rArr; <a href="#ord-class">Ord</a> (<a href="#result-type">Result</a> :A :B)</code>
 - <code><a href="#applicative-class">Applicative</a> (<a href="#result-type">Result</a> :A)</code>
 - <code><a href="#bifunctor-class">Bifunctor</a> <a href="#result-type">Result</a></code>
-- <code><a href="#fromiterator-class">FromIterator</a> :A :B &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#result-type">Result</a> :C :A) (<a href="#result-type">Result</a> :C :B)</code>
+- <code><a href="#fromiterator-class">FromIterator</a> :CONTAINER :ELT &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#result-type">Result</a> :ERR :CONTAINER) (<a href="#result-type">Result</a> :ERR :ELT)</code>
 - <code><a href="#functor-class">Functor</a> (<a href="#result-type">Result</a> :A)</code>
-- <code><a href="#into-class">Into</a> (<a href="#optional-type">Optional</a> :A) (<a href="#result-type">Result</a> <a href="#unit-type">Unit</a> :A)</code>
+- <code><a href="#into-class">Into</a> (<a href="#optional-type">Optional</a> :B) (<a href="#result-type">Result</a> <a href="#unit-type">Unit</a> :B)</code>
 - <code><a href="#into-class">Into</a> (<a href="#result-type">Result</a> :A :B) (<a href="#optional-type">Optional</a> :B)</code>
-- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#result-type">Result</a> :A :B) :B</code>
+- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#result-type">Result</a> :ERR :ELT) :ELT</code>
 - <code><a href="#iso-class">Iso</a> (<a href="#result-type">Result</a> <a href="#unit-type">Unit</a> :A) (<a href="#optional-type">Optional</a> :A)</code>
 - <code><a href="#monad-class">Monad</a> (<a href="#result-type">Result</a> :A)</code>
-- <code><a href="#monoid-class">Monoid</a> :A &rArr; <a href="#monoid-class">Monoid</a> (<a href="#result-type">Result</a> :B :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#result-type">Result</a> :A :B)</code>
-- <code><a href="#semigroup-class">Semigroup</a> :A &rArr; <a href="#semigroup-class">Semigroup</a> (<a href="#result-type">Result</a> :B :A)</code>
-- <code><a href="#terminator-class">Terminator</a> (<a href="#result-type">Result</a> :A :B)</code>
+- <code><a href="#monoid-class">Monoid</a> :B &rArr; <a href="#monoid-class">Monoid</a> (<a href="#result-type">Result</a> :A :B)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#result-type">Result</a> :|0| :|1|)</code>
+- <code><a href="#semigroup-class">Semigroup</a> :B &rArr; <a href="#semigroup-class">Semigroup</a> (<a href="#result-type">Result</a> :A :B)</code>
+- <code><a href="#terminator-class">Terminator</a> (<a href="#result-type">Result</a> :E :A)</code>
 - <code><a href="#traversable-class">Traversable</a> (<a href="#result-type">Result</a> :A)</code>
 - <code><a href="#unwrappable-class">Unwrappable</a> (<a href="#result-type">Result</a> :A)</code>
-- <code><a href="#yielder-class">Yielder</a> (<a href="#result-type">Result</a> :A)</code>
+- <code><a href="#yielder-class">Yielder</a> (<a href="#result-type">Result</a> :E)</code>
 
 </details>
 
@@ -2412,16 +2412,16 @@ A heterogeneous collection of items.
 - <code>(<a href="#hash-class">Hash</a> :A) (<a href="#hash-class">Hash</a> :B) &rArr; <a href="#hash-class">Hash</a> (<a href="#tuple-type">Tuple</a> :A :B)</code>
 - <code>(<a href="#ord-class">Ord</a> :A) (<a href="#ord-class">Ord</a> :B) &rArr; <a href="#ord-class">Ord</a> (<a href="#tuple-type">Tuple</a> :A :B)</code>
 - <code><a href="#bifunctor-class">Bifunctor</a> <a href="#tuple-type">Tuple</a></code>
-- <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#hashmap-type">HashMap</a> :A :B) (<a href="#tuple-type">Tuple</a> :A :B)</code>
-- <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#hashtable-type">Hashtable</a> :A :B) (<a href="#tuple-type">Tuple</a> :A :B)</code>
-- <code><a href="#into-class">Into</a> (<a href="#mappair-type">MapPair</a> :A :B) (<a href="#tuple-type">Tuple</a> :A :B)</code>
+- <code><a href="#hash-class">Hash</a> :K &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#hashmap-type">HashMap</a> :K :V) (<a href="#tuple-type">Tuple</a> :K :V)</code>
+- <code><a href="#hash-class">Hash</a> :KEY &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#hashtable-type">Hashtable</a> :KEY :VALUE) (<a href="#tuple-type">Tuple</a> :KEY :VALUE)</code>
+- <code><a href="#into-class">Into</a> (<a href="#mappair-type">MapPair</a> :KEY :VALUE) (<a href="#tuple-type">Tuple</a> :KEY :VALUE)</code>
 - <code><a href="#into-class">Into</a> (<a href="#tuple-type">Tuple</a> :A :B) (<a href="#tuple-type">Tuple</a> :B :A)</code>
-- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#hashmap-type">HashMap</a> :A :B) (<a href="#tuple-type">Tuple</a> :A :B)</code>
-- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#hashtable-type">Hashtable</a> :A :B) (<a href="#tuple-type">Tuple</a> :A :B)</code>
-- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#ordmap-type">OrdMap</a> :A :B) (<a href="#tuple-type">Tuple</a> :A :B)</code>
+- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#hashmap-type">HashMap</a> :K :V) (<a href="#tuple-type">Tuple</a> :K :V)</code>
+- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#hashtable-type">Hashtable</a> :KEY :VALUE) (<a href="#tuple-type">Tuple</a> :KEY :VALUE)</code>
+- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#ordmap-type">OrdMap</a> :KEY :VALUE) (<a href="#tuple-type">Tuple</a> :KEY :VALUE)</code>
 - <code><a href="#iso-class">Iso</a> (<a href="#tuple-type">Tuple</a> :A :B) (<a href="#tuple-type">Tuple</a> :B :A)</code>
-- <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#ordmap-type">OrdMap</a> :A :B) (<a href="#tuple-type">Tuple</a> :A :B)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#tuple-type">Tuple</a> :A :B)</code>
+- <code><a href="#ord-class">Ord</a> :KEY &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#ordmap-type">OrdMap</a> :KEY :VALUE) (<a href="#tuple-type">Tuple</a> :KEY :VALUE)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#tuple-type">Tuple</a> :|0| :|1|)</code>
 - <code><a href="#traversable-class">Traversable</a> (<a href="#tuple-type">Tuple</a> :A)</code>
 
 </details>
@@ -2433,18 +2433,18 @@ A heterogeneous collection of items.
 ### Classes
 
 #### <a href="#alternative-class"><code>Alternative</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L256-L259">src</a></sub></sup><a name="alternative-class"></a>
-<code><a href="#applicative-class">Applicative</a> :A &rArr; <a href="#alternative-class">Alternative</a> :A</code>
+<code><a href="#applicative-class">Applicative</a> :F &rArr; <a href="#alternative-class">Alternative</a> :F</code>
 
 
 Types which are monoids on applicative functors.
 
 Methods:
-- <code>ALT :: ((:A :B) &rarr; (:A :B) &rarr; (:A :B))</code>
-- <code>EMPTY :: (:A :C)</code>
+- <code>ALT :: ((:F :A) &rarr; (:F :A) &rarr; (:F :A))</code>
+- <code>EMPTY :: (:F :B)</code>
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#monad-class">Monad</a> :A &rArr; <a href="#alternative-class">Alternative</a> (<a href="#optionalt-type">OptionalT</a> :A)</code>
+- <code><a href="#monad-class">Monad</a> :M &rArr; <a href="#alternative-class">Alternative</a> (<a href="#optionalt-type">OptionalT</a> :M)</code>
 - <code><a href="#alternative-class">Alternative</a> <a href="#list-type">List</a></code>
 - <code><a href="#alternative-class">Alternative</a> <a href="#optional-type">Optional</a></code>
 
@@ -2455,26 +2455,26 @@ Methods:
 ***
 
 #### <a href="#applicative-class"><code>Applicative</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L229-L232">src</a></sub></sup><a name="applicative-class"></a>
-<code><a href="#functor-class">Functor</a> :A &rArr; <a href="#applicative-class">Applicative</a> :A</code>
+<code><a href="#functor-class">Functor</a> :F &rArr; <a href="#applicative-class">Applicative</a> :F</code>
 
 
 Types which are a functor which can embed pure expressions and sequence operations.
 
 Methods:
-- <code>PURE :: (:B &rarr; (:A :B))</code>
-- <code>LIFTA2 :: ((:C &rarr; :D &rarr; :E) &rarr; (:A :C) &rarr; (:A :D) &rarr; (:A :E))</code>
+- <code>PURE :: (:A &rarr; (:F :A))</code>
+- <code>LIFTA2 :: ((:B &rarr; :C &rarr; :D) &rarr; (:F :B) &rarr; (:F :C) &rarr; (:F :D))</code>
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#monad-class">Monad</a> :A &rArr; <a href="#applicative-class">Applicative</a> (<a href="#loopt-type">LoopT</a> :A)</code>
-- <code>(<a href="#functor-class">Functor</a> :A) (<a href="#monad-class">Monad</a> :B) &rArr; <a href="#applicative-class">Applicative</a> ((<a href="#freet-type">FreeT</a> :A) :B)</code>
-- <code><a href="#functor-class">Functor</a> :A &rArr; <a href="#applicative-class">Applicative</a> (<a href="#free-type">Free</a> :A)</code>
-- <code><a href="#monad-class">Monad</a> :A &rArr; <a href="#applicative-class">Applicative</a> (<a href="#optionalt-type">OptionalT</a> :A)</code>
-- <code><a href="#monad-class">Monad</a> :A &rArr; <a href="#applicative-class">Applicative</a> ((<a href="#resultt-type">ResultT</a> :B) :A)</code>
-- <code><a href="#applicative-class">Applicative</a> :A &rArr; <a href="#applicative-class">Applicative</a> ((<a href="#envt-type">EnvT</a> :B) :A)</code>
-- <code><a href="#applicative-class">Applicative</a> (<a href="#env-type">Env</a> :A)</code>
-- <code><a href="#applicative-class">Applicative</a> :A &rArr; <a href="#applicative-class">Applicative</a> ((<a href="#statet-type">StateT</a> :B) :A)</code>
-- <code><a href="#applicative-class">Applicative</a> (<a href="#st-type">ST</a> :A)</code>
+- <code><a href="#monad-class">Monad</a> :M &rArr; <a href="#applicative-class">Applicative</a> (<a href="#loopt-type">LoopT</a> :M)</code>
+- <code>(<a href="#functor-class">Functor</a> :F) (<a href="#monad-class">Monad</a> :M) &rArr; <a href="#applicative-class">Applicative</a> ((<a href="#freet-type">FreeT</a> :F) :M)</code>
+- <code><a href="#functor-class">Functor</a> :F &rArr; <a href="#applicative-class">Applicative</a> (<a href="#free-type">Free</a> :F)</code>
+- <code><a href="#monad-class">Monad</a> :M &rArr; <a href="#applicative-class">Applicative</a> (<a href="#optionalt-type">OptionalT</a> :M)</code>
+- <code><a href="#monad-class">Monad</a> :M &rArr; <a href="#applicative-class">Applicative</a> ((<a href="#resultt-type">ResultT</a> :ERR) :M)</code>
+- <code><a href="#applicative-class">Applicative</a> :M &rArr; <a href="#applicative-class">Applicative</a> ((<a href="#envt-type">EnvT</a> :ENV) :M)</code>
+- <code><a href="#applicative-class">Applicative</a> (<a href="#env-type">Env</a> :ENV)</code>
+- <code><a href="#applicative-class">Applicative</a> :M &rArr; <a href="#applicative-class">Applicative</a> ((<a href="#statet-type">StateT</a> :S) :M)</code>
+- <code><a href="#applicative-class">Applicative</a> (<a href="#st-type">ST</a> :STATE)</code>
 - <code><a href="#applicative-class">Applicative</a> <a href="#identity-type">Identity</a></code>
 - <code><a href="#applicative-class">Applicative</a> <a href="#list-type">List</a></code>
 - <code><a href="#applicative-class">Applicative</a> (<a href="#result-type">Result</a> :A)</code>
@@ -2489,17 +2489,17 @@ Methods:
 ***
 
 #### <a href="#bifunctor-class"><code>Bifunctor</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L292-L294">src</a></sub></sup><a name="bifunctor-class"></a>
-<code><a href="#bifunctor-class">Bifunctor</a> :A</code>
+<code><a href="#bifunctor-class">Bifunctor</a> :F</code>
 
 
 Types which take two type arguments and are functors on both.
 
 Methods:
-- <code>BIMAP :: ((:B &rarr; :C) &rarr; (:D &rarr; :E) &rarr; ((:A :B) :D) &rarr; ((:A :C) :E))</code>
+- <code>BIMAP :: ((:A &rarr; :B) &rarr; (:C &rarr; :D) &rarr; ((:F :A) :C) &rarr; ((:F :B) :D))</code>
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#functor-class">Functor</a> :A &rArr; <a href="#bifunctor-class">Bifunctor</a> (<a href="#freef-type">FreeF</a> :A)</code>
+- <code><a href="#functor-class">Functor</a> :F &rArr; <a href="#bifunctor-class">Bifunctor</a> (<a href="#freef-type">FreeF</a> :F)</code>
 - <code><a href="#bifunctor-class">Bifunctor</a> <a href="#result-type">Result</a></code>
 - <code><a href="#bifunctor-class">Bifunctor</a> <a href="#tuple-type">Tuple</a></code>
 
@@ -2522,7 +2522,7 @@ Methods:
 
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#default-class">Default</a> (<a href="#seq-type">Seq</a> :A)</code>
 - <code><a href="#default-class">Default</a> (<a href="#queue-type">Queue</a> :A)</code>
-- <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#default-class">Default</a> (<a href="#hashtable-type">Hashtable</a> :A :B)</code>
+- <code><a href="#hash-class">Hash</a> :KEY &rArr; <a href="#default-class">Default</a> (<a href="#hashtable-type">Hashtable</a> :KEY :VALUE)</code>
 - <code><a href="#default-class">Default</a> <a href="#string-type">String</a></code>
 - <code><a href="#default-class">Default</a> (<a href="#vector-type">Vector</a> :A)</code>
 - <code><a href="#default-class">Default</a> (<a href="#list-type">List</a> :A)</code>
@@ -2571,18 +2571,18 @@ Methods:
 - <code><a href="#eq-class">Eq</a> <a href="#big-float-type">Big-Float</a></code>
 - <code><a href="#eq-class">Eq</a> <a href="#pathname-type">Pathname</a></code>
 - <code><a href="#eq-class">Eq</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#seq-type">Seq</a> :A)</code>
-- <code>(<a href="#eq-class">Eq</a> :A) (<a href="#eq-class">Eq</a> :B) &rArr; <a href="#eq-class">Eq</a> (<a href="#ordmap-type">OrdMap</a> :A :B)</code>
-- <code><a href="#eq-class">Eq</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#mappair-type">MapPair</a> :A :B)</code>
-- <code><a href="#eq-class">Eq</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#ordtree-type">OrdTree</a> :A)</code>
+- <code>(<a href="#eq-class">Eq</a> :KEY) (<a href="#eq-class">Eq</a> :VALUE) &rArr; <a href="#eq-class">Eq</a> (<a href="#ordmap-type">OrdMap</a> :KEY :VALUE)</code>
+- <code><a href="#eq-class">Eq</a> :KEY &rArr; <a href="#eq-class">Eq</a> (<a href="#mappair-type">MapPair</a> :KEY :VALUE)</code>
+- <code><a href="#eq-class">Eq</a> :ELT &rArr; <a href="#eq-class">Eq</a> (<a href="#ordtree-type">OrdTree</a> :ELT)</code>
 - <code><a href="#eq-class">Eq</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#queue-type">Queue</a> :A)</code>
-- <code>(<a href="#eq-class">Eq</a> :A) (<a href="#eq-class">Eq</a> :B) (<a href="#hash-class">Hash</a> :A) &rArr; <a href="#eq-class">Eq</a> (<a href="#hashmap-type">HashMap</a> :A :B)</code>
-- <code>(<a href="#hash-class">Hash</a> :A) (<a href="#eq-class">Eq</a> :B) &rArr; <a href="#eq-class">Eq</a> (<a href="#hashtable-type">Hashtable</a> :A :B)</code>
+- <code>(<a href="#eq-class">Eq</a> :K) (<a href="#eq-class">Eq</a> :V) (<a href="#hash-class">Hash</a> :K) &rArr; <a href="#eq-class">Eq</a> (<a href="#hashmap-type">HashMap</a> :K :V)</code>
+- <code>(<a href="#hash-class">Hash</a> :KEY) (<a href="#eq-class">Eq</a> :VALUE) &rArr; <a href="#eq-class">Eq</a> (<a href="#hashtable-type">Hashtable</a> :KEY :VALUE)</code>
 - <code><a href="#eq-class">Eq</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#slice-type">Slice</a> :A)</code>
 - <code><a href="#eq-class">Eq</a> <a href="#string-type">String</a></code>
 - <code><a href="#eq-class">Eq</a> <a href="#char-type">Char</a></code>
 - <code><a href="#eq-class">Eq</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#vector-type">Vector</a> :A)</code>
 - <code><a href="#eq-class">Eq</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#list-type">List</a> :A)</code>
-- <code><a href="#eq-class">Eq</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#lisparray-type">LispArray</a> :A)</code>
+- <code><a href="#eq-class">Eq</a> :T &rArr; <a href="#eq-class">Eq</a> (<a href="#lisparray-type">LispArray</a> :T)</code>
 - <code>(<a href="#eq-class">Eq</a> :A) (<a href="#eq-class">Eq</a> :B) &rArr; <a href="#eq-class">Eq</a> (<a href="#result-type">Result</a> :A :B)</code>
 - <code><a href="#eq-class">Eq</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#optional-type">Optional</a> :A)</code>
 - <code>(<a href="#eq-class">Eq</a> :A) (<a href="#eq-class">Eq</a> :B) (<a href="#eq-class">Eq</a> :C) (<a href="#eq-class">Eq</a> :D) (<a href="#eq-class">Eq</a> :E) &rArr; <a href="#eq-class">Eq</a> (<a href="#tuple5-type">Tuple5</a> :A :B :C :D :E)</code>
@@ -2590,8 +2590,8 @@ Methods:
 - <code>(<a href="#eq-class">Eq</a> :A) (<a href="#eq-class">Eq</a> :B) (<a href="#eq-class">Eq</a> :C) &rArr; <a href="#eq-class">Eq</a> (<a href="#tuple3-type">Tuple3</a> :A :B :C)</code>
 - <code>(<a href="#eq-class">Eq</a> :A) (<a href="#eq-class">Eq</a> :B) &rArr; <a href="#eq-class">Eq</a> (<a href="#tuple-type">Tuple</a> :A :B)</code>
 - <code><a href="#eq-class">Eq</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#cell-type">Cell</a> :A)</code>
-- <code><a href="#eq-class">Eq</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
-- <code><a href="#eq-class">Eq</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#dual-type">Dual</a> :A)</code>  
+- <code><a href="#eq-class">Eq</a> :T &rArr; <a href="#eq-class">Eq</a> (<a href="#hyperdual-type">Hyperdual</a> :T)</code>
+- <code><a href="#eq-class">Eq</a> :T &rArr; <a href="#eq-class">Eq</a> (<a href="#dual-type">Dual</a> :T)</code>  
 Note: Eq only compares the primal component.
 - <code><a href="#eq-class">Eq</a> <a href="#dyadic-type">Dyadic</a></code>
 - <code><a href="#complexcomponent-class">ComplexComponent</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#complex-type">Complex</a> :A)</code>
@@ -2624,19 +2624,19 @@ Note: Eq only compares the primal component.
 ***
 
 #### <a href="#foldable-class"><code>Foldable</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L261-L264">src</a></sub></sup><a name="foldable-class"></a>
-<code><a href="#foldable-class">Foldable</a> :A</code>
+<code><a href="#foldable-class">Foldable</a> :CONTAINER</code>
 
 
 Types which can be folded into a single element.
 
 Methods:
-- <code>FOLD :: ((:B &rarr; :C &rarr; :B) &rarr; :B &rarr; (:A :C) &rarr; :B)</code><br/>A left tail-recursive fold.
-- <code>FOLDR :: ((:D &rarr; :E &rarr; :E) &rarr; :E &rarr; (:A :D) &rarr; :E)</code><br/>A right non-tail-recursive fold.
+- <code>FOLD :: ((:ACCUM &rarr; :ELT &rarr; :ACCUM) &rarr; :ACCUM &rarr; (:CONTAINER :ELT) &rarr; :ACCUM)</code><br/>A left tail-recursive fold.
+- <code>FOLDR :: ((:A &rarr; :B &rarr; :B) &rarr; :B &rarr; (:CONTAINER :A) &rarr; :B)</code><br/>A right non-tail-recursive fold.
 <details>
 <summary>Instances</summary>
 
 - <code><a href="#foldable-class">Foldable</a> <a href="#ordtree-type">OrdTree</a></code>
-- <code><a href="#foldable-class">Foldable</a> :A &rArr; <a href="#foldable-class">Foldable</a> (<a href="#free-type">Free</a> :A)</code>
+- <code><a href="#foldable-class">Foldable</a> :F &rArr; <a href="#foldable-class">Foldable</a> (<a href="#free-type">Free</a> :F)</code>
 - <code><a href="#foldable-class">Foldable</a> <a href="#queue-type">Queue</a></code>
 - <code><a href="#foldable-class">Foldable</a> <a href="#slice-type">Slice</a></code>
 - <code><a href="#foldable-class">Foldable</a> <a href="#vector-type">Vector</a></code>
@@ -2650,31 +2650,31 @@ Methods:
 ***
 
 #### <a href="#functor-class"><code>Functor</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L225-L227">src</a></sub></sup><a name="functor-class"></a>
-<code><a href="#functor-class">Functor</a> :A</code>
+<code><a href="#functor-class">Functor</a> :F</code>
 
 
 Types which can map an inner type where the mapping adheres to the identity and composition laws.
 
 Methods:
-- <code>MAP :: ((:B &rarr; :C) &rarr; (:A :B) &rarr; (:A :C))</code>
+- <code>MAP :: ((:A &rarr; :B) &rarr; (:F :A) &rarr; (:F :B))</code>
 <details>
 <summary>Instances</summary>
 
 - <code><a href="#functor-class">Functor</a> <a href="#seq-type">Seq</a></code>
-- <code><a href="#functor-class">Functor</a> (<a href="#ordmap-type">OrdMap</a> :A)</code>
-- <code><a href="#functor-class">Functor</a> :A &rArr; <a href="#functor-class">Functor</a> (<a href="#loopt-type">LoopT</a> :A)</code>
-- <code>(<a href="#functor-class">Functor</a> :A) (<a href="#functor-class">Functor</a> :B) &rArr; <a href="#functor-class">Functor</a> ((<a href="#freet-type">FreeT</a> :A) :B)</code>
-- <code><a href="#functor-class">Functor</a> :A &rArr; <a href="#functor-class">Functor</a> ((<a href="#freef-type">FreeF</a> :A) :B)</code>
-- <code><a href="#functor-class">Functor</a> :A &rArr; <a href="#functor-class">Functor</a> (<a href="#free-type">Free</a> :A)</code>
-- <code><a href="#functor-class">Functor</a> :A &rArr; <a href="#functor-class">Functor</a> (<a href="#optionalt-type">OptionalT</a> :A)</code>
-- <code><a href="#functor-class">Functor</a> :A &rArr; <a href="#functor-class">Functor</a> ((<a href="#resultt-type">ResultT</a> :B) :A)</code>
-- <code><a href="#functor-class">Functor</a> :A &rArr; <a href="#functor-class">Functor</a> ((<a href="#envt-type">EnvT</a> :B) :A)</code>
-- <code><a href="#functor-class">Functor</a> (<a href="#env-type">Env</a> :A)</code>
-- <code><a href="#functor-class">Functor</a> :A &rArr; <a href="#functor-class">Functor</a> ((<a href="#statet-type">StateT</a> :B) :A)</code>
-- <code><a href="#functor-class">Functor</a> (<a href="#st-type">ST</a> :A)</code>
+- <code><a href="#functor-class">Functor</a> (<a href="#ordmap-type">OrdMap</a> :KEY)</code>
+- <code><a href="#functor-class">Functor</a> :M &rArr; <a href="#functor-class">Functor</a> (<a href="#loopt-type">LoopT</a> :M)</code>
+- <code>(<a href="#functor-class">Functor</a> :F) (<a href="#functor-class">Functor</a> :M) &rArr; <a href="#functor-class">Functor</a> ((<a href="#freet-type">FreeT</a> :F) :M)</code>
+- <code><a href="#functor-class">Functor</a> :F &rArr; <a href="#functor-class">Functor</a> ((<a href="#freef-type">FreeF</a> :F) :A)</code>
+- <code><a href="#functor-class">Functor</a> :F &rArr; <a href="#functor-class">Functor</a> (<a href="#free-type">Free</a> :F)</code>
+- <code><a href="#functor-class">Functor</a> :M &rArr; <a href="#functor-class">Functor</a> (<a href="#optionalt-type">OptionalT</a> :M)</code>
+- <code><a href="#functor-class">Functor</a> :M &rArr; <a href="#functor-class">Functor</a> ((<a href="#resultt-type">ResultT</a> :ERR) :M)</code>
+- <code><a href="#functor-class">Functor</a> :M &rArr; <a href="#functor-class">Functor</a> ((<a href="#envt-type">EnvT</a> :ENV) :M)</code>
+- <code><a href="#functor-class">Functor</a> (<a href="#env-type">Env</a> :ENV)</code>
+- <code><a href="#functor-class">Functor</a> :M &rArr; <a href="#functor-class">Functor</a> ((<a href="#statet-type">StateT</a> :S) :M)</code>
+- <code><a href="#functor-class">Functor</a> (<a href="#st-type">ST</a> :STATE)</code>
 - <code><a href="#functor-class">Functor</a> <a href="#identity-type">Identity</a></code>
 - <code><a href="#functor-class">Functor</a> <a href="#queue-type">Queue</a></code>
-- <code><a href="#functor-class">Functor</a> (<a href="#hashmap-type">HashMap</a> :A)</code>
+- <code><a href="#functor-class">Functor</a> (<a href="#hashmap-type">HashMap</a> :KEY)</code>
 - <code><a href="#functor-class">Functor</a> <a href="#vector-type">Vector</a></code>
 - <code><a href="#functor-class">Functor</a> <a href="#list-type">List</a></code>
 - <code><a href="#functor-class">Functor</a> (<a href="#result-type">Result</a> :A)</code>
@@ -2702,10 +2702,10 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code>(<a href="#hash-class">Hash</a> :A) (<a href="#hash-class">Hash</a> :B) &rArr; <a href="#hash-class">Hash</a> (<a href="#ordmap-type">OrdMap</a> :A :B)</code>
-- <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#hash-class">Hash</a> (<a href="#ordtree-type">OrdTree</a> :A)</code>
-- <code>(<a href="#hash-class">Hash</a> :A) (<a href="#hash-class">Hash</a> :B) &rArr; <a href="#hash-class">Hash</a> (<a href="#hashmap-type">HashMap</a> :A :B)</code>
-- <code>(<a href="#hash-class">Hash</a> :A) (<a href="#hash-class">Hash</a> :B) &rArr; <a href="#hash-class">Hash</a> (<a href="#hashtable-type">Hashtable</a> :A :B)</code>
+- <code>(<a href="#hash-class">Hash</a> :KEY) (<a href="#hash-class">Hash</a> :VALUE) &rArr; <a href="#hash-class">Hash</a> (<a href="#ordmap-type">OrdMap</a> :KEY :VALUE)</code>
+- <code><a href="#hash-class">Hash</a> :ELT &rArr; <a href="#hash-class">Hash</a> (<a href="#ordtree-type">OrdTree</a> :ELT)</code>
+- <code>(<a href="#hash-class">Hash</a> :K) (<a href="#hash-class">Hash</a> :V) &rArr; <a href="#hash-class">Hash</a> (<a href="#hashmap-type">HashMap</a> :K :V)</code>
+- <code>(<a href="#hash-class">Hash</a> :KEY) (<a href="#hash-class">Hash</a> :VALUE) &rArr; <a href="#hash-class">Hash</a> (<a href="#hashtable-type">Hashtable</a> :KEY :VALUE)</code>
 - <code><a href="#hash-class">Hash</a> <a href="#string-type">String</a></code>
 - <code><a href="#hash-class">Hash</a> <a href="#char-type">Char</a></code>
 - <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#hash-class">Hash</a> (<a href="#list-type">List</a> :A)</code>
@@ -2713,8 +2713,8 @@ Methods:
 - <code>(<a href="#hash-class">Hash</a> :A) (<a href="#hash-class">Hash</a> :B) (<a href="#hash-class">Hash</a> :C) (<a href="#hash-class">Hash</a> :D) &rArr; <a href="#hash-class">Hash</a> (<a href="#tuple4-type">Tuple4</a> :A :B :C :D)</code>
 - <code>(<a href="#hash-class">Hash</a> :A) (<a href="#hash-class">Hash</a> :B) (<a href="#hash-class">Hash</a> :C) &rArr; <a href="#hash-class">Hash</a> (<a href="#tuple3-type">Tuple3</a> :A :B :C)</code>
 - <code>(<a href="#hash-class">Hash</a> :A) (<a href="#hash-class">Hash</a> :B) &rArr; <a href="#hash-class">Hash</a> (<a href="#tuple-type">Tuple</a> :A :B)</code>
-- <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#hash-class">Hash</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
-- <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#hash-class">Hash</a> (<a href="#dual-type">Dual</a> :A)</code>  
+- <code><a href="#hash-class">Hash</a> :T &rArr; <a href="#hash-class">Hash</a> (<a href="#hyperdual-type">Hyperdual</a> :T)</code>
+- <code><a href="#hash-class">Hash</a> :T &rArr; <a href="#hash-class">Hash</a> (<a href="#dual-type">Dual</a> :T)</code>  
 Note: Hash only considers the primal component in order to be consistent with Eq.
 - <code><a href="#hash-class">Hash</a> <a href="#f64-type">F64</a></code>
 - <code><a href="#hash-class">Hash</a> <a href="#f32-type">F32</a></code>
@@ -2773,8 +2773,8 @@ Methods:
 - <code><a href="#into-class">Into</a> <a href="#string-type">String</a> <a href="#pathname-type">Pathname</a></code>
 - <code><a href="#into-class">Into</a> (<a href="#seq-type">Seq</a> :A) (<a href="#vector-type">Vector</a> :A)</code>
 - <code><a href="#into-class">Into</a> (<a href="#seq-type">Seq</a> :A) (<a href="#list-type">List</a> :A)</code>
-- <code>(<a href="#foldable-class">Foldable</a> :A) (<a href="#runtimerepr-class">RuntimeRepr</a> :B) &rArr; <a href="#into-class">Into</a> (:A :B) (<a href="#seq-type">Seq</a> :B)</code>
-- <code><a href="#into-class">Into</a> (<a href="#mappair-type">MapPair</a> :A :B) (<a href="#tuple-type">Tuple</a> :A :B)</code>
+- <code>(<a href="#foldable-class">Foldable</a> :F) (<a href="#runtimerepr-class">RuntimeRepr</a> :A) &rArr; <a href="#into-class">Into</a> (:F :A) (<a href="#seq-type">Seq</a> :A)</code>
+- <code><a href="#into-class">Into</a> (<a href="#mappair-type">MapPair</a> :KEY :VALUE) (<a href="#tuple-type">Tuple</a> :KEY :VALUE)</code>
 - <code><a href="#into-class">Into</a> (<a href="#vector-type">Vector</a> :A) (<a href="#slice-type">Slice</a> :A)</code>
 - <code><a href="#into-class">Into</a> (<a href="#slice-type">Slice</a> :A) (<a href="#vector-type">Vector</a> :A)</code>
 - <code><a href="#into-class">Into</a> <a href="#f64-type">F64</a> <a href="#string-type">String</a></code>
@@ -2799,16 +2799,16 @@ Methods:
 - <code><a href="#into-class">Into</a> (<a href="#vector-type">Vector</a> :A) (<a href="#list-type">List</a> :A)</code>
 - <code><a href="#into-class">Into</a> (<a href="#list-type">List</a> :A) (<a href="#vector-type">Vector</a> :A)</code>
 - <code><a href="#into-class">Into</a> (<a href="#optional-type">Optional</a> :A) (<a href="#list-type">List</a> :A)</code>
-- <code><a href="#into-class">Into</a> (<a href="#lisparray-type">LispArray</a> :A) (<a href="#list-type">List</a> :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#into-class">Into</a> (<a href="#list-type">List</a> :A) (<a href="#lisparray-type">LispArray</a> :A)</code>
-- <code><a href="#into-class">Into</a> (<a href="#optional-type">Optional</a> :A) (<a href="#result-type">Result</a> <a href="#unit-type">Unit</a> :A)</code>
+- <code><a href="#into-class">Into</a> (<a href="#lisparray-type">LispArray</a> :T) (<a href="#list-type">List</a> :T)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> :T &rArr; <a href="#into-class">Into</a> (<a href="#list-type">List</a> :T) (<a href="#lisparray-type">LispArray</a> :T)</code>
+- <code><a href="#into-class">Into</a> (<a href="#optional-type">Optional</a> :B) (<a href="#result-type">Result</a> <a href="#unit-type">Unit</a> :B)</code>
 - <code><a href="#into-class">Into</a> (<a href="#result-type">Result</a> :A :B) (<a href="#optional-type">Optional</a> :B)</code>
 - <code><a href="#into-class">Into</a> (<a href="#tuple-type">Tuple</a> :A :B) (<a href="#tuple-type">Tuple</a> :B :A)</code>
 - <code><a href="#into-class">Into</a> :A <a href="#string-type">String</a> &rArr; <a href="#into-class">Into</a> (<a href="#cell-type">Cell</a> :A) <a href="#string-type">String</a></code>
 - <code><a href="#into-class">Into</a> (<a href="#cell-type">Cell</a> :A) :A</code>
 - <code><a href="#into-class">Into</a> :A (<a href="#cell-type">Cell</a> :A)</code>
-- <code>(<a href="#complexcomponent-class">ComplexComponent</a> :A) (<a href="#into-class">Into</a> :A (<a href="#hyperdual-type">Hyperdual</a> :A)) &rArr; <a href="#into-class">Into</a> (<a href="#complex-type">Complex</a> :A) (<a href="#complex-type">Complex</a> (<a href="#hyperdual-type">Hyperdual</a> :A))</code>
-- <code><a href="#num-class">Num</a> :A &rArr; <a href="#into-class">Into</a> :A (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
+- <code>(<a href="#complexcomponent-class">ComplexComponent</a> :T) (<a href="#into-class">Into</a> :T (<a href="#hyperdual-type">Hyperdual</a> :T)) &rArr; <a href="#into-class">Into</a> (<a href="#complex-type">Complex</a> :T) (<a href="#complex-type">Complex</a> (<a href="#hyperdual-type">Hyperdual</a> :T))</code>
+- <code><a href="#num-class">Num</a> :T &rArr; <a href="#into-class">Into</a> :T (<a href="#hyperdual-type">Hyperdual</a> :T)</code>
 - <code><a href="#into-class">Into</a> <a href="#integer-type">Integer</a> <a href="#dyadic-type">Dyadic</a></code>
 - <code><a href="#into-class">Into</a> <a href="#dyadic-type">Dyadic</a> <a href="#fraction-type">Fraction</a></code>
 - <code><a href="#complexcomponent-class">ComplexComponent</a> :A &rArr; <a href="#into-class">Into</a> :A (<a href="#complex-type">Complex</a> :A)</code>
@@ -2910,7 +2910,7 @@ Methods:
 - <code><a href="#iso-class">Iso</a> (<a href="#slice-type">Slice</a> :A) (<a href="#vector-type">Vector</a> :A)</code>
 - <code><a href="#iso-class">Iso</a> (<a href="#list-type">List</a> <a href="#char-type">Char</a>) <a href="#string-type">String</a></code>
 - <code><a href="#iso-class">Iso</a> (<a href="#vector-type">Vector</a> :A) (<a href="#list-type">List</a> :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#iso-class">Iso</a> (<a href="#lisparray-type">LispArray</a> :A) (<a href="#list-type">List</a> :A)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> :T &rArr; <a href="#iso-class">Iso</a> (<a href="#lisparray-type">LispArray</a> :T) (<a href="#list-type">List</a> :T)</code>
 - <code><a href="#iso-class">Iso</a> (<a href="#result-type">Result</a> <a href="#unit-type">Unit</a> :A) (<a href="#optional-type">Optional</a> :A)</code>
 - <code><a href="#iso-class">Iso</a> (<a href="#tuple-type">Tuple</a> :A :B) (<a href="#tuple-type">Tuple</a> :B :A)</code>
 - <code><a href="#iso-class">Iso</a> :A :A</code>
@@ -2922,25 +2922,25 @@ Methods:
 ***
 
 #### <a href="#monad-class"><code>Monad</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L234-L236">src</a></sub></sup><a name="monad-class"></a>
-<code><a href="#applicative-class">Applicative</a> :A &rArr; <a href="#monad-class">Monad</a> :A</code>
+<code><a href="#applicative-class">Applicative</a> :M &rArr; <a href="#monad-class">Monad</a> :M</code>
 
 
 Types which are monads as defined in Haskell. See https://wiki.haskell.org/Monad for more information.
 
 Methods:
-- <code>&gt;&gt;= :: ((:A :B) &rarr; (:B &rarr; (:A :C)) &rarr; (:A :C))</code>
+- <code>&gt;&gt;= :: ((:M :A) &rarr; (:A &rarr; (:M :B)) &rarr; (:M :B))</code>
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#monad-class">Monad</a> :A &rArr; <a href="#monad-class">Monad</a> (<a href="#loopt-type">LoopT</a> :A)</code>
-- <code>(<a href="#functor-class">Functor</a> :A) (<a href="#monad-class">Monad</a> :B) &rArr; <a href="#monad-class">Monad</a> ((<a href="#freet-type">FreeT</a> :A) :B)</code>
-- <code><a href="#functor-class">Functor</a> :A &rArr; <a href="#monad-class">Monad</a> (<a href="#free-type">Free</a> :A)</code>
-- <code><a href="#monad-class">Monad</a> :A &rArr; <a href="#monad-class">Monad</a> (<a href="#optionalt-type">OptionalT</a> :A)</code>
-- <code><a href="#monad-class">Monad</a> :A &rArr; <a href="#monad-class">Monad</a> ((<a href="#resultt-type">ResultT</a> :B) :A)</code>
-- <code><a href="#monad-class">Monad</a> :A &rArr; <a href="#monad-class">Monad</a> ((<a href="#envt-type">EnvT</a> :B) :A)</code>
-- <code><a href="#monad-class">Monad</a> (<a href="#env-type">Env</a> :A)</code>
-- <code><a href="#monad-class">Monad</a> :A &rArr; <a href="#monad-class">Monad</a> ((<a href="#statet-type">StateT</a> :B) :A)</code>
-- <code><a href="#monad-class">Monad</a> (<a href="#st-type">ST</a> :A)</code>
+- <code><a href="#monad-class">Monad</a> :M &rArr; <a href="#monad-class">Monad</a> (<a href="#loopt-type">LoopT</a> :M)</code>
+- <code>(<a href="#functor-class">Functor</a> :F) (<a href="#monad-class">Monad</a> :M) &rArr; <a href="#monad-class">Monad</a> ((<a href="#freet-type">FreeT</a> :F) :M)</code>
+- <code><a href="#functor-class">Functor</a> :F &rArr; <a href="#monad-class">Monad</a> (<a href="#free-type">Free</a> :F)</code>
+- <code><a href="#monad-class">Monad</a> :M &rArr; <a href="#monad-class">Monad</a> (<a href="#optionalt-type">OptionalT</a> :M)</code>
+- <code><a href="#monad-class">Monad</a> :M &rArr; <a href="#monad-class">Monad</a> ((<a href="#resultt-type">ResultT</a> :ERR) :M)</code>
+- <code><a href="#monad-class">Monad</a> :M &rArr; <a href="#monad-class">Monad</a> ((<a href="#envt-type">EnvT</a> :ENV) :M)</code>
+- <code><a href="#monad-class">Monad</a> (<a href="#env-type">Env</a> :ENV)</code>
+- <code><a href="#monad-class">Monad</a> :M &rArr; <a href="#monad-class">Monad</a> ((<a href="#statet-type">StateT</a> :S) :M)</code>
+- <code><a href="#monad-class">Monad</a> (<a href="#st-type">ST</a> :STATE)</code>
 - <code><a href="#monad-class">Monad</a> <a href="#identity-type">Identity</a></code>
 - <code><a href="#monad-class">Monad</a> <a href="#list-type">List</a></code>
 - <code><a href="#monad-class">Monad</a> (<a href="#result-type">Result</a> :A)</code>
@@ -2954,10 +2954,10 @@ Methods:
 ***
 
 #### <a href="#monadfail-class"><code>MonadFail</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L253-L254">src</a></sub></sup><a name="monadfail-class"></a>
-<code><a href="#monad-class">Monad</a> :A &rArr; <a href="#monadfail-class">MonadFail</a> :A</code>
+<code><a href="#monad-class">Monad</a> :M &rArr; <a href="#monadfail-class">MonadFail</a> :M</code>
 
 Methods:
-- <code>FAIL :: (<a href="#string-type">String</a> &rarr; (:A :B))</code>
+- <code>FAIL :: (<a href="#string-type">String</a> &rarr; (:M :A))</code>
 <details>
 <summary>Instances</summary>
 
@@ -2970,23 +2970,23 @@ Methods:
 ***
 
 #### <a href="#monadtransformer-class"><code>MonadTransformer</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L238-L241">src</a></sub></sup><a name="monadtransformer-class"></a>
-<code><a href="#monadtransformer-class">MonadTransformer</a> :A</code>
+<code><a href="#monadtransformer-class">MonadTransformer</a> :T</code>
 
 
 Types which are monads that wrap another monad, allowing you to use - for example - State and Result
 together.
 
 Methods:
-- <code>LIFT :: <a href="#monad-class">Monad</a> :B &rArr; ((:B :C) &rarr; ((:A :B) :C))</code>
+- <code>LIFT :: <a href="#monad-class">Monad</a> :M &rArr; ((:M :A) &rarr; ((:T :M) :A))</code>
 <details>
 <summary>Instances</summary>
 
 - <code><a href="#monadtransformer-class">MonadTransformer</a> <a href="#loopt-type">LoopT</a></code>
-- <code><a href="#functor-class">Functor</a> :A &rArr; <a href="#monadtransformer-class">MonadTransformer</a> (<a href="#freet-type">FreeT</a> :A)</code>
+- <code><a href="#functor-class">Functor</a> :F &rArr; <a href="#monadtransformer-class">MonadTransformer</a> (<a href="#freet-type">FreeT</a> :F)</code>
 - <code><a href="#monadtransformer-class">MonadTransformer</a> <a href="#optionalt-type">OptionalT</a></code>
-- <code><a href="#monadtransformer-class">MonadTransformer</a> (<a href="#resultt-type">ResultT</a> :A)</code>
-- <code><a href="#monadtransformer-class">MonadTransformer</a> (<a href="#envt-type">EnvT</a> :A)</code>
-- <code><a href="#monadtransformer-class">MonadTransformer</a> (<a href="#statet-type">StateT</a> :A)</code>
+- <code><a href="#monadtransformer-class">MonadTransformer</a> (<a href="#resultt-type">ResultT</a> :ERR)</code>
+- <code><a href="#monadtransformer-class">MonadTransformer</a> (<a href="#envt-type">EnvT</a> :ENV)</code>
+- <code><a href="#monadtransformer-class">MonadTransformer</a> (<a href="#statet-type">StateT</a> :S)</code>
 
 </details>
 
@@ -3007,12 +3007,12 @@ Methods:
 
 - <code><a href="#monoid-class">Monoid</a> <a href="#pathname-type">Pathname</a></code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#monoid-class">Monoid</a> (<a href="#seq-type">Seq</a> :A)</code>
-- <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#monoid-class">Monoid</a> (<a href="#ordmap-type">OrdMap</a> :A :B)</code>
-- <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#monoid-class">Monoid</a> (<a href="#hashmap-type">HashMap</a> :A :B)</code>
+- <code><a href="#ord-class">Ord</a> :KEY &rArr; <a href="#monoid-class">Monoid</a> (<a href="#ordmap-type">OrdMap</a> :KEY :VALUE)</code>
+- <code><a href="#hash-class">Hash</a> :K &rArr; <a href="#monoid-class">Monoid</a> (<a href="#hashmap-type">HashMap</a> :K :V)</code>
 - <code><a href="#monoid-class">Monoid</a> <a href="#string-type">String</a></code>
 - <code><a href="#monoid-class">Monoid</a> (<a href="#vector-type">Vector</a> :A)</code>
 - <code><a href="#monoid-class">Monoid</a> (<a href="#list-type">List</a> :A)</code>
-- <code><a href="#monoid-class">Monoid</a> :A &rArr; <a href="#monoid-class">Monoid</a> (<a href="#result-type">Result</a> :B :A)</code>
+- <code><a href="#monoid-class">Monoid</a> :B &rArr; <a href="#monoid-class">Monoid</a> (<a href="#result-type">Result</a> :A :B)</code>
 - <code><a href="#monoid-class">Monoid</a> :A &rArr; <a href="#monoid-class">Monoid</a> (<a href="#optional-type">Optional</a> :A)</code>
 - <code><a href="#monoid-class">Monoid</a> <a href="#hash-type">Hash</a></code>
 
@@ -3039,8 +3039,8 @@ Methods:
 - <code><a href="#num-class">Num</a> <a href="#creal-type">CReal</a></code>
 - <code><a href="#num-class">Num</a> <a href="#big-float-type">Big-Float</a></code>
 - <code><a href="#num-class">Num</a> :A &rArr; <a href="#num-class">Num</a> (<a href="#cell-type">Cell</a> :A)</code>
-- <code><a href="#num-class">Num</a> :A &rArr; <a href="#num-class">Num</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
-- <code><a href="#num-class">Num</a> :A &rArr; <a href="#num-class">Num</a> (<a href="#dual-type">Dual</a> :A)</code>
+- <code><a href="#num-class">Num</a> :T &rArr; <a href="#num-class">Num</a> (<a href="#hyperdual-type">Hyperdual</a> :T)</code>
+- <code><a href="#num-class">Num</a> :T &rArr; <a href="#num-class">Num</a> (<a href="#dual-type">Dual</a> :T)</code>
 - <code><a href="#num-class">Num</a> <a href="#dyadic-type">Dyadic</a></code>
 - <code><a href="#complexcomponent-class">ComplexComponent</a> :A &rArr; <a href="#num-class">Num</a> (<a href="#complex-type">Complex</a> :A)</code>
 - <code><a href="#num-class">Num</a> <a href="#fraction-type">Fraction</a></code>
@@ -3079,16 +3079,16 @@ Methods:
 - <code><a href="#ord-class">Ord</a> <a href="#creal-type">CReal</a></code>
 - <code><a href="#ord-class">Ord</a> <a href="#big-float-type">Big-Float</a></code>
 - <code><a href="#ord-class">Ord</a> <a href="#pathname-type">Pathname</a></code>
-- <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#ord-class">Ord</a> (<a href="#mappair-type">MapPair</a> :A :B)</code>
+- <code><a href="#ord-class">Ord</a> :KEY &rArr; <a href="#ord-class">Ord</a> (<a href="#mappair-type">MapPair</a> :KEY :VALUE)</code>
 - <code><a href="#ord-class">Ord</a> <a href="#string-type">String</a></code>
 - <code><a href="#ord-class">Ord</a> <a href="#char-type">Char</a></code>
-- <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#ord-class">Ord</a> (<a href="#list-type">List</a> :A)</code>
+- <code><a href="#ord-class">Ord</a> :ELT &rArr; <a href="#ord-class">Ord</a> (<a href="#list-type">List</a> :ELT)</code>
 - <code>(<a href="#ord-class">Ord</a> :A) (<a href="#ord-class">Ord</a> :B) &rArr; <a href="#ord-class">Ord</a> (<a href="#result-type">Result</a> :A :B)</code>
 - <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#ord-class">Ord</a> (<a href="#optional-type">Optional</a> :A)</code>
 - <code>(<a href="#ord-class">Ord</a> :A) (<a href="#ord-class">Ord</a> :B) &rArr; <a href="#ord-class">Ord</a> (<a href="#tuple-type">Tuple</a> :A :B)</code>
 - <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#ord-class">Ord</a> (<a href="#cell-type">Cell</a> :A)</code>
-- <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#ord-class">Ord</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
-- <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#ord-class">Ord</a> (<a href="#dual-type">Dual</a> :A)</code>  
+- <code><a href="#ord-class">Ord</a> :T &rArr; <a href="#ord-class">Ord</a> (<a href="#hyperdual-type">Hyperdual</a> :T)</code>
+- <code><a href="#ord-class">Ord</a> :T &rArr; <a href="#ord-class">Ord</a> (<a href="#dual-type">Dual</a> :T)</code>  
 Note: Ord only compares the primal component.
 - <code><a href="#ord-class">Ord</a> <a href="#dyadic-type">Dyadic</a></code>
 - <code><a href="#ord-class">Ord</a> <a href="#fraction-type">Fraction</a></code>
@@ -3129,13 +3129,13 @@ Methods:
 
 - <code><a href="#semigroup-class">Semigroup</a> <a href="#pathname-type">Pathname</a></code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#semigroup-class">Semigroup</a> (<a href="#seq-type">Seq</a> :A)</code>
-- <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#semigroup-class">Semigroup</a> (<a href="#ordmap-type">OrdMap</a> :A :B)</code>
+- <code><a href="#ord-class">Ord</a> :KEY &rArr; <a href="#semigroup-class">Semigroup</a> (<a href="#ordmap-type">OrdMap</a> :KEY :VALUE)</code>
 - <code><a href="#semigroup-class">Semigroup</a> (<a href="#queue-type">Queue</a> :A)</code>
-- <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#semigroup-class">Semigroup</a> (<a href="#hashmap-type">HashMap</a> :A :B)</code>
+- <code><a href="#hash-class">Hash</a> :K &rArr; <a href="#semigroup-class">Semigroup</a> (<a href="#hashmap-type">HashMap</a> :K :V)</code>
 - <code><a href="#semigroup-class">Semigroup</a> <a href="#string-type">String</a></code>
 - <code><a href="#semigroup-class">Semigroup</a> (<a href="#vector-type">Vector</a> :A)</code>
 - <code><a href="#semigroup-class">Semigroup</a> (<a href="#list-type">List</a> :A)</code>
-- <code><a href="#semigroup-class">Semigroup</a> :A &rArr; <a href="#semigroup-class">Semigroup</a> (<a href="#result-type">Result</a> :B :A)</code>
+- <code><a href="#semigroup-class">Semigroup</a> :B &rArr; <a href="#semigroup-class">Semigroup</a> (<a href="#result-type">Result</a> :A :B)</code>
 - <code><a href="#semigroup-class">Semigroup</a> :A &rArr; <a href="#semigroup-class">Semigroup</a> (<a href="#optional-type">Optional</a> :A)</code>
 - <code><a href="#semigroup-class">Semigroup</a> :A &rArr; <a href="#semigroup-class">Semigroup</a> (<a href="#cell-type">Cell</a> :A)</code>
 - <code><a href="#semigroup-class">Semigroup</a> <a href="#hash-type">Hash</a></code>
@@ -3168,16 +3168,16 @@ Methods:
 ***
 
 #### <a href="#traversable-class"><code>Traversable</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L286-L287">src</a></sub></sup><a name="traversable-class"></a>
-<code><a href="#traversable-class">Traversable</a> :A</code>
+<code><a href="#traversable-class">Traversable</a> :T</code>
 
 Methods:
-- <code>TRAVERSE :: <a href="#applicative-class">Applicative</a> :B &rArr; ((:C &rarr; (:B :D)) &rarr; (:A :C) &rarr; (:B (:A :D)))</code>
+- <code>TRAVERSE :: <a href="#applicative-class">Applicative</a> :F &rArr; ((:A &rarr; (:F :B)) &rarr; (:T :A) &rarr; (:F (:T :B)))</code>
 <details>
 <summary>Instances</summary>
 
-- <code>(<a href="#monad-class">Monad</a> :A) (<a href="#traversable-class">Traversable</a> :A) (<a href="#traversable-class">Traversable</a> :B) &rArr; <a href="#traversable-class">Traversable</a> ((<a href="#freet-type">FreeT</a> :B) :A)</code>
-- <code><a href="#traversable-class">Traversable</a> :A &rArr; <a href="#traversable-class">Traversable</a> ((<a href="#freef-type">FreeF</a> :A) :B)</code>
-- <code><a href="#traversable-class">Traversable</a> :A &rArr; <a href="#traversable-class">Traversable</a> (<a href="#free-type">Free</a> :A)</code>
+- <code>(<a href="#monad-class">Monad</a> :M) (<a href="#traversable-class">Traversable</a> :M) (<a href="#traversable-class">Traversable</a> :F) &rArr; <a href="#traversable-class">Traversable</a> ((<a href="#freet-type">FreeT</a> :F) :M)</code>
+- <code><a href="#traversable-class">Traversable</a> :F &rArr; <a href="#traversable-class">Traversable</a> ((<a href="#freef-type">FreeF</a> :F) :A)</code>
+- <code><a href="#traversable-class">Traversable</a> :T &rArr; <a href="#traversable-class">Traversable</a> (<a href="#free-type">Free</a> :T)</code>
 - <code><a href="#traversable-class">Traversable</a> <a href="#list-type">List</a></code>
 - <code><a href="#traversable-class">Traversable</a> (<a href="#result-type">Result</a> :A)</code>
 - <code><a href="#traversable-class">Traversable</a> <a href="#optional-type">Optional</a></code>
@@ -3303,7 +3303,7 @@ Methods:
 ***
 
 #### <a href="#unwrappable-class"><code>Unwrappable</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L330-L346">src</a></sub></sup><a name="unwrappable-class"></a>
-<code><a href="#unwrappable-class">Unwrappable</a> :A</code>
+<code><a href="#unwrappable-class">Unwrappable</a> :CONTAINER</code>
 
 
 Containers which can be unwrapped to get access to their contents.
@@ -3320,7 +3320,7 @@ Typical `fail` continuations are:
 - Signal an error.
 
 Methods:
-- <code>UNWRAP-OR-ELSE :: ((:B &rarr; :C) &rarr; (<a href="#unit-type">Unit</a> &rarr; :C) &rarr; (:A :B) &rarr; :C)</code>
+- <code>UNWRAP-OR-ELSE :: ((:ELT &rarr; :RESULT) &rarr; (<a href="#unit-type">Unit</a> &rarr; :RESULT) &rarr; (:CONTAINER :ELT) &rarr; :RESULT)</code>
 <details>
 <summary>Instances</summary>
 
@@ -3372,7 +3372,7 @@ Is `x` greater than or equal to `y`?
 ***
 
 #### <a href="#>>-value"><code>(&gt;&gt; A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L244-L246">src</a></sub></sup><a name=">>-value"></a>
-<code>&forall; :A :B :C. <a href="#monad-class">Monad</a> :A &rArr; ((:A :B) &rarr; (:A :C) &rarr; (:A :C))</code>
+<code>&forall; :M :A :B. <a href="#monad-class">Monad</a> :M &rArr; ((:M :A) &rarr; (:M :B) &rarr; (:M :B))</code>
 
 Equivalent to `(>>= a (fn (_) b))`.
 
@@ -3381,7 +3381,7 @@ Equivalent to `(>>= a (fn (_) b))`.
 ***
 
 #### <a href="#as-optional-value"><code>(AS-OPTIONAL CONTAINER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L391-L395">src</a></sub></sup><a name="as-optional-value"></a>
-<code>&forall; :A :B. <a href="#unwrappable-class">Unwrappable</a> :A &rArr; ((:A :B) &rarr; (<a href="#optional-type">Optional</a> :B))</code>
+<code>&forall; :CONTAINER :ELT. <a href="#unwrappable-class">Unwrappable</a> :CONTAINER &rArr; ((:CONTAINER :ELT) &rarr; (<a href="#optional-type">Optional</a> :ELT))</code>
 
 Convert any Unwrappable container into an `Optional`, constructing Some on a successful unwrap and None on a failed unwrap.
 
@@ -3399,7 +3399,7 @@ Is `x` the default item of its type?
 ***
 
 #### <a href="#defaulting-unwrap-value"><code>(DEFAULTING-UNWRAP CONTAINER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L408-L412">src</a></sub></sup><a name="defaulting-unwrap-value"></a>
-<code>&forall; :A :B. (<a href="#unwrappable-class">Unwrappable</a> :A) (<a href="#default-class">Default</a> :B) &rArr; ((:A :B) &rarr; :B)</code>
+<code>&forall; :CONTAINER :ELEMENT. (<a href="#unwrappable-class">Unwrappable</a> :CONTAINER) (<a href="#default-class">Default</a> :ELEMENT) &rArr; ((:CONTAINER :ELEMENT) &rarr; :ELEMENT)</code>
 
 Unwrap an `unwrappable`, returning `(default)` of the wrapped type on failure.
 
@@ -3408,7 +3408,7 @@ Unwrap an `unwrappable`, returning `(default)` of the wrapped type on failure.
 ***
 
 #### <a href="#expect-value"><code>(EXPECT REASON CONTAINER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L358-L362">src</a></sub></sup><a name="expect-value"></a>
-<code>&forall; :A :B. <a href="#unwrappable-class">Unwrappable</a> :A &rArr; (<a href="#string-type">String</a> &rarr; (:A :B) &rarr; :B)</code>
+<code>&forall; :CONTAINER :ELEMENT. <a href="#unwrappable-class">Unwrappable</a> :CONTAINER &rArr; (<a href="#string-type">String</a> &rarr; (:CONTAINER :ELEMENT) &rarr; :ELEMENT)</code>
 
 Unwrap `container`, signaling an error with the description `reason` on failure.
 
@@ -3417,7 +3417,7 @@ Unwrap `container`, signaling an error with the description `reason` on failure.
 ***
 
 #### <a href="#join-value"><code>(JOIN M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L249-L251">src</a></sub></sup><a name="join-value"></a>
-<code>&forall; :A :B. <a href="#monad-class">Monad</a> :A &rArr; ((:A (:A :B)) &rarr; (:A :B))</code>
+<code>&forall; :M :A. <a href="#monad-class">Monad</a> :M &rArr; ((:M (:M :A)) &rarr; (:M :A))</code>
 
 Equivalent to `(>>= m id)`.
 
@@ -3426,7 +3426,7 @@ Equivalent to `(>>= m id)`.
 ***
 
 #### <a href="#map-fst-value"><code>(MAP-FST F B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L297-L299">src</a></sub></sup><a name="map-fst-value"></a>
-<code>&forall; :A :B :C :D. <a href="#bifunctor-class">Bifunctor</a> :C &rArr; ((:A &rarr; :B) &rarr; (:C :A :D) &rarr; (:C :B :D))</code>
+<code>&forall; :A :B :F :C. <a href="#bifunctor-class">Bifunctor</a> :F &rArr; ((:A &rarr; :B) &rarr; ((:F :A) :C) &rarr; ((:F :B) :C))</code>
 
 Map over the first argument of a `Bifunctor`.
 
@@ -3435,7 +3435,7 @@ Map over the first argument of a `Bifunctor`.
 ***
 
 #### <a href="#map-snd-value"><code>(MAP-SND F B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L302-L304">src</a></sub></sup><a name="map-snd-value"></a>
-<code>&forall; :A :B :C :D. <a href="#bifunctor-class">Bifunctor</a> :C &rArr; ((:A &rarr; :B) &rarr; (:C :D :A) &rarr; (:C :D :B))</code>
+<code>&forall; :B :C :F :A. <a href="#bifunctor-class">Bifunctor</a> :F &rArr; ((:B &rarr; :C) &rarr; ((:F :A) :B) &rarr; ((:F :A) :C))</code>
 
 Map over the second argument of a `Bifunctor`.
 
@@ -3462,7 +3462,7 @@ Does `a <> b` equal `b <> a`?
 ***
 
 #### <a href="#mconcat-value"><code>(MCONCAT A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L272-L274">src</a></sub></sup><a name="mconcat-value"></a>
-<code>&forall; :A :B. (<a href="#foldable-class">Foldable</a> :A) (<a href="#monoid-class">Monoid</a> :B) &rArr; ((:A :B) &rarr; :B)</code>
+<code>&forall; :F :A. (<a href="#foldable-class">Foldable</a> :F) (<a href="#monoid-class">Monoid</a> :A) &rArr; ((:F :A) &rarr; :A)</code>
 
 Fold a container of monoids into a single element.
 
@@ -3471,7 +3471,7 @@ Fold a container of monoids into a single element.
 ***
 
 #### <a href="#mconcatmap-value"><code>(MCONCATMAP F A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L277-L279">src</a></sub></sup><a name="mconcatmap-value"></a>
-<code>&forall; :A :B :C. (<a href="#foldable-class">Foldable</a> :C) (<a href="#monoid-class">Monoid</a> :B) &rArr; ((:A &rarr; :B) &rarr; (:C :A) &rarr; :B)</code>
+<code>&forall; :B :A :F. (<a href="#foldable-class">Foldable</a> :F) (<a href="#monoid-class">Monoid</a> :A) &rArr; ((:B &rarr; :A) &rarr; (:F :B) &rarr; :A)</code>
 
 Map a container to a container of monoids, and then fold that container into a single element.
 
@@ -3498,13 +3498,13 @@ Returns the lesser element of `x` and `y`.
 ***
 
 #### <a href="#sequence-value"><code>(SEQUENCE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L290-L290">src</a></sub></sup><a name="sequence-value"></a>
-<code>&forall; :A :B :C. (<a href="#traversable-class">Traversable</a> :A) (<a href="#applicative-class">Applicative</a> :B) &rArr; ((:A (:B :C)) &rarr; (:B (:A :C)))</code>
+<code>&forall; :T :F :B. (<a href="#traversable-class">Traversable</a> :T) (<a href="#applicative-class">Applicative</a> :F) &rArr; ((:T (:F :B)) &rarr; (:F (:T :B)))</code>
 
 
 ***
 
 #### <a href="#unwrap-value"><code>(UNWRAP CONTAINER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L367-L373">src</a></sub></sup><a name="unwrap-value"></a>
-<code>&forall; :A :B. <a href="#unwrappable-class">Unwrappable</a> :A &rArr; ((:A :B) &rarr; :B)</code>
+<code>&forall; :CONTAINER :ELEMENT. <a href="#unwrappable-class">Unwrappable</a> :CONTAINER &rArr; ((:CONTAINER :ELEMENT) &rarr; :ELEMENT)</code>
 
 Unwrap `container`, signaling an error on failure.
 
@@ -3513,7 +3513,7 @@ Unwrap `container`, signaling an error on failure.
 ***
 
 #### <a href="#unwrap-into-value"><code>(UNWRAP-INTO X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L376-L378">src</a></sub></sup><a name="unwrap-into-value"></a>
-<code>&forall; :A :B :C. <a href="#tryinto-class">TryInto</a> :B :C :A &rArr; (:B &rarr; :C)</code>
+<code>&forall; :C :A :B. <a href="#tryinto-class">TryInto</a> :A :B :C &rArr; (:A &rarr; :B)</code>
 
 Same as `tryInto` followed by `unwrap`.
 
@@ -3522,7 +3522,7 @@ Same as `tryInto` followed by `unwrap`.
 ***
 
 #### <a href="#with-default-value"><code>(WITH-DEFAULT DEFAULT CONTAINER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L384-L388">src</a></sub></sup><a name="with-default-value"></a>
-<code>&forall; :A :B. <a href="#unwrappable-class">Unwrappable</a> :B &rArr; (:A &rarr; (:B :A) &rarr; :A)</code>
+<code>&forall; :ELEMENT :CONTAINER. <a href="#unwrappable-class">Unwrappable</a> :CONTAINER &rArr; (:ELEMENT &rarr; (:CONTAINER :ELEMENT) &rarr; :ELEMENT)</code>
 
 Unwrap `container`, returning `default` on failure.
 
@@ -3662,13 +3662,13 @@ See `comparison-threshold` for more details.
 ### Values
 
 #### <a href="#flatmap-success-value"><code>(FLATMAP-SUCCESS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.lisp#L207-L207">src</a></sub></sup><a name="flatmap-success-value"></a>
-<code>&forall; :A :B :C :D. (<a href="#monad-class">Monad</a> :C) (<a href="#yielder-class">Yielder</a> :A) &rArr; ((:A :B) &rarr; (:B &rarr; (:C (:A :D))) &rarr; (:C (:A :D)))</code>
+<code>&forall; :Y :A :M :B. (<a href="#monad-class">Monad</a> :M) (<a href="#yielder-class">Yielder</a> :Y) &rArr; ((:Y :A) &rarr; (:A &rarr; (:M (:Y :B))) &rarr; (:M (:Y :B)))</code>
 
 
 ***
 
 #### <a href="#flatmap-successm-value"><code>(FLATMAP-SUCCESSM MVAL? F-&gt;MVAL?B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.lisp#L211-L216">src</a></sub></sup><a name="flatmap-successm-value"></a>
-<code>&forall; :A :B :C :D. (<a href="#monad-class">Monad</a> :A) (<a href="#yielder-class">Yielder</a> :B) &rArr; ((:A (:B :C)) &rarr; (:C &rarr; (:A (:B :D))) &rarr; (:A (:B :D)))</code>
+<code>&forall; :M :Y :A :B. (<a href="#monad-class">Monad</a> :M) (<a href="#yielder-class">Yielder</a> :Y) &rArr; ((:M (:Y :A)) &rarr; (:A &rarr; (:M (:Y :B))) &rarr; (:M (:Y :B)))</code>
 
 Evaluate MVAL?, and if the result yields a value, then flatmap F->MVAL?B
 over the value.
@@ -3678,7 +3678,7 @@ over the value.
 ***
 
 #### <a href="#if*-value"><code>(IF* VAL? M-TRUE M-FALSE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.lisp#L155-L160">src</a></sub></sup><a name="if*-value"></a>
-<code>&forall; :A :B :C. (<a href="#monad-class">Monad</a> :B) (<a href="#terminator-class">Terminator</a> :A) &rArr; (:A &rarr; (:B :C) &rarr; (:B :C) &rarr; (:B :C))</code>
+<code>&forall; :T :M :B. (<a href="#monad-class">Monad</a> :M) (<a href="#terminator-class">Terminator</a> :T) &rArr; (:T &rarr; (:M :B) &rarr; (:M :B) &rarr; (:M :B))</code>
 
 Choose between M-TRUE and M-FALSE based on VAL?. If (ended? VAL?) is true, run M-TRUE,
 else run M-FALSE.
@@ -3688,7 +3688,7 @@ else run M-FALSE.
 ***
 
 #### <a href="#if-val-value"><code>(IF-VAL VAL? F-MVAL M-NONE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.lisp#L164-L170">src</a></sub></sup><a name="if-val-value"></a>
-<code>&forall; :A :B :C :D. (<a href="#monad-class">Monad</a> :C) (<a href="#yielder-class">Yielder</a> :A) &rArr; ((:A :B) &rarr; (:B &rarr; (:C :D)) &rarr; (:C :D) &rarr; (:C :D))</code>
+<code>&forall; :Y :A :M :B. (<a href="#monad-class">Monad</a> :M) (<a href="#yielder-class">Yielder</a> :Y) &rArr; ((:Y :A) &rarr; (:A &rarr; (:M :B)) &rarr; (:M :B) &rarr; (:M :B))</code>
 
 If VAL? yields a value, apply F-MVAL to it. Otherwise, run M-NONE.
 
@@ -3697,7 +3697,7 @@ If VAL? yields a value, apply F-MVAL to it. Otherwise, run M-NONE.
 ***
 
 #### <a href="#if-valm-value"><code>(IF-VALM MVAL? F-MVAL M-NONE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.lisp#L184-L189">src</a></sub></sup><a name="if-valm-value"></a>
-<code>&forall; :A :B :C :D. (<a href="#monad-class">Monad</a> :A) (<a href="#yielder-class">Yielder</a> :B) &rArr; ((:A (:B :C)) &rarr; (:C &rarr; (:A :D)) &rarr; (:A :D) &rarr; (:A :D))</code>
+<code>&forall; :M :Y :A :B. (<a href="#monad-class">Monad</a> :M) (<a href="#yielder-class">Yielder</a> :Y) &rArr; ((:M (:Y :A)) &rarr; (:A &rarr; (:M :B)) &rarr; (:M :B) &rarr; (:M :B))</code>
 
 Evaluate MVAL? and dispatch to F-MVAL if the result yields a value.
 Otherwise evaluate M-NONE.
@@ -3707,7 +3707,7 @@ Otherwise evaluate M-NONE.
 ***
 
 #### <a href="#if-val_-value"><code>(IF-VAL_ VAL? F-MVAL M-NONE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.lisp#L174-L180">src</a></sub></sup><a name="if-val_-value"></a>
-<code>&forall; :A :B :C :D :E. (<a href="#monad-class">Monad</a> :C) (<a href="#yielder-class">Yielder</a> :A) &rArr; ((:A :B) &rarr; (:B &rarr; (:C :D)) &rarr; (:C :E) &rarr; (:C <a href="#unit-type">Unit</a>))</code>
+<code>&forall; :Y :A :M :B :C. (<a href="#monad-class">Monad</a> :M) (<a href="#yielder-class">Yielder</a> :Y) &rArr; ((:Y :A) &rarr; (:A &rarr; (:M :B)) &rarr; (:M :C) &rarr; (:M <a href="#unit-type">Unit</a>))</code>
 
 Like if-val, but discards the branch result and returns Unit.
 
@@ -3716,7 +3716,7 @@ Like if-val, but discards the branch result and returns Unit.
 ***
 
 #### <a href="#map-success-value"><code>(MAP-SUCCESS VAL? F-&gt;MB)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.lisp#L193-L195">src</a></sub></sup><a name="map-success-value"></a>
-<code>&forall; :A :B :C :D. (<a href="#monad-class">Monad</a> :C) (<a href="#yielder-class">Yielder</a> :A) &rArr; ((:A :B) &rarr; (:B &rarr; (:C :D)) &rarr; (:C (:A :D)))</code>
+<code>&forall; :Y :A :M :B. (<a href="#monad-class">Monad</a> :M) (<a href="#yielder-class">Yielder</a> :Y) &rArr; ((:Y :A) &rarr; (:A &rarr; (:M :B)) &rarr; (:M (:Y :B)))</code>
 
 Map F->MB over the successful/available value(s) of VAL? within the monad.
 
@@ -3725,7 +3725,7 @@ Map F->MB over the successful/available value(s) of VAL? within the monad.
 ***
 
 #### <a href="#map-successm-value"><code>(MAP-SUCCESSM MVAL? F-&gt;MB)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.lisp#L199-L203">src</a></sub></sup><a name="map-successm-value"></a>
-<code>&forall; :A :B :C :D. (<a href="#monad-class">Monad</a> :A) (<a href="#yielder-class">Yielder</a> :B) &rArr; ((:A (:B :C)) &rarr; (:C &rarr; (:A :D)) &rarr; (:A (:B :D)))</code>
+<code>&forall; :M :Y :A :B. (<a href="#monad-class">Monad</a> :M) (<a href="#yielder-class">Yielder</a> :Y) &rArr; ((:M (:Y :A)) &rarr; (:A &rarr; (:M :B)) &rarr; (:M (:Y :B)))</code>
 
 Evaluate MVAL? and map F->MB over the successful value(s) from inside the monad.
 
@@ -3734,7 +3734,7 @@ Evaluate MVAL? and map F->MB over the successful value(s) from inside the monad.
 ***
 
 #### <a href="#when-val-value"><code>(WHEN-VAL VAL? F-&gt;M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.lisp#L135-L143">src</a></sub></sup><a name="when-val-value"></a>
-<code>&forall; :A :B :C :D. (<a href="#monad-class">Monad</a> :C) (<a href="#yielder-class">Yielder</a> :A) &rArr; ((:A :B) &rarr; (:B &rarr; (:C :D)) &rarr; (:C <a href="#unit-type">Unit</a>))</code>
+<code>&forall; :Y :A :M :Z. (<a href="#monad-class">Monad</a> :M) (<a href="#yielder-class">Yielder</a> :Y) &rArr; ((:Y :A) &rarr; (:A &rarr; (:M :Z)) &rarr; (:M <a href="#unit-type">Unit</a>))</code>
 
 If VAL? yields a value, apply F->M to it. If not, do nothing. Always returns Unit.
 
@@ -3743,7 +3743,7 @@ If VAL? yields a value, apply F->M to it. If not, do nothing. Always returns Uni
 ***
 
 #### <a href="#when-valm-value"><code>(WHEN-VALM MVAL? F-&gt;M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.lisp#L147-L151">src</a></sub></sup><a name="when-valm-value"></a>
-<code>&forall; :A :B :C :D. (<a href="#monad-class">Monad</a> :A) (<a href="#yielder-class">Yielder</a> :B) &rArr; ((:A (:B :C)) &rarr; (:C &rarr; (:A :D)) &rarr; (:A <a href="#unit-type">Unit</a>))</code>
+<code>&forall; :M :Y :A :Z. (<a href="#monad-class">Monad</a> :M) (<a href="#yielder-class">Yielder</a> :Y) &rArr; ((:M (:Y :A)) &rarr; (:A &rarr; (:M :Z)) &rarr; (:M <a href="#unit-type">Unit</a>))</code>
 
 Evaluate MVAL?, and if it yields, run F->M on the value. Otherwise, do nothing.
 
@@ -3752,7 +3752,7 @@ Evaluate MVAL?, and if it yields, run F->M on the value. Otherwise, do nothing.
 ***
 
 #### <a href="#whenm-value"><code>(WHENM MTERM? MOP)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.lisp#L127-L131">src</a></sub></sup><a name="whenm-value"></a>
-<code>&forall; :A :B :C. (<a href="#monad-class">Monad</a> :A) (<a href="#terminator-class">Terminator</a> :B) &rArr; ((:A :B) &rarr; (:A :C) &rarr; (:A <a href="#unit-type">Unit</a>))</code>
+<code>&forall; :M :T :Z. (<a href="#monad-class">Monad</a> :M) (<a href="#terminator-class">Terminator</a> :T) &rArr; ((:M :T) &rarr; (:M :Z) &rarr; (:M <a href="#unit-type">Unit</a>))</code>
 
 Evaluate MTERM?, and if it indicates completion, run MOP, or do nothing.
 
@@ -3761,7 +3761,7 @@ Evaluate MTERM?, and if it indicates completion, run MOP, or do nothing.
 ***
 
 #### <a href="#when_-value"><code>(WHEN_ TERM? M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.lisp#L118-L123">src</a></sub></sup><a name="when_-value"></a>
-<code>&forall; :A :B :C. (<a href="#monad-class">Monad</a> :B) (<a href="#terminator-class">Terminator</a> :A) &rArr; (:A &rarr; (:B :C) &rarr; (:B <a href="#unit-type">Unit</a>))</code>
+<code>&forall; :T :M :Z. (<a href="#monad-class">Monad</a> :M) (<a href="#terminator-class">Terminator</a> :T) &rArr; (:T &rarr; (:M :Z) &rarr; (:M <a href="#unit-type">Unit</a>))</code>
 
 Run the monadic operation M when the terminator TERM? indicates completion,
 or do nothing.
@@ -3775,7 +3775,7 @@ or do nothing.
 ### Values
 
 #### <a href="#collect-value"><code>(COLLECT INTO-ITR FA-&gt;M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.lisp#L99-L109">src</a></sub></sup><a name="collect-value"></a>
-<code>&forall; :A :B :C :D. (<a href="#monad-class">Monad</a> :C) (<a href="#intoiterator-class">IntoIterator</a> :A :B) &rArr; (:A &rarr; (:B &rarr; (:C :D)) &rarr; (:C (<a href="#list-type">List</a> :D)))</code>
+<code>&forall; :I :A :M :Z. (<a href="#monad-class">Monad</a> :M) (<a href="#intoiterator-class">IntoIterator</a> :I :A) &rArr; (:I &rarr; (:A &rarr; (:M :Z)) &rarr; (:M (<a href="#list-type">List</a> :Z)))</code>
 
 Apply FA->M to each element produced by INTO-ITR and run the resulting monadic action.
 Collect the results.
@@ -3785,7 +3785,7 @@ Collect the results.
 ***
 
 #### <a href="#collect-val-value"><code>(COLLECT-VAL M-OPERATION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.lisp#L86-L96">src</a></sub></sup><a name="collect-val-value"></a>
-<code>&forall; :A :B :C. (<a href="#monad-class">Monad</a> :A) (<a href="#yielder-class">Yielder</a> :B) &rArr; ((:A (:B :C)) &rarr; (:A (<a href="#list-type">List</a> :C)))</code>
+<code>&forall; :M :Y :A. (<a href="#monad-class">Monad</a> :M) (<a href="#yielder-class">Yielder</a> :Y) &rArr; ((:M (:Y :A)) &rarr; (:M (<a href="#list-type">List</a> :A)))</code>
 
 Repeatedly run M-OPERATION, collecting each yielded value into a list until
 no value is yielded.
@@ -3795,7 +3795,7 @@ no value is yielded.
 ***
 
 #### <a href="#foreach-value"><code>(FOREACH INTO-ITR FA-&gt;M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.lisp#L112-L121">src</a></sub></sup><a name="foreach-value"></a>
-<code>&forall; :A :B :C :D. (<a href="#monad-class">Monad</a> :C) (<a href="#intoiterator-class">IntoIterator</a> :A :B) &rArr; (:A &rarr; (:B &rarr; (:C :D)) &rarr; (:C <a href="#unit-type">Unit</a>))</code>
+<code>&forall; :I :A :M :Z. (<a href="#monad-class">Monad</a> :M) (<a href="#intoiterator-class">IntoIterator</a> :I :A) &rArr; (:I &rarr; (:A &rarr; (:M :Z)) &rarr; (:M <a href="#unit-type">Unit</a>))</code>
 
 Apply FA->M to each element produced by INTO-ITR and run the resulting monadic action.
 Discards the return values and returns Unit.
@@ -3805,7 +3805,7 @@ Discards the return values and returns Unit.
 ***
 
 #### <a href="#loop-do-while-value"><code>(LOOP-DO-WHILE M-TERM? BODY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.lisp#L62-L71">src</a></sub></sup><a name="loop-do-while-value"></a>
-<code>&forall; :A :B :C. (<a href="#monad-class">Monad</a> :A) (<a href="#terminator-class">Terminator</a> :B) &rArr; ((:A :B) &rarr; (:A :C) &rarr; (:A <a href="#unit-type">Unit</a>))</code>
+<code>&forall; :M :T :A. (<a href="#monad-class">Monad</a> :M) (<a href="#terminator-class">Terminator</a> :T) &rArr; ((:M :T) &rarr; (:M :A) &rarr; (:M <a href="#unit-type">Unit</a>))</code>
 
 Before each iteration, evaluate M-TERM?. If it indicates completion, stop; otherwise run BODY.
 Returns Unit.
@@ -3815,7 +3815,7 @@ Returns Unit.
 ***
 
 #### <a href="#loop-times-value"><code>(LOOP-TIMES N M-OPERATION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.lisp#L74-L82">src</a></sub></sup><a name="loop-times-value"></a>
-<code>&forall; :A :B. <a href="#monad-class">Monad</a> :A &rArr; (<a href="#ufix-type">UFix</a> &rarr; (<a href="#ufix-type">UFix</a> &rarr; (:A :B)) &rarr; (:A <a href="#unit-type">Unit</a>))</code>
+<code>&forall; :M :A. <a href="#monad-class">Monad</a> :M &rArr; (<a href="#ufix-type">UFix</a> &rarr; (<a href="#ufix-type">UFix</a> &rarr; (:M :A)) &rarr; (:M <a href="#unit-type">Unit</a>))</code>
 
 Repeat M-OPERATION N times. Passes the current index (starting at 0) to
 M-OPERATION. Returns Unit.
@@ -3825,7 +3825,7 @@ M-OPERATION. Returns Unit.
 ***
 
 #### <a href="#loop-while-value"><code>(LOOP-WHILE M-OPERATION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.lisp#L39-L45">src</a></sub></sup><a name="loop-while-value"></a>
-<code>&forall; :A :B. (<a href="#monad-class">Monad</a> :A) (<a href="#terminator-class">Terminator</a> :B) &rArr; ((:A :B) &rarr; (:A <a href="#unit-type">Unit</a>))</code>
+<code>&forall; :M :T. (<a href="#monad-class">Monad</a> :M) (<a href="#terminator-class">Terminator</a> :T) &rArr; ((:M :T) &rarr; (:M <a href="#unit-type">Unit</a>))</code>
 
 Repeat M-OPERATION until it returns a terminated value. Returns Unit.
 
@@ -3834,7 +3834,7 @@ Repeat M-OPERATION until it returns a terminated value. Returns Unit.
 ***
 
 #### <a href="#loop-while-valm-value"><code>(LOOP-WHILE-VALM M-OPERATION F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.lisp#L48-L59">src</a></sub></sup><a name="loop-while-valm-value"></a>
-<code>&forall; :A :B :C :D. (<a href="#monad-class">Monad</a> :A) (<a href="#yielder-class">Yielder</a> :B) &rArr; ((:A (:B :C)) &rarr; (:C &rarr; (:A :D)) &rarr; (:A <a href="#unit-type">Unit</a>))</code>
+<code>&forall; :M :Y :A :B. (<a href="#monad-class">Monad</a> :M) (<a href="#yielder-class">Yielder</a> :Y) &rArr; ((:M (:Y :A)) &rarr; (:A &rarr; (:M :B)) &rarr; (:M <a href="#unit-type">Unit</a>))</code>
 
 Repeat M-OPERATION while it yields a value, running the yielded value applied to F.
 Returns Unit.
@@ -3872,13 +3872,13 @@ Wraps BODY in a 'do' block. Returns Unit.
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#functor-class">Functor</a> :A &rArr; <a href="#functor-class">Functor</a> (<a href="#loopt-type">LoopT</a> :A)</code>
-- <code><a href="#monad-class">Monad</a> :A &rArr; <a href="#applicative-class">Applicative</a> (<a href="#loopt-type">LoopT</a> :A)</code>
-- <code><a href="#monad-class">Monad</a> :A &rArr; <a href="#monad-class">Monad</a> (<a href="#loopt-type">LoopT</a> :A)</code>
-- <code><a href="#monadenvironment-class">MonadEnvironment</a> :A :B &rArr; <a href="#monadenvironment-class">MonadEnvironment</a> :A (<a href="#loopt-type">LoopT</a> :B)</code>
-- <code><a href="#monadstate-class">MonadState</a> :A :B &rArr; <a href="#monadstate-class">MonadState</a> :A (<a href="#loopt-type">LoopT</a> :B)</code>
+- <code><a href="#functor-class">Functor</a> :M &rArr; <a href="#functor-class">Functor</a> (<a href="#loopt-type">LoopT</a> :M)</code>
+- <code><a href="#monad-class">Monad</a> :M &rArr; <a href="#applicative-class">Applicative</a> (<a href="#loopt-type">LoopT</a> :M)</code>
+- <code><a href="#monad-class">Monad</a> :M &rArr; <a href="#monad-class">Monad</a> (<a href="#loopt-type">LoopT</a> :M)</code>
+- <code><a href="#monadenvironment-class">MonadEnvironment</a> :E :M &rArr; <a href="#monadenvironment-class">MonadEnvironment</a> :E (<a href="#loopt-type">LoopT</a> :M)</code>
+- <code><a href="#monadstate-class">MonadState</a> :S :M &rArr; <a href="#monadstate-class">MonadState</a> :S (<a href="#loopt-type">LoopT</a> :M)</code>
 - <code><a href="#monadtransformer-class">MonadTransformer</a> <a href="#loopt-type">LoopT</a></code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> ((<a href="#loopt-type">LoopT</a> :A) :B)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> ((<a href="#loopt-type">LoopT</a> :|0|) :|1|)</code>
 
 </details>
 
@@ -3889,7 +3889,7 @@ Wraps BODY in a 'do' block. Returns Unit.
 ### Values
 
 #### <a href="#collect-value"><code>(COLLECT BODY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.lisp#L229-L239">src</a></sub></sup><a name="collect-value"></a>
-<code>&forall; :A :B. <a href="#monad-class">Monad</a> :A &rArr; (((<a href="#loopt-type">LoopT</a> :A) :B) &rarr; (:A (<a href="#list-type">List</a> :B)))</code>
+<code>&forall; :M :A. <a href="#monad-class">Monad</a> :M &rArr; (((<a href="#loopt-type">LoopT</a> :M) :A) &rarr; (:M (<a href="#list-type">List</a> :A)))</code>
 
 Run BODY in a loop, collecting each value it produces into a list in encounter order.
 Stops when BODY breaks. Continues skip the rest of the iteration. Returns the collected list.
@@ -3899,7 +3899,7 @@ Stops when BODY breaks. Continues skip the rest of the iteration. Returns the co
 ***
 
 #### <a href="#collect-val-value"><code>(COLLECT-VAL BODY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.lisp#L242-L257">src</a></sub></sup><a name="collect-val-value"></a>
-<code>&forall; :A :B :C. (<a href="#monad-class">Monad</a> :A) (<a href="#yielder-class">Yielder</a> :B) &rArr; (((<a href="#loopt-type">LoopT</a> :A) (:B :C)) &rarr; (:A (<a href="#list-type">List</a> :C)))</code>
+<code>&forall; :M :Y :A. (<a href="#monad-class">Monad</a> :M) (<a href="#yielder-class">Yielder</a> :Y) &rArr; (((<a href="#loopt-type">LoopT</a> :M) (:Y :A)) &rarr; (:M (<a href="#list-type">List</a> :A)))</code>
 
 Run BODY in a loop, adding each available value it yields to a list.
 Stops when BODY yields no value or breaks. Continue skips the rest of the iteration.
@@ -3910,7 +3910,7 @@ Returns the collected list.
 ***
 
 #### <a href="#foreach-value"><code>(FOREACH LST FA-&gt;LPT-M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.lisp#L260-L271">src</a></sub></sup><a name="foreach-value"></a>
-<code>&forall; :A :B :C. <a href="#monad-class">Monad</a> :B &rArr; ((<a href="#list-type">List</a> :A) &rarr; (:A &rarr; ((<a href="#loopt-type">LoopT</a> :B) :C)) &rarr; (:B <a href="#unit-type">Unit</a>))</code>
+<code>&forall; :A :M :Z. <a href="#monad-class">Monad</a> :M &rArr; ((<a href="#list-type">List</a> :A) &rarr; (:A &rarr; ((<a href="#loopt-type">LoopT</a> :M) :Z)) &rarr; (:M <a href="#unit-type">Unit</a>))</code>
 
 For each element of LST, run FA->LPT-M on it. Break stops the iteration.
 Continue skips to the next element. Discards return values and returns Unit.
@@ -3920,7 +3920,7 @@ Continue skips to the next element. Discards return values and returns Unit.
 ***
 
 #### <a href="#loop-do-while-value"><code>(LOOP-DO-WHILE M-TERM? BODY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.lisp#L201-L212">src</a></sub></sup><a name="loop-do-while-value"></a>
-<code>&forall; :A :B :C. (<a href="#monad-class">Monad</a> :A) (<a href="#terminator-class">Terminator</a> :B) &rArr; ((:A :B) &rarr; ((<a href="#loopt-type">LoopT</a> :A) :C) &rarr; (:A <a href="#unit-type">Unit</a>))</code>
+<code>&forall; :M :T :A. (<a href="#monad-class">Monad</a> :M) (<a href="#terminator-class">Terminator</a> :T) &rArr; ((:M :T) &rarr; ((<a href="#loopt-type">LoopT</a> :M) :A) &rarr; (:M <a href="#unit-type">Unit</a>))</code>
 
 Before each iteration, evaluate M-TERM?. If it indicates completion, stop; otherwise run BODY.
 Respects break and continue within BODY. Returns Unit.
@@ -3930,7 +3930,7 @@ Respects break and continue within BODY. Returns Unit.
 ***
 
 #### <a href="#loop-times-value"><code>(LOOP-TIMES N BODY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.lisp#L215-L226">src</a></sub></sup><a name="loop-times-value"></a>
-<code>&forall; :A :B. <a href="#monad-class">Monad</a> :A &rArr; (<a href="#ufix-type">UFix</a> &rarr; (<a href="#ufix-type">UFix</a> &rarr; ((<a href="#loopt-type">LoopT</a> :A) :B)) &rarr; (:A <a href="#unit-type">Unit</a>))</code>
+<code>&forall; :M :A. <a href="#monad-class">Monad</a> :M &rArr; (<a href="#ufix-type">UFix</a> &rarr; (<a href="#ufix-type">UFix</a> &rarr; ((<a href="#loopt-type">LoopT</a> :M) :A)) &rarr; (:M <a href="#unit-type">Unit</a>))</code>
 
 Repeat BODY N times. Passes the current index (starting at 0) to BODY.
 Returns Unit.
@@ -3940,7 +3940,7 @@ Returns Unit.
 ***
 
 #### <a href="#loop-while-value"><code>(LOOP-WHILE BODY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.lisp#L188-L198">src</a></sub></sup><a name="loop-while-value"></a>
-<code>&forall; :A :B. (<a href="#monad-class">Monad</a> :A) (<a href="#terminator-class">Terminator</a> :B) &rArr; (((<a href="#loopt-type">LoopT</a> :A) :B) &rarr; (:A <a href="#unit-type">Unit</a>))</code>
+<code>&forall; :M :T. (<a href="#monad-class">Monad</a> :M) (<a href="#terminator-class">Terminator</a> :T) &rArr; (((<a href="#loopt-type">LoopT</a> :M) :T) &rarr; (:M <a href="#unit-type">Unit</a>))</code>
 
 Run BODY repeatedly until it returns a terminated value. Returns Unit.
 
@@ -3949,7 +3949,7 @@ Run BODY repeatedly until it returns a terminated value. Returns Unit.
 ***
 
 #### <a href="#loop_-value"><code>(LOOP_ BODY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.lisp#L179-L185">src</a></sub></sup><a name="loop_-value"></a>
-<code>&forall; :A :B. <a href="#monad-class">Monad</a> :A &rArr; (((<a href="#loopt-type">LoopT</a> :A) :B) &rarr; (:A <a href="#unit-type">Unit</a>))</code>
+<code>&forall; :M :A. <a href="#monad-class">Monad</a> :M &rArr; (((<a href="#loopt-type">LoopT</a> :M) :A) &rarr; (:M <a href="#unit-type">Unit</a>))</code>
 
 Run BODY forever, until it signals a break. Any produced values are ignored. Returns Unit.
 
@@ -3958,7 +3958,7 @@ Run BODY forever, until it signals a break. Any produced values are ignored. Ret
 ***
 
 #### <a href="#once-value"><code>(ONCE LP-M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.lisp#L275-L280">src</a></sub></sup><a name="once-value"></a>
-<code>&forall; :A :B. <a href="#monad-class">Monad</a> :A &rArr; (((<a href="#loopt-type">LoopT</a> :A) :B) &rarr; (:A <a href="#unit-type">Unit</a>))</code>
+<code>&forall; :M :A. <a href="#monad-class">Monad</a> :M &rArr; (((<a href="#loopt-type">LoopT</a> :M) :A) &rarr; (:M <a href="#unit-type">Unit</a>))</code>
 
 Run an operation exactly once. Continue or break will both immediately end
 execution in the operation. Returns Unit.
@@ -3968,7 +3968,7 @@ execution in the operation. Returns Unit.
 ***
 
 #### <a href="#unwrap-loop-value"><code>(UNWRAP-LOOP (LOOPT M-STP))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.lisp#L83-L86">src</a></sub></sup><a name="unwrap-loop-value"></a>
-<code>&forall; :A :B. (((<a href="#loopt-type">LoopT</a> :A) :B) &rarr; (:A (<a href="#step-type">Step</a> :B)))</code>
+<code>&forall; :M :A. (((<a href="#loopt-type">LoopT</a> :M) :A) &rarr; (:M (<a href="#step-type">Step</a> :A)))</code>
 
 Advance a LoopT computation by one step, returning whether it asked to continue,
 break, or produced a value.
@@ -3978,7 +3978,7 @@ break, or produced a value.
 ***
 
 #### <a href="#break-loop-value"><code>BREAK-LOOP</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.lisp#L90-L92">src</a></sub></sup><a name="break-loop-value"></a>
-<code>&forall; :A :B. <a href="#monad-class">Monad</a> :A &rArr; ((<a href="#loopt-type">LoopT</a> :A) :B)</code>
+<code>&forall; :M :A. <a href="#monad-class">Monad</a> :M &rArr; ((<a href="#loopt-type">LoopT</a> :M) :A)</code>
 
 Signal that the loop should terminate immediately.
 
@@ -3987,7 +3987,7 @@ Signal that the loop should terminate immediately.
 ***
 
 #### <a href="#continue-loop-value"><code>CONTINUE-LOOP</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.lisp#L96-L98">src</a></sub></sup><a name="continue-loop-value"></a>
-<code>&forall; :A :B. <a href="#monad-class">Monad</a> :A &rArr; ((<a href="#loopt-type">LoopT</a> :A) :B)</code>
+<code>&forall; :M :A. <a href="#monad-class">Monad</a> :M &rArr; ((<a href="#loopt-type">LoopT</a> :M) :A)</code>
 
 Signal that the current iteration should be skipped and the loop should continue.
 
@@ -4212,7 +4212,7 @@ Represents a file stream, using `cl:file-stream`.
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#filestream-type">FileStream</a> :A)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#filestream-type">FileStream</a> :|0|)</code>
 
 </details>
 
@@ -4326,7 +4326,7 @@ Closes a FileStream and aborts all operations..
 ***
 
 #### <a href="#append-to-file!-value"><code>(APPEND-TO-FILE! PATH DATA)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L715-L719">src</a></sub></sup><a name="append-to-file!-value"></a>
-<code>&forall; :A :B. (<a href="#runtimerepr-class">RuntimeRepr</a> :B) (<a href="#into-class">Into</a> :A <a href="#pathname-type">Pathname</a>) (<a href="#file-class">File</a> :B) &rArr; (:A &rarr; (<a href="#vector-type">Vector</a> :B) &rarr; (<a href="#result-type">Result</a> <a href="#fileerror-type">FileError</a> <a href="#unit-type">Unit</a>))</code>
+<code>&forall; :P :A. (<a href="#runtimerepr-class">RuntimeRepr</a> :A) (<a href="#into-class">Into</a> :P <a href="#pathname-type">Pathname</a>) (<a href="#file-class">File</a> :A) &rArr; (:P &rarr; (<a href="#vector-type">Vector</a> :A) &rarr; (<a href="#result-type">Result</a> <a href="#fileerror-type">FileError</a> <a href="#unit-type">Unit</a>))</code>
 
 Opens and appends a file with data of type :a.
 
@@ -4632,7 +4632,7 @@ Writes a `string` to a FileStream of type Char.
 ***
 
 #### <a href="#write-to-file!-value"><code>(WRITE-TO-FILE! PATH DATA)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.lisp#L727-L731">src</a></sub></sup><a name="write-to-file!-value"></a>
-<code>&forall; :A :B. (<a href="#runtimerepr-class">RuntimeRepr</a> :B) (<a href="#into-class">Into</a> :A <a href="#pathname-type">Pathname</a>) (<a href="#file-class">File</a> :B) &rArr; (:A &rarr; (<a href="#vector-type">Vector</a> :B) &rarr; (<a href="#result-type">Result</a> <a href="#fileerror-type">FileError</a> <a href="#unit-type">Unit</a>))</code>
+<code>&forall; :P :A. (<a href="#runtimerepr-class">RuntimeRepr</a> :A) (<a href="#into-class">Into</a> :P <a href="#pathname-type">Pathname</a>) (<a href="#file-class">File</a> :A) &rArr; (:P &rarr; (<a href="#vector-type">Vector</a> :A) &rarr; (<a href="#result-type">Result</a> <a href="#fileerror-type">FileError</a> <a href="#unit-type">Unit</a>))</code>
 
 Opens and writes to a file with data of type :a. Supersedes existing data on the file.
 
@@ -4663,7 +4663,7 @@ Is `a` not equal to `b`?
 ***
 
 #### <a href="#asum-value"><code>(ASUM XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L181-L183">src</a></sub></sup><a name="asum-value"></a>
-<code>&forall; :A :B :C. (<a href="#alternative-class">Alternative</a> :B) (<a href="#foldable-class">Foldable</a> :A) &rArr; ((:A (:B :C)) &rarr; (:B :C))</code>
+<code>&forall; :T :F :A. (<a href="#alternative-class">Alternative</a> :F) (<a href="#foldable-class">Foldable</a> :T) &rArr; ((:T (:F :A)) &rarr; (:F :A))</code>
 
 Fold over a list using `alt`.
 
@@ -4672,7 +4672,7 @@ Fold over a list using `alt`.
 ***
 
 #### <a href="#bracket-value"><code>(BRACKET INIT EXIT BODY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L226-L235">src</a></sub></sup><a name="bracket-value"></a>
-<code>&forall; :A :B :C :D. <a href="#monad-class">Monad</a> :A &rArr; ((:A :B) &rarr; (:B &rarr; (:A :C)) &rarr; (:B &rarr; (:A :D)) &rarr; (:A :D))</code>
+<code>&forall; :M :A :B :C. <a href="#monad-class">Monad</a> :M &rArr; ((:M :A) &rarr; (:A &rarr; (:M :B)) &rarr; (:A &rarr; (:M :C)) &rarr; (:M :C))</code>
 
 Bracket takes an initial state, performs a body of operations, and then forces a safe exit.
 
@@ -4694,7 +4694,7 @@ Compute the complement of a unary Boolean function.
 ***
 
 #### <a href="#compose-value"><code>(COMPOSE F G X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L104-L106">src</a></sub></sup><a name="compose-value"></a>
-<code>&forall; :A :B :C. ((:A &rarr; :B) &rarr; (:C &rarr; :A) &rarr; :C &rarr; :B)</code>
+<code>&forall; :B :C :A. ((:B &rarr; :C) &rarr; (:A &rarr; :B) &rarr; :A &rarr; :C)</code>
 
 Equivalent to `(f (g x))`.
 
@@ -4721,7 +4721,7 @@ A function that always returns its first argument.
 ***
 
 #### <a href="#curry-value"><code>(CURRY FUNC LEFT RIGHT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L153-L155">src</a></sub></sup><a name="curry-value"></a>
-<code>&forall; :A :B :C. (((<a href="#tuple-type">Tuple</a> :A :B) &rarr; :C) &rarr; :A &rarr; :B &rarr; :C)</code>
+<code>&forall; :LEFT :RIGHT :RESULT. (((<a href="#tuple-type">Tuple</a> :LEFT :RIGHT) &rarr; :RESULT) &rarr; :LEFT &rarr; :RIGHT &rarr; :RESULT)</code>
 
 Take a function whose input is a tuple and enable curried application of the left and right parameters, equivalent to `(func (Tuple left right))`.
 
@@ -4773,7 +4773,7 @@ A function that always returns its argument.
 ***
 
 #### <a href="#msum-value"><code>(MSUM XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L176-L178">src</a></sub></sup><a name="msum-value"></a>
-<code>&forall; :A :B. (<a href="#monoid-class">Monoid</a> :B) (<a href="#foldable-class">Foldable</a> :A) &rArr; ((:A :B) &rarr; :B)</code>
+<code>&forall; :T :A. (<a href="#monoid-class">Monoid</a> :A) (<a href="#foldable-class">Foldable</a> :T) &rArr; ((:T :A) &rarr; :A)</code>
 
 Fold over a list using `<>`.
 
@@ -4782,7 +4782,7 @@ Fold over a list using `<>`.
 ***
 
 #### <a href="#pair-with-value"><code>(PAIR-WITH FUNC LEFT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L165-L167">src</a></sub></sup><a name="pair-with-value"></a>
-<code>&forall; :A :B. ((:A &rarr; :B) &rarr; :A &rarr; (<a href="#tuple-type">Tuple</a> :A :B))</code>
+<code>&forall; :LEFT :RIGHT. ((:LEFT &rarr; :RIGHT) &rarr; :LEFT &rarr; (<a href="#tuple-type">Tuple</a> :LEFT :RIGHT))</code>
 
 Create a `Tuple` of the form `(Tuple left (func left))`.
 
@@ -4800,7 +4800,7 @@ Print the String representation of `item` to `cl:*standard-output*`.
 ***
 
 #### <a href="#reduce-value"><code>(REDUCE F Y XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L98-L100">src</a></sub></sup><a name="reduce-value"></a>
-<code>&forall; :A :B :C. <a href="#foldable-class">Foldable</a> :C &rArr; ((:A &rarr; :B &rarr; :B) &rarr; :B &rarr; (:C :A) &rarr; :B)</code>
+<code>&forall; :A :B :F. <a href="#foldable-class">Foldable</a> :F &rArr; ((:A &rarr; :B &rarr; :B) &rarr; :B &rarr; (:F :A) &rarr; :B)</code>
 
 The same as `fold` but with the argument order swapped to match `cl:reduce`
 
@@ -4827,7 +4827,7 @@ Print a line to `cl:*standard-output*` in the form "{STR}: {ITEM}".
 ***
 
 #### <a href="#uncurry-value"><code>(UNCURRY FUNC TPL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.lisp#L158-L162">src</a></sub></sup><a name="uncurry-value"></a>
-<code>&forall; :A :B :C. ((:A &rarr; :B &rarr; :C) &rarr; (<a href="#tuple-type">Tuple</a> :A :B) &rarr; :C)</code>
+<code>&forall; :LEFT :RIGHT :RESULT. ((:LEFT &rarr; :RIGHT &rarr; :RESULT) &rarr; (<a href="#tuple-type">Tuple</a> :LEFT :RIGHT) &rarr; :RESULT)</code>
 
 Take a function with two currying parameters and enable their input as a single `Tuple`.
 
@@ -4899,14 +4899,14 @@ Immutable map (also known as a dictionary or dict) using hashes. Implemented as 
 <details>
 <summary>Instances</summary>
 
-- <code>(<a href="#eq-class">Eq</a> :A) (<a href="#eq-class">Eq</a> :B) (<a href="#hash-class">Hash</a> :A) &rArr; <a href="#eq-class">Eq</a> (<a href="#hashmap-type">HashMap</a> :A :B)</code>
-- <code>(<a href="#hash-class">Hash</a> :A) (<a href="#hash-class">Hash</a> :B) &rArr; <a href="#hash-class">Hash</a> (<a href="#hashmap-type">HashMap</a> :A :B)</code>
-- <code><a href="#functor-class">Functor</a> (<a href="#hashmap-type">HashMap</a> :A)</code>
-- <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#hashmap-type">HashMap</a> :A :B) (<a href="#tuple-type">Tuple</a> :A :B)</code>
-- <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#monoid-class">Monoid</a> (<a href="#hashmap-type">HashMap</a> :A :B)</code>
-- <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#semigroup-class">Semigroup</a> (<a href="#hashmap-type">HashMap</a> :A :B)</code>
-- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#hashmap-type">HashMap</a> :A :B) (<a href="#tuple-type">Tuple</a> :A :B)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#hashmap-type">HashMap</a> :A :B)</code>
+- <code>(<a href="#eq-class">Eq</a> :K) (<a href="#eq-class">Eq</a> :V) (<a href="#hash-class">Hash</a> :K) &rArr; <a href="#eq-class">Eq</a> (<a href="#hashmap-type">HashMap</a> :K :V)</code>
+- <code>(<a href="#hash-class">Hash</a> :K) (<a href="#hash-class">Hash</a> :V) &rArr; <a href="#hash-class">Hash</a> (<a href="#hashmap-type">HashMap</a> :K :V)</code>
+- <code><a href="#functor-class">Functor</a> (<a href="#hashmap-type">HashMap</a> :KEY)</code>
+- <code><a href="#hash-class">Hash</a> :K &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#hashmap-type">HashMap</a> :K :V) (<a href="#tuple-type">Tuple</a> :K :V)</code>
+- <code><a href="#hash-class">Hash</a> :K &rArr; <a href="#monoid-class">Monoid</a> (<a href="#hashmap-type">HashMap</a> :K :V)</code>
+- <code><a href="#hash-class">Hash</a> :K &rArr; <a href="#semigroup-class">Semigroup</a> (<a href="#hashmap-type">HashMap</a> :K :V)</code>
+- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#hashmap-type">HashMap</a> :K :V) (<a href="#tuple-type">Tuple</a> :K :V)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#hashmap-type">HashMap</a> :|0| :|1|)</code>
 
 </details>
 
@@ -4917,7 +4917,7 @@ Immutable map (also known as a dictionary or dict) using hashes. Implemented as 
 ### Values
 
 #### <a href="#adjoin-value"><code>(ADJOIN HM KEY VAL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L494-L497">src</a></sub></sup><a name="adjoin-value"></a>
-<code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashmap-type">HashMap</a> :A :B) &rarr; :A &rarr; :B &rarr; (<a href="#hashmap-type">HashMap</a> :A :B))</code>
+<code>&forall; :K :V. <a href="#hash-class">Hash</a> :K &rArr; ((<a href="#hashmap-type">HashMap</a> :K :V) &rarr; :K &rarr; :V &rarr; (<a href="#hashmap-type">HashMap</a> :K :V))</code>
 
 Returns a hashmap that has a new entry of (`key`, `val`) added to `hm`.
 If `hm` alreay contains an entry with `key`, however, `hm` is returned as is.
@@ -4927,7 +4927,7 @@ If `hm` alreay contains an entry with `key`, however, `hm` is returned as is.
 ***
 
 #### <a href="#count-value"><code>(COUNT HM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L354-L363">src</a></sub></sup><a name="count-value"></a>
-<code>&forall; :A :B. ((<a href="#hashmap-type">HashMap</a> :A :B) &rarr; <a href="#integer-type">Integer</a>)</code>
+<code>&forall; :K :V. ((<a href="#hashmap-type">HashMap</a> :K :V) &rarr; <a href="#integer-type">Integer</a>)</code>
 
 Returns the number of entries in HM.
 
@@ -4936,7 +4936,7 @@ Returns the number of entries in HM.
 ***
 
 #### <a href="#difference-value"><code>(DIFFERENCE A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L769-L771">src</a></sub></sup><a name="difference-value"></a>
-<code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashmap-type">HashMap</a> :A :B) &rarr; (<a href="#hashmap-type">HashMap</a> :A :B) &rarr; (<a href="#hashmap-type">HashMap</a> :A :B))</code>
+<code>&forall; :K :V. <a href="#hash-class">Hash</a> :K &rArr; ((<a href="#hashmap-type">HashMap</a> :K :V) &rarr; (<a href="#hashmap-type">HashMap</a> :K :V) &rarr; (<a href="#hashmap-type">HashMap</a> :K :V))</code>
 
 Returns a HashMap that contains mappings in `a` but not in `b`.
 
@@ -4945,7 +4945,7 @@ Returns a HashMap that contains mappings in `a` but not in `b`.
 ***
 
 #### <a href="#empty?-value"><code>(EMPTY? HM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L344-L348">src</a></sub></sup><a name="empty?-value"></a>
-<code>&forall; :A :B. ((<a href="#hashmap-type">HashMap</a> :A :B) &rarr; <a href="#boolean-type">Boolean</a>)</code>
+<code>&forall; :K :V. ((<a href="#hashmap-type">HashMap</a> :K :V) &rarr; <a href="#boolean-type">Boolean</a>)</code>
 
 Returns True if a hashmap HM is empty, False if not.
 
@@ -4954,7 +4954,7 @@ Returns True if a hashmap HM is empty, False if not.
 ***
 
 #### <a href="#entries-value"><code>(ENTRIES HM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L707-L709">src</a></sub></sup><a name="entries-value"></a>
-<code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashmap-type">HashMap</a> :A :B) &rarr; (<a href="#iterator-type">Iterator</a> (<a href="#tuple-type">Tuple</a> :A :B)))</code>
+<code>&forall; :K :V. <a href="#hash-class">Hash</a> :K &rArr; ((<a href="#hashmap-type">HashMap</a> :K :V) &rarr; (<a href="#iterator-type">Iterator</a> (<a href="#tuple-type">Tuple</a> :K :V)))</code>
 
 Returns an iterator over all entries in hashmap hm.
 
@@ -4963,7 +4963,7 @@ Returns an iterator over all entries in hashmap hm.
 ***
 
 #### <a href="#insert-value"><code>(INSERT HM KEY VAL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L486-L489">src</a></sub></sup><a name="insert-value"></a>
-<code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashmap-type">HashMap</a> :A :B) &rarr; :A &rarr; :B &rarr; (<a href="#hashmap-type">HashMap</a> :A :B))</code>
+<code>&forall; :K :V. <a href="#hash-class">Hash</a> :K &rArr; ((<a href="#hashmap-type">HashMap</a> :K :V) &rarr; :K &rarr; :V &rarr; (<a href="#hashmap-type">HashMap</a> :K :V))</code>
 
 Returns a hashmap that has a new entry of (KEY, VAL) added to HM.  If HM
 contains an entry with KEY, the new hashmap replaces it for the new entry.
@@ -4973,7 +4973,7 @@ contains an entry with KEY, the new hashmap replaces it for the new entry.
 ***
 
 #### <a href="#intersection-value"><code>(INTERSECTION A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L756-L766">src</a></sub></sup><a name="intersection-value"></a>
-<code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashmap-type">HashMap</a> :A :B) &rarr; (<a href="#hashmap-type">HashMap</a> :A :B) &rarr; (<a href="#hashmap-type">HashMap</a> :A :B))</code>
+<code>&forall; :K :V. <a href="#hash-class">Hash</a> :K &rArr; ((<a href="#hashmap-type">HashMap</a> :K :V) &rarr; (<a href="#hashmap-type">HashMap</a> :K :V) &rarr; (<a href="#hashmap-type">HashMap</a> :K :V))</code>
 
 Construct a HashMap containing all the mappings whose key is in both A and B.
 
@@ -4984,7 +4984,7 @@ The entries from A remains in the result.
 ***
 
 #### <a href="#keys-value"><code>(KEYS HM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L695-L697">src</a></sub></sup><a name="keys-value"></a>
-<code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashmap-type">HashMap</a> :A :B) &rarr; (<a href="#iterator-type">Iterator</a> :A))</code>
+<code>&forall; :K :V. <a href="#hash-class">Hash</a> :K &rArr; ((<a href="#hashmap-type">HashMap</a> :K :V) &rarr; (<a href="#iterator-type">Iterator</a> :K))</code>
 
 Returns an iterator over all the keys in a hashmap hm.
 
@@ -4993,7 +4993,7 @@ Returns an iterator over all the keys in a hashmap hm.
 ***
 
 #### <a href="#lookup-value"><code>(LOOKUP HM KEY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L367-L388">src</a></sub></sup><a name="lookup-value"></a>
-<code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashmap-type">HashMap</a> :A :B) &rarr; :A &rarr; (<a href="#optional-type">Optional</a> :B))</code>
+<code>&forall; :K :V. <a href="#hash-class">Hash</a> :K &rArr; ((<a href="#hashmap-type">HashMap</a> :K :V) &rarr; :K &rarr; (<a href="#optional-type">Optional</a> :V))</code>
 
 Returns a value associated with KEY in the hashmap HM.
 
@@ -5002,7 +5002,7 @@ Returns a value associated with KEY in the hashmap HM.
 ***
 
 #### <a href="#modify-value"><code>(MODIFY HM KEY F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L626-L628">src</a></sub></sup><a name="modify-value"></a>
-<code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashmap-type">HashMap</a> :A :B) &rarr; :A &rarr; (:B &rarr; :B) &rarr; (<a href="#hashmap-type">HashMap</a> :A :B))</code>
+<code>&forall; :K :V. <a href="#hash-class">Hash</a> :K &rArr; ((<a href="#hashmap-type">HashMap</a> :K :V) &rarr; :K &rarr; (:V &rarr; :V) &rarr; (<a href="#hashmap-type">HashMap</a> :K :V))</code>
 
 Modify the value at KEY with F. Returns the modified `HashMap`.
 
@@ -5011,7 +5011,7 @@ Modify the value at KEY with F. Returns the modified `HashMap`.
 ***
 
 #### <a href="#modify-get-value"><code>(MODIFY-GET HM KEY F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L613-L622">src</a></sub></sup><a name="modify-get-value"></a>
-<code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashmap-type">HashMap</a> :A :B) &rarr; :A &rarr; (:B &rarr; :B) &rarr; (<a href="#tuple-type">Tuple</a> (<a href="#hashmap-type">HashMap</a> :A :B) (<a href="#optional-type">Optional</a> :B)))</code>
+<code>&forall; :K :V. <a href="#hash-class">Hash</a> :K &rArr; ((<a href="#hashmap-type">HashMap</a> :K :V) &rarr; :K &rarr; (:V &rarr; :V) &rarr; (<a href="#tuple-type">Tuple</a> (<a href="#hashmap-type">HashMap</a> :K :V) (<a href="#optional-type">Optional</a> :V)))</code>
 
 Modify the value at KEY with F. Returns the modified `HashMap` and the
 new value, if the key was found.
@@ -5021,7 +5021,7 @@ new value, if the key was found.
 ***
 
 #### <a href="#remove-value"><code>(REMOVE HM KEY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L511-L521">src</a></sub></sup><a name="remove-value"></a>
-<code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashmap-type">HashMap</a> :A :B) &rarr; :A &rarr; (<a href="#hashmap-type">HashMap</a> :A :B))</code>
+<code>&forall; :K :V. <a href="#hash-class">Hash</a> :K &rArr; ((<a href="#hashmap-type">HashMap</a> :K :V) &rarr; :K &rarr; (<a href="#hashmap-type">HashMap</a> :K :V))</code>
 
 Returns a hashmap that is identical to HM except the entry with KEY is
 removed.  If HM does not contain an entry with KEY, HM is returned as is.
@@ -5031,7 +5031,7 @@ removed.  If HM does not contain an entry with KEY, HM is returned as is.
 ***
 
 #### <a href="#replace-value"><code>(REPLACE HM KEY VAL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L502-L506">src</a></sub></sup><a name="replace-value"></a>
-<code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashmap-type">HashMap</a> :A :B) &rarr; :A &rarr; :B &rarr; (<a href="#hashmap-type">HashMap</a> :A :B))</code>
+<code>&forall; :K :V. <a href="#hash-class">Hash</a> :K &rArr; ((<a href="#hashmap-type">HashMap</a> :K :V) &rarr; :K &rarr; :V &rarr; (<a href="#hashmap-type">HashMap</a> :K :V))</code>
 
 Returns a hashmap where the value associated with `key` is replaced
 with `val`.  If `hm` does not contain an entry with `key`, `hm` is
@@ -5042,7 +5042,7 @@ with `val`.  If `hm` does not contain an entry with `key`, `hm` is
 ***
 
 #### <a href="#show-value"><code>(SHOW HM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L793-L806">src</a></sub></sup><a name="show-value"></a>
-<code>&forall; :A :B. (<a href="#hash-class">Hash</a> :A) (<a href="#into-class">Into</a> :A <a href="#string-type">String</a>) (<a href="#into-class">Into</a> :B <a href="#string-type">String</a>) &rArr; ((<a href="#hashmap-type">HashMap</a> :A :B) &rarr; <a href="#string-type">String</a>)</code>
+<code>&forall; :K :V. (<a href="#hash-class">Hash</a> :K) (<a href="#into-class">Into</a> :K <a href="#string-type">String</a>) (<a href="#into-class">Into</a> :V <a href="#string-type">String</a>) &rArr; ((<a href="#hashmap-type">HashMap</a> :K :V) &rarr; <a href="#string-type">String</a>)</code>
 
 Return a human-readable representation of HM.
 
@@ -5051,7 +5051,7 @@ Return a human-readable representation of HM.
 ***
 
 #### <a href="#union-value"><code>(UNION A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L747-L753">src</a></sub></sup><a name="union-value"></a>
-<code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashmap-type">HashMap</a> :A :B) &rarr; (<a href="#hashmap-type">HashMap</a> :A :B) &rarr; (<a href="#hashmap-type">HashMap</a> :A :B))</code>
+<code>&forall; :K :V. <a href="#hash-class">Hash</a> :K &rArr; ((<a href="#hashmap-type">HashMap</a> :K :V) &rarr; (<a href="#hashmap-type">HashMap</a> :K :V) &rarr; (<a href="#hashmap-type">HashMap</a> :K :V))</code>
 
 Construct a HashMap containing all the mappings from A and B.
 
@@ -5064,7 +5064,7 @@ The operation is associative, but not commutative.
 ***
 
 #### <a href="#update-value"><code>(UPDATE HM KEY F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L528-L609">src</a></sub></sup><a name="update-value"></a>
-<code>&forall; :A :B :C. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashmap-type">HashMap</a> :A :B) &rarr; :A &rarr; ((<a href="#optional-type">Optional</a> :B) &rarr; (<a href="#tuple-type">Tuple</a> (<a href="#optional-type">Optional</a> :B) :C)) &rarr; (<a href="#tuple-type">Tuple</a> (<a href="#hashmap-type">HashMap</a> :A :B) :C))</code>
+<code>&forall; :K :V :A. <a href="#hash-class">Hash</a> :K &rArr; ((<a href="#hashmap-type">HashMap</a> :K :V) &rarr; :K &rarr; ((<a href="#optional-type">Optional</a> :V) &rarr; (<a href="#tuple-type">Tuple</a> (<a href="#optional-type">Optional</a> :V) :A)) &rarr; (<a href="#tuple-type">Tuple</a> (<a href="#hashmap-type">HashMap</a> :K :V) :A))</code>
 
 Generic update/filter function. Takes a KEY and a F. F is passed
 NONE if KEY is not found, (Some KEY) if it is found. F returns a tuple,
@@ -5078,7 +5078,7 @@ modified `HashMap`.
 ***
 
 #### <a href="#values-value"><code>(VALUES HM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L701-L703">src</a></sub></sup><a name="values-value"></a>
-<code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashmap-type">HashMap</a> :A :B) &rarr; (<a href="#iterator-type">Iterator</a> :B))</code>
+<code>&forall; :K :V. <a href="#hash-class">Hash</a> :K &rArr; ((<a href="#hashmap-type">HashMap</a> :K :V) &rarr; (<a href="#iterator-type">Iterator</a> :V))</code>
 
 Returns an iterator over all the values in a hashmap hm.
 
@@ -5087,7 +5087,7 @@ Returns an iterator over all the values in a hashmap hm.
 ***
 
 #### <a href="#xor-value"><code>(XOR A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L774-L784">src</a></sub></sup><a name="xor-value"></a>
-<code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashmap-type">HashMap</a> :A :B) &rarr; (<a href="#hashmap-type">HashMap</a> :A :B) &rarr; (<a href="#hashmap-type">HashMap</a> :A :B))</code>
+<code>&forall; :K :V. <a href="#hash-class">Hash</a> :K &rArr; ((<a href="#hashmap-type">HashMap</a> :K :V) &rarr; (<a href="#hashmap-type">HashMap</a> :K :V) &rarr; (<a href="#hashmap-type">HashMap</a> :K :V))</code>
 
 Returns a HashMap that contains mappings either in `a` or in `b`,
 but not in both.
@@ -5097,7 +5097,7 @@ but not in both.
 ***
 
 #### <a href="#empty-value"><code>EMPTY</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.lisp#L338-L340">src</a></sub></sup><a name="empty-value"></a>
-<code>&forall; :A :B. (<a href="#hashmap-type">HashMap</a> :A :B)</code>
+<code>&forall; :K :V. (<a href="#hashmap-type">HashMap</a> :K :V)</code>
 
 An empty HashMap
 
@@ -5116,12 +5116,12 @@ A mutable hash table.
 <details>
 <summary>Instances</summary>
 
-- <code>(<a href="#hash-class">Hash</a> :A) (<a href="#eq-class">Eq</a> :B) &rArr; <a href="#eq-class">Eq</a> (<a href="#hashtable-type">Hashtable</a> :A :B)</code>
-- <code>(<a href="#hash-class">Hash</a> :A) (<a href="#hash-class">Hash</a> :B) &rArr; <a href="#hash-class">Hash</a> (<a href="#hashtable-type">Hashtable</a> :A :B)</code>
-- <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#default-class">Default</a> (<a href="#hashtable-type">Hashtable</a> :A :B)</code>
-- <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#hashtable-type">Hashtable</a> :A :B) (<a href="#tuple-type">Tuple</a> :A :B)</code>
-- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#hashtable-type">Hashtable</a> :A :B) (<a href="#tuple-type">Tuple</a> :A :B)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#hashtable-type">Hashtable</a> :A :B)</code>
+- <code>(<a href="#hash-class">Hash</a> :KEY) (<a href="#eq-class">Eq</a> :VALUE) &rArr; <a href="#eq-class">Eq</a> (<a href="#hashtable-type">Hashtable</a> :KEY :VALUE)</code>
+- <code>(<a href="#hash-class">Hash</a> :KEY) (<a href="#hash-class">Hash</a> :VALUE) &rArr; <a href="#hash-class">Hash</a> (<a href="#hashtable-type">Hashtable</a> :KEY :VALUE)</code>
+- <code><a href="#hash-class">Hash</a> :KEY &rArr; <a href="#default-class">Default</a> (<a href="#hashtable-type">Hashtable</a> :KEY :VALUE)</code>
+- <code><a href="#hash-class">Hash</a> :KEY &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#hashtable-type">Hashtable</a> :KEY :VALUE) (<a href="#tuple-type">Tuple</a> :KEY :VALUE)</code>
+- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#hashtable-type">Hashtable</a> :KEY :VALUE) (<a href="#tuple-type">Tuple</a> :KEY :VALUE)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#hashtable-type">Hashtable</a> :|0| :|1|)</code>
 
 </details>
 
@@ -5132,7 +5132,7 @@ A mutable hash table.
 ### Values
 
 #### <a href="#count-value"><code>(COUNT TABLE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashtable.lisp#L109-L112">src</a></sub></sup><a name="count-value"></a>
-<code>&forall; :A :B. ((<a href="#hashtable-type">Hashtable</a> :A :B) &rarr; <a href="#integer-type">Integer</a>)</code>
+<code>&forall; :KEY :VALUE. ((<a href="#hashtable-type">Hashtable</a> :KEY :VALUE) &rarr; <a href="#integer-type">Integer</a>)</code>
 
 Returns the number of entries in TABLE
 
@@ -5141,7 +5141,7 @@ Returns the number of entries in TABLE
 ***
 
 #### <a href="#entries-value"><code>(ENTRIES TABLE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashtable.lisp#L115-L126">src</a></sub></sup><a name="entries-value"></a>
-<code>&forall; :A :B. ((<a href="#hashtable-type">Hashtable</a> :A :B) &rarr; (<a href="#iterator-type">Iterator</a> (<a href="#tuple-type">Tuple</a> :A :B)))</code>
+<code>&forall; :KEY :VALUE. ((<a href="#hashtable-type">Hashtable</a> :KEY :VALUE) &rarr; (<a href="#iterator-type">Iterator</a> (<a href="#tuple-type">Tuple</a> :KEY :VALUE)))</code>
 
 Returns the key-values pairs as a list.
 
@@ -5150,7 +5150,7 @@ Returns the key-values pairs as a list.
 ***
 
 #### <a href="#extend!-value"><code>(EXTEND! TABLE ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashtable.lisp#L160-L167">src</a></sub></sup><a name="extend!-value"></a>
-<code>&forall; :A :B :C. (<a href="#hash-class">Hash</a> :A) (<a href="#intoiterator-class">IntoIterator</a> :C (<a href="#tuple-type">Tuple</a> :A :B)) &rArr; ((<a href="#hashtable-type">Hashtable</a> :A :B) &rarr; :C &rarr; <a href="#unit-type">Unit</a>)</code>
+<code>&forall; :KEY :VALUE :CONTAINER. (<a href="#hash-class">Hash</a> :KEY) (<a href="#intoiterator-class">IntoIterator</a> :CONTAINER (<a href="#tuple-type">Tuple</a> :KEY :VALUE)) &rArr; ((<a href="#hashtable-type">Hashtable</a> :KEY :VALUE) &rarr; :CONTAINER &rarr; <a href="#unit-type">Unit</a>)</code>
 
 Insert all of the key value pairs from ITER into TABLE, overwriting duplicate keys.
 
@@ -5159,7 +5159,7 @@ Insert all of the key value pairs from ITER into TABLE, overwriting duplicate ke
 ***
 
 #### <a href="#get-value"><code>(GET TABLE KEY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashtable.lisp#L83-L90">src</a></sub></sup><a name="get-value"></a>
-<code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashtable-type">Hashtable</a> :A :B) &rarr; :A &rarr; (<a href="#optional-type">Optional</a> :B))</code>
+<code>&forall; :KEY :VALUE. <a href="#hash-class">Hash</a> :KEY &rArr; ((<a href="#hashtable-type">Hashtable</a> :KEY :VALUE) &rarr; :KEY &rarr; (<a href="#optional-type">Optional</a> :VALUE))</code>
 
 Lookup KEY in TABLE
 
@@ -5168,7 +5168,7 @@ Lookup KEY in TABLE
 ***
 
 #### <a href="#keys-value"><code>(KEYS TABLE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashtable.lisp#L129-L141">src</a></sub></sup><a name="keys-value"></a>
-<code>&forall; :A :B. ((<a href="#hashtable-type">Hashtable</a> :A :B) &rarr; (<a href="#iterator-type">Iterator</a> :A))</code>
+<code>&forall; :KEY :VALUE. ((<a href="#hashtable-type">Hashtable</a> :KEY :VALUE) &rarr; (<a href="#iterator-type">Iterator</a> :KEY))</code>
 
 Returns the keys in TABLE as a list
 
@@ -5177,7 +5177,7 @@ Returns the keys in TABLE as a list
 ***
 
 #### <a href="#new-value"><code>(NEW _)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashtable.lisp#L77-L80">src</a></sub></sup><a name="new-value"></a>
-<code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; (<a href="#unit-type">Unit</a> &rarr; (<a href="#hashtable-type">Hashtable</a> :A :B))</code>
+<code>&forall; :KEY :VALUE. <a href="#hash-class">Hash</a> :KEY &rArr; (<a href="#unit-type">Unit</a> &rarr; (<a href="#hashtable-type">Hashtable</a> :KEY :VALUE))</code>
 
 Create a new empty hashtable
 
@@ -5186,7 +5186,7 @@ Create a new empty hashtable
 ***
 
 #### <a href="#remove!-value"><code>(REMOVE! TABLE KEY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashtable.lisp#L101-L106">src</a></sub></sup><a name="remove!-value"></a>
-<code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashtable-type">Hashtable</a> :A :B) &rarr; :A &rarr; <a href="#unit-type">Unit</a>)</code>
+<code>&forall; :KEY :VALUE. <a href="#hash-class">Hash</a> :KEY &rArr; ((<a href="#hashtable-type">Hashtable</a> :KEY :VALUE) &rarr; :KEY &rarr; <a href="#unit-type">Unit</a>)</code>
 
 Remove the entry at KEY from TABLE
 
@@ -5195,7 +5195,7 @@ Remove the entry at KEY from TABLE
 ***
 
 #### <a href="#set!-value"><code>(SET! TABLE KEY VALUE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashtable.lisp#L93-L98">src</a></sub></sup><a name="set!-value"></a>
-<code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#hashtable-type">Hashtable</a> :A :B) &rarr; :A &rarr; :B &rarr; <a href="#unit-type">Unit</a>)</code>
+<code>&forall; :KEY :VALUE. <a href="#hash-class">Hash</a> :KEY &rArr; ((<a href="#hashtable-type">Hashtable</a> :KEY :VALUE) &rarr; :KEY &rarr; :VALUE &rarr; <a href="#unit-type">Unit</a>)</code>
 
 Set KEY to VALUE in TABLE
 
@@ -5204,7 +5204,7 @@ Set KEY to VALUE in TABLE
 ***
 
 #### <a href="#values-value"><code>(VALUES TABLE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashtable.lisp#L144-L156">src</a></sub></sup><a name="values-value"></a>
-<code>&forall; :A :B. ((<a href="#hashtable-type">Hashtable</a> :A :B) &rarr; (<a href="#iterator-type">Iterator</a> :B))</code>
+<code>&forall; :KEY :VALUE. ((<a href="#hashtable-type">Hashtable</a> :KEY :VALUE) &rarr; (<a href="#iterator-type">Iterator</a> :VALUE))</code>
 
 Returns the values in TABLE as a list
 
@@ -5213,7 +5213,7 @@ Returns the values in TABLE as a list
 ***
 
 #### <a href="#with-capacity-value"><code>(WITH-CAPACITY CAPACITY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashtable.lisp#L70-L74">src</a></sub></sup><a name="with-capacity-value"></a>
-<code>&forall; :A :B. <a href="#hash-class">Hash</a> :A &rArr; (<a href="#integer-type">Integer</a> &rarr; (<a href="#hashtable-type">Hashtable</a> :A :B))</code>
+<code>&forall; :KEY :VALUE. <a href="#hash-class">Hash</a> :KEY &rArr; (<a href="#integer-type">Integer</a> &rarr; (<a href="#hashtable-type">Hashtable</a> :KEY :VALUE))</code>
 
 Create a new empty hashtable with a given capacity
 
@@ -5233,8 +5233,8 @@ A forward-moving pointer into an ordered sequence of :ELTs
 <summary>Instances</summary>
 
 - <code><a href="#functor-class">Functor</a> <a href="#iterator-type">Iterator</a></code>
-- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#iterator-type">Iterator</a> :A) :A</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#iterator-type">Iterator</a> :A)</code>
+- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#iterator-type">Iterator</a> :ELT) :ELT</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#iterator-type">Iterator</a> :|0|)</code>
 
 </details>
 
@@ -5245,25 +5245,25 @@ A forward-moving pointer into an ordered sequence of :ELTs
 ### Classes
 
 #### <a href="#fromiterator-class"><code>FromIterator</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L655-L656">src</a></sub></sup><a name="fromiterator-class"></a>
-<code><a href="#fromiterator-class">FromIterator</a> :A :B</code>
+<code><a href="#fromiterator-class">FromIterator</a> :CONTAINER :ELT</code>
 
 Methods:
-- <code>COLLECT! :: ((<a href="#iterator-type">Iterator</a> :B) &rarr; :A)</code>
+- <code>COLLECT! :: ((<a href="#iterator-type">Iterator</a> :ELT) &rarr; :CONTAINER)</code>
 <details>
 <summary>Instances</summary>
 
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#seq-type">Seq</a> :A) :A</code>
-- <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#ordmap-type">OrdMap</a> :A :B) (<a href="#tuple-type">Tuple</a> :A :B)</code>
-- <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#ordtree-type">OrdTree</a> :A) :A</code>
+- <code><a href="#ord-class">Ord</a> :KEY &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#ordmap-type">OrdMap</a> :KEY :VALUE) (<a href="#tuple-type">Tuple</a> :KEY :VALUE)</code>
+- <code><a href="#ord-class">Ord</a> :ELT &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#ordtree-type">OrdTree</a> :ELT) :ELT</code>
 - <code><a href="#fromiterator-class">FromIterator</a> (<a href="#queue-type">Queue</a> :A) :A</code>
-- <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#hashmap-type">HashMap</a> :A :B) (<a href="#tuple-type">Tuple</a> :A :B)</code>
-- <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#hashtable-type">Hashtable</a> :A :B) (<a href="#tuple-type">Tuple</a> :A :B)</code>
+- <code><a href="#hash-class">Hash</a> :K &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#hashmap-type">HashMap</a> :K :V) (<a href="#tuple-type">Tuple</a> :K :V)</code>
+- <code><a href="#hash-class">Hash</a> :KEY &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#hashtable-type">Hashtable</a> :KEY :VALUE) (<a href="#tuple-type">Tuple</a> :KEY :VALUE)</code>
 - <code><a href="#fromiterator-class">FromIterator</a> (<a href="#slice-type">Slice</a> :A) :A</code>
 - <code><a href="#fromiterator-class">FromIterator</a> <a href="#string-type">String</a> <a href="#char-type">Char</a></code>
 - <code><a href="#fromiterator-class">FromIterator</a> (<a href="#vector-type">Vector</a> :A) :A</code>
-- <code><a href="#fromiterator-class">FromIterator</a> (<a href="#list-type">List</a> :A) :A</code>
-- <code><a href="#fromiterator-class">FromIterator</a> :A :B &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#result-type">Result</a> :C :A) (<a href="#result-type">Result</a> :C :B)</code>
-- <code><a href="#fromiterator-class">FromIterator</a> :A :B &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#optional-type">Optional</a> :A) (<a href="#optional-type">Optional</a> :B)</code>
+- <code><a href="#fromiterator-class">FromIterator</a> (<a href="#list-type">List</a> :ELT) :ELT</code>
+- <code><a href="#fromiterator-class">FromIterator</a> :CONTAINER :ELT &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#result-type">Result</a> :ERR :CONTAINER) (<a href="#result-type">Result</a> :ERR :ELT)</code>
+- <code><a href="#fromiterator-class">FromIterator</a> :CONTAINER :ELT &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#optional-type">Optional</a> :CONTAINER) (<a href="#optional-type">Optional</a> :ELT)</code>
 
 </details>
 
@@ -5272,7 +5272,7 @@ Methods:
 ***
 
 #### <a href="#intoiterator-class"><code>IntoIterator</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L141-L145">src</a></sub></sup><a name="intoiterator-class"></a>
-<code><a href="#intoiterator-class">IntoIterator</a> :A :B</code>
+<code><a href="#intoiterator-class">IntoIterator</a> :CONTAINER :ELT</code>
 
 
 Containers which can be converted into iterators.
@@ -5280,23 +5280,23 @@ Containers which can be converted into iterators.
 `INTO-ITER` must not mutate its argument, only produce a "view" into it.
 
 Methods:
-- <code>INTO-ITER :: (:A &rarr; (<a href="#iterator-type">Iterator</a> :B))</code>
+- <code>INTO-ITER :: (:CONTAINER &rarr; (<a href="#iterator-type">Iterator</a> :ELT))</code>
 <details>
 <summary>Instances</summary>
 
 - <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#seq-type">Seq</a> :A) :A</code>
-- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#ordmap-type">OrdMap</a> :A :B) (<a href="#tuple-type">Tuple</a> :A :B)</code>
-- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#ordtree-type">OrdTree</a> :A) :A</code>
+- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#ordmap-type">OrdMap</a> :KEY :VALUE) (<a href="#tuple-type">Tuple</a> :KEY :VALUE)</code>
+- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#ordtree-type">OrdTree</a> :ELT) :ELT</code>
 - <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#queue-type">Queue</a> :A) :A</code>
-- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#hashmap-type">HashMap</a> :A :B) (<a href="#tuple-type">Tuple</a> :A :B)</code>
-- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#hashtable-type">Hashtable</a> :A :B) (<a href="#tuple-type">Tuple</a> :A :B)</code>
+- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#hashmap-type">HashMap</a> :K :V) (<a href="#tuple-type">Tuple</a> :K :V)</code>
+- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#hashtable-type">Hashtable</a> :KEY :VALUE) (<a href="#tuple-type">Tuple</a> :KEY :VALUE)</code>
 - <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#slice-type">Slice</a> :A) :A</code>
 - <code><a href="#intoiterator-class">IntoIterator</a> <a href="#string-type">String</a> <a href="#char-type">Char</a></code>
 - <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#vector-type">Vector</a> :A) :A</code>
-- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#list-type">List</a> :A) :A</code>
-- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#result-type">Result</a> :A :B) :B</code>
+- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#list-type">List</a> :ELT) :ELT</code>
+- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#result-type">Result</a> :ERR :ELT) :ELT</code>
 - <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#optional-type">Optional</a> :A) :A</code>
-- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#iterator-type">Iterator</a> :A) :A</code>
+- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#iterator-type">Iterator</a> :ELT) :ELT</code>
 
 </details>
 
@@ -5316,7 +5316,7 @@ Returns True if all iterator elements are True. May not consume the entire itera
 ***
 
 #### <a href="#any!-value"><code>(ANY! GOOD? ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L611-L617">src</a></sub></sup><a name="any!-value"></a>
-<code>&forall; :A. ((:A &rarr; <a href="#boolean-type">Boolean</a>) &rarr; (<a href="#iterator-type">Iterator</a> :A) &rarr; <a href="#boolean-type">Boolean</a>)</code>
+<code>&forall; :ELT. ((:ELT &rarr; <a href="#boolean-type">Boolean</a>) &rarr; (<a href="#iterator-type">Iterator</a> :ELT) &rarr; <a href="#boolean-type">Boolean</a>)</code>
 
 Return `True` as soon as any element of ITER is GOOD?, or `False` if none of them are.
 
@@ -5327,7 +5327,7 @@ Returns `False` if ITER is empty.
 ***
 
 #### <a href="#chain!-value"><code>(CHAIN! ITER1 ITER2)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L420-L431">src</a></sub></sup><a name="chain!-value"></a>
-<code>&forall; :A. ((<a href="#iterator-type">Iterator</a> :A) &rarr; (<a href="#iterator-type">Iterator</a> :A) &rarr; (<a href="#iterator-type">Iterator</a> :A))</code>
+<code>&forall; :ELT. ((<a href="#iterator-type">Iterator</a> :ELT) &rarr; (<a href="#iterator-type">Iterator</a> :ELT) &rarr; (<a href="#iterator-type">Iterator</a> :ELT))</code>
 
 Yield all the elements of ITER1 followed by all the elements from ITER2.
 
@@ -5336,7 +5336,7 @@ Yield all the elements of ITER1 followed by all the elements from ITER2.
 ***
 
 #### <a href="#count!-value"><code>(COUNT! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L513-L517">src</a></sub></sup><a name="count!-value"></a>
-<code>&forall; :A. ((<a href="#iterator-type">Iterator</a> :A) &rarr; <a href="#ufix-type">UFix</a>)</code>
+<code>&forall; :ELT. ((<a href="#iterator-type">Iterator</a> :ELT) &rarr; <a href="#ufix-type">UFix</a>)</code>
 
 Return the number of elements in ITER.
 This operation could be called `length!`, but `count!` emphasizes the fact that it consumes ITER, and
@@ -5347,7 +5347,7 @@ afterwards, ITER will be exhausted.
 ***
 
 #### <a href="#count-forever-value"><code>(COUNT-FOREVER _)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L248-L252">src</a></sub></sup><a name="count-forever-value"></a>
-<code>&forall; :A. (<a href="#num-class">Num</a> :A) (<a href="#ord-class">Ord</a> :A) &rArr; (<a href="#unit-type">Unit</a> &rarr; (<a href="#iterator-type">Iterator</a> :A))</code>
+<code>&forall; :NUM. (<a href="#num-class">Num</a> :NUM) (<a href="#ord-class">Ord</a> :NUM) &rArr; (<a href="#unit-type">Unit</a> &rarr; (<a href="#iterator-type">Iterator</a> :NUM))</code>
 
 An infinite iterator which starts at 0 and counts upwards by 1.
 
@@ -5356,7 +5356,7 @@ An infinite iterator which starts at 0 and counts upwards by 1.
 ***
 
 #### <a href="#down-from-value"><code>(DOWN-FROM LIMIT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L243-L245">src</a></sub></sup><a name="down-from-value"></a>
-<code>&forall; :A. (<a href="#num-class">Num</a> :A) (<a href="#ord-class">Ord</a> :A) &rArr; (:A &rarr; (<a href="#iterator-type">Iterator</a> :A))</code>
+<code>&forall; :NUM. (<a href="#num-class">Num</a> :NUM) (<a href="#ord-class">Ord</a> :NUM) &rArr; (:NUM &rarr; (<a href="#iterator-type">Iterator</a> :NUM))</code>
 
 An iterator which begins below the provided limit and counts down through and including zero.
 
@@ -5365,7 +5365,7 @@ An iterator which begins below the provided limit and counts down through and in
 ***
 
 #### <a href="#elementwise-hash!-value"><code>(ELEMENTWISE-HASH! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L640-L649">src</a></sub></sup><a name="elementwise-hash!-value"></a>
-<code>&forall; :A. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#iterator-type">Iterator</a> :A) &rarr; <a href="#hash-type">Hash</a>)</code>
+<code>&forall; :ELT. <a href="#hash-class">Hash</a> :ELT &rArr; ((<a href="#iterator-type">Iterator</a> :ELT) &rarr; <a href="#hash-type">Hash</a>)</code>
 
 Hash an iterator by combining the hashes of all its elements.
 
@@ -5376,7 +5376,7 @@ The empty iterator will hash as 0.
 ***
 
 #### <a href="#elementwise-match!-value"><code>(ELEMENTWISE-MATCH! SAME? LEFT RIGHT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L620-L629">src</a></sub></sup><a name="elementwise-match!-value"></a>
-<code>&forall; :A. ((:A &rarr; :A &rarr; <a href="#boolean-type">Boolean</a>) &rarr; (<a href="#iterator-type">Iterator</a> :A) &rarr; (<a href="#iterator-type">Iterator</a> :A) &rarr; <a href="#boolean-type">Boolean</a>)</code>
+<code>&forall; :ELT. ((:ELT &rarr; :ELT &rarr; <a href="#boolean-type">Boolean</a>) &rarr; (<a href="#iterator-type">Iterator</a> :ELT) &rarr; (<a href="#iterator-type">Iterator</a> :ELT) &rarr; <a href="#boolean-type">Boolean</a>)</code>
 
 Are LEFT and RIGHT elementwise-identical under SAME?
 
@@ -5388,7 +5388,7 @@ same length.
 ***
 
 #### <a href="#elementwise==!-value"><code>(ELEMENTWISE==!)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L632-L637">src</a></sub></sup><a name="elementwise==!-value"></a>
-<code>&forall; :A. <a href="#eq-class">Eq</a> :A &rArr; ((<a href="#iterator-type">Iterator</a> :A) &rarr; (<a href="#iterator-type">Iterator</a> :A) &rarr; <a href="#boolean-type">Boolean</a>)</code>
+<code>&forall; :ELT. <a href="#eq-class">Eq</a> :ELT &rArr; ((<a href="#iterator-type">Iterator</a> :ELT) &rarr; (<a href="#iterator-type">Iterator</a> :ELT) &rarr; <a href="#boolean-type">Boolean</a>)</code>
 
 Is every element of the first iterator `==' to the corresponding element of the second?
 
@@ -5400,7 +5400,7 @@ the Nth element of the second iterator.
 ***
 
 #### <a href="#enumerate!-value"><code>(ENUMERATE! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L347-L349">src</a></sub></sup><a name="enumerate!-value"></a>
-<code>&forall; :A. ((<a href="#iterator-type">Iterator</a> :A) &rarr; (<a href="#iterator-type">Iterator</a> (<a href="#tuple-type">Tuple</a> <a href="#ufix-type">UFix</a> :A)))</code>
+<code>&forall; :ELT. ((<a href="#iterator-type">Iterator</a> :ELT) &rarr; (<a href="#iterator-type">Iterator</a> (<a href="#tuple-type">Tuple</a> <a href="#ufix-type">UFix</a> :ELT)))</code>
 
 Pair successive zero-based incides with elements from ITER
 
@@ -5409,7 +5409,7 @@ Pair successive zero-based incides with elements from ITER
 ***
 
 #### <a href="#every!-value"><code>(EVERY! GOOD? ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L602-L608">src</a></sub></sup><a name="every!-value"></a>
-<code>&forall; :A. ((:A &rarr; <a href="#boolean-type">Boolean</a>) &rarr; (<a href="#iterator-type">Iterator</a> :A) &rarr; <a href="#boolean-type">Boolean</a>)</code>
+<code>&forall; :ELT. ((:ELT &rarr; <a href="#boolean-type">Boolean</a>) &rarr; (<a href="#iterator-type">Iterator</a> :ELT) &rarr; <a href="#boolean-type">Boolean</a>)</code>
 
 Return `True` if every element of ITER is GOOD?, or `False` as soon as any element is not GOOD?.
 
@@ -5420,7 +5420,7 @@ Returns `True` if ITER is empty.
 ***
 
 #### <a href="#filter!-value"><code>(FILTER! KEEP? ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L352-L360">src</a></sub></sup><a name="filter!-value"></a>
-<code>&forall; :A. ((:A &rarr; <a href="#boolean-type">Boolean</a>) &rarr; (<a href="#iterator-type">Iterator</a> :A) &rarr; (<a href="#iterator-type">Iterator</a> :A))</code>
+<code>&forall; :ELT. ((:ELT &rarr; <a href="#boolean-type">Boolean</a>) &rarr; (<a href="#iterator-type">Iterator</a> :ELT) &rarr; (<a href="#iterator-type">Iterator</a> :ELT))</code>
 
 Return an iterator over the elements from ITER for which KEEP? returns true.
 
@@ -5438,7 +5438,7 @@ Map an iterator, retaining only the elements where F returns SOME.
 ***
 
 #### <a href="#find!-value"><code>(FIND! THIS? ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L528-L534">src</a></sub></sup><a name="find!-value"></a>
-<code>&forall; :A. ((:A &rarr; <a href="#boolean-type">Boolean</a>) &rarr; (<a href="#iterator-type">Iterator</a> :A) &rarr; (<a href="#optional-type">Optional</a> :A))</code>
+<code>&forall; :ELT. ((:ELT &rarr; <a href="#boolean-type">Boolean</a>) &rarr; (<a href="#iterator-type">Iterator</a> :ELT) &rarr; (<a href="#optional-type">Optional</a> :ELT))</code>
 
 Return the first element of ITER for which THIS? returns `True`, or `None` if no element matches.
 
@@ -5465,7 +5465,7 @@ Flatten! wrapped around map.
 ***
 
 #### <a href="#flatten!-value"><code>(FLATTEN! ITERS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L434-L448">src</a></sub></sup><a name="flatten!-value"></a>
-<code>&forall; :A. ((<a href="#iterator-type">Iterator</a> (<a href="#iterator-type">Iterator</a> :A)) &rarr; (<a href="#iterator-type">Iterator</a> :A))</code>
+<code>&forall; :ELT. ((<a href="#iterator-type">Iterator</a> (<a href="#iterator-type">Iterator</a> :ELT)) &rarr; (<a href="#iterator-type">Iterator</a> :ELT))</code>
 
 Yield all the elements from each of the ITERS in order.
 
@@ -5474,7 +5474,7 @@ Yield all the elements from each of the ITERS in order.
 ***
 
 #### <a href="#fold!-value"><code>(FOLD! FUNC INIT ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L113-L123">src</a></sub></sup><a name="fold!-value"></a>
-<code>&forall; :A :B. ((:A &rarr; :B &rarr; :A) &rarr; :A &rarr; (<a href="#iterator-type">Iterator</a> :B) &rarr; :A)</code>
+<code>&forall; :STATE :ELT. ((:STATE &rarr; :ELT &rarr; :STATE) &rarr; :STATE &rarr; (<a href="#iterator-type">Iterator</a> :ELT) &rarr; :STATE)</code>
 
 Tail recursive in-order fold. Common Lisp calls this operation `reduce`.
 
@@ -5486,7 +5486,7 @@ STATE, using INIT as the first STATE.
 ***
 
 #### <a href="#for-each!-value"><code>(FOR-EACH! THUNK ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L520-L525">src</a></sub></sup><a name="for-each!-value"></a>
-<code>&forall; :A. ((:A &rarr; <a href="#unit-type">Unit</a>) &rarr; (<a href="#iterator-type">Iterator</a> :A) &rarr; <a href="#unit-type">Unit</a>)</code>
+<code>&forall; :ELT. ((:ELT &rarr; <a href="#unit-type">Unit</a>) &rarr; (<a href="#iterator-type">Iterator</a> :ELT) &rarr; <a href="#unit-type">Unit</a>)</code>
 
 Call THUNK on each element of ITER in order for side effects.
 Discard values returned by THUNK.
@@ -5496,7 +5496,7 @@ Discard values returned by THUNK.
 ***
 
 #### <a href="#index-of!-value"><code>(INDEX-OF! THIS? ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L542-L548">src</a></sub></sup><a name="index-of!-value"></a>
-<code>&forall; :A. ((:A &rarr; <a href="#boolean-type">Boolean</a>) &rarr; (<a href="#iterator-type">Iterator</a> :A) &rarr; (<a href="#optional-type">Optional</a> <a href="#ufix-type">UFix</a>))</code>
+<code>&forall; :ELT. ((:ELT &rarr; <a href="#boolean-type">Boolean</a>) &rarr; (<a href="#iterator-type">Iterator</a> :ELT) &rarr; (<a href="#optional-type">Optional</a> <a href="#ufix-type">UFix</a>))</code>
 
 Return the zero-based index of the first element of ITER for which THIS? is `True`, or `None` if no element matches.
 
@@ -5535,7 +5535,7 @@ Map an iterator, stopping early if F returns NONE.
 ***
 
 #### <a href="#max!-value"><code>(MAX! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L565-L567">src</a></sub></sup><a name="max!-value"></a>
-<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#iterator-type">Iterator</a> :A) &rarr; (<a href="#optional-type">Optional</a> :A))</code>
+<code>&forall; :NUM. <a href="#ord-class">Ord</a> :NUM &rArr; ((<a href="#iterator-type">Iterator</a> :NUM) &rarr; (<a href="#optional-type">Optional</a> :NUM))</code>
 
 Return the most-positive element of ITER, or `None` if ITER is empty.
 
@@ -5544,7 +5544,7 @@ Return the most-positive element of ITER, or `None` if ITER is empty.
 ***
 
 #### <a href="#maximize-by!-value"><code>(MAXIMIZE-BY! F ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L588-L592">src</a></sub></sup><a name="maximize-by!-value"></a>
-<code>&forall; :A :B. <a href="#ord-class">Ord</a> :B &rArr; ((:A &rarr; :B) &rarr; (<a href="#iterator-type">Iterator</a> :A) &rarr; (<a href="#optional-type">Optional</a> :A))</code>
+<code>&forall; :ELT :A. <a href="#ord-class">Ord</a> :A &rArr; ((:ELT &rarr; :A) &rarr; (<a href="#iterator-type">Iterator</a> :ELT) &rarr; (<a href="#optional-type">Optional</a> :ELT))</code>
 
 For a function F, which maps the iterator, return the element of ITER where (F ELT) is the most-positive.
 
@@ -5564,7 +5564,7 @@ Fold an iterator of monoids into a single element.
 ***
 
 #### <a href="#mconcatmap!-value"><code>(MCONCATMAP! FUNC ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L461-L463">src</a></sub></sup><a name="mconcatmap!-value"></a>
-<code>&forall; :A :B. <a href="#monoid-class">Monoid</a> :B &rArr; ((:A &rarr; :B) &rarr; (<a href="#iterator-type">Iterator</a> :A) &rarr; :B)</code>
+<code>&forall; :B :A. <a href="#monoid-class">Monoid</a> :A &rArr; ((:B &rarr; :A) &rarr; (<a href="#iterator-type">Iterator</a> :B) &rarr; :A)</code>
 
 Map an iterator to an iterator of monoids, and then fold that iterator into a single element.
 
@@ -5573,7 +5573,7 @@ Map an iterator to an iterator of monoids, and then fold that iterator into a si
 ***
 
 #### <a href="#min!-value"><code>(MIN! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L570-L572">src</a></sub></sup><a name="min!-value"></a>
-<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#iterator-type">Iterator</a> :A) &rarr; (<a href="#optional-type">Optional</a> :A))</code>
+<code>&forall; :NUM. <a href="#ord-class">Ord</a> :NUM &rArr; ((<a href="#iterator-type">Iterator</a> :NUM) &rarr; (<a href="#optional-type">Optional</a> :NUM))</code>
 
 Return the most-negative element of ITER, or `None` if ITER is empty.
 
@@ -5582,7 +5582,7 @@ Return the most-negative element of ITER, or `None` if ITER is empty.
 ***
 
 #### <a href="#minimize-by!-value"><code>(MINIMIZE-BY! F ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L595-L599">src</a></sub></sup><a name="minimize-by!-value"></a>
-<code>&forall; :A :B. <a href="#ord-class">Ord</a> :B &rArr; ((:A &rarr; :B) &rarr; (<a href="#iterator-type">Iterator</a> :A) &rarr; (<a href="#optional-type">Optional</a> :A))</code>
+<code>&forall; :ELT :A. <a href="#ord-class">Ord</a> :A &rArr; ((:ELT &rarr; :A) &rarr; (<a href="#iterator-type">Iterator</a> :ELT) &rarr; (<a href="#optional-type">Optional</a> :ELT))</code>
 
 For a function F, which maps the iterator, return the element of ITER where (F ELT) is the most-negative.
 
@@ -5593,7 +5593,7 @@ Return `None' if ITER is empty.
 ***
 
 #### <a href="#new-value"><code>(NEW F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L90-L92">src</a></sub></sup><a name="new-value"></a>
-<code>&forall; :A. ((<a href="#unit-type">Unit</a> &rarr; (<a href="#optional-type">Optional</a> :A)) &rarr; (<a href="#iterator-type">Iterator</a> :A))</code>
+<code>&forall; :ELT. ((<a href="#unit-type">Unit</a> &rarr; (<a href="#optional-type">Optional</a> :ELT)) &rarr; (<a href="#iterator-type">Iterator</a> :ELT))</code>
 
 Create a new iterator from a function that yields elements.
 
@@ -5602,7 +5602,7 @@ Create a new iterator from a function that yields elements.
 ***
 
 #### <a href="#next!-value"><code>(NEXT! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L104-L110">src</a></sub></sup><a name="next!-value"></a>
-<code>&forall; :A. ((<a href="#iterator-type">Iterator</a> :A) &rarr; (<a href="#optional-type">Optional</a> :A))</code>
+<code>&forall; :ELT. ((<a href="#iterator-type">Iterator</a> :ELT) &rarr; (<a href="#optional-type">Optional</a> :ELT))</code>
 
 Advance ITER, returning its next yielded value, or `None` if the iterator is exhausted.
 Behavior is undefined if two threads concurrently call `next!` on the same iterator without a lock. Note that
@@ -5614,7 +5614,7 @@ most of the operators defined on iterators call `next!` internally, or create ne
 ***
 
 #### <a href="#once-value"><code>(ONCE ITEM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L268-L277">src</a></sub></sup><a name="once-value"></a>
-<code>&forall; :A. (:A &rarr; (<a href="#iterator-type">Iterator</a> :A))</code>
+<code>&forall; :ITEM. (:ITEM &rarr; (<a href="#iterator-type">Iterator</a> :ITEM))</code>
 
 Yield `item` once.
 
@@ -5623,7 +5623,7 @@ Yield `item` once.
 ***
 
 #### <a href="#optimize!-value"><code>(OPTIMIZE! BETTER? ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L551-L562">src</a></sub></sup><a name="optimize!-value"></a>
-<code>&forall; :A. ((:A &rarr; :A &rarr; <a href="#boolean-type">Boolean</a>) &rarr; (<a href="#iterator-type">Iterator</a> :A) &rarr; (<a href="#optional-type">Optional</a> :A))</code>
+<code>&forall; :ELT. ((:ELT &rarr; :ELT &rarr; <a href="#boolean-type">Boolean</a>) &rarr; (<a href="#iterator-type">Iterator</a> :ELT) &rarr; (<a href="#optional-type">Optional</a> :ELT))</code>
 
 For an order BETTER? which returns `True` if its first argument is better than its second argument, return the best element of ITER.
 
@@ -5634,7 +5634,7 @@ Return `None` if ITER is empty.
 ***
 
 #### <a href="#optimize-by!-value"><code>(OPTIMIZE-BY! BETTER? F ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L578-L585">src</a></sub></sup><a name="optimize-by!-value"></a>
-<code>&forall; :A :B. ((:A &rarr; :A &rarr; <a href="#boolean-type">Boolean</a>) &rarr; (:B &rarr; :A) &rarr; (<a href="#iterator-type">Iterator</a> :B) &rarr; (<a href="#optional-type">Optional</a> :B))</code>
+<code>&forall; :B :A. ((:B &rarr; :B &rarr; <a href="#boolean-type">Boolean</a>) &rarr; (:A &rarr; :B) &rarr; (<a href="#iterator-type">Iterator</a> :A) &rarr; (<a href="#optional-type">Optional</a> :A))</code>
 
 For an order BETTER? which returns `True` if its first argument is better than its second argument, return the element of ITER where (F ELT) is the best.
 
@@ -5654,7 +5654,7 @@ Returns True if any iterator elements are True. May not consume the entire itera
 ***
 
 #### <a href="#pair-with!-value"><code>(PAIR-WITH! FUNC KEYS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L466-L469">src</a></sub></sup><a name="pair-with!-value"></a>
-<code>&forall; :A :B. ((:A &rarr; :B) &rarr; (<a href="#iterator-type">Iterator</a> :A) &rarr; (<a href="#iterator-type">Iterator</a> (<a href="#tuple-type">Tuple</a> :A :B)))</code>
+<code>&forall; :KEY :VALUE. ((:KEY &rarr; :VALUE) &rarr; (<a href="#iterator-type">Iterator</a> :KEY) &rarr; (<a href="#iterator-type">Iterator</a> (<a href="#tuple-type">Tuple</a> :KEY :VALUE)))</code>
 
 Returns an iterator over tuples whose FSTs are elements from KEYS, and whose SNDs are the results of applying FUNC to those KEYS.
 
@@ -5663,7 +5663,7 @@ Returns an iterator over tuples whose FSTs are elements from KEYS, and whose SND
 ***
 
 #### <a href="#range-decreasing-value"><code>(RANGE-DECREASING STEP START END)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L206-L240">src</a></sub></sup><a name="range-decreasing-value"></a>
-<code>&forall; :A. (<a href="#num-class">Num</a> :A) (<a href="#ord-class">Ord</a> :A) &rArr; (:A &rarr; :A &rarr; :A &rarr; (<a href="#iterator-type">Iterator</a> :A))</code>
+<code>&forall; :NUM. (<a href="#num-class">Num</a> :NUM) (<a href="#ord-class">Ord</a> :NUM) &rArr; (:NUM &rarr; :NUM &rarr; :NUM &rarr; (<a href="#iterator-type">Iterator</a> :NUM))</code>
 
 A range which begins below START and counts down through and including END by STEP.
 
@@ -5674,7 +5674,7 @@ Equivalent to reversing `range-increasing`
 ***
 
 #### <a href="#range-increasing-value"><code>(RANGE-INCREASING STEP START END)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L170-L178">src</a></sub></sup><a name="range-increasing-value"></a>
-<code>&forall; :A. (<a href="#num-class">Num</a> :A) (<a href="#ord-class">Ord</a> :A) &rArr; (:A &rarr; :A &rarr; :A &rarr; (<a href="#iterator-type">Iterator</a> :A))</code>
+<code>&forall; :NUM. (<a href="#num-class">Num</a> :NUM) (<a href="#ord-class">Ord</a> :NUM) &rArr; (:NUM &rarr; :NUM &rarr; :NUM &rarr; (<a href="#iterator-type">Iterator</a> :NUM))</code>
 
 An iterator which begins at START and yields successive elements spaced by STEP, stopping before END.
 
@@ -5683,7 +5683,7 @@ An iterator which begins at START and yields successive elements spaced by STEP,
 ***
 
 #### <a href="#recursive-iter-value"><code>(RECURSIVE-ITER SUCC DONE? START)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L151-L163">src</a></sub></sup><a name="recursive-iter-value"></a>
-<code>&forall; :A. ((:A &rarr; :A) &rarr; (:A &rarr; <a href="#boolean-type">Boolean</a>) &rarr; :A &rarr; (<a href="#iterator-type">Iterator</a> :A))</code>
+<code>&forall; :ELT. ((:ELT &rarr; :ELT) &rarr; (:ELT &rarr; <a href="#boolean-type">Boolean</a>) &rarr; :ELT &rarr; (<a href="#iterator-type">Iterator</a> :ELT))</code>
 
 An iterator which yields first START, then (SUCC START), then (SUCC (SUCC START)), and so on, stopping as soon as such a value is `done?`.
 
@@ -5695,7 +5695,7 @@ iterator is empty.
 ***
 
 #### <a href="#remove-duplicates!-value"><code>(REMOVE-DUPLICATES! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashtable.lisp#L268-L277">src</a></sub></sup><a name="remove-duplicates!-value"></a>
-<code>&forall; :A. <a href="#hash-class">Hash</a> :A &rArr; ((<a href="#iterator-type">Iterator</a> :A) &rarr; (<a href="#iterator-type">Iterator</a> :A))</code>
+<code>&forall; :ELT. <a href="#hash-class">Hash</a> :ELT &rArr; ((<a href="#iterator-type">Iterator</a> :ELT) &rarr; (<a href="#iterator-type">Iterator</a> :ELT))</code>
 
 Yield unique elements from ITER in order of first appearance.
 
@@ -5704,7 +5704,7 @@ Yield unique elements from ITER in order of first appearance.
 ***
 
 #### <a href="#repeat-value"><code>(REPEAT ITEM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L255-L260">src</a></sub></sup><a name="repeat-value"></a>
-<code>&forall; :A. (:A &rarr; (<a href="#iterator-type">Iterator</a> :A))</code>
+<code>&forall; :ITEM. (:ITEM &rarr; (<a href="#iterator-type">Iterator</a> :ITEM))</code>
 
 Yield ITEM over and over, infinitely.
 
@@ -5713,7 +5713,7 @@ Yield ITEM over and over, infinitely.
 ***
 
 #### <a href="#repeat-for-value"><code>(REPEAT-FOR ITEM COUNT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L263-L265">src</a></sub></sup><a name="repeat-for-value"></a>
-<code>&forall; :A. (:A &rarr; <a href="#ufix-type">UFix</a> &rarr; (<a href="#iterator-type">Iterator</a> :A))</code>
+<code>&forall; :ITEM. (:ITEM &rarr; <a href="#ufix-type">UFix</a> &rarr; (<a href="#iterator-type">Iterator</a> :ITEM))</code>
 
 Yield ITEM COUNT times, then stop.
 
@@ -5722,13 +5722,13 @@ Yield ITEM COUNT times, then stop.
 ***
 
 #### <a href="#size-hint-value"><code>(SIZE-HINT ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L99-L101">src</a></sub></sup><a name="size-hint-value"></a>
-<code>&forall; :A. ((<a href="#iterator-type">Iterator</a> :A) &rarr; (<a href="#optional-type">Optional</a> <a href="#ufix-type">UFix</a>))</code>
+<code>&forall; :ELT. ((<a href="#iterator-type">Iterator</a> :ELT) &rarr; (<a href="#optional-type">Optional</a> <a href="#ufix-type">UFix</a>))</code>
 
 
 ***
 
 #### <a href="#sum!-value"><code>(SUM! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L508-L510">src</a></sub></sup><a name="sum!-value"></a>
-<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; ((<a href="#iterator-type">Iterator</a> :A) &rarr; :A)</code>
+<code>&forall; :NUM. <a href="#num-class">Num</a> :NUM &rArr; ((<a href="#iterator-type">Iterator</a> :NUM) &rarr; :NUM)</code>
 
 Add together all the elements of ITER.
 
@@ -5737,7 +5737,7 @@ Add together all the elements of ITER.
 ***
 
 #### <a href="#take!-value"><code>(TAKE! COUNT ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L413-L417">src</a></sub></sup><a name="take!-value"></a>
-<code>&forall; :A. (<a href="#ufix-type">UFix</a> &rarr; (<a href="#iterator-type">Iterator</a> :A) &rarr; (<a href="#iterator-type">Iterator</a> :A))</code>
+<code>&forall; :ELT. (<a href="#ufix-type">UFix</a> &rarr; (<a href="#iterator-type">Iterator</a> :ELT) &rarr; (<a href="#iterator-type">Iterator</a> :ELT))</code>
 
 An `Iterator` which yields at most COUNT elements from ITER.
 
@@ -5746,13 +5746,13 @@ An `Iterator` which yields at most COUNT elements from ITER.
 ***
 
 #### <a href="#unwrapped!-value"><code>(UNWRAPPED! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L402-L410">src</a></sub></sup><a name="unwrapped!-value"></a>
-<code>&forall; :A :B. <a href="#unwrappable-class">Unwrappable</a> :A &rArr; ((<a href="#iterator-type">Iterator</a> (:A :B)) &rarr; (<a href="#iterator-type">Iterator</a> :B))</code>
+<code>&forall; :WRAPPER :ELT. <a href="#unwrappable-class">Unwrappable</a> :WRAPPER &rArr; ((<a href="#iterator-type">Iterator</a> (:WRAPPER :ELT)) &rarr; (<a href="#iterator-type">Iterator</a> :ELT))</code>
 
 
 ***
 
 #### <a href="#up-through-value"><code>(UP-THROUGH LIMIT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L186-L188">src</a></sub></sup><a name="up-through-value"></a>
-<code>&forall; :A. (<a href="#num-class">Num</a> :A) (<a href="#ord-class">Ord</a> :A) &rArr; (:A &rarr; (<a href="#iterator-type">Iterator</a> :A))</code>
+<code>&forall; :NUM. (<a href="#num-class">Num</a> :NUM) (<a href="#ord-class">Ord</a> :NUM) &rArr; (:NUM &rarr; (<a href="#iterator-type">Iterator</a> :NUM))</code>
 
 An iterator which begins at zero and counts up through and including LIMIT.
 
@@ -5761,7 +5761,7 @@ An iterator which begins at zero and counts up through and including LIMIT.
 ***
 
 #### <a href="#up-to-value"><code>(UP-TO LIMIT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L181-L183">src</a></sub></sup><a name="up-to-value"></a>
-<code>&forall; :A. (<a href="#num-class">Num</a> :A) (<a href="#ord-class">Ord</a> :A) &rArr; (:A &rarr; (<a href="#iterator-type">Iterator</a> :A))</code>
+<code>&forall; :NUM. (<a href="#num-class">Num</a> :NUM) (<a href="#ord-class">Ord</a> :NUM) &rArr; (:NUM &rarr; (<a href="#iterator-type">Iterator</a> :NUM))</code>
 
 An iterator which begins at zero and counts up to, but not including, LIMIT.
 
@@ -5770,13 +5770,13 @@ An iterator which begins at zero and counts up to, but not including, LIMIT.
 ***
 
 #### <a href="#with-size-value"><code>(WITH-SIZE F SIZE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L95-L96">src</a></sub></sup><a name="with-size-value"></a>
-<code>&forall; :A. ((<a href="#unit-type">Unit</a> &rarr; (<a href="#optional-type">Optional</a> :A)) &rarr; <a href="#ufix-type">UFix</a> &rarr; (<a href="#iterator-type">Iterator</a> :A))</code>
+<code>&forall; :ELT. ((<a href="#unit-type">Unit</a> &rarr; (<a href="#optional-type">Optional</a> :ELT)) &rarr; <a href="#ufix-type">UFix</a> &rarr; (<a href="#iterator-type">Iterator</a> :ELT))</code>
 
 
 ***
 
 #### <a href="#zip!-value"><code>(ZIP!)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L342-L344">src</a></sub></sup><a name="zip!-value"></a>
-<code>&forall; :A :B. ((<a href="#iterator-type">Iterator</a> :A) &rarr; (<a href="#iterator-type">Iterator</a> :B) &rarr; (<a href="#iterator-type">Iterator</a> (<a href="#tuple-type">Tuple</a> :A :B)))</code>
+<code>&forall; :LEFT :RIGHT. ((<a href="#iterator-type">Iterator</a> :LEFT) &rarr; (<a href="#iterator-type">Iterator</a> :RIGHT) &rarr; (<a href="#iterator-type">Iterator</a> (<a href="#tuple-type">Tuple</a> :LEFT :RIGHT)))</code>
 
 Return an iterator of tuples contining elements from two iterators.
 
@@ -5785,7 +5785,7 @@ Return an iterator of tuples contining elements from two iterators.
 ***
 
 #### <a href="#zip-with!-value"><code>(ZIP-WITH! F LEFT RIGHT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L328-L339">src</a></sub></sup><a name="zip-with!-value"></a>
-<code>&forall; :A :B :C. ((:A &rarr; :B &rarr; :C) &rarr; (<a href="#iterator-type">Iterator</a> :A) &rarr; (<a href="#iterator-type">Iterator</a> :B) &rarr; (<a href="#iterator-type">Iterator</a> :C))</code>
+<code>&forall; :LEFT :RIGHT :OUT. ((:LEFT &rarr; :RIGHT &rarr; :OUT) &rarr; (<a href="#iterator-type">Iterator</a> :LEFT) &rarr; (<a href="#iterator-type">Iterator</a> :RIGHT) &rarr; (<a href="#iterator-type">Iterator</a> :OUT))</code>
 
 Return an iterator of elements from LEFT and RIGHT which terminates as soon as either LEFT or RIGHT does.
 
@@ -5794,7 +5794,7 @@ Return an iterator of elements from LEFT and RIGHT which terminates as soon as e
 ***
 
 #### <a href="#empty-value"><code>EMPTY</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.lisp#L137-L139">src</a></sub></sup><a name="empty-value"></a>
-<code>&forall; :A. (<a href="#iterator-type">Iterator</a> :A)</code>
+<code>&forall; :ANY. (<a href="#iterator-type">Iterator</a> :ANY)</code>
 
 Yields nothing; stops immediately
 
@@ -5817,13 +5817,13 @@ Whether or not the arrays are specialized depends on the underlying Lisp impleme
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#eq-class">Eq</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#lisparray-type">LispArray</a> :A)</code>
+- <code><a href="#eq-class">Eq</a> :T &rArr; <a href="#eq-class">Eq</a> (<a href="#lisparray-type">LispArray</a> :T)</code>
 - <code><a href="#foldable-class">Foldable</a> <a href="#lisparray-type">LispArray</a></code>
-- <code><a href="#into-class">Into</a> (<a href="#lisparray-type">LispArray</a> :A) (<a href="#list-type">List</a> :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#into-class">Into</a> (<a href="#list-type">List</a> :A) (<a href="#lisparray-type">LispArray</a> :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#iso-class">Iso</a> (<a href="#lisparray-type">LispArray</a> :A) (<a href="#list-type">List</a> :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#randomaccess-class">RandomAccess</a> (<a href="#lisparray-type">LispArray</a> :A) :A</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#lisparray-type">LispArray</a> :A)</code>
+- <code><a href="#into-class">Into</a> (<a href="#lisparray-type">LispArray</a> :T) (<a href="#list-type">List</a> :T)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> :T &rArr; <a href="#into-class">Into</a> (<a href="#list-type">List</a> :T) (<a href="#lisparray-type">LispArray</a> :T)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> :T &rArr; <a href="#iso-class">Iso</a> (<a href="#lisparray-type">LispArray</a> :T) (<a href="#list-type">List</a> :T)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> :T &rArr; <a href="#randomaccess-class">RandomAccess</a> (<a href="#lisparray-type">LispArray</a> :T) :T</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> :T &rArr; <a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#lisparray-type">LispArray</a> :T)</code>
 
 </details>
 
@@ -5834,7 +5834,7 @@ Whether or not the arrays are specialized depends on the underlying Lisp impleme
 ### Values
 
 #### <a href="#aref-value"><code>(AREF V I)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L78-L81">src</a></sub></sup><a name="aref-value"></a>
-<code>&forall; :A. ((<a href="#lisparray-type">LispArray</a> :A) &rarr; <a href="#ufix-type">UFix</a> &rarr; :A)</code>
+<code>&forall; :T. ((<a href="#lisparray-type">LispArray</a> :T) &rarr; <a href="#ufix-type">UFix</a> &rarr; :T)</code>
 
 Read the `i`th value of the `LispArray` `v`.
 
@@ -5843,7 +5843,7 @@ Read the `i`th value of the `LispArray` `v`.
 ***
 
 #### <a href="#copy-value"><code>(COPY V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L93-L96">src</a></sub></sup><a name="copy-value"></a>
-<code>&forall; :A. ((<a href="#lisparray-type">LispArray</a> :A) &rarr; (<a href="#lisparray-type">LispArray</a> :A))</code>
+<code>&forall; :T. ((<a href="#lisparray-type">LispArray</a> :T) &rarr; (<a href="#lisparray-type">LispArray</a> :T))</code>
 
 Make a deep copy of the `LispArray` `v`.
 
@@ -5852,7 +5852,7 @@ Make a deep copy of the `LispArray` `v`.
 ***
 
 #### <a href="#length-value"><code>(LENGTH V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L71-L74">src</a></sub></sup><a name="length-value"></a>
-<code>&forall; :A. ((<a href="#lisparray-type">LispArray</a> :A) &rarr; <a href="#ufix-type">UFix</a>)</code>
+<code>&forall; :T. ((<a href="#lisparray-type">LispArray</a> :T) &rarr; <a href="#ufix-type">UFix</a>)</code>
 
 Return the length of the `LispArray` `v`.
 
@@ -5860,8 +5860,8 @@ Return the length of the `LispArray` `v`.
 
 ***
 
-#### <a href="#make-value"><code>(MAKE N X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L46-L53">src</a></sub></sup><a name="make-value"></a>
-<code>&forall; :A. <a href="#runtimerepr-class">RuntimeRepr</a> :A &rArr; (<a href="#ufix-type">UFix</a> &rarr; :A &rarr; (<a href="#lisparray-type">LispArray</a> :A))</code>
+#### <a href="#make-value"><code>(MAKE N X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L48-L55">src</a></sub></sup><a name="make-value"></a>
+<code>&forall; :T. <a href="#runtimerepr-class">RuntimeRepr</a> :T &rArr; (<a href="#ufix-type">UFix</a> &rarr; :T &rarr; (<a href="#lisparray-type">LispArray</a> :T))</code>
 
 Make a new `LispArray` of length `n` initialized to `x`.
 
@@ -5871,8 +5871,8 @@ If the type of `x` represents a specialized array
 
 ***
 
-#### <a href="#make-uninitialized-value"><code>(MAKE-UNINITIALIZED N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L56-L67">src</a></sub></sup><a name="make-uninitialized-value"></a>
-<code>&forall; :A. <a href="#runtimerepr-class">RuntimeRepr</a> :A &rArr; (<a href="#ufix-type">UFix</a> &rarr; (<a href="#lisparray-type">LispArray</a> :A))</code>
+#### <a href="#make-uninitialized-value"><code>(MAKE-UNINITIALIZED N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L60-L67">src</a></sub></sup><a name="make-uninitialized-value"></a>
+<code>&forall; :T. <a href="#runtimerepr-class">RuntimeRepr</a> :T &rArr; (<a href="#ufix-type">UFix</a> &rarr; (<a href="#lisparray-type">LispArray</a> :T))</code>
 
 Make a new LispArray of length `n` that can store elements of type `:t`.
 
@@ -5884,7 +5884,7 @@ WARNING: The consequences are undefined if an uninitialized element is read befo
 ***
 
 #### <a href="#set!-value"><code>(SET! V I X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/lisparray.lisp#L85-L89">src</a></sub></sup><a name="set!-value"></a>
-<code>&forall; :A. ((<a href="#lisparray-type">LispArray</a> :A) &rarr; <a href="#ufix-type">UFix</a> &rarr; :A &rarr; <a href="#unit-type">Unit</a>)</code>
+<code>&forall; :T. ((<a href="#lisparray-type">LispArray</a> :T) &rarr; <a href="#ufix-type">UFix</a> &rarr; :T &rarr; <a href="#unit-type">Unit</a>)</code>
 
 Set the `i`th value of the `LispArray` `v` to `x`.
 
@@ -6207,7 +6207,7 @@ Returns a least element of a list, or `None`.
 ***
 
 #### <a href="#nth-value"><code>(NTH N L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L273-L275">src</a></sub></sup><a name="nth-value"></a>
-<code>&forall; :A. (<a href="#ufix-type">UFix</a> &rarr; (<a href="#list-type">List</a> :A) &rarr; :A)</code>
+<code>&forall; :T. (<a href="#ufix-type">UFix</a> &rarr; (<a href="#list-type">List</a> :T) &rarr; :T)</code>
 
 Like INDEX, but errors if the index is not found.
 
@@ -6270,7 +6270,7 @@ Returns the product of `xs`.
 ***
 
 #### <a href="#range-value"><code>(RANGE START END)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.lisp#L304-L319">src</a></sub></sup><a name="range-value"></a>
-<code>&forall; :A. (<a href="#num-class">Num</a> :A) (<a href="#ord-class">Ord</a> :A) &rArr; (:A &rarr; :A &rarr; (<a href="#list-type">List</a> :A))</code>
+<code>&forall; :INT. (<a href="#num-class">Num</a> :INT) (<a href="#ord-class">Ord</a> :INT) &rArr; (:INT &rarr; :INT &rarr; (<a href="#list-type">List</a> :INT))</code>
 
 Returns a list containing the numbers from START to END inclusive, counting by 1.
 
@@ -6489,7 +6489,7 @@ Make a homogeneous list of `elements`. Synonym for `coalton:make-list`.
 ### Classes
 
 #### <a href="#dividable-class"><code>Dividable</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L64-L86">src</a></sub></sup><a name="dividable-class"></a>
-<code><a href="#dividable-class">Dividable</a> :A :B</code>
+<code><a href="#dividable-class">Dividable</a> :ARG-TYPE :RES-TYPE</code>
 
 
 The representation of a type such that division within that type possibly results in another type. For instance,
@@ -6512,7 +6512,7 @@ The function `general/` is partial, and will error produce a run-time error if t
 
 
 Methods:
-- <code>GENERAL/ :: (:A &rarr; :A &rarr; :B)</code>
+- <code>GENERAL/ :: (:ARG-TYPE &rarr; :ARG-TYPE &rarr; :RES-TYPE)</code>
 <details>
 <summary>Instances</summary>
 
@@ -6551,8 +6551,8 @@ Methods:
 
 - <code><a href="#reciprocable-class">Reciprocable</a> <a href="#creal-type">CReal</a></code>
 - <code><a href="#reciprocable-class">Reciprocable</a> <a href="#big-float-type">Big-Float</a></code>
-- <code><a href="#reciprocable-class">Reciprocable</a> :A &rArr; <a href="#reciprocable-class">Reciprocable</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
-- <code><a href="#reciprocable-class">Reciprocable</a> :A &rArr; <a href="#reciprocable-class">Reciprocable</a> (<a href="#dual-type">Dual</a> :A)</code>
+- <code><a href="#reciprocable-class">Reciprocable</a> :T &rArr; <a href="#reciprocable-class">Reciprocable</a> (<a href="#hyperdual-type">Hyperdual</a> :T)</code>
+- <code><a href="#reciprocable-class">Reciprocable</a> :T &rArr; <a href="#reciprocable-class">Reciprocable</a> (<a href="#dual-type">Dual</a> :T)</code>
 - <code>(<a href="#complexcomponent-class">ComplexComponent</a> :A) (<a href="#reciprocable-class">Reciprocable</a> :A) &rArr; <a href="#reciprocable-class">Reciprocable</a> (<a href="#complex-type">Complex</a> :A)</code>
 - <code><a href="#reciprocable-class">Reciprocable</a> <a href="#fraction-type">Fraction</a></code>
 - <code><a href="#reciprocable-class">Reciprocable</a> <a href="#f64-type">F64</a></code>
@@ -6591,7 +6591,7 @@ Methods:
 ### Values
 
 #### <a href="#1+-value"><code>(1+ NUM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L177-L179">src</a></sub></sup><a name="1+-value"></a>
-<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (:A &rarr; :A)</code>
+<code>&forall; :NUM. <a href="#num-class">Num</a> :NUM &rArr; (:NUM &rarr; :NUM)</code>
 
 Increment `num`.
 
@@ -6600,7 +6600,7 @@ Increment `num`.
 ***
 
 #### <a href="#1--value"><code>(1- NUM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L183-L185">src</a></sub></sup><a name="1--value"></a>
-<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (:A &rarr; :A)</code>
+<code>&forall; :NUM. <a href="#num-class">Num</a> :NUM &rArr; (:NUM &rarr; :NUM)</code>
 
 Decrement `num`.
 
@@ -6765,9 +6765,9 @@ component types.
 <details>
 <summary>Instances</summary>
 
-- <code>(<a href="#complexcomponent-class">ComplexComponent</a> :A) (<a href="#into-class">Into</a> :A (<a href="#hyperdual-type">Hyperdual</a> :A)) &rArr; <a href="#into-class">Into</a> (<a href="#complex-type">Complex</a> :A) (<a href="#complex-type">Complex</a> (<a href="#hyperdual-type">Hyperdual</a> :A))</code>
 - <code>(<a href="#complexcomponent-class">ComplexComponent</a> :A) (<a href="#into-class">Into</a> :A <a href="#creal-type">CReal</a>) &rArr; <a href="#into-class">Into</a> (<a href="#complex-type">Complex</a> :A) (<a href="#complex-type">Complex</a> <a href="#creal-type">CReal</a>)</code>
 - <code>(<a href="#complexcomponent-class">ComplexComponent</a> :A) (<a href="#reciprocable-class">Reciprocable</a> :A) &rArr; <a href="#reciprocable-class">Reciprocable</a> (<a href="#complex-type">Complex</a> :A)</code>
+- <code>(<a href="#complexcomponent-class">ComplexComponent</a> :T) (<a href="#into-class">Into</a> :T (<a href="#hyperdual-type">Hyperdual</a> :T)) &rArr; <a href="#into-class">Into</a> (<a href="#complex-type">Complex</a> :T) (<a href="#complex-type">Complex</a> (<a href="#hyperdual-type">Hyperdual</a> :T))</code>
 - <code><a href="#complexcomponent-class">ComplexComponent</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#complex-type">Complex</a> :A)</code>
 - <code><a href="#complexcomponent-class">ComplexComponent</a> :A &rArr; <a href="#into-class">Into</a> :A (<a href="#complex-type">Complex</a> :A)</code>
 - <code><a href="#complexcomponent-class">ComplexComponent</a> :A &rArr; <a href="#num-class">Num</a> (<a href="#complex-type">Complex</a> :A)</code>
@@ -6782,7 +6782,7 @@ component types.
 - <code><a href="#fftgroup-class">FFTGroup</a> (<a href="#complex-type">Complex</a> <a href="#f32-type">F32</a>)</code>
 - <code><a href="#fftring-class">FFTRing</a> (<a href="#complex-type">Complex</a> <a href="#f64-type">F64</a>)</code>
 - <code><a href="#fftring-class">FFTRing</a> (<a href="#complex-type">Complex</a> <a href="#f32-type">F32</a>)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#complex-type">Complex</a> :A)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> :T &rArr; <a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#complex-type">Complex</a> :T)</code>
 
 </details>
 
@@ -6808,7 +6808,7 @@ Methods:
 
 - <code><a href="#complexcomponent-class">ComplexComponent</a> <a href="#creal-type">CReal</a></code>
 - <code><a href="#complexcomponent-class">ComplexComponent</a> <a href="#big-float-type">Big-Float</a></code>
-- <code><a href="#complexcomponent-class">ComplexComponent</a> :A &rArr; <a href="#complexcomponent-class">ComplexComponent</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
+- <code><a href="#complexcomponent-class">ComplexComponent</a> :T &rArr; <a href="#complexcomponent-class">ComplexComponent</a> (<a href="#hyperdual-type">Hyperdual</a> :T)</code>
 - <code><a href="#complexcomponent-class">ComplexComponent</a> <a href="#integer-type">Integer</a></code>
 - <code><a href="#complexcomponent-class">ComplexComponent</a> <a href="#fraction-type">Fraction</a></code>
 - <code><a href="#complexcomponent-class">ComplexComponent</a> <a href="#f64-type">F64</a></code>
@@ -6908,7 +6908,7 @@ References:
 
 ### Structs
 
-#### <a href="#dual-type"><code>Dual :A</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dual.lisp#L81-L89">src</a></sub></sup><a name="dual-type"></a>
+#### <a href="#dual-type"><code>Dual :T</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dual.lisp#L81-L89">src</a></sub></sup><a name="dual-type"></a>
 
 Representation of a dual number in the form $a + b\varepsilon$ where
 $a$ and $b$ are real numbers and $\varepsilon$ satisfies
@@ -6920,18 +6920,18 @@ component.
 <details>
 <summary>Instances</summary>
 
-- <code>(<a href="#num-class">Num</a> :A) (<a href="#exponentiable-class">Exponentiable</a> :A) (<a href="#reciprocable-class">Reciprocable</a> :A) &rArr; <a href="#exponentiable-class">Exponentiable</a> (<a href="#dual-type">Dual</a> :A)</code>
-- <code>(<a href="#num-class">Num</a> :A) (<a href="#radical-class">Radical</a> :A) (<a href="#reciprocable-class">Reciprocable</a> :A) (<a href="#exponentiable-class">Exponentiable</a> :A) &rArr; <a href="#radical-class">Radical</a> (<a href="#dual-type">Dual</a> :A)</code>
-- <code>(<a href="#num-class">Num</a> :A) (<a href="#trigonometric-class">Trigonometric</a> :A) (<a href="#reciprocable-class">Reciprocable</a> :A) (<a href="#radical-class">Radical</a> :A) &rArr; <a href="#trigonometric-class">Trigonometric</a> (<a href="#dual-type">Dual</a> :A)</code>
-- <code><a href="#eq-class">Eq</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#dual-type">Dual</a> :A)</code>  
+- <code>(<a href="#num-class">Num</a> :T) (<a href="#exponentiable-class">Exponentiable</a> :T) (<a href="#reciprocable-class">Reciprocable</a> :T) &rArr; <a href="#exponentiable-class">Exponentiable</a> (<a href="#dual-type">Dual</a> :T)</code>
+- <code>(<a href="#num-class">Num</a> :T) (<a href="#radical-class">Radical</a> :T) (<a href="#reciprocable-class">Reciprocable</a> :T) (<a href="#exponentiable-class">Exponentiable</a> :T) &rArr; <a href="#radical-class">Radical</a> (<a href="#dual-type">Dual</a> :T)</code>
+- <code>(<a href="#num-class">Num</a> :T) (<a href="#trigonometric-class">Trigonometric</a> :T) (<a href="#reciprocable-class">Reciprocable</a> :T) (<a href="#radical-class">Radical</a> :T) &rArr; <a href="#trigonometric-class">Trigonometric</a> (<a href="#dual-type">Dual</a> :T)</code>
+- <code><a href="#eq-class">Eq</a> :T &rArr; <a href="#eq-class">Eq</a> (<a href="#dual-type">Dual</a> :T)</code>  
 Note: Eq only compares the primal component.
-- <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#hash-class">Hash</a> (<a href="#dual-type">Dual</a> :A)</code>  
+- <code><a href="#hash-class">Hash</a> :T &rArr; <a href="#hash-class">Hash</a> (<a href="#dual-type">Dual</a> :T)</code>  
 Note: Hash only considers the primal component in order to be consistent with Eq.
-- <code><a href="#num-class">Num</a> :A &rArr; <a href="#num-class">Num</a> (<a href="#dual-type">Dual</a> :A)</code>
-- <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#ord-class">Ord</a> (<a href="#dual-type">Dual</a> :A)</code>  
+- <code><a href="#num-class">Num</a> :T &rArr; <a href="#num-class">Num</a> (<a href="#dual-type">Dual</a> :T)</code>
+- <code><a href="#ord-class">Ord</a> :T &rArr; <a href="#ord-class">Ord</a> (<a href="#dual-type">Dual</a> :T)</code>  
 Note: Ord only compares the primal component.
-- <code><a href="#reciprocable-class">Reciprocable</a> :A &rArr; <a href="#reciprocable-class">Reciprocable</a> (<a href="#dual-type">Dual</a> :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#dual-type">Dual</a> :A)</code>
+- <code><a href="#reciprocable-class">Reciprocable</a> :T &rArr; <a href="#reciprocable-class">Reciprocable</a> (<a href="#dual-type">Dual</a> :T)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#dual-type">Dual</a> :|0|)</code>
 
 </details>
 
@@ -6942,7 +6942,7 @@ Note: Ord only compares the primal component.
 ### Values
 
 #### <a href="#dual-part-value"><code>(DUAL-PART (DUAL _ D))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dual.lisp#L97-L99">src</a></sub></sup><a name="dual-part-value"></a>
-<code>&forall; :A. ((<a href="#dual-type">Dual</a> :A) &rarr; :A)</code>
+<code>&forall; :T. ((<a href="#dual-type">Dual</a> :T) &rarr; :T)</code>
 
 The dual (i.e., derivative) part of a dual number.
 
@@ -6951,7 +6951,7 @@ The dual (i.e., derivative) part of a dual number.
 ***
 
 #### <a href="#primal-part-value"><code>(PRIMAL-PART (DUAL P _))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dual.lisp#L92-L94">src</a></sub></sup><a name="primal-part-value"></a>
-<code>&forall; :A. ((<a href="#dual-type">Dual</a> :A) &rarr; :A)</code>
+<code>&forall; :T. ((<a href="#dual-type">Dual</a> :T) &rarr; :T)</code>
 
 The primal (i.e., real) part of a dual number.
 
@@ -7073,8 +7073,8 @@ Methods:
 
 - <code><a href="#exponentiable-class">Exponentiable</a> <a href="#creal-type">CReal</a></code>
 - <code><a href="#exponentiable-class">Exponentiable</a> <a href="#big-float-type">Big-Float</a></code>
-- <code>(<a href="#exponentiable-class">Exponentiable</a> :A) (<a href="#reciprocable-class">Reciprocable</a> :A) &rArr; <a href="#exponentiable-class">Exponentiable</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
-- <code>(<a href="#num-class">Num</a> :A) (<a href="#exponentiable-class">Exponentiable</a> :A) (<a href="#reciprocable-class">Reciprocable</a> :A) &rArr; <a href="#exponentiable-class">Exponentiable</a> (<a href="#dual-type">Dual</a> :A)</code>
+- <code>(<a href="#exponentiable-class">Exponentiable</a> :T) (<a href="#reciprocable-class">Reciprocable</a> :T) &rArr; <a href="#exponentiable-class">Exponentiable</a> (<a href="#hyperdual-type">Hyperdual</a> :T)</code>
+- <code>(<a href="#num-class">Num</a> :T) (<a href="#exponentiable-class">Exponentiable</a> :T) (<a href="#reciprocable-class">Reciprocable</a> :T) &rArr; <a href="#exponentiable-class">Exponentiable</a> (<a href="#dual-type">Dual</a> :T)</code>
 - <code><a href="#elementary-class">Elementary</a> :A &rArr; <a href="#exponentiable-class">Exponentiable</a> (<a href="#complex-type">Complex</a> :A)</code>
 - <code><a href="#exponentiable-class">Exponentiable</a> <a href="#f64-type">F64</a></code>
 - <code><a href="#exponentiable-class">Exponentiable</a> <a href="#f32-type">F32</a></code>
@@ -7131,8 +7131,8 @@ Methods:
 
 - <code><a href="#radical-class">Radical</a> <a href="#creal-type">CReal</a></code>
 - <code><a href="#radical-class">Radical</a> <a href="#big-float-type">Big-Float</a></code>
-- <code>(<a href="#radical-class">Radical</a> :A) (<a href="#reciprocable-class">Reciprocable</a> :A) (<a href="#exponentiable-class">Exponentiable</a> :A) &rArr; <a href="#radical-class">Radical</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
-- <code>(<a href="#num-class">Num</a> :A) (<a href="#radical-class">Radical</a> :A) (<a href="#reciprocable-class">Reciprocable</a> :A) (<a href="#exponentiable-class">Exponentiable</a> :A) &rArr; <a href="#radical-class">Radical</a> (<a href="#dual-type">Dual</a> :A)</code>
+- <code>(<a href="#radical-class">Radical</a> :T) (<a href="#reciprocable-class">Reciprocable</a> :T) (<a href="#exponentiable-class">Exponentiable</a> :T) &rArr; <a href="#radical-class">Radical</a> (<a href="#hyperdual-type">Hyperdual</a> :T)</code>
+- <code>(<a href="#num-class">Num</a> :T) (<a href="#radical-class">Radical</a> :T) (<a href="#reciprocable-class">Reciprocable</a> :T) (<a href="#exponentiable-class">Exponentiable</a> :T) &rArr; <a href="#radical-class">Radical</a> (<a href="#dual-type">Dual</a> :T)</code>
 - <code><a href="#elementary-class">Elementary</a> :A &rArr; <a href="#radical-class">Radical</a> (<a href="#complex-type">Complex</a> :A)</code>
 - <code><a href="#radical-class">Radical</a> <a href="#f64-type">F64</a></code>
 - <code><a href="#radical-class">Radical</a> <a href="#f32-type">F32</a></code>
@@ -7162,8 +7162,8 @@ Methods:
 
 - <code><a href="#trigonometric-class">Trigonometric</a> <a href="#creal-type">CReal</a></code>
 - <code><a href="#trigonometric-class">Trigonometric</a> <a href="#big-float-type">Big-Float</a></code>
-- <code>(<a href="#trigonometric-class">Trigonometric</a> :A) (<a href="#reciprocable-class">Reciprocable</a> :A) (<a href="#radical-class">Radical</a> :A) &rArr; <a href="#trigonometric-class">Trigonometric</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
-- <code>(<a href="#num-class">Num</a> :A) (<a href="#trigonometric-class">Trigonometric</a> :A) (<a href="#reciprocable-class">Reciprocable</a> :A) (<a href="#radical-class">Radical</a> :A) &rArr; <a href="#trigonometric-class">Trigonometric</a> (<a href="#dual-type">Dual</a> :A)</code>
+- <code>(<a href="#trigonometric-class">Trigonometric</a> :T) (<a href="#reciprocable-class">Reciprocable</a> :T) (<a href="#radical-class">Radical</a> :T) &rArr; <a href="#trigonometric-class">Trigonometric</a> (<a href="#hyperdual-type">Hyperdual</a> :T)</code>
+- <code>(<a href="#num-class">Num</a> :T) (<a href="#trigonometric-class">Trigonometric</a> :T) (<a href="#reciprocable-class">Reciprocable</a> :T) (<a href="#radical-class">Radical</a> :T) &rArr; <a href="#trigonometric-class">Trigonometric</a> (<a href="#dual-type">Dual</a> :T)</code>
 - <code><a href="#elementary-class">Elementary</a> :A &rArr; <a href="#trigonometric-class">Trigonometric</a> (<a href="#complex-type">Complex</a> :A)</code>
 - <code><a href="#trigonometric-class">Trigonometric</a> <a href="#f64-type">F64</a></code>
 - <code><a href="#trigonometric-class">Trigonometric</a> <a href="#f32-type">F32</a></code>
@@ -7177,19 +7177,19 @@ Methods:
 ### Values
 
 #### <a href="#acosh-value"><code>(ACOSH X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L147-L148">src</a></sub></sup><a name="acosh-value"></a>
-<code>&forall; :A. <a href="#elementary-class">Elementary</a> :A &rArr; (:A &rarr; :A)</code>
+<code>&forall; :F. <a href="#elementary-class">Elementary</a> :F &rArr; (:F &rarr; :F)</code>
 
 
 ***
 
 #### <a href="#asinh-value"><code>(ASINH X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L143-L144">src</a></sub></sup><a name="asinh-value"></a>
-<code>&forall; :A. <a href="#elementary-class">Elementary</a> :A &rArr; (:A &rarr; :A)</code>
+<code>&forall; :F. <a href="#elementary-class">Elementary</a> :F &rArr; (:F &rarr; :F)</code>
 
 
 ***
 
 #### <a href="#atan2-value"><code>(ATAN2 Y X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L60-L70">src</a></sub></sup><a name="atan2-value"></a>
-<code>&forall; :A. (<a href="#ord-class">Ord</a> :A) (<a href="#trigonometric-class">Trigonometric</a> :A) (<a href="#reciprocable-class">Reciprocable</a> :A) &rArr; (:A &rarr; :A &rarr; :A)</code>
+<code>&forall; :F. (<a href="#ord-class">Ord</a> :F) (<a href="#trigonometric-class">Trigonometric</a> :F) (<a href="#reciprocable-class">Reciprocable</a> :F) &rArr; (:F &rarr; :F &rarr; :F)</code>
 
 Computes the two-argument arctangent of `y` and `x`, which is roughly the same
 as `(atan (/ y x))` when defined and accounting for the quadrant of
@@ -7200,7 +7200,7 @@ the point $(\mathtt{x},\mathtt{y})$.
 ***
 
 #### <a href="#atanh-value"><code>(ATANH X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L151-L152">src</a></sub></sup><a name="atanh-value"></a>
-<code>&forall; :A. <a href="#elementary-class">Elementary</a> :A &rArr; (:A &rarr; :A)</code>
+<code>&forall; :F. <a href="#elementary-class">Elementary</a> :F &rArr; (:F &rarr; :F)</code>
 
 
 ***
@@ -7220,7 +7220,7 @@ A point on the complex unit circle:
 ***
 
 #### <a href="#cosh-value"><code>(COSH X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L135-L136">src</a></sub></sup><a name="cosh-value"></a>
-<code>&forall; :A. <a href="#elementary-class">Elementary</a> :A &rArr; (:A &rarr; :A)</code>
+<code>&forall; :F. <a href="#elementary-class">Elementary</a> :F &rArr; (:F &rarr; :F)</code>
 
 
 ***
@@ -7247,13 +7247,13 @@ Computes the sine and cosine of X.
 ***
 
 #### <a href="#sinh-value"><code>(SINH X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L131-L132">src</a></sub></sup><a name="sinh-value"></a>
-<code>&forall; :A. <a href="#elementary-class">Elementary</a> :A &rArr; (:A &rarr; :A)</code>
+<code>&forall; :F. <a href="#elementary-class">Elementary</a> :F &rArr; (:F &rarr; :F)</code>
 
 
 ***
 
 #### <a href="#tanh-value"><code>(TANH X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L139-L140">src</a></sub></sup><a name="tanh-value"></a>
-<code>&forall; :A. <a href="#elementary-class">Elementary</a> :A &rArr; (:A &rarr; :A)</code>
+<code>&forall; :F. <a href="#elementary-class">Elementary</a> :F &rArr; (:F &rarr; :F)</code>
 
 
 ***
@@ -7387,7 +7387,7 @@ The following list of identities describe the theory of hyperdual numbers.
 
 ### Structs
 
-#### <a href="#hyperdual-type"><code>Hyperdual :A</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L137-L144">src</a></sub></sup><a name="hyperdual-type"></a>
+#### <a href="#hyperdual-type"><code>Hyperdual :T</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L137-L144">src</a></sub></sup><a name="hyperdual-type"></a>
 
 Representation of a hyperdual number in the form `a + bε₁ + cε₂ + dε₁ε₂` where `a`, `b`, `c`, and `d` are real numbers and `ε₁` and `ε₂` satisfy `εᵢ² = 0` and `ε₁ε₂ != 0`.
 
@@ -7396,17 +7396,17 @@ Note: `Eq`, and `Ord` and `Hash` only make use of the primal component.
 <details>
 <summary>Instances</summary>
 
-- <code>(<a href="#exponentiable-class">Exponentiable</a> :A) (<a href="#reciprocable-class">Reciprocable</a> :A) &rArr; <a href="#exponentiable-class">Exponentiable</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
-- <code>(<a href="#radical-class">Radical</a> :A) (<a href="#reciprocable-class">Reciprocable</a> :A) (<a href="#exponentiable-class">Exponentiable</a> :A) &rArr; <a href="#radical-class">Radical</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
-- <code>(<a href="#trigonometric-class">Trigonometric</a> :A) (<a href="#reciprocable-class">Reciprocable</a> :A) (<a href="#radical-class">Radical</a> :A) &rArr; <a href="#trigonometric-class">Trigonometric</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
-- <code><a href="#complexcomponent-class">ComplexComponent</a> :A &rArr; <a href="#complexcomponent-class">ComplexComponent</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
-- <code><a href="#eq-class">Eq</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
-- <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#hash-class">Hash</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
-- <code><a href="#num-class">Num</a> :A &rArr; <a href="#into-class">Into</a> :A (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
-- <code><a href="#num-class">Num</a> :A &rArr; <a href="#num-class">Num</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
-- <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#ord-class">Ord</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
-- <code><a href="#reciprocable-class">Reciprocable</a> :A &rArr; <a href="#reciprocable-class">Reciprocable</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
+- <code>(<a href="#exponentiable-class">Exponentiable</a> :T) (<a href="#reciprocable-class">Reciprocable</a> :T) &rArr; <a href="#exponentiable-class">Exponentiable</a> (<a href="#hyperdual-type">Hyperdual</a> :T)</code>
+- <code>(<a href="#radical-class">Radical</a> :T) (<a href="#reciprocable-class">Reciprocable</a> :T) (<a href="#exponentiable-class">Exponentiable</a> :T) &rArr; <a href="#radical-class">Radical</a> (<a href="#hyperdual-type">Hyperdual</a> :T)</code>
+- <code>(<a href="#trigonometric-class">Trigonometric</a> :T) (<a href="#reciprocable-class">Reciprocable</a> :T) (<a href="#radical-class">Radical</a> :T) &rArr; <a href="#trigonometric-class">Trigonometric</a> (<a href="#hyperdual-type">Hyperdual</a> :T)</code>
+- <code><a href="#complexcomponent-class">ComplexComponent</a> :T &rArr; <a href="#complexcomponent-class">ComplexComponent</a> (<a href="#hyperdual-type">Hyperdual</a> :T)</code>
+- <code><a href="#eq-class">Eq</a> :T &rArr; <a href="#eq-class">Eq</a> (<a href="#hyperdual-type">Hyperdual</a> :T)</code>
+- <code><a href="#hash-class">Hash</a> :T &rArr; <a href="#hash-class">Hash</a> (<a href="#hyperdual-type">Hyperdual</a> :T)</code>
+- <code><a href="#num-class">Num</a> :T &rArr; <a href="#into-class">Into</a> :T (<a href="#hyperdual-type">Hyperdual</a> :T)</code>
+- <code><a href="#num-class">Num</a> :T &rArr; <a href="#num-class">Num</a> (<a href="#hyperdual-type">Hyperdual</a> :T)</code>
+- <code><a href="#ord-class">Ord</a> :T &rArr; <a href="#ord-class">Ord</a> (<a href="#hyperdual-type">Hyperdual</a> :T)</code>
+- <code><a href="#reciprocable-class">Reciprocable</a> :T &rArr; <a href="#reciprocable-class">Reciprocable</a> (<a href="#hyperdual-type">Hyperdual</a> :T)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#hyperdual-type">Hyperdual</a> :|0|)</code>
 
 </details>
 
@@ -7417,7 +7417,7 @@ Note: `Eq`, and `Ord` and `Hash` only make use of the primal component.
 ### Values
 
 #### <a href="#d-x-value"><code>(D-X F X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L327-L329">src</a></sub></sup><a name="d-x-value"></a>
-<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A)) &rarr; :A &rarr; :A)</code>
+<code>&forall; :T. <a href="#num-class">Num</a> :T &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :T)) &rarr; :T &rarr; :T)</code>
 
 Compute f'(x).
 
@@ -7426,7 +7426,7 @@ Compute f'(x).
 ***
 
 #### <a href="#d-xx-value"><code>(D-XX F X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L332-L334">src</a></sub></sup><a name="d-xx-value"></a>
-<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A)) &rarr; :A &rarr; :A)</code>
+<code>&forall; :T. <a href="#num-class">Num</a> :T &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :T)) &rarr; :T &rarr; :T)</code>
 
 Compute f''(x).
 
@@ -7435,7 +7435,7 @@ Compute f''(x).
 ***
 
 #### <a href="#gradient-value"><code>(GRADIENT F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L347-L350">src</a></sub></sup><a name="gradient-value"></a>
-<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A)) &rarr; :A &rarr; :A &rarr; (<a href="#list-type">List</a> :A))</code>
+<code>&forall; :T. <a href="#num-class">Num</a> :T &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :T)) &rarr; :T &rarr; :T &rarr; (<a href="#list-type">List</a> :T))</code>
 
 Compute the gradient (∂f/∂x, ∂f/∂y) at the point (x, y).
 
@@ -7444,7 +7444,7 @@ Compute the gradient (∂f/∂x, ∂f/∂y) at the point (x, y).
 ***
 
 #### <a href="#hessian-value"><code>(HESSIAN F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L373-L379">src</a></sub></sup><a name="hessian-value"></a>
-<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A)) &rarr; :A &rarr; :A &rarr; (<a href="#list-type">List</a> :A))</code>
+<code>&forall; :T. <a href="#num-class">Num</a> :T &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :T)) &rarr; :T &rarr; :T &rarr; (<a href="#list-type">List</a> :T))</code>
 
 Compute the flat Hessian (∂²f/∂x², ∂²f/∂x∂y, ∂²f/∂y∂x, ∂²f/∂y²) at the point (x, y).
 
@@ -7453,7 +7453,7 @@ Compute the flat Hessian (∂²f/∂x², ∂²f/∂x∂y, ∂²f/∂y∂x, ∂²
 ***
 
 #### <a href="#laplacian-value"><code>(LAPLACIAN F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L368-L370">src</a></sub></sup><a name="laplacian-value"></a>
-<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A)) &rarr; :A &rarr; :A &rarr; :A)</code>
+<code>&forall; :T. <a href="#num-class">Num</a> :T &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :T)) &rarr; :T &rarr; :T &rarr; :T)</code>
 
 Compute the Laplacian ∂²f/∂x² + ∂²f/∂y² at the point (x, y).
 
@@ -7462,7 +7462,7 @@ Compute the Laplacian ∂²f/∂x² + ∂²f/∂y² at the point (x, y).
 ***
 
 #### <a href="#partial-x-value"><code>(PARTIAL-X F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L337-L339">src</a></sub></sup><a name="partial-x-value"></a>
-<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A)) &rarr; :A &rarr; :A &rarr; :A)</code>
+<code>&forall; :T. <a href="#num-class">Num</a> :T &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :T)) &rarr; :T &rarr; :T &rarr; :T)</code>
 
 Compute ∂f/∂x(x, y).
 
@@ -7471,7 +7471,7 @@ Compute ∂f/∂x(x, y).
 ***
 
 #### <a href="#partial-xx-value"><code>(PARTIAL-XX F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L353-L355">src</a></sub></sup><a name="partial-xx-value"></a>
-<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A)) &rarr; :A &rarr; :A &rarr; :A)</code>
+<code>&forall; :T. <a href="#num-class">Num</a> :T &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :T)) &rarr; :T &rarr; :T &rarr; :T)</code>
 
 Compute ∂²f/∂x²(x, y).
 
@@ -7480,7 +7480,7 @@ Compute ∂²f/∂x²(x, y).
 ***
 
 #### <a href="#partial-xy-value"><code>(PARTIAL-XY F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L358-L360">src</a></sub></sup><a name="partial-xy-value"></a>
-<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A)) &rarr; :A &rarr; :A &rarr; :A)</code>
+<code>&forall; :T. <a href="#num-class">Num</a> :T &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :T)) &rarr; :T &rarr; :T &rarr; :T)</code>
 
 Compute ∂²f/∂x∂y(x, y).
 
@@ -7489,7 +7489,7 @@ Compute ∂²f/∂x∂y(x, y).
 ***
 
 #### <a href="#partial-y-value"><code>(PARTIAL-Y F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L342-L344">src</a></sub></sup><a name="partial-y-value"></a>
-<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A)) &rarr; :A &rarr; :A &rarr; :A)</code>
+<code>&forall; :T. <a href="#num-class">Num</a> :T &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :T)) &rarr; :T &rarr; :T &rarr; :T)</code>
 
 Compute ∂f/∂y(x, y).
 
@@ -7498,7 +7498,7 @@ Compute ∂f/∂y(x, y).
 ***
 
 #### <a href="#partial-yy-value"><code>(PARTIAL-YY F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L363-L365">src</a></sub></sup><a name="partial-yy-value"></a>
-<code>&forall; :A. <a href="#num-class">Num</a> :A &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :A)) &rarr; :A &rarr; :A &rarr; :A)</code>
+<code>&forall; :T. <a href="#num-class">Num</a> :T &rArr; (((<a href="#hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#hyperdual-type">Hyperdual</a> :T)) &rarr; :T &rarr; :T &rarr; :T)</code>
 
 Compute ∂²f/∂y²(x, y).
 
@@ -7511,14 +7511,14 @@ Compute ∂²f/∂y²(x, y).
 ### Classes
 
 #### <a href="#integral-class"><code>Integral</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.lisp#L61-L64">src</a></sub></sup><a name="integral-class"></a>
-<code>(<a href="#remainder-class">Remainder</a> :A) (<a href="#ord-class">Ord</a> :A) &rArr; <a href="#integral-class">Integral</a> :A</code>
+<code>(<a href="#remainder-class">Remainder</a> :INT) (<a href="#ord-class">Ord</a> :INT) &rArr; <a href="#integral-class">Integral</a> :INT</code>
 
 
 Integral is a number that is either even or odd where `div` and `quot`
 are floored and truncated division, respectively.
 
 Methods:
-- <code>TOINTEGER :: (:A &rarr; <a href="#integer-type">Integer</a>)</code>
+- <code>TOINTEGER :: (:INT &rarr; <a href="#integer-type">Integer</a>)</code>
 <details>
 <summary>Instances</summary>
 
@@ -7606,7 +7606,7 @@ The greatest common divisor of A and B.
 ***
 
 #### <a href="#ilog-value"><code>(ILOG B X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.lisp#L151-L167">src</a></sub></sup><a name="ilog-value"></a>
-<code>&forall; :A. <a href="#integral-class">Integral</a> :A &rArr; (:A &rarr; :A &rarr; :A)</code>
+<code>&forall; :INT. <a href="#integral-class">Integral</a> :INT &rArr; (:INT &rarr; :INT &rarr; :INT)</code>
 
 The floor of the logarithm with base B > 1 of X >= 1.
 
@@ -7624,7 +7624,7 @@ Converts any Integral N into any Num.
 ***
 
 #### <a href="#isqrt-value"><code>(ISQRT X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.lisp#L170-L181">src</a></sub></sup><a name="isqrt-value"></a>
-<code>&forall; :A. <a href="#integral-class">Integral</a> :A &rArr; (:A &rarr; :A)</code>
+<code>&forall; :INT. <a href="#integral-class">Integral</a> :INT &rArr; (:INT &rarr; :INT)</code>
 
 The floor of the square root of N > 0.
 
@@ -7642,7 +7642,7 @@ The least common multiple of A and B.
 ***
 
 #### <a href="#lsh-value"><code>(LSH X N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.lisp#L78-L80">src</a></sub></sup><a name="lsh-value"></a>
-<code>&forall; :A :B. (<a href="#integral-class">Integral</a> :B) (<a href="#bits-class">Bits</a> :A) &rArr; (:A &rarr; :B &rarr; :A)</code>
+<code>&forall; :B :N. (<a href="#integral-class">Integral</a> :N) (<a href="#bits-class">Bits</a> :B) &rArr; (:B &rarr; :N &rarr; :B)</code>
 
 Left shift X by N
 
@@ -7660,7 +7660,7 @@ Is N odd?
 ***
 
 #### <a href="#rsh-value"><code>(RSH X N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.lisp#L73-L75">src</a></sub></sup><a name="rsh-value"></a>
-<code>&forall; :A :B. (<a href="#integral-class">Integral</a> :B) (<a href="#bits-class">Bits</a> :A) &rArr; (:A &rarr; :B &rarr; :A)</code>
+<code>&forall; :B :N. (<a href="#integral-class">Integral</a> :N) (<a href="#bits-class">Bits</a> :B) &rArr; (:B &rarr; :N &rarr; :B)</code>
 
 Right shift X by N
 
@@ -7669,7 +7669,7 @@ Right shift X by N
 ***
 
 #### <a href="#^-value"><code>(^ BASE POWER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.lisp#L93-L116">src</a></sub></sup><a name="^-value"></a>
-<code>&forall; :A :B. (<a href="#num-class">Num</a> :A) (<a href="#integral-class">Integral</a> :B) &rArr; (:A &rarr; :B &rarr; :A)</code>
+<code>&forall; :A :INT. (<a href="#num-class">Num</a> :A) (<a href="#integral-class">Integral</a> :INT) &rArr; (:A &rarr; :INT &rarr; :A)</code>
 
 Exponentiate BASE to a non-negative POWER.
 
@@ -7678,7 +7678,7 @@ Exponentiate BASE to a non-negative POWER.
 ***
 
 #### <a href="#^^-value"><code>(^^ BASE POWER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.lisp#L119-L123">src</a></sub></sup><a name="^^-value"></a>
-<code>&forall; :A :B. (<a href="#reciprocable-class">Reciprocable</a> :A) (<a href="#integral-class">Integral</a> :B) &rArr; (:A &rarr; :B &rarr; :A)</code>
+<code>&forall; :A :INT. (<a href="#reciprocable-class">Reciprocable</a> :A) (<a href="#integral-class">Integral</a> :INT) &rArr; (:A &rarr; :INT &rarr; :A)</code>
 
 Exponentiate BASE to a signed POWER.
 
@@ -7697,7 +7697,7 @@ Represents an integer quantization of `:a`.
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#quantization-type">Quantization</a> :A)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#quantization-type">Quantization</a> :|0|)</code>
 
 </details>
 
@@ -7960,18 +7960,18 @@ Returns the integer closest/equal to `x` that is within `0` and `x`.
 ### Classes
 
 #### <a href="#liftto-class"><code>LiftTo</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/classes.lisp#L29-L31">src</a></sub></sup><a name="liftto-class"></a>
-<code>(<a href="#monad-class">Monad</a> :A) (<a href="#monad-class">Monad</a> :B) &rArr; <a href="#liftto-class">LiftTo</a> :A :B</code>
+<code>(<a href="#monad-class">Monad</a> :M) (<a href="#monad-class">Monad</a> :R) &rArr; <a href="#liftto-class">LiftTo</a> :M :R</code>
 
 
 A monad, :m, which can be lifted to :r. Typically because :m is a MonadTransformer or :m and :r are the same.
 
 Methods:
-- <code>LIFT-TO :: ((:A :C) &rarr; (:B :C))</code>
+- <code>LIFT-TO :: ((:M :A) &rarr; (:R :A))</code>
 <details>
 <summary>Instances</summary>
 
-- <code>(<a href="#monad-class">Monad</a> :A) (<a href="#monad-class">Monad</a> (:B :A)) (<a href="#monadtransformer-class">MonadTransformer</a> :B) &rArr; <a href="#liftto-class">LiftTo</a> :A (:B :A)</code>
-- <code><a href="#monad-class">Monad</a> :A &rArr; <a href="#liftto-class">LiftTo</a> :A :A</code>
+- <code>(<a href="#monad-class">Monad</a> :M) (<a href="#monad-class">Monad</a> (:T :M)) (<a href="#monadtransformer-class">MonadTransformer</a> :T) &rArr; <a href="#liftto-class">LiftTo</a> :M (:T :M)</code>
+- <code><a href="#monad-class">Monad</a> :M &rArr; <a href="#liftto-class">LiftTo</a> :M :M</code>
 
 </details>
 
@@ -7980,24 +7980,24 @@ Methods:
 ***
 
 #### <a href="#monadenvironment-class"><code>MonadEnvironment</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/classes.lisp#L41-L51">src</a></sub></sup><a name="monadenvironment-class"></a>
-<code><a href="#monad-class">Monad</a> :A &rArr; <a href="#monadenvironment-class">MonadEnvironment</a> :B :A</code>
+<code><a href="#monad-class">Monad</a> :M &rArr; <a href="#monadenvironment-class">MonadEnvironment</a> :ENV :M</code>
 
 
 A monad capable of a function in a computation environment.
 
 Methods:
-- <code>ASK :: (:A :B)</code><br/>Retrieves the computation environment.
-- <code>LOCAL :: ((:B &rarr; :B) &rarr; (:A :C) &rarr; (:A :C))</code><br/>Run a computation in a modified environment.
-- <code>ASKS :: ((:B &rarr; :D) &rarr; (:A :D))</code><br/>Retrieve an aspect of the computation environment.
+- <code>ASK :: (:M :ENV)</code><br/>Retrieves the computation environment.
+- <code>LOCAL :: ((:ENV &rarr; :ENV) &rarr; (:M :A) &rarr; (:M :A))</code><br/>Run a computation in a modified environment.
+- <code>ASKS :: ((:ENV &rarr; :B) &rarr; (:M :B))</code><br/>Retrieve an aspect of the computation environment.
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#monadenvironment-class">MonadEnvironment</a> :A :B &rArr; <a href="#monadenvironment-class">MonadEnvironment</a> :A (<a href="#loopt-type">LoopT</a> :B)</code>
-- <code><a href="#monadenvironment-class">MonadEnvironment</a> :A :B &rArr; <a href="#monadenvironment-class">MonadEnvironment</a> :A (<a href="#optionalt-type">OptionalT</a> :B)</code>
-- <code><a href="#monadenvironment-class">MonadEnvironment</a> :A :B &rArr; <a href="#monadenvironment-class">MonadEnvironment</a> :A ((<a href="#resultt-type">ResultT</a> :C) :B)</code>
-- <code><a href="#monad-class">Monad</a> :A &rArr; <a href="#monadenvironment-class">MonadEnvironment</a> :B ((<a href="#envt-type">EnvT</a> :B) :A)</code>
-- <code><a href="#monadenvironment-class">MonadEnvironment</a> :A (<a href="#env-type">Env</a> :A)</code>
-- <code><a href="#monadenvironment-class">MonadEnvironment</a> :A :B &rArr; <a href="#monadenvironment-class">MonadEnvironment</a> :A ((<a href="#statet-type">StateT</a> :C) :B)</code>
+- <code><a href="#monadenvironment-class">MonadEnvironment</a> :E :M &rArr; <a href="#monadenvironment-class">MonadEnvironment</a> :E (<a href="#loopt-type">LoopT</a> :M)</code>
+- <code><a href="#monadenvironment-class">MonadEnvironment</a> :ENV :M &rArr; <a href="#monadenvironment-class">MonadEnvironment</a> :ENV (<a href="#optionalt-type">OptionalT</a> :M)</code>
+- <code><a href="#monadenvironment-class">MonadEnvironment</a> :ENV :M &rArr; <a href="#monadenvironment-class">MonadEnvironment</a> :ENV ((<a href="#resultt-type">ResultT</a> :ERR) :M)</code>
+- <code><a href="#monad-class">Monad</a> :M &rArr; <a href="#monadenvironment-class">MonadEnvironment</a> :ENV ((<a href="#envt-type">EnvT</a> :ENV) :M)</code>
+- <code><a href="#monadenvironment-class">MonadEnvironment</a> :ENV (<a href="#env-type">Env</a> :ENV)</code>
+- <code><a href="#monadenvironment-class">MonadEnvironment</a> :E :M &rArr; <a href="#monadenvironment-class">MonadEnvironment</a> :E ((<a href="#statet-type">StateT</a> :S) :M)</code>
 
 </details>
 
@@ -8006,23 +8006,23 @@ Methods:
 ***
 
 #### <a href="#monadstate-class"><code>MonadState</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/classes.lisp#L53-L63">src</a></sub></sup><a name="monadstate-class"></a>
-<code><a href="#monad-class">Monad</a> :A &rArr; <a href="#monadstate-class">MonadState</a> :B :A</code>
+<code><a href="#monad-class">Monad</a> :M &rArr; <a href="#monadstate-class">MonadState</a> :S :M</code>
 
 
 A monad capable of tracking state in a computation.
 
 Methods:
-- <code>GET :: (:A :B)</code><br/>Retrieve the computation state.
-- <code>PUT :: (:B &rarr; (:A <a href="#unit-type">Unit</a>))</code><br/>Set the state to a given value.
-- <code>MODIFY :: ((:B &rarr; :B) &rarr; (:A <a href="#unit-type">Unit</a>))</code><br/>Modify the computation state, discarding the old state.
+- <code>GET :: (:M :S)</code><br/>Retrieve the computation state.
+- <code>PUT :: (:S &rarr; (:M <a href="#unit-type">Unit</a>))</code><br/>Set the state to a given value.
+- <code>MODIFY :: ((:S &rarr; :S) &rarr; (:M <a href="#unit-type">Unit</a>))</code><br/>Modify the computation state, discarding the old state.
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#monadstate-class">MonadState</a> :A :B &rArr; <a href="#monadstate-class">MonadState</a> :A (<a href="#loopt-type">LoopT</a> :B)</code>
-- <code><a href="#monadstate-class">MonadState</a> :A :B &rArr; <a href="#monadstate-class">MonadState</a> :A (<a href="#optionalt-type">OptionalT</a> :B)</code>
-- <code><a href="#monadstate-class">MonadState</a> :A :B &rArr; <a href="#monadstate-class">MonadState</a> :A ((<a href="#resultt-type">ResultT</a> :C) :B)</code>
-- <code><a href="#monadstate-class">MonadState</a> :A :B &rArr; <a href="#monadstate-class">MonadState</a> :A ((<a href="#envt-type">EnvT</a> :C) :B)</code>
-- <code><a href="#monad-class">Monad</a> :A &rArr; <a href="#monadstate-class">MonadState</a> :B ((<a href="#statet-type">StateT</a> :B) :A)</code>
+- <code><a href="#monadstate-class">MonadState</a> :S :M &rArr; <a href="#monadstate-class">MonadState</a> :S (<a href="#loopt-type">LoopT</a> :M)</code>
+- <code><a href="#monadstate-class">MonadState</a> :S :M &rArr; <a href="#monadstate-class">MonadState</a> :S (<a href="#optionalt-type">OptionalT</a> :M)</code>
+- <code><a href="#monadstate-class">MonadState</a> :S :M &rArr; <a href="#monadstate-class">MonadState</a> :S ((<a href="#resultt-type">ResultT</a> :ERR) :M)</code>
+- <code><a href="#monadstate-class">MonadState</a> :S :M &rArr; <a href="#monadstate-class">MonadState</a> :S ((<a href="#envt-type">EnvT</a> :E) :M)</code>
+- <code><a href="#monad-class">Monad</a> :M &rArr; <a href="#monadstate-class">MonadState</a> :S ((<a href="#statet-type">StateT</a> :S) :M)</code>
 
 </details>
 
@@ -8042,11 +8042,11 @@ A computation that runs inside an :env environment.
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#applicative-class">Applicative</a> (<a href="#env-type">Env</a> :A)</code>
-- <code><a href="#functor-class">Functor</a> (<a href="#env-type">Env</a> :A)</code>
-- <code><a href="#monad-class">Monad</a> (<a href="#env-type">Env</a> :A)</code>
-- <code><a href="#monadenvironment-class">MonadEnvironment</a> :A (<a href="#env-type">Env</a> :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#env-type">Env</a> :A :B)</code>
+- <code><a href="#applicative-class">Applicative</a> (<a href="#env-type">Env</a> :ENV)</code>
+- <code><a href="#functor-class">Functor</a> (<a href="#env-type">Env</a> :ENV)</code>
+- <code><a href="#monad-class">Monad</a> (<a href="#env-type">Env</a> :ENV)</code>
+- <code><a href="#monadenvironment-class">MonadEnvironment</a> :ENV (<a href="#env-type">Env</a> :ENV)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#env-type">Env</a> :|0| :|1|)</code>
 
 </details>
 
@@ -8063,13 +8063,13 @@ Equivalent to Haskell's ReaderT monad https://hackage.haskell.org/package/transf
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#applicative-class">Applicative</a> :A &rArr; <a href="#applicative-class">Applicative</a> ((<a href="#envt-type">EnvT</a> :B) :A)</code>
-- <code><a href="#functor-class">Functor</a> :A &rArr; <a href="#functor-class">Functor</a> ((<a href="#envt-type">EnvT</a> :B) :A)</code>
-- <code><a href="#monad-class">Monad</a> :A &rArr; <a href="#monad-class">Monad</a> ((<a href="#envt-type">EnvT</a> :B) :A)</code>
-- <code><a href="#monad-class">Monad</a> :A &rArr; <a href="#monadenvironment-class">MonadEnvironment</a> :B ((<a href="#envt-type">EnvT</a> :B) :A)</code>
-- <code><a href="#monadstate-class">MonadState</a> :A :B &rArr; <a href="#monadstate-class">MonadState</a> :A ((<a href="#envt-type">EnvT</a> :C) :B)</code>
-- <code><a href="#monadtransformer-class">MonadTransformer</a> (<a href="#envt-type">EnvT</a> :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (((<a href="#envt-type">EnvT</a> :A) :B) :C)</code>
+- <code><a href="#applicative-class">Applicative</a> :M &rArr; <a href="#applicative-class">Applicative</a> ((<a href="#envt-type">EnvT</a> :ENV) :M)</code>
+- <code><a href="#functor-class">Functor</a> :M &rArr; <a href="#functor-class">Functor</a> ((<a href="#envt-type">EnvT</a> :ENV) :M)</code>
+- <code><a href="#monad-class">Monad</a> :M &rArr; <a href="#monad-class">Monad</a> ((<a href="#envt-type">EnvT</a> :ENV) :M)</code>
+- <code><a href="#monad-class">Monad</a> :M &rArr; <a href="#monadenvironment-class">MonadEnvironment</a> :ENV ((<a href="#envt-type">EnvT</a> :ENV) :M)</code>
+- <code><a href="#monadstate-class">MonadState</a> :S :M &rArr; <a href="#monadstate-class">MonadState</a> :S ((<a href="#envt-type">EnvT</a> :E) :M)</code>
+- <code><a href="#monadtransformer-class">MonadTransformer</a> (<a href="#envt-type">EnvT</a> :ENV)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (((<a href="#envt-type">EnvT</a> :|0|) :|1|) :|2|)</code>
 
 </details>
 
@@ -8080,7 +8080,7 @@ Equivalent to Haskell's ReaderT monad https://hackage.haskell.org/package/transf
 ### Values
 
 #### <a href="#asks-env-value"><code>(ASKS-ENV FENV-&gt;A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L73-L76">src</a></sub></sup><a name="asks-env-value"></a>
-<code>&forall; :A :B. ((:A &rarr; :B) &rarr; (<a href="#env-type">Env</a> :A :B))</code>
+<code>&forall; :ENV :A. ((:ENV &rarr; :A) &rarr; (<a href="#env-type">Env</a> :ENV :A))</code>
 
 Retrieve an aspect of the computation environment.
 
@@ -8089,7 +8089,7 @@ Retrieve an aspect of the computation environment.
 ***
 
 #### <a href="#asks-envt-value"><code>(ASKS-ENVT FENV-&gt;A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L137-L140">src</a></sub></sup><a name="asks-envt-value"></a>
-<code>&forall; :A :B :C. <a href="#applicative-class">Applicative</a> :C &rArr; ((:A &rarr; :B) &rarr; (((<a href="#envt-type">EnvT</a> :A) :C) :B))</code>
+<code>&forall; :ENV :A :M. <a href="#applicative-class">Applicative</a> :M &rArr; ((:ENV &rarr; :A) &rarr; (((<a href="#envt-type">EnvT</a> :ENV) :M) :A))</code>
 
 Retrieve an aspect of the computation environment.
 
@@ -8098,19 +8098,19 @@ Retrieve an aspect of the computation environment.
 ***
 
 #### <a href="#lift-envt-value"><code>(LIFT-ENVT M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L161-L162">src</a></sub></sup><a name="lift-envt-value"></a>
-<code>&forall; :A :B :C. ((:A :B) &rarr; (((<a href="#envt-type">EnvT</a> :C) :A) :B))</code>
+<code>&forall; :M :A :ENV. ((:M :A) &rarr; (((<a href="#envt-type">EnvT</a> :ENV) :M) :A))</code>
 
 
 ***
 
 #### <a href="#local-env-value"><code>(LOCAL-ENV FENV MENV)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L61-L63">src</a></sub></sup><a name="local-env-value"></a>
-<code>&forall; :A :B. ((:A &rarr; :A) &rarr; (<a href="#env-type">Env</a> :A :B) &rarr; (<a href="#env-type">Env</a> :A :B))</code>
+<code>&forall; :ENV :VALUE. ((:ENV &rarr; :ENV) &rarr; (<a href="#env-type">Env</a> :ENV :VALUE) &rarr; (<a href="#env-type">Env</a> :ENV :VALUE))</code>
 
 
 ***
 
 #### <a href="#local-envt-value"><code>(LOCAL-ENVT FENV (ENVT FENV-&gt;A))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L124-L127">src</a></sub></sup><a name="local-envt-value"></a>
-<code>&forall; :A :B :C. ((:A &rarr; :A) &rarr; (((<a href="#envt-type">EnvT</a> :A) :B) :C) &rarr; (((<a href="#envt-type">EnvT</a> :A) :B) :C))</code>
+<code>&forall; :ENV :M :VALUE. ((:ENV &rarr; :ENV) &rarr; (((<a href="#envt-type">EnvT</a> :ENV) :M) :VALUE) &rarr; (((<a href="#envt-type">EnvT</a> :ENV) :M) :VALUE))</code>
 
 Run a computation in a modified environment.
 
@@ -8119,13 +8119,13 @@ Run a computation in a modified environment.
 ***
 
 #### <a href="#map-envt-value"><code>(MAP-ENVT FMA-&gt;NB (ENVT FENV-&gt;MA))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L155-L157">src</a></sub></sup><a name="map-envt-value"></a>
-<code>&forall; :A :B :C :D :E. (((:A :B) &rarr; (:C :D)) &rarr; (((<a href="#envt-type">EnvT</a> :E) :A) :B) &rarr; (((<a href="#envt-type">EnvT</a> :E) :C) :D))</code>
+<code>&forall; :M :A :N :B :ENV. (((:M :A) &rarr; (:N :B)) &rarr; (((<a href="#envt-type">EnvT</a> :ENV) :M) :A) &rarr; (((<a href="#envt-type">EnvT</a> :ENV) :N) :B))</code>
 
 
 ***
 
 #### <a href="#run-env-value"><code>(RUN-ENV (ENV ENV-COMPUTATION) ENV)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L55-L57">src</a></sub></sup><a name="run-env-value"></a>
-<code>&forall; :A :B. ((<a href="#env-type">Env</a> :A :B) &rarr; :A &rarr; :B)</code>
+<code>&forall; :ENV :VALUE. ((<a href="#env-type">Env</a> :ENV :VALUE) &rarr; :ENV &rarr; :VALUE)</code>
 
 Run a Env inside an environment.
 
@@ -8134,7 +8134,7 @@ Run a Env inside an environment.
 ***
 
 #### <a href="#run-envt-value"><code>(RUN-ENVT (ENVT FENV-&gt;VAL) ENV)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L144-L146">src</a></sub></sup><a name="run-envt-value"></a>
-<code>&forall; :A :B :C. ((((<a href="#envt-type">EnvT</a> :A) :B) :C) &rarr; :A &rarr; (:B :C))</code>
+<code>&forall; :ENV :M :VALUE. ((((<a href="#envt-type">EnvT</a> :ENV) :M) :VALUE) &rarr; :ENV &rarr; (:M :VALUE))</code>
 
 Run a EnvT inside an environment.
 
@@ -8143,7 +8143,7 @@ Run a EnvT inside an environment.
 ***
 
 #### <a href="#ask-env-value"><code>ASK-ENV</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L67-L69">src</a></sub></sup><a name="ask-env-value"></a>
-<code>&forall; :A. (<a href="#env-type">Env</a> :A :A)</code>
+<code>&forall; :ENV. (<a href="#env-type">Env</a> :ENV :ENV)</code>
 
 Retrieve the computation environment.
 
@@ -8152,7 +8152,7 @@ Retrieve the computation environment.
 ***
 
 #### <a href="#ask-envt-value"><code>ASK-ENVT</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/environment.lisp#L131-L133">src</a></sub></sup><a name="ask-envt-value"></a>
-<code>&forall; :A :B. <a href="#monad-class">Monad</a> :B &rArr; (((<a href="#envt-type">EnvT</a> :A) :B) :A)</code>
+<code>&forall; :ENV :M. <a href="#monad-class">Monad</a> :M &rArr; (((<a href="#envt-type">EnvT</a> :ENV) :M) :ENV)</code>
 
 Retrieve the computation environment.
 
@@ -8175,13 +8175,13 @@ References: [here](https://serokell.io/blog/introduction-to-free-monads) and [he
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#foldable-class">Foldable</a> :A &rArr; <a href="#foldable-class">Foldable</a> (<a href="#free-type">Free</a> :A)</code>
-- <code><a href="#functor-class">Functor</a> :A &rArr; <a href="#applicative-class">Applicative</a> (<a href="#free-type">Free</a> :A)</code>
-- <code><a href="#functor-class">Functor</a> :A &rArr; <a href="#functor-class">Functor</a> (<a href="#free-type">Free</a> :A)</code>
-- <code><a href="#functor-class">Functor</a> :A &rArr; <a href="#monad-class">Monad</a> (<a href="#free-type">Free</a> :A)</code>
-- <code><a href="#functor-class">Functor</a> :A &rArr; <a href="#monadfree-class">MonadFree</a> :A (<a href="#free-type">Free</a> :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> ((<a href="#free-type">Free</a> :A) :B)</code>
-- <code><a href="#traversable-class">Traversable</a> :A &rArr; <a href="#traversable-class">Traversable</a> (<a href="#free-type">Free</a> :A)</code>
+- <code><a href="#foldable-class">Foldable</a> :F &rArr; <a href="#foldable-class">Foldable</a> (<a href="#free-type">Free</a> :F)</code>
+- <code><a href="#functor-class">Functor</a> :F &rArr; <a href="#applicative-class">Applicative</a> (<a href="#free-type">Free</a> :F)</code>
+- <code><a href="#functor-class">Functor</a> :F &rArr; <a href="#functor-class">Functor</a> (<a href="#free-type">Free</a> :F)</code>
+- <code><a href="#functor-class">Functor</a> :F &rArr; <a href="#monad-class">Monad</a> (<a href="#free-type">Free</a> :F)</code>
+- <code><a href="#functor-class">Functor</a> :F &rArr; <a href="#monadfree-class">MonadFree</a> :F (<a href="#free-type">Free</a> :F)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> ((<a href="#free-type">Free</a> :|0|) :|1|)</code>
+- <code><a href="#traversable-class">Traversable</a> :T &rArr; <a href="#traversable-class">Traversable</a> (<a href="#free-type">Free</a> :T)</code>
 
 </details>
 
@@ -8192,19 +8192,19 @@ References: [here](https://serokell.io/blog/introduction-to-free-monads) and [he
 ### Classes
 
 #### <a href="#monadfree-class"><code>MonadFree</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/free.lisp#L28-L31">src</a></sub></sup><a name="monadfree-class"></a>
-<code><a href="#monad-class">Monad</a> :A &rArr; <a href="#monadfree-class">MonadFree</a> :B :A</code>
+<code><a href="#monad-class">Monad</a> :M &rArr; <a href="#monadfree-class">MonadFree</a> :F :M</code>
 
 
 A free monad is a monad, :m, which is capable of 'wrapping'
 around functors, and then 'unwrapping' them later using `>>=`.
 
 Methods:
-- <code>WRAP :: ((:B (:A :C)) &rarr; (:A :C))</code>
+- <code>WRAP :: ((:F (:M :A)) &rarr; (:M :A))</code>
 <details>
 <summary>Instances</summary>
 
-- <code>(<a href="#functor-class">Functor</a> :A) (<a href="#monad-class">Monad</a> :B) &rArr; <a href="#monadfree-class">MonadFree</a> :A ((<a href="#freet-type">FreeT</a> :A) :B)</code>
-- <code><a href="#functor-class">Functor</a> :A &rArr; <a href="#monadfree-class">MonadFree</a> :A (<a href="#free-type">Free</a> :A)</code>
+- <code>(<a href="#functor-class">Functor</a> :F) (<a href="#monad-class">Monad</a> :M) &rArr; <a href="#monadfree-class">MonadFree</a> :F ((<a href="#freet-type">FreeT</a> :F) :M)</code>
+- <code><a href="#functor-class">Functor</a> :F &rArr; <a href="#monadfree-class">MonadFree</a> :F (<a href="#free-type">Free</a> :F)</code>
 
 </details>
 
@@ -8225,7 +8225,7 @@ free monad to a target monad.
 ***
 
 #### <a href="#liftf-value"><code>(LIFTF F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/free.lisp#L34-L36">src</a></sub></sup><a name="liftf-value"></a>
-<code>&forall; :A :B :C. (<a href="#functor-class">Functor</a> :A) (<a href="#monadfree-class">MonadFree</a> :A :C) &rArr; ((:A :B) &rarr; (:C :B))</code>
+<code>&forall; :F :A :M. (<a href="#functor-class">Functor</a> :F) (<a href="#monadfree-class">MonadFree</a> :F :M) &rArr; ((:F :A) &rarr; (:M :A))</code>
 
 Lift a Functor into the Free Monad.
 
@@ -8234,7 +8234,7 @@ Lift a Functor into the Free Monad.
 ***
 
 #### <a href="#run-free-value"><code>(RUN-FREE TRANSF OP)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/free.lisp#L63-L72">src</a></sub></sup><a name="run-free-value"></a>
-<code>&forall; :A :B. <a href="#functor-class">Functor</a> :A &rArr; (((:A ((<a href="#free-type">Free</a> :A) :B)) &rarr; ((<a href="#free-type">Free</a> :A) :B)) &rarr; ((<a href="#free-type">Free</a> :A) :B) &rarr; :B)</code>
+<code>&forall; :F :A. <a href="#functor-class">Functor</a> :F &rArr; (((:F ((<a href="#free-type">Free</a> :F) :A)) &rarr; ((<a href="#free-type">Free</a> :F) :A)) &rarr; ((<a href="#free-type">Free</a> :F) :A) &rarr; :A)</code>
 
 Run a free monad with a function that unwraps a single layer of the functor
 `f` at a time.
@@ -8255,10 +8255,10 @@ References: [here](https://github.com/purescript/purescript-free/blob/v5.1.0/src
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#functor-class">Functor</a> :A &rArr; <a href="#bifunctor-class">Bifunctor</a> (<a href="#freef-type">FreeF</a> :A)</code>
-- <code><a href="#functor-class">Functor</a> :A &rArr; <a href="#functor-class">Functor</a> ((<a href="#freef-type">FreeF</a> :A) :B)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (((<a href="#freef-type">FreeF</a> :A) :B) :C)</code>
-- <code><a href="#traversable-class">Traversable</a> :A &rArr; <a href="#traversable-class">Traversable</a> ((<a href="#freef-type">FreeF</a> :A) :B)</code>
+- <code><a href="#functor-class">Functor</a> :F &rArr; <a href="#bifunctor-class">Bifunctor</a> (<a href="#freef-type">FreeF</a> :F)</code>
+- <code><a href="#functor-class">Functor</a> :F &rArr; <a href="#functor-class">Functor</a> ((<a href="#freef-type">FreeF</a> :F) :A)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (((<a href="#freef-type">FreeF</a> :|0|) :|1|) :|2|)</code>
+- <code><a href="#traversable-class">Traversable</a> :F &rArr; <a href="#traversable-class">Traversable</a> ((<a href="#freef-type">FreeF</a> :F) :A)</code>
 
 </details>
 
@@ -8274,13 +8274,13 @@ References: [here](https://github.com/purescript/purescript-free/blob/v5.1.0/src
 <details>
 <summary>Instances</summary>
 
-- <code>(<a href="#functor-class">Functor</a> :A) (<a href="#functor-class">Functor</a> :B) &rArr; <a href="#functor-class">Functor</a> ((<a href="#freet-type">FreeT</a> :A) :B)</code>
-- <code>(<a href="#functor-class">Functor</a> :A) (<a href="#monad-class">Monad</a> :B) &rArr; <a href="#applicative-class">Applicative</a> ((<a href="#freet-type">FreeT</a> :A) :B)</code>
-- <code>(<a href="#functor-class">Functor</a> :A) (<a href="#monad-class">Monad</a> :B) &rArr; <a href="#monad-class">Monad</a> ((<a href="#freet-type">FreeT</a> :A) :B)</code>
-- <code>(<a href="#functor-class">Functor</a> :A) (<a href="#monad-class">Monad</a> :B) &rArr; <a href="#monadfree-class">MonadFree</a> :A ((<a href="#freet-type">FreeT</a> :A) :B)</code>
-- <code>(<a href="#monad-class">Monad</a> :A) (<a href="#traversable-class">Traversable</a> :A) (<a href="#traversable-class">Traversable</a> :B) &rArr; <a href="#traversable-class">Traversable</a> ((<a href="#freet-type">FreeT</a> :B) :A)</code>
-- <code><a href="#functor-class">Functor</a> :A &rArr; <a href="#monadtransformer-class">MonadTransformer</a> (<a href="#freet-type">FreeT</a> :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (((<a href="#freet-type">FreeT</a> :A) :B) :C)</code>
+- <code>(<a href="#functor-class">Functor</a> :F) (<a href="#functor-class">Functor</a> :M) &rArr; <a href="#functor-class">Functor</a> ((<a href="#freet-type">FreeT</a> :F) :M)</code>
+- <code>(<a href="#functor-class">Functor</a> :F) (<a href="#monad-class">Monad</a> :M) &rArr; <a href="#applicative-class">Applicative</a> ((<a href="#freet-type">FreeT</a> :F) :M)</code>
+- <code>(<a href="#functor-class">Functor</a> :F) (<a href="#monad-class">Monad</a> :M) &rArr; <a href="#monad-class">Monad</a> ((<a href="#freet-type">FreeT</a> :F) :M)</code>
+- <code>(<a href="#functor-class">Functor</a> :F) (<a href="#monad-class">Monad</a> :M) &rArr; <a href="#monadfree-class">MonadFree</a> :F ((<a href="#freet-type">FreeT</a> :F) :M)</code>
+- <code>(<a href="#monad-class">Monad</a> :M) (<a href="#traversable-class">Traversable</a> :M) (<a href="#traversable-class">Traversable</a> :F) &rArr; <a href="#traversable-class">Traversable</a> ((<a href="#freet-type">FreeT</a> :F) :M)</code>
+- <code><a href="#functor-class">Functor</a> :F &rArr; <a href="#monadtransformer-class">MonadTransformer</a> (<a href="#freet-type">FreeT</a> :F)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (((<a href="#freet-type">FreeT</a> :|0|) :|1|) :|2|)</code>
 
 </details>
 
@@ -8291,13 +8291,13 @@ References: [here](https://github.com/purescript/purescript-free/blob/v5.1.0/src
 ### Values
 
 #### <a href="#fold-freet-value"><code>(FOLD-FREET F (FREET M))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/freet.lisp#L173-L181">src</a></sub></sup><a name="fold-freet-value"></a>
-<code>&forall; :A :B :C :D. (<a href="#monadtransformer-class">MonadTransformer</a> :D) (<a href="#monad-class">Monad</a> (:D :B)) (<a href="#monad-class">Monad</a> :B) &rArr; (((:A (((<a href="#freet-type">FreeT</a> :A) :B) :C)) &rarr; ((:D :B) (((<a href="#freet-type">FreeT</a> :A) :B) :C))) &rarr; (((<a href="#freet-type">FreeT</a> :A) :B) :C) &rarr; ((:D :B) :C))</code>
+<code>&forall; :F :M :A :T. (<a href="#monadtransformer-class">MonadTransformer</a> :T) (<a href="#monad-class">Monad</a> (:T :M)) (<a href="#monad-class">Monad</a> :M) &rArr; (((:F (((<a href="#freet-type">FreeT</a> :F) :M) :A)) &rarr; ((:T :M) (((<a href="#freet-type">FreeT</a> :F) :M) :A))) &rarr; (((<a href="#freet-type">FreeT</a> :F) :M) :A) &rarr; ((:T :M) :A))</code>
 
 
 ***
 
 #### <a href="#run-freet-value"><code>(RUN-FREET TRANSF OP)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/freet.lisp#L92-L101">src</a></sub></sup><a name="run-freet-value"></a>
-<code>&forall; :A :B :C. <a href="#monad-class">Monad</a> :B &rArr; (((:A (((<a href="#freet-type">FreeT</a> :A) :B) :C)) &rarr; (((<a href="#freet-type">FreeT</a> :A) :B) :C)) &rarr; (((<a href="#freet-type">FreeT</a> :A) :B) :C) &rarr; (:B :C))</code>
+<code>&forall; :F :M :A. <a href="#monad-class">Monad</a> :M &rArr; (((:F (((<a href="#freet-type">FreeT</a> :F) :M) :A)) &rarr; (((<a href="#freet-type">FreeT</a> :F) :M) :A)) &rarr; (((<a href="#freet-type">FreeT</a> :F) :M) :A) &rarr; (:M :A))</code>
 
 Run a free monad transformer with a function that unwraps a single layer of the
 functor `f` at a time.
@@ -8307,7 +8307,7 @@ functor `f` at a time.
 ***
 
 #### <a href="#unwrap-freet-value"><code>(UNWRAP-FREET (FREET M))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/freet.lisp#L82-L86">src</a></sub></sup><a name="unwrap-freet-value"></a>
-<code>&forall; :A :B :C. ((((<a href="#freet-type">FreeT</a> :A) :B) :C) &rarr; (:B (((<a href="#freef-type">FreeF</a> :A) :C) (((<a href="#freet-type">FreeT</a> :A) :B) :C))))</code>
+<code>&forall; :F :M :A. ((((<a href="#freet-type">FreeT</a> :F) :M) :A) &rarr; (:M (((<a href="#freef-type">FreeF</a> :F) :A) (((<a href="#freet-type">FreeT</a> :F) :M) :A))))</code>
 
 Unwrap one layer of the the free monad transformer, returning a value of the base
 monad containing a FreeF (which can either contain VAL, a pure value, or FREEF, another
@@ -8332,7 +8332,7 @@ A bare computation. Not useful on its own, but is useful for running Monad trans
 - <code><a href="#applicative-class">Applicative</a> <a href="#identity-type">Identity</a></code>
 - <code><a href="#functor-class">Functor</a> <a href="#identity-type">Identity</a></code>
 - <code><a href="#monad-class">Monad</a> <a href="#identity-type">Identity</a></code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#identity-type">Identity</a> :A)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#identity-type">Identity</a> :|0|)</code>
 
 </details>
 
@@ -8360,14 +8360,14 @@ A monadic computation that returns an Optional.
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#functor-class">Functor</a> :A &rArr; <a href="#functor-class">Functor</a> (<a href="#optionalt-type">OptionalT</a> :A)</code>
-- <code><a href="#monad-class">Monad</a> :A &rArr; <a href="#alternative-class">Alternative</a> (<a href="#optionalt-type">OptionalT</a> :A)</code>
-- <code><a href="#monad-class">Monad</a> :A &rArr; <a href="#applicative-class">Applicative</a> (<a href="#optionalt-type">OptionalT</a> :A)</code>
-- <code><a href="#monad-class">Monad</a> :A &rArr; <a href="#monad-class">Monad</a> (<a href="#optionalt-type">OptionalT</a> :A)</code>
-- <code><a href="#monadenvironment-class">MonadEnvironment</a> :A :B &rArr; <a href="#monadenvironment-class">MonadEnvironment</a> :A (<a href="#optionalt-type">OptionalT</a> :B)</code>
-- <code><a href="#monadstate-class">MonadState</a> :A :B &rArr; <a href="#monadstate-class">MonadState</a> :A (<a href="#optionalt-type">OptionalT</a> :B)</code>
+- <code><a href="#functor-class">Functor</a> :M &rArr; <a href="#functor-class">Functor</a> (<a href="#optionalt-type">OptionalT</a> :M)</code>
+- <code><a href="#monad-class">Monad</a> :M &rArr; <a href="#alternative-class">Alternative</a> (<a href="#optionalt-type">OptionalT</a> :M)</code>
+- <code><a href="#monad-class">Monad</a> :M &rArr; <a href="#applicative-class">Applicative</a> (<a href="#optionalt-type">OptionalT</a> :M)</code>
+- <code><a href="#monad-class">Monad</a> :M &rArr; <a href="#monad-class">Monad</a> (<a href="#optionalt-type">OptionalT</a> :M)</code>
+- <code><a href="#monadenvironment-class">MonadEnvironment</a> :ENV :M &rArr; <a href="#monadenvironment-class">MonadEnvironment</a> :ENV (<a href="#optionalt-type">OptionalT</a> :M)</code>
+- <code><a href="#monadstate-class">MonadState</a> :S :M &rArr; <a href="#monadstate-class">MonadState</a> :S (<a href="#optionalt-type">OptionalT</a> :M)</code>
 - <code><a href="#monadtransformer-class">MonadTransformer</a> <a href="#optionalt-type">OptionalT</a></code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> ((<a href="#optionalt-type">OptionalT</a> :A) :B)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> ((<a href="#optionalt-type">OptionalT</a> :|0|) :|1|)</code>
 
 </details>
 
@@ -8378,13 +8378,13 @@ A monadic computation that returns an Optional.
 ### Values
 
 #### <a href="#map-optionalt-value"><code>(MAP-OPTIONALT F (OPTIONALT M))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/optionalt.lisp#L37-L38">src</a></sub></sup><a name="map-optionalt-value"></a>
-<code>&forall; :A :B :C :D. (((:A (<a href="#optional-type">Optional</a> :B)) &rarr; (:C (<a href="#optional-type">Optional</a> :D))) &rarr; ((<a href="#optionalt-type">OptionalT</a> :A) :B) &rarr; ((<a href="#optionalt-type">OptionalT</a> :C) :D))</code>
+<code>&forall; :M :A :N :B. (((:M (<a href="#optional-type">Optional</a> :A)) &rarr; (:N (<a href="#optional-type">Optional</a> :B))) &rarr; ((<a href="#optionalt-type">OptionalT</a> :M) :A) &rarr; ((<a href="#optionalt-type">OptionalT</a> :N) :B))</code>
 
 
 ***
 
 #### <a href="#run-optionalt-value"><code>(RUN-OPTIONALT (OPTIONALT M))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/optionalt.lisp#L30-L31">src</a></sub></sup><a name="run-optionalt-value"></a>
-<code>&forall; :A :B. (((<a href="#optionalt-type">OptionalT</a> :A) :B) &rarr; (:A (<a href="#optional-type">Optional</a> :B)))</code>
+<code>&forall; :M :A. (((<a href="#optionalt-type">OptionalT</a> :M) :A) &rarr; (:M (<a href="#optional-type">Optional</a> :A)))</code>
 
 
 ***
@@ -8401,13 +8401,13 @@ A monadic computation that returns a Result.
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#functor-class">Functor</a> :A &rArr; <a href="#functor-class">Functor</a> ((<a href="#resultt-type">ResultT</a> :B) :A)</code>
-- <code><a href="#monad-class">Monad</a> :A &rArr; <a href="#applicative-class">Applicative</a> ((<a href="#resultt-type">ResultT</a> :B) :A)</code>
-- <code><a href="#monad-class">Monad</a> :A &rArr; <a href="#monad-class">Monad</a> ((<a href="#resultt-type">ResultT</a> :B) :A)</code>
-- <code><a href="#monadenvironment-class">MonadEnvironment</a> :A :B &rArr; <a href="#monadenvironment-class">MonadEnvironment</a> :A ((<a href="#resultt-type">ResultT</a> :C) :B)</code>
-- <code><a href="#monadstate-class">MonadState</a> :A :B &rArr; <a href="#monadstate-class">MonadState</a> :A ((<a href="#resultt-type">ResultT</a> :C) :B)</code>
-- <code><a href="#monadtransformer-class">MonadTransformer</a> (<a href="#resultt-type">ResultT</a> :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (((<a href="#resultt-type">ResultT</a> :A) :B) :C)</code>
+- <code><a href="#functor-class">Functor</a> :M &rArr; <a href="#functor-class">Functor</a> ((<a href="#resultt-type">ResultT</a> :ERR) :M)</code>
+- <code><a href="#monad-class">Monad</a> :M &rArr; <a href="#applicative-class">Applicative</a> ((<a href="#resultt-type">ResultT</a> :ERR) :M)</code>
+- <code><a href="#monad-class">Monad</a> :M &rArr; <a href="#monad-class">Monad</a> ((<a href="#resultt-type">ResultT</a> :ERR) :M)</code>
+- <code><a href="#monadenvironment-class">MonadEnvironment</a> :ENV :M &rArr; <a href="#monadenvironment-class">MonadEnvironment</a> :ENV ((<a href="#resultt-type">ResultT</a> :ERR) :M)</code>
+- <code><a href="#monadstate-class">MonadState</a> :S :M &rArr; <a href="#monadstate-class">MonadState</a> :S ((<a href="#resultt-type">ResultT</a> :ERR) :M)</code>
+- <code><a href="#monadtransformer-class">MonadTransformer</a> (<a href="#resultt-type">ResultT</a> :ERR)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (((<a href="#resultt-type">ResultT</a> :|0|) :|1|) :|2|)</code>
 
 </details>
 
@@ -8418,7 +8418,7 @@ A monadic computation that returns a Result.
 ### Values
 
 #### <a href="#err-ifm-value"><code>(ERR-IFM FAILED? FAILURE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/resultt.lisp#L66-L68">src</a></sub></sup><a name="err-ifm-value"></a>
-<code>&forall; :A :B. <a href="#monad-class">Monad</a> :B &rArr; (<a href="#boolean-type">Boolean</a> &rarr; :A &rarr; (:B (<a href="#result-type">Result</a> :A <a href="#unit-type">Unit</a>)))</code>
+<code>&forall; :ERR :M. <a href="#monad-class">Monad</a> :M &rArr; (<a href="#boolean-type">Boolean</a> &rarr; :ERR &rarr; (:M (<a href="#result-type">Result</a> :ERR <a href="#unit-type">Unit</a>)))</code>
 
 Fail with FAILURE inside :m if FAILED? is True.
 
@@ -8427,7 +8427,7 @@ Fail with FAILURE inside :m if FAILED? is True.
 ***
 
 #### <a href="#err-ift-value"><code>(ERR-IFT FAILED? FAILURE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/resultt.lisp#L60-L62">src</a></sub></sup><a name="err-ift-value"></a>
-<code>&forall; :A :B. <a href="#monad-class">Monad</a> :B &rArr; (<a href="#boolean-type">Boolean</a> &rarr; :A &rarr; (((<a href="#resultt-type">ResultT</a> :A) :B) <a href="#unit-type">Unit</a>))</code>
+<code>&forall; :ERR :M. <a href="#monad-class">Monad</a> :M &rArr; (<a href="#boolean-type">Boolean</a> &rarr; :ERR &rarr; (((<a href="#resultt-type">ResultT</a> :ERR) :M) <a href="#unit-type">Unit</a>))</code>
 
 Fail with FAILURE if FAILED? is True.
 
@@ -8436,7 +8436,7 @@ Fail with FAILURE if FAILED? is True.
 ***
 
 #### <a href="#map-errm-value"><code>(MAP-ERRM FERR M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/resultt.lisp#L48-L52">src</a></sub></sup><a name="map-errm-value"></a>
-<code>&forall; :A :B :C :D. <a href="#monad-class">Monad</a> :C &rArr; ((:A &rarr; :B) &rarr; (:C (<a href="#result-type">Result</a> :A :D)) &rarr; (:C (<a href="#result-type">Result</a> :B :D)))</code>
+<code>&forall; :A :B :M :C. <a href="#monad-class">Monad</a> :M &rArr; ((:A &rarr; :B) &rarr; (:M (<a href="#result-type">Result</a> :A :C)) &rarr; (:M (<a href="#result-type">Result</a> :B :C)))</code>
 
 Map FERR over the error value of a Result contained in M.
 
@@ -8445,19 +8445,19 @@ Map FERR over the error value of a Result contained in M.
 ***
 
 #### <a href="#map-errt-value"><code>(MAP-ERRT FERR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/resultt.lisp#L56-L56">src</a></sub></sup><a name="map-errt-value"></a>
-<code>&forall; :A :B :C :D. <a href="#functor-class">Functor</a> :C &rArr; ((:A &rarr; :B) &rarr; (((<a href="#resultt-type">ResultT</a> :A) :C) :D) &rarr; (((<a href="#resultt-type">ResultT</a> :B) :C) :D))</code>
+<code>&forall; :A :B :M :C. <a href="#functor-class">Functor</a> :M &rArr; ((:A &rarr; :B) &rarr; (((<a href="#resultt-type">ResultT</a> :A) :M) :C) &rarr; (((<a href="#resultt-type">ResultT</a> :B) :M) :C))</code>
 
 
 ***
 
 #### <a href="#map-resultt-value"><code>(MAP-RESULTT F (RESULTT M))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/resultt.lisp#L43-L44">src</a></sub></sup><a name="map-resultt-value"></a>
-<code>&forall; :A :B :C :D :E :F. (((:A (<a href="#result-type">Result</a> :B :C)) &rarr; (:D (<a href="#result-type">Result</a> :E :F))) &rarr; (((<a href="#resultt-type">ResultT</a> :B) :A) :C) &rarr; (((<a href="#resultt-type">ResultT</a> :E) :D) :F))</code>
+<code>&forall; :M :E1 :A :N :E2 :B. (((:M (<a href="#result-type">Result</a> :E1 :A)) &rarr; (:N (<a href="#result-type">Result</a> :E2 :B))) &rarr; (((<a href="#resultt-type">ResultT</a> :E1) :M) :A) &rarr; (((<a href="#resultt-type">ResultT</a> :E2) :N) :B))</code>
 
 
 ***
 
 #### <a href="#run-resultt-value"><code>(RUN-RESULTT (RESULTT M))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/resultt.lisp#L36-L37">src</a></sub></sup><a name="run-resultt-value"></a>
-<code>&forall; :A :B :C. ((((<a href="#resultt-type">ResultT</a> :A) :B) :C) &rarr; (:B (<a href="#result-type">Result</a> :A :C)))</code>
+<code>&forall; :ERR :M :OK. ((((<a href="#resultt-type">ResultT</a> :ERR) :M) :OK) &rarr; (:M (<a href="#result-type">Result</a> :ERR :OK)))</code>
 
 
 ***
@@ -8475,10 +8475,10 @@ Represented as a closure from initial state to updated state and value.
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#applicative-class">Applicative</a> (<a href="#st-type">ST</a> :A)</code>
-- <code><a href="#functor-class">Functor</a> (<a href="#st-type">ST</a> :A)</code>
-- <code><a href="#monad-class">Monad</a> (<a href="#st-type">ST</a> :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#st-type">ST</a> :A :B)</code>
+- <code><a href="#applicative-class">Applicative</a> (<a href="#st-type">ST</a> :STATE)</code>
+- <code><a href="#functor-class">Functor</a> (<a href="#st-type">ST</a> :STATE)</code>
+- <code><a href="#monad-class">Monad</a> (<a href="#st-type">ST</a> :STATE)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#st-type">ST</a> :|0| :|1|)</code>
 
 </details>
 
@@ -8489,7 +8489,7 @@ Represented as a closure from initial state to updated state and value.
 ### Values
 
 #### <a href="#modify-value"><code>(MODIFY FS-&gt;S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.lisp#L56-L59">src</a></sub></sup><a name="modify-value"></a>
-<code>&forall; :A. ((:A &rarr; :A) &rarr; (<a href="#st-type">ST</a> :A <a href="#unit-type">Unit</a>))</code>
+<code>&forall; :STATE. ((:STATE &rarr; :STATE) &rarr; (<a href="#st-type">ST</a> :STATE <a href="#unit-type">Unit</a>))</code>
 
 Modify the state in a StatefulComputation, discarding the old state.
 
@@ -8498,7 +8498,7 @@ Modify the state in a StatefulComputation, discarding the old state.
 ***
 
 #### <a href="#modify-get-value"><code>(MODIFY-GET FS-&gt;S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.lisp#L63-L67">src</a></sub></sup><a name="modify-get-value"></a>
-<code>&forall; :A. ((:A &rarr; :A) &rarr; (<a href="#st-type">ST</a> :A :A))</code>
+<code>&forall; :STATE. ((:STATE &rarr; :STATE) &rarr; (<a href="#st-type">ST</a> :STATE :STATE))</code>
 
 Modify the state in a StatefulComputation, discarding the old state. Return the new state.
 
@@ -8507,7 +8507,7 @@ Modify the state in a StatefulComputation, discarding the old state. Return the 
 ***
 
 #### <a href="#modify-swap-value"><code>(MODIFY-SWAP FS-&gt;S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.lisp#L77-L80">src</a></sub></sup><a name="modify-swap-value"></a>
-<code>&forall; :A. ((:A &rarr; :A) &rarr; (<a href="#st-type">ST</a> :A :A))</code>
+<code>&forall; :STATE. ((:STATE &rarr; :STATE) &rarr; (<a href="#st-type">ST</a> :STATE :STATE))</code>
 
 Modify the state in a StatefulComputation, returning the old state.
 
@@ -8516,7 +8516,7 @@ Modify the state in a StatefulComputation, returning the old state.
 ***
 
 #### <a href="#put-value"><code>(PUT STATE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.lisp#L36-L38">src</a></sub></sup><a name="put-value"></a>
-<code>&forall; :A. (:A &rarr; (<a href="#st-type">ST</a> :A <a href="#unit-type">Unit</a>))</code>
+<code>&forall; :STATE. (:STATE &rarr; (<a href="#st-type">ST</a> :STATE <a href="#unit-type">Unit</a>))</code>
 
 A StatefulComputation with state set to be the given state. The returned value is Unit.
 
@@ -8525,7 +8525,7 @@ A StatefulComputation with state set to be the given state. The returned value i
 ***
 
 #### <a href="#run-value"><code>(RUN SC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.lisp#L48-L52">src</a></sub></sup><a name="run-value"></a>
-<code>&forall; :A :B. ((<a href="#st-type">ST</a> :A :B) &rarr; :A &rarr; (<a href="#tuple-type">Tuple</a> :A :B))</code>
+<code>&forall; :STATE :A. ((<a href="#st-type">ST</a> :STATE :A) &rarr; :STATE &rarr; (<a href="#tuple-type">Tuple</a> :STATE :A))</code>
 
 Runs a StatefulComputation to produce a final updated state and value given an initial state
 
@@ -8534,7 +8534,7 @@ Runs a StatefulComputation to produce a final updated state and value given an i
 ***
 
 #### <a href="#swap-value"><code>(SWAP STATE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.lisp#L71-L73">src</a></sub></sup><a name="swap-value"></a>
-<code>&forall; :A. (:A &rarr; (<a href="#st-type">ST</a> :A :A))</code>
+<code>&forall; :STATE. (:STATE &rarr; (<a href="#st-type">ST</a> :STATE :STATE))</code>
 
 A StatefulComputation with state set to be the given state. The old state is returned.
 
@@ -8543,7 +8543,7 @@ A StatefulComputation with state set to be the given state. The old state is ret
 ***
 
 #### <a href="#get-value"><code>GET</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.lisp#L42-L44">src</a></sub></sup><a name="get-value"></a>
-<code>&forall; :A. (<a href="#st-type">ST</a> :A :A)</code>
+<code>&forall; :STATE. (<a href="#st-type">ST</a> :STATE :STATE)</code>
 
 A StatefulComputation which returns the current state as the value.
 
@@ -8563,13 +8563,13 @@ A monadic computation that tracks state of type :s.
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#applicative-class">Applicative</a> :A &rArr; <a href="#applicative-class">Applicative</a> ((<a href="#statet-type">StateT</a> :B) :A)</code>
-- <code><a href="#functor-class">Functor</a> :A &rArr; <a href="#functor-class">Functor</a> ((<a href="#statet-type">StateT</a> :B) :A)</code>
-- <code><a href="#monad-class">Monad</a> :A &rArr; <a href="#monad-class">Monad</a> ((<a href="#statet-type">StateT</a> :B) :A)</code>
-- <code><a href="#monad-class">Monad</a> :A &rArr; <a href="#monadstate-class">MonadState</a> :B ((<a href="#statet-type">StateT</a> :B) :A)</code>
-- <code><a href="#monadenvironment-class">MonadEnvironment</a> :A :B &rArr; <a href="#monadenvironment-class">MonadEnvironment</a> :A ((<a href="#statet-type">StateT</a> :C) :B)</code>
-- <code><a href="#monadtransformer-class">MonadTransformer</a> (<a href="#statet-type">StateT</a> :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (((<a href="#statet-type">StateT</a> :A) :B) :C)</code>
+- <code><a href="#applicative-class">Applicative</a> :M &rArr; <a href="#applicative-class">Applicative</a> ((<a href="#statet-type">StateT</a> :S) :M)</code>
+- <code><a href="#functor-class">Functor</a> :M &rArr; <a href="#functor-class">Functor</a> ((<a href="#statet-type">StateT</a> :S) :M)</code>
+- <code><a href="#monad-class">Monad</a> :M &rArr; <a href="#monad-class">Monad</a> ((<a href="#statet-type">StateT</a> :S) :M)</code>
+- <code><a href="#monad-class">Monad</a> :M &rArr; <a href="#monadstate-class">MonadState</a> :S ((<a href="#statet-type">StateT</a> :S) :M)</code>
+- <code><a href="#monadenvironment-class">MonadEnvironment</a> :E :M &rArr; <a href="#monadenvironment-class">MonadEnvironment</a> :E ((<a href="#statet-type">StateT</a> :S) :M)</code>
+- <code><a href="#monadtransformer-class">MonadTransformer</a> (<a href="#statet-type">StateT</a> :S)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (((<a href="#statet-type">StateT</a> :|0|) :|1|) :|2|)</code>
 
 </details>
 
@@ -8580,7 +8580,7 @@ A monadic computation that tracks state of type :s.
 ### Values
 
 #### <a href="#lift-statet-value"><code>(LIFT-STATET M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/statet.lisp#L90-L95">src</a></sub></sup><a name="lift-statet-value"></a>
-<code>&forall; :A :B :C. <a href="#functor-class">Functor</a> :A &rArr; ((:A :B) &rarr; (((<a href="#statet-type">StateT</a> :C) :A) :B))</code>
+<code>&forall; :M :A :S. <a href="#functor-class">Functor</a> :M &rArr; ((:M :A) &rarr; (((<a href="#statet-type">StateT</a> :S) :M) :A))</code>
 
 Lift a stateless computation into a stateful context.
 
@@ -8589,7 +8589,7 @@ Lift a stateless computation into a stateful context.
 ***
 
 #### <a href="#map-statet-value"><code>(MAP-STATET FMA-&gt;NB (STATET FS-&gt;MSA))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/statet.lisp#L83-L86">src</a></sub></sup><a name="map-statet-value"></a>
-<code>&forall; :A :B :C :D :E. (((:A (<a href="#tuple-type">Tuple</a> :B :C)) &rarr; (:D (<a href="#tuple-type">Tuple</a> :B :E))) &rarr; (((<a href="#statet-type">StateT</a> :B) :A) :C) &rarr; (((<a href="#statet-type">StateT</a> :B) :D) :E))</code>
+<code>&forall; :M :S :A :N :B. (((:M (<a href="#tuple-type">Tuple</a> :S :A)) &rarr; (:N (<a href="#tuple-type">Tuple</a> :S :B))) &rarr; (((<a href="#statet-type">StateT</a> :S) :M) :A) &rarr; (((<a href="#statet-type">StateT</a> :S) :N) :B))</code>
 
 Map the return value, the final state, and the execution context.
 
@@ -8598,7 +8598,7 @@ Map the return value, the final state, and the execution context.
 ***
 
 #### <a href="#modify-statet-value"><code>(MODIFY-STATET FS-&gt;S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/statet.lisp#L71-L75">src</a></sub></sup><a name="modify-statet-value"></a>
-<code>&forall; :A :B. <a href="#applicative-class">Applicative</a> :B &rArr; ((:A &rarr; :A) &rarr; (((<a href="#statet-type">StateT</a> :A) :B) <a href="#unit-type">Unit</a>))</code>
+<code>&forall; :S :M. <a href="#applicative-class">Applicative</a> :M &rArr; ((:S &rarr; :S) &rarr; (((<a href="#statet-type">StateT</a> :S) :M) <a href="#unit-type">Unit</a>))</code>
 
 Modify the computation state, discarding the old state.
 
@@ -8607,7 +8607,7 @@ Modify the computation state, discarding the old state.
 ***
 
 #### <a href="#put-statet-value"><code>(PUT-STATET STATE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/statet.lisp#L47-L49">src</a></sub></sup><a name="put-statet-value"></a>
-<code>&forall; :A :B. <a href="#applicative-class">Applicative</a> :B &rArr; (:A &rarr; (((<a href="#statet-type">StateT</a> :A) :B) <a href="#unit-type">Unit</a>))</code>
+<code>&forall; :S :M. <a href="#applicative-class">Applicative</a> :M &rArr; (:S &rarr; (((<a href="#statet-type">StateT</a> :S) :M) <a href="#unit-type">Unit</a>))</code>
 
 A stateful computation with state set to the given state. The returned value is Unit.
 
@@ -8616,13 +8616,13 @@ A stateful computation with state set to the given state. The returned value is 
 ***
 
 #### <a href="#run-statet-value"><code>(RUN-STATET (STATET FS-&gt;MSA) S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/statet.lisp#L60-L61">src</a></sub></sup><a name="run-statet-value"></a>
-<code>&forall; :A :B :C. <a href="#applicative-class">Applicative</a> :B &rArr; ((((<a href="#statet-type">StateT</a> :A) :B) :C) &rarr; :A &rarr; (:B (<a href="#tuple-type">Tuple</a> :A :C)))</code>
+<code>&forall; :S :M :A. <a href="#applicative-class">Applicative</a> :M &rArr; ((((<a href="#statet-type">StateT</a> :S) :M) :A) &rarr; :S &rarr; (:M (<a href="#tuple-type">Tuple</a> :S :A)))</code>
 
 
 ***
 
 #### <a href="#run-statet_-value"><code>(RUN-STATET_ ST-OP S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/statet.lisp#L65-L67">src</a></sub></sup><a name="run-statet_-value"></a>
-<code>&forall; :A :B :C. <a href="#applicative-class">Applicative</a> :B &rArr; ((((<a href="#statet-type">StateT</a> :A) :B) :C) &rarr; :A &rarr; (:B :C))</code>
+<code>&forall; :S :M :A. <a href="#applicative-class">Applicative</a> :M &rArr; ((((<a href="#statet-type">StateT</a> :S) :M) :A) &rarr; :S &rarr; (:M :A))</code>
 
 Run ST-OP, discarding the state and returning the result.
 
@@ -8631,7 +8631,7 @@ Run ST-OP, discarding the state and returning the result.
 ***
 
 #### <a href="#get-statet-value"><code>GET-STATET</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/statet.lisp#L53-L56">src</a></sub></sup><a name="get-statet-value"></a>
-<code>&forall; :A :B. <a href="#applicative-class">Applicative</a> :B &rArr; (((<a href="#statet-type">StateT</a> :A) :B) :A)</code>
+<code>&forall; :S :M. <a href="#applicative-class">Applicative</a> :M &rArr; (((<a href="#statet-type">StateT</a> :S) :M) :S)</code>
 
 A stateful computation which returns the current state as the value.
 
@@ -8681,14 +8681,14 @@ A binary tree which associates each :KEY with a :VALUE, sorted by `<=>' on the k
 <details>
 <summary>Instances</summary>
 
-- <code>(<a href="#eq-class">Eq</a> :A) (<a href="#eq-class">Eq</a> :B) &rArr; <a href="#eq-class">Eq</a> (<a href="#ordmap-type">OrdMap</a> :A :B)</code>
-- <code>(<a href="#hash-class">Hash</a> :A) (<a href="#hash-class">Hash</a> :B) &rArr; <a href="#hash-class">Hash</a> (<a href="#ordmap-type">OrdMap</a> :A :B)</code>
-- <code><a href="#functor-class">Functor</a> (<a href="#ordmap-type">OrdMap</a> :A)</code>
-- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#ordmap-type">OrdMap</a> :A :B) (<a href="#tuple-type">Tuple</a> :A :B)</code>
-- <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#ordmap-type">OrdMap</a> :A :B) (<a href="#tuple-type">Tuple</a> :A :B)</code>
-- <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#monoid-class">Monoid</a> (<a href="#ordmap-type">OrdMap</a> :A :B)</code>
-- <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#semigroup-class">Semigroup</a> (<a href="#ordmap-type">OrdMap</a> :A :B)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#ordmap-type">OrdMap</a> :A :B)</code>
+- <code>(<a href="#eq-class">Eq</a> :KEY) (<a href="#eq-class">Eq</a> :VALUE) &rArr; <a href="#eq-class">Eq</a> (<a href="#ordmap-type">OrdMap</a> :KEY :VALUE)</code>
+- <code>(<a href="#hash-class">Hash</a> :KEY) (<a href="#hash-class">Hash</a> :VALUE) &rArr; <a href="#hash-class">Hash</a> (<a href="#ordmap-type">OrdMap</a> :KEY :VALUE)</code>
+- <code><a href="#functor-class">Functor</a> (<a href="#ordmap-type">OrdMap</a> :KEY)</code>
+- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#ordmap-type">OrdMap</a> :KEY :VALUE) (<a href="#tuple-type">Tuple</a> :KEY :VALUE)</code>
+- <code><a href="#ord-class">Ord</a> :KEY &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#ordmap-type">OrdMap</a> :KEY :VALUE) (<a href="#tuple-type">Tuple</a> :KEY :VALUE)</code>
+- <code><a href="#ord-class">Ord</a> :KEY &rArr; <a href="#monoid-class">Monoid</a> (<a href="#ordmap-type">OrdMap</a> :KEY :VALUE)</code>
+- <code><a href="#ord-class">Ord</a> :KEY &rArr; <a href="#semigroup-class">Semigroup</a> (<a href="#ordmap-type">OrdMap</a> :KEY :VALUE)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#ordmap-type">OrdMap</a> :|0| :|1|)</code>
 
 </details>
 
@@ -8699,7 +8699,7 @@ A binary tree which associates each :KEY with a :VALUE, sorted by `<=>' on the k
 ### Values
 
 #### <a href="#adjoin-value"><code>(ADJOIN MP K V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L137-L142">src</a></sub></sup><a name="adjoin-value"></a>
-<code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordmap-type">OrdMap</a> :A :B) &rarr; :A &rarr; :B &rarr; (<a href="#ordmap-type">OrdMap</a> :A :B))</code>
+<code>&forall; :KEY :VALUE. <a href="#ord-class">Ord</a> :KEY &rArr; ((<a href="#ordmap-type">OrdMap</a> :KEY :VALUE) &rarr; :KEY &rarr; :VALUE &rarr; (<a href="#ordmap-type">OrdMap</a> :KEY :VALUE))</code>
 
 Returns an OrdMap in which the key `k` is associated with `v` added
 to the `mp`, only when `mp` doesn't have an association with `k`.
@@ -8710,7 +8710,7 @@ If `mp` already contains an association with `k`, `mp` is returned as is.
 ***
 
 #### <a href="#collect-value"><code>(COLLECT COLL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L201-L208">src</a></sub></sup><a name="collect-value"></a>
-<code>&forall; :A :B :C. (<a href="#ord-class">Ord</a> :B) (<a href="#foldable-class">Foldable</a> :A) &rArr; ((:A (<a href="#tuple-type">Tuple</a> :B :C)) &rarr; (<a href="#ordmap-type">OrdMap</a> :B :C))</code>
+<code>&forall; :COLLECTION :KEY :VALUE. (<a href="#ord-class">Ord</a> :KEY) (<a href="#foldable-class">Foldable</a> :COLLECTION) &rArr; ((:COLLECTION (<a href="#tuple-type">Tuple</a> :KEY :VALUE)) &rarr; (<a href="#ordmap-type">OrdMap</a> :KEY :VALUE))</code>
 
 Construct a `OrdMap` containing all the `(key value)` pairs in `coll`.
 
@@ -8721,7 +8721,7 @@ If `coll` contains duplicate keys, later values will overwrite earlier values.
 ***
 
 #### <a href="#collect!-value"><code>(COLLECT! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L191-L198">src</a></sub></sup><a name="collect!-value"></a>
-<code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#iterator-type">Iterator</a> (<a href="#tuple-type">Tuple</a> :A :B)) &rarr; (<a href="#ordmap-type">OrdMap</a> :A :B))</code>
+<code>&forall; :KEY :VALUE. <a href="#ord-class">Ord</a> :KEY &rArr; ((<a href="#iterator-type">Iterator</a> (<a href="#tuple-type">Tuple</a> :KEY :VALUE)) &rarr; (<a href="#ordmap-type">OrdMap</a> :KEY :VALUE))</code>
 
 Construct a `OrdMap` containing all the `(key value)` pairs in `iter`.
 
@@ -8732,7 +8732,7 @@ If `iter` contains duplicate keys, later values will overwrite earlier values.
 ***
 
 #### <a href="#difference-value"><code>(DIFFERENCE A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L275-L279">src</a></sub></sup><a name="difference-value"></a>
-<code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordmap-type">OrdMap</a> :A :B) &rarr; (<a href="#ordmap-type">OrdMap</a> :A :B) &rarr; (<a href="#ordmap-type">OrdMap</a> :A :B))</code>
+<code>&forall; :KEY :VALUE. <a href="#ord-class">Ord</a> :KEY &rArr; ((<a href="#ordmap-type">OrdMap</a> :KEY :VALUE) &rarr; (<a href="#ordmap-type">OrdMap</a> :KEY :VALUE) &rarr; (<a href="#ordmap-type">OrdMap</a> :KEY :VALUE))</code>
 
 Returns an OrdMap that contains mappings in `a` but not in `b`.
 
@@ -8741,7 +8741,7 @@ Returns an OrdMap that contains mappings in `a` but not in `b`.
 ***
 
 #### <a href="#empty?-value"><code>(EMPTY? M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L84-L87">src</a></sub></sup><a name="empty?-value"></a>
-<code>&forall; :A :B. ((<a href="#ordmap-type">OrdMap</a> :A :B) &rarr; <a href="#boolean-type">Boolean</a>)</code>
+<code>&forall; :KEY :VALUE. ((<a href="#ordmap-type">OrdMap</a> :KEY :VALUE) &rarr; <a href="#boolean-type">Boolean</a>)</code>
 
 Returns True iff the given OrdMap is empty.
 
@@ -8750,7 +8750,7 @@ Returns True iff the given OrdMap is empty.
 ***
 
 #### <a href="#entries-value"><code>(ENTRIES MP)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L162-L165">src</a></sub></sup><a name="entries-value"></a>
-<code>&forall; :A :B. ((<a href="#ordmap-type">OrdMap</a> :A :B) &rarr; (<a href="#iterator-type">Iterator</a> (<a href="#tuple-type">Tuple</a> :A :B)))</code>
+<code>&forall; :KEY :VALUE. ((<a href="#ordmap-type">OrdMap</a> :KEY :VALUE) &rarr; (<a href="#iterator-type">Iterator</a> (<a href="#tuple-type">Tuple</a> :KEY :VALUE)))</code>
 
 Iterate over the (key value) pairs in MP, sorted by the keys in least-to-greatest order.
 
@@ -8759,7 +8759,7 @@ Iterate over the (key value) pairs in MP, sorted by the keys in least-to-greates
 ***
 
 #### <a href="#insert-value"><code>(INSERT MP K V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L129-L133">src</a></sub></sup><a name="insert-value"></a>
-<code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordmap-type">OrdMap</a> :A :B) &rarr; :A &rarr; :B &rarr; (<a href="#ordmap-type">OrdMap</a> :A :B))</code>
+<code>&forall; :KEY :VALUE. <a href="#ord-class">Ord</a> :KEY &rArr; ((<a href="#ordmap-type">OrdMap</a> :KEY :VALUE) &rarr; :KEY &rarr; :VALUE &rarr; (<a href="#ordmap-type">OrdMap</a> :KEY :VALUE))</code>
 
 Returns an OrdMap in which the key `k` is associated with `v` added
 to the `mp`.  If `mp` already contains mapping for `k`, it is replaced.
@@ -8769,7 +8769,7 @@ to the `mp`.  If `mp` already contains mapping for `k`, it is replaced.
 ***
 
 #### <a href="#intersection-value"><code>(INTERSECTION A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L267-L272">src</a></sub></sup><a name="intersection-value"></a>
-<code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordmap-type">OrdMap</a> :A :B) &rarr; (<a href="#ordmap-type">OrdMap</a> :A :B) &rarr; (<a href="#ordmap-type">OrdMap</a> :A :B))</code>
+<code>&forall; :KEY :VALUE. <a href="#ord-class">Ord</a> :KEY &rArr; ((<a href="#ordmap-type">OrdMap</a> :KEY :VALUE) &rarr; (<a href="#ordmap-type">OrdMap</a> :KEY :VALUE) &rarr; (<a href="#ordmap-type">OrdMap</a> :KEY :VALUE))</code>
 
 Construct an OrdMap contaning elements whose key appears in both `a` and `b`.
 The resulting values are from `a`.
@@ -8779,7 +8779,7 @@ The resulting values are from `a`.
 ***
 
 #### <a href="#keys-value"><code>(KEYS MP)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L171-L174">src</a></sub></sup><a name="keys-value"></a>
-<code>&forall; :A :B. ((<a href="#ordmap-type">OrdMap</a> :A :B) &rarr; (<a href="#iterator-type">Iterator</a> :A))</code>
+<code>&forall; :KEY :VALUE. ((<a href="#ordmap-type">OrdMap</a> :KEY :VALUE) &rarr; (<a href="#iterator-type">Iterator</a> :KEY))</code>
 
 Iterate over the keys in MP, sorted least-to-greatest.
 
@@ -8788,7 +8788,7 @@ Iterate over the keys in MP, sorted least-to-greatest.
 ***
 
 #### <a href="#lookup-value"><code>(LOOKUP MP K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L91-L94">src</a></sub></sup><a name="lookup-value"></a>
-<code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordmap-type">OrdMap</a> :A :B) &rarr; :A &rarr; (<a href="#optional-type">Optional</a> :B))</code>
+<code>&forall; :KEY :VALUE. <a href="#ord-class">Ord</a> :KEY &rArr; ((<a href="#ordmap-type">OrdMap</a> :KEY :VALUE) &rarr; :KEY &rarr; (<a href="#optional-type">Optional</a> :VALUE))</code>
 
 Retrieve the value associated with K in MP, or None if MP does not contain K.
 
@@ -8797,7 +8797,7 @@ Retrieve the value associated with K in MP, or None if MP does not contain K.
 ***
 
 #### <a href="#lookup-neighbors-value"><code>(LOOKUP-NEIGHBORS MP K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L112-L125">src</a></sub></sup><a name="lookup-neighbors-value"></a>
-<code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordmap-type">OrdMap</a> :A :B) &rarr; :A &rarr; (<a href="#tuple3-type">Tuple3</a> (<a href="#optional-type">Optional</a> (<a href="#tuple-type">Tuple</a> :A :B)) (<a href="#optional-type">Optional</a> (<a href="#tuple-type">Tuple</a> :A :B)) (<a href="#optional-type">Optional</a> (<a href="#tuple-type">Tuple</a> :A :B))))</code>
+<code>&forall; :KEY :VALUE. <a href="#ord-class">Ord</a> :KEY &rArr; ((<a href="#ordmap-type">OrdMap</a> :KEY :VALUE) &rarr; :KEY &rarr; (<a href="#tuple3-type">Tuple3</a> (<a href="#optional-type">Optional</a> (<a href="#tuple-type">Tuple</a> :KEY :VALUE)) (<a href="#optional-type">Optional</a> (<a href="#tuple-type">Tuple</a> :KEY :VALUE)) (<a href="#optional-type">Optional</a> (<a href="#tuple-type">Tuple</a> :KEY :VALUE))))</code>
 
 Returns elements LO, ON, and HI, such that LO has the closest
 key that is strictly less than `k`, ON is the entry with `k`,
@@ -8809,7 +8809,7 @@ Any of these values can be None if there's no such entry.
 ***
 
 #### <a href="#max-key-entry-value"><code>(MAX-KEY-ENTRY MP)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L97-L100">src</a></sub></sup><a name="max-key-entry-value"></a>
-<code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordmap-type">OrdMap</a> :A :B) &rarr; (<a href="#optional-type">Optional</a> (<a href="#tuple-type">Tuple</a> :A :B)))</code>
+<code>&forall; :KEY :VALUE. <a href="#ord-class">Ord</a> :KEY &rArr; ((<a href="#ordmap-type">OrdMap</a> :KEY :VALUE) &rarr; (<a href="#optional-type">Optional</a> (<a href="#tuple-type">Tuple</a> :KEY :VALUE)))</code>
 
 Returns the entry (Tuple :key :value) with the maximum key in the map `mp`. If the map is empty, None is returned.
 
@@ -8818,7 +8818,7 @@ Returns the entry (Tuple :key :value) with the maximum key in the map `mp`. If t
 ***
 
 #### <a href="#min-key-entry-value"><code>(MIN-KEY-ENTRY MP)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L103-L106">src</a></sub></sup><a name="min-key-entry-value"></a>
-<code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordmap-type">OrdMap</a> :A :B) &rarr; (<a href="#optional-type">Optional</a> (<a href="#tuple-type">Tuple</a> :A :B)))</code>
+<code>&forall; :KEY :VALUE. <a href="#ord-class">Ord</a> :KEY &rArr; ((<a href="#ordmap-type">OrdMap</a> :KEY :VALUE) &rarr; (<a href="#optional-type">Optional</a> (<a href="#tuple-type">Tuple</a> :KEY :VALUE)))</code>
 
 Returns the entry (Tuple :key :value) with the minimum key in the map `mp`. If the map is empty, None is returned.
 
@@ -8827,7 +8827,7 @@ Returns the entry (Tuple :key :value) with the minimum key in the map `mp`. If t
 ***
 
 #### <a href="#remove-value"><code>(REMOVE MP K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L155-L159">src</a></sub></sup><a name="remove-value"></a>
-<code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordmap-type">OrdMap</a> :A :B) &rarr; :A &rarr; (<a href="#ordmap-type">OrdMap</a> :A :B))</code>
+<code>&forall; :KEY :VALUE. <a href="#ord-class">Ord</a> :KEY &rArr; ((<a href="#ordmap-type">OrdMap</a> :KEY :VALUE) &rarr; :KEY &rarr; (<a href="#ordmap-type">OrdMap</a> :KEY :VALUE))</code>
 
 Returns an OrdMap in which the association with key 'k' is removed from
 `mp`.  If `mp` doesn't have an association with `k`, it is returned as is.
@@ -8837,7 +8837,7 @@ Returns an OrdMap in which the association with key 'k' is removed from
 ***
 
 #### <a href="#replace-value"><code>(REPLACE MP K V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L146-L151">src</a></sub></sup><a name="replace-value"></a>
-<code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordmap-type">OrdMap</a> :A :B) &rarr; :A &rarr; :B &rarr; (<a href="#ordmap-type">OrdMap</a> :A :B))</code>
+<code>&forall; :KEY :VALUE. <a href="#ord-class">Ord</a> :KEY &rArr; ((<a href="#ordmap-type">OrdMap</a> :KEY :VALUE) &rarr; :KEY &rarr; :VALUE &rarr; (<a href="#ordmap-type">OrdMap</a> :KEY :VALUE))</code>
 
 Returns an OrdMap in which the key `k` is associated with `v` replaced
 from `mp`, when `mp` already has an association with `k`.
@@ -8848,7 +8848,7 @@ If `mp` doesn't has an association with `k`, `mp` is returned as is.
 ***
 
 #### <a href="#union-value"><code>(UNION A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L256-L264">src</a></sub></sup><a name="union-value"></a>
-<code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordmap-type">OrdMap</a> :A :B) &rarr; (<a href="#ordmap-type">OrdMap</a> :A :B) &rarr; (<a href="#ordmap-type">OrdMap</a> :A :B))</code>
+<code>&forall; :KEY :VALUE. <a href="#ord-class">Ord</a> :KEY &rArr; ((<a href="#ordmap-type">OrdMap</a> :KEY :VALUE) &rarr; (<a href="#ordmap-type">OrdMap</a> :KEY :VALUE) &rarr; (<a href="#ordmap-type">OrdMap</a> :KEY :VALUE))</code>
 
 Construct an OrdMap containing all the mappings of both A and B.
 
@@ -8861,7 +8861,7 @@ The operation is associative, but not commutative.
 ***
 
 #### <a href="#update-value"><code>(UPDATE MP K F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L218-L252">src</a></sub></sup><a name="update-value"></a>
-<code>&forall; :A :B :C. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordmap-type">OrdMap</a> :A :B) &rarr; :A &rarr; ((<a href="#optional-type">Optional</a> :B) &rarr; (<a href="#tuple-type">Tuple</a> (<a href="#optional-type">Optional</a> :B) :C)) &rarr; (<a href="#tuple-type">Tuple</a> (<a href="#ordmap-type">OrdMap</a> :A :B) :C))</code>
+<code>&forall; :KEY :VALUE :A. <a href="#ord-class">Ord</a> :KEY &rArr; ((<a href="#ordmap-type">OrdMap</a> :KEY :VALUE) &rarr; :KEY &rarr; ((<a href="#optional-type">Optional</a> :VALUE) &rarr; (<a href="#tuple-type">Tuple</a> (<a href="#optional-type">Optional</a> :VALUE) :A)) &rarr; (<a href="#tuple-type">Tuple</a> (<a href="#ordmap-type">OrdMap</a> :KEY :VALUE) :A))</code>
 
 Lookup an association with `k` in `mp`.  If there's an entry, call `f`
 with its value wrapped with Some.  If there isn't an entry, call 'f' with
@@ -8888,7 +8888,7 @@ result, where v' is the previous value associated with k.
 ***
 
 #### <a href="#values-value"><code>(VALUES MP)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L177-L180">src</a></sub></sup><a name="values-value"></a>
-<code>&forall; :A :B. ((<a href="#ordmap-type">OrdMap</a> :A :B) &rarr; (<a href="#iterator-type">Iterator</a> :B))</code>
+<code>&forall; :KEY :VALUE. ((<a href="#ordmap-type">OrdMap</a> :KEY :VALUE) &rarr; (<a href="#iterator-type">Iterator</a> :VALUE))</code>
 
 Iterate over the values in MP, sorted by their corresponding keys in least-to-greatest order.
 
@@ -8897,7 +8897,7 @@ Iterate over the values in MP, sorted by their corresponding keys in least-to-gr
 ***
 
 #### <a href="#xor-value"><code>(XOR A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L282-L287">src</a></sub></sup><a name="xor-value"></a>
-<code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordmap-type">OrdMap</a> :A :B) &rarr; (<a href="#ordmap-type">OrdMap</a> :A :B) &rarr; (<a href="#ordmap-type">OrdMap</a> :A :B))</code>
+<code>&forall; :KEY :VALUE. <a href="#ord-class">Ord</a> :KEY &rArr; ((<a href="#ordmap-type">OrdMap</a> :KEY :VALUE) &rarr; (<a href="#ordmap-type">OrdMap</a> :KEY :VALUE) &rarr; (<a href="#ordmap-type">OrdMap</a> :KEY :VALUE))</code>
 
 Returns an OrdMap that contains mappings either in `a` or in `b`,
 but not in both.
@@ -8907,7 +8907,7 @@ but not in both.
 ***
 
 #### <a href="#empty-value"><code>EMPTY</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.lisp#L79-L81">src</a></sub></sup><a name="empty-value"></a>
-<code>&forall; :A :B. (<a href="#ordmap-type">OrdMap</a> :A :B)</code>
+<code>&forall; :KEY :VALUE. (<a href="#ordmap-type">OrdMap</a> :KEY :VALUE)</code>
 
 A OrdMap containing no mappings.
 
@@ -8928,12 +8928,12 @@ A 1-2 brother tree, sorted by `<=>` and unique by `==`.
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#eq-class">Eq</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#ordtree-type">OrdTree</a> :A)</code>
+- <code><a href="#eq-class">Eq</a> :ELT &rArr; <a href="#eq-class">Eq</a> (<a href="#ordtree-type">OrdTree</a> :ELT)</code>
 - <code><a href="#foldable-class">Foldable</a> <a href="#ordtree-type">OrdTree</a></code>
-- <code><a href="#hash-class">Hash</a> :A &rArr; <a href="#hash-class">Hash</a> (<a href="#ordtree-type">OrdTree</a> :A)</code>
-- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#ordtree-type">OrdTree</a> :A) :A</code>
-- <code><a href="#ord-class">Ord</a> :A &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#ordtree-type">OrdTree</a> :A) :A</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#ordtree-type">OrdTree</a> :A)</code>
+- <code><a href="#hash-class">Hash</a> :ELT &rArr; <a href="#hash-class">Hash</a> (<a href="#ordtree-type">OrdTree</a> :ELT)</code>
+- <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#ordtree-type">OrdTree</a> :ELT) :ELT</code>
+- <code><a href="#ord-class">Ord</a> :ELT &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#ordtree-type">OrdTree</a> :ELT) :ELT</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#ordtree-type">OrdTree</a> :|0|)</code>
 
 </details>
 
@@ -8944,7 +8944,7 @@ A 1-2 brother tree, sorted by `<=>` and unique by `==`.
 ### Values
 
 #### <a href="#adjoin-value"><code>(ADJOIN T A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L236-L249">src</a></sub></sup><a name="adjoin-value"></a>
-<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordtree-type">OrdTree</a> :A) &rarr; :A &rarr; (<a href="#ordtree-type">OrdTree</a> :A))</code>
+<code>&forall; :ELT. <a href="#ord-class">Ord</a> :ELT &rArr; ((<a href="#ordtree-type">OrdTree</a> :ELT) &rarr; :ELT &rarr; (<a href="#ordtree-type">OrdTree</a> :ELT))</code>
 
 Returns an ordtree that has a new entry `a`.  If `t` already has an entry
 which is `==` to `a`, however, the original `t` is returned as is.
@@ -8954,7 +8954,7 @@ which is `==` to `a`, however, the original `t` is returned as is.
 ***
 
 #### <a href="#decreasing-order-value"><code>(DECREASING-ORDER TRE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L406-L421">src</a></sub></sup><a name="decreasing-order-value"></a>
-<code>&forall; :A. ((<a href="#ordtree-type">OrdTree</a> :A) &rarr; (<a href="#iterator-type">Iterator</a> :A))</code>
+<code>&forall; :ELT. ((<a href="#ordtree-type">OrdTree</a> :ELT) &rarr; (<a href="#iterator-type">Iterator</a> :ELT))</code>
 
 Returns an iterator that traverses elements in `tre` in decreasing order.
 
@@ -8963,7 +8963,7 @@ Returns an iterator that traverses elements in `tre` in decreasing order.
 ***
 
 #### <a href="#difference-value"><code>(DIFFERENCE A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L508-L510">src</a></sub></sup><a name="difference-value"></a>
-<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordtree-type">OrdTree</a> :A) &rarr; (<a href="#ordtree-type">OrdTree</a> :A) &rarr; (<a href="#ordtree-type">OrdTree</a> :A))</code>
+<code>&forall; :ELT. <a href="#ord-class">Ord</a> :ELT &rArr; ((<a href="#ordtree-type">OrdTree</a> :ELT) &rarr; (<a href="#ordtree-type">OrdTree</a> :ELT) &rarr; (<a href="#ordtree-type">OrdTree</a> :ELT))</code>
 
 Returns an OrdTree that contains elements in `a` but not in `b`.
 
@@ -8972,13 +8972,13 @@ Returns an OrdTree that contains elements in `a` but not in `b`.
 ***
 
 #### <a href="#empty?-value"><code>(EMPTY? T)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L66-L69">src</a></sub></sup><a name="empty?-value"></a>
-<code>&forall; :A. ((<a href="#ordtree-type">OrdTree</a> :A) &rarr; <a href="#boolean-type">Boolean</a>)</code>
+<code>&forall; :ELT. ((<a href="#ordtree-type">OrdTree</a> :ELT) &rarr; <a href="#boolean-type">Boolean</a>)</code>
 
 
 ***
 
 #### <a href="#increasing-order-value"><code>(INCREASING-ORDER TRE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L387-L403">src</a></sub></sup><a name="increasing-order-value"></a>
-<code>&forall; :A. ((<a href="#ordtree-type">OrdTree</a> :A) &rarr; (<a href="#iterator-type">Iterator</a> :A))</code>
+<code>&forall; :ELT. ((<a href="#ordtree-type">OrdTree</a> :ELT) &rarr; (<a href="#iterator-type">Iterator</a> :ELT))</code>
 
 Returns an iterator that traverses elements in `tre` in increasing order.
 This is same as (iter:into-iter tre).
@@ -8988,7 +8988,7 @@ This is same as (iter:into-iter tre).
 ***
 
 #### <a href="#insert-value"><code>(INSERT T A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L218-L232">src</a></sub></sup><a name="insert-value"></a>
-<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordtree-type">OrdTree</a> :A) &rarr; :A &rarr; (<a href="#ordtree-type">OrdTree</a> :A))</code>
+<code>&forall; :ELT. <a href="#ord-class">Ord</a> :ELT &rArr; ((<a href="#ordtree-type">OrdTree</a> :ELT) &rarr; :ELT &rarr; (<a href="#ordtree-type">OrdTree</a> :ELT))</code>
 
 Returns an ordtree that has an new entry `a` added to `t`.  If `t` already
 has an entry which is `==` to `a`,  The new ordtree has `a` in place of the
@@ -8999,7 +8999,7 @@ existing entry.
 ***
 
 #### <a href="#intersection-value"><code>(INTERSECTION A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L496-L505">src</a></sub></sup><a name="intersection-value"></a>
-<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordtree-type">OrdTree</a> :A) &rarr; (<a href="#ordtree-type">OrdTree</a> :A) &rarr; (<a href="#ordtree-type">OrdTree</a> :A))</code>
+<code>&forall; :ELT. <a href="#ord-class">Ord</a> :ELT &rArr; ((<a href="#ordtree-type">OrdTree</a> :ELT) &rarr; (<a href="#ordtree-type">OrdTree</a> :ELT) &rarr; (<a href="#ordtree-type">OrdTree</a> :ELT))</code>
 
 Returns an OrdTree that contains elements that appear in both `a` and `b`.
 The resulting elements are from `a`.
@@ -9009,7 +9009,7 @@ The resulting elements are from `a`.
 ***
 
 #### <a href="#lookup-value"><code>(LOOKUP HAYSTACK NEEDLE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L101-L113">src</a></sub></sup><a name="lookup-value"></a>
-<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordtree-type">OrdTree</a> :A) &rarr; :A &rarr; (<a href="#optional-type">Optional</a> :A))</code>
+<code>&forall; :ELT. <a href="#ord-class">Ord</a> :ELT &rArr; ((<a href="#ordtree-type">OrdTree</a> :ELT) &rarr; :ELT &rarr; (<a href="#optional-type">Optional</a> :ELT))</code>
 
 If HAYSTACK contains an element `==` to NEEDLE, return it.
 
@@ -9018,7 +9018,7 @@ If HAYSTACK contains an element `==` to NEEDLE, return it.
 ***
 
 #### <a href="#lookup-neighbors-value"><code>(LOOKUP-NEIGHBORS HAYSTACK NEEDLE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L458-L481">src</a></sub></sup><a name="lookup-neighbors-value"></a>
-<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordtree-type">OrdTree</a> :A) &rarr; :A &rarr; (<a href="#tuple3-type">Tuple3</a> (<a href="#optional-type">Optional</a> :A) (<a href="#optional-type">Optional</a> :A) (<a href="#optional-type">Optional</a> :A)))</code>
+<code>&forall; :ELT. <a href="#ord-class">Ord</a> :ELT &rArr; ((<a href="#ordtree-type">OrdTree</a> :ELT) &rarr; :ELT &rarr; (<a href="#tuple3-type">Tuple3</a> (<a href="#optional-type">Optional</a> :ELT) (<a href="#optional-type">Optional</a> :ELT) (<a href="#optional-type">Optional</a> :ELT)))</code>
 
 Returns elements LO, ON, and HI, such that LO is the closest
 element that is strictly less than `needle`, ON is the element
@@ -9031,7 +9031,7 @@ if there's no such element.
 ***
 
 #### <a href="#max-element-value"><code>(MAX-ELEMENT TRE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L431-L439">src</a></sub></sup><a name="max-element-value"></a>
-<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordtree-type">OrdTree</a> :A) &rarr; (<a href="#optional-type">Optional</a> :A))</code>
+<code>&forall; :ELT. <a href="#ord-class">Ord</a> :ELT &rArr; ((<a href="#ordtree-type">OrdTree</a> :ELT) &rarr; (<a href="#optional-type">Optional</a> :ELT))</code>
 
 Returns the maximum element in the tree, or None if the tree is empty.
 
@@ -9040,7 +9040,7 @@ Returns the maximum element in the tree, or None if the tree is empty.
 ***
 
 #### <a href="#min-element-value"><code>(MIN-ELEMENT TRE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L443-L451">src</a></sub></sup><a name="min-element-value"></a>
-<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordtree-type">OrdTree</a> :A) &rarr; (<a href="#optional-type">Optional</a> :A))</code>
+<code>&forall; :ELT. <a href="#ord-class">Ord</a> :ELT &rArr; ((<a href="#ordtree-type">OrdTree</a> :ELT) &rarr; (<a href="#optional-type">Optional</a> :ELT))</code>
 
 Returns the minimum element in the tree, or None if the tree is empty.
 
@@ -9049,7 +9049,7 @@ Returns the minimum element in the tree, or None if the tree is empty.
 ***
 
 #### <a href="#remove-value"><code>(REMOVE T A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L271-L287">src</a></sub></sup><a name="remove-value"></a>
-<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordtree-type">OrdTree</a> :A) &rarr; :A &rarr; (<a href="#ordtree-type">OrdTree</a> :A))</code>
+<code>&forall; :ELT. <a href="#ord-class">Ord</a> :ELT &rArr; ((<a href="#ordtree-type">OrdTree</a> :ELT) &rarr; :ELT &rarr; (<a href="#ordtree-type">OrdTree</a> :ELT))</code>
 
 Returns an ordtree that is the same as `t` except that the entry
 which is `==` to `a` is removed.  If `t` does not have such an entry,
@@ -9060,7 +9060,7 @@ which is `==` to `a` is removed.  If `t` does not have such an entry,
 ***
 
 #### <a href="#replace-value"><code>(REPLACE T A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L253-L267">src</a></sub></sup><a name="replace-value"></a>
-<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordtree-type">OrdTree</a> :A) &rarr; :A &rarr; (<a href="#ordtree-type">OrdTree</a> :A))</code>
+<code>&forall; :ELT. <a href="#ord-class">Ord</a> :ELT &rArr; ((<a href="#ordtree-type">OrdTree</a> :ELT) &rarr; :ELT &rarr; (<a href="#ordtree-type">OrdTree</a> :ELT))</code>
 
 Returns an ordtree that has an entry `a` only if `t` already has an
 entry which is `==` to `a`.  The original entry is replaced with the given
@@ -9087,7 +9087,7 @@ We do not name this `map` because of this restriction.
 ***
 
 #### <a href="#union-value"><code>(UNION A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L490-L493">src</a></sub></sup><a name="union-value"></a>
-<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordtree-type">OrdTree</a> :A) &rarr; (<a href="#ordtree-type">OrdTree</a> :A) &rarr; (<a href="#ordtree-type">OrdTree</a> :A))</code>
+<code>&forall; :ELT. <a href="#ord-class">Ord</a> :ELT &rArr; ((<a href="#ordtree-type">OrdTree</a> :ELT) &rarr; (<a href="#ordtree-type">OrdTree</a> :ELT) &rarr; (<a href="#ordtree-type">OrdTree</a> :ELT))</code>
 
 Returns an OrdTree that contains all the elements from `a` and `b`.
 If both OrdTrees has the same (`==`) element, the one from `a` is taken.
@@ -9097,7 +9097,7 @@ If both OrdTrees has the same (`==`) element, the one from `a` is taken.
 ***
 
 #### <a href="#update-value"><code>(UPDATE T A F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L306-L367">src</a></sub></sup><a name="update-value"></a>
-<code>&forall; :A :B. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordtree-type">OrdTree</a> :A) &rarr; :A &rarr; ((<a href="#optional-type">Optional</a> :A) &rarr; (<a href="#tuple-type">Tuple</a> (<a href="#optional-type">Optional</a> :A) :B)) &rarr; (<a href="#tuple-type">Tuple</a> (<a href="#ordtree-type">OrdTree</a> :A) :B))</code>
+<code>&forall; :ELT :A. <a href="#ord-class">Ord</a> :ELT &rArr; ((<a href="#ordtree-type">OrdTree</a> :ELT) &rarr; :ELT &rarr; ((<a href="#optional-type">Optional</a> :ELT) &rarr; (<a href="#tuple-type">Tuple</a> (<a href="#optional-type">Optional</a> :ELT) :A)) &rarr; (<a href="#tuple-type">Tuple</a> (<a href="#ordtree-type">OrdTree</a> :ELT) :A))</code>
 
 Generic update.  Look for the element `a` in `t`.  If there's an entry,
 call `f` with the existing entry wrapped with Some.  If there isn't an entry,
@@ -9121,7 +9121,7 @@ carries extra info, though; see OrdMap implementation.
 ***
 
 #### <a href="#xor-value"><code>(XOR A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.lisp#L513-L523">src</a></sub></sup><a name="xor-value"></a>
-<code>&forall; :A. <a href="#ord-class">Ord</a> :A &rArr; ((<a href="#ordtree-type">OrdTree</a> :A) &rarr; (<a href="#ordtree-type">OrdTree</a> :A) &rarr; (<a href="#ordtree-type">OrdTree</a> :A))</code>
+<code>&forall; :ELT. <a href="#ord-class">Ord</a> :ELT &rArr; ((<a href="#ordtree-type">OrdTree</a> :ELT) &rarr; (<a href="#ordtree-type">OrdTree</a> :ELT) &rarr; (<a href="#ordtree-type">OrdTree</a> :ELT))</code>
 
 Rdturns an OrdTree that contains elements either in `a` or in `b`,
 but not in both.
@@ -9147,7 +9147,7 @@ Unbounded FIFO queue implemented with a linked list.
 - <code><a href="#fromiterator-class">FromIterator</a> (<a href="#queue-type">Queue</a> :A) :A</code>
 - <code><a href="#functor-class">Functor</a> <a href="#queue-type">Queue</a></code>
 - <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#queue-type">Queue</a> :A) :A</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#queue-type">Queue</a> :A)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#queue-type">Queue</a> :|0|)</code>
 - <code><a href="#semigroup-class">Semigroup</a> (<a href="#queue-type">Queue</a> :A)</code>
 
 </details>
@@ -9195,7 +9195,7 @@ Is `q` empty?
 ***
 
 #### <a href="#extend!-value"><code>(EXTEND! Q ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/queue.lisp#L181-L189">src</a></sub></sup><a name="extend!-value"></a>
-<code>&forall; :A :B. <a href="#intoiterator-class">IntoIterator</a> :B :A &rArr; ((<a href="#queue-type">Queue</a> :A) &rarr; :B &rarr; <a href="#unit-type">Unit</a>)</code>
+<code>&forall; :ELT :CONTAINER. <a href="#intoiterator-class">IntoIterator</a> :CONTAINER :ELT &rArr; ((<a href="#queue-type">Queue</a> :ELT) &rarr; :CONTAINER &rarr; <a href="#unit-type">Unit</a>)</code>
 
 Push every element in `iter` to the end of `q`.
 
@@ -9298,7 +9298,7 @@ Push `item` onto the end of `q`.
 ### Classes
 
 #### <a href="#randomaccess-class"><code>RandomAccess</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/randomaccess.lisp#L39-L49">src</a></sub></sup><a name="randomaccess-class"></a>
-<code><a href="#randomaccess-class">RandomAccess</a> :A :B</code>
+<code><a href="#randomaccess-class">RandomAccess</a> :F :T</code>
 
 
 Establishes that `:f` is a random-access store of elements of type `:t`. The **storage type** `:f` implies the **stored type** `:t`. The storage is expected to be sequential and O(1) in random access reads and writes.
@@ -9306,18 +9306,18 @@ Establishes that `:f` is a random-access store of elements of type `:t`. The **s
 It is permitted for any of `make`, `unsafe-aref`, or `unsafe-set!` to error.
 
 Methods:
-- <code>MAKE :: (<a href="#ufix-type">UFix</a> &rarr; :B &rarr; :A)</code>
-- <code>MAKE-UNINITIALIZED :: (<a href="#ufix-type">UFix</a> &rarr; :A)</code>
-- <code>LENGTH :: (:A &rarr; <a href="#ufix-type">UFix</a>)</code>
-- <code>READABLE? :: (:A &rarr; <a href="#boolean-type">Boolean</a>)</code>
-- <code>WRITABLE? :: (:A &rarr; <a href="#boolean-type">Boolean</a>)</code>
-- <code>UNSAFE-AREF :: (:A &rarr; <a href="#ufix-type">UFix</a> &rarr; :B)</code>
-- <code>UNSAFE-SET! :: (:A &rarr; <a href="#ufix-type">UFix</a> &rarr; :B &rarr; <a href="#unit-type">Unit</a>)</code>
+- <code>MAKE :: (<a href="#ufix-type">UFix</a> &rarr; :T &rarr; :F)</code>
+- <code>MAKE-UNINITIALIZED :: (<a href="#ufix-type">UFix</a> &rarr; :F)</code>
+- <code>LENGTH :: (:F &rarr; <a href="#ufix-type">UFix</a>)</code>
+- <code>READABLE? :: (:F &rarr; <a href="#boolean-type">Boolean</a>)</code>
+- <code>WRITABLE? :: (:F &rarr; <a href="#boolean-type">Boolean</a>)</code>
+- <code>UNSAFE-AREF :: (:F &rarr; <a href="#ufix-type">UFix</a> &rarr; :T)</code>
+- <code>UNSAFE-SET! :: (:F &rarr; <a href="#ufix-type">UFix</a> &rarr; :T &rarr; <a href="#unit-type">Unit</a>)</code>
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#randomaccess-class">RandomAccess</a> (<a href="#vector-type">Vector</a> :A) :A</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#randomaccess-class">RandomAccess</a> (<a href="#lisparray-type">LispArray</a> :A) :A</code>
+- <code><a href="#randomaccess-class">RandomAccess</a> (<a href="#vector-type">Vector</a> :T) :T</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> :T &rArr; <a href="#randomaccess-class">RandomAccess</a> (<a href="#lisparray-type">LispArray</a> :T) :T</code>
 
 </details>
 
@@ -9328,7 +9328,7 @@ Methods:
 ### Values
 
 #### <a href="#aref-value"><code>(AREF STORAGE INDEX)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/randomaccess.lisp#L55-L60">src</a></sub></sup><a name="aref-value"></a>
-<code>&forall; :A :B. <a href="#randomaccess-class">RandomAccess</a> :A :B &rArr; (:A &rarr; <a href="#ufix-type">UFix</a> &rarr; (<a href="#optional-type">Optional</a> :B))</code>
+<code>&forall; :F :T. <a href="#randomaccess-class">RandomAccess</a> :F :T &rArr; (:F &rarr; <a href="#ufix-type">UFix</a> &rarr; (<a href="#optional-type">Optional</a> :T))</code>
 
 Read the element at `index` of the random-access storage `storage`. Return `None` if the read is out-of-bounds or not permitted.
 
@@ -9337,7 +9337,7 @@ Read the element at `index` of the random-access storage `storage`. Return `None
 ***
 
 #### <a href="#rotate!-value"><code>(ROTATE! STORAGE INDEX1 INDEX2)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/randomaccess.lisp#L79-L87">src</a></sub></sup><a name="rotate!-value"></a>
-<code>&forall; :A :B. <a href="#randomaccess-class">RandomAccess</a> :B :A &rArr; (:B &rarr; <a href="#ufix-type">UFix</a> &rarr; <a href="#ufix-type">UFix</a> &rarr; (<a href="#optional-type">Optional</a> <a href="#unit-type">Unit</a>))</code>
+<code>&forall; :T :F. <a href="#randomaccess-class">RandomAccess</a> :F :T &rArr; (:F &rarr; <a href="#ufix-type">UFix</a> &rarr; <a href="#ufix-type">UFix</a> &rarr; (<a href="#optional-type">Optional</a> <a href="#unit-type">Unit</a>))</code>
 
 Rotate the elements at indices `index1` and `index2` of the random-access storage `storage`. Return `None` if the indices are out-of-bounds or if reading from or writing to `storage` is not permitted.
 
@@ -9346,7 +9346,7 @@ Rotate the elements at indices `index1` and `index2` of the random-access storag
 ***
 
 #### <a href="#set!-value"><code>(SET! STORAGE INDEX VALUE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/randomaccess.lisp#L63-L68">src</a></sub></sup><a name="set!-value"></a>
-<code>&forall; :A :B. <a href="#randomaccess-class">RandomAccess</a> :A :B &rArr; (:A &rarr; <a href="#ufix-type">UFix</a> &rarr; :B &rarr; (<a href="#optional-type">Optional</a> <a href="#unit-type">Unit</a>))</code>
+<code>&forall; :F :T. <a href="#randomaccess-class">RandomAccess</a> :F :T &rArr; (:F &rarr; <a href="#ufix-type">UFix</a> &rarr; :T &rarr; (<a href="#optional-type">Optional</a> <a href="#unit-type">Unit</a>))</code>
 
 Write the element `value` at `index` of the random-access storage `storage`. Return `None` if the write is out-of-bounds or not permitted.
 
@@ -9355,7 +9355,7 @@ Write the element `value` at `index` of the random-access storage `storage`. Ret
 ***
 
 #### <a href="#unsafe-rotate!-value"><code>(UNSAFE-ROTATE! STORAGE INDEX1 INDEX2)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/randomaccess.lisp#L71-L76">src</a></sub></sup><a name="unsafe-rotate!-value"></a>
-<code>&forall; :A :B. <a href="#randomaccess-class">RandomAccess</a> :B :A &rArr; (:B &rarr; <a href="#ufix-type">UFix</a> &rarr; <a href="#ufix-type">UFix</a> &rarr; <a href="#unit-type">Unit</a>)</code>
+<code>&forall; :T :F. <a href="#randomaccess-class">RandomAccess</a> :F :T &rArr; (:F &rarr; <a href="#ufix-type">UFix</a> &rarr; <a href="#ufix-type">UFix</a> &rarr; <a href="#unit-type">Unit</a>)</code>
 
 Rotate the elements at indices `index1` and `index2` of the random-access storage `storage`.
 
@@ -9368,7 +9368,7 @@ Rotate the elements at indices `index1` and `index2` of the random-access storag
 ### Values
 
 #### <a href="#err-if-value"><code>(ERR-IF FAILED? FAILURE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L34-L38">src</a></sub></sup><a name="err-if-value"></a>
-<code>&forall; :A. (<a href="#boolean-type">Boolean</a> &rarr; :A &rarr; (<a href="#result-type">Result</a> :A <a href="#unit-type">Unit</a>))</code>
+<code>&forall; :ERR. (<a href="#boolean-type">Boolean</a> &rarr; :ERR &rarr; (<a href="#result-type">Result</a> :ERR <a href="#unit-type">Unit</a>))</code>
 
 Fail with FAILURE value if FAILED? is True.
 
@@ -9401,7 +9401,7 @@ Map over the ERR case
 ***
 
 #### <a href="#ok-or-def-value"><code>(OK-OR-DEF DEF RES)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L75-L79">src</a></sub></sup><a name="ok-or-def-value"></a>
-<code>&forall; :A :B. (:A &rarr; (<a href="#result-type">Result</a> :B :A) &rarr; :A)</code>
+<code>&forall; :A :ERR. (:A &rarr; (<a href="#result-type">Result</a> :ERR :A) &rarr; :A)</code>
 
 Take value in RES if it is OK, or DEF if it is ERR.
 
@@ -9410,7 +9410,7 @@ Take value in RES if it is OK, or DEF if it is ERR.
 ***
 
 #### <a href="#ok-or-error-value"><code>(OK-OR-ERROR RES)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L88-L91">src</a></sub></sup><a name="ok-or-error-value"></a>
-<code>&forall; :A :B. <a href="#signalable-class">Signalable</a> :A &rArr; ((<a href="#result-type">Result</a> :A :B) &rarr; :B)</code>
+<code>&forall; :ERR :A. <a href="#signalable-class">Signalable</a> :ERR &rArr; ((<a href="#result-type">Result</a> :ERR :A) &rarr; :A)</code>
 
 
 ***
@@ -9425,7 +9425,7 @@ Returns TRUE if X is OK
 ***
 
 #### <a href="#okm-value"><code>(OKM F-A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L63-L65">src</a></sub></sup><a name="okm-value"></a>
-<code>&forall; :A :B :C. <a href="#functor-class">Functor</a> :A &rArr; ((:A :B) &rarr; (:A (<a href="#result-type">Result</a> :C :B)))</code>
+<code>&forall; :F :A :E. <a href="#functor-class">Functor</a> :F &rArr; ((:F :A) &rarr; (:F (<a href="#result-type">Result</a> :E :A)))</code>
 
 Wrap a value inside F-A inside of 'Ok'.
 
@@ -9434,7 +9434,7 @@ Wrap a value inside F-A inside of 'Ok'.
 ***
 
 #### <a href="#opt->result-value"><code>(OPT-&gt;RESULT FAILURE OPT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.lisp#L41-L45">src</a></sub></sup><a name="opt->result-value"></a>
-<code>&forall; :A :B. (:A &rarr; (<a href="#optional-type">Optional</a> :B) &rarr; (<a href="#result-type">Result</a> :A :B))</code>
+<code>&forall; :ERR :A. (:ERR &rarr; (<a href="#optional-type">Optional</a> :A) &rarr; (<a href="#result-type">Result</a> :ERR :A))</code>
 
 Convert OPT to a Result, using FAILURE value if None.
 
@@ -9450,13 +9450,13 @@ Convert OPT to a Result, using FAILURE value if None.
 <details>
 <summary>Instances</summary>
 
-- <code>(<a href="#foldable-class">Foldable</a> :A) (<a href="#runtimerepr-class">RuntimeRepr</a> :B) &rArr; <a href="#into-class">Into</a> (:A :B) (<a href="#seq-type">Seq</a> :B)</code>
+- <code>(<a href="#foldable-class">Foldable</a> :F) (<a href="#runtimerepr-class">RuntimeRepr</a> :A) &rArr; <a href="#into-class">Into</a> (:F :A) (<a href="#seq-type">Seq</a> :A)</code>
 - <code><a href="#eq-class">Eq</a> :A &rArr; <a href="#eq-class">Eq</a> (<a href="#seq-type">Seq</a> :A)</code>
 - <code><a href="#functor-class">Functor</a> <a href="#seq-type">Seq</a></code>
 - <code><a href="#into-class">Into</a> (<a href="#seq-type">Seq</a> :A) (<a href="#list-type">List</a> :A)</code>
 - <code><a href="#into-class">Into</a> (<a href="#seq-type">Seq</a> :A) (<a href="#vector-type">Vector</a> :A)</code>
 - <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#seq-type">Seq</a> :A) :A</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#seq-type">Seq</a> :A)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#seq-type">Seq</a> :|0|)</code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#default-class">Default</a> (<a href="#seq-type">Seq</a> :A)</code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#fromiterator-class">FromIterator</a> (<a href="#seq-type">Seq</a> :A) :A</code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#monoid-class">Monoid</a> (<a href="#seq-type">Seq</a> :A)</code>
@@ -9567,7 +9567,7 @@ Create a new `Seq` containing `elems`.
 - <code><a href="#into-class">Into</a> (<a href="#vector-type">Vector</a> :A) (<a href="#slice-type">Slice</a> :A)</code>
 - <code><a href="#intoiterator-class">IntoIterator</a> (<a href="#slice-type">Slice</a> :A) :A</code>
 - <code><a href="#iso-class">Iso</a> (<a href="#slice-type">Slice</a> :A) (<a href="#vector-type">Vector</a> :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#slice-type">Slice</a> :A)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#slice-type">Slice</a> :|0|)</code>
 - <code><a href="#sliceable-class">Sliceable</a> (<a href="#slice-type">Slice</a> :A)</code>
 
 </details>
@@ -9597,7 +9597,7 @@ Lookup the element at `index` in `s` without bounds checking.
 ***
 
 #### <a href="#iter-chunked-value"><code>(ITER-CHUNKED SIZE S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/slice.lisp#L119-L144">src</a></sub></sup><a name="iter-chunked-value"></a>
-<code>&forall; :A :B. <a href="#sliceable-class">Sliceable</a> (:A :B) &rArr; (<a href="#ufix-type">UFix</a> &rarr; (:A :B) &rarr; (<a href="#iterator-type">Iterator</a> (<a href="#slice-type">Slice</a> :B)))</code>
+<code>&forall; :B :A. <a href="#sliceable-class">Sliceable</a> (:B :A) &rArr; (<a href="#ufix-type">UFix</a> &rarr; (:B :A) &rarr; (<a href="#iterator-type">Iterator</a> (<a href="#slice-type">Slice</a> :A)))</code>
 
 Divide `s` into a series of slices of length `size`. Will return a final shorter slice if `s` does not divide evenly.
 
@@ -9606,7 +9606,7 @@ Divide `s` into a series of slices of length `size`. Will return a final shorter
 ***
 
 #### <a href="#iter-chunked-exact-value"><code>(ITER-CHUNKED-EXACT SIZE S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/slice.lisp#L147-L159">src</a></sub></sup><a name="iter-chunked-exact-value"></a>
-<code>&forall; :A :B. <a href="#sliceable-class">Sliceable</a> (:A :B) &rArr; (<a href="#ufix-type">UFix</a> &rarr; (:A :B) &rarr; (<a href="#iterator-type">Iterator</a> (<a href="#slice-type">Slice</a> :B)))</code>
+<code>&forall; :B :A. <a href="#sliceable-class">Sliceable</a> (:B :A) &rArr; (<a href="#ufix-type">UFix</a> &rarr; (:B :A) &rarr; (<a href="#iterator-type">Iterator</a> (<a href="#slice-type">Slice</a> :A)))</code>
 
 Divide `s` into a series of slices of length `size`. Will skip trailing elements if `s` does not divide evenly.
 
@@ -9615,7 +9615,7 @@ Divide `s` into a series of slices of length `size`. Will skip trailing elements
 ***
 
 #### <a href="#iter-sliding-value"><code>(ITER-SLIDING SIZE S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/slice.lisp#L102-L116">src</a></sub></sup><a name="iter-sliding-value"></a>
-<code>&forall; :A :B. <a href="#sliceable-class">Sliceable</a> (:A :B) &rArr; (<a href="#ufix-type">UFix</a> &rarr; (:A :B) &rarr; (<a href="#iterator-type">Iterator</a> (<a href="#slice-type">Slice</a> :B)))</code>
+<code>&forall; :B :A. <a href="#sliceable-class">Sliceable</a> (:B :A) &rArr; (<a href="#ufix-type">UFix</a> &rarr; (:B :A) &rarr; (<a href="#iterator-type">Iterator</a> (<a href="#slice-type">Slice</a> :A)))</code>
 
 Returns an iterator that yields a series of overlapping slices of length `size`.
 
@@ -9633,7 +9633,7 @@ Returns the length of `s`.
 ***
 
 #### <a href="#new-value"><code>(NEW START LEN V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/slice.lisp#L53-L70">src</a></sub></sup><a name="new-value"></a>
-<code>&forall; :A :B. <a href="#sliceable-class">Sliceable</a> (:A :B) &rArr; (<a href="#ufix-type">UFix</a> &rarr; <a href="#ufix-type">UFix</a> &rarr; (:A :B) &rarr; (<a href="#slice-type">Slice</a> :B))</code>
+<code>&forall; :B :A. <a href="#sliceable-class">Sliceable</a> (:B :A) &rArr; (<a href="#ufix-type">UFix</a> &rarr; <a href="#ufix-type">UFix</a> &rarr; (:B :A) &rarr; (<a href="#slice-type">Slice</a> :A))</code>
 
 Create a new slice backed by `v` starting at index `start` and continuing for `len` elements.
 
@@ -9911,7 +9911,7 @@ Function output with space and timing metedata.
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#meteredresult-type">MeteredResult</a> :A)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#meteredresult-type">MeteredResult</a> :|0|)</code>
 
 </details>
 
@@ -10136,7 +10136,7 @@ The number of internal time units per second. This is implementation specific.
 - <code>(<a href="#default-class">Default</a> :A) (<a href="#default-class">Default</a> :B) (<a href="#default-class">Default</a> :C) &rArr; <a href="#default-class">Default</a> (<a href="#tuple3-type">Tuple3</a> :A :B :C)</code>
 - <code>(<a href="#eq-class">Eq</a> :A) (<a href="#eq-class">Eq</a> :B) (<a href="#eq-class">Eq</a> :C) &rArr; <a href="#eq-class">Eq</a> (<a href="#tuple3-type">Tuple3</a> :A :B :C)</code>
 - <code>(<a href="#hash-class">Hash</a> :A) (<a href="#hash-class">Hash</a> :B) (<a href="#hash-class">Hash</a> :C) &rArr; <a href="#hash-class">Hash</a> (<a href="#tuple3-type">Tuple3</a> :A :B :C)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#tuple3-type">Tuple3</a> :A :B :C)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#tuple3-type">Tuple3</a> :|0| :|1| :|2|)</code>
 
 </details>
 
@@ -10155,7 +10155,7 @@ The number of internal time units per second. This is implementation specific.
 - <code>(<a href="#default-class">Default</a> :A) (<a href="#default-class">Default</a> :B) (<a href="#default-class">Default</a> :C) (<a href="#default-class">Default</a> :D) &rArr; <a href="#default-class">Default</a> (<a href="#tuple4-type">Tuple4</a> :A :B :C :D)</code>
 - <code>(<a href="#eq-class">Eq</a> :A) (<a href="#eq-class">Eq</a> :B) (<a href="#eq-class">Eq</a> :C) (<a href="#eq-class">Eq</a> :D) &rArr; <a href="#eq-class">Eq</a> (<a href="#tuple4-type">Tuple4</a> :A :B :C :D)</code>
 - <code>(<a href="#hash-class">Hash</a> :A) (<a href="#hash-class">Hash</a> :B) (<a href="#hash-class">Hash</a> :C) (<a href="#hash-class">Hash</a> :D) &rArr; <a href="#hash-class">Hash</a> (<a href="#tuple4-type">Tuple4</a> :A :B :C :D)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#tuple4-type">Tuple4</a> :A :B :C :D)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#tuple4-type">Tuple4</a> :|0| :|1| :|2| :|3|)</code>
 
 </details>
 
@@ -10175,7 +10175,7 @@ The number of internal time units per second. This is implementation specific.
 - <code>(<a href="#default-class">Default</a> :A) (<a href="#default-class">Default</a> :B) (<a href="#default-class">Default</a> :C) (<a href="#default-class">Default</a> :D) (<a href="#default-class">Default</a> :E) &rArr; <a href="#default-class">Default</a> (<a href="#tuple5-type">Tuple5</a> :A :B :C :D :E)</code>
 - <code>(<a href="#eq-class">Eq</a> :A) (<a href="#eq-class">Eq</a> :B) (<a href="#eq-class">Eq</a> :C) (<a href="#eq-class">Eq</a> :D) (<a href="#eq-class">Eq</a> :E) &rArr; <a href="#eq-class">Eq</a> (<a href="#tuple5-type">Tuple5</a> :A :B :C :D :E)</code>
 - <code>(<a href="#hash-class">Hash</a> :A) (<a href="#hash-class">Hash</a> :B) (<a href="#hash-class">Hash</a> :C) (<a href="#hash-class">Hash</a> :D) (<a href="#hash-class">Hash</a> :E) &rArr; <a href="#hash-class">Hash</a> (<a href="#tuple5-type">Tuple5</a> :A :B :C :D :E)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#tuple5-type">Tuple5</a> :A :B :C :D :E)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#tuple5-type">Tuple5</a> :|0| :|1| :|2| :|3| :|4|)</code>
 
 </details>
 
@@ -10195,7 +10195,7 @@ Get the first element of a tuple.
 ***
 
 #### <a href="#sequence-tuple-value"><code>(SEQUENCE-TUPLE (TUPLE A? B?))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp#L47-L53">src</a></sub></sup><a name="sequence-tuple-value"></a>
-<code>&forall; :A :B :C. <a href="#monad-class">Monad</a> :A &rArr; ((<a href="#tuple-type">Tuple</a> (:A :B) (:A :C)) &rarr; (:A (<a href="#tuple-type">Tuple</a> :B :C)))</code>
+<code>&forall; :M :A :B. <a href="#monad-class">Monad</a> :M &rArr; ((<a href="#tuple-type">Tuple</a> (:M :A) (:M :B)) &rarr; (:M (<a href="#tuple-type">Tuple</a> :A :B)))</code>
 
 Flatten a Tuple of wrapped-values. Particularly useful for types like
 (Tuple (Optional :a) (Optional :b)), etc.
@@ -10205,7 +10205,7 @@ Flatten a Tuple of wrapped-values. Particularly useful for types like
 ***
 
 #### <a href="#sequence-tuple3-value"><code>(SEQUENCE-TUPLE3 (TUPLE3 A? B? C?))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp#L64-L71">src</a></sub></sup><a name="sequence-tuple3-value"></a>
-<code>&forall; :A :B :C :D. <a href="#monad-class">Monad</a> :A &rArr; ((<a href="#tuple3-type">Tuple3</a> (:A :B) (:A :C) (:A :D)) &rarr; (:A (<a href="#tuple3-type">Tuple3</a> :B :C :D)))</code>
+<code>&forall; :M :A :B :C. <a href="#monad-class">Monad</a> :M &rArr; ((<a href="#tuple3-type">Tuple3</a> (:M :A) (:M :B) (:M :C)) &rarr; (:M (<a href="#tuple3-type">Tuple3</a> :A :B :C)))</code>
 
 Flatten a Tuple of wrapped-values. Particularly useful for types like
 (Tuple (Optional :a) (Optional :b)), etc.
@@ -10215,7 +10215,7 @@ Flatten a Tuple of wrapped-values. Particularly useful for types like
 ***
 
 #### <a href="#sequence-tuple4-value"><code>(SEQUENCE-TUPLE4 (TUPLE4 A? B? C? D?))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp#L83-L91">src</a></sub></sup><a name="sequence-tuple4-value"></a>
-<code>&forall; :A :B :C :D :E. <a href="#monad-class">Monad</a> :A &rArr; ((<a href="#tuple4-type">Tuple4</a> (:A :B) (:A :C) (:A :D) (:A :E)) &rarr; (:A (<a href="#tuple4-type">Tuple4</a> :B :C :D :E)))</code>
+<code>&forall; :M :A :B :C :D. <a href="#monad-class">Monad</a> :M &rArr; ((<a href="#tuple4-type">Tuple4</a> (:M :A) (:M :B) (:M :C) (:M :D)) &rarr; (:M (<a href="#tuple4-type">Tuple4</a> :A :B :C :D)))</code>
 
 Flatten a Tuple of wrapped-values. Particularly useful for types like
 (Tuple (Optional :a) (Optional :b)), etc.
@@ -10225,7 +10225,7 @@ Flatten a Tuple of wrapped-values. Particularly useful for types like
 ***
 
 #### <a href="#sequence-tuple5-value"><code>(SEQUENCE-TUPLE5 (TUPLE5 A? B? C? D? E?))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.lisp#L104-L113">src</a></sub></sup><a name="sequence-tuple5-value"></a>
-<code>&forall; :A :B :C :D :E :F. <a href="#monad-class">Monad</a> :A &rArr; ((<a href="#tuple5-type">Tuple5</a> (:A :B) (:A :C) (:A :D) (:A :E) (:A :F)) &rarr; (:A (<a href="#tuple5-type">Tuple5</a> :B :C :D :E :F)))</code>
+<code>&forall; :M :A :B :C :D :E. <a href="#monad-class">Monad</a> :M &rArr; ((<a href="#tuple5-type">Tuple5</a> (:M :A) (:M :B) (:M :C) (:M :D) (:M :E)) &rarr; (:M (<a href="#tuple5-type">Tuple5</a> :A :B :C :D :E)))</code>
 
 Flatten a Tuple of wrapped-values. Particularly useful for types like
 (Tuple (Optional :a) (Optional :b)), etc.
@@ -10301,52 +10301,52 @@ Methods:
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> <a href="#roundingmode-type">RoundingMode</a></code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> <a href="#streamoptions-type">StreamOptions</a></code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> <a href="#ifexists-type">IfExists</a></code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#filestream-type">FileStream</a> :A)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#filestream-type">FileStream</a> :|0|)</code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> <a href="#fileerror-type">FileError</a></code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> <a href="#pathname-type">Pathname</a></code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> <a href="#lispcondition-type">LispCondition</a></code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#meteredresult-type">MeteredResult</a> :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#seq-type">Seq</a> :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#ordmap-type">OrdMap</a> :A :B)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#mappair-type">MapPair</a> :A :B)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#ordtree-type">OrdTree</a> :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> ((<a href="#loopt-type">LoopT</a> :A) :B)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#step-type">Step</a> :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (((<a href="#freet-type">FreeT</a> :A) :B) :C)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (((<a href="#freef-type">FreeF</a> :A) :B) :C)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> ((<a href="#free-type">Free</a> :A) :B)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> ((<a href="#optionalt-type">OptionalT</a> :A) :B)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (((<a href="#resultt-type">ResultT</a> :A) :B) :C)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (((<a href="#envt-type">EnvT</a> :A) :B) :C)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#env-type">Env</a> :A :B)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (((<a href="#statet-type">StateT</a> :A) :B) :C)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#st-type">ST</a> :A :B)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#identity-type">Identity</a> :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#queue-type">Queue</a> :A)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#meteredresult-type">MeteredResult</a> :|0|)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#seq-type">Seq</a> :|0|)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#ordmap-type">OrdMap</a> :|0| :|1|)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#mappair-type">MapPair</a> :|0| :|1|)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#ordtree-type">OrdTree</a> :|0|)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> ((<a href="#loopt-type">LoopT</a> :|0|) :|1|)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#step-type">Step</a> :|0|)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (((<a href="#freet-type">FreeT</a> :|0|) :|1|) :|2|)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (((<a href="#freef-type">FreeF</a> :|0|) :|1|) :|2|)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> ((<a href="#free-type">Free</a> :|0|) :|1|)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> ((<a href="#optionalt-type">OptionalT</a> :|0|) :|1|)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (((<a href="#resultt-type">ResultT</a> :|0|) :|1|) :|2|)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (((<a href="#envt-type">EnvT</a> :|0|) :|1|) :|2|)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#env-type">Env</a> :|0| :|1|)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (((<a href="#statet-type">StateT</a> :|0|) :|1|) :|2|)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#st-type">ST</a> :|0| :|1|)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#identity-type">Identity</a> :|0|)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#queue-type">Queue</a> :|0|)</code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> <a href="#insertionmode-type">InsertionMode</a></code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#hashmap-type">HashMap</a> :A :B)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#hmnode-type">HmNode</a> :A :B)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#hmentry-type">HmEntry</a> :A :B)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#hashtable-type">Hashtable</a> :A :B)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#slice-type">Slice</a> :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#vector-type">Vector</a> :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#lisparray-type">LispArray</a> :A)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#hashmap-type">HashMap</a> :|0| :|1|)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#hmnode-type">HmNode</a> :|0| :|1|)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#hmentry-type">HmEntry</a> :|0| :|1|)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#hashtable-type">Hashtable</a> :|0| :|1|)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#slice-type">Slice</a> :|0|)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#vector-type">Vector</a> :|0|)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> :T &rArr; <a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#lisparray-type">LispArray</a> :T)</code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> <a href="#rangestatus-type">RangeStatus</a></code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#iterator-type">Iterator</a> :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#tuple5-type">Tuple5</a> :A :B :C :D :E)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#tuple4-type">Tuple4</a> :A :B :C :D)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#tuple3-type">Tuple3</a> :A :B :C)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#cell-type">Cell</a> :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#hyperdual-type">Hyperdual</a> :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#dual-type">Dual</a> :A)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#iterator-type">Iterator</a> :|0|)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#tuple5-type">Tuple5</a> :|0| :|1| :|2| :|3| :|4|)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#tuple4-type">Tuple4</a> :|0| :|1| :|2| :|3|)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#tuple3-type">Tuple3</a> :|0| :|1| :|2|)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#cell-type">Cell</a> :|0|)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#hyperdual-type">Hyperdual</a> :|0|)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#dual-type">Dual</a> :|0|)</code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> <a href="#dyadic-type">Dyadic</a></code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#complex-type">Complex</a> :A)</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#quantization-type">Quantization</a> :A)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> :T &rArr; <a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#complex-type">Complex</a> :T)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#quantization-type">Quantization</a> :|0|)</code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> <a href="#symbol-type">Symbol</a></code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#tuple-type">Tuple</a> :A :B)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#tuple-type">Tuple</a> :|0| :|1|)</code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> <a href="#ord-type">Ord</a></code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> <a href="#hash-type">Hash</a></code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#result-type">Result</a> :A :B)</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#result-type">Result</a> :|0| :|1|)</code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> <a href="#ufix-type">UFix</a></code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> <a href="#ifix-type">IFix</a></code>
 - <code><a href="#runtimerepr-class">RuntimeRepr</a> <a href="#i64-type">I64</a></code>
@@ -10404,7 +10404,7 @@ Returns a Proxy containing the type of the parameter.
 
 ***
 
-#### <a href="#runtime-repr-of-value"><code>(RUNTIME-REPR-OF X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/types.lisp#L57-L59">src</a></sub></sup><a name="runtime-repr-of-value"></a>
+#### <a href="#runtime-repr-of-value"><code>(RUNTIME-REPR-OF _)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/types.lisp#L59-L61">src</a></sub></sup><a name="runtime-repr-of-value"></a>
 <code>&forall; :A. <a href="#runtimerepr-class">RuntimeRepr</a> :A &rArr; (:A &rarr; <a href="#lisptype-type">LispType</a>)</code>
 
 Returns the runtime representation of the type of the given value.
@@ -10437,8 +10437,8 @@ Returns the runtime representation of the type of the given value.
 - <code><a href="#iso-class">Iso</a> (<a href="#slice-type">Slice</a> :A) (<a href="#vector-type">Vector</a> :A)</code>
 - <code><a href="#iso-class">Iso</a> (<a href="#vector-type">Vector</a> :A) (<a href="#list-type">List</a> :A)</code>
 - <code><a href="#monoid-class">Monoid</a> (<a href="#vector-type">Vector</a> :A)</code>
-- <code><a href="#randomaccess-class">RandomAccess</a> (<a href="#vector-type">Vector</a> :A) :A</code>
-- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#vector-type">Vector</a> :A)</code>
+- <code><a href="#randomaccess-class">RandomAccess</a> (<a href="#vector-type">Vector</a> :T) :T</code>
+- <code><a href="#runtimerepr-class">RuntimeRepr</a> (<a href="#vector-type">Vector</a> :|0|)</code>
 - <code><a href="#semigroup-class">Semigroup</a> (<a href="#vector-type">Vector</a> :A)</code>
 - <code><a href="#sliceable-class">Sliceable</a> (<a href="#vector-type">Vector</a> :A)</code>
 
@@ -10496,7 +10496,7 @@ Is `v` empty?
 ***
 
 #### <a href="#extend!-value"><code>(EXTEND! VEC ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.lisp#L307-L323">src</a></sub></sup><a name="extend!-value"></a>
-<code>&forall; :A :B. <a href="#intoiterator-class">IntoIterator</a> :B :A &rArr; ((<a href="#vector-type">Vector</a> :A) &rarr; :B &rarr; <a href="#unit-type">Unit</a>)</code>
+<code>&forall; :ELT :CONTAINER. <a href="#intoiterator-class">IntoIterator</a> :CONTAINER :ELT &rArr; ((<a href="#vector-type">Vector</a> :ELT) &rarr; :CONTAINER &rarr; <a href="#unit-type">Unit</a>)</code>
 
 Push every element in `iter` to the end of `vec`.
 
