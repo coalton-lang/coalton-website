@@ -82,7 +82,7 @@ params:
     minMatchCharLength: 0
     keys: ["title", "permalink", "summary", "content"]
 
-  footerText: "Copyright © 2018–2025 Coalton Developers. [source](https://github.com/coalton-lang/coalton-website) · [rss](/index.xml)"
+  footerText: "Copyright © 2018–2026 Coalton Developers. [source](https://github.com/coalton-lang/coalton-website) · [rss](/index.xml)"
 
 markup:
   defaultMarkdownHandler: goldmark
