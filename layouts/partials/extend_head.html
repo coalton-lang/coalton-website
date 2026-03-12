@@ -11,4 +11,18 @@
 <script defer src="/js/reference.js"></script>
 {{- end }}
 
+{{- /* Hidden/draft banner */ -}}
+{{- if .Params.hidden }}
+<style>
+.draft-banner {
+  background-color: #d32f2f;
+  color: #fff;
+  text-align: center;
+  padding: 0.6em 1em;
+  font-weight: bold;
+  font-size: 0.95em;
+}
+</style>
+{{- end }}
+
 {{- /* Head custom content area end */ -}}
