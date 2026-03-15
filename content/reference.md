@@ -17,14 +17,11 @@ layout: two-pane
 <div class="sidebar-content">
 
 - <a href="#coalton-package"><code>COALTON</code></a>
-- <a href="#coalton-algorithms-fft-package"><code>COALTON/ALGORITHMS/FFT</code></a>
-- <a href="#coalton-big-float-package"><code>COALTON/BIG-FLOAT</code></a>
 - <a href="#coalton-bits-package"><code>COALTON/BITS</code></a>
 - <a href="#coalton-builtin-package"><code>COALTON/BUILTIN</code></a>
 - <a href="#coalton-cell-package"><code>COALTON/CELL</code></a>
 - <a href="#coalton-char-package"><code>COALTON/CHAR</code></a>
 - <a href="#coalton-classes-package"><code>COALTON/CLASSES</code></a>
-- <a href="#coalton-computable-reals-package"><code>COALTON/COMPUTABLE-REALS</code></a>
 - <a href="#coalton-experimental-do-control-core-package"><code>COALTON/EXPERIMENTAL/DO-CONTROL-CORE</code></a>
 - <a href="#coalton-experimental-do-control-loops-package"><code>COALTON/EXPERIMENTAL/DO-CONTROL-LOOPS</code></a>
 - <a href="#coalton-experimental-do-control-loops-adv-package"><code>COALTON/EXPERIMENTAL/DO-CONTROL-LOOPS-ADV</code></a>
@@ -40,11 +37,8 @@ layout: two-pane
 - <a href="#coalton-math-arith-package"><code>COALTON/MATH/ARITH</code></a>
 - <a href="#coalton-math-bounded-package"><code>COALTON/MATH/BOUNDED</code></a>
 - <a href="#coalton-math-complex-package"><code>COALTON/MATH/COMPLEX</code></a>
-- <a href="#coalton-math-dual-package"><code>COALTON/MATH/DUAL</code></a>
-- <a href="#coalton-math-dyadic-package"><code>COALTON/MATH/DYADIC</code></a>
 - <a href="#coalton-math-elementary-package"><code>COALTON/MATH/ELEMENTARY</code></a>
 - <a href="#coalton-math-fraction-package"><code>COALTON/MATH/FRACTION</code></a>
-- <a href="#coalton-math-hyperdual-package"><code>COALTON/MATH/HYPERDUAL</code></a>
 - <a href="#coalton-math-integral-package"><code>COALTON/MATH/INTEGRAL</code></a>
 - <a href="#coalton-math-real-package"><code>COALTON/MATH/REAL</code></a>
 - <a href="#coalton-monad-classes-package"><code>COALTON/MONAD/CLASSES</code></a>
@@ -70,6 +64,13 @@ layout: two-pane
 - <a href="#coalton-tuple-package"><code>COALTON/TUPLE</code></a>
 - <a href="#coalton-types-package"><code>COALTON/TYPES</code></a>
 - <a href="#coalton-vector-package"><code>COALTON/VECTOR</code></a>
+- <a href="#coalton-xmath-big-float-package"><code>COALTON/XMATH/BIG-FLOAT</code></a>
+- <a href="#coalton-xmath-computable-reals-package"><code>COALTON/XMATH/COMPUTABLE-REALS</code></a>
+- <a href="#coalton-xmath-dual-package"><code>COALTON/XMATH/DUAL</code></a>
+- <a href="#coalton-xmath-dyadic-package"><code>COALTON/XMATH/DYADIC</code></a>
+- <a href="#coalton-xmath-fft-package"><code>COALTON/XMATH/FFT</code></a>
+- <a href="#coalton-xmath-hyperdual-package"><code>COALTON/XMATH/HYPERDUAL</code></a>
+- <a href="#coalton-xmath-realalgebraic-package"><code>COALTON/XMATH/REALALGEBRAIC</code></a>
 </div>
 </aside>
 <div class="main-content">
@@ -219,8 +220,8 @@ Single-precision floating point number (32 bits in size). Represented by a Commo
 - <code><a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> <a href="#coalton-f32-type">F32</a></code>
 - <code><a href="#coalton-classes-hash-class">Hash</a> <a href="#coalton-f32-type">F32</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-f32-type">F32</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-f64-type">F64</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-string-type">String</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-f32-type">F32</a></code>
@@ -270,8 +271,8 @@ Double-precision floating point number (64 bits in size). Represented by a Commo
 - <code><a href="#coalton-classes-hash-class">Hash</a> <a href="#coalton-f64-type">F64</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-f64-type">F64</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-f64-type">F64</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-string-type">String</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-f64-type">F64</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-f64-type">F64</a></code>
@@ -315,9 +316,10 @@ A ratio of integers always in reduced form. Represented by a Common Lisp `cl:rat
 - <code><a href="#coalton-math-arith-dividable-class">Dividable</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-fraction-type">Fraction</a></code>
 - <code><a href="#coalton-classes-eq-class">Eq</a> <a href="#coalton-fraction-type">Fraction</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-fraction-type">Fraction</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-math-dyadic-dyadic-type">Dyadic</a> <a href="#coalton-fraction-type">Fraction</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a> <a href="#coalton-fraction-type">Fraction</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-string-type">String</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-fraction-type">Fraction</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-fraction-type">Fraction</a></code>
@@ -340,6 +342,7 @@ A ratio of integers always in reduced form. Represented by a Common Lisp `cl:rat
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-fraction-type">Fraction</a></code>
 - <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-string-type">String</a></code>
 - <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-string-type">String</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-string-type">String</a></code>
 
 </details>
 
@@ -363,7 +366,7 @@ Signed 16-bit integer capable of storing values in `[-32768, 32767]`. Uses `(sig
 - <code><a href="#coalton-classes-hash-class">Hash</a> <a href="#coalton-i16-type">I16</a></code>
 - <code><a href="#coalton-math-integral-integral-class">Integral</a> <a href="#coalton-i16-type">I16</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-i16-type">I16</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-f32-type">F32</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-f64-type">F64</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-fraction-type">Fraction</a></code>
@@ -417,7 +420,7 @@ Signed 32-bit integer capable of storing values in `[-2147483648, 2147483647]`. 
 - <code><a href="#coalton-math-integral-integral-class">Integral</a> <a href="#coalton-i32-type">I32</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-i32-type">I32</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-i32-type">I32</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-f64-type">F64</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-fraction-type">Fraction</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-i64-type">I64</a></code>
@@ -474,7 +477,7 @@ Signed 64-bit integer capable of storing values in `[-9223372036854775808, 92233
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-i64-type">I64</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-i64-type">I64</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-i64-type">I64</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-fraction-type">Fraction</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-integer-type">Integer</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-string-type">String</a></code>
@@ -528,7 +531,7 @@ Signed 8-bit integer capable of storing values in `[-128, 127]`. Uses `(signed-b
 - <code><a href="#coalton-classes-hash-class">Hash</a> <a href="#coalton-i8-type">I8</a></code>
 - <code><a href="#coalton-math-integral-integral-class">Integral</a> <a href="#coalton-i8-type">I8</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-i8-type">I8</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-f32-type">F32</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-f64-type">F64</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-fraction-type">Fraction</a></code>
@@ -587,7 +590,7 @@ Non-allocating tagged integer; range is platform-dependent. Does not error on ov
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-ifix-type">IFix</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-ifix-type">IFix</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-ifix-type">IFix</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-fraction-type">Fraction</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-i64-type">I64</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-integer-type">Integer</a></code>
@@ -634,11 +637,12 @@ Integer of unbounded size. Represented by a Common Lisp `cl:integer`.
 - <code><a href="#coalton-bits-bits-class">Bits</a> <a href="#coalton-integer-type">Integer</a></code>
 - <code><a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> <a href="#coalton-integer-type">Integer</a></code>
 - <code><a href="#coalton-classes-default-class">Default</a> <a href="#coalton-integer-type">Integer</a></code>
-- <code><a href="#coalton-math-arith-dividable-class">Dividable</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-math-arith-dividable-class">Dividable</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-math-arith-dividable-class">Dividable</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-math-arith-dividable-class">Dividable</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
 - <code><a href="#coalton-math-arith-dividable-class">Dividable</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-f32-type">F32</a></code>
 - <code><a href="#coalton-math-arith-dividable-class">Dividable</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-f64-type">F64</a></code>
 - <code><a href="#coalton-math-arith-dividable-class">Dividable</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-fraction-type">Fraction</a></code>
+- <code><a href="#coalton-math-arith-dividable-class">Dividable</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a></code>
 - <code><a href="#coalton-classes-eq-class">Eq</a> <a href="#coalton-integer-type">Integer</a></code>
 - <code><a href="#coalton-classes-hash-class">Hash</a> <a href="#coalton-integer-type">Integer</a></code>
 - <code><a href="#coalton-math-integral-integral-class">Integral</a> <a href="#coalton-integer-type">Integer</a></code>
@@ -648,10 +652,11 @@ Integer of unbounded size. Represented by a Common Lisp `cl:integer`.
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-integer-type">Integer</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-integer-type">Integer</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-integer-type">Integer</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-math-dyadic-dyadic-type">Dyadic</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-fraction-type">Fraction</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-string-type">String</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-integer-type">Integer</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-integer-type">Integer</a></code>
@@ -879,6 +884,7 @@ String of characters. Represented by Common Lisp `cl:string`.
 - <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-string-type">String</a></code>
 - <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
 - <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-string-type">String</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-string-type">String</a></code>
 - <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-string-type">String</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-string-type">String</a></code>
 - <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
 - <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-string-type">String</a></code>
@@ -937,7 +943,7 @@ Unsigned 16-bit integer capable of storing values in `[0, 65535]`. Uses `(unsign
 - <code><a href="#coalton-classes-hash-class">Hash</a> <a href="#coalton-u16-type">U16</a></code>
 - <code><a href="#coalton-math-integral-integral-class">Integral</a> <a href="#coalton-u16-type">U16</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-u16-type">U16</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-f32-type">F32</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-f64-type">F64</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-fraction-type">Fraction</a></code>
@@ -992,7 +998,7 @@ Unsigned 32-bit integer capable of storing values in `[0, 4294967295]`. Uses `(u
 - <code><a href="#coalton-math-integral-integral-class">Integral</a> <a href="#coalton-u32-type">U32</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-u32-type">U32</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-u32-type">U32</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-f64-type">F64</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-fraction-type">Fraction</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-i64-type">I64</a></code>
@@ -1050,7 +1056,7 @@ Unsigned 64-bit integer capable of storing values in `[0, 18446744073709551615]`
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-u64-type">U64</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-u64-type">U64</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-u64-type">U64</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-fraction-type">Fraction</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-integer-type">Integer</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-string-type">String</a></code>
@@ -1105,7 +1111,7 @@ Unsigned 8-bit integer capable of storing values in `[0, 255]`. Uses `(unsigned-
 - <code><a href="#coalton-classes-hash-class">Hash</a> <a href="#coalton-u8-type">U8</a></code>
 - <code><a href="#coalton-math-integral-integral-class">Integral</a> <a href="#coalton-u8-type">U8</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-u8-type">U8</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-f32-type">F32</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-f64-type">F64</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-fraction-type">Fraction</a></code>
@@ -1165,7 +1171,7 @@ Non-allocating tagged non-negative integer; range is platform-dependent. Uses `(
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-ufix-type">UFix</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-ufix-type">UFix</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-ufix-type">UFix</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-fraction-type">Fraction</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-i64-type">I64</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-ifix-type">IFix</a></code>
@@ -1467,423 +1473,6 @@ is equivalent to
     (fn (expr) (the <type> (unwrap (tryInto expr)))).
 
 Note that this may copy the object or allocate memory.
-
-
-
-***
-
-# Package `COALTON/ALGORITHMS/FFT`<a name="coalton-algorithms-fft-package"></a>
-
-
-A coalton package for performing FFTs.
-
-### Classes
-
-#### <a href="#coalton-algorithms-fft-fftcyclicgroup-class"><code>FFTCyclicGroup</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L150-L159">src</a></sub></sup><a name="coalton-algorithms-fft-fftcyclicgroup-class"></a>
-<code><a href="#coalton-algorithms-fft-fftcyclicgroup-class">FFTCyclicGroup</a> :T</code>
-
-
-A class of types, each of which is a mathematical cyclic group.
-
-These are types which are valid elements for a collection which may undergo a discrete Fourier transform. Examples include complex floating-point numbers and finite (modular) integers.
-
-Methods:
-- <code>CYCLIC-ADD-IDENTITY :: :T</code>
-- <code>CYCLIC-ADD :: (:T * :T &rarr; :T)</code>
-- <code>CYCLIC-ADD-INVERSE :: (:T &rarr; :T)</code>
-- <code>CYCLIC-NTH-GENERATOR :: (<a href="#coalton-ufix-type">UFix</a> &rarr; :T)</code><br/>A function which returns a primitive `n`th root of unity.
-<details>
-<summary>Instances</summary>
-
-- <code><a href="#coalton-algorithms-fft-fftcyclicgroup-class">FFTCyclicGroup</a> (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-f64-type">F64</a>)</code>
-- <code><a href="#coalton-algorithms-fft-fftcyclicgroup-class">FFTCyclicGroup</a> (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-f32-type">F32</a>)</code>
-
-</details>
-
-
-
-***
-
-#### <a href="#coalton-algorithms-fft-fftfield-class"><code>FFTField</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L140-L144">src</a></sub></sup><a name="coalton-algorithms-fft-fftfield-class"></a>
-<code><a href="#coalton-algorithms-fft-fftring-class">FFTRing</a> :T &rArr; <a href="#coalton-algorithms-fft-fftfield-class">FFTField</a> :T</code>
-
-
-A class of types, each of which is a mathematical field.
-
-These are types which are valid elements for a collection which may undergo a discrete Fourier transform. Examples include complex floating-point numbers and finite (modular) integers.
-
-Methods:
-- <code>MULTIPLY-INVERSE :: (:T &rarr; :T)</code>
-<details>
-<summary>Instances</summary>
-
-- <code><a href="#coalton-algorithms-fft-fftfield-class">FFTField</a> (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-f64-type">F64</a>)</code>
-- <code><a href="#coalton-algorithms-fft-fftfield-class">FFTField</a> (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-f32-type">F32</a>)</code>
-
-</details>
-
-
-
-***
-
-#### <a href="#coalton-algorithms-fft-fftgroup-class"><code>FFTGroup</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L121-L127">src</a></sub></sup><a name="coalton-algorithms-fft-fftgroup-class"></a>
-<code><a href="#coalton-algorithms-fft-fftgroup-class">FFTGroup</a> :T</code>
-
-
-A class of types, each of which is a mathematical group.
-
-These are types which are valid elements for a collection which may undergo a discrete Fourier transform. Examples include complex floating-point numbers and finite (modular) integers.
-
-Methods:
-- <code>ADD-IDENTITY :: :T</code>
-- <code>ADD :: (:T * :T &rarr; :T)</code>
-- <code>ADD-INVERSE :: (:T &rarr; :T)</code>
-<details>
-<summary>Instances</summary>
-
-- <code><a href="#coalton-algorithms-fft-fftgroup-class">FFTGroup</a> (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-f64-type">F64</a>)</code>
-- <code><a href="#coalton-algorithms-fft-fftgroup-class">FFTGroup</a> (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-f32-type">F32</a>)</code>
-
-</details>
-
-
-
-***
-
-#### <a href="#coalton-algorithms-fft-fftring-class"><code>FFTRing</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L133-L138">src</a></sub></sup><a name="coalton-algorithms-fft-fftring-class"></a>
-<code><a href="#coalton-algorithms-fft-fftgroup-class">FFTGroup</a> :T &rArr; <a href="#coalton-algorithms-fft-fftring-class">FFTRing</a> :T</code>
-
-
-A class of types, each of which is a mathematical ring.
-
-These are types which are valid elements for a collection which may undergo a discrete Fourier transform. Examples include complex floating-point numbers and finite (modular) integers.
-
-Methods:
-- <code>MULTIPLY-IDENTITY :: :T</code>
-- <code>MULTIPLY :: (:T * :T &rarr; :T)</code>
-<details>
-<summary>Instances</summary>
-
-- <code><a href="#coalton-algorithms-fft-fftring-class">FFTRing</a> (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-f64-type">F64</a>)</code>
-- <code><a href="#coalton-algorithms-fft-fftring-class">FFTRing</a> (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-f32-type">F32</a>)</code>
-
-</details>
-
-
-
-***
-
-### Values
-
-#### <a href="#coalton-algorithms-fft-dif-fft-raw-value"><code>(DIF-FFT-RAW DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L266-L279">src</a></sub></sup><a name="coalton-algorithms-fft-dif-fft-raw-value"></a>
-<code>&forall; :T :C :D. (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :C :T) (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :D :T) (<a href="#coalton-algorithms-fft-fftring-class">FFTRing</a> :T) (<a href="#coalton-algorithms-fft-fftcyclicgroup-class">FFTCyclicGroup</a> :T) &rArr; (:C * :D &rarr; Void)</code>
-
-A decimation-in-frequency fast fourier transform, reading from `src` and writing to `dst`.
-
-Input: natural order
-Output: bit-reversed order
-Normalization: none
-
-
-
-***
-
-#### <a href="#coalton-algorithms-fft-dif-ifft-raw-value"><code>(DIF-IFFT-RAW DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L286-L299">src</a></sub></sup><a name="coalton-algorithms-fft-dif-ifft-raw-value"></a>
-<code>&forall; :T :C :D. (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :C :T) (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :D :T) (<a href="#coalton-algorithms-fft-fftring-class">FFTRing</a> :T) (<a href="#coalton-algorithms-fft-fftcyclicgroup-class">FFTCyclicGroup</a> :T) &rArr; (:C * :D &rarr; Void)</code>
-
-A decimation-in-frequency inverse fast fourier transform, reading from `src` and writing to `dst`.
-
-Input: natural order
-Output: bit-reversed order
-Normalization: none
-
-
-
-***
-
-#### <a href="#coalton-algorithms-fft-dit-fft-raw-value"><code>(DIT-FFT-RAW DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L411-L425">src</a></sub></sup><a name="coalton-algorithms-fft-dit-fft-raw-value"></a>
-<code>&forall; :T :C :D. (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :C :T) (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :D :T) (<a href="#coalton-algorithms-fft-fftring-class">FFTRing</a> :T) (<a href="#coalton-algorithms-fft-fftcyclicgroup-class">FFTCyclicGroup</a> :T) &rArr; (:C * :D &rarr; Void)</code>
-
-A decimation-in-time fast fourier transform, reading from `src` and writing to `dst`.
-
-Input: bit-reversed order
-Output: natural order
-Normalization: none
-
-
-
-***
-
-#### <a href="#coalton-algorithms-fft-dit-ifft-raw-value"><code>(DIT-IFFT-RAW DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L432-L446">src</a></sub></sup><a name="coalton-algorithms-fft-dit-ifft-raw-value"></a>
-<code>&forall; :T :C :D. (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :C :T) (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :D :T) (<a href="#coalton-algorithms-fft-fftring-class">FFTRing</a> :T) (<a href="#coalton-algorithms-fft-fftcyclicgroup-class">FFTCyclicGroup</a> :T) &rArr; (:C * :D &rarr; Void)</code>
-
-A decimation-in-time inverse fast fourier transform, reading from `src` and writing to `dst`.
-
-Input: bit-reversed order
-Output: natural order
-Normalization: none
-
-
-
-***
-
-#### <a href="#coalton-algorithms-fft-divide-value"><code>(DIVIDE X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L147-L148">src</a></sub></sup><a name="coalton-algorithms-fft-divide-value"></a>
-<code>&forall; :T. <a href="#coalton-algorithms-fft-fftfield-class">FFTField</a> :T &rArr; (:T * :T &rarr; :T)</code>
-
-
-***
-
-#### <a href="#coalton-algorithms-fft-fft-value"><code>(FFT STORAGE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L529-L541">src</a></sub></sup><a name="coalton-algorithms-fft-fft-value"></a>
-<code>&forall; :T :C :D. (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :C :T) (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :D :T) (<a href="#coalton-algorithms-fft-fftring-class">FFTRing</a> :T) (<a href="#coalton-algorithms-fft-fftcyclicgroup-class">FFTCyclicGroup</a> :T) &rArr; (:C &rarr; :D)</code>
-
-Perform a fast Fourier transform on the data in `storage`.
-
-
-
-***
-
-#### <a href="#coalton-algorithms-fft-fft!-value"><code>(FFT! STORAGE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L455-L466">src</a></sub></sup><a name="coalton-algorithms-fft-fft!-value"></a>
-<code>&forall; :T :C. (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :C :T) (<a href="#coalton-algorithms-fft-fftring-class">FFTRing</a> :T) (<a href="#coalton-algorithms-fft-fftcyclicgroup-class">FFTCyclicGroup</a> :T) &rArr; (:C &rarr; :C)</code>
-
-Perform an in-place fast Fourier transform on `storage`.
-
-
-
-***
-
-#### <a href="#coalton-algorithms-fft-fft-into!-value"><code>(FFT-INTO! DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L491-L503">src</a></sub></sup><a name="coalton-algorithms-fft-fft-into!-value"></a>
-<code>&forall; :T :D :C. (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :C :T) (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :D :T) (<a href="#coalton-algorithms-fft-fftring-class">FFTRing</a> :T) (<a href="#coalton-algorithms-fft-fftcyclicgroup-class">FFTCyclicGroup</a> :T) &rArr; (:D * :C &rarr; :D)</code>
-
-Perform a fast Fourier transform of `src`, writing the result to `dst`. If `dst` is longer than `src`, then remaining elements of `dst` are left unmutated.
-
-
-
-***
-
-#### <a href="#coalton-algorithms-fft-ifft-value"><code>(IFFT STORAGE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L546-L562">src</a></sub></sup><a name="coalton-algorithms-fft-ifft-value"></a>
-<code>&forall; :T :C :D. (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :C :T) (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :D :T) (<a href="#coalton-algorithms-fft-fftfield-class">FFTField</a> :T) (<a href="#coalton-algorithms-fft-fftcyclicgroup-class">FFTCyclicGroup</a> :T) (<a href="#coalton-classes-num-class">Num</a> :T) &rArr; (:C &rarr; :D)</code>
-
-Perform an inverse fast Fourier transform on the data in `storage`.
-
-
-
-***
-
-#### <a href="#coalton-algorithms-fft-ifft!-value"><code>(IFFT! STORAGE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L471-L486">src</a></sub></sup><a name="coalton-algorithms-fft-ifft!-value"></a>
-<code>&forall; :T :C. (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :C :T) (<a href="#coalton-algorithms-fft-fftfield-class">FFTField</a> :T) (<a href="#coalton-algorithms-fft-fftcyclicgroup-class">FFTCyclicGroup</a> :T) (<a href="#coalton-classes-num-class">Num</a> :T) &rArr; (:C &rarr; :C)</code>
-
-Perform an in-place inverse fast Fourier transform on `storage`.
-
-
-
-***
-
-#### <a href="#coalton-algorithms-fft-ifft-into!-value"><code>(IFFT-INTO! DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L508-L524">src</a></sub></sup><a name="coalton-algorithms-fft-ifft-into!-value"></a>
-<code>&forall; :T :D :C. (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :C :T) (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :D :T) (<a href="#coalton-algorithms-fft-fftfield-class">FFTField</a> :T) (<a href="#coalton-algorithms-fft-fftcyclicgroup-class">FFTCyclicGroup</a> :T) (<a href="#coalton-classes-num-class">Num</a> :T) &rArr; (:D * :C &rarr; :D)</code>
-
-Perform an inverse fast Fourier transform of `src`, writing the result to `dst`. If `dst` is longer than `src`, then remaining elements of `dst` are left unmutated.
-
-
-
-***
-
-#### <a href="#coalton-algorithms-fft-subtract-value"><code>(SUBTRACT X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/algorithms/fft.lisp#L130-L131">src</a></sub></sup><a name="coalton-algorithms-fft-subtract-value"></a>
-<code>&forall; :T. <a href="#coalton-algorithms-fft-fftgroup-class">FFTGroup</a> :T &rArr; (:T * :T &rarr; :T)</code>
-
-
-***
-
-# Package `COALTON/BIG-FLOAT`<a name="coalton-big-float-package"></a>
-
-### Types
-
-#### <a href="#coalton-big-float-big-float-type"><code>Big-Float</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/big-float/impl-sbcl.lisp#L166-L167">src</a></sub></sup><a name="coalton-big-float-big-float-type"></a>
-
-An arbitrary (but fixed) precision floating point number.
-
-<details>
-<summary>Instances</summary>
-
-- <code><a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-math-arith-dividable-class">Dividable</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-math-elementary-elementary-class">Elementary</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-classes-eq-class">Eq</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-classes-num-class">Num</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-math-elementary-polar-class">Polar</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-math-real-quantizable-class">Quantizable</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-math-elementary-radical-class">Radical</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-math-real-rational-class">Rational</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-math-real-real-class">Real</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-math-arith-transfinite-class">Transfinite</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-
-</details>
-
-
-
-***
-
-#### <a href="#coalton-big-float-roundingmode-type"><code>RoundingMode</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/big-float/impl-sbcl.lisp#L88-L88">src</a></sub></sup><a name="coalton-big-float-roundingmode-type"></a>
-<details>
-<summary>Instances</summary>
-
-- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-big-float-roundingmode-type">RoundingMode</a></code>
-
-</details>
-
-
-
-***
-
-### Values
-
-#### <a href="#coalton-big-float-bf-ee-value"><code>(BF-EE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/big-float/impl-sbcl.lisp#L309-L312">src</a></sub></sup><a name="coalton-big-float-bf-ee-value"></a>
-<code>(Void &rarr; <a href="#coalton-big-float-big-float-type">Big-Float</a>)</code>
-
-Return the value of ee = exp(1) to the currently set precision.
-
-
-
-***
-
-#### <a href="#coalton-big-float-bf-pi-value"><code>(BF-PI)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/big-float/impl-sbcl.lisp#L280-L283">src</a></sub></sup><a name="coalton-big-float-bf-pi-value"></a>
-<code>(Void &rarr; <a href="#coalton-big-float-big-float-type">Big-Float</a>)</code>
-
-Return the value of pi to the currently set precision.
-
-
-
-***
-
-#### <a href="#coalton-big-float-get-precision-value"><code>(GET-PRECISION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/big-float/impl-sbcl.lisp#L132-L135">src</a></sub></sup><a name="coalton-big-float-get-precision-value"></a>
-<code>(Void &rarr; <a href="#coalton-ufix-type">UFix</a>)</code>
-
-Get the current precision of Big-Float arithmetic.
-
-
-
-***
-
-#### <a href="#coalton-big-float-get-rounding-mode-value"><code>(GET-ROUNDING-MODE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/big-float/impl-sbcl.lisp#L138-L141">src</a></sub></sup><a name="coalton-big-float-get-rounding-mode-value"></a>
-<code>(Void &rarr; <a href="#coalton-big-float-roundingmode-type">RoundingMode</a>)</code>
-
-Get the current rounding-mode of Big-Float arithmetic.
-
-
-
-***
-
-#### <a href="#coalton-big-float-set-precision!-value"><code>(SET-PRECISION! PREC-BITS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/big-float/impl-sbcl.lisp#L114-L121">src</a></sub></sup><a name="coalton-big-float-set-precision!-value"></a>
-<code>(<a href="#coalton-ufix-type">UFix</a> &rarr; Void)</code>
-
-Set the precision of Big-Float arithmetic to PREC-BITS bits.
-
-
-
-***
-
-#### <a href="#coalton-big-float-set-rounding-mode!-value"><code>(SET-ROUNDING-MODE! R)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/big-float/impl-sbcl.lisp#L124-L129">src</a></sub></sup><a name="coalton-big-float-set-rounding-mode!-value"></a>
-<code>(<a href="#coalton-big-float-roundingmode-type">RoundingMode</a> &rarr; Void)</code>
-
-Set the global rounding mode for Big-Float operations.
-
-
-
-***
-
-#### <a href="#coalton-big-float-with-precision-value"><code>(WITH-PRECISION F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/big-float/impl-sbcl.lisp#L154-L156">src</a></sub></sup><a name="coalton-big-float-with-precision-value"></a>
-<code>&forall; :A. ((Void &rarr; :A) &key (:precision <a href="#coalton-ufix-type">UFix</a>) &rarr; :A)</code>
-
-Call F with a temporary Big-Float PRECISION.
-
-
-
-***
-
-#### <a href="#coalton-big-float-with-precision-rounding-value"><code>(WITH-PRECISION-ROUNDING F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/big-float/impl-sbcl.lisp#L145-L150">src</a></sub></sup><a name="coalton-big-float-with-precision-rounding-value"></a>
-<code>&forall; :A. ((Void &rarr; :A) &key (:precision <a href="#coalton-ufix-type">UFix</a>) (:rounding <a href="#coalton-big-float-roundingmode-type">RoundingMode</a>) &rarr; :A)</code>
-
-Call F with a temporary Big-Float PRECISION and ROUNDING mode.
-
-
-
-***
-
-#### <a href="#coalton-big-float-with-rounding-value"><code>(WITH-ROUNDING F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/big-float/impl-sbcl.lisp#L160-L162">src</a></sub></sup><a name="coalton-big-float-with-rounding-value"></a>
-<code>&forall; :A. ((Void &rarr; :A) &key (:rounding <a href="#coalton-big-float-roundingmode-type">RoundingMode</a>) &rarr; :A)</code>
-
-Call F with a temporary Big-Float ROUNDING mode.
-
-
-
-***
-
-#### <a href="#coalton-big-float-rnda-value"><code>RNDA</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/big-float/impl-sbcl.lisp#L105-L107">src</a></sub></sup><a name="coalton-big-float-rnda-value"></a>
-<code><a href="#coalton-big-float-roundingmode-type">RoundingMode</a></code>
-
-RouND Away from zero.
-
-
-
-***
-
-#### <a href="#coalton-big-float-rndd-value"><code>RNDD</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/big-float/impl-sbcl.lisp#L102-L104">src</a></sub></sup><a name="coalton-big-float-rndd-value"></a>
-<code><a href="#coalton-big-float-roundingmode-type">RoundingMode</a></code>
-
-RouND Down, toward negative infinity.
-
-
-
-***
-
-#### <a href="#coalton-big-float-rndf-value"><code>RNDF</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/big-float/impl-sbcl.lisp#L108-L110">src</a></sub></sup><a name="coalton-big-float-rndf-value"></a>
-<code><a href="#coalton-big-float-roundingmode-type">RoundingMode</a></code>
-
-Faithful rounding (experimental).
-
-
-
-***
-
-#### <a href="#coalton-big-float-rndn-value"><code>RNDN</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/big-float/impl-sbcl.lisp#L93-L95">src</a></sub></sup><a name="coalton-big-float-rndn-value"></a>
-<code><a href="#coalton-big-float-roundingmode-type">RoundingMode</a></code>
-
-RouND to Nearest, with the even rounding rule.
-
-
-
-***
-
-#### <a href="#coalton-big-float-rndna-value"><code>RNDNA</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/big-float/impl-sbcl.lisp#L90-L92">src</a></sub></sup><a name="coalton-big-float-rndna-value"></a>
-<code><a href="#coalton-big-float-roundingmode-type">RoundingMode</a></code>
-
-RouND to Nearest Away.
-
-
-
-***
-
-#### <a href="#coalton-big-float-rndu-value"><code>RNDU</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/big-float/impl-sbcl.lisp#L99-L101">src</a></sub></sup><a name="coalton-big-float-rndu-value"></a>
-<code><a href="#coalton-big-float-roundingmode-type">RoundingMode</a></code>
-
-RouND Up, toward positive infinity.
-
-
-
-***
-
-#### <a href="#coalton-big-float-rndz-value"><code>RNDZ</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/big-float/impl-sbcl.lisp#L96-L98">src</a></sub></sup><a name="coalton-big-float-rndz-value"></a>
-<code><a href="#coalton-big-float-roundingmode-type">RoundingMode</a></code>
-
-RouND toward Zero.
 
 
 
@@ -2554,8 +2143,13 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#coalton-classes-eq-class">Eq</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-classes-eq-class">Eq</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-eq-class">Eq</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a></code>
+- <code><a href="#coalton-classes-eq-class">Eq</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-eq-class">Eq</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-eq-class">Eq</a> :T &rArr; <a href="#coalton-classes-eq-class">Eq</a> (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
+- <code><a href="#coalton-classes-eq-class">Eq</a> :T &rArr; <a href="#coalton-classes-eq-class">Eq</a> (<a href="#coalton-xmath-dual-dual-type">Dual</a> :T)</code>  
+Note: Eq only compares the primal component.
+- <code><a href="#coalton-classes-eq-class">Eq</a> <a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a></code>
 - <code><a href="#coalton-classes-eq-class">Eq</a> <a href="#coalton-file-pathname-type">Pathname</a></code>
 - <code><a href="#coalton-classes-eq-class">Eq</a> :A &rArr; <a href="#coalton-classes-eq-class">Eq</a> (<a href="#coalton-seq-seq-type">Seq</a> :A)</code>
 - <code>(<a href="#coalton-classes-eq-class">Eq</a> :KEY) (<a href="#coalton-classes-eq-class">Eq</a> :VALUE) &rArr; <a href="#coalton-classes-eq-class">Eq</a> (<a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE)</code>
@@ -2577,10 +2171,6 @@ Methods:
 - <code>(<a href="#coalton-classes-eq-class">Eq</a> :A) (<a href="#coalton-classes-eq-class">Eq</a> :B) (<a href="#coalton-classes-eq-class">Eq</a> :C) &rArr; <a href="#coalton-classes-eq-class">Eq</a> (<a href="#coalton-tuple-tuple3-type">Tuple3</a> :A :B :C)</code>
 - <code>(<a href="#coalton-classes-eq-class">Eq</a> :A) (<a href="#coalton-classes-eq-class">Eq</a> :B) &rArr; <a href="#coalton-classes-eq-class">Eq</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :A :B)</code>
 - <code><a href="#coalton-classes-eq-class">Eq</a> :A &rArr; <a href="#coalton-classes-eq-class">Eq</a> (<a href="#coalton-cell-cell-type">Cell</a> :A)</code>
-- <code><a href="#coalton-classes-eq-class">Eq</a> :T &rArr; <a href="#coalton-classes-eq-class">Eq</a> (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
-- <code><a href="#coalton-classes-eq-class">Eq</a> :T &rArr; <a href="#coalton-classes-eq-class">Eq</a> (<a href="#coalton-math-dual-dual-type">Dual</a> :T)</code>  
-Note: Eq only compares the primal component.
-- <code><a href="#coalton-classes-eq-class">Eq</a> <a href="#coalton-math-dyadic-dyadic-type">Dyadic</a></code>
 - <code><a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> :A &rArr; <a href="#coalton-classes-eq-class">Eq</a> (<a href="#coalton-math-complex-complex-type">Complex</a> :A)</code>
 - <code><a href="#coalton-classes-eq-class">Eq</a> <a href="#coalton-fraction-type">Fraction</a></code>
 - <code><a href="#coalton-classes-eq-class">Eq</a> <a href="#coalton-f64-type">F64</a></code>
@@ -2689,6 +2279,9 @@ Methods:
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#coalton-classes-hash-class">Hash</a> :T &rArr; <a href="#coalton-classes-hash-class">Hash</a> (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
+- <code><a href="#coalton-classes-hash-class">Hash</a> :T &rArr; <a href="#coalton-classes-hash-class">Hash</a> (<a href="#coalton-xmath-dual-dual-type">Dual</a> :T)</code>  
+Note: Hash only considers the primal component in order to be consistent with Eq.
 - <code>(<a href="#coalton-classes-hash-class">Hash</a> :KEY) (<a href="#coalton-classes-hash-class">Hash</a> :VALUE) &rArr; <a href="#coalton-classes-hash-class">Hash</a> (<a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE)</code>
 - <code><a href="#coalton-classes-hash-class">Hash</a> :ELT &rArr; <a href="#coalton-classes-hash-class">Hash</a> (<a href="#coalton-ordtree-ordtree-type">OrdTree</a> :ELT)</code>
 - <code>(<a href="#coalton-classes-hash-class">Hash</a> :K) (<a href="#coalton-classes-hash-class">Hash</a> :V) &rArr; <a href="#coalton-classes-hash-class">Hash</a> (<a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V)</code>
@@ -2700,9 +2293,6 @@ Methods:
 - <code>(<a href="#coalton-classes-hash-class">Hash</a> :A) (<a href="#coalton-classes-hash-class">Hash</a> :B) (<a href="#coalton-classes-hash-class">Hash</a> :C) (<a href="#coalton-classes-hash-class">Hash</a> :D) &rArr; <a href="#coalton-classes-hash-class">Hash</a> (<a href="#coalton-tuple-tuple4-type">Tuple4</a> :A :B :C :D)</code>
 - <code>(<a href="#coalton-classes-hash-class">Hash</a> :A) (<a href="#coalton-classes-hash-class">Hash</a> :B) (<a href="#coalton-classes-hash-class">Hash</a> :C) &rArr; <a href="#coalton-classes-hash-class">Hash</a> (<a href="#coalton-tuple-tuple3-type">Tuple3</a> :A :B :C)</code>
 - <code>(<a href="#coalton-classes-hash-class">Hash</a> :A) (<a href="#coalton-classes-hash-class">Hash</a> :B) &rArr; <a href="#coalton-classes-hash-class">Hash</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :A :B)</code>
-- <code><a href="#coalton-classes-hash-class">Hash</a> :T &rArr; <a href="#coalton-classes-hash-class">Hash</a> (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
-- <code><a href="#coalton-classes-hash-class">Hash</a> :T &rArr; <a href="#coalton-classes-hash-class">Hash</a> (<a href="#coalton-math-dual-dual-type">Dual</a> :T)</code>  
-Note: Hash only considers the primal component in order to be consistent with Eq.
 - <code><a href="#coalton-classes-hash-class">Hash</a> <a href="#coalton-f64-type">F64</a></code>
 - <code><a href="#coalton-classes-hash-class">Hash</a> <a href="#coalton-f32-type">F32</a></code>
 - <code><a href="#coalton-classes-hash-class">Hash</a> <a href="#coalton-ufix-type">UFix</a></code>
@@ -2737,25 +2327,31 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code>(<a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> :A) (<a href="#coalton-classes-into-class">Into</a> :A <a href="#coalton-computable-reals-creal-type">CReal</a>) &rArr; <a href="#coalton-classes-into-class">Into</a> (<a href="#coalton-math-complex-complex-type">Complex</a> :A) (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-computable-reals-creal-type">CReal</a>)</code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code>(<a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> :A) (<a href="#coalton-classes-into-class">Into</a> :A <a href="#coalton-xmath-computable-reals-creal-type">CReal</a>) &rArr; <a href="#coalton-classes-into-class">Into</a> (<a href="#coalton-math-complex-complex-type">Complex</a> :A) (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a>)</code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code>(<a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> :T) (<a href="#coalton-classes-into-class">Into</a> :T (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)) &rArr; <a href="#coalton-classes-into-class">Into</a> (<a href="#coalton-math-complex-complex-type">Complex</a> :T) (<a href="#coalton-math-complex-complex-type">Complex</a> (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T))</code>
+- <code><a href="#coalton-classes-num-class">Num</a> :T &rArr; <a href="#coalton-classes-into-class">Into</a> :T (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a> <a href="#coalton-fraction-type">Fraction</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-file-pathname-type">Pathname</a> <a href="#coalton-string-type">String</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-string-type">String</a> <a href="#coalton-file-pathname-type">Pathname</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> (<a href="#coalton-seq-seq-type">Seq</a> :A) (<a href="#coalton-vector-vector-type">Vector</a> :A)</code>
@@ -2794,10 +2390,6 @@ Methods:
 - <code><a href="#coalton-classes-into-class">Into</a> :A <a href="#coalton-string-type">String</a> &rArr; <a href="#coalton-classes-into-class">Into</a> (<a href="#coalton-cell-cell-type">Cell</a> :A) <a href="#coalton-string-type">String</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> (<a href="#coalton-cell-cell-type">Cell</a> :A) :A</code>
 - <code><a href="#coalton-classes-into-class">Into</a> :A (<a href="#coalton-cell-cell-type">Cell</a> :A)</code>
-- <code>(<a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> :T) (<a href="#coalton-classes-into-class">Into</a> :T (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T)) &rArr; <a href="#coalton-classes-into-class">Into</a> (<a href="#coalton-math-complex-complex-type">Complex</a> :T) (<a href="#coalton-math-complex-complex-type">Complex</a> (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T))</code>
-- <code><a href="#coalton-classes-num-class">Num</a> :T &rArr; <a href="#coalton-classes-into-class">Into</a> :T (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-math-dyadic-dyadic-type">Dyadic</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-math-dyadic-dyadic-type">Dyadic</a> <a href="#coalton-fraction-type">Fraction</a></code>
 - <code><a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> :A &rArr; <a href="#coalton-classes-into-class">Into</a> :A (<a href="#coalton-math-complex-complex-type">Complex</a> :A)</code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-fraction-type">Fraction</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-fraction-type">Fraction</a></code>
@@ -3023,12 +2615,13 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#coalton-classes-num-class">Num</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-classes-num-class">Num</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-num-class">Num</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a></code>
+- <code><a href="#coalton-classes-num-class">Num</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-num-class">Num</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-num-class">Num</a> :T &rArr; <a href="#coalton-classes-num-class">Num</a> (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
+- <code><a href="#coalton-classes-num-class">Num</a> :T &rArr; <a href="#coalton-classes-num-class">Num</a> (<a href="#coalton-xmath-dual-dual-type">Dual</a> :T)</code>
+- <code><a href="#coalton-classes-num-class">Num</a> <a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a></code>
 - <code><a href="#coalton-classes-num-class">Num</a> :A &rArr; <a href="#coalton-classes-num-class">Num</a> (<a href="#coalton-cell-cell-type">Cell</a> :A)</code>
-- <code><a href="#coalton-classes-num-class">Num</a> :T &rArr; <a href="#coalton-classes-num-class">Num</a> (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
-- <code><a href="#coalton-classes-num-class">Num</a> :T &rArr; <a href="#coalton-classes-num-class">Num</a> (<a href="#coalton-math-dual-dual-type">Dual</a> :T)</code>
-- <code><a href="#coalton-classes-num-class">Num</a> <a href="#coalton-math-dyadic-dyadic-type">Dyadic</a></code>
 - <code><a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> :A &rArr; <a href="#coalton-classes-num-class">Num</a> (<a href="#coalton-math-complex-complex-type">Complex</a> :A)</code>
 - <code><a href="#coalton-classes-num-class">Num</a> <a href="#coalton-fraction-type">Fraction</a></code>
 - <code><a href="#coalton-classes-num-class">Num</a> <a href="#coalton-f64-type">F64</a></code>
@@ -3063,8 +2656,13 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a></code>
+- <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-ord-class">Ord</a> :T &rArr; <a href="#coalton-classes-ord-class">Ord</a> (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
+- <code><a href="#coalton-classes-ord-class">Ord</a> :T &rArr; <a href="#coalton-classes-ord-class">Ord</a> (<a href="#coalton-xmath-dual-dual-type">Dual</a> :T)</code>  
+Note: Ord only compares the primal component.
+- <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a></code>
 - <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-file-pathname-type">Pathname</a></code>
 - <code><a href="#coalton-classes-ord-class">Ord</a> :KEY &rArr; <a href="#coalton-classes-ord-class">Ord</a> (<a href="#coalton-ordmap-mappair-type">MapPair</a> :KEY :VALUE)</code>
 - <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-string-type">String</a></code>
@@ -3074,10 +2672,6 @@ Methods:
 - <code><a href="#coalton-classes-ord-class">Ord</a> :A &rArr; <a href="#coalton-classes-ord-class">Ord</a> (<a href="#coalton-optional-type">Optional</a> :A)</code>
 - <code>(<a href="#coalton-classes-ord-class">Ord</a> :A) (<a href="#coalton-classes-ord-class">Ord</a> :B) &rArr; <a href="#coalton-classes-ord-class">Ord</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :A :B)</code>
 - <code><a href="#coalton-classes-ord-class">Ord</a> :A &rArr; <a href="#coalton-classes-ord-class">Ord</a> (<a href="#coalton-cell-cell-type">Cell</a> :A)</code>
-- <code><a href="#coalton-classes-ord-class">Ord</a> :T &rArr; <a href="#coalton-classes-ord-class">Ord</a> (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
-- <code><a href="#coalton-classes-ord-class">Ord</a> :T &rArr; <a href="#coalton-classes-ord-class">Ord</a> (<a href="#coalton-math-dual-dual-type">Dual</a> :T)</code>  
-Note: Ord only compares the primal component.
-- <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-math-dyadic-dyadic-type">Dyadic</a></code>
 - <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-fraction-type">Fraction</a></code>
 - <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-f64-type">F64</a></code>
 - <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-f32-type">F32</a></code>
@@ -3187,6 +2781,7 @@ Methods:
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-string-type">String</a></code>
 - <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-string-type">String</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-string-type">String</a></code>
 - <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-string-type">String</a></code>
 - <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-string-type">String</a></code>
@@ -3512,142 +3107,6 @@ Same as `tryInto` followed by `unwrap`.
 <code>&forall; :ELEMENT :CONTAINER. <a href="#coalton-classes-unwrappable-class">Unwrappable</a> :CONTAINER &rArr; (:ELEMENT * (:CONTAINER :ELEMENT) &rarr; :ELEMENT)</code>
 
 Unwrap `container`, returning `default` on failure.
-
-
-
-***
-
-# Package `COALTON/COMPUTABLE-REALS`<a name="coalton-computable-reals-package"></a>
-
-### Types
-
-#### <a href="#coalton-computable-reals-creal-type"><code>CReal</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L39-L39">src</a></sub></sup><a name="coalton-computable-reals-creal-type"></a>
-<details>
-<summary>Instances</summary>
-
-- <code><a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-math-arith-dividable-class">Dividable</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-math-elementary-elementary-class">Elementary</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-classes-eq-class">Eq</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-classes-num-class">Num</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-math-elementary-polar-class">Polar</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-math-real-quantizable-class">Quantizable</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-math-elementary-radical-class">Radical</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-math-real-real-class">Real</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-
-</details>
-
-
-
-***
-
-### Values
-
-#### <a href="#coalton-computable-reals-approx-value"><code>(APPROX X K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L305-L317">src</a></sub></sup><a name="coalton-computable-reals-approx-value"></a>
-<code>(<a href="#coalton-computable-reals-creal-type">CReal</a> * <a href="#coalton-ufix-type">UFix</a> &rarr; <a href="#coalton-integer-type">Integer</a>)</code>
-
-Computes an approximation of the bits of a given
-`CReal`. Specifically, given an object of type `CReal` `x` and a
-non-negative integer `k`, return an integer $a$ with
-
-$$
-\vert a\cdot 2^{-\mathtt{k}} - \mathtt{x}\vert \leq 2^{-\mathtt{k}}.
-$$
-
-See `rational` or `rationalize` to produce a rational approximation of
-`CReal`.
-
-
-
-***
-
-#### <a href="#coalton-computable-reals-comparison-threshold-value"><code>(COMPARISON-THRESHOLD)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L49-L58">src</a></sub></sup><a name="coalton-computable-reals-comparison-threshold-value"></a>
-<code>(Void &rarr; <a href="#coalton-ufix-type">UFix</a>)</code>
-
-Returns the current `CReal` comparison threshold measured as a number
-of bits after the 'decimal' point.
-
-This threshold is used to ensure `Eq` and `Ord` instances
-terminate. (In general, computable real arithmetic is undecidable.)
-Note that if the production of a `CReal` depends on comparison, *there
-is no guarantee that the `CReal` will be accurate to any precision*.
-
-
-
-***
-
-#### <a href="#coalton-computable-reals-cr-print-value"><code>(CR-PRINT X K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L349-L352">src</a></sub></sup><a name="coalton-computable-reals-cr-print-value"></a>
-<code>(<a href="#coalton-computable-reals-creal-type">CReal</a> * <a href="#coalton-ufix-type">UFix</a> &rarr; <a href="#coalton-boolean-type">Boolean</a>)</code>
-
-Prints a real `x` up to `k` bits of precision.
-
-
-
-***
-
-#### <a href="#coalton-computable-reals-rational-approx-value"><code>(RATIONAL-APPROX X K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L320-L327">src</a></sub></sup><a name="coalton-computable-reals-rational-approx-value"></a>
-<code>(<a href="#coalton-computable-reals-creal-type">CReal</a> * <a href="#coalton-ufix-type">UFix</a> &rarr; <a href="#coalton-fraction-type">Fraction</a>)</code>
-
-Produce a rational approximation of `x` called $r$ such that
-
-$$
-\vert r - \mathtt{x} \vert < 2^{-\mathtt{k}}.
-$$
-
-
-
-***
-
-#### <a href="#coalton-computable-reals-rationalize-value"><code>(RATIONALIZE X K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L330-L340">src</a></sub></sup><a name="coalton-computable-reals-rationalize-value"></a>
-<code>(<a href="#coalton-computable-reals-creal-type">CReal</a> * <a href="#coalton-ufix-type">UFix</a> &rarr; <a href="#coalton-fraction-type">Fraction</a>)</code>
-
-Produce a rational approximation of `x` called $r$ such that
-
-$$
-\vert r - \mathtt{x} \vert < 2^{-\mathtt{k}},
-$$
-
-taking into account the maximum precision specified by `k` to return
-the simplest possible such approximation.
-
-
-
-***
-
-#### <a href="#coalton-computable-reals-set-comparison-threshold!-value"><code>(SET-COMPARISON-THRESHOLD! K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L41-L47">src</a></sub></sup><a name="coalton-computable-reals-set-comparison-threshold!-value"></a>
-<code>&forall; :A. (:A &rarr; <a href="#coalton-unit-type">Unit</a>)</code>
-
-Sets the global `CReal` comparison threshold to k bits after the 'decimal' point.
-
-See `comparison-threshold` for more details.
-
-
-
-***
-
-#### <a href="#coalton-computable-reals-with-comparison-threshold-value"><code>(WITH-COMPARISON-THRESHOLD F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/computable-reals/computable-reals.lisp#L61-L65">src</a></sub></sup><a name="coalton-computable-reals-with-comparison-threshold-value"></a>
-<code>&forall; :A. ((Void &rarr; :A) &key (:bits <a href="#coalton-ufix-type">UFix</a>) &rarr; :A)</code>
-
-Call F with a temporary `CReal` comparison threshold of BITS.
 
 
 
@@ -6517,8 +5976,9 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#coalton-math-arith-dividable-class">Dividable</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-math-arith-dividable-class">Dividable</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-math-arith-dividable-class">Dividable</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a></code>
+- <code><a href="#coalton-math-arith-dividable-class">Dividable</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-math-arith-dividable-class">Dividable</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-math-arith-dividable-class">Dividable</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-fraction-type">Fraction</a></code>
 - <code><a href="#coalton-math-arith-dividable-class">Dividable</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-f64-type">F64</a></code>
 - <code><a href="#coalton-math-arith-dividable-class">Dividable</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-f32-type">F32</a></code>
@@ -6550,10 +6010,11 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :T &rArr; <a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
-- <code><a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :T &rArr; <a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> (<a href="#coalton-math-dual-dual-type">Dual</a> :T)</code>
+- <code><a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a></code>
+- <code><a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :T &rArr; <a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
+- <code><a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :T &rArr; <a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> (<a href="#coalton-xmath-dual-dual-type">Dual</a> :T)</code>
 - <code>(<a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> :A) (<a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :A) &rArr; <a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> (<a href="#coalton-math-complex-complex-type">Complex</a> :A)</code>
 - <code><a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> <a href="#coalton-fraction-type">Fraction</a></code>
 - <code><a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> <a href="#coalton-f64-type">F64</a></code>
@@ -6579,7 +6040,7 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#coalton-math-arith-transfinite-class">Transfinite</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-math-arith-transfinite-class">Transfinite</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-math-arith-transfinite-class">Transfinite</a> <a href="#coalton-f64-type">F64</a></code>
 - <code><a href="#coalton-math-arith-transfinite-class">Transfinite</a> <a href="#coalton-f32-type">F32</a></code>
 
@@ -6766,23 +6227,23 @@ component types.
 <details>
 <summary>Instances</summary>
 
-- <code>(<a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> :A) (<a href="#coalton-classes-into-class">Into</a> :A <a href="#coalton-computable-reals-creal-type">CReal</a>) &rArr; <a href="#coalton-classes-into-class">Into</a> (<a href="#coalton-math-complex-complex-type">Complex</a> :A) (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-computable-reals-creal-type">CReal</a>)</code>
+- <code>(<a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> :A) (<a href="#coalton-classes-into-class">Into</a> :A <a href="#coalton-xmath-computable-reals-creal-type">CReal</a>) &rArr; <a href="#coalton-classes-into-class">Into</a> (<a href="#coalton-math-complex-complex-type">Complex</a> :A) (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a>)</code>
 - <code>(<a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> :A) (<a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :A) &rArr; <a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> (<a href="#coalton-math-complex-complex-type">Complex</a> :A)</code>
-- <code>(<a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> :T) (<a href="#coalton-classes-into-class">Into</a> :T (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T)) &rArr; <a href="#coalton-classes-into-class">Into</a> (<a href="#coalton-math-complex-complex-type">Complex</a> :T) (<a href="#coalton-math-complex-complex-type">Complex</a> (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T))</code>
+- <code>(<a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> :T) (<a href="#coalton-classes-into-class">Into</a> :T (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)) &rArr; <a href="#coalton-classes-into-class">Into</a> (<a href="#coalton-math-complex-complex-type">Complex</a> :T) (<a href="#coalton-math-complex-complex-type">Complex</a> (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T))</code>
 - <code><a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> :A &rArr; <a href="#coalton-classes-eq-class">Eq</a> (<a href="#coalton-math-complex-complex-type">Complex</a> :A)</code>
 - <code><a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> :A &rArr; <a href="#coalton-classes-into-class">Into</a> :A (<a href="#coalton-math-complex-complex-type">Complex</a> :A)</code>
 - <code><a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> :A &rArr; <a href="#coalton-classes-num-class">Num</a> (<a href="#coalton-math-complex-complex-type">Complex</a> :A)</code>
 - <code><a href="#coalton-math-elementary-elementary-class">Elementary</a> :A &rArr; <a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> (<a href="#coalton-math-complex-complex-type">Complex</a> :A)</code>
 - <code><a href="#coalton-math-elementary-elementary-class">Elementary</a> :A &rArr; <a href="#coalton-math-elementary-radical-class">Radical</a> (<a href="#coalton-math-complex-complex-type">Complex</a> :A)</code>
 - <code><a href="#coalton-math-elementary-elementary-class">Elementary</a> :A &rArr; <a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> (<a href="#coalton-math-complex-complex-type">Complex</a> :A)</code>
-- <code><a href="#coalton-algorithms-fft-fftcyclicgroup-class">FFTCyclicGroup</a> (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-f32-type">F32</a>)</code>
-- <code><a href="#coalton-algorithms-fft-fftcyclicgroup-class">FFTCyclicGroup</a> (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-f64-type">F64</a>)</code>
-- <code><a href="#coalton-algorithms-fft-fftfield-class">FFTField</a> (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-f32-type">F32</a>)</code>
-- <code><a href="#coalton-algorithms-fft-fftfield-class">FFTField</a> (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-f64-type">F64</a>)</code>
-- <code><a href="#coalton-algorithms-fft-fftgroup-class">FFTGroup</a> (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-f32-type">F32</a>)</code>
-- <code><a href="#coalton-algorithms-fft-fftgroup-class">FFTGroup</a> (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-f64-type">F64</a>)</code>
-- <code><a href="#coalton-algorithms-fft-fftring-class">FFTRing</a> (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-f32-type">F32</a>)</code>
-- <code><a href="#coalton-algorithms-fft-fftring-class">FFTRing</a> (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-f64-type">F64</a>)</code>
+- <code><a href="#coalton-xmath-fft-fftcyclicgroup-class">FFTCyclicGroup</a> (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-f32-type">F32</a>)</code>
+- <code><a href="#coalton-xmath-fft-fftcyclicgroup-class">FFTCyclicGroup</a> (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-f64-type">F64</a>)</code>
+- <code><a href="#coalton-xmath-fft-fftfield-class">FFTField</a> (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-f32-type">F32</a>)</code>
+- <code><a href="#coalton-xmath-fft-fftfield-class">FFTField</a> (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-f64-type">F64</a>)</code>
+- <code><a href="#coalton-xmath-fft-fftgroup-class">FFTGroup</a> (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-f32-type">F32</a>)</code>
+- <code><a href="#coalton-xmath-fft-fftgroup-class">FFTGroup</a> (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-f64-type">F64</a>)</code>
+- <code><a href="#coalton-xmath-fft-fftring-class">FFTRing</a> (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-f32-type">F32</a>)</code>
+- <code><a href="#coalton-xmath-fft-fftring-class">FFTRing</a> (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-f64-type">F64</a>)</code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> :T &rArr; <a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-math-complex-complex-type">Complex</a> :T)</code>
 
 </details>
@@ -6807,9 +6268,9 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> :T &rArr; <a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
+- <code><a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> :T &rArr; <a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
 - <code><a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> <a href="#coalton-integer-type">Integer</a></code>
 - <code><a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> <a href="#coalton-fraction-type">Fraction</a></code>
 - <code><a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> <a href="#coalton-f64-type">F64</a></code>
@@ -6852,185 +6313,11 @@ blackboard-bold 𝕚.)
 
 ***
 
-# Package `COALTON/MATH/DUAL`<a name="coalton-math-dual-package"></a>
-
-
-
-Dual numbers are a hypercomplex number system [1]. A dual number has
-the form $a + b\varepsilon$ where $a$ and $b$ are real numbers and
-$\varepsilon$ is a symbol that satisfies $\varepsilon^2=0$ and
-$\varepsilon\neq 0$. The value $a$ is often called the *primal part*
-and the value $b$ is often called the *dual part*. One application of
-dual numbers is automatic differentiation; an example taken from [2]
-is as follows.
-
-Consider the function $f(x) = 3x+2$ and you want to calculate $f(4)$
-and $f^{\prime}(4)$. By the usual rules of differentiation, we know
-$f^{\prime}(x) = 3$ and thus $(f(4), f^{\prime}(4)) = (14, 3)$. We
-seek to recover this with dual numbers.
-
-With dual numbers, we can calculate
-
-$$f(a) + f^{\prime}(a)\varepsilon$$
-
-by taking a real-valued function $f$ and evaluating as if it were a
-dual-valued function at the point $a + \varepsilon$. Thus, for the
-defined $f$, we have:
-
-$$
-\begin{aligned}
-f(4 + \varepsilon)
-&= 3(4 + \varepsilon) + 2 \\\\
-&= 3\cdot 4 + 3\varepsilon + 2 \\\\
-&= 14 + 3\varepsilon.
-\end{aligned}
-$$
-
-In this result, the primal $14$ is the value of $f(4)$ and the dual is
-the value of of $f^{\prime}(4)$.
-
-Haskell has an automatic differentiation library and you can find it
-here [3].
-
-Limitations:
-
-We have decided to implement Ord, Eq, and Hash to look at only the
-primal part of numbers. This is so the Dual type can be used primarily
-for the purpose of automatic differentiation of existing code, and not
-for general abstract mathematics. If you need these type classes
-acting in the usual way (i.e., on both primal and dual parts), then we
-recommend making your own data type which wraps a dual number.
-
-References:
-
-- [1] https://en.wikipedia.org/wiki/Dual_number
-- [2] https://blog.demofox.org/2014/12/30/dual-numbers-automatic-differentiation/
-- [3] https://hackage.haskell.org/package/ad
-
-### Structs
-
-#### <a href="#coalton-math-dual-dual-type"><code>Dual :T</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dual.lisp#L81-L89">src</a></sub></sup><a name="coalton-math-dual-dual-type"></a>
-
-Representation of a dual number in the form $a + b\varepsilon$ where
-$a$ and $b$ are real numbers and $\varepsilon$ satisfies
-$\varepsilon^2 = 0$ and $\varepsilon \neq 0$.
-
-Note: `Eq`, and `Ord` and `Hash` only make use of the primal
-component.
-
-<details>
-<summary>Instances</summary>
-
-- <code>(<a href="#coalton-classes-num-class">Num</a> :T) (<a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> :T) (<a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :T) &rArr; <a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> (<a href="#coalton-math-dual-dual-type">Dual</a> :T)</code>
-- <code>(<a href="#coalton-classes-num-class">Num</a> :T) (<a href="#coalton-math-elementary-radical-class">Radical</a> :T) (<a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :T) (<a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> :T) &rArr; <a href="#coalton-math-elementary-radical-class">Radical</a> (<a href="#coalton-math-dual-dual-type">Dual</a> :T)</code>
-- <code>(<a href="#coalton-classes-num-class">Num</a> :T) (<a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> :T) (<a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :T) (<a href="#coalton-math-elementary-radical-class">Radical</a> :T) &rArr; <a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> (<a href="#coalton-math-dual-dual-type">Dual</a> :T)</code>
-- <code><a href="#coalton-classes-eq-class">Eq</a> :T &rArr; <a href="#coalton-classes-eq-class">Eq</a> (<a href="#coalton-math-dual-dual-type">Dual</a> :T)</code>  
-Note: Eq only compares the primal component.
-- <code><a href="#coalton-classes-hash-class">Hash</a> :T &rArr; <a href="#coalton-classes-hash-class">Hash</a> (<a href="#coalton-math-dual-dual-type">Dual</a> :T)</code>  
-Note: Hash only considers the primal component in order to be consistent with Eq.
-- <code><a href="#coalton-classes-num-class">Num</a> :T &rArr; <a href="#coalton-classes-num-class">Num</a> (<a href="#coalton-math-dual-dual-type">Dual</a> :T)</code>
-- <code><a href="#coalton-classes-ord-class">Ord</a> :T &rArr; <a href="#coalton-classes-ord-class">Ord</a> (<a href="#coalton-math-dual-dual-type">Dual</a> :T)</code>  
-Note: Ord only compares the primal component.
-- <code><a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :T &rArr; <a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> (<a href="#coalton-math-dual-dual-type">Dual</a> :T)</code>
-- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-math-dual-dual-type">Dual</a> :|0|)</code>
-
-</details>
-
-
-
-***
-
-### Values
-
-#### <a href="#coalton-math-dual-dual-part-value"><code>(DUAL-PART (DUAL _ D))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dual.lisp#L97-L99">src</a></sub></sup><a name="coalton-math-dual-dual-part-value"></a>
-<code>&forall; :T. ((<a href="#coalton-math-dual-dual-type">Dual</a> :T) &rarr; :T)</code>
-
-The dual (i.e., derivative) part of a dual number.
-
-
-
-***
-
-#### <a href="#coalton-math-dual-primal-part-value"><code>(PRIMAL-PART (DUAL P _))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dual.lisp#L92-L94">src</a></sub></sup><a name="coalton-math-dual-primal-part-value"></a>
-<code>&forall; :T. ((<a href="#coalton-math-dual-dual-type">Dual</a> :T) &rarr; :T)</code>
-
-The primal (i.e., real) part of a dual number.
-
-
-
-***
-
-# Package `COALTON/MATH/DYADIC`<a name="coalton-math-dyadic-package"></a>
-
-### Types
-
-#### <a href="#coalton-math-dyadic-dyadic-type"><code>Dyadic</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dyadic.lisp#L32-L34">src</a></sub></sup><a name="coalton-math-dyadic-dyadic-type"></a>
-- <code>(Dyadic <a href="#coalton-integer-type">Integer</a> <a href="#coalton-integer-type">Integer</a>)</code>
-
-`(Dyadic n k)` represents the rational $\mathtt{n}\cdot 2^{\mathtt{k}}$.
-
-<details>
-<summary>Instances</summary>
-
-- <code><a href="#coalton-classes-eq-class">Eq</a> <a href="#coalton-math-dyadic-dyadic-type">Dyadic</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-math-dyadic-dyadic-type">Dyadic</a> <a href="#coalton-fraction-type">Fraction</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-math-dyadic-dyadic-type">Dyadic</a></code>
-- <code><a href="#coalton-classes-num-class">Num</a> <a href="#coalton-math-dyadic-dyadic-type">Dyadic</a></code>
-- <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-math-dyadic-dyadic-type">Dyadic</a></code>
-- <code><a href="#coalton-math-real-quantizable-class">Quantizable</a> <a href="#coalton-math-dyadic-dyadic-type">Dyadic</a></code>
-- <code><a href="#coalton-math-real-rational-class">Rational</a> <a href="#coalton-math-dyadic-dyadic-type">Dyadic</a></code>
-- <code><a href="#coalton-math-real-real-class">Real</a> <a href="#coalton-math-dyadic-dyadic-type">Dyadic</a></code>
-- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-math-dyadic-dyadic-type">Dyadic</a></code>
-
-</details>
-
-
-
-***
-
-### Values
-
-#### <a href="#coalton-math-dyadic-scale-value"><code>(SCALE X J)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dyadic.lisp#L155-L158">src</a></sub></sup><a name="coalton-math-dyadic-scale-value"></a>
-<code>(<a href="#coalton-math-dyadic-dyadic-type">Dyadic</a> * <a href="#coalton-integer-type">Integer</a> &rarr; <a href="#coalton-math-dyadic-dyadic-type">Dyadic</a>)</code>
-
-Scales a dyadic `x` by $2^{\mathtt{k}}$.
-
-
-
-***
-
-#### <a href="#coalton-math-dyadic-shift-value"><code>(SHIFT K A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dyadic.lisp#L161-L168">src</a></sub></sup><a name="coalton-math-dyadic-shift-value"></a>
-<code>(<a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-math-dyadic-dyadic-type">Dyadic</a> &rarr; <a href="#coalton-math-dyadic-dyadic-type">Dyadic</a>)</code>
-
-Shift dyadic `a` to its floor with $\mathtt{k}+1$ bits of precision.
-
-
-
-***
-
-#### <a href="#coalton-math-dyadic-simplify-value"><code>(SIMPLIFY D)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dyadic.lisp#L99-L103">src</a></sub></sup><a name="coalton-math-dyadic-simplify-value"></a>
-<code>(<a href="#coalton-math-dyadic-dyadic-type">Dyadic</a> &rarr; <a href="#coalton-math-dyadic-dyadic-type">Dyadic</a>)</code>
-
-Simplifies a dyadic by maximizing the absolute value of the exponent.
-
-
-
-***
-
-#### <a href="#coalton-math-dyadic-simplify-integer-value"><code>(SIMPLIFY-INTEGER N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/dyadic.lisp#L88-L97">src</a></sub></sup><a name="coalton-math-dyadic-simplify-integer-value"></a>
-<code>(<a href="#coalton-integer-type">Integer</a> &rarr; <a href="#coalton-math-dyadic-dyadic-type">Dyadic</a>)</code>
-
-Finds the simplest dyadic given an integer.
-
-
-
-***
-
 # Package `COALTON/MATH/ELEMENTARY`<a name="coalton-math-elementary-package"></a>
 
 ### Classes
 
-#### <a href="#coalton-math-elementary-elementary-class"><code>Elementary</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L122-L126">src</a></sub></sup><a name="coalton-math-elementary-elementary-class"></a>
+#### <a href="#coalton-math-elementary-elementary-class"><code>Elementary</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L124-L128">src</a></sub></sup><a name="coalton-math-elementary-elementary-class"></a>
 <code>(<a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :A) (<a href="#coalton-math-elementary-polar-class">Polar</a> :A) (<a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> :A) (<a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> :A) (<a href="#coalton-math-elementary-radical-class">Radical</a> :A) &rArr; <a href="#coalton-math-elementary-elementary-class">Elementary</a> :A</code>
 
 
@@ -7040,8 +6327,8 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#coalton-math-elementary-elementary-class">Elementary</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-math-elementary-elementary-class">Elementary</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-math-elementary-elementary-class">Elementary</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-math-elementary-elementary-class">Elementary</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-math-elementary-elementary-class">Elementary</a> <a href="#coalton-f64-type">F64</a></code>
 - <code><a href="#coalton-math-elementary-elementary-class">Elementary</a> <a href="#coalton-f32-type">F32</a></code>
 
@@ -7051,7 +6338,7 @@ Methods:
 
 ***
 
-#### <a href="#coalton-math-elementary-exponentiable-class"><code>Exponentiable</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L72-L84">src</a></sub></sup><a name="coalton-math-elementary-exponentiable-class"></a>
+#### <a href="#coalton-math-elementary-exponentiable-class"><code>Exponentiable</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L74-L86">src</a></sub></sup><a name="coalton-math-elementary-exponentiable-class"></a>
 <code><a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> :A</code>
 
 
@@ -7072,10 +6359,10 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code>(<a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> :T) (<a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :T) &rArr; <a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
-- <code>(<a href="#coalton-classes-num-class">Num</a> :T) (<a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> :T) (<a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :T) &rArr; <a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> (<a href="#coalton-math-dual-dual-type">Dual</a> :T)</code>
+- <code><a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code>(<a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> :T) (<a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :T) &rArr; <a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
+- <code>(<a href="#coalton-classes-num-class">Num</a> :T) (<a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> :T) (<a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :T) &rArr; <a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> (<a href="#coalton-xmath-dual-dual-type">Dual</a> :T)</code>
 - <code><a href="#coalton-math-elementary-elementary-class">Elementary</a> :A &rArr; <a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> (<a href="#coalton-math-complex-complex-type">Complex</a> :A)</code>
 - <code><a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> <a href="#coalton-f64-type">F64</a></code>
 - <code><a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> <a href="#coalton-f32-type">F32</a></code>
@@ -7086,7 +6373,7 @@ Methods:
 
 ***
 
-#### <a href="#coalton-math-elementary-polar-class"><code>Polar</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L93-L103">src</a></sub></sup><a name="coalton-math-elementary-polar-class"></a>
+#### <a href="#coalton-math-elementary-polar-class"><code>Polar</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L95-L105">src</a></sub></sup><a name="coalton-math-elementary-polar-class"></a>
 <code>(<a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> :A) (<a href="#coalton-classes-num-class">Num</a> :A) &rArr; <a href="#coalton-math-elementary-polar-class">Polar</a> :A</code>
 
 
@@ -7105,8 +6392,8 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#coalton-math-elementary-polar-class">Polar</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-math-elementary-polar-class">Polar</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-math-elementary-polar-class">Polar</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-math-elementary-polar-class">Polar</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-math-elementary-polar-class">Polar</a> <a href="#coalton-f64-type">F64</a></code>
 - <code><a href="#coalton-math-elementary-polar-class">Polar</a> <a href="#coalton-f32-type">F32</a></code>
 
@@ -7116,7 +6403,7 @@ Methods:
 
 ***
 
-#### <a href="#coalton-math-elementary-radical-class"><code>Radical</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L86-L91">src</a></sub></sup><a name="coalton-math-elementary-radical-class"></a>
+#### <a href="#coalton-math-elementary-radical-class"><code>Radical</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L88-L93">src</a></sub></sup><a name="coalton-math-elementary-radical-class"></a>
 <code><a href="#coalton-math-elementary-radical-class">Radical</a> :A</code>
 
 
@@ -7130,10 +6417,11 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#coalton-math-elementary-radical-class">Radical</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-math-elementary-radical-class">Radical</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code>(<a href="#coalton-math-elementary-radical-class">Radical</a> :T) (<a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :T) (<a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> :T) &rArr; <a href="#coalton-math-elementary-radical-class">Radical</a> (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
-- <code>(<a href="#coalton-classes-num-class">Num</a> :T) (<a href="#coalton-math-elementary-radical-class">Radical</a> :T) (<a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :T) (<a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> :T) &rArr; <a href="#coalton-math-elementary-radical-class">Radical</a> (<a href="#coalton-math-dual-dual-type">Dual</a> :T)</code>
+- <code><a href="#coalton-math-elementary-radical-class">Radical</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a></code>
+- <code><a href="#coalton-math-elementary-radical-class">Radical</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-math-elementary-radical-class">Radical</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code>(<a href="#coalton-math-elementary-radical-class">Radical</a> :T) (<a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :T) (<a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> :T) &rArr; <a href="#coalton-math-elementary-radical-class">Radical</a> (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
+- <code>(<a href="#coalton-classes-num-class">Num</a> :T) (<a href="#coalton-math-elementary-radical-class">Radical</a> :T) (<a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :T) (<a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> :T) &rArr; <a href="#coalton-math-elementary-radical-class">Radical</a> (<a href="#coalton-xmath-dual-dual-type">Dual</a> :T)</code>
 - <code><a href="#coalton-math-elementary-elementary-class">Elementary</a> :A &rArr; <a href="#coalton-math-elementary-radical-class">Radical</a> (<a href="#coalton-math-complex-complex-type">Complex</a> :A)</code>
 - <code><a href="#coalton-math-elementary-radical-class">Radical</a> <a href="#coalton-f64-type">F64</a></code>
 - <code><a href="#coalton-math-elementary-radical-class">Radical</a> <a href="#coalton-f32-type">F32</a></code>
@@ -7144,7 +6432,7 @@ Methods:
 
 ***
 
-#### <a href="#coalton-math-elementary-trigonometric-class"><code>Trigonometric</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L44-L52">src</a></sub></sup><a name="coalton-math-elementary-trigonometric-class"></a>
+#### <a href="#coalton-math-elementary-trigonometric-class"><code>Trigonometric</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L46-L54">src</a></sub></sup><a name="coalton-math-elementary-trigonometric-class"></a>
 <code><a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> :A</code>
 
 
@@ -7161,10 +6449,10 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code>(<a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> :T) (<a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :T) (<a href="#coalton-math-elementary-radical-class">Radical</a> :T) &rArr; <a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
-- <code>(<a href="#coalton-classes-num-class">Num</a> :T) (<a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> :T) (<a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :T) (<a href="#coalton-math-elementary-radical-class">Radical</a> :T) &rArr; <a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> (<a href="#coalton-math-dual-dual-type">Dual</a> :T)</code>
+- <code><a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code>(<a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> :T) (<a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :T) (<a href="#coalton-math-elementary-radical-class">Radical</a> :T) &rArr; <a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
+- <code>(<a href="#coalton-classes-num-class">Num</a> :T) (<a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> :T) (<a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :T) (<a href="#coalton-math-elementary-radical-class">Radical</a> :T) &rArr; <a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> (<a href="#coalton-xmath-dual-dual-type">Dual</a> :T)</code>
 - <code><a href="#coalton-math-elementary-elementary-class">Elementary</a> :A &rArr; <a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> (<a href="#coalton-math-complex-complex-type">Complex</a> :A)</code>
 - <code><a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> <a href="#coalton-f64-type">F64</a></code>
 - <code><a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> <a href="#coalton-f32-type">F32</a></code>
@@ -7177,19 +6465,19 @@ Methods:
 
 ### Values
 
-#### <a href="#coalton-math-elementary-acosh-value"><code>(ACOSH X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L147-L148">src</a></sub></sup><a name="coalton-math-elementary-acosh-value"></a>
+#### <a href="#coalton-math-elementary-acosh-value"><code>(ACOSH X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L149-L150">src</a></sub></sup><a name="coalton-math-elementary-acosh-value"></a>
 <code>&forall; :F. <a href="#coalton-math-elementary-elementary-class">Elementary</a> :F &rArr; (:F &rarr; :F)</code>
 
 
 ***
 
-#### <a href="#coalton-math-elementary-asinh-value"><code>(ASINH X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L143-L144">src</a></sub></sup><a name="coalton-math-elementary-asinh-value"></a>
+#### <a href="#coalton-math-elementary-asinh-value"><code>(ASINH X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L145-L146">src</a></sub></sup><a name="coalton-math-elementary-asinh-value"></a>
 <code>&forall; :F. <a href="#coalton-math-elementary-elementary-class">Elementary</a> :F &rArr; (:F &rarr; :F)</code>
 
 
 ***
 
-#### <a href="#coalton-math-elementary-atan2-value"><code>(ATAN2 Y X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L60-L70">src</a></sub></sup><a name="coalton-math-elementary-atan2-value"></a>
+#### <a href="#coalton-math-elementary-atan2-value"><code>(ATAN2 Y X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L62-L72">src</a></sub></sup><a name="coalton-math-elementary-atan2-value"></a>
 <code>&forall; :F. (<a href="#coalton-classes-ord-class">Ord</a> :F) (<a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> :F) (<a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :F) &rArr; (:F * :F &rarr; :F)</code>
 
 Computes the two-argument arctangent of `y` and `x`, which is roughly the same
@@ -7200,13 +6488,13 @@ the point $(\mathtt{x},\mathtt{y})$.
 
 ***
 
-#### <a href="#coalton-math-elementary-atanh-value"><code>(ATANH X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L151-L152">src</a></sub></sup><a name="coalton-math-elementary-atanh-value"></a>
+#### <a href="#coalton-math-elementary-atanh-value"><code>(ATANH X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L153-L154">src</a></sub></sup><a name="coalton-math-elementary-atanh-value"></a>
 <code>&forall; :F. <a href="#coalton-math-elementary-elementary-class">Elementary</a> :F &rArr; (:F &rarr; :F)</code>
 
 
 ***
 
-#### <a href="#coalton-math-elementary-cis-value"><code>(CIS Z)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L113-L120">src</a></sub></sup><a name="coalton-math-elementary-cis-value"></a>
+#### <a href="#coalton-math-elementary-cis-value"><code>(CIS Z)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L115-L122">src</a></sub></sup><a name="coalton-math-elementary-cis-value"></a>
 <code>&forall; :A. (<a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> :A) (<a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> :A) &rArr; (:A &rarr; (<a href="#coalton-math-complex-complex-type">Complex</a> :A))</code>
 
 A point on the complex unit circle:
@@ -7220,13 +6508,13 @@ A point on the complex unit circle:
 
 ***
 
-#### <a href="#coalton-math-elementary-cosh-value"><code>(COSH X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L135-L136">src</a></sub></sup><a name="coalton-math-elementary-cosh-value"></a>
+#### <a href="#coalton-math-elementary-cosh-value"><code>(COSH X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L137-L138">src</a></sub></sup><a name="coalton-math-elementary-cosh-value"></a>
 <code>&forall; :F. <a href="#coalton-math-elementary-elementary-class">Elementary</a> :F &rArr; (:F &rarr; :F)</code>
 
 
 ***
 
-#### <a href="#coalton-math-elementary-magnitude-value"><code>(MAGNITUDE Z)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L105-L110">src</a></sub></sup><a name="coalton-math-elementary-magnitude-value"></a>
+#### <a href="#coalton-math-elementary-magnitude-value"><code>(MAGNITUDE Z)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L107-L112">src</a></sub></sup><a name="coalton-math-elementary-magnitude-value"></a>
 <code>&forall; :A. (<a href="#coalton-math-elementary-radical-class">Radical</a> :A) (<a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> :A) &rArr; ((<a href="#coalton-math-complex-complex-type">Complex</a> :A) &rarr; :A)</code>
 
 The magnitude of a complex number. For `z = x + yi`,
@@ -7238,7 +6526,7 @@ The magnitude of a complex number. For `z = x + yi`,
 
 ***
 
-#### <a href="#coalton-math-elementary-sincos-value"><code>(SINCOS X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L55-L57">src</a></sub></sup><a name="coalton-math-elementary-sincos-value"></a>
+#### <a href="#coalton-math-elementary-sincos-value"><code>(SINCOS X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L57-L59">src</a></sub></sup><a name="coalton-math-elementary-sincos-value"></a>
 <code>&forall; :A. <a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> :A &rArr; (:A &rarr; :A * :A)</code>
 
 Computes the sine and cosine of X.
@@ -7247,13 +6535,13 @@ Computes the sine and cosine of X.
 
 ***
 
-#### <a href="#coalton-math-elementary-sinh-value"><code>(SINH X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L131-L132">src</a></sub></sup><a name="coalton-math-elementary-sinh-value"></a>
+#### <a href="#coalton-math-elementary-sinh-value"><code>(SINH X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L133-L134">src</a></sub></sup><a name="coalton-math-elementary-sinh-value"></a>
 <code>&forall; :F. <a href="#coalton-math-elementary-elementary-class">Elementary</a> :F &rArr; (:F &rarr; :F)</code>
 
 
 ***
 
-#### <a href="#coalton-math-elementary-tanh-value"><code>(TANH X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L139-L140">src</a></sub></sup><a name="coalton-math-elementary-tanh-value"></a>
+#### <a href="#coalton-math-elementary-tanh-value"><code>(TANH X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.lisp#L141-L142">src</a></sub></sup><a name="coalton-math-elementary-tanh-value"></a>
 <code>&forall; :F. <a href="#coalton-math-elementary-elementary-class">Elementary</a> :F &rArr; (:F &rarr; :F)</code>
 
 
@@ -7282,226 +6570,6 @@ The denominator of a fraction.
 <code>(<a href="#coalton-fraction-type">Fraction</a> &rarr; <a href="#coalton-integer-type">Integer</a>)</code>
 
 The numerator of a fraction.
-
-
-
-***
-
-# Package `COALTON/MATH/HYPERDUAL`<a name="coalton-math-hyperdual-package"></a>
-
-
-An implementation of hyperdual numbers for second-order and
-multivariate automatic differentiation.
-
- ——————————————————————————————————————————————–
-
-For univariate differentiation of a function `f` at a point `x`, apply
-`f` to `(Hyperdual x 1 1 0)`. The result will be
-`(Hyperdual f(x) df/dx(x) df/dx(x) d²f/dx²(x))`.
-
-You may also use the convenience functions `d-x` and `d-xx` to compute
-the first and second derivatives as `(d-x f x)` and `(d-xx f x)`.
-
- ——————————————————————————————————————————————–
-
-For multivariate differentiation of a function `f` at a point `(x,
-y)`, an application of `f` to `(Hyperdual x 1 0 0)` and 
-`(Hyperdual y 0 1 0)` will result in  
-`(Hyperdual f(x, y) ∂f/∂x(x, y) ∂f/∂y(x, y) ∂²f/∂x∂y(x, y))`. 
-
-Second derivatives of a single argument `xi` of `f` are computed in
-the same manner as the univariate case, except the values 
-`(Hyperdual xj 0 0 0)` are passed for the remaining arguments, j ≠ i.
-
-You may also use the convenience functions `partial-x`, `partial-y`,
-`gradient`, `partial-xx`, `partial-xy`, `partial-yy`, `hessian`, and
-`laplacian`, to compute partials of bivariate functions.
-
- ——————————————————————————————————————————————–
-
-The following list of identities describe the theory of hyperdual numbers.
-
- :: given (∀i∀j((i ≠ j) → (εᵢεⱼ ≠ 0)) ∧ ∀i(εᵢ² = 0))
-
- ——————————————————————————————————————————————–
-
- :: univariate identities
-
- (1) f(a + bε₁ + cε₂ + dε₁ε₂)
-      = f(a) + (bε₁+cε₂+dε₁ε₂)f'(a) + bcε₁ε₂f''(a)
-      = f(a) + bf'(a)ε₁ + cf'(a)ε₂ + [df'(a) + bcf''(a)]ε₁ε₂
-
- (2) f(x + ε₁ + ε₂)
-      = f(x) + f'(x)ε₁ + f'(x)ε₂ + f''(x)ε₁ε₂
-
- :: multivariate identities
-
- (3) f(a₁ + b₁ε₁ + c₁ε₂ + d₁ε₁ε₂, a₂ + b₂ε₁ + c₂ε₂ + d₂ε₁ε₂)
-      = f(a₁, a₂) + (b₁ε₁ + c₁ε₂ + d₁ε₁ε₂)∂f/∂x(a₁, a₂) + b₁c₁ε₁ε₂∂²f/∂x²(a₁, a₂)
-        + (b₂ε₁ + c₂ε₂ + d₂ε₁ε₂)∂f/∂y(a₁, a₂) + b₂c₂ε₁ε₂∂²f/∂y² 
-        + (b₁c₂ + b₂c₁)ε₁ε₂∂²f/∂x∂y(a₁, a₂)
-      = f(a₁, a₂) 
-        + (b₁∂f/∂x(a₁, a₂) + b₂∂f/∂y(a₁, a₂))ε₁ 
-        + (c₁∂f/∂x(a₁, a₂) + c₂∂f/∂y(a₁, a₂))ε₂
-        + (d₁∂f/∂x(a₁, a₂) + d₂∂f/∂y(a₁, a₂) 
-           + b₁c₁∂²f/∂x²(a₁, a₂) + b₂c₂∂²f/∂x²(a₁, a₂) 
-           + (b₁c₂ + b₂c₁)∂²f/∂x∂y(a₁, a₂))ε₁ε₂
-
- (4) f(x + ε₁ + ε₂, y)
-      = f(x, y) + ∂f/∂x(x, y)ε₁ + ∂f/∂x(x, y)ε₂ + ∂²f/∂x²(x, y)ε₁ε₂
-
- (5) f(x + ε₁, y + ε₂)
-      = f(x, y) + ∂f/∂x(x, y)ε₁ + ∂f/∂y(x, y)ε₂ + ∂²f/∂x∂y(x, y)ε₁ε₂
-
- (6) f(x, y + ε₁ + ε₂)
-      = f(x, y) + ∂f/∂y(x, y)ε₁ + ∂f/∂y(x, y)ε₂ + ∂²f/∂y²(x, y)ε₁ε₂
-
- :: equivalently
-
- (1) (f (Hyperdual a b c d))
-      = (Hyperdual
-         (f a)
-         (* b (f' a))
-         (* c (f' a))
-         (+ (* d (f' a)) (* (* b c) (f'' a))))
-
- (2) (f (Hyperdual x 1 1 0))
-      = (Hyperdual (f x) (f' x) (f' x) (f'' x))
-
- (3) (f (Hyperdual a1 b1 c1 d1) (Hyperdual a2 b2 c2 d2))
-      = (Hyperdual
-         (f a1 a2)
-         (+ (* b1 (∂f/∂x a1 a2)) (* b2 (∂f/∂y a1 a2)))
-         (+ (* c1 (∂f/∂x a1 a2)) (* c2 (∂f/∂y a1 a2)))
-         (+ (+ (* d1 (∂f/∂x a1 a2)) (* d2 (∂f/∂y a1 a2)))
-            (+ (* (* b1 c1) (∂²f/∂x² a1 a2)) (* (* b2 c2) (∂²f/∂y² a1 a2)))
-            (* (+ (* b1 c2) (* b2 c1)) (∂²f/∂x∂y a1 a2)))
-
- (4) (f (Hyperdual x 1 1 0) (Hyperdual y 0 0 0))
-      = (Hyperdual (f x y) (∂f/∂x x y) (∂f/∂x x y) (∂²f/∂x² x y))
-
- (5) (f (Hyperdual x 1 0 0) (Hyperdual y 0 1 0))
-      = (Hyperdual (f x y) (∂f/∂x x y) (∂f/∂y x y) (∂²f/∂x∂y x y))
-
- (6) (f (Hyperdual x 0 0 0) (Hyperdual y 1 1 0))
-      = (Hyperdual (f x y) (∂f/∂x x y) (∂f/∂x x y) (∂²f/∂x² x y))
-
-### Structs
-
-#### <a href="#coalton-math-hyperdual-hyperdual-type"><code>Hyperdual :T</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L137-L144">src</a></sub></sup><a name="coalton-math-hyperdual-hyperdual-type"></a>
-
-Representation of a hyperdual number in the form `a + bε₁ + cε₂ + dε₁ε₂` where `a`, `b`, `c`, and `d` are real numbers and `ε₁` and `ε₂` satisfy `εᵢ² = 0` and `ε₁ε₂ != 0`.
-
-Note: `Eq`, and `Ord` and `Hash` only make use of the primal component.
-
-<details>
-<summary>Instances</summary>
-
-- <code>(<a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> :T) (<a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :T) &rArr; <a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
-- <code>(<a href="#coalton-math-elementary-radical-class">Radical</a> :T) (<a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :T) (<a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> :T) &rArr; <a href="#coalton-math-elementary-radical-class">Radical</a> (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
-- <code>(<a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> :T) (<a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :T) (<a href="#coalton-math-elementary-radical-class">Radical</a> :T) &rArr; <a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
-- <code><a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> :T &rArr; <a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
-- <code><a href="#coalton-classes-eq-class">Eq</a> :T &rArr; <a href="#coalton-classes-eq-class">Eq</a> (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
-- <code><a href="#coalton-classes-hash-class">Hash</a> :T &rArr; <a href="#coalton-classes-hash-class">Hash</a> (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
-- <code><a href="#coalton-classes-num-class">Num</a> :T &rArr; <a href="#coalton-classes-into-class">Into</a> :T (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
-- <code><a href="#coalton-classes-num-class">Num</a> :T &rArr; <a href="#coalton-classes-num-class">Num</a> (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
-- <code><a href="#coalton-classes-ord-class">Ord</a> :T &rArr; <a href="#coalton-classes-ord-class">Ord</a> (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
-- <code><a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :T &rArr; <a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
-- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :|0|)</code>
-
-</details>
-
-
-
-***
-
-### Values
-
-#### <a href="#coalton-math-hyperdual-d-x-value"><code>(D-X F X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L327-L329">src</a></sub></sup><a name="coalton-math-hyperdual-d-x-value"></a>
-<code>&forall; :T. <a href="#coalton-classes-num-class">Num</a> :T &rArr; (((<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T)) * :T &rarr; :T)</code>
-
-Compute f'(x).
-
-
-
-***
-
-#### <a href="#coalton-math-hyperdual-d-xx-value"><code>(D-XX F X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L332-L334">src</a></sub></sup><a name="coalton-math-hyperdual-d-xx-value"></a>
-<code>&forall; :T. <a href="#coalton-classes-num-class">Num</a> :T &rArr; (((<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T)) * :T &rarr; :T)</code>
-
-Compute f''(x).
-
-
-
-***
-
-#### <a href="#coalton-math-hyperdual-gradient-value"><code>(GRADIENT F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L347-L350">src</a></sub></sup><a name="coalton-math-hyperdual-gradient-value"></a>
-<code>&forall; :T. <a href="#coalton-classes-num-class">Num</a> :T &rArr; (((<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T) * (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T)) * :T * :T &rarr; (<a href="#coalton-list-type">List</a> :T))</code>
-
-Compute the gradient (∂f/∂x, ∂f/∂y) at the point (x, y).
-
-
-
-***
-
-#### <a href="#coalton-math-hyperdual-hessian-value"><code>(HESSIAN F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L373-L379">src</a></sub></sup><a name="coalton-math-hyperdual-hessian-value"></a>
-<code>&forall; :T. <a href="#coalton-classes-num-class">Num</a> :T &rArr; (((<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T) * (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T)) * :T * :T &rarr; (<a href="#coalton-list-type">List</a> :T))</code>
-
-Compute the flat Hessian (∂²f/∂x², ∂²f/∂x∂y, ∂²f/∂y∂x, ∂²f/∂y²) at the point (x, y).
-
-
-
-***
-
-#### <a href="#coalton-math-hyperdual-laplacian-value"><code>(LAPLACIAN F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L368-L370">src</a></sub></sup><a name="coalton-math-hyperdual-laplacian-value"></a>
-<code>&forall; :T. <a href="#coalton-classes-num-class">Num</a> :T &rArr; (((<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T) * (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T)) * :T * :T &rarr; :T)</code>
-
-Compute the Laplacian ∂²f/∂x² + ∂²f/∂y² at the point (x, y).
-
-
-
-***
-
-#### <a href="#coalton-math-hyperdual-partial-x-value"><code>(PARTIAL-X F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L337-L339">src</a></sub></sup><a name="coalton-math-hyperdual-partial-x-value"></a>
-<code>&forall; :T. <a href="#coalton-classes-num-class">Num</a> :T &rArr; (((<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T) * (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T)) * :T * :T &rarr; :T)</code>
-
-Compute ∂f/∂x(x, y).
-
-
-
-***
-
-#### <a href="#coalton-math-hyperdual-partial-xx-value"><code>(PARTIAL-XX F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L353-L355">src</a></sub></sup><a name="coalton-math-hyperdual-partial-xx-value"></a>
-<code>&forall; :T. <a href="#coalton-classes-num-class">Num</a> :T &rArr; (((<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T) * (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T)) * :T * :T &rarr; :T)</code>
-
-Compute ∂²f/∂x²(x, y).
-
-
-
-***
-
-#### <a href="#coalton-math-hyperdual-partial-xy-value"><code>(PARTIAL-XY F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L358-L360">src</a></sub></sup><a name="coalton-math-hyperdual-partial-xy-value"></a>
-<code>&forall; :T. <a href="#coalton-classes-num-class">Num</a> :T &rArr; (((<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T) * (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T)) * :T * :T &rarr; :T)</code>
-
-Compute ∂²f/∂x∂y(x, y).
-
-
-
-***
-
-#### <a href="#coalton-math-hyperdual-partial-y-value"><code>(PARTIAL-Y F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L342-L344">src</a></sub></sup><a name="coalton-math-hyperdual-partial-y-value"></a>
-<code>&forall; :T. <a href="#coalton-classes-num-class">Num</a> :T &rArr; (((<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T) * (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T)) * :T * :T &rarr; :T)</code>
-
-Compute ∂f/∂y(x, y).
-
-
-
-***
-
-#### <a href="#coalton-math-hyperdual-partial-yy-value"><code>(PARTIAL-YY F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/hyperdual.lisp#L363-L365">src</a></sub></sup><a name="coalton-math-hyperdual-partial-yy-value"></a>
-<code>&forall; :T. <a href="#coalton-classes-num-class">Num</a> :T &rArr; (((<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T) * (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :T)) * :T * :T &rarr; :T)</code>
-
-Compute ∂²f/∂y²(x, y).
 
 
 
@@ -7737,9 +6805,10 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#coalton-math-real-quantizable-class">Quantizable</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-math-real-quantizable-class">Quantizable</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-math-real-quantizable-class">Quantizable</a> <a href="#coalton-math-dyadic-dyadic-type">Dyadic</a></code>
+- <code><a href="#coalton-math-real-quantizable-class">Quantizable</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a></code>
+- <code><a href="#coalton-math-real-quantizable-class">Quantizable</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-math-real-quantizable-class">Quantizable</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-math-real-quantizable-class">Quantizable</a> <a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a></code>
 - <code><a href="#coalton-math-real-quantizable-class">Quantizable</a> <a href="#coalton-f64-type">F64</a></code>
 - <code><a href="#coalton-math-real-quantizable-class">Quantizable</a> <a href="#coalton-f32-type">F32</a></code>
 - <code><a href="#coalton-math-real-quantizable-class">Quantizable</a> <a href="#coalton-fraction-type">Fraction</a></code>
@@ -7782,8 +6851,8 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#coalton-math-real-rational-class">Rational</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-math-real-rational-class">Rational</a> <a href="#coalton-math-dyadic-dyadic-type">Dyadic</a></code>
+- <code><a href="#coalton-math-real-rational-class">Rational</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-math-real-rational-class">Rational</a> <a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a></code>
 - <code><a href="#coalton-math-real-rational-class">Rational</a> <a href="#coalton-f64-type">F64</a></code>
 - <code><a href="#coalton-math-real-rational-class">Rational</a> <a href="#coalton-f32-type">F32</a></code>
 - <code><a href="#coalton-math-real-rational-class">Rational</a> <a href="#coalton-fraction-type">Fraction</a></code>
@@ -7815,9 +6884,10 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#coalton-math-real-real-class">Real</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-math-real-real-class">Real</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-math-real-real-class">Real</a> <a href="#coalton-math-dyadic-dyadic-type">Dyadic</a></code>
+- <code><a href="#coalton-math-real-real-class">Real</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a></code>
+- <code><a href="#coalton-math-real-real-class">Real</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-math-real-real-class">Real</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-math-real-real-class">Real</a> <a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a></code>
 - <code><a href="#coalton-math-real-real-class">Real</a> <a href="#coalton-f64-type">F64</a></code>
 - <code><a href="#coalton-math-real-real-class">Real</a> <a href="#coalton-f32-type">F32</a></code>
 - <code><a href="#coalton-math-real-real-class">Real</a> <a href="#coalton-fraction-type">Fraction</a></code>
@@ -10296,9 +9366,14 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-computable-reals-creal-type">CReal</a></code>
-- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-big-float-roundingmode-type">RoundingMode</a></code>
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a></code>
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-xmath-realalgebraic-poly-type">Poly</a> :|0|)</code>
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a></code>
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :|0|)</code>
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-xmath-dual-dual-type">Dual</a> :|0|)</code>
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a></code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-file-opendirection-type">OpenDirection</a></code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-file-ifexists-type">IfExists</a></code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-file-filestream-type">FileStream</a> :|0|)</code>
@@ -10337,9 +9412,6 @@ Methods:
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-tuple-tuple4-type">Tuple4</a> :|0| :|1| :|2| :|3|)</code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-tuple-tuple3-type">Tuple3</a> :|0| :|1| :|2|)</code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-cell-cell-type">Cell</a> :|0|)</code>
-- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-math-hyperdual-hyperdual-type">Hyperdual</a> :|0|)</code>
-- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-math-dual-dual-type">Dual</a> :|0|)</code>
-- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-math-dyadic-dyadic-type">Dyadic</a></code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> :T &rArr; <a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-math-complex-complex-type">Complex</a> :T)</code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-math-real-quantization-type">Quantization</a> :|0|)</code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-symbol-symbol-type">Symbol</a></code>
@@ -10746,6 +9818,1088 @@ Create a new vector with `n` elements equal to `x`.
 #### <a href="#coalton-vector-make-macro"><code>MAKE (&amp;REST ELEMENTS)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-vector-make-macro"></a>
 
 Construct a `Vector' containing the ELEMENTS, in the order listed.
+
+
+
+***
+
+# Package `COALTON/XMATH/BIG-FLOAT`<a name="coalton-xmath-big-float-package"></a>
+
+### Types
+
+#### <a href="#coalton-xmath-big-float-big-float-type"><code>Big-Float</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.lisp#L166-L167">src</a></sub></sup><a name="coalton-xmath-big-float-big-float-type"></a>
+
+An arbitrary (but fixed) precision floating point number.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-math-arith-dividable-class">Dividable</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-math-elementary-elementary-class">Elementary</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-eq-class">Eq</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-num-class">Num</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-math-elementary-polar-class">Polar</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-math-real-quantizable-class">Quantizable</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-math-elementary-radical-class">Radical</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-math-real-rational-class">Rational</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-math-real-real-class">Real</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-math-arith-transfinite-class">Transfinite</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+
+</details>
+
+
+
+***
+
+#### <a href="#coalton-xmath-big-float-roundingmode-type"><code>RoundingMode</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.lisp#L88-L88">src</a></sub></sup><a name="coalton-xmath-big-float-roundingmode-type"></a>
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a></code>
+
+</details>
+
+
+
+***
+
+### Values
+
+#### <a href="#coalton-xmath-big-float-bf-ee-value"><code>(BF-EE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.lisp#L309-L312">src</a></sub></sup><a name="coalton-xmath-big-float-bf-ee-value"></a>
+<code>(Void &rarr; <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a>)</code>
+
+Return the value of ee = exp(1) to the currently set precision.
+
+
+
+***
+
+#### <a href="#coalton-xmath-big-float-bf-pi-value"><code>(BF-PI)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.lisp#L280-L283">src</a></sub></sup><a name="coalton-xmath-big-float-bf-pi-value"></a>
+<code>(Void &rarr; <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a>)</code>
+
+Return the value of pi to the currently set precision.
+
+
+
+***
+
+#### <a href="#coalton-xmath-big-float-get-precision-value"><code>(GET-PRECISION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.lisp#L132-L135">src</a></sub></sup><a name="coalton-xmath-big-float-get-precision-value"></a>
+<code>(Void &rarr; <a href="#coalton-ufix-type">UFix</a>)</code>
+
+Get the current precision of Big-Float arithmetic.
+
+
+
+***
+
+#### <a href="#coalton-xmath-big-float-get-rounding-mode-value"><code>(GET-ROUNDING-MODE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.lisp#L138-L141">src</a></sub></sup><a name="coalton-xmath-big-float-get-rounding-mode-value"></a>
+<code>(Void &rarr; <a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a>)</code>
+
+Get the current rounding-mode of Big-Float arithmetic.
+
+
+
+***
+
+#### <a href="#coalton-xmath-big-float-set-precision!-value"><code>(SET-PRECISION! PREC-BITS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.lisp#L114-L121">src</a></sub></sup><a name="coalton-xmath-big-float-set-precision!-value"></a>
+<code>(<a href="#coalton-ufix-type">UFix</a> &rarr; Void)</code>
+
+Set the precision of Big-Float arithmetic to PREC-BITS bits.
+
+
+
+***
+
+#### <a href="#coalton-xmath-big-float-set-rounding-mode!-value"><code>(SET-ROUNDING-MODE! R)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.lisp#L124-L129">src</a></sub></sup><a name="coalton-xmath-big-float-set-rounding-mode!-value"></a>
+<code>(<a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a> &rarr; Void)</code>
+
+Set the global rounding mode for Big-Float operations.
+
+
+
+***
+
+#### <a href="#coalton-xmath-big-float-with-precision-value"><code>(WITH-PRECISION F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.lisp#L154-L156">src</a></sub></sup><a name="coalton-xmath-big-float-with-precision-value"></a>
+<code>&forall; :A. ((Void &rarr; :A) &key (:precision <a href="#coalton-ufix-type">UFix</a>) &rarr; :A)</code>
+
+Call F with a temporary Big-Float PRECISION.
+
+
+
+***
+
+#### <a href="#coalton-xmath-big-float-with-precision-rounding-value"><code>(WITH-PRECISION-ROUNDING F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.lisp#L145-L150">src</a></sub></sup><a name="coalton-xmath-big-float-with-precision-rounding-value"></a>
+<code>&forall; :A. ((Void &rarr; :A) &key (:precision <a href="#coalton-ufix-type">UFix</a>) (:rounding <a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a>) &rarr; :A)</code>
+
+Call F with a temporary Big-Float PRECISION and ROUNDING mode.
+
+
+
+***
+
+#### <a href="#coalton-xmath-big-float-with-rounding-value"><code>(WITH-ROUNDING F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.lisp#L160-L162">src</a></sub></sup><a name="coalton-xmath-big-float-with-rounding-value"></a>
+<code>&forall; :A. ((Void &rarr; :A) &key (:rounding <a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a>) &rarr; :A)</code>
+
+Call F with a temporary Big-Float ROUNDING mode.
+
+
+
+***
+
+#### <a href="#coalton-xmath-big-float-rnda-value"><code>RNDA</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.lisp#L105-L107">src</a></sub></sup><a name="coalton-xmath-big-float-rnda-value"></a>
+<code><a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a></code>
+
+RouND Away from zero.
+
+
+
+***
+
+#### <a href="#coalton-xmath-big-float-rndd-value"><code>RNDD</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.lisp#L102-L104">src</a></sub></sup><a name="coalton-xmath-big-float-rndd-value"></a>
+<code><a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a></code>
+
+RouND Down, toward negative infinity.
+
+
+
+***
+
+#### <a href="#coalton-xmath-big-float-rndf-value"><code>RNDF</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.lisp#L108-L110">src</a></sub></sup><a name="coalton-xmath-big-float-rndf-value"></a>
+<code><a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a></code>
+
+Faithful rounding (experimental).
+
+
+
+***
+
+#### <a href="#coalton-xmath-big-float-rndn-value"><code>RNDN</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.lisp#L93-L95">src</a></sub></sup><a name="coalton-xmath-big-float-rndn-value"></a>
+<code><a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a></code>
+
+RouND to Nearest, with the even rounding rule.
+
+
+
+***
+
+#### <a href="#coalton-xmath-big-float-rndna-value"><code>RNDNA</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.lisp#L90-L92">src</a></sub></sup><a name="coalton-xmath-big-float-rndna-value"></a>
+<code><a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a></code>
+
+RouND to Nearest Away.
+
+
+
+***
+
+#### <a href="#coalton-xmath-big-float-rndu-value"><code>RNDU</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.lisp#L99-L101">src</a></sub></sup><a name="coalton-xmath-big-float-rndu-value"></a>
+<code><a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a></code>
+
+RouND Up, toward positive infinity.
+
+
+
+***
+
+#### <a href="#coalton-xmath-big-float-rndz-value"><code>RNDZ</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.lisp#L96-L98">src</a></sub></sup><a name="coalton-xmath-big-float-rndz-value"></a>
+<code><a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a></code>
+
+RouND toward Zero.
+
+
+
+***
+
+# Package `COALTON/XMATH/COMPUTABLE-REALS`<a name="coalton-xmath-computable-reals-package"></a>
+
+### Types
+
+#### <a href="#coalton-xmath-computable-reals-creal-type"><code>CReal</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/computable-reals/computable-reals.lisp#L40-L40">src</a></sub></sup><a name="coalton-xmath-computable-reals-creal-type"></a>
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-math-arith-dividable-class">Dividable</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-math-elementary-elementary-class">Elementary</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-eq-class">Eq</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-num-class">Num</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-math-elementary-polar-class">Polar</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-math-real-quantizable-class">Quantizable</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-math-elementary-radical-class">Radical</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-math-real-real-class">Real</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+- <code><a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
+
+</details>
+
+
+
+***
+
+### Values
+
+#### <a href="#coalton-xmath-computable-reals-approx-value"><code>(APPROX X K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/computable-reals/computable-reals.lisp#L306-L318">src</a></sub></sup><a name="coalton-xmath-computable-reals-approx-value"></a>
+<code>(<a href="#coalton-xmath-computable-reals-creal-type">CReal</a> * <a href="#coalton-ufix-type">UFix</a> &rarr; <a href="#coalton-integer-type">Integer</a>)</code>
+
+Computes an approximation of the bits of a given
+`CReal`. Specifically, given an object of type `CReal` `x` and a
+non-negative integer `k`, return an integer $a$ with
+
+$$
+\vert a\cdot 2^{-\mathtt{k}} - \mathtt{x}\vert \leq 2^{-\mathtt{k}}.
+$$
+
+See `rational` or `rationalize` to produce a rational approximation of
+`CReal`.
+
+
+
+***
+
+#### <a href="#coalton-xmath-computable-reals-comparison-threshold-value"><code>(COMPARISON-THRESHOLD)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/computable-reals/computable-reals.lisp#L50-L59">src</a></sub></sup><a name="coalton-xmath-computable-reals-comparison-threshold-value"></a>
+<code>(Void &rarr; <a href="#coalton-ufix-type">UFix</a>)</code>
+
+Returns the current `CReal` comparison threshold measured as a number
+of bits after the 'decimal' point.
+
+This threshold is used to ensure `Eq` and `Ord` instances
+terminate. (In general, computable real arithmetic is undecidable.)
+Note that if the production of a `CReal` depends on comparison, *there
+is no guarantee that the `CReal` will be accurate to any precision*.
+
+
+
+***
+
+#### <a href="#coalton-xmath-computable-reals-cr-print-value"><code>(CR-PRINT X K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/computable-reals/computable-reals.lisp#L350-L353">src</a></sub></sup><a name="coalton-xmath-computable-reals-cr-print-value"></a>
+<code>(<a href="#coalton-xmath-computable-reals-creal-type">CReal</a> * <a href="#coalton-ufix-type">UFix</a> &rarr; <a href="#coalton-boolean-type">Boolean</a>)</code>
+
+Prints a real `x` up to `k` bits of precision.
+
+
+
+***
+
+#### <a href="#coalton-xmath-computable-reals-rational-approx-value"><code>(RATIONAL-APPROX X K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/computable-reals/computable-reals.lisp#L321-L328">src</a></sub></sup><a name="coalton-xmath-computable-reals-rational-approx-value"></a>
+<code>(<a href="#coalton-xmath-computable-reals-creal-type">CReal</a> * <a href="#coalton-ufix-type">UFix</a> &rarr; <a href="#coalton-fraction-type">Fraction</a>)</code>
+
+Produce a rational approximation of `x` called $r$ such that
+
+$$
+\vert r - \mathtt{x} \vert < 2^{-\mathtt{k}}.
+$$
+
+
+
+***
+
+#### <a href="#coalton-xmath-computable-reals-rationalize-value"><code>(RATIONALIZE X K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/computable-reals/computable-reals.lisp#L331-L341">src</a></sub></sup><a name="coalton-xmath-computable-reals-rationalize-value"></a>
+<code>(<a href="#coalton-xmath-computable-reals-creal-type">CReal</a> * <a href="#coalton-ufix-type">UFix</a> &rarr; <a href="#coalton-fraction-type">Fraction</a>)</code>
+
+Produce a rational approximation of `x` called $r$ such that
+
+$$
+\vert r - \mathtt{x} \vert < 2^{-\mathtt{k}},
+$$
+
+taking into account the maximum precision specified by `k` to return
+the simplest possible such approximation.
+
+
+
+***
+
+#### <a href="#coalton-xmath-computable-reals-set-comparison-threshold!-value"><code>(SET-COMPARISON-THRESHOLD! K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/computable-reals/computable-reals.lisp#L42-L48">src</a></sub></sup><a name="coalton-xmath-computable-reals-set-comparison-threshold!-value"></a>
+<code>&forall; :A. (:A &rarr; <a href="#coalton-unit-type">Unit</a>)</code>
+
+Sets the global `CReal` comparison threshold to k bits after the 'decimal' point.
+
+See `comparison-threshold` for more details.
+
+
+
+***
+
+#### <a href="#coalton-xmath-computable-reals-with-comparison-threshold-value"><code>(WITH-COMPARISON-THRESHOLD F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/computable-reals/computable-reals.lisp#L62-L66">src</a></sub></sup><a name="coalton-xmath-computable-reals-with-comparison-threshold-value"></a>
+<code>&forall; :A. ((Void &rarr; :A) &key (:bits <a href="#coalton-ufix-type">UFix</a>) &rarr; :A)</code>
+
+Call F with a temporary `CReal` comparison threshold of BITS.
+
+
+
+***
+
+# Package `COALTON/XMATH/DUAL`<a name="coalton-xmath-dual-package"></a>
+
+
+
+Dual numbers are a hypercomplex number system [1]. A dual number has
+the form $a + b\varepsilon$ where $a$ and $b$ are real numbers and
+$\varepsilon$ is a symbol that satisfies $\varepsilon^2=0$ and
+$\varepsilon\neq 0$. The value $a$ is often called the *primal part*
+and the value $b$ is often called the *dual part*. One application of
+dual numbers is automatic differentiation; an example taken from [2]
+is as follows.
+
+Consider the function $f(x) = 3x+2$ and you want to calculate $f(4)$
+and $f^{\prime}(4)$. By the usual rules of differentiation, we know
+$f^{\prime}(x) = 3$ and thus $(f(4), f^{\prime}(4)) = (14, 3)$. We
+seek to recover this with dual numbers.
+
+With dual numbers, we can calculate
+
+$$f(a) + f^{\prime}(a)\varepsilon$$
+
+by taking a real-valued function $f$ and evaluating as if it were a
+dual-valued function at the point $a + \varepsilon$. Thus, for the
+defined $f$, we have:
+
+$$
+\begin{aligned}
+f(4 + \varepsilon)
+&= 3(4 + \varepsilon) + 2 \\\\
+&= 3\cdot 4 + 3\varepsilon + 2 \\\\
+&= 14 + 3\varepsilon.
+\end{aligned}
+$$
+
+In this result, the primal $14$ is the value of $f(4)$ and the dual is
+the value of of $f^{\prime}(4)$.
+
+Haskell has an automatic differentiation library and you can find it
+here [3].
+
+Limitations:
+
+We have decided to implement Ord, Eq, and Hash to look at only the
+primal part of numbers. This is so the Dual type can be used primarily
+for the purpose of automatic differentiation of existing code, and not
+for general abstract mathematics. If you need these type classes
+acting in the usual way (i.e., on both primal and dual parts), then we
+recommend making your own data type which wraps a dual number.
+
+References:
+
+- [1] https://en.wikipedia.org/wiki/Dual_number
+- [2] https://blog.demofox.org/2014/12/30/dual-numbers-automatic-differentiation/
+- [3] https://hackage.haskell.org/package/ad
+
+### Structs
+
+#### <a href="#coalton-xmath-dual-dual-type"><code>Dual :T</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/dual.lisp#L84-L92">src</a></sub></sup><a name="coalton-xmath-dual-dual-type"></a>
+
+Representation of a dual number in the form $a + b\varepsilon$ where
+$a$ and $b$ are real numbers and $\varepsilon$ satisfies
+$\varepsilon^2 = 0$ and $\varepsilon \neq 0$.
+
+Note: `Eq`, and `Ord` and `Hash` only make use of the primal
+component.
+
+<details>
+<summary>Instances</summary>
+
+- <code>(<a href="#coalton-classes-num-class">Num</a> :T) (<a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> :T) (<a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :T) &rArr; <a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> (<a href="#coalton-xmath-dual-dual-type">Dual</a> :T)</code>
+- <code>(<a href="#coalton-classes-num-class">Num</a> :T) (<a href="#coalton-math-elementary-radical-class">Radical</a> :T) (<a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :T) (<a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> :T) &rArr; <a href="#coalton-math-elementary-radical-class">Radical</a> (<a href="#coalton-xmath-dual-dual-type">Dual</a> :T)</code>
+- <code>(<a href="#coalton-classes-num-class">Num</a> :T) (<a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> :T) (<a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :T) (<a href="#coalton-math-elementary-radical-class">Radical</a> :T) &rArr; <a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> (<a href="#coalton-xmath-dual-dual-type">Dual</a> :T)</code>
+- <code><a href="#coalton-classes-eq-class">Eq</a> :T &rArr; <a href="#coalton-classes-eq-class">Eq</a> (<a href="#coalton-xmath-dual-dual-type">Dual</a> :T)</code>  
+Note: Eq only compares the primal component.
+- <code><a href="#coalton-classes-hash-class">Hash</a> :T &rArr; <a href="#coalton-classes-hash-class">Hash</a> (<a href="#coalton-xmath-dual-dual-type">Dual</a> :T)</code>  
+Note: Hash only considers the primal component in order to be consistent with Eq.
+- <code><a href="#coalton-classes-num-class">Num</a> :T &rArr; <a href="#coalton-classes-num-class">Num</a> (<a href="#coalton-xmath-dual-dual-type">Dual</a> :T)</code>
+- <code><a href="#coalton-classes-ord-class">Ord</a> :T &rArr; <a href="#coalton-classes-ord-class">Ord</a> (<a href="#coalton-xmath-dual-dual-type">Dual</a> :T)</code>  
+Note: Ord only compares the primal component.
+- <code><a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :T &rArr; <a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> (<a href="#coalton-xmath-dual-dual-type">Dual</a> :T)</code>
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-xmath-dual-dual-type">Dual</a> :|0|)</code>
+
+</details>
+
+
+
+***
+
+### Values
+
+#### <a href="#coalton-xmath-dual-dual-part-value"><code>(DUAL-PART (DUAL _ D))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/dual.lisp#L100-L102">src</a></sub></sup><a name="coalton-xmath-dual-dual-part-value"></a>
+<code>&forall; :T. ((<a href="#coalton-xmath-dual-dual-type">Dual</a> :T) &rarr; :T)</code>
+
+The dual (i.e., derivative) part of a dual number.
+
+
+
+***
+
+#### <a href="#coalton-xmath-dual-primal-part-value"><code>(PRIMAL-PART (DUAL P _))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/dual.lisp#L95-L97">src</a></sub></sup><a name="coalton-xmath-dual-primal-part-value"></a>
+<code>&forall; :T. ((<a href="#coalton-xmath-dual-dual-type">Dual</a> :T) &rarr; :T)</code>
+
+The primal (i.e., real) part of a dual number.
+
+
+
+***
+
+# Package `COALTON/XMATH/DYADIC`<a name="coalton-xmath-dyadic-package"></a>
+
+### Types
+
+#### <a href="#coalton-xmath-dyadic-dyadic-type"><code>Dyadic</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/dyadic.lisp#L35-L37">src</a></sub></sup><a name="coalton-xmath-dyadic-dyadic-type"></a>
+- <code>(Dyadic <a href="#coalton-integer-type">Integer</a> <a href="#coalton-integer-type">Integer</a>)</code>
+
+`(Dyadic n k)` represents the rational $\mathtt{n}\cdot 2^{\mathtt{k}}$.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#coalton-classes-eq-class">Eq</a> <a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a> <a href="#coalton-fraction-type">Fraction</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a></code>
+- <code><a href="#coalton-classes-num-class">Num</a> <a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a></code>
+- <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a></code>
+- <code><a href="#coalton-math-real-quantizable-class">Quantizable</a> <a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a></code>
+- <code><a href="#coalton-math-real-rational-class">Rational</a> <a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a></code>
+- <code><a href="#coalton-math-real-real-class">Real</a> <a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a></code>
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a></code>
+
+</details>
+
+
+
+***
+
+### Values
+
+#### <a href="#coalton-xmath-dyadic-scale-value"><code>(SCALE X J)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/dyadic.lisp#L164-L167">src</a></sub></sup><a name="coalton-xmath-dyadic-scale-value"></a>
+<code>(<a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a> * <a href="#coalton-integer-type">Integer</a> &rarr; <a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a>)</code>
+
+Scales a dyadic `x` by $2^{\mathtt{k}}$.
+
+
+
+***
+
+#### <a href="#coalton-xmath-dyadic-shift-value"><code>(SHIFT K A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/dyadic.lisp#L170-L179">src</a></sub></sup><a name="coalton-xmath-dyadic-shift-value"></a>
+<code>(<a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a> &rarr; <a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a>)</code>
+
+Shift dyadic `a` to its floor with $\mathtt{k}+1$ bits of precision.
+
+
+
+***
+
+#### <a href="#coalton-xmath-dyadic-simplify-value"><code>(SIMPLIFY D)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/dyadic.lisp#L108-L112">src</a></sub></sup><a name="coalton-xmath-dyadic-simplify-value"></a>
+<code>(<a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a> &rarr; <a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a>)</code>
+
+Simplifies a dyadic by maximizing the absolute value of the exponent.
+
+
+
+***
+
+#### <a href="#coalton-xmath-dyadic-simplify-integer-value"><code>(SIMPLIFY-INTEGER N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/dyadic.lisp#L97-L106">src</a></sub></sup><a name="coalton-xmath-dyadic-simplify-integer-value"></a>
+<code>(<a href="#coalton-integer-type">Integer</a> &rarr; <a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a>)</code>
+
+Finds the simplest dyadic given an integer.
+
+
+
+***
+
+# Package `COALTON/XMATH/FFT`<a name="coalton-xmath-fft-package"></a>
+
+
+A coalton package for performing FFTs.
+
+### Classes
+
+#### <a href="#coalton-xmath-fft-fftcyclicgroup-class"><code>FFTCyclicGroup</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/fft.lisp#L151-L160">src</a></sub></sup><a name="coalton-xmath-fft-fftcyclicgroup-class"></a>
+<code><a href="#coalton-xmath-fft-fftcyclicgroup-class">FFTCyclicGroup</a> :T</code>
+
+
+A class of types, each of which is a mathematical cyclic group.
+
+These are types which are valid elements for a collection which may undergo a discrete Fourier transform. Examples include complex floating-point numbers and finite (modular) integers.
+
+Methods:
+- <code>CYCLIC-ADD-IDENTITY :: :T</code>
+- <code>CYCLIC-ADD :: (:T * :T &rarr; :T)</code>
+- <code>CYCLIC-ADD-INVERSE :: (:T &rarr; :T)</code>
+- <code>CYCLIC-NTH-GENERATOR :: (<a href="#coalton-ufix-type">UFix</a> &rarr; :T)</code><br/>A function which returns a primitive `n`th root of unity.
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#coalton-xmath-fft-fftcyclicgroup-class">FFTCyclicGroup</a> (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-f64-type">F64</a>)</code>
+- <code><a href="#coalton-xmath-fft-fftcyclicgroup-class">FFTCyclicGroup</a> (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-f32-type">F32</a>)</code>
+
+</details>
+
+
+
+***
+
+#### <a href="#coalton-xmath-fft-fftfield-class"><code>FFTField</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/fft.lisp#L141-L145">src</a></sub></sup><a name="coalton-xmath-fft-fftfield-class"></a>
+<code><a href="#coalton-xmath-fft-fftring-class">FFTRing</a> :T &rArr; <a href="#coalton-xmath-fft-fftfield-class">FFTField</a> :T</code>
+
+
+A class of types, each of which is a mathematical field.
+
+These are types which are valid elements for a collection which may undergo a discrete Fourier transform. Examples include complex floating-point numbers and finite (modular) integers.
+
+Methods:
+- <code>MULTIPLY-INVERSE :: (:T &rarr; :T)</code>
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#coalton-xmath-fft-fftfield-class">FFTField</a> (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-f64-type">F64</a>)</code>
+- <code><a href="#coalton-xmath-fft-fftfield-class">FFTField</a> (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-f32-type">F32</a>)</code>
+
+</details>
+
+
+
+***
+
+#### <a href="#coalton-xmath-fft-fftgroup-class"><code>FFTGroup</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/fft.lisp#L122-L128">src</a></sub></sup><a name="coalton-xmath-fft-fftgroup-class"></a>
+<code><a href="#coalton-xmath-fft-fftgroup-class">FFTGroup</a> :T</code>
+
+
+A class of types, each of which is a mathematical group.
+
+These are types which are valid elements for a collection which may undergo a discrete Fourier transform. Examples include complex floating-point numbers and finite (modular) integers.
+
+Methods:
+- <code>ADD-IDENTITY :: :T</code>
+- <code>ADD :: (:T * :T &rarr; :T)</code>
+- <code>ADD-INVERSE :: (:T &rarr; :T)</code>
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#coalton-xmath-fft-fftgroup-class">FFTGroup</a> (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-f64-type">F64</a>)</code>
+- <code><a href="#coalton-xmath-fft-fftgroup-class">FFTGroup</a> (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-f32-type">F32</a>)</code>
+
+</details>
+
+
+
+***
+
+#### <a href="#coalton-xmath-fft-fftring-class"><code>FFTRing</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/fft.lisp#L134-L139">src</a></sub></sup><a name="coalton-xmath-fft-fftring-class"></a>
+<code><a href="#coalton-xmath-fft-fftgroup-class">FFTGroup</a> :T &rArr; <a href="#coalton-xmath-fft-fftring-class">FFTRing</a> :T</code>
+
+
+A class of types, each of which is a mathematical ring.
+
+These are types which are valid elements for a collection which may undergo a discrete Fourier transform. Examples include complex floating-point numbers and finite (modular) integers.
+
+Methods:
+- <code>MULTIPLY-IDENTITY :: :T</code>
+- <code>MULTIPLY :: (:T * :T &rarr; :T)</code>
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#coalton-xmath-fft-fftring-class">FFTRing</a> (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-f64-type">F64</a>)</code>
+- <code><a href="#coalton-xmath-fft-fftring-class">FFTRing</a> (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-f32-type">F32</a>)</code>
+
+</details>
+
+
+
+***
+
+### Values
+
+#### <a href="#coalton-xmath-fft-dif-fft-raw-value"><code>(DIF-FFT-RAW DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/fft.lisp#L267-L280">src</a></sub></sup><a name="coalton-xmath-fft-dif-fft-raw-value"></a>
+<code>&forall; :T :C :D. (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :C :T) (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :D :T) (<a href="#coalton-xmath-fft-fftring-class">FFTRing</a> :T) (<a href="#coalton-xmath-fft-fftcyclicgroup-class">FFTCyclicGroup</a> :T) &rArr; (:C * :D &rarr; Void)</code>
+
+A decimation-in-frequency fast fourier transform, reading from `src` and writing to `dst`.
+
+Input: natural order
+Output: bit-reversed order
+Normalization: none
+
+
+
+***
+
+#### <a href="#coalton-xmath-fft-dif-ifft-raw-value"><code>(DIF-IFFT-RAW DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/fft.lisp#L287-L300">src</a></sub></sup><a name="coalton-xmath-fft-dif-ifft-raw-value"></a>
+<code>&forall; :T :C :D. (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :C :T) (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :D :T) (<a href="#coalton-xmath-fft-fftring-class">FFTRing</a> :T) (<a href="#coalton-xmath-fft-fftcyclicgroup-class">FFTCyclicGroup</a> :T) &rArr; (:C * :D &rarr; Void)</code>
+
+A decimation-in-frequency inverse fast fourier transform, reading from `src` and writing to `dst`.
+
+Input: natural order
+Output: bit-reversed order
+Normalization: none
+
+
+
+***
+
+#### <a href="#coalton-xmath-fft-dit-fft-raw-value"><code>(DIT-FFT-RAW DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/fft.lisp#L412-L426">src</a></sub></sup><a name="coalton-xmath-fft-dit-fft-raw-value"></a>
+<code>&forall; :T :C :D. (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :C :T) (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :D :T) (<a href="#coalton-xmath-fft-fftring-class">FFTRing</a> :T) (<a href="#coalton-xmath-fft-fftcyclicgroup-class">FFTCyclicGroup</a> :T) &rArr; (:C * :D &rarr; Void)</code>
+
+A decimation-in-time fast fourier transform, reading from `src` and writing to `dst`.
+
+Input: bit-reversed order
+Output: natural order
+Normalization: none
+
+
+
+***
+
+#### <a href="#coalton-xmath-fft-dit-ifft-raw-value"><code>(DIT-IFFT-RAW DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/fft.lisp#L433-L447">src</a></sub></sup><a name="coalton-xmath-fft-dit-ifft-raw-value"></a>
+<code>&forall; :T :C :D. (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :C :T) (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :D :T) (<a href="#coalton-xmath-fft-fftring-class">FFTRing</a> :T) (<a href="#coalton-xmath-fft-fftcyclicgroup-class">FFTCyclicGroup</a> :T) &rArr; (:C * :D &rarr; Void)</code>
+
+A decimation-in-time inverse fast fourier transform, reading from `src` and writing to `dst`.
+
+Input: bit-reversed order
+Output: natural order
+Normalization: none
+
+
+
+***
+
+#### <a href="#coalton-xmath-fft-divide-value"><code>(DIVIDE X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/fft.lisp#L148-L149">src</a></sub></sup><a name="coalton-xmath-fft-divide-value"></a>
+<code>&forall; :T. <a href="#coalton-xmath-fft-fftfield-class">FFTField</a> :T &rArr; (:T * :T &rarr; :T)</code>
+
+
+***
+
+#### <a href="#coalton-xmath-fft-fft-value"><code>(FFT STORAGE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/fft.lisp#L530-L542">src</a></sub></sup><a name="coalton-xmath-fft-fft-value"></a>
+<code>&forall; :T :C :D. (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :C :T) (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :D :T) (<a href="#coalton-xmath-fft-fftring-class">FFTRing</a> :T) (<a href="#coalton-xmath-fft-fftcyclicgroup-class">FFTCyclicGroup</a> :T) &rArr; (:C &rarr; :D)</code>
+
+Perform a fast Fourier transform on the data in `storage`.
+
+
+
+***
+
+#### <a href="#coalton-xmath-fft-fft!-value"><code>(FFT! STORAGE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/fft.lisp#L456-L467">src</a></sub></sup><a name="coalton-xmath-fft-fft!-value"></a>
+<code>&forall; :T :C. (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :C :T) (<a href="#coalton-xmath-fft-fftring-class">FFTRing</a> :T) (<a href="#coalton-xmath-fft-fftcyclicgroup-class">FFTCyclicGroup</a> :T) &rArr; (:C &rarr; :C)</code>
+
+Perform an in-place fast Fourier transform on `storage`.
+
+
+
+***
+
+#### <a href="#coalton-xmath-fft-fft-into!-value"><code>(FFT-INTO! DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/fft.lisp#L492-L504">src</a></sub></sup><a name="coalton-xmath-fft-fft-into!-value"></a>
+<code>&forall; :T :D :C. (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :C :T) (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :D :T) (<a href="#coalton-xmath-fft-fftring-class">FFTRing</a> :T) (<a href="#coalton-xmath-fft-fftcyclicgroup-class">FFTCyclicGroup</a> :T) &rArr; (:D * :C &rarr; :D)</code>
+
+Perform a fast Fourier transform of `src`, writing the result to `dst`. If `dst` is longer than `src`, then remaining elements of `dst` are left unmutated.
+
+
+
+***
+
+#### <a href="#coalton-xmath-fft-ifft-value"><code>(IFFT STORAGE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/fft.lisp#L547-L563">src</a></sub></sup><a name="coalton-xmath-fft-ifft-value"></a>
+<code>&forall; :T :C :D. (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :C :T) (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :D :T) (<a href="#coalton-xmath-fft-fftfield-class">FFTField</a> :T) (<a href="#coalton-xmath-fft-fftcyclicgroup-class">FFTCyclicGroup</a> :T) (<a href="#coalton-classes-num-class">Num</a> :T) &rArr; (:C &rarr; :D)</code>
+
+Perform an inverse fast Fourier transform on the data in `storage`.
+
+
+
+***
+
+#### <a href="#coalton-xmath-fft-ifft!-value"><code>(IFFT! STORAGE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/fft.lisp#L472-L487">src</a></sub></sup><a name="coalton-xmath-fft-ifft!-value"></a>
+<code>&forall; :T :C. (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :C :T) (<a href="#coalton-xmath-fft-fftfield-class">FFTField</a> :T) (<a href="#coalton-xmath-fft-fftcyclicgroup-class">FFTCyclicGroup</a> :T) (<a href="#coalton-classes-num-class">Num</a> :T) &rArr; (:C &rarr; :C)</code>
+
+Perform an in-place inverse fast Fourier transform on `storage`.
+
+
+
+***
+
+#### <a href="#coalton-xmath-fft-ifft-into!-value"><code>(IFFT-INTO! DST SRC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/fft.lisp#L509-L525">src</a></sub></sup><a name="coalton-xmath-fft-ifft-into!-value"></a>
+<code>&forall; :T :D :C. (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :C :T) (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :D :T) (<a href="#coalton-xmath-fft-fftfield-class">FFTField</a> :T) (<a href="#coalton-xmath-fft-fftcyclicgroup-class">FFTCyclicGroup</a> :T) (<a href="#coalton-classes-num-class">Num</a> :T) &rArr; (:D * :C &rarr; :D)</code>
+
+Perform an inverse fast Fourier transform of `src`, writing the result to `dst`. If `dst` is longer than `src`, then remaining elements of `dst` are left unmutated.
+
+
+
+***
+
+#### <a href="#coalton-xmath-fft-subtract-value"><code>(SUBTRACT X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/fft.lisp#L131-L132">src</a></sub></sup><a name="coalton-xmath-fft-subtract-value"></a>
+<code>&forall; :T. <a href="#coalton-xmath-fft-fftgroup-class">FFTGroup</a> :T &rArr; (:T * :T &rarr; :T)</code>
+
+
+***
+
+# Package `COALTON/XMATH/HYPERDUAL`<a name="coalton-xmath-hyperdual-package"></a>
+
+
+An implementation of hyperdual numbers for second-order and
+multivariate automatic differentiation.
+
+ ——————————————————————————————————————————————–
+
+For univariate differentiation of a function `f` at a point `x`, apply
+`f` to `(Hyperdual x 1 1 0)`. The result will be
+`(Hyperdual f(x) df/dx(x) df/dx(x) d²f/dx²(x))`.
+
+You may also use the convenience functions `d-x` and `d-xx` to compute
+the first and second derivatives as `(d-x f x)` and `(d-xx f x)`.
+
+ ——————————————————————————————————————————————–
+
+For multivariate differentiation of a function `f` at a point `(x,
+y)`, an application of `f` to `(Hyperdual x 1 0 0)` and 
+`(Hyperdual y 0 1 0)` will result in  
+`(Hyperdual f(x, y) ∂f/∂x(x, y) ∂f/∂y(x, y) ∂²f/∂x∂y(x, y))`. 
+
+Second derivatives of a single argument `xi` of `f` are computed in
+the same manner as the univariate case, except the values 
+`(Hyperdual xj 0 0 0)` are passed for the remaining arguments, j ≠ i.
+
+You may also use the convenience functions `partial-x`, `partial-y`,
+`gradient`, `partial-xx`, `partial-xy`, `partial-yy`, `hessian`, and
+`laplacian`, to compute partials of bivariate functions.
+
+ ——————————————————————————————————————————————–
+
+The following list of identities describe the theory of hyperdual numbers.
+
+ :: given (∀i∀j((i ≠ j) → (εᵢεⱼ ≠ 0)) ∧ ∀i(εᵢ² = 0))
+
+ ——————————————————————————————————————————————–
+
+ :: univariate identities
+
+ (1) f(a + bε₁ + cε₂ + dε₁ε₂)
+      = f(a) + (bε₁+cε₂+dε₁ε₂)f'(a) + bcε₁ε₂f''(a)
+      = f(a) + bf'(a)ε₁ + cf'(a)ε₂ + [df'(a) + bcf''(a)]ε₁ε₂
+
+ (2) f(x + ε₁ + ε₂)
+      = f(x) + f'(x)ε₁ + f'(x)ε₂ + f''(x)ε₁ε₂
+
+ :: multivariate identities
+
+ (3) f(a₁ + b₁ε₁ + c₁ε₂ + d₁ε₁ε₂, a₂ + b₂ε₁ + c₂ε₂ + d₂ε₁ε₂)
+      = f(a₁, a₂) + (b₁ε₁ + c₁ε₂ + d₁ε₁ε₂)∂f/∂x(a₁, a₂) + b₁c₁ε₁ε₂∂²f/∂x²(a₁, a₂)
+        + (b₂ε₁ + c₂ε₂ + d₂ε₁ε₂)∂f/∂y(a₁, a₂) + b₂c₂ε₁ε₂∂²f/∂y² 
+        + (b₁c₂ + b₂c₁)ε₁ε₂∂²f/∂x∂y(a₁, a₂)
+      = f(a₁, a₂) 
+        + (b₁∂f/∂x(a₁, a₂) + b₂∂f/∂y(a₁, a₂))ε₁ 
+        + (c₁∂f/∂x(a₁, a₂) + c₂∂f/∂y(a₁, a₂))ε₂
+        + (d₁∂f/∂x(a₁, a₂) + d₂∂f/∂y(a₁, a₂) 
+           + b₁c₁∂²f/∂x²(a₁, a₂) + b₂c₂∂²f/∂x²(a₁, a₂) 
+           + (b₁c₂ + b₂c₁)∂²f/∂x∂y(a₁, a₂))ε₁ε₂
+
+ (4) f(x + ε₁ + ε₂, y)
+      = f(x, y) + ∂f/∂x(x, y)ε₁ + ∂f/∂x(x, y)ε₂ + ∂²f/∂x²(x, y)ε₁ε₂
+
+ (5) f(x + ε₁, y + ε₂)
+      = f(x, y) + ∂f/∂x(x, y)ε₁ + ∂f/∂y(x, y)ε₂ + ∂²f/∂x∂y(x, y)ε₁ε₂
+
+ (6) f(x, y + ε₁ + ε₂)
+      = f(x, y) + ∂f/∂y(x, y)ε₁ + ∂f/∂y(x, y)ε₂ + ∂²f/∂y²(x, y)ε₁ε₂
+
+ :: equivalently
+
+ (1) (f (Hyperdual a b c d))
+      = (Hyperdual
+         (f a)
+         (* b (f' a))
+         (* c (f' a))
+         (+ (* d (f' a)) (* (* b c) (f'' a))))
+
+ (2) (f (Hyperdual x 1 1 0))
+      = (Hyperdual (f x) (f' x) (f' x) (f'' x))
+
+ (3) (f (Hyperdual a1 b1 c1 d1) (Hyperdual a2 b2 c2 d2))
+      = (Hyperdual
+         (f a1 a2)
+         (+ (* b1 (∂f/∂x a1 a2)) (* b2 (∂f/∂y a1 a2)))
+         (+ (* c1 (∂f/∂x a1 a2)) (* c2 (∂f/∂y a1 a2)))
+         (+ (+ (* d1 (∂f/∂x a1 a2)) (* d2 (∂f/∂y a1 a2)))
+            (+ (* (* b1 c1) (∂²f/∂x² a1 a2)) (* (* b2 c2) (∂²f/∂y² a1 a2)))
+            (* (+ (* b1 c2) (* b2 c1)) (∂²f/∂x∂y a1 a2)))
+
+ (4) (f (Hyperdual x 1 1 0) (Hyperdual y 0 0 0))
+      = (Hyperdual (f x y) (∂f/∂x x y) (∂f/∂x x y) (∂²f/∂x² x y))
+
+ (5) (f (Hyperdual x 1 0 0) (Hyperdual y 0 1 0))
+      = (Hyperdual (f x y) (∂f/∂x x y) (∂f/∂y x y) (∂²f/∂x∂y x y))
+
+ (6) (f (Hyperdual x 0 0 0) (Hyperdual y 1 1 0))
+      = (Hyperdual (f x y) (∂f/∂x x y) (∂f/∂x x y) (∂²f/∂x² x y))
+
+### Structs
+
+#### <a href="#coalton-xmath-hyperdual-hyperdual-type"><code>Hyperdual :T</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/hyperdual.lisp#L140-L147">src</a></sub></sup><a name="coalton-xmath-hyperdual-hyperdual-type"></a>
+
+Representation of a hyperdual number in the form `a + bε₁ + cε₂ + dε₁ε₂` where `a`, `b`, `c`, and `d` are real numbers and `ε₁` and `ε₂` satisfy `εᵢ² = 0` and `ε₁ε₂ != 0`.
+
+Note: `Eq`, and `Ord` and `Hash` only make use of the primal component.
+
+<details>
+<summary>Instances</summary>
+
+- <code>(<a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> :T) (<a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :T) &rArr; <a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
+- <code>(<a href="#coalton-math-elementary-radical-class">Radical</a> :T) (<a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :T) (<a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> :T) &rArr; <a href="#coalton-math-elementary-radical-class">Radical</a> (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
+- <code>(<a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> :T) (<a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :T) (<a href="#coalton-math-elementary-radical-class">Radical</a> :T) &rArr; <a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
+- <code><a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> :T &rArr; <a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
+- <code><a href="#coalton-classes-eq-class">Eq</a> :T &rArr; <a href="#coalton-classes-eq-class">Eq</a> (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
+- <code><a href="#coalton-classes-hash-class">Hash</a> :T &rArr; <a href="#coalton-classes-hash-class">Hash</a> (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
+- <code><a href="#coalton-classes-num-class">Num</a> :T &rArr; <a href="#coalton-classes-into-class">Into</a> :T (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
+- <code><a href="#coalton-classes-num-class">Num</a> :T &rArr; <a href="#coalton-classes-num-class">Num</a> (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
+- <code><a href="#coalton-classes-ord-class">Ord</a> :T &rArr; <a href="#coalton-classes-ord-class">Ord</a> (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
+- <code><a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :T &rArr; <a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :|0|)</code>
+
+</details>
+
+
+
+***
+
+### Values
+
+#### <a href="#coalton-xmath-hyperdual-d-x-value"><code>(D-X F X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/hyperdual.lisp#L330-L332">src</a></sub></sup><a name="coalton-xmath-hyperdual-d-x-value"></a>
+<code>&forall; :T. <a href="#coalton-classes-num-class">Num</a> :T &rArr; (((<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)) * :T &rarr; :T)</code>
+
+Compute f'(x).
+
+
+
+***
+
+#### <a href="#coalton-xmath-hyperdual-d-xx-value"><code>(D-XX F X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/hyperdual.lisp#L335-L337">src</a></sub></sup><a name="coalton-xmath-hyperdual-d-xx-value"></a>
+<code>&forall; :T. <a href="#coalton-classes-num-class">Num</a> :T &rArr; (((<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)) * :T &rarr; :T)</code>
+
+Compute f''(x).
+
+
+
+***
+
+#### <a href="#coalton-xmath-hyperdual-gradient-value"><code>(GRADIENT F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/hyperdual.lisp#L350-L353">src</a></sub></sup><a name="coalton-xmath-hyperdual-gradient-value"></a>
+<code>&forall; :T. <a href="#coalton-classes-num-class">Num</a> :T &rArr; (((<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T) * (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)) * :T * :T &rarr; (<a href="#coalton-list-type">List</a> :T))</code>
+
+Compute the gradient (∂f/∂x, ∂f/∂y) at the point (x, y).
+
+
+
+***
+
+#### <a href="#coalton-xmath-hyperdual-hessian-value"><code>(HESSIAN F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/hyperdual.lisp#L376-L382">src</a></sub></sup><a name="coalton-xmath-hyperdual-hessian-value"></a>
+<code>&forall; :T. <a href="#coalton-classes-num-class">Num</a> :T &rArr; (((<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T) * (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)) * :T * :T &rarr; (<a href="#coalton-list-type">List</a> :T))</code>
+
+Compute the flat Hessian (∂²f/∂x², ∂²f/∂x∂y, ∂²f/∂y∂x, ∂²f/∂y²) at the point (x, y).
+
+
+
+***
+
+#### <a href="#coalton-xmath-hyperdual-laplacian-value"><code>(LAPLACIAN F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/hyperdual.lisp#L371-L373">src</a></sub></sup><a name="coalton-xmath-hyperdual-laplacian-value"></a>
+<code>&forall; :T. <a href="#coalton-classes-num-class">Num</a> :T &rArr; (((<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T) * (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)) * :T * :T &rarr; :T)</code>
+
+Compute the Laplacian ∂²f/∂x² + ∂²f/∂y² at the point (x, y).
+
+
+
+***
+
+#### <a href="#coalton-xmath-hyperdual-partial-x-value"><code>(PARTIAL-X F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/hyperdual.lisp#L340-L342">src</a></sub></sup><a name="coalton-xmath-hyperdual-partial-x-value"></a>
+<code>&forall; :T. <a href="#coalton-classes-num-class">Num</a> :T &rArr; (((<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T) * (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)) * :T * :T &rarr; :T)</code>
+
+Compute ∂f/∂x(x, y).
+
+
+
+***
+
+#### <a href="#coalton-xmath-hyperdual-partial-xx-value"><code>(PARTIAL-XX F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/hyperdual.lisp#L356-L358">src</a></sub></sup><a name="coalton-xmath-hyperdual-partial-xx-value"></a>
+<code>&forall; :T. <a href="#coalton-classes-num-class">Num</a> :T &rArr; (((<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T) * (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)) * :T * :T &rarr; :T)</code>
+
+Compute ∂²f/∂x²(x, y).
+
+
+
+***
+
+#### <a href="#coalton-xmath-hyperdual-partial-xy-value"><code>(PARTIAL-XY F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/hyperdual.lisp#L361-L363">src</a></sub></sup><a name="coalton-xmath-hyperdual-partial-xy-value"></a>
+<code>&forall; :T. <a href="#coalton-classes-num-class">Num</a> :T &rArr; (((<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T) * (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)) * :T * :T &rarr; :T)</code>
+
+Compute ∂²f/∂x∂y(x, y).
+
+
+
+***
+
+#### <a href="#coalton-xmath-hyperdual-partial-y-value"><code>(PARTIAL-Y F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/hyperdual.lisp#L345-L347">src</a></sub></sup><a name="coalton-xmath-hyperdual-partial-y-value"></a>
+<code>&forall; :T. <a href="#coalton-classes-num-class">Num</a> :T &rArr; (((<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T) * (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)) * :T * :T &rarr; :T)</code>
+
+Compute ∂f/∂y(x, y).
+
+
+
+***
+
+#### <a href="#coalton-xmath-hyperdual-partial-yy-value"><code>(PARTIAL-YY F X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/hyperdual.lisp#L366-L368">src</a></sub></sup><a name="coalton-xmath-hyperdual-partial-yy-value"></a>
+<code>&forall; :T. <a href="#coalton-classes-num-class">Num</a> :T &rArr; (((<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T) * (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T) &rarr; (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)) * :T * :T &rarr; :T)</code>
+
+Compute ∂²f/∂y²(x, y).
+
+
+
+***
+
+# Package `COALTON/XMATH/REALALGEBRAIC`<a name="coalton-xmath-realalgebraic-package"></a>
+
+
+Certified real algebraic numbers.
+
+A real algebraic number is represented as a square-free primitive polynomial
+over Z together with a rational isolating interval certified by Sturm's
+theorem. Arithmetic is implemented via resultant-based elimination, and all
+operations (construction, comparison, root selection) are exact.
+
+Construct values with `root' (single root from polynomial + interval),
+`real-roots' (all roots of a polynomial), `fromInt', or `into'. Extract
+rational values with `tryInto'. Standard numeric type class instances are
+provided: Eq, Ord, Num, Reciprocable, Radical, Quantizable, and Real.
+
+### Structs
+
+#### <a href="#coalton-xmath-realalgebraic-realalgebraic-type"><code>RealAlgebraic</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/realalgebraic.lisp#L75-L84">src</a></sub></sup><a name="coalton-xmath-realalgebraic-realalgebraic-type"></a>
+
+Certified real algebraic number.
+
+`poly` is a square-free primitive defining polynomial in descending degree
+order. `(lo, hi)` is a rational open interval that isolates exactly one real
+root of `poly`. `sturm` caches a Sturm sequence for `poly`.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#coalton-math-arith-dividable-class">Dividable</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a></code>
+- <code><a href="#coalton-classes-eq-class">Eq</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a></code>
+- <code><a href="#coalton-classes-num-class">Num</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a></code>
+- <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a></code>
+- <code><a href="#coalton-math-real-quantizable-class">Quantizable</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a></code>
+- <code><a href="#coalton-math-elementary-radical-class">Radical</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a></code>
+- <code><a href="#coalton-math-real-real-class">Real</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a></code>
+- <code><a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a></code>
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-string-type">String</a></code>
+
+</details>
+
+
+
+***
+
+### Values
+
+#### <a href="#coalton-xmath-realalgebraic-decimal-string-value"><code>(DECIMAL-STRING DIGITS X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/realalgebraic.lisp#L1769-L1779">src</a></sub></sup><a name="coalton-xmath-realalgebraic-decimal-string-value"></a>
+<code>(<a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a> &rarr; <a href="#coalton-string-type">String</a>)</code>
+
+Render a fixed-point decimal approximation of `x`.
+
+`digits` is the number of digits after the decimal point. Rounding is half-up
+and computed from exact rational arithmetic.
+
+
+
+***
+
+#### <a href="#coalton-xmath-realalgebraic-isolating-interval-value"><code>(ISOLATING-INTERVAL X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/realalgebraic.lisp#L1641-L1643">src</a></sub></sup><a name="coalton-xmath-realalgebraic-isolating-interval-value"></a>
+<code>(<a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a> &rarr; (<a href="#coalton-classes-tuple-type">Tuple</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-fraction-type">Fraction</a>))</code>
+
+Return the current rational isolating interval `(lo, hi)` for `x`.
+
+
+
+***
+
+#### <a href="#coalton-xmath-realalgebraic-rational?-value"><code>(RATIONAL? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/realalgebraic.lisp#L1894-L1898">src</a></sub></sup><a name="coalton-xmath-realalgebraic-rational?-value"></a>
+<code>(<a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a> &rarr; <a href="#coalton-boolean-type">Boolean</a>)</code>
+
+Return `True` when `x` is rational, decided by the rational root theorem.
+
+
+
+***
+
+#### <a href="#coalton-xmath-realalgebraic-real-roots-value"><code>(REAL-ROOTS COEFFS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/realalgebraic.lisp#L792-L808">src</a></sub></sup><a name="coalton-xmath-realalgebraic-real-roots-value"></a>
+<code>((<a href="#coalton-list-type">List</a> <a href="#coalton-integer-type">Integer</a>) &rarr; (<a href="#coalton-classes-result-type">Result</a> <a href="#coalton-string-type">String</a> (<a href="#coalton-list-type">List</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a>)))</code>
+
+Isolate all distinct real roots of a polynomial.
+
+COEFFS is a list of integer coefficients in descending degree order.
+
+
+
+***
+
+#### <a href="#coalton-xmath-realalgebraic-refine-value"><code>(REFINE X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/realalgebraic.lisp#L1651-L1653">src</a></sub></sup><a name="coalton-xmath-realalgebraic-refine-value"></a>
+<code>(<a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a> &rarr; <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a>)</code>
+
+Return a strictly tighter certified isolating interval for `x`.
+
+
+
+***
+
+#### <a href="#coalton-xmath-realalgebraic-refine-to-width-value"><code>(REFINE-TO-WIDTH WIDTH X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/realalgebraic.lisp#L1656-L1667">src</a></sub></sup><a name="coalton-xmath-realalgebraic-refine-to-width-value"></a>
+<code>(<a href="#coalton-fraction-type">Fraction</a> * <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a> &rarr; <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a>)</code>
+
+Refine `x` until its isolating interval width is at most `width`.
+
+`width` must be positive.
+
+
+
+***
+
+#### <a href="#coalton-xmath-realalgebraic-root-value"><code>(ROOT COEFFS LO HI)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/realalgebraic.lisp#L778-L789">src</a></sub></sup><a name="coalton-xmath-realalgebraic-root-value"></a>
+<code>((<a href="#coalton-list-type">List</a> <a href="#coalton-integer-type">Integer</a>) * <a href="#coalton-fraction-type">Fraction</a> * <a href="#coalton-fraction-type">Fraction</a> &rarr; (<a href="#coalton-classes-result-type">Result</a> <a href="#coalton-string-type">String</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a>))</code>
+
+Construct a real algebraic number from a polynomial and isolating interval.
+
+COEFFS is a list of integer coefficients in descending degree order. The
+rational interval `(lo, hi)` must isolate exactly one real root of the
+polynomial.
+
+
+
+***
+
+#### <a href="#coalton-xmath-realalgebraic-show-value"><code>(SHOW X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/realalgebraic.lisp#L1681-L1707">src</a></sub></sup><a name="coalton-xmath-realalgebraic-show-value"></a>
+<code>(<a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a> &rarr; <a href="#coalton-string-type">String</a>)</code>
+
+Render a human-readable representation of `x` as a string.
+
+Exposes the defining polynomial and current isolating interval, useful for
+debugging, proof traces, and serialization diagnostics.
 
 
 
