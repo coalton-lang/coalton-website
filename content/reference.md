@@ -6079,7 +6079,7 @@ Methods:
 
 ### Values
 
-#### <a href="#coalton-math-arith-1+-value"><code>(1+ NUM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L177-L179">src</a></sub></sup><a name="coalton-math-arith-1+-value"></a>
+#### <a href="#coalton-math-arith-1+-value"><code>(1+ NUM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L186-L188">src</a></sub></sup><a name="coalton-math-arith-1+-value"></a>
 <code>&forall; :NUM. <a href="#coalton-classes-num-class">Num</a> :NUM &rArr; (:NUM &rarr; :NUM)</code>
 
 Increment `num`.
@@ -6088,7 +6088,7 @@ Increment `num`.
 
 ***
 
-#### <a href="#coalton-math-arith-1--value"><code>(1- NUM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L183-L185">src</a></sub></sup><a name="coalton-math-arith-1--value"></a>
+#### <a href="#coalton-math-arith-1--value"><code>(1- NUM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L192-L194">src</a></sub></sup><a name="coalton-math-arith-1--value"></a>
 <code>&forall; :NUM. <a href="#coalton-classes-num-class">Num</a> :NUM &rArr; (:NUM &rarr; :NUM)</code>
 
 Decrement `num`.
@@ -6097,7 +6097,7 @@ Decrement `num`.
 
 ***
 
-#### <a href="#coalton-math-arith-abs-value"><code>(ABS X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L154-L158">src</a></sub></sup><a name="coalton-math-arith-abs-value"></a>
+#### <a href="#coalton-math-arith-abs-value"><code>(ABS X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L162-L166">src</a></sub></sup><a name="coalton-math-arith-abs-value"></a>
 <code>&forall; :A. (<a href="#coalton-classes-ord-class">Ord</a> :A) (<a href="#coalton-classes-num-class">Num</a> :A) &rArr; (:A &rarr; :A)</code>
 
 Absolute value of `x`.
@@ -6106,7 +6106,7 @@ Absolute value of `x`.
 
 ***
 
-#### <a href="#coalton-math-arith-ash-value"><code>(ASH X N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L171-L173">src</a></sub></sup><a name="coalton-math-arith-ash-value"></a>
+#### <a href="#coalton-math-arith-ash-value"><code>(ASH X N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L179-L182">src</a></sub></sup><a name="coalton-math-arith-ash-value"></a>
 <code>(<a href="#coalton-integer-type">Integer</a> * <a href="#coalton-integer-type">Integer</a> &rarr; <a href="#coalton-integer-type">Integer</a>)</code>
 
 Compute the "arithmetic shift" of `x` by `n`.
@@ -6124,7 +6124,7 @@ Neither infinite or NaN.
 
 ***
 
-#### <a href="#coalton-math-arith-negate-value"><code>(NEGATE X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L148-L150">src</a></sub></sup><a name="coalton-math-arith-negate-value"></a>
+#### <a href="#coalton-math-arith-negate-value"><code>(NEGATE X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L156-L158">src</a></sub></sup><a name="coalton-math-arith-negate-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-num-class">Num</a> :A &rArr; (:A &rarr; :A)</code>
 
 The negation, or additive inverse, of `x`.
@@ -6133,7 +6133,7 @@ The negation, or additive inverse, of `x`.
 
 ***
 
-#### <a href="#coalton-math-arith-negative?-value"><code>(NEGATIVE? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L195-L197">src</a></sub></sup><a name="coalton-math-arith-negative?-value"></a>
+#### <a href="#coalton-math-arith-negative?-value"><code>(NEGATIVE? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L204-L206">src</a></sub></sup><a name="coalton-math-arith-negative?-value"></a>
 <code>&forall; :A. (<a href="#coalton-classes-num-class">Num</a> :A) (<a href="#coalton-classes-ord-class">Ord</a> :A) &rArr; (:A &rarr; <a href="#coalton-boolean-type">Boolean</a>)</code>
 
 Is `x` negative?
@@ -6142,7 +6142,7 @@ Is `x` negative?
 
 ***
 
-#### <a href="#coalton-math-arith-nonnegative?-value"><code>(NONNEGATIVE? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L207-L209">src</a></sub></sup><a name="coalton-math-arith-nonnegative?-value"></a>
+#### <a href="#coalton-math-arith-nonnegative?-value"><code>(NONNEGATIVE? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L216-L218">src</a></sub></sup><a name="coalton-math-arith-nonnegative?-value"></a>
 <code>&forall; :A. (<a href="#coalton-classes-num-class">Num</a> :A) (<a href="#coalton-classes-ord-class">Ord</a> :A) &rArr; (:A &rarr; <a href="#coalton-boolean-type">Boolean</a>)</code>
 
 Is `x` not negative?
@@ -6151,7 +6151,7 @@ Is `x` not negative?
 
 ***
 
-#### <a href="#coalton-math-arith-nonpositive?-value"><code>(NONPOSITIVE? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L201-L203">src</a></sub></sup><a name="coalton-math-arith-nonpositive?-value"></a>
+#### <a href="#coalton-math-arith-nonpositive?-value"><code>(NONPOSITIVE? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L210-L212">src</a></sub></sup><a name="coalton-math-arith-nonpositive?-value"></a>
 <code>&forall; :A. (<a href="#coalton-classes-num-class">Num</a> :A) (<a href="#coalton-classes-ord-class">Ord</a> :A) &rArr; (:A &rarr; <a href="#coalton-boolean-type">Boolean</a>)</code>
 
 Is `x` not positive?
@@ -6160,7 +6160,7 @@ Is `x` not positive?
 
 ***
 
-#### <a href="#coalton-math-arith-nonzero?-value"><code>(NONZERO? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L219-L221">src</a></sub></sup><a name="coalton-math-arith-nonzero?-value"></a>
+#### <a href="#coalton-math-arith-nonzero?-value"><code>(NONZERO? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L228-L230">src</a></sub></sup><a name="coalton-math-arith-nonzero?-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-num-class">Num</a> :A &rArr; (:A &rarr; <a href="#coalton-boolean-type">Boolean</a>)</code>
 
 Is `x` not zero?
@@ -6169,7 +6169,7 @@ Is `x` not zero?
 
 ***
 
-#### <a href="#coalton-math-arith-positive?-value"><code>(POSITIVE? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L189-L191">src</a></sub></sup><a name="coalton-math-arith-positive?-value"></a>
+#### <a href="#coalton-math-arith-positive?-value"><code>(POSITIVE? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L198-L200">src</a></sub></sup><a name="coalton-math-arith-positive?-value"></a>
 <code>&forall; :A. (<a href="#coalton-classes-num-class">Num</a> :A) (<a href="#coalton-classes-ord-class">Ord</a> :A) &rArr; (:A &rarr; <a href="#coalton-boolean-type">Boolean</a>)</code>
 
 Is `x` positive?
@@ -6178,7 +6178,7 @@ Is `x` positive?
 
 ***
 
-#### <a href="#coalton-math-arith-sign-value"><code>(SIGN X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L162-L167">src</a></sub></sup><a name="coalton-math-arith-sign-value"></a>
+#### <a href="#coalton-math-arith-sign-value"><code>(SIGN X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L170-L175">src</a></sub></sup><a name="coalton-math-arith-sign-value"></a>
 <code>&forall; :A :B. (<a href="#coalton-classes-ord-class">Ord</a> :A) (<a href="#coalton-classes-num-class">Num</a> :A) (<a href="#coalton-classes-num-class">Num</a> :B) &rArr; (:A &rarr; :B)</code>
 
 The sign of `x`, where `(sign 0) = 0`.
@@ -6187,7 +6187,7 @@ The sign of `x`, where `(sign 0) = 0`.
 
 ***
 
-#### <a href="#coalton-math-arith-zero?-value"><code>(ZERO? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L213-L215">src</a></sub></sup><a name="coalton-math-arith-zero?-value"></a>
+#### <a href="#coalton-math-arith-zero?-value"><code>(ZERO? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.lisp#L222-L224">src</a></sub></sup><a name="coalton-math-arith-zero?-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-num-class">Num</a> :A &rArr; (:A &rarr; <a href="#coalton-boolean-type">Boolean</a>)</code>
 
 Is `x` zero?
@@ -6579,7 +6579,7 @@ Computes the sine and cosine of X.
 
 ### Values
 
-#### <a href="#coalton-math-fraction-denominator-value"><code>(DENOMINATOR Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/fraction.lisp#L41-L44">src</a></sub></sup><a name="coalton-math-fraction-denominator-value"></a>
+#### <a href="#coalton-math-fraction-denominator-value"><code>(DENOMINATOR Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/fraction.lisp#L42-L46">src</a></sub></sup><a name="coalton-math-fraction-denominator-value"></a>
 <code>(<a href="#coalton-fraction-type">Fraction</a> &rarr; <a href="#coalton-integer-type">Integer</a>)</code>
 
 The denominator of a fraction.
@@ -6594,7 +6594,7 @@ The denominator of a fraction.
 
 ***
 
-#### <a href="#coalton-math-fraction-numerator-value"><code>(NUMERATOR Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/fraction.lisp#L35-L38">src</a></sub></sup><a name="coalton-math-fraction-numerator-value"></a>
+#### <a href="#coalton-math-fraction-numerator-value"><code>(NUMERATOR Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/fraction.lisp#L35-L39">src</a></sub></sup><a name="coalton-math-fraction-numerator-value"></a>
 <code>(<a href="#coalton-fraction-type">Fraction</a> &rarr; <a href="#coalton-integer-type">Integer</a>)</code>
 
 The numerator of a fraction.
@@ -6787,7 +6787,7 @@ Exponentiate BASE to a signed POWER.
 
 ### Structs
 
-#### <a href="#coalton-math-real-quantization-type"><code>Quantization :A</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L222-L233">src</a></sub></sup><a name="coalton-math-real-quantization-type"></a>
+#### <a href="#coalton-math-real-quantization-type"><code>Quantization :A</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L229-L240">src</a></sub></sup><a name="coalton-math-real-quantization-type"></a>
 
 Represents an integer quantization of `:a`.
 
@@ -6938,7 +6938,7 @@ Methods:
 
 ### Values
 
-#### <a href="#coalton-math-real-ceiling/-value"><code>(CEILING/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L283-L285">src</a></sub></sup><a name="coalton-math-real-ceiling/-value"></a>
+#### <a href="#coalton-math-real-ceiling/-value"><code>(CEILING/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L290-L292">src</a></sub></sup><a name="coalton-math-real-ceiling/-value"></a>
 <code>(<a href="#coalton-integer-type">Integer</a> * <a href="#coalton-integer-type">Integer</a> &rarr; <a href="#coalton-integer-type">Integer</a>)</code>
 
 Divide two integers and compute the ceiling of the quotient.
@@ -6947,7 +6947,7 @@ Divide two integers and compute the ceiling of the quotient.
 
 ***
 
-#### <a href="#coalton-math-real-exact/-value"><code>(EXACT/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L265-L267">src</a></sub></sup><a name="coalton-math-real-exact/-value"></a>
+#### <a href="#coalton-math-real-exact/-value"><code>(EXACT/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L272-L274">src</a></sub></sup><a name="coalton-math-real-exact/-value"></a>
 <code>(<a href="#coalton-integer-type">Integer</a> * <a href="#coalton-integer-type">Integer</a> &rarr; <a href="#coalton-fraction-type">Fraction</a>)</code>
 
 Exactly divide two integers and produce a fraction.
@@ -6956,7 +6956,7 @@ Exactly divide two integers and produce a fraction.
 
 ***
 
-#### <a href="#coalton-math-real-floor/-value"><code>(FLOOR/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L278-L280">src</a></sub></sup><a name="coalton-math-real-floor/-value"></a>
+#### <a href="#coalton-math-real-floor/-value"><code>(FLOOR/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L285-L287">src</a></sub></sup><a name="coalton-math-real-floor/-value"></a>
 <code>(<a href="#coalton-integer-type">Integer</a> * <a href="#coalton-integer-type">Integer</a> &rarr; <a href="#coalton-integer-type">Integer</a>)</code>
 
 Divide two integers and compute the floor of the quotient.
@@ -6965,7 +6965,7 @@ Divide two integers and compute the floor of the quotient.
 
 ***
 
-#### <a href="#coalton-math-real-fromfrac-value"><code>(FROMFRAC Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L293-L299">src</a></sub></sup><a name="coalton-math-real-fromfrac-value"></a>
+#### <a href="#coalton-math-real-fromfrac-value"><code>(FROMFRAC Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L300-L306">src</a></sub></sup><a name="coalton-math-real-fromfrac-value"></a>
 <code>&forall; :A. <a href="#coalton-math-arith-dividable-class">Dividable</a> <a href="#coalton-integer-type">Integer</a> :A &rArr; (<a href="#coalton-fraction-type">Fraction</a> &rarr; :A)</code>
 
 Converts a fraction to a target type.
@@ -6978,7 +6978,7 @@ This conversion may result in loss of fidelity.
 
 ***
 
-#### <a href="#coalton-math-real-inexact/-value"><code>(INEXACT/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L271-L275">src</a></sub></sup><a name="coalton-math-real-inexact/-value"></a>
+#### <a href="#coalton-math-real-inexact/-value"><code>(INEXACT/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L278-L282">src</a></sub></sup><a name="coalton-math-real-inexact/-value"></a>
 <code>(<a href="#coalton-integer-type">Integer</a> * <a href="#coalton-integer-type">Integer</a> &rarr; <a href="#coalton-f64-type">F64</a>)</code>
 
 Compute the quotient of integers as a double-precision float.
@@ -6989,7 +6989,7 @@ Note: This does *not* divide double-float arguments.
 
 ***
 
-#### <a href="#coalton-math-real-quantize-value"><code>(QUANTIZE X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L236-L244">src</a></sub></sup><a name="coalton-math-real-quantize-value"></a>
+#### <a href="#coalton-math-real-quantize-value"><code>(QUANTIZE X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L243-L251">src</a></sub></sup><a name="coalton-math-real-quantize-value"></a>
 <code>&forall; :A. <a href="#coalton-math-real-real-class">Real</a> :A &rArr; (:A &rarr; (<a href="#coalton-math-real-quantization-type">Quantization</a> :A))</code>
 
 Given X, (QUANTIZE X) will return the least integer greater or equal to X,
@@ -7009,7 +7009,7 @@ Return the nearest integer to X, with ties breaking towards even numbers.
 
 ***
 
-#### <a href="#coalton-math-real-round-half-down-value"><code>(ROUND-HALF-DOWN X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L252-L254">src</a></sub></sup><a name="coalton-math-real-round-half-down-value"></a>
+#### <a href="#coalton-math-real-round-half-down-value"><code>(ROUND-HALF-DOWN X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L259-L261">src</a></sub></sup><a name="coalton-math-real-round-half-down-value"></a>
 <code>&forall; :A. (<a href="#coalton-math-real-quantizable-class">Quantizable</a> :A) (<a href="#coalton-classes-num-class">Num</a> :A) &rArr; (:A &rarr; <a href="#coalton-integer-type">Integer</a>)</code>
 
 Return the nearest integer to X, with ties breaking toward positive infinity.
@@ -7018,7 +7018,7 @@ Return the nearest integer to X, with ties breaking toward positive infinity.
 
 ***
 
-#### <a href="#coalton-math-real-round-half-up-value"><code>(ROUND-HALF-UP X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L247-L249">src</a></sub></sup><a name="coalton-math-real-round-half-up-value"></a>
+#### <a href="#coalton-math-real-round-half-up-value"><code>(ROUND-HALF-UP X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L254-L256">src</a></sub></sup><a name="coalton-math-real-round-half-up-value"></a>
 <code>&forall; :A. (<a href="#coalton-math-real-quantizable-class">Quantizable</a> :A) (<a href="#coalton-classes-num-class">Num</a> :A) &rArr; (:A &rarr; <a href="#coalton-integer-type">Integer</a>)</code>
 
 Return the nearest integer to X, with ties breaking toward positive infinity.
@@ -7027,7 +7027,7 @@ Return the nearest integer to X, with ties breaking toward positive infinity.
 
 ***
 
-#### <a href="#coalton-math-real-round/-value"><code>(ROUND/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L288-L290">src</a></sub></sup><a name="coalton-math-real-round/-value"></a>
+#### <a href="#coalton-math-real-round/-value"><code>(ROUND/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L295-L297">src</a></sub></sup><a name="coalton-math-real-round/-value"></a>
 <code>(<a href="#coalton-integer-type">Integer</a> * <a href="#coalton-integer-type">Integer</a> &rarr; <a href="#coalton-integer-type">Integer</a>)</code>
 
 Divide two integers and round the quotient.
@@ -7036,7 +7036,7 @@ Divide two integers and round the quotient.
 
 ***
 
-#### <a href="#coalton-math-real-safe/-value"><code>(SAFE/ X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L257-L261">src</a></sub></sup><a name="coalton-math-real-safe/-value"></a>
+#### <a href="#coalton-math-real-safe/-value"><code>(SAFE/ X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.lisp#L264-L268">src</a></sub></sup><a name="coalton-math-real-safe/-value"></a>
 <code>&forall; :A :B. (<a href="#coalton-classes-num-class">Num</a> :A) (<a href="#coalton-math-arith-dividable-class">Dividable</a> :A :B) &rArr; (:A * :A &rarr; (<a href="#coalton-optional-type">Optional</a> :B))</code>
 
 Safely divide X by Y, returning None if Y is zero.
