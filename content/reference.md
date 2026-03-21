@@ -136,17 +136,17 @@ A single bit, equal to 0 or 1. Uses `cl:bit`.
 - <code><a href="#coalton-math-integral-remainder-class">Remainder</a> <a href="#coalton-bit-type">Bit</a></code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-bit-type">Bit</a></code>
 - <code><a href="#coalton-show-show-class">Show</a> <a href="#coalton-bit-type">Bit</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-bit-type">Bit</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-bit-type">Bit</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-bit-type">Bit</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-bit-type">Bit</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-bit-type">Bit</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-bit-type">Bit</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-bit-type">Bit</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-bit-type">Bit</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-bit-type">Bit</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-bit-type">Bit</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-bit-type">Bit</a></code>
 
 </details>
 
@@ -246,14 +246,14 @@ Single-precision floating point number (32 bits in size). Represented by a Commo
 - <code><a href="#coalton-show-show-class">Show</a> <a href="#coalton-f32-type">F32</a></code>
 - <code><a href="#coalton-math-arith-transfinite-class">Transfinite</a> <a href="#coalton-f32-type">F32</a></code>
 - <code><a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> <a href="#coalton-f32-type">F32</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-string-type">String</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-fraction-type">Fraction</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-f32-type">F32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-f32-type">F32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-f32-type">F32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-f32-type">F32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-f32-type">F32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-f32-type">F32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-f32-type">F32</a></code>
 
 </details>
 
@@ -299,12 +299,12 @@ Double-precision floating point number (64 bits in size). Represented by a Commo
 - <code><a href="#coalton-show-show-class">Show</a> <a href="#coalton-f64-type">F64</a></code>
 - <code><a href="#coalton-math-arith-transfinite-class">Transfinite</a> <a href="#coalton-f64-type">F64</a></code>
 - <code><a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> <a href="#coalton-f64-type">F64</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-string-type">String</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-fraction-type">Fraction</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-f64-type">F64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-f64-type">F64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-f64-type">F64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-f64-type">F64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-f64-type">F64</a></code>
 
 </details>
 
@@ -348,9 +348,9 @@ A ratio of integers always in reduced form. Represented by a Common Lisp `cl:rat
 - <code><a href="#coalton-math-integral-remainder-class">Remainder</a> <a href="#coalton-fraction-type">Fraction</a></code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-fraction-type">Fraction</a></code>
 - <code><a href="#coalton-show-show-class">Show</a> <a href="#coalton-fraction-type">Fraction</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-string-type">String</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-fraction-type">Fraction</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-fraction-type">Fraction</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a> <a href="#coalton-fraction-type">Fraction</a></code>
 
 </details>
 
@@ -390,21 +390,21 @@ Signed 16-bit integer capable of storing values in `[-32768, 32767]`. Uses `(sig
 - <code><a href="#coalton-math-integral-remainder-class">Remainder</a> <a href="#coalton-i16-type">I16</a></code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-i16-type">I16</a></code>
 - <code><a href="#coalton-show-show-class">Show</a> <a href="#coalton-i16-type">I16</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-string-type">String</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-bit-type">Bit</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-i8-type">I8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-u16-type">U16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-u32-type">U32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-u64-type">U64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-u8-type">U8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-ufix-type">UFix</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-i16-type">I16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-i16-type">I16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-i16-type">I16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-i16-type">I16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-i16-type">I16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-i16-type">I16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-i16-type">I16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-i16-type">I16</a></code>
 
 </details>
 
@@ -447,21 +447,21 @@ Signed 32-bit integer capable of storing values in `[-2147483648, 2147483647]`. 
 - <code><a href="#coalton-math-integral-remainder-class">Remainder</a> <a href="#coalton-i32-type">I32</a></code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-i32-type">I32</a></code>
 - <code><a href="#coalton-show-show-class">Show</a> <a href="#coalton-i32-type">I32</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-string-type">String</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-bit-type">Bit</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-f32-type">F32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-i16-type">I16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-i8-type">I8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-u16-type">U16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-u32-type">U32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-u64-type">U64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-u8-type">U8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-ufix-type">UFix</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-i32-type">I32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-i32-type">I32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-i32-type">I32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-i32-type">I32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-i32-type">I32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-i32-type">I32</a></code>
 
 </details>
 
@@ -505,20 +505,20 @@ Signed 64-bit integer capable of storing values in `[-9223372036854775808, 92233
 - <code><a href="#coalton-math-integral-remainder-class">Remainder</a> <a href="#coalton-i64-type">I64</a></code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-i64-type">I64</a></code>
 - <code><a href="#coalton-show-show-class">Show</a> <a href="#coalton-i64-type">I64</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-string-type">String</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-bit-type">Bit</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-f32-type">F32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-f64-type">F64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-i16-type">I16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-i32-type">I32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-i8-type">I8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-ifix-type">IFix</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-u16-type">U16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-u32-type">U32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-u64-type">U64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-u8-type">U8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-ufix-type">UFix</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-i64-type">I64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-i64-type">I64</a></code>
 
 </details>
 
@@ -560,22 +560,22 @@ Signed 8-bit integer capable of storing values in `[-128, 127]`. Uses `(signed-b
 - <code><a href="#coalton-math-integral-remainder-class">Remainder</a> <a href="#coalton-i8-type">I8</a></code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-i8-type">I8</a></code>
 - <code><a href="#coalton-show-show-class">Show</a> <a href="#coalton-i8-type">I8</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-i8-type">I8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-i8-type">I8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-i8-type">I8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-bit-type">Bit</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-u16-type">U16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-u32-type">U32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-u64-type">U64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-u8-type">U8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-ufix-type">UFix</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-i8-type">I8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-i8-type">I8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-i8-type">I8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-i8-type">I8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-i8-type">I8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-i8-type">I8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-i8-type">I8</a></code>
 
 </details>
 
@@ -619,20 +619,20 @@ Non-allocating tagged integer; range is platform-dependent. Does not error on ov
 - <code><a href="#coalton-math-integral-remainder-class">Remainder</a> <a href="#coalton-ifix-type">IFix</a></code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-ifix-type">IFix</a></code>
 - <code><a href="#coalton-show-show-class">Show</a> <a href="#coalton-ifix-type">IFix</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-string-type">String</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-ifix-type">IFix</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-bit-type">Bit</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-f32-type">F32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-f64-type">F64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-i16-type">I16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-i32-type">I32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-i8-type">I8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-u16-type">U16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-u32-type">U32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-u64-type">U64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-u8-type">U8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-ufix-type">UFix</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-ifix-type">IFix</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-ifix-type">IFix</a></code>
 
 </details>
 
@@ -684,20 +684,20 @@ Integer of unbounded size. Represented by a Common Lisp `cl:integer`.
 - <code><a href="#coalton-math-integral-remainder-class">Remainder</a> <a href="#coalton-integer-type">Integer</a></code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-integer-type">Integer</a></code>
 - <code><a href="#coalton-show-show-class">Show</a> <a href="#coalton-integer-type">Integer</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-string-type">String</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-string-type">String</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-bit-type">Bit</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-f32-type">F32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-f64-type">F64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-i16-type">I16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-i32-type">I32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-i64-type">I64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-i8-type">I8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-ifix-type">IFix</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-u16-type">U16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-u32-type">U32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-u64-type">U64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-u8-type">U8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-ufix-type">UFix</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-string-type">String</a> <a href="#coalton-integer-type">Integer</a></code>
 
 </details>
 
@@ -841,102 +841,7 @@ String of characters. Represented by Common Lisp `cl:string`.
 - <code><a href="#coalton-classes-semigroup-class">Semigroup</a> <a href="#coalton-string-type">String</a></code>
 - <code><a href="#coalton-show-show-class">Show</a> <a href="#coalton-string-type">String</a></code>
 - <code><a href="#coalton-classes-signalable-class">Signalable</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-string-type">String</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-string-type">String</a> <a href="#coalton-integer-type">Integer</a></code>
 
 </details>
 
@@ -979,19 +884,19 @@ Unsigned 16-bit integer capable of storing values in `[0, 65535]`. Uses `(unsign
 - <code><a href="#coalton-bits-reversebits-class">ReverseBits</a> <a href="#coalton-u16-type">U16</a></code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-u16-type">U16</a></code>
 - <code><a href="#coalton-show-show-class">Show</a> <a href="#coalton-u16-type">U16</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-u16-type">U16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-u16-type">U16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-u16-type">U16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-u16-type">U16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-u16-type">U16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-u16-type">U16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-bit-type">Bit</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-i16-type">I16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-i8-type">I8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-u8-type">U8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-u16-type">U16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-u16-type">U16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-u16-type">U16</a></code>
 
 </details>
 
@@ -1035,21 +940,21 @@ Unsigned 32-bit integer capable of storing values in `[0, 4294967295]`. Uses `(u
 - <code><a href="#coalton-bits-reversebits-class">ReverseBits</a> <a href="#coalton-u32-type">U32</a></code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-u32-type">U32</a></code>
 - <code><a href="#coalton-show-show-class">Show</a> <a href="#coalton-u32-type">U32</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-string-type">String</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-u32-type">U32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-u32-type">U32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-u32-type">U32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-u32-type">U32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-u32-type">U32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-u32-type">U32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-bit-type">Bit</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-f32-type">F32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-i16-type">I16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-i32-type">I32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-i8-type">I8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-u16-type">U16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-u8-type">U8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-u32-type">U32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-u32-type">U32</a></code>
 
 </details>
 
@@ -1090,24 +995,24 @@ Unsigned 64-bit integer capable of storing values in `[0, 18446744073709551615]`
 - <code><a href="#coalton-bits-reversebits-class">ReverseBits</a> <a href="#coalton-u64-type">U64</a></code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-u64-type">U64</a></code>
 - <code><a href="#coalton-show-show-class">Show</a> <a href="#coalton-u64-type">U64</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-string-type">String</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-u64-type">U64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-u64-type">U64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-u64-type">U64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-u64-type">U64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-u64-type">U64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-u64-type">U64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-bit-type">Bit</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-f32-type">F32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-f64-type">F64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-i16-type">I16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-i32-type">I32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-i64-type">I64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-i8-type">I8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-ifix-type">IFix</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-u16-type">U16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-u32-type">U32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-u8-type">U8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-ufix-type">UFix</a></code>
 
 </details>
 
@@ -1154,18 +1059,18 @@ Unsigned 8-bit integer capable of storing values in `[0, 255]`. Uses `(unsigned-
 - <code><a href="#coalton-bits-reversebits-class">ReverseBits</a> <a href="#coalton-u8-type">U8</a></code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-u8-type">U8</a></code>
 - <code><a href="#coalton-show-show-class">Show</a> <a href="#coalton-u8-type">U8</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-u8-type">U8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-u8-type">U8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-u8-type">U8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-u8-type">U8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-u8-type">U8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-u8-type">U8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-u8-type">U8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-u8-type">U8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-u8-type">U8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-bit-type">Bit</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-i8-type">I8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-u8-type">U8</a></code>
 
 </details>
 
@@ -1208,22 +1113,22 @@ Non-allocating tagged non-negative integer; range is platform-dependent. Uses `(
 - <code><a href="#coalton-bits-reversebits-class">ReverseBits</a> <a href="#coalton-ufix-type">UFix</a></code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-ufix-type">UFix</a></code>
 - <code><a href="#coalton-show-show-class">Show</a> <a href="#coalton-ufix-type">UFix</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-ufix-type">UFix</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-ufix-type">UFix</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-ufix-type">UFix</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-ufix-type">UFix</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-ufix-type">UFix</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-ufix-type">UFix</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-ufix-type">UFix</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-bit-type">Bit</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-f32-type">F32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-f64-type">F64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-i16-type">I16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-i32-type">I32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-i8-type">I8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-u16-type">U16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-u32-type">U32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-u8-type">U8</a></code>
 
 </details>
 
@@ -1460,7 +1365,7 @@ A syntactic convenience for type casting.
 
 is equivalent to
 
-    (the (Result :_ <type>) (tryInto <expr>))
+    (the (Optional <type>) (tryInto <expr>))
 
 and
 
@@ -1468,7 +1373,7 @@ and
 
 is equivalent to
 
-    (fn (expr) (the (Result :_ <type>) (tryInto expr))).
+    (fn (expr) (the (Optional <type>) (tryInto expr))).
 
 Note that this may copy the object or allocate memory.
 
@@ -2107,7 +2012,7 @@ Methods:
 
 ***
 
-#### <a href="#coalton-classes-default-class"><code>Default</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L401-L403">src</a></sub></sup><a name="coalton-classes-default-class"></a>
+#### <a href="#coalton-classes-default-class"><code>Default</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L407-L409">src</a></sub></sup><a name="coalton-classes-default-class"></a>
 <code><a href="#coalton-classes-default-class">Default</a> :A</code>
 
 
@@ -2793,112 +2698,112 @@ Methods:
 ***
 
 #### <a href="#coalton-classes-tryinto-class"><code>TryInto</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L319-L321">src</a></sub></sup><a name="coalton-classes-tryinto-class"></a>
-<code><a href="#coalton-classes-tryinto-class">TryInto</a> :A :B :C</code>
+<code><a href="#coalton-classes-tryinto-class">TryInto</a> :A :B</code>
 
 
-`TRY-INTO` implies some elements of `:a` can be represented exactly by an element of `:b`, but sometimes not. If not, an error of type `:c` is returned.
+`TRY-INTO` implies some elements of `:a` can be represented exactly by an element of `:b`, but sometimes not. Failed conversions return `None`.
 
 Methods:
-- <code>TRYINTO :: (:A &rarr; (<a href="#coalton-classes-result-type">Result</a> :C :B))</code>
+- <code>TRYINTO :: (:A &rarr; (<a href="#coalton-optional-type">Optional</a> :B))</code>
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-string-type">String</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-string-type">String</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-string-type">String</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a> <a href="#coalton-fraction-type">Fraction</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-string-type">String</a> <a href="#coalton-integer-type">Integer</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-f64-type">F64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-f64-type">F64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-f64-type">F64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-f64-type">F64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-f32-type">F32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-f32-type">F32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-f32-type">F32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-f32-type">F32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-f32-type">F32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-f32-type">F32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-f64-type">F64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-f32-type">F32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-ifix-type">IFix</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-ufix-type">UFix</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-i64-type">I64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-u64-type">U64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-i32-type">I32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-u32-type">U32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-i16-type">I16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-u16-type">U16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-i8-type">I8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-u8-type">U8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-bit-type">Bit</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-ufix-type">UFix</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-u64-type">U64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-i32-type">I32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-u32-type">U32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-i16-type">I16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-u16-type">U16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-i8-type">I8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-u8-type">U8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-bit-type">Bit</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-i32-type">I32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-u32-type">U32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-i16-type">I16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-u16-type">U16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-i8-type">I8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-u8-type">U8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-bit-type">Bit</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-ifix-type">IFix</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-ufix-type">UFix</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-u64-type">U64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-i32-type">I32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-u32-type">U32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-i16-type">I16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-u16-type">U16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-i8-type">I8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-u8-type">U8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-bit-type">Bit</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-ifix-type">IFix</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-ufix-type">UFix</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-i64-type">I64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-i32-type">I32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-u32-type">U32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-i16-type">I16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-u16-type">U16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-i8-type">I8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-u8-type">U8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-bit-type">Bit</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-ufix-type">UFix</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-u64-type">U64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-u32-type">U32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-i16-type">I16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-u16-type">U16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-i8-type">I8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-u8-type">U8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-bit-type">Bit</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-i32-type">I32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-i16-type">I16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-u16-type">U16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-i8-type">I8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-u8-type">U8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-bit-type">Bit</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-ufix-type">UFix</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-u64-type">U64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-u32-type">U32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-u16-type">U16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-i8-type">I8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-u8-type">U8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-bit-type">Bit</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-i16-type">I16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-i8-type">I8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-u8-type">U8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-bit-type">Bit</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-ufix-type">UFix</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-u64-type">U64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-u32-type">U32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-u16-type">U16</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-u8-type">U8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-bit-type">Bit</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-i8-type">I8</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-bit-type">Bit</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-fraction-type">Fraction</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-fraction-type">Fraction</a></code>
 
 </details>
 
@@ -2984,7 +2889,7 @@ Equivalent to `(>>= a (fn (_) b))`.
 
 ***
 
-#### <a href="#coalton-classes-as-optional-value"><code>(AS-OPTIONAL CONTAINER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L390-L394">src</a></sub></sup><a name="coalton-classes-as-optional-value"></a>
+#### <a href="#coalton-classes-as-optional-value"><code>(AS-OPTIONAL CONTAINER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L396-L400">src</a></sub></sup><a name="coalton-classes-as-optional-value"></a>
 <code>&forall; :CONTAINER :ELT. <a href="#coalton-classes-unwrappable-class">Unwrappable</a> :CONTAINER &rArr; ((:CONTAINER :ELT) &rarr; (<a href="#coalton-optional-type">Optional</a> :ELT))</code>
 
 Convert any Unwrappable container into an `Optional`, constructing Some on a successful unwrap and None on a failed unwrap.
@@ -2993,7 +2898,7 @@ Convert any Unwrappable container into an `Optional`, constructing Some on a suc
 
 ***
 
-#### <a href="#coalton-classes-default?-value"><code>(DEFAULT? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L414-L416">src</a></sub></sup><a name="coalton-classes-default?-value"></a>
+#### <a href="#coalton-classes-default?-value"><code>(DEFAULT? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L420-L422">src</a></sub></sup><a name="coalton-classes-default?-value"></a>
 <code>&forall; :A. (<a href="#coalton-classes-default-class">Default</a> :A) (<a href="#coalton-classes-eq-class">Eq</a> :A) &rArr; (:A &rarr; <a href="#coalton-boolean-type">Boolean</a>)</code>
 
 Is `x` the default item of its type?
@@ -3002,7 +2907,7 @@ Is `x` the default item of its type?
 
 ***
 
-#### <a href="#coalton-classes-defaulting-unwrap-value"><code>(DEFAULTING-UNWRAP CONTAINER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L407-L411">src</a></sub></sup><a name="coalton-classes-defaulting-unwrap-value"></a>
+#### <a href="#coalton-classes-defaulting-unwrap-value"><code>(DEFAULTING-UNWRAP CONTAINER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L413-L417">src</a></sub></sup><a name="coalton-classes-defaulting-unwrap-value"></a>
 <code>&forall; :CONTAINER :ELEMENT. (<a href="#coalton-classes-unwrappable-class">Unwrappable</a> :CONTAINER) (<a href="#coalton-classes-default-class">Default</a> :ELEMENT) &rArr; ((:CONTAINER :ELEMENT) &rarr; :ELEMENT)</code>
 
 Unwrap an `unwrappable`, returning `(default)` of the wrapped type on failure.
@@ -3011,7 +2916,7 @@ Unwrap an `unwrappable`, returning `(default)` of the wrapped type on failure.
 
 ***
 
-#### <a href="#coalton-classes-expect-value"><code>(EXPECT REASON CONTAINER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L357-L361">src</a></sub></sup><a name="coalton-classes-expect-value"></a>
+#### <a href="#coalton-classes-expect-value"><code>(EXPECT REASON CONTAINER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L363-L367">src</a></sub></sup><a name="coalton-classes-expect-value"></a>
 <code>&forall; :CONTAINER :ELEMENT. <a href="#coalton-classes-unwrappable-class">Unwrappable</a> :CONTAINER &rArr; (<a href="#coalton-string-type">String</a> * (:CONTAINER :ELEMENT) &rarr; :ELEMENT)</code>
 
 Unwrap `container`, signaling an error with the description `reason` on failure.
@@ -3107,7 +3012,7 @@ Returns the lesser element of `x` and `y`.
 
 ***
 
-#### <a href="#coalton-classes-unwrap-value"><code>(UNWRAP CONTAINER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L366-L372">src</a></sub></sup><a name="coalton-classes-unwrap-value"></a>
+#### <a href="#coalton-classes-unwrap-value"><code>(UNWRAP CONTAINER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L372-L378">src</a></sub></sup><a name="coalton-classes-unwrap-value"></a>
 <code>&forall; :CONTAINER :ELEMENT. <a href="#coalton-classes-unwrappable-class">Unwrappable</a> :CONTAINER &rArr; ((:CONTAINER :ELEMENT) &rarr; :ELEMENT)</code>
 
 Unwrap `container`, signaling an error on failure.
@@ -3116,8 +3021,8 @@ Unwrap `container`, signaling an error on failure.
 
 ***
 
-#### <a href="#coalton-classes-unwrap-into-value"><code>(UNWRAP-INTO X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L375-L377">src</a></sub></sup><a name="coalton-classes-unwrap-into-value"></a>
-<code>&forall; :C :A :B. <a href="#coalton-classes-tryinto-class">TryInto</a> :A :B :C &rArr; (:A &rarr; :B)</code>
+#### <a href="#coalton-classes-unwrap-into-value"><code>(UNWRAP-INTO X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L381-L383">src</a></sub></sup><a name="coalton-classes-unwrap-into-value"></a>
+<code>&forall; :A :B. <a href="#coalton-classes-tryinto-class">TryInto</a> :A :B &rArr; (:A &rarr; :B)</code>
 
 Same as `tryInto` followed by `unwrap`.
 
@@ -3125,7 +3030,7 @@ Same as `tryInto` followed by `unwrap`.
 
 ***
 
-#### <a href="#coalton-classes-with-default-value"><code>(WITH-DEFAULT DEFAULT CONTAINER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L383-L387">src</a></sub></sup><a name="coalton-classes-with-default-value"></a>
+#### <a href="#coalton-classes-with-default-value"><code>(WITH-DEFAULT DEFAULT CONTAINER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.lisp#L389-L393">src</a></sub></sup><a name="coalton-classes-with-default-value"></a>
 <code>&forall; :ELEMENT :CONTAINER. <a href="#coalton-classes-unwrappable-class">Unwrappable</a> :CONTAINER &rArr; (:ELEMENT * (:CONTAINER :ELEMENT) &rarr; :ELEMENT)</code>
 
 Unwrap `container`, returning `default` on failure.
@@ -10959,7 +10864,7 @@ root of `poly`. `sturm` caches a Sturm sequence for `poly`.
 - <code><a href="#coalton-math-real-real-class">Real</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a></code>
 - <code><a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a></code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a></code>
-- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-string-type">String</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a> <a href="#coalton-fraction-type">Fraction</a></code>
 
 </details>
 
