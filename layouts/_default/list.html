@@ -31,7 +31,7 @@
 {{- end }}
 
 {{- if .Content }}
-<div class="post-content">
+<div class="post-content{{- if (.Param "hideSectionList") }} post-content-narrow{{- end }}">
   {{- if not (.Param "disableAnchoredHeadings") }}
   {{- partial "anchored_headings.html" .Content -}}
   {{- else }}{{ .Content }}{{ end }}
@@ -47,6 +47,8 @@
 
 {{/* Filter out hidden pages */}}
 {{- $pages = where $pages "Params.hidden" "!=" true }}
+
+{{- if not (.Param "hideSectionList") }}
 
 {{- $paginator := .Paginate $pages }}
 
@@ -117,6 +119,8 @@
     {{- end }}
   </nav>
 </footer>
+{{- end }}
+
 {{- end }}
 
 {{- end }}{{/* end profileMode */}}

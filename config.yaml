@@ -28,10 +28,14 @@ menu:
       name: About
       url: /about/
       weight: 4
+    - identifier: manual
+      name: Manual
+      url: /manual/
+      weight: 5
     - identifier: reference
       name: Reference
       url: /reference/
-      weight: 5
+      weight: 6
 
 params:
   env: production

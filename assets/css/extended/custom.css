@@ -40,6 +40,11 @@ html {
   width: 100%;
 }
 
+.post-content.post-content-narrow {
+  width: min(100%, var(--single-main-width));
+  margin: 0 auto;
+}
+
 
 /*
  * Two pane layout
