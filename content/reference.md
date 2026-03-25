@@ -11041,14 +11041,14 @@ over Z together with a rational isolating interval certified by Sturm's
 theorem. Arithmetic is implemented via resultant-based elimination, and all
 operations (construction, comparison, root selection) are exact.
 
-Construct values with `root' (single root from polynomial + interval),
-`real-roots' (all roots of a polynomial), `fromInt', or `into'. Extract
-rational values with `tryInto'. Standard numeric type class instances are
+Construct values with `root` (single root from polynomial + interval),
+`real-roots` (all roots of a polynomial), `fromInt`, or `into`. Extract
+rational values with `tryInto`. Standard numeric type class instances are
 provided: Eq, Ord, Num, Reciprocable, Radical, Quantizable, and Real.
 
 ### Structs
 
-#### <a href="#coalton-xmath-realalgebraic-realalgebraic-type"><code>RealAlgebraic</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/realalgebraic.ct#L73-L82">src</a></sub></sup><a name="coalton-xmath-realalgebraic-realalgebraic-type"></a>
+#### <a href="#coalton-xmath-realalgebraic-realalgebraic-type"><code>RealAlgebraic</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/realalgebraic.ct#L69-L78">src</a></sub></sup><a name="coalton-xmath-realalgebraic-realalgebraic-type"></a>
 
 Certified real algebraic number.
 
@@ -11080,7 +11080,7 @@ root of `poly`. `sturm` caches a Sturm sequence for `poly`.
 
 ### Values
 
-#### <a href="#coalton-xmath-realalgebraic-decimal-string-value"><code>(DECIMAL-STRING DIGITS X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/realalgebraic.ct#L1767-L1777">src</a></sub></sup><a name="coalton-xmath-realalgebraic-decimal-string-value"></a>
+#### <a href="#coalton-xmath-realalgebraic-decimal-string-value"><code>(DECIMAL-STRING DIGITS X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/realalgebraic.ct#L1759-L1769">src</a></sub></sup><a name="coalton-xmath-realalgebraic-decimal-string-value"></a>
 <code><a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a> &rarr; <a href="#coalton-string-type">String</a></code>
 
 Render a fixed-point decimal approximation of `x`.
@@ -11092,7 +11092,7 @@ and computed from exact rational arithmetic.
 
 ***
 
-#### <a href="#coalton-xmath-realalgebraic-isolating-interval-value"><code>(ISOLATING-INTERVAL X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/realalgebraic.ct#L1639-L1641">src</a></sub></sup><a name="coalton-xmath-realalgebraic-isolating-interval-value"></a>
+#### <a href="#coalton-xmath-realalgebraic-isolating-interval-value"><code>(ISOLATING-INTERVAL X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/realalgebraic.ct#L1631-L1633">src</a></sub></sup><a name="coalton-xmath-realalgebraic-isolating-interval-value"></a>
 <code><a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a> &rarr; <a href="#coalton-classes-tuple-type">Tuple</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-fraction-type">Fraction</a></code>
 
 Return the current rational isolating interval `(lo, hi)` for `x`.
@@ -11101,7 +11101,7 @@ Return the current rational isolating interval `(lo, hi)` for `x`.
 
 ***
 
-#### <a href="#coalton-xmath-realalgebraic-rational?-value"><code>(RATIONAL? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/realalgebraic.ct#L1892-L1896">src</a></sub></sup><a name="coalton-xmath-realalgebraic-rational?-value"></a>
+#### <a href="#coalton-xmath-realalgebraic-rational?-value"><code>(RATIONAL? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/realalgebraic.ct#L1884-L1888">src</a></sub></sup><a name="coalton-xmath-realalgebraic-rational?-value"></a>
 <code><a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a> &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Return `True` when `x` is rational, decided by the rational root theorem.
@@ -11110,7 +11110,7 @@ Return `True` when `x` is rational, decided by the rational root theorem.
 
 ***
 
-#### <a href="#coalton-xmath-realalgebraic-real-roots-value"><code>(REAL-ROOTS COEFFS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/realalgebraic.ct#L790-L806">src</a></sub></sup><a name="coalton-xmath-realalgebraic-real-roots-value"></a>
+#### <a href="#coalton-xmath-realalgebraic-real-roots-value"><code>(REAL-ROOTS COEFFS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/realalgebraic.ct#L782-L798">src</a></sub></sup><a name="coalton-xmath-realalgebraic-real-roots-value"></a>
 <code><a href="#coalton-list-type">List</a> <a href="#coalton-integer-type">Integer</a> &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-string-type">String</a> (<a href="#coalton-list-type">List</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a>)</code>
 
 Isolate all distinct real roots of a polynomial.
@@ -11121,7 +11121,7 @@ COEFFS is a list of integer coefficients in descending degree order.
 
 ***
 
-#### <a href="#coalton-xmath-realalgebraic-refine-value"><code>(REFINE X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/realalgebraic.ct#L1649-L1651">src</a></sub></sup><a name="coalton-xmath-realalgebraic-refine-value"></a>
+#### <a href="#coalton-xmath-realalgebraic-refine-value"><code>(REFINE X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/realalgebraic.ct#L1641-L1643">src</a></sub></sup><a name="coalton-xmath-realalgebraic-refine-value"></a>
 <code><a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a> &rarr; <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a></code>
 
 Return a strictly tighter certified isolating interval for `x`.
@@ -11130,7 +11130,7 @@ Return a strictly tighter certified isolating interval for `x`.
 
 ***
 
-#### <a href="#coalton-xmath-realalgebraic-refine-to-width-value"><code>(REFINE-TO-WIDTH WIDTH X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/realalgebraic.ct#L1654-L1665">src</a></sub></sup><a name="coalton-xmath-realalgebraic-refine-to-width-value"></a>
+#### <a href="#coalton-xmath-realalgebraic-refine-to-width-value"><code>(REFINE-TO-WIDTH WIDTH X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/realalgebraic.ct#L1646-L1657">src</a></sub></sup><a name="coalton-xmath-realalgebraic-refine-to-width-value"></a>
 <code><a href="#coalton-fraction-type">Fraction</a> * <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a> &rarr; <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a></code>
 
 Refine `x` until its isolating interval width is at most `width`.
@@ -11141,7 +11141,7 @@ Refine `x` until its isolating interval width is at most `width`.
 
 ***
 
-#### <a href="#coalton-xmath-realalgebraic-root-value"><code>(ROOT COEFFS LO HI)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/realalgebraic.ct#L776-L787">src</a></sub></sup><a name="coalton-xmath-realalgebraic-root-value"></a>
+#### <a href="#coalton-xmath-realalgebraic-root-value"><code>(ROOT COEFFS LO HI)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/realalgebraic.ct#L768-L779">src</a></sub></sup><a name="coalton-xmath-realalgebraic-root-value"></a>
 <code><a href="#coalton-list-type">List</a> <a href="#coalton-integer-type">Integer</a> * <a href="#coalton-fraction-type">Fraction</a> * <a href="#coalton-fraction-type">Fraction</a> &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-string-type">String</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a></code>
 
 Construct a real algebraic number from a polynomial and isolating interval.
@@ -11154,7 +11154,7 @@ polynomial.
 
 ***
 
-#### <a href="#coalton-xmath-realalgebraic-show-value"><code>(SHOW X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/realalgebraic.ct#L1679-L1705">src</a></sub></sup><a name="coalton-xmath-realalgebraic-show-value"></a>
+#### <a href="#coalton-xmath-realalgebraic-show-value"><code>(SHOW X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/realalgebraic.ct#L1671-L1697">src</a></sub></sup><a name="coalton-xmath-realalgebraic-show-value"></a>
 <code><a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a> &rarr; <a href="#coalton-string-type">String</a></code>
 
 Render a human-readable representation of `x` as a string.
