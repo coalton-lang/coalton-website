@@ -44,7 +44,7 @@ params:
   keywords: [coalton, functional programming, lisp, static types]
   DateFormat: "January 2, 2006"
   defaultTheme: light
-  disableThemeToggle: true
+  disableThemeToggle: false
 
   ShowShareButtons: false
   ShowPostNavLinks: false
