@@ -3832,7 +3832,7 @@ Pathname object. Equivalent to `cl:pathname`
 
 ### Classes
 
-#### <a href="#coalton-file-file-class"><code>File</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L524-L534">src</a></sub></sup><a name="coalton-file-file-class"></a>
+#### <a href="#coalton-file-file-class"><code>File</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L527-L537">src</a></sub></sup><a name="coalton-file-file-class"></a>
 <code><a href="#coalton-file-file-class">File</a> :A</code>
 
 
@@ -3874,7 +3874,7 @@ Closes a FileStream and aborts all operations..
 
 ***
 
-#### <a href="#coalton-file-append-to-file!-value"><code>(APPEND-TO-FILE! PATH DATA)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L735-L741">src</a></sub></sup><a name="coalton-file-append-to-file!-value"></a>
+#### <a href="#coalton-file-append-to-file!-value"><code>(APPEND-TO-FILE! PATH DATA)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L738-L744">src</a></sub></sup><a name="coalton-file-append-to-file!-value"></a>
 <code>&forall; :P :A. (<a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> :A) (<a href="#coalton-classes-into-class">Into</a> :P <a href="#coalton-file-pathname-type">Pathname</a>) (<a href="#coalton-file-file-class">File</a> :A) &rArr; :P * <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-file-fileerror-type">FileError</a> <a href="#coalton-unit-type">Unit</a></code>
 
 Opens and appends a file with data of type :a.
@@ -3910,7 +3910,7 @@ This is equivalent to `mkdir -p`. Creates a directory and its parents. The pathn
 
 ***
 
-#### <a href="#coalton-file-create-temp-directory!-value"><code>(CREATE-TEMP-DIRECTORY!)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L687-L689">src</a></sub></sup><a name="coalton-file-create-temp-directory!-value"></a>
+#### <a href="#coalton-file-create-temp-directory!-value"><code>(CREATE-TEMP-DIRECTORY!)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L690-L692">src</a></sub></sup><a name="coalton-file-create-temp-directory!-value"></a>
 <code>Void &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-file-fileerror-type">FileError</a> <a href="#coalton-file-pathname-type">Pathname</a></code>
 
 This configures a default temporary directory for use.
@@ -3919,7 +3919,7 @@ This configures a default temporary directory for use.
 
 ***
 
-#### <a href="#coalton-file-create-temp-file!-value"><code>(CREATE-TEMP-FILE!)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L692-L698">src</a></sub></sup><a name="coalton-file-create-temp-file!-value"></a>
+#### <a href="#coalton-file-create-temp-file!-value"><code>(CREATE-TEMP-FILE!)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L695-L701">src</a></sub></sup><a name="coalton-file-create-temp-file!-value"></a>
 <code>&key (:extension <a href="#coalton-string-type">String</a>) &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-file-fileerror-type">FileError</a> <a href="#coalton-file-pathname-type">Pathname</a></code>
 
 Create a temporary file path, optionally ending in EXTENSION.
@@ -4036,7 +4036,7 @@ Reads a character from an FileStream.
 
 ***
 
-#### <a href="#coalton-file-read-file-lines-value"><code>(READ-FILE-LINES PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L767-L771">src</a></sub></sup><a name="coalton-file-read-file-lines-value"></a>
+#### <a href="#coalton-file-read-file-lines-value"><code>(READ-FILE-LINES PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L770-L774">src</a></sub></sup><a name="coalton-file-read-file-lines-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-into-class">Into</a> :A <a href="#coalton-file-pathname-type">Pathname</a> &rArr; :A &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-file-fileerror-type">FileError</a> (<a href="#coalton-list-type">List</a> <a href="#coalton-string-type">String</a>)</code>
 
 Reads a file into lines, given a pathname or string.
@@ -4045,7 +4045,7 @@ Reads a file into lines, given a pathname or string.
 
 ***
 
-#### <a href="#coalton-file-read-file-to-string-value"><code>(READ-FILE-TO-STRING PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L760-L764">src</a></sub></sup><a name="coalton-file-read-file-to-string-value"></a>
+#### <a href="#coalton-file-read-file-to-string-value"><code>(READ-FILE-TO-STRING PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L763-L767">src</a></sub></sup><a name="coalton-file-read-file-to-string-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-into-class">Into</a> :A <a href="#coalton-file-pathname-type">Pathname</a> &rArr; :A &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-file-fileerror-type">FileError</a> <a href="#coalton-string-type">String</a></code>
 
 Reads a file into a string, given a pathname string.
@@ -4054,7 +4054,7 @@ Reads a file into a string, given a pathname string.
 
 ***
 
-#### <a href="#coalton-file-read-file-to-vector-value"><code>(READ-FILE-TO-VECTOR STREAM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L613-L622">src</a></sub></sup><a name="coalton-file-read-file-to-vector-value"></a>
+#### <a href="#coalton-file-read-file-to-vector-value"><code>(READ-FILE-TO-VECTOR STREAM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L616-L625">src</a></sub></sup><a name="coalton-file-read-file-to-vector-value"></a>
 <code>&forall; :A. <a href="#coalton-file-file-class">File</a> :A &rArr; <a href="#coalton-file-filestream-type">FileStream</a> :A &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-file-fileerror-type">FileError</a> (<a href="#coalton-vector-vector-type">Vector</a> :A)</code>
 
 Reads a file into a vector of type `:a`.
@@ -4072,7 +4072,7 @@ Reads a line of characters from a FileStream.
 
 ***
 
-#### <a href="#coalton-file-read-vector-value"><code>(READ-VECTOR STREAM CHUNK-SIZE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L599-L607">src</a></sub></sup><a name="coalton-file-read-vector-value"></a>
+#### <a href="#coalton-file-read-vector-value"><code>(READ-VECTOR STREAM CHUNK-SIZE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L602-L610">src</a></sub></sup><a name="coalton-file-read-vector-value"></a>
 <code>&forall; :A. <a href="#coalton-file-file-class">File</a> :A &rArr; <a href="#coalton-file-filestream-type">FileStream</a> :A * <a href="#coalton-ufix-type">UFix</a> &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-file-fileerror-type">FileError</a> (<a href="#coalton-vector-vector-type">Vector</a> :A)</code>
 
 Reads a chunk of a file into a vector of type `:a`.
@@ -4126,7 +4126,7 @@ Generates a system-relative-pathname for a given filename or path. This is a wra
 
 ***
 
-#### <a href="#coalton-file-with-open-file-value"><code>(WITH-OPEN-FILE PATH THUNK)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L588-L592">src</a></sub></sup><a name="coalton-file-with-open-file-value"></a>
+#### <a href="#coalton-file-with-open-file-value"><code>(WITH-OPEN-FILE PATH THUNK)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L591-L595">src</a></sub></sup><a name="coalton-file-with-open-file-value"></a>
 <code>&forall; :PATH :A :B. (<a href="#coalton-file-file-class">File</a> :A) (<a href="#coalton-classes-into-class">Into</a> :PATH <a href="#coalton-file-pathname-type">Pathname</a>) &rArr; :PATH * (<a href="#coalton-file-filestream-type">FileStream</a> :A &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-file-fileerror-type">FileError</a> :B) &key (:direction <a href="#coalton-file-opendirection-type">OpenDirection</a>) (:if-exists <a href="#coalton-file-ifexists-type">IfExists</a>) &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-file-fileerror-type">FileError</a> :B</code>
 
 Open PATH, run THUNK on the stream, and then close it.
@@ -4135,7 +4135,7 @@ Open PATH, run THUNK on the stream, and then close it.
 
 ***
 
-#### <a href="#coalton-file-with-temp-directory-value"><code>(WITH-TEMP-DIRECTORY THUNK)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L716-L721">src</a></sub></sup><a name="coalton-file-with-temp-directory-value"></a>
+#### <a href="#coalton-file-with-temp-directory-value"><code>(WITH-TEMP-DIRECTORY THUNK)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L719-L724">src</a></sub></sup><a name="coalton-file-with-temp-directory-value"></a>
 <code>&forall; :A. (<a href="#coalton-file-pathname-type">Pathname</a> &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-file-fileerror-type">FileError</a> :A) &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-file-fileerror-type">FileError</a> :A</code>
 
 Performs an operation `thunk` inside a temporary directory.
@@ -4144,7 +4144,7 @@ Performs an operation `thunk` inside a temporary directory.
 
 ***
 
-#### <a href="#coalton-file-with-temp-file-value"><code>(WITH-TEMP-FILE THUNK)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L706-L713">src</a></sub></sup><a name="coalton-file-with-temp-file-value"></a>
+#### <a href="#coalton-file-with-temp-file-value"><code>(WITH-TEMP-FILE THUNK)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L709-L716">src</a></sub></sup><a name="coalton-file-with-temp-file-value"></a>
 <code>&forall; :A :B. <a href="#coalton-file-file-class">File</a> :A &rArr; (<a href="#coalton-file-filestream-type">FileStream</a> :A &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-file-fileerror-type">FileError</a> :B) &key (:extension <a href="#coalton-string-type">String</a>) &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-file-fileerror-type">FileError</a> :B</code>
 
 Perform THUNK on a temporary file, optionally ending in EXTENSION.
@@ -4162,7 +4162,7 @@ Writes a `Char` to the stream.
 
 ***
 
-#### <a href="#coalton-file-write-line-value"><code>(WRITE-LINE STREAM S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L640-L643">src</a></sub></sup><a name="coalton-file-write-line-value"></a>
+#### <a href="#coalton-file-write-line-value"><code>(WRITE-LINE STREAM S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L643-L646">src</a></sub></sup><a name="coalton-file-write-line-value"></a>
 <code><a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-char-type">Char</a> * <a href="#coalton-string-type">String</a> &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-file-fileerror-type">FileError</a> <a href="#coalton-unit-type">Unit</a></code>
 
 Writes a string with an appended newline to a filestream of type Char.
@@ -4171,7 +4171,7 @@ Writes a string with an appended newline to a filestream of type Char.
 
 ***
 
-#### <a href="#coalton-file-write-string-value"><code>(WRITE-STRING FS S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L635-L637">src</a></sub></sup><a name="coalton-file-write-string-value"></a>
+#### <a href="#coalton-file-write-string-value"><code>(WRITE-STRING FS S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L638-L640">src</a></sub></sup><a name="coalton-file-write-string-value"></a>
 <code><a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-char-type">Char</a> * <a href="#coalton-string-type">String</a> &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-file-fileerror-type">FileError</a> <a href="#coalton-unit-type">Unit</a></code>
 
 Writes a `string` to a FileStream of type Char.
@@ -4180,7 +4180,7 @@ Writes a `string` to a FileStream of type Char.
 
 ***
 
-#### <a href="#coalton-file-write-to-file!-value"><code>(WRITE-TO-FILE! PATH DATA)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L751-L757">src</a></sub></sup><a name="coalton-file-write-to-file!-value"></a>
+#### <a href="#coalton-file-write-to-file!-value"><code>(WRITE-TO-FILE! PATH DATA)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L754-L760">src</a></sub></sup><a name="coalton-file-write-to-file!-value"></a>
 <code>&forall; :P :A. (<a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> :A) (<a href="#coalton-classes-into-class">Into</a> :P <a href="#coalton-file-pathname-type">Pathname</a>) (<a href="#coalton-file-file-class">File</a> :A) &rArr; :P * <a href="#coalton-vector-vector-type">Vector</a> :A &key (:if-exists <a href="#coalton-file-ifexists-type">IfExists</a>) &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-file-fileerror-type">FileError</a> <a href="#coalton-unit-type">Unit</a></code>
 
 Open PATH and write DATA using the requested IF-EXISTS policy.
@@ -4189,7 +4189,7 @@ Open PATH and write DATA using the requested IF-EXISTS policy.
 
 ***
 
-#### <a href="#coalton-file-write-vector-value"><code>(WRITE-VECTOR STREAM V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L628-L632">src</a></sub></sup><a name="coalton-file-write-vector-value"></a>
+#### <a href="#coalton-file-write-vector-value"><code>(WRITE-VECTOR STREAM V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L631-L635">src</a></sub></sup><a name="coalton-file-write-vector-value"></a>
 <code>&forall; :A. (<a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> :A) (<a href="#coalton-file-file-class">File</a> :A) &rArr; <a href="#coalton-file-filestream-type">FileStream</a> :A * <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-file-fileerror-type">FileError</a> <a href="#coalton-unit-type">Unit</a></code>
 
 Writes elements of an vector of type `:a` to a stream of type `:a`.
