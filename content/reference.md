@@ -171,7 +171,7 @@ Either true or false, internally represented by `cl:t` and `cl:nil` respectively
 - <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-boolean-type">Boolean</a></code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-boolean-type">Boolean</a></code>
 - <code><a href="#coalton-show-show-class">Show</a> <a href="#coalton-boolean-type">Boolean</a></code>
-- <code><a href="#coalton-experimental-do-control-core-terminator-class">Terminator</a> <a href="#coalton-boolean-type">Boolean</a></code>
+- <code><a href="#coalton-experimental-do-control-core-truthlike-class">Truthlike</a> <a href="#coalton-boolean-type">Boolean</a></code>
 
 </details>
 
@@ -746,8 +746,8 @@ Homogeneous list of objects. Represented as a typical Common Lisp chain of `cl:c
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> :T &rArr; <a href="#coalton-classes-iso-class">Iso</a> (<a href="#coalton-lisparray-lisparray-type">LispArray</a> :T) (<a href="#coalton-list-type">List</a> :T)</code>
 - <code><a href="#coalton-classes-semigroup-class">Semigroup</a> (<a href="#coalton-list-type">List</a> :A)</code>
 - <code><a href="#coalton-show-show-class">Show</a> :A &rArr; <a href="#coalton-show-show-class">Show</a> (<a href="#coalton-list-type">List</a> :A)</code>
-- <code><a href="#coalton-experimental-do-control-core-terminator-class">Terminator</a> (<a href="#coalton-list-type">List</a> :A)</code>
 - <code><a href="#coalton-classes-traversable-class">Traversable</a> <a href="#coalton-list-type">List</a></code>
+- <code><a href="#coalton-experimental-do-control-core-truthlike-class">Truthlike</a> (<a href="#coalton-list-type">List</a> :A)</code>
 - <code><a href="#coalton-experimental-do-control-core-yielder-class">Yielder</a> <a href="#coalton-list-type">List</a></code>
 
 </details>
@@ -785,8 +785,8 @@ A type that allows indicating the presence or absence of a value. The underlying
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-optional-type">Optional</a> :A)</code>
 - <code><a href="#coalton-classes-semigroup-class">Semigroup</a> :A &rArr; <a href="#coalton-classes-semigroup-class">Semigroup</a> (<a href="#coalton-optional-type">Optional</a> :A)</code>
 - <code><a href="#coalton-show-show-class">Show</a> :A &rArr; <a href="#coalton-show-show-class">Show</a> (<a href="#coalton-optional-type">Optional</a> :A)</code>
-- <code><a href="#coalton-experimental-do-control-core-terminator-class">Terminator</a> (<a href="#coalton-optional-type">Optional</a> :A)</code>
 - <code><a href="#coalton-classes-traversable-class">Traversable</a> <a href="#coalton-optional-type">Optional</a></code>
+- <code><a href="#coalton-experimental-do-control-core-truthlike-class">Truthlike</a> (<a href="#coalton-optional-type">Optional</a> :A)</code>
 - <code><a href="#coalton-classes-unwrappable-class">Unwrappable</a> <a href="#coalton-optional-type">Optional</a></code>
 - <code><a href="#coalton-experimental-do-control-core-yielder-class">Yielder</a> <a href="#coalton-optional-type">Optional</a></code>
 
@@ -1894,8 +1894,8 @@ Represents something that may have failed.
 - <code><a href="#coalton-classes-monoid-class">Monoid</a> :B &rArr; <a href="#coalton-classes-monoid-class">Monoid</a> (<a href="#coalton-classes-result-type">Result</a> :A :B)</code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-classes-result-type">Result</a> :|0| :|1|)</code>
 - <code><a href="#coalton-classes-semigroup-class">Semigroup</a> :B &rArr; <a href="#coalton-classes-semigroup-class">Semigroup</a> (<a href="#coalton-classes-result-type">Result</a> :A :B)</code>
-- <code><a href="#coalton-experimental-do-control-core-terminator-class">Terminator</a> (<a href="#coalton-classes-result-type">Result</a> :E :A)</code>
 - <code><a href="#coalton-classes-traversable-class">Traversable</a> (<a href="#coalton-classes-result-type">Result</a> :A)</code>
+- <code><a href="#coalton-experimental-do-control-core-truthlike-class">Truthlike</a> (<a href="#coalton-classes-result-type">Result</a> :E :A)</code>
 - <code><a href="#coalton-classes-unwrappable-class">Unwrappable</a> (<a href="#coalton-classes-result-type">Result</a> :A)</code>
 - <code><a href="#coalton-experimental-do-control-core-yielder-class">Yielder</a> (<a href="#coalton-classes-result-type">Result</a> :E)</code>
 
@@ -3205,13 +3205,13 @@ Unwrap `container`, returning `default` on failure.
 
 ### Values
 
-#### <a href="#coalton-experimental-do-control-core-flatmap-success-value"><code>(FLATMAP-SUCCESS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.ct#L205-L205">src</a></sub></sup><a name="coalton-experimental-do-control-core-flatmap-success-value"></a>
+#### <a href="#coalton-experimental-do-control-core-flatmap-success-value"><code>(FLATMAP-SUCCESS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.ct#L204-L204">src</a></sub></sup><a name="coalton-experimental-do-control-core-flatmap-success-value"></a>
 <code>&forall; :Y :A :M :B. (<a href="#coalton-classes-monad-class">Monad</a> :M) (<a href="#coalton-experimental-do-control-core-yielder-class">Yielder</a> :Y) &rArr; :Y :A * (:A &rarr; :M (:Y :B)) &rarr; :M (:Y :B)</code>
 
 
 ***
 
-#### <a href="#coalton-experimental-do-control-core-flatmap-successm-value"><code>(FLATMAP-SUCCESSM MVAL? F-&gt;MVAL?B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.ct#L209-L214">src</a></sub></sup><a name="coalton-experimental-do-control-core-flatmap-successm-value"></a>
+#### <a href="#coalton-experimental-do-control-core-flatmap-successm-value"><code>(FLATMAP-SUCCESSM MVAL? F-&gt;MVAL?B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.ct#L208-L213">src</a></sub></sup><a name="coalton-experimental-do-control-core-flatmap-successm-value"></a>
 <code>&forall; :M :Y :A :B. (<a href="#coalton-classes-monad-class">Monad</a> :M) (<a href="#coalton-experimental-do-control-core-yielder-class">Yielder</a> :Y) &rArr; :M (:Y :A) * (:A &rarr; :M (:Y :B)) &rarr; :M (:Y :B)</code>
 
 Evaluate MVAL?, and if the result yields a value, then flatmap F->MVAL?B
@@ -3221,17 +3221,17 @@ over the value.
 
 ***
 
-#### <a href="#coalton-experimental-do-control-core-if*-value"><code>(IF* VAL? M-TRUE M-FALSE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.ct#L153-L158">src</a></sub></sup><a name="coalton-experimental-do-control-core-if*-value"></a>
-<code>&forall; :T :M :B. (<a href="#coalton-classes-monad-class">Monad</a> :M) (<a href="#coalton-experimental-do-control-core-terminator-class">Terminator</a> :T) &rArr; :T * :M :B * :M :B &rarr; :M :B</code>
+#### <a href="#coalton-experimental-do-control-core-if*-value"><code>(IF* VAL? M-TRUE M-FALSE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.ct#L152-L157">src</a></sub></sup><a name="coalton-experimental-do-control-core-if*-value"></a>
+<code>&forall; :T :M :B. (<a href="#coalton-classes-monad-class">Monad</a> :M) (<a href="#coalton-experimental-do-control-core-truthlike-class">Truthlike</a> :T) &rArr; :T * :M :B * :M :B &rarr; :M :B</code>
 
-Choose between M-TRUE and M-FALSE based on VAL?. If (ended? VAL?) is true, run M-TRUE,
-else run M-FALSE.
+Choose between M-TRUE and M-FALSE based on VAL?. If VAL? is true-like, run M-TRUE,
+otherwise run M-FALSE.
 
 
 
 ***
 
-#### <a href="#coalton-experimental-do-control-core-if-val-value"><code>(IF-VAL VAL? F-MVAL M-NONE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.ct#L162-L168">src</a></sub></sup><a name="coalton-experimental-do-control-core-if-val-value"></a>
+#### <a href="#coalton-experimental-do-control-core-if-val-value"><code>(IF-VAL VAL? F-MVAL M-NONE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.ct#L161-L167">src</a></sub></sup><a name="coalton-experimental-do-control-core-if-val-value"></a>
 <code>&forall; :Y :A :M :B. (<a href="#coalton-classes-monad-class">Monad</a> :M) (<a href="#coalton-experimental-do-control-core-yielder-class">Yielder</a> :Y) &rArr; :Y :A * (:A &rarr; :M :B) * :M :B &rarr; :M :B</code>
 
 If VAL? yields a value, apply F-MVAL to it. Otherwise, run M-NONE.
@@ -3240,7 +3240,7 @@ If VAL? yields a value, apply F-MVAL to it. Otherwise, run M-NONE.
 
 ***
 
-#### <a href="#coalton-experimental-do-control-core-if-valm-value"><code>(IF-VALM MVAL? F-MVAL M-NONE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.ct#L182-L187">src</a></sub></sup><a name="coalton-experimental-do-control-core-if-valm-value"></a>
+#### <a href="#coalton-experimental-do-control-core-if-valm-value"><code>(IF-VALM MVAL? F-MVAL M-NONE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.ct#L181-L186">src</a></sub></sup><a name="coalton-experimental-do-control-core-if-valm-value"></a>
 <code>&forall; :M :Y :A :B. (<a href="#coalton-classes-monad-class">Monad</a> :M) (<a href="#coalton-experimental-do-control-core-yielder-class">Yielder</a> :Y) &rArr; :M (:Y :A) * (:A &rarr; :M :B) * :M :B &rarr; :M :B</code>
 
 Evaluate MVAL? and dispatch to F-MVAL if the result yields a value.
@@ -3250,7 +3250,7 @@ Otherwise evaluate M-NONE.
 
 ***
 
-#### <a href="#coalton-experimental-do-control-core-if-val_-value"><code>(IF-VAL_ VAL? F-MVAL M-NONE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.ct#L172-L178">src</a></sub></sup><a name="coalton-experimental-do-control-core-if-val_-value"></a>
+#### <a href="#coalton-experimental-do-control-core-if-val_-value"><code>(IF-VAL_ VAL? F-MVAL M-NONE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.ct#L171-L177">src</a></sub></sup><a name="coalton-experimental-do-control-core-if-val_-value"></a>
 <code>&forall; :Y :A :M :B :C. (<a href="#coalton-classes-monad-class">Monad</a> :M) (<a href="#coalton-experimental-do-control-core-yielder-class">Yielder</a> :Y) &rArr; :Y :A * (:A &rarr; :M :B) * :M :C &rarr; :M <a href="#coalton-unit-type">Unit</a></code>
 
 Like if-val, but discards the branch result and returns Unit.
@@ -3259,7 +3259,7 @@ Like if-val, but discards the branch result and returns Unit.
 
 ***
 
-#### <a href="#coalton-experimental-do-control-core-map-success-value"><code>(MAP-SUCCESS VAL? F-&gt;MB)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.ct#L191-L193">src</a></sub></sup><a name="coalton-experimental-do-control-core-map-success-value"></a>
+#### <a href="#coalton-experimental-do-control-core-map-success-value"><code>(MAP-SUCCESS VAL? F-&gt;MB)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.ct#L190-L192">src</a></sub></sup><a name="coalton-experimental-do-control-core-map-success-value"></a>
 <code>&forall; :Y :A :M :B. (<a href="#coalton-classes-monad-class">Monad</a> :M) (<a href="#coalton-experimental-do-control-core-yielder-class">Yielder</a> :Y) &rArr; :Y :A * (:A &rarr; :M :B) &rarr; :M (:Y :B)</code>
 
 Map F->MB over the successful/available value(s) of VAL? within the monad.
@@ -3268,7 +3268,7 @@ Map F->MB over the successful/available value(s) of VAL? within the monad.
 
 ***
 
-#### <a href="#coalton-experimental-do-control-core-map-successm-value"><code>(MAP-SUCCESSM MVAL? F-&gt;MB)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.ct#L197-L201">src</a></sub></sup><a name="coalton-experimental-do-control-core-map-successm-value"></a>
+#### <a href="#coalton-experimental-do-control-core-map-successm-value"><code>(MAP-SUCCESSM MVAL? F-&gt;MB)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.ct#L196-L200">src</a></sub></sup><a name="coalton-experimental-do-control-core-map-successm-value"></a>
 <code>&forall; :M :Y :A :B. (<a href="#coalton-classes-monad-class">Monad</a> :M) (<a href="#coalton-experimental-do-control-core-yielder-class">Yielder</a> :Y) &rArr; :M (:Y :A) * (:A &rarr; :M :B) &rarr; :M (:Y :B)</code>
 
 Evaluate MVAL? and map F->MB over the successful value(s) from inside the monad.
@@ -3277,7 +3277,7 @@ Evaluate MVAL? and map F->MB over the successful value(s) from inside the monad.
 
 ***
 
-#### <a href="#coalton-experimental-do-control-core-when-val-value"><code>(WHEN-VAL VAL? F-&gt;M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.ct#L133-L141">src</a></sub></sup><a name="coalton-experimental-do-control-core-when-val-value"></a>
+#### <a href="#coalton-experimental-do-control-core-when-val-value"><code>(WHEN-VAL VAL? F-&gt;M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.ct#L132-L140">src</a></sub></sup><a name="coalton-experimental-do-control-core-when-val-value"></a>
 <code>&forall; :Y :A :M :Z. (<a href="#coalton-classes-monad-class">Monad</a> :M) (<a href="#coalton-experimental-do-control-core-yielder-class">Yielder</a> :Y) &rArr; :Y :A * (:A &rarr; :M :Z) &rarr; :M <a href="#coalton-unit-type">Unit</a></code>
 
 If VAL? yields a value, apply F->M to it. If not, do nothing. Always returns Unit.
@@ -3286,7 +3286,7 @@ If VAL? yields a value, apply F->M to it. If not, do nothing. Always returns Uni
 
 ***
 
-#### <a href="#coalton-experimental-do-control-core-when-valm-value"><code>(WHEN-VALM MVAL? F-&gt;M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.ct#L145-L149">src</a></sub></sup><a name="coalton-experimental-do-control-core-when-valm-value"></a>
+#### <a href="#coalton-experimental-do-control-core-when-valm-value"><code>(WHEN-VALM MVAL? F-&gt;M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.ct#L144-L148">src</a></sub></sup><a name="coalton-experimental-do-control-core-when-valm-value"></a>
 <code>&forall; :M :Y :A :Z. (<a href="#coalton-classes-monad-class">Monad</a> :M) (<a href="#coalton-experimental-do-control-core-yielder-class">Yielder</a> :Y) &rArr; :M (:Y :A) * (:A &rarr; :M :Z) &rarr; :M <a href="#coalton-unit-type">Unit</a></code>
 
 Evaluate MVAL?, and if it yields, run F->M on the value. Otherwise, do nothing.
@@ -3295,20 +3295,19 @@ Evaluate MVAL?, and if it yields, run F->M on the value. Otherwise, do nothing.
 
 ***
 
-#### <a href="#coalton-experimental-do-control-core-whenm-value"><code>(WHENM MTERM? MOP)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.ct#L125-L129">src</a></sub></sup><a name="coalton-experimental-do-control-core-whenm-value"></a>
-<code>&forall; :M :T :Z. (<a href="#coalton-classes-monad-class">Monad</a> :M) (<a href="#coalton-experimental-do-control-core-terminator-class">Terminator</a> :T) &rArr; :M :T * :M :Z &rarr; :M <a href="#coalton-unit-type">Unit</a></code>
+#### <a href="#coalton-experimental-do-control-core-whenm-value"><code>(WHENM MVAL MOP)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.ct#L124-L128">src</a></sub></sup><a name="coalton-experimental-do-control-core-whenm-value"></a>
+<code>&forall; :M :T :Z. (<a href="#coalton-classes-monad-class">Monad</a> :M) (<a href="#coalton-experimental-do-control-core-truthlike-class">Truthlike</a> :T) &rArr; :M :T * :M :Z &rarr; :M <a href="#coalton-unit-type">Unit</a></code>
 
-Evaluate MTERM?, and if it indicates completion, run MOP, or do nothing.
+Evaluate MVAL, and if returns a true-like value, run MOP. Otherwise do nothing.
 
 
 
 ***
 
-#### <a href="#coalton-experimental-do-control-core-when_-value"><code>(WHEN_ TERM? M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.ct#L116-L121">src</a></sub></sup><a name="coalton-experimental-do-control-core-when_-value"></a>
-<code>&forall; :T :M :Z. (<a href="#coalton-classes-monad-class">Monad</a> :M) (<a href="#coalton-experimental-do-control-core-terminator-class">Terminator</a> :T) &rArr; :T * :M :Z &rarr; :M <a href="#coalton-unit-type">Unit</a></code>
+#### <a href="#coalton-experimental-do-control-core-when_-value"><code>(WHEN_ VAL M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-core.ct#L116-L120">src</a></sub></sup><a name="coalton-experimental-do-control-core-when_-value"></a>
+<code>&forall; :T :M :Z. (<a href="#coalton-classes-monad-class">Monad</a> :M) (<a href="#coalton-experimental-do-control-core-truthlike-class">Truthlike</a> :T) &rArr; :T * :M :Z &rarr; :M <a href="#coalton-unit-type">Unit</a></code>
 
-Run the monadic operation M when the terminator TERM? indicates completion,
-or do nothing.
+Run the monadic operation M when the value VAL is true-like. Otherwise do nothing.
 
 
 
@@ -3349,10 +3348,10 @@ Discards the return values and returns Unit.
 ***
 
 #### <a href="#coalton-experimental-do-control-loops-loop-do-while-value"><code>(LOOP-DO-WHILE M-TERM? BODY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.ct#L60-L69">src</a></sub></sup><a name="coalton-experimental-do-control-loops-loop-do-while-value"></a>
-<code>&forall; :M :T :A. (<a href="#coalton-classes-monad-class">Monad</a> :M) (<a href="#coalton-experimental-do-control-core-terminator-class">Terminator</a> :T) &rArr; :M :T * :M :A &rarr; :M <a href="#coalton-unit-type">Unit</a></code>
+<code>&forall; :M :T :A. (<a href="#coalton-classes-monad-class">Monad</a> :M) (<a href="#coalton-experimental-do-control-core-truthlike-class">Truthlike</a> :T) &rArr; :M :T * :M :A &rarr; :M <a href="#coalton-unit-type">Unit</a></code>
 
-Before each iteration, evaluate M-TERM?. If it indicates completion, stop; otherwise run BODY.
-Returns Unit.
+Before each iteration, evaluate M-TERM?. If it returns a true-like value, run BODY.
+Otherwise, stop.
 
 
 
@@ -3369,9 +3368,9 @@ M-OPERATION. Returns Unit.
 ***
 
 #### <a href="#coalton-experimental-do-control-loops-loop-while-value"><code>(LOOP-WHILE M-OPERATION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops.ct#L37-L43">src</a></sub></sup><a name="coalton-experimental-do-control-loops-loop-while-value"></a>
-<code>&forall; :M :T. (<a href="#coalton-classes-monad-class">Monad</a> :M) (<a href="#coalton-experimental-do-control-core-terminator-class">Terminator</a> :T) &rArr; :M :T &rarr; :M <a href="#coalton-unit-type">Unit</a></code>
+<code>&forall; :M :T. (<a href="#coalton-classes-monad-class">Monad</a> :M) (<a href="#coalton-experimental-do-control-core-truthlike-class">Truthlike</a> :T) &rArr; :M :T &rarr; :M <a href="#coalton-unit-type">Unit</a></code>
 
-Repeat M-OPERATION until it returns a terminated value. Returns Unit.
+Run M-OPERATION. If it returns a true-like value, repeat. Otherwise stop.
 
 
 
@@ -3411,7 +3410,7 @@ Wraps BODY in a 'do' block. Returns Unit.
 
 ### Types
 
-#### <a href="#coalton-experimental-do-control-loops-adv-loopt-type"><code>LoopT</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.ct#L76-L77">src</a></sub></sup><a name="coalton-experimental-do-control-loops-adv-loopt-type"></a>
+#### <a href="#coalton-experimental-do-control-loops-adv-loopt-type"><code>LoopT</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.ct#L81-L82">src</a></sub></sup><a name="coalton-experimental-do-control-loops-adv-loopt-type"></a>
 - <code>(LoopT :A (<a href="#coalton-experimental-do-control-loops-adv-step-type">Step</a> :B))</code>
 <details>
 <summary>Instances</summary>
@@ -3432,7 +3431,7 @@ Wraps BODY in a 'do' block. Returns Unit.
 
 ### Values
 
-#### <a href="#coalton-experimental-do-control-loops-adv-collect-value"><code>(COLLECT BODY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.ct#L232-L242">src</a></sub></sup><a name="coalton-experimental-do-control-loops-adv-collect-value"></a>
+#### <a href="#coalton-experimental-do-control-loops-adv-collect-value"><code>(COLLECT BODY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.ct#L237-L247">src</a></sub></sup><a name="coalton-experimental-do-control-loops-adv-collect-value"></a>
 <code>&forall; :M :A. <a href="#coalton-classes-monad-class">Monad</a> :M &rArr; <a href="#coalton-experimental-do-control-loops-adv-loopt-type">LoopT</a> :M :A &rarr; :M (<a href="#coalton-list-type">List</a> :A)</code>
 
 Run BODY in a loop, collecting each value it produces into a list in encounter order.
@@ -3442,7 +3441,7 @@ Stops when BODY breaks. Continues skip the rest of the iteration. Returns the co
 
 ***
 
-#### <a href="#coalton-experimental-do-control-loops-adv-collect-val-value"><code>(COLLECT-VAL BODY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.ct#L245-L260">src</a></sub></sup><a name="coalton-experimental-do-control-loops-adv-collect-val-value"></a>
+#### <a href="#coalton-experimental-do-control-loops-adv-collect-val-value"><code>(COLLECT-VAL BODY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.ct#L250-L265">src</a></sub></sup><a name="coalton-experimental-do-control-loops-adv-collect-val-value"></a>
 <code>&forall; :M :Y :A. (<a href="#coalton-classes-monad-class">Monad</a> :M) (<a href="#coalton-experimental-do-control-core-yielder-class">Yielder</a> :Y) &rArr; <a href="#coalton-experimental-do-control-loops-adv-loopt-type">LoopT</a> :M (:Y :A) &rarr; :M (<a href="#coalton-list-type">List</a> :A)</code>
 
 Run BODY in a loop, adding each available value it yields to a list.
@@ -3453,7 +3452,7 @@ Returns the collected list.
 
 ***
 
-#### <a href="#coalton-experimental-do-control-loops-adv-foreach-value"><code>(FOREACH LST FA-&gt;LPT-M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.ct#L263-L274">src</a></sub></sup><a name="coalton-experimental-do-control-loops-adv-foreach-value"></a>
+#### <a href="#coalton-experimental-do-control-loops-adv-foreach-value"><code>(FOREACH LST FA-&gt;LPT-M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.ct#L268-L279">src</a></sub></sup><a name="coalton-experimental-do-control-loops-adv-foreach-value"></a>
 <code>&forall; :A :M :Z. <a href="#coalton-classes-monad-class">Monad</a> :M &rArr; <a href="#coalton-list-type">List</a> :A * (:A &rarr; <a href="#coalton-experimental-do-control-loops-adv-loopt-type">LoopT</a> :M :Z) &rarr; :M <a href="#coalton-unit-type">Unit</a></code>
 
 For each element of LST, run FA->LPT-M on it. Break stops the iteration.
@@ -3463,17 +3462,17 @@ Continue skips to the next element. Discards return values and returns Unit.
 
 ***
 
-#### <a href="#coalton-experimental-do-control-loops-adv-loop-do-while-value"><code>(LOOP-DO-WHILE M-TERM? BODY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.ct#L204-L215">src</a></sub></sup><a name="coalton-experimental-do-control-loops-adv-loop-do-while-value"></a>
-<code>&forall; :M :T :A. (<a href="#coalton-classes-monad-class">Monad</a> :M) (<a href="#coalton-experimental-do-control-core-terminator-class">Terminator</a> :T) &rArr; :M :T * <a href="#coalton-experimental-do-control-loops-adv-loopt-type">LoopT</a> :M :A &rarr; :M <a href="#coalton-unit-type">Unit</a></code>
+#### <a href="#coalton-experimental-do-control-loops-adv-loop-do-while-value"><code>(LOOP-DO-WHILE M-TERM? BODY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.ct#L209-L220">src</a></sub></sup><a name="coalton-experimental-do-control-loops-adv-loop-do-while-value"></a>
+<code>&forall; :M :T :A. (<a href="#coalton-classes-monad-class">Monad</a> :M) (<a href="#coalton-experimental-do-control-core-truthlike-class">Truthlike</a> :T) &rArr; :M :T * <a href="#coalton-experimental-do-control-loops-adv-loopt-type">LoopT</a> :M :A &rarr; :M <a href="#coalton-unit-type">Unit</a></code>
 
-Before each iteration, evaluate M-TERM?. If it indicates completion, stop; otherwise run BODY.
-Respects break and continue within BODY. Returns Unit.
+Before each iteration, evaluate M-TERM?. If it returns a true-like value, run BODY.
+Otherwise, stop.
 
 
 
 ***
 
-#### <a href="#coalton-experimental-do-control-loops-adv-loop-times-value"><code>(LOOP-TIMES N BODY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.ct#L218-L229">src</a></sub></sup><a name="coalton-experimental-do-control-loops-adv-loop-times-value"></a>
+#### <a href="#coalton-experimental-do-control-loops-adv-loop-times-value"><code>(LOOP-TIMES N BODY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.ct#L223-L234">src</a></sub></sup><a name="coalton-experimental-do-control-loops-adv-loop-times-value"></a>
 <code>&forall; :M :A. <a href="#coalton-classes-monad-class">Monad</a> :M &rArr; <a href="#coalton-ufix-type">UFix</a> * (<a href="#coalton-ufix-type">UFix</a> &rarr; <a href="#coalton-experimental-do-control-loops-adv-loopt-type">LoopT</a> :M :A) &rarr; :M <a href="#coalton-unit-type">Unit</a></code>
 
 Repeat BODY N times. Passes the current index (starting at 0) to BODY.
@@ -3483,16 +3482,16 @@ Returns Unit.
 
 ***
 
-#### <a href="#coalton-experimental-do-control-loops-adv-loop-while-value"><code>(LOOP-WHILE BODY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.ct#L191-L201">src</a></sub></sup><a name="coalton-experimental-do-control-loops-adv-loop-while-value"></a>
-<code>&forall; :M :T. (<a href="#coalton-classes-monad-class">Monad</a> :M) (<a href="#coalton-experimental-do-control-core-terminator-class">Terminator</a> :T) &rArr; <a href="#coalton-experimental-do-control-loops-adv-loopt-type">LoopT</a> :M :T &rarr; :M <a href="#coalton-unit-type">Unit</a></code>
+#### <a href="#coalton-experimental-do-control-loops-adv-loop-while-value"><code>(LOOP-WHILE BODY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.ct#L196-L206">src</a></sub></sup><a name="coalton-experimental-do-control-loops-adv-loop-while-value"></a>
+<code>&forall; :M :T. (<a href="#coalton-classes-monad-class">Monad</a> :M) (<a href="#coalton-experimental-do-control-core-truthlike-class">Truthlike</a> :T) &rArr; <a href="#coalton-experimental-do-control-loops-adv-loopt-type">LoopT</a> :M :T &rarr; :M <a href="#coalton-unit-type">Unit</a></code>
 
-Run BODY repeatedly until it returns a terminated value. Returns Unit.
+Run BODY. If it returns a true-like value, repeat. Otherwise stop.
 
 
 
 ***
 
-#### <a href="#coalton-experimental-do-control-loops-adv-loop_-value"><code>(LOOP_ BODY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.ct#L182-L188">src</a></sub></sup><a name="coalton-experimental-do-control-loops-adv-loop_-value"></a>
+#### <a href="#coalton-experimental-do-control-loops-adv-loop_-value"><code>(LOOP_ BODY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.ct#L187-L193">src</a></sub></sup><a name="coalton-experimental-do-control-loops-adv-loop_-value"></a>
 <code>&forall; :M :A. <a href="#coalton-classes-monad-class">Monad</a> :M &rArr; <a href="#coalton-experimental-do-control-loops-adv-loopt-type">LoopT</a> :M :A &rarr; :M <a href="#coalton-unit-type">Unit</a></code>
 
 Run BODY forever, until it signals a break. Any produced values are ignored. Returns Unit.
@@ -3501,7 +3500,7 @@ Run BODY forever, until it signals a break. Any produced values are ignored. Ret
 
 ***
 
-#### <a href="#coalton-experimental-do-control-loops-adv-once-value"><code>(ONCE LP-M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.ct#L278-L283">src</a></sub></sup><a name="coalton-experimental-do-control-loops-adv-once-value"></a>
+#### <a href="#coalton-experimental-do-control-loops-adv-once-value"><code>(ONCE LP-M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.ct#L283-L288">src</a></sub></sup><a name="coalton-experimental-do-control-loops-adv-once-value"></a>
 <code>&forall; :M :A. <a href="#coalton-classes-monad-class">Monad</a> :M &rArr; <a href="#coalton-experimental-do-control-loops-adv-loopt-type">LoopT</a> :M :A &rarr; :M <a href="#coalton-unit-type">Unit</a></code>
 
 Run an operation exactly once. Continue or break will both immediately end
@@ -3511,7 +3510,7 @@ execution in the operation. Returns Unit.
 
 ***
 
-#### <a href="#coalton-experimental-do-control-loops-adv-unwrap-loop-value"><code>(UNWRAP-LOOP (LOOPT M-STP))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.ct#L81-L84">src</a></sub></sup><a name="coalton-experimental-do-control-loops-adv-unwrap-loop-value"></a>
+#### <a href="#coalton-experimental-do-control-loops-adv-unwrap-loop-value"><code>(UNWRAP-LOOP (LOOPT M-STP))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.ct#L86-L89">src</a></sub></sup><a name="coalton-experimental-do-control-loops-adv-unwrap-loop-value"></a>
 <code>&forall; :M :A. <a href="#coalton-experimental-do-control-loops-adv-loopt-type">LoopT</a> :M :A &rarr; :M (<a href="#coalton-experimental-do-control-loops-adv-step-type">Step</a> :A)</code>
 
 Advance a LoopT computation by one step, returning whether it asked to continue,
@@ -3521,7 +3520,7 @@ break, or produced a value.
 
 ***
 
-#### <a href="#coalton-experimental-do-control-loops-adv-break-loop-value"><code>BREAK-LOOP</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.ct#L88-L90">src</a></sub></sup><a name="coalton-experimental-do-control-loops-adv-break-loop-value"></a>
+#### <a href="#coalton-experimental-do-control-loops-adv-break-loop-value"><code>BREAK-LOOP</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.ct#L93-L95">src</a></sub></sup><a name="coalton-experimental-do-control-loops-adv-break-loop-value"></a>
 <code>&forall; :M :A. <a href="#coalton-classes-monad-class">Monad</a> :M &rArr; <a href="#coalton-experimental-do-control-loops-adv-loopt-type">LoopT</a> :M :A</code>
 
 Signal that the loop should terminate immediately.
@@ -3530,7 +3529,7 @@ Signal that the loop should terminate immediately.
 
 ***
 
-#### <a href="#coalton-experimental-do-control-loops-adv-continue-loop-value"><code>CONTINUE-LOOP</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.ct#L94-L96">src</a></sub></sup><a name="coalton-experimental-do-control-loops-adv-continue-loop-value"></a>
+#### <a href="#coalton-experimental-do-control-loops-adv-continue-loop-value"><code>CONTINUE-LOOP</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/experimental/do-control-loops-adv.ct#L99-L101">src</a></sub></sup><a name="coalton-experimental-do-control-loops-adv-continue-loop-value"></a>
 <code>&forall; :M :A. <a href="#coalton-classes-monad-class">Monad</a> :M &rArr; <a href="#coalton-experimental-do-control-loops-adv-loopt-type">LoopT</a> :M :A</code>
 
 Signal that the current iteration should be skipped and the loop should continue.
