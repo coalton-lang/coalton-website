@@ -7207,6 +7207,7 @@ Methods:
 - <code><a href="#coalton-monad-classes-monadstate-class">MonadState</a> :S :M &rArr; <a href="#coalton-monad-classes-monadstate-class">MonadState</a> :S (<a href="#coalton-monad-resultt-resultt-type">ResultT</a> :ERR :M)</code>
 - <code><a href="#coalton-monad-classes-monadstate-class">MonadState</a> :S :M &rArr; <a href="#coalton-monad-classes-monadstate-class">MonadState</a> :S (<a href="#coalton-monad-environment-envt-type">EnvT</a> :E :M)</code>
 - <code><a href="#coalton-classes-monad-class">Monad</a> :M &rArr; <a href="#coalton-monad-classes-monadstate-class">MonadState</a> :S (<a href="#coalton-monad-statet-statet-type">StateT</a> :S :M)</code>
+- <code><a href="#coalton-monad-classes-monadstate-class">MonadState</a> :S (<a href="#coalton-monad-state-st-type">ST</a> :S)</code>
 
 </details>
 
@@ -7650,7 +7651,7 @@ Map FERR over the error value of a Result contained in M.
 
 ### Types
 
-#### <a href="#coalton-monad-state-st-type"><code>ST</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.ct#L27-L30">src</a></sub></sup><a name="coalton-monad-state-st-type"></a>
+#### <a href="#coalton-monad-state-st-type"><code>ST</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.ct#L38-L41">src</a></sub></sup><a name="coalton-monad-state-st-type"></a>
 - <code>(ST :A &rarr; <a href="#coalton-classes-tuple-type">Tuple</a> :A :B)</code>
 
 A computation of a value which may affect the state.
@@ -7662,6 +7663,7 @@ Represented as a closure from initial state to updated state and value.
 - <code><a href="#coalton-classes-applicative-class">Applicative</a> (<a href="#coalton-monad-state-st-type">ST</a> :STATE)</code>
 - <code><a href="#coalton-classes-functor-class">Functor</a> (<a href="#coalton-monad-state-st-type">ST</a> :STATE)</code>
 - <code><a href="#coalton-classes-monad-class">Monad</a> (<a href="#coalton-monad-state-st-type">ST</a> :STATE)</code>
+- <code><a href="#coalton-monad-classes-monadstate-class">MonadState</a> :S (<a href="#coalton-monad-state-st-type">ST</a> :S)</code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-monad-state-st-type">ST</a> :|0| :|1|)</code>
 
 </details>
@@ -7672,16 +7674,7 @@ Represented as a closure from initial state to updated state and value.
 
 ### Values
 
-#### <a href="#coalton-monad-state-modify-value"><code>(MODIFY FS-&gt;S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.ct#L54-L57">src</a></sub></sup><a name="coalton-monad-state-modify-value"></a>
-<code>&forall; :STATE. (:STATE &rarr; :STATE) &rarr; <a href="#coalton-monad-state-st-type">ST</a> :STATE <a href="#coalton-unit-type">Unit</a></code>
-
-Modify the state in a StatefulComputation, discarding the old state.
-
-
-
-***
-
-#### <a href="#coalton-monad-state-modify-get-value"><code>(MODIFY-GET FS-&gt;S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.ct#L61-L65">src</a></sub></sup><a name="coalton-monad-state-modify-get-value"></a>
+#### <a href="#coalton-monad-state-modify-get-value"><code>(MODIFY-GET FS-&gt;S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.ct#L72-L76">src</a></sub></sup><a name="coalton-monad-state-modify-get-value"></a>
 <code>&forall; :STATE. (:STATE &rarr; :STATE) &rarr; <a href="#coalton-monad-state-st-type">ST</a> :STATE :STATE</code>
 
 Modify the state in a StatefulComputation, discarding the old state. Return the new state.
@@ -7690,7 +7683,16 @@ Modify the state in a StatefulComputation, discarding the old state. Return the 
 
 ***
 
-#### <a href="#coalton-monad-state-modify-swap-value"><code>(MODIFY-SWAP FS-&gt;S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.ct#L75-L78">src</a></sub></sup><a name="coalton-monad-state-modify-swap-value"></a>
+#### <a href="#coalton-monad-state-modify-state-value"><code>(MODIFY-STATE FS-&gt;S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.ct#L65-L68">src</a></sub></sup><a name="coalton-monad-state-modify-state-value"></a>
+<code>&forall; :STATE. (:STATE &rarr; :STATE) &rarr; <a href="#coalton-monad-state-st-type">ST</a> :STATE <a href="#coalton-unit-type">Unit</a></code>
+
+Modify the state in a StatefulComputation, discarding the old state.
+
+
+
+***
+
+#### <a href="#coalton-monad-state-modify-swap-value"><code>(MODIFY-SWAP FS-&gt;S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.ct#L86-L89">src</a></sub></sup><a name="coalton-monad-state-modify-swap-value"></a>
 <code>&forall; :STATE. (:STATE &rarr; :STATE) &rarr; <a href="#coalton-monad-state-st-type">ST</a> :STATE :STATE</code>
 
 Modify the state in a StatefulComputation, returning the old state.
@@ -7699,7 +7701,7 @@ Modify the state in a StatefulComputation, returning the old state.
 
 ***
 
-#### <a href="#coalton-monad-state-put-value"><code>(PUT STATE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.ct#L34-L36">src</a></sub></sup><a name="coalton-monad-state-put-value"></a>
+#### <a href="#coalton-monad-state-put-state-value"><code>(PUT-STATE STATE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.ct#L45-L47">src</a></sub></sup><a name="coalton-monad-state-put-state-value"></a>
 <code>&forall; :STATE. :STATE &rarr; <a href="#coalton-monad-state-st-type">ST</a> :STATE <a href="#coalton-unit-type">Unit</a></code>
 
 A StatefulComputation with state set to be the given state. The returned value is Unit.
@@ -7708,7 +7710,7 @@ A StatefulComputation with state set to be the given state. The returned value i
 
 ***
 
-#### <a href="#coalton-monad-state-run-value"><code>(RUN SC STATE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.ct#L46-L50">src</a></sub></sup><a name="coalton-monad-state-run-value"></a>
+#### <a href="#coalton-monad-state-run-value"><code>(RUN SC STATE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.ct#L57-L61">src</a></sub></sup><a name="coalton-monad-state-run-value"></a>
 <code>&forall; :STATE :A. <a href="#coalton-monad-state-st-type">ST</a> :STATE :A * :STATE &rarr; <a href="#coalton-classes-tuple-type">Tuple</a> :STATE :A</code>
 
 Runs a StatefulComputation to produce a final updated state and value given an initial state
@@ -7717,7 +7719,7 @@ Runs a StatefulComputation to produce a final updated state and value given an i
 
 ***
 
-#### <a href="#coalton-monad-state-swap-value"><code>(SWAP STATE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.ct#L69-L71">src</a></sub></sup><a name="coalton-monad-state-swap-value"></a>
+#### <a href="#coalton-monad-state-swap-value"><code>(SWAP STATE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.ct#L80-L82">src</a></sub></sup><a name="coalton-monad-state-swap-value"></a>
 <code>&forall; :STATE. :STATE &rarr; <a href="#coalton-monad-state-st-type">ST</a> :STATE :STATE</code>
 
 A StatefulComputation with state set to be the given state. The old state is returned.
@@ -7726,7 +7728,7 @@ A StatefulComputation with state set to be the given state. The old state is ret
 
 ***
 
-#### <a href="#coalton-monad-state-get-value"><code>GET</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.ct#L40-L42">src</a></sub></sup><a name="coalton-monad-state-get-value"></a>
+#### <a href="#coalton-monad-state-get-state-value"><code>GET-STATE</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/monad/state.ct#L51-L53">src</a></sub></sup><a name="coalton-monad-state-get-state-value"></a>
 <code>&forall; :STATE. <a href="#coalton-monad-state-st-type">ST</a> :STATE :STATE</code>
 
 A StatefulComputation which returns the current state as the value.
