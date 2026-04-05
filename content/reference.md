@@ -3543,7 +3543,7 @@ Signal that the current iteration should be skipped and the loop should continue
 
 A Coalton package of loop macros.
 
-Note: `(return)`, `(break)`, and `(continue)` do not work inside _any_ of these loop macros.
+Note: `(break)` and `(continue)` do not work inside these loop macros. `(return)` refers to the enclosing function, not the macro's hidden callback.
 
 ### Macros
 
