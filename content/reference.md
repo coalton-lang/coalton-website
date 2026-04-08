@@ -706,10 +706,10 @@ Integer of unbounded size. Represented by a Common Lisp `cl:integer`.
 ***
 
 #### <a href="#coalton-list-type"><code>List</code></a> <sup><sub>[TYPE]</sub></sup><a name="coalton-list-type"></a>
-- <code>Nil</code> 
-  - `Nil` represents an empty `List`.
 - <code>(Cons :A <a href="#coalton-list-type">List</a> :A)</code>
   - `Cons` represents a `List` containing a first element (`car`) and a nested `Cons` (`cdr`).
+- <code>Nil</code> 
+  - `Nil` represents an empty `List`.
 
 Homogeneous list of objects. Represented as a typical Common Lisp chain of `cl:cons` (or `cl:nil`).
 
@@ -757,10 +757,10 @@ Homogeneous list of objects. Represented as a typical Common Lisp chain of `cl:c
 ***
 
 #### <a href="#coalton-optional-type"><code>Optional</code></a> <sup><sub>[TYPE]</sub></sup><a name="coalton-optional-type"></a>
-- <code>(Some :A)</code>
-  - `Some` expresses the presence of a meaningful value.
 - <code>None</code> 
   - `None` expresses the absence of a meaningful value.
+- <code>(Some :A)</code>
+  - `Some` expresses the presence of a meaningful value.
 
 A type that allows indicating the presence or absence of a value. The underlying representation does not allocate when a value is present (i.e., with `Some`).
 
@@ -1849,12 +1849,12 @@ Implementation dependent hash code.
 ***
 
 #### <a href="#coalton-classes-ordering-type"><code>Ordering</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L142-L146">src</a></sub></sup><a name="coalton-classes-ordering-type"></a>
-- <code>LT</code> 
-  - Less than
-- <code>GT</code> 
-  - Greater than
 - <code>EQ</code> 
   - Equal to
+- <code>GT</code> 
+  - Greater than
+- <code>LT</code> 
+  - Less than
 
 The result of an ordered comparison.
 
@@ -3745,10 +3745,10 @@ trailing slash.
 ### Types
 
 #### <a href="#coalton-file-fileerror-type"><code>FileError</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L154-L159">src</a></sub></sup><a name="coalton-file-fileerror-type"></a>
-- <code>(PathError <a href="#coalton-string-type">String</a> <a href="#coalton-file-pathname-type">Pathname</a>)</code>
-- <code>(LispError <a href="#coalton-system-lispcondition-type">LispCondition</a>)</code>
-- <code>(FileError <a href="#coalton-string-type">String</a>)</code>
 - <code>EOF</code> 
+- <code>(FileError <a href="#coalton-string-type">String</a>)</code>
+- <code>(LispError <a href="#coalton-system-lispcondition-type">LispCondition</a>)</code>
+- <code>(PathError <a href="#coalton-string-type">String</a> <a href="#coalton-file-pathname-type">Pathname</a>)</code>
 
 Errors for file functions.
 
@@ -3780,10 +3780,10 @@ Represents a file stream, using `cl:file-stream`.
 ***
 
 #### <a href="#coalton-file-ifexists-type"><code>IfExists</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L369-L374">src</a></sub></sup><a name="coalton-file-ifexists-type"></a>
-- <code>Supersede</code> 
-- <code>Overwrite</code> 
-- <code>EError</code> 
 - <code>Append</code> 
+- <code>EError</code> 
+- <code>Overwrite</code> 
+- <code>Supersede</code> 
 
 Possible options for opening a stream when the file exists.
 
@@ -3800,8 +3800,8 @@ Possible options for opening a stream when the file exists.
 
 #### <a href="#coalton-file-opendirection-type"><code>OpenDirection</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L377-L381">src</a></sub></sup><a name="coalton-file-opendirection-type"></a>
 - <code>Bidirectional</code> 
-- <code>Output</code> 
 - <code>Input</code> 
+- <code>Output</code> 
 
 Possible directions for opening a stream.
 
