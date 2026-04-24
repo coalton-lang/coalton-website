@@ -2,7 +2,7 @@
 
 `mine` is an integrated development environment for Coalton and Common Lisp for Windows, macOS, and Linux.
 
-<center>👉 <a href="https://github.com/coalton-lang/coalton/releases/latest"><strong>Download the latest release.</strong></a></center>
+<center>👉 <a href="https://github.com/coalton-lang/coalton/releases/latest"><strong>Download the latest release.</strong></a></center><br>
 
 `mine` comes in two flavors:
 
