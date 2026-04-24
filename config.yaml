@@ -32,6 +32,10 @@ menu:
       name: Manual
       url: /manual/
       weight: 5
+    - identifier: mine
+      name: mine
+      url: /mine/
+      weight: 6
 
 params:
   env: production
