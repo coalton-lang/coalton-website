@@ -41,7 +41,7 @@ When writing Coalton, the full data type of the function your cursor is on will 
 
 ### Structural Editing Lessons
 
-You've heard about structural editing, like ParEdit, but don't want to read manuals and cheat sheets to learn it? Take the built-in structural editing lessons to learn how to do structural editng in about 5 minutes. Structural Editing is completely optional, but vastly increases the efficiency of Coalton development.
+You've heard about structural editing, like ParEdit, but don't want to read manuals and cheat sheets to learn it? Take the built-in structural editing lessons to learn how to do structural editing in about 5 minutes. Structural Editing is completely optional, but vastly increases the efficiency of Coalton development.
 
 <center><img src="mine-structural.png" alt="" style="width: 50%"></center>
 
