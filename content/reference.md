@@ -7840,7 +7840,7 @@ A stateful computation which returns the current state as the value.
 
 ### Values
 
-#### <a href="#coalton-optional-from-some-value"><code>(FROM-SOME STR OPT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/optional.ct#L22-L26">src</a></sub></sup><a name="coalton-optional-from-some-value"></a>
+#### <a href="#coalton-optional-from-some-value"><code>(FROM-SOME STR OPT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/optional.ct#L24-L28">src</a></sub></sup><a name="coalton-optional-from-some-value"></a>
 <code>&forall; :A. <a href="#coalton-string-type">String</a> * <a href="#coalton-optional-type">Optional</a> :A &rarr; :A</code>
 
 Get the value of OPT, erroring with the provided string if it is None.
@@ -7849,7 +7849,16 @@ Get the value of OPT, erroring with the provided string if it is None.
 
 ***
 
-#### <a href="#coalton-optional-none?-value"><code>(NONE? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/optional.ct#L38-L42">src</a></sub></sup><a name="coalton-optional-none?-value"></a>
+#### <a href="#coalton-optional-from-some-or-value"><code>(FROM-SOME-OR DEF VAL?)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/optional.ct#L48-L52">src</a></sub></sup><a name="coalton-optional-from-some-or-value"></a>
+<code>&forall; :A. :A * <a href="#coalton-optional-type">Optional</a> :A &rarr; :A</code>
+
+Get the value of OPT if it is Some, or use DEF as the default.
+
+
+
+***
+
+#### <a href="#coalton-optional-none?-value"><code>(NONE? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/optional.ct#L40-L44">src</a></sub></sup><a name="coalton-optional-none?-value"></a>
 <code>&forall; :A. <a href="#coalton-optional-type">Optional</a> :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is X None?
@@ -7858,7 +7867,7 @@ Is X None?
 
 ***
 
-#### <a href="#coalton-optional-some?-value"><code>(SOME? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/optional.ct#L30-L34">src</a></sub></sup><a name="coalton-optional-some?-value"></a>
+#### <a href="#coalton-optional-some?-value"><code>(SOME? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/optional.ct#L32-L36">src</a></sub></sup><a name="coalton-optional-some?-value"></a>
 <code>&forall; :A. <a href="#coalton-optional-type">Optional</a> :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is X Some?
