@@ -1980,7 +1980,7 @@ Methods:
 - <code><a href="#coalton-classes-monad-class">Monad</a> :M &rArr; <a href="#coalton-classes-applicative-class">Applicative</a> (<a href="#coalton-monad-resultt-resultt-type">ResultT</a> :ERR :M)</code>
 - <code><a href="#coalton-classes-applicative-class">Applicative</a> :M &rArr; <a href="#coalton-classes-applicative-class">Applicative</a> (<a href="#coalton-monad-environment-envt-type">EnvT</a> :ENV :M)</code>
 - <code><a href="#coalton-classes-applicative-class">Applicative</a> (<a href="#coalton-monad-environment-env-type">Env</a> :ENV)</code>
-- <code><a href="#coalton-classes-applicative-class">Applicative</a> :M &rArr; <a href="#coalton-classes-applicative-class">Applicative</a> (<a href="#coalton-monad-statet-statet-type">StateT</a> :S :M)</code>
+- <code><a href="#coalton-classes-monad-class">Monad</a> :M &rArr; <a href="#coalton-classes-applicative-class">Applicative</a> (<a href="#coalton-monad-statet-statet-type">StateT</a> :S :M)</code>
 - <code><a href="#coalton-classes-applicative-class">Applicative</a> (<a href="#coalton-monad-state-st-type">ST</a> :STATE)</code>
 - <code><a href="#coalton-classes-applicative-class">Applicative</a> <a href="#coalton-monad-identity-identity-type">Identity</a></code>
 - <code><a href="#coalton-classes-applicative-class">Applicative</a> <a href="#coalton-list-type">List</a></code>
@@ -7760,8 +7760,8 @@ A monadic computation that tracks state of type :s.
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#coalton-classes-applicative-class">Applicative</a> :M &rArr; <a href="#coalton-classes-applicative-class">Applicative</a> (<a href="#coalton-monad-statet-statet-type">StateT</a> :S :M)</code>
 - <code><a href="#coalton-classes-functor-class">Functor</a> :M &rArr; <a href="#coalton-classes-functor-class">Functor</a> (<a href="#coalton-monad-statet-statet-type">StateT</a> :S :M)</code>
+- <code><a href="#coalton-classes-monad-class">Monad</a> :M &rArr; <a href="#coalton-classes-applicative-class">Applicative</a> (<a href="#coalton-monad-statet-statet-type">StateT</a> :S :M)</code>
 - <code><a href="#coalton-classes-monad-class">Monad</a> :M &rArr; <a href="#coalton-classes-monad-class">Monad</a> (<a href="#coalton-monad-statet-statet-type">StateT</a> :S :M)</code>
 - <code><a href="#coalton-classes-monad-class">Monad</a> :M &rArr; <a href="#coalton-monad-classes-monadstate-class">MonadState</a> :S (<a href="#coalton-monad-statet-statet-type">StateT</a> :S :M)</code>
 - <code><a href="#coalton-monad-classes-monadenvironment-class">MonadEnvironment</a> :E :M &rArr; <a href="#coalton-monad-classes-monadenvironment-class">MonadEnvironment</a> :E (<a href="#coalton-monad-statet-statet-type">StateT</a> :S :M)</code>
