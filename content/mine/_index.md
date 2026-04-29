@@ -6,8 +6,8 @@
 
 `mine` comes in two flavors:
 
-* `mine-app` for Windows and macOS is a complete, all-in-one, packaged application with no dependencies. It Just Works™, or it's a bug.
-* `mine-core` for Windows, macOS, and Linux is a hacker-friendly "bring your own compliant terminal" variant. It allows you to use `mine` at the command line, but requires a terminal that has a Unicode font and supports the Kitty keyboard protocol.
+* `mine-app` is a complete, all-in-one, packaged application with no dependencies. It Just Works™, or it's a bug.
+* `mine-core` is a hacker-friendly "bring your own compliant terminal" variant. It allows you to use `mine` at your own command line, but requires a terminal that has a Unicode font, supports rich colors, and supports the Kitty keyboard protocol.
 
 ### Coalton and Common Lisp
 
