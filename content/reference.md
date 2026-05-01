@@ -4220,7 +4220,7 @@ Writes elements of an vector of type `:a` to a stream of type `:a`.
 
 ### Values
 
-#### <a href="#coalton-functions-/=-value"><code>(/= A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.ct#L194-L196">src</a></sub></sup><a name="coalton-functions-/=-value"></a>
+#### <a href="#coalton-functions-/=-value"><code>(/= A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.ct#L199-L201">src</a></sub></sup><a name="coalton-functions-/=-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-eq-class">Eq</a> :A &rArr; :A * :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is `a` not equal to `b`?
@@ -4229,7 +4229,7 @@ Is `a` not equal to `b`?
 
 ***
 
-#### <a href="#coalton-functions-asum-value"><code>(ASUM XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.ct#L188-L190">src</a></sub></sup><a name="coalton-functions-asum-value"></a>
+#### <a href="#coalton-functions-asum-value"><code>(ASUM XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.ct#L193-L195">src</a></sub></sup><a name="coalton-functions-asum-value"></a>
 <code>&forall; :T :F :A. (<a href="#coalton-classes-alternative-class">Alternative</a> :F) (<a href="#coalton-classes-foldable-class">Foldable</a> :T) &rArr; :T (:F :A) &rarr; :F :A</code>
 
 Fold over a list using `alt`.
@@ -4238,7 +4238,7 @@ Fold over a list using `alt`.
 
 ***
 
-#### <a href="#coalton-functions-bracket-value"><code>(BRACKET INIT EXIT BODY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.ct#L233-L242">src</a></sub></sup><a name="coalton-functions-bracket-value"></a>
+#### <a href="#coalton-functions-bracket-value"><code>(BRACKET INIT EXIT BODY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.ct#L240-L249">src</a></sub></sup><a name="coalton-functions-bracket-value"></a>
 <code>&forall; :M :A :B :C. <a href="#coalton-classes-monad-class">Monad</a> :M &rArr; :M :A * (:A &rarr; :M :B) * (:A &rarr; :M :C) &rarr; :M :C</code>
 
 Bracket takes an initial state, performs a body of operations, and then forces a safe exit.
@@ -4251,7 +4251,7 @@ Modeled after Haskell: https://wiki.haskell.org/Bracket_pattern
 
 ***
 
-#### <a href="#coalton-functions-complement-value"><code>(COMPLEMENT F X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.ct#L153-L155">src</a></sub></sup><a name="coalton-functions-complement-value"></a>
+#### <a href="#coalton-functions-complement-value"><code>(COMPLEMENT F X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.ct#L156-L158">src</a></sub></sup><a name="coalton-functions-complement-value"></a>
 <code>&forall; :A. (:A &rarr; <a href="#coalton-boolean-type">Boolean</a>) * :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Compute the complement of a unary Boolean function.
@@ -4260,7 +4260,7 @@ Compute the complement of a unary Boolean function.
 
 ***
 
-#### <a href="#coalton-functions-compose-value"><code>(COMPOSE F G)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.ct#L109-L111">src</a></sub></sup><a name="coalton-functions-compose-value"></a>
+#### <a href="#coalton-functions-compose-value"><code>(COMPOSE F G)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.ct#L110-L112">src</a></sub></sup><a name="coalton-functions-compose-value"></a>
 <code>&forall; :B :C :A. (:B &rarr; :C) * (:A &rarr; :B) &rarr; :A &rarr; :C</code>
 
 Equivalent to `(f (g x))`.
@@ -4269,7 +4269,7 @@ Equivalent to `(f (g x))`.
 
 ***
 
-#### <a href="#coalton-functions-conjoin-value"><code>(CONJOIN F G X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.ct#L116-L118">src</a></sub></sup><a name="coalton-functions-conjoin-value"></a>
+#### <a href="#coalton-functions-conjoin-value"><code>(CONJOIN F G X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.ct#L118-L120">src</a></sub></sup><a name="coalton-functions-conjoin-value"></a>
 <code>&forall; :A. (:A &rarr; <a href="#coalton-boolean-type">Boolean</a>) * (:A &rarr; <a href="#coalton-boolean-type">Boolean</a>) * :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Compute the conjunction of two unary Boolean functions.
@@ -4287,7 +4287,7 @@ A function that always returns its first argument.
 
 ***
 
-#### <a href="#coalton-functions-curry-value"><code>(CURRY FUNC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.ct#L158-L161">src</a></sub></sup><a name="coalton-functions-curry-value"></a>
+#### <a href="#coalton-functions-curry-value"><code>(CURRY FUNC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.ct#L162-L165">src</a></sub></sup><a name="coalton-functions-curry-value"></a>
 <code>&forall; :LEFT :RIGHT :RESULT. (<a href="#coalton-classes-tuple-type">Tuple</a> :LEFT :RIGHT &rarr; :RESULT) &rarr; :LEFT * :RIGHT &rarr; :RESULT</code>
 
 Adapt a function on `(Tuple left right)` into a two-argument function.
@@ -4296,7 +4296,7 @@ Adapt a function on `(Tuple left right)` into a two-argument function.
 
 ***
 
-#### <a href="#coalton-functions-disjoin-value"><code>(DISJOIN F G X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.ct#L121-L123">src</a></sub></sup><a name="coalton-functions-disjoin-value"></a>
+#### <a href="#coalton-functions-disjoin-value"><code>(DISJOIN F G X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.ct#L124-L126">src</a></sub></sup><a name="coalton-functions-disjoin-value"></a>
 <code>&forall; :A. (:A &rarr; <a href="#coalton-boolean-type">Boolean</a>) * (:A &rarr; <a href="#coalton-boolean-type">Boolean</a>) * :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Compute the disjunction of two unary Boolean functions.
@@ -4339,7 +4339,7 @@ A function that always returns its argument.
 
 ***
 
-#### <a href="#coalton-functions-msum-value"><code>(MSUM XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.ct#L183-L185">src</a></sub></sup><a name="coalton-functions-msum-value"></a>
+#### <a href="#coalton-functions-msum-value"><code>(MSUM XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.ct#L187-L189">src</a></sub></sup><a name="coalton-functions-msum-value"></a>
 <code>&forall; :T :A. (<a href="#coalton-classes-monoid-class">Monoid</a> :A) (<a href="#coalton-classes-foldable-class">Foldable</a> :T) &rArr; :T :A &rarr; :A</code>
 
 Fold over a list using `<>`.
@@ -4348,7 +4348,7 @@ Fold over a list using `<>`.
 
 ***
 
-#### <a href="#coalton-functions-pair-with-value"><code>(PAIR-WITH FUNC LEFT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.ct#L172-L174">src</a></sub></sup><a name="coalton-functions-pair-with-value"></a>
+#### <a href="#coalton-functions-pair-with-value"><code>(PAIR-WITH FUNC LEFT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.ct#L177-L179">src</a></sub></sup><a name="coalton-functions-pair-with-value"></a>
 <code>&forall; :LEFT :RIGHT. (:LEFT &rarr; :RIGHT) * :LEFT &rarr; <a href="#coalton-classes-tuple-type">Tuple</a> :LEFT :RIGHT</code>
 
 Create a `Tuple` of the form `(Tuple left (func left))`.
@@ -4366,7 +4366,7 @@ Print the String representation of `item` to `cl:*standard-output*`.
 
 ***
 
-#### <a href="#coalton-functions-reduce-value"><code>(REDUCE F Y XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.ct#L103-L105">src</a></sub></sup><a name="coalton-functions-reduce-value"></a>
+#### <a href="#coalton-functions-reduce-value"><code>(REDUCE F Y XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.ct#L104-L106">src</a></sub></sup><a name="coalton-functions-reduce-value"></a>
 <code>&forall; :A :B :F. <a href="#coalton-classes-foldable-class">Foldable</a> :F &rArr; (:A * :B &rarr; :B) * :B * :F :A &rarr; :B</code>
 
 The same as `fold` but with the argument order swapped to match `cl:reduce`
@@ -4397,7 +4397,7 @@ Print a line to `cl:*standard-output*` in the form "{STR}: {ITEM}".
 
 ***
 
-#### <a href="#coalton-functions-uncurry-value"><code>(UNCURRY FUNC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.ct#L164-L169">src</a></sub></sup><a name="coalton-functions-uncurry-value"></a>
+#### <a href="#coalton-functions-uncurry-value"><code>(UNCURRY FUNC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.ct#L168-L173">src</a></sub></sup><a name="coalton-functions-uncurry-value"></a>
 <code>&forall; :LEFT :RIGHT :RESULT. (:LEFT * :RIGHT &rarr; :RESULT) &rarr; <a href="#coalton-classes-tuple-type">Tuple</a> :LEFT :RIGHT &rarr; :RESULT</code>
 
 Adapt a two-argument function into one that accepts a single `Tuple`.
