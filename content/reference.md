@@ -4283,7 +4283,7 @@ Writes elements of an vector of type `:a` to a stream of type `:a`.
 
 #### <a href="#coalton-format-format-macro"><code>FORMAT (TARGET CTRL-STR &amp;REST ARGS)</code></a> <sup><sub>[MACRO]</sub></sup><a name="coalton-format-format-macro"></a>
 
-Format `ctrl-str` using `args`. Syntax is the same as Common Lisp format. The number of
+Format `ctrl-str` using `args`. Syntax is the same as Common Lisp `format`. The number of
 arguments, their types, and the syntax of `ctrl-str` are checked at compile time.
 Directives are case-insensitive.
 
