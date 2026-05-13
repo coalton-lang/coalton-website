@@ -4325,7 +4325,7 @@ The following directives are supported with the given argument requirements:
 | `~~` | Print a tilde | No Argument |
 | `~%` | Print an unconditional newline | No Argument |
 | `~&` | Print a fresh line | No Argument |
-| `~|` | Print a page separator | No Argument |
+| <code>~&#124;</code> | Print a page separator | No Argument |
 | `~^` | Terminate if there are no remaining arguments | No Argument |
 | `~F` | Print floating fixed-point notation | `Num :a` |
 | `~E` | Print floating exponential notation | `Num :a` |
