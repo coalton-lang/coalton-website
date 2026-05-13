@@ -4293,13 +4293,13 @@ Writes elements of an vector of type `:a` to a stream of type `:a`.
 
 ### Values
 
-#### <a href="#coalton-format-out-value"><code>OUT</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/format.ct#L1142-L1144">src</a></sub></sup><a name="coalton-format-out-value"></a>
+#### <a href="#coalton-format-out-value"><code>OUT</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/format.ct#L1144-L1146">src</a></sub></sup><a name="coalton-format-out-value"></a>
 <code><a href="#coalton-symbol-symbol-type">Symbol</a></code>
 
 
 ***
 
-#### <a href="#coalton-format-str-value"><code>STR</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/format.ct#L1139-L1141">src</a></sub></sup><a name="coalton-format-str-value"></a>
+#### <a href="#coalton-format-str-value"><code>STR</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/format.ct#L1140-L1142">src</a></sub></sup><a name="coalton-format-str-value"></a>
 <code><a href="#coalton-symbol-symbol-type">Symbol</a></code>
 
 
