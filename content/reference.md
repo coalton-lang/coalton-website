@@ -116,6 +116,7 @@ A single bit, equal to 0 or 1. Uses `cl:bit`.
 - <code><a href="#coalton-classes-hash-class">Hash</a> <a href="#coalton-bit-type">Bit</a></code>
 - <code><a href="#coalton-format-intatruntime-class">IntAtRuntime</a> <a href="#coalton-bit-type">Bit</a></code>
 - <code><a href="#coalton-math-integral-integral-class">Integral</a> <a href="#coalton-bit-type">Bit</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-f32-type">F32</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-f64-type">F64</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-fraction-type">Fraction</a></code>
@@ -248,6 +249,7 @@ Single-precision floating point number (32 bits in size). Represented by a Commo
 - <code><a href="#coalton-show-show-class">Show</a> <a href="#coalton-f32-type">F32</a></code>
 - <code><a href="#coalton-math-arith-transfinite-class">Transfinite</a> <a href="#coalton-f32-type">F32</a></code>
 - <code><a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> <a href="#coalton-f32-type">F32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a> <a href="#coalton-f32-type">F32</a></code>
 - <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-fraction-type">Fraction</a></code>
 - <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-f32-type">F32</a></code>
 - <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-f32-type">F32</a></code>
@@ -301,6 +303,7 @@ Double-precision floating point number (64 bits in size). Represented by a Commo
 - <code><a href="#coalton-show-show-class">Show</a> <a href="#coalton-f64-type">F64</a></code>
 - <code><a href="#coalton-math-arith-transfinite-class">Transfinite</a> <a href="#coalton-f64-type">F64</a></code>
 - <code><a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> <a href="#coalton-f64-type">F64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a> <a href="#coalton-f64-type">F64</a></code>
 - <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-fraction-type">Fraction</a></code>
 - <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-f64-type">F64</a></code>
 - <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-f64-type">F64</a></code>
@@ -377,6 +380,7 @@ Signed 16-bit integer capable of storing values in `[-32768, 32767]`. Uses `(sig
 - <code><a href="#coalton-format-intatruntime-class">IntAtRuntime</a> <a href="#coalton-i16-type">I16</a></code>
 - <code><a href="#coalton-math-integral-integral-class">Integral</a> <a href="#coalton-i16-type">I16</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-i16-type">I16</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-f32-type">F32</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-f64-type">F64</a></code>
@@ -433,6 +437,7 @@ Signed 32-bit integer capable of storing values in `[-2147483648, 2147483647]`. 
 - <code><a href="#coalton-math-integral-integral-class">Integral</a> <a href="#coalton-i32-type">I32</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-i32-type">I32</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-i32-type">I32</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-f64-type">F64</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-fraction-type">Fraction</a></code>
@@ -492,6 +497,7 @@ Signed 64-bit integer capable of storing values in `[-9223372036854775808, 92233
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-i64-type">I64</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-i64-type">I64</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-i64-type">I64</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-fraction-type">Fraction</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-integer-type">Integer</a></code>
@@ -548,6 +554,7 @@ Signed 8-bit integer capable of storing values in `[-128, 127]`. Uses `(signed-b
 - <code><a href="#coalton-format-intatruntime-class">IntAtRuntime</a> <a href="#coalton-i8-type">I8</a></code>
 - <code><a href="#coalton-math-integral-integral-class">Integral</a> <a href="#coalton-i8-type">I8</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-i8-type">I8</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-f32-type">F32</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-f64-type">F64</a></code>
@@ -609,6 +616,7 @@ Non-allocating tagged integer; range is platform-dependent. Does not error on ov
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-ifix-type">IFix</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-ifix-type">IFix</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-ifix-type">IFix</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-fraction-type">Fraction</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-i64-type">I64</a></code>
@@ -878,6 +886,7 @@ Unsigned 16-bit integer capable of storing values in `[0, 65535]`. Uses `(unsign
 - <code><a href="#coalton-format-intatruntime-class">IntAtRuntime</a> <a href="#coalton-u16-type">U16</a></code>
 - <code><a href="#coalton-math-integral-integral-class">Integral</a> <a href="#coalton-u16-type">U16</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-u16-type">U16</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-f32-type">F32</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-f64-type">F64</a></code>
@@ -935,6 +944,7 @@ Unsigned 32-bit integer capable of storing values in `[0, 4294967295]`. Uses `(u
 - <code><a href="#coalton-math-integral-integral-class">Integral</a> <a href="#coalton-u32-type">U32</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-u32-type">U32</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-u32-type">U32</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-f64-type">F64</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-fraction-type">Fraction</a></code>
@@ -995,6 +1005,7 @@ Unsigned 64-bit integer capable of storing values in `[0, 18446744073709551615]`
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-u64-type">U64</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-u64-type">U64</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-u64-type">U64</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-fraction-type">Fraction</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-integer-type">Integer</a></code>
@@ -1052,6 +1063,7 @@ Unsigned 8-bit integer capable of storing values in `[0, 255]`. Uses `(unsigned-
 - <code><a href="#coalton-format-intatruntime-class">IntAtRuntime</a> <a href="#coalton-u8-type">U8</a></code>
 - <code><a href="#coalton-math-integral-integral-class">Integral</a> <a href="#coalton-u8-type">U8</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-u8-type">U8</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-f32-type">F32</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-f64-type">F64</a></code>
@@ -1114,6 +1126,7 @@ Non-allocating tagged non-negative integer; range is platform-dependent. Uses `(
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-ufix-type">UFix</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-ufix-type">UFix</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-ufix-type">UFix</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-fraction-type">Fraction</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-i64-type">I64</a></code>
@@ -2452,6 +2465,17 @@ Methods:
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
 - <code>(<a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> :A) (<a href="#coalton-classes-into-class">Into</a> :A <a href="#coalton-xmath-computable-reals-creal-type">CReal</a>) &rArr; <a href="#coalton-classes-into-class">Into</a> (<a href="#coalton-math-complex-complex-type">Complex</a> :A) (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a>)</code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
@@ -2892,6 +2916,8 @@ Methods:
 <summary>Instances</summary>
 
 - <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a> <a href="#coalton-fraction-type">Fraction</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a> <a href="#coalton-f64-type">F64</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a> <a href="#coalton-f32-type">F32</a></code>
 - <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-string-type">String</a> <a href="#coalton-integer-type">Integer</a></code>
 - <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-f64-type">F64</a></code>
 - <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-f64-type">F64</a></code>
@@ -10265,7 +10291,7 @@ Construct a `Vector' containing the ELEMENTS, in the order listed.
 
 ### Types
 
-#### <a href="#coalton-xmath-big-float-big-float-type"><code>Big-Float</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L171-L172">src</a></sub></sup><a name="coalton-xmath-big-float-big-float-type"></a>
+#### <a href="#coalton-xmath-big-float-big-float-type"><code>Big-Float</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L204-L205">src</a></sub></sup><a name="coalton-xmath-big-float-big-float-type"></a>
 
 An arbitrary (but fixed) precision floating point number.
 
@@ -10277,10 +10303,21 @@ An arbitrary (but fixed) precision floating point number.
 - <code><a href="#coalton-math-elementary-elementary-class">Elementary</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-classes-eq-class">Eq</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i32-type">I32</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-classes-num-class">Num</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-math-elementary-polar-class">Polar</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
@@ -10292,6 +10329,8 @@ An arbitrary (but fixed) precision floating point number.
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-math-arith-transfinite-class">Transfinite</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a> <a href="#coalton-f32-type">F32</a></code>
+- <code><a href="#coalton-classes-tryinto-class">TryInto</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a> <a href="#coalton-f64-type">F64</a></code>
 
 </details>
 
@@ -10299,7 +10338,7 @@ An arbitrary (but fixed) precision floating point number.
 
 ***
 
-#### <a href="#coalton-xmath-big-float-roundingmode-type"><code>RoundingMode</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L86-L86">src</a></sub></sup><a name="coalton-xmath-big-float-roundingmode-type"></a>
+#### <a href="#coalton-xmath-big-float-roundingmode-type"><code>RoundingMode</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L119-L119">src</a></sub></sup><a name="coalton-xmath-big-float-roundingmode-type"></a>
 <details>
 <summary>Instances</summary>
 
@@ -10313,7 +10352,7 @@ An arbitrary (but fixed) precision floating point number.
 
 ### Values
 
-#### <a href="#coalton-xmath-big-float-bf-ee-value"><code>(BF-EE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L316-L319">src</a></sub></sup><a name="coalton-xmath-big-float-bf-ee-value"></a>
+#### <a href="#coalton-xmath-big-float-bf-ee-value"><code>(BF-EE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L365-L368">src</a></sub></sup><a name="coalton-xmath-big-float-bf-ee-value"></a>
 <code>Void &rarr; <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 
 Return the value of ee = exp(1) to the currently set precision.
@@ -10322,7 +10361,7 @@ Return the value of ee = exp(1) to the currently set precision.
 
 ***
 
-#### <a href="#coalton-xmath-big-float-bf-pi-value"><code>(BF-PI)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L286-L289">src</a></sub></sup><a name="coalton-xmath-big-float-bf-pi-value"></a>
+#### <a href="#coalton-xmath-big-float-bf-pi-value"><code>(BF-PI)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L335-L338">src</a></sub></sup><a name="coalton-xmath-big-float-bf-pi-value"></a>
 <code>Void &rarr; <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 
 Return the value of pi to the currently set precision.
@@ -10331,7 +10370,7 @@ Return the value of pi to the currently set precision.
 
 ***
 
-#### <a href="#coalton-xmath-big-float-get-precision-value"><code>(GET-PRECISION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L137-L140">src</a></sub></sup><a name="coalton-xmath-big-float-get-precision-value"></a>
+#### <a href="#coalton-xmath-big-float-get-precision-value"><code>(GET-PRECISION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L170-L173">src</a></sub></sup><a name="coalton-xmath-big-float-get-precision-value"></a>
 <code>Void &rarr; <a href="#coalton-ufix-type">UFix</a></code>
 
 Get the current precision of Big-Float arithmetic.
@@ -10340,7 +10379,7 @@ Get the current precision of Big-Float arithmetic.
 
 ***
 
-#### <a href="#coalton-xmath-big-float-get-rounding-mode-value"><code>(GET-ROUNDING-MODE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L143-L146">src</a></sub></sup><a name="coalton-xmath-big-float-get-rounding-mode-value"></a>
+#### <a href="#coalton-xmath-big-float-get-rounding-mode-value"><code>(GET-ROUNDING-MODE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L176-L179">src</a></sub></sup><a name="coalton-xmath-big-float-get-rounding-mode-value"></a>
 <code>Void &rarr; <a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a></code>
 
 Get the current rounding-mode of Big-Float arithmetic.
@@ -10349,7 +10388,25 @@ Get the current rounding-mode of Big-Float arithmetic.
 
 ***
 
-#### <a href="#coalton-xmath-big-float-set-precision!-value"><code>(SET-PRECISION! PREC-BITS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L119-L126">src</a></sub></sup><a name="coalton-xmath-big-float-set-precision!-value"></a>
+#### <a href="#coalton-xmath-big-float-round-to-f32-value"><code>(ROUND-TO-F32 A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L273-L273">src</a></sub></sup><a name="coalton-xmath-big-float-round-to-f32-value"></a>
+<code><a href="#coalton-xmath-big-float-big-float-type">Big-Float</a> &rarr; <a href="#coalton-f32-type">F32</a></code>
+
+Round a Big-Float to the nearest representable native float, with ties to even.
+
+
+
+***
+
+#### <a href="#coalton-xmath-big-float-round-to-f64-value"><code>(ROUND-TO-F64 A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L274-L274">src</a></sub></sup><a name="coalton-xmath-big-float-round-to-f64-value"></a>
+<code><a href="#coalton-xmath-big-float-big-float-type">Big-Float</a> &rarr; <a href="#coalton-f64-type">F64</a></code>
+
+Round a Big-Float to the nearest representable native float, with ties to even.
+
+
+
+***
+
+#### <a href="#coalton-xmath-big-float-set-precision!-value"><code>(SET-PRECISION! PREC-BITS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L152-L159">src</a></sub></sup><a name="coalton-xmath-big-float-set-precision!-value"></a>
 <code><a href="#coalton-ufix-type">UFix</a> &rarr; Void</code>
 
 Set the precision of Big-Float arithmetic to PREC-BITS bits.
@@ -10358,7 +10415,7 @@ Set the precision of Big-Float arithmetic to PREC-BITS bits.
 
 ***
 
-#### <a href="#coalton-xmath-big-float-set-rounding-mode!-value"><code>(SET-ROUNDING-MODE! R)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L129-L134">src</a></sub></sup><a name="coalton-xmath-big-float-set-rounding-mode!-value"></a>
+#### <a href="#coalton-xmath-big-float-set-rounding-mode!-value"><code>(SET-ROUNDING-MODE! R)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L162-L167">src</a></sub></sup><a name="coalton-xmath-big-float-set-rounding-mode!-value"></a>
 <code><a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a> &rarr; Void</code>
 
 Set the global rounding mode for Big-Float operations.
@@ -10367,7 +10424,7 @@ Set the global rounding mode for Big-Float operations.
 
 ***
 
-#### <a href="#coalton-xmath-big-float-with-precision-value"><code>(WITH-PRECISION F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L159-L161">src</a></sub></sup><a name="coalton-xmath-big-float-with-precision-value"></a>
+#### <a href="#coalton-xmath-big-float-with-precision-value"><code>(WITH-PRECISION F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L192-L194">src</a></sub></sup><a name="coalton-xmath-big-float-with-precision-value"></a>
 <code>&forall; :A. (Void &rarr; :A) &key (:precision <a href="#coalton-ufix-type">UFix</a>) &rarr; :A</code>
 
 Call F with a temporary Big-Float PRECISION.
@@ -10376,7 +10433,7 @@ Call F with a temporary Big-Float PRECISION.
 
 ***
 
-#### <a href="#coalton-xmath-big-float-with-precision-rounding-value"><code>(WITH-PRECISION-ROUNDING F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L150-L155">src</a></sub></sup><a name="coalton-xmath-big-float-with-precision-rounding-value"></a>
+#### <a href="#coalton-xmath-big-float-with-precision-rounding-value"><code>(WITH-PRECISION-ROUNDING F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L183-L188">src</a></sub></sup><a name="coalton-xmath-big-float-with-precision-rounding-value"></a>
 <code>&forall; :A. (Void &rarr; :A) &key (:precision <a href="#coalton-ufix-type">UFix</a>) (:rounding <a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a>) &rarr; :A</code>
 
 Call F with a temporary Big-Float PRECISION and ROUNDING mode.
@@ -10385,7 +10442,7 @@ Call F with a temporary Big-Float PRECISION and ROUNDING mode.
 
 ***
 
-#### <a href="#coalton-xmath-big-float-with-rounding-value"><code>(WITH-ROUNDING F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L165-L167">src</a></sub></sup><a name="coalton-xmath-big-float-with-rounding-value"></a>
+#### <a href="#coalton-xmath-big-float-with-rounding-value"><code>(WITH-ROUNDING F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L198-L200">src</a></sub></sup><a name="coalton-xmath-big-float-with-rounding-value"></a>
 <code>&forall; :A. (Void &rarr; :A) &key (:rounding <a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a>) &rarr; :A</code>
 
 Call F with a temporary Big-Float ROUNDING mode.
@@ -10394,7 +10451,7 @@ Call F with a temporary Big-Float ROUNDING mode.
 
 ***
 
-#### <a href="#coalton-xmath-big-float-rnda-value"><code>RNDA</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L109-L111">src</a></sub></sup><a name="coalton-xmath-big-float-rnda-value"></a>
+#### <a href="#coalton-xmath-big-float-rnda-value"><code>RNDA</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L142-L144">src</a></sub></sup><a name="coalton-xmath-big-float-rnda-value"></a>
 <code><a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a></code>
 
 RouND Away from zero.
@@ -10403,7 +10460,7 @@ RouND Away from zero.
 
 ***
 
-#### <a href="#coalton-xmath-big-float-rndd-value"><code>RNDD</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L105-L107">src</a></sub></sup><a name="coalton-xmath-big-float-rndd-value"></a>
+#### <a href="#coalton-xmath-big-float-rndd-value"><code>RNDD</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L138-L140">src</a></sub></sup><a name="coalton-xmath-big-float-rndd-value"></a>
 <code><a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a></code>
 
 RouND Down, toward negative infinity.
@@ -10412,7 +10469,7 @@ RouND Down, toward negative infinity.
 
 ***
 
-#### <a href="#coalton-xmath-big-float-rndf-value"><code>RNDF</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L113-L115">src</a></sub></sup><a name="coalton-xmath-big-float-rndf-value"></a>
+#### <a href="#coalton-xmath-big-float-rndf-value"><code>RNDF</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L146-L148">src</a></sub></sup><a name="coalton-xmath-big-float-rndf-value"></a>
 <code><a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a></code>
 
 Faithful rounding (experimental).
@@ -10421,7 +10478,7 @@ Faithful rounding (experimental).
 
 ***
 
-#### <a href="#coalton-xmath-big-float-rndn-value"><code>RNDN</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L93-L95">src</a></sub></sup><a name="coalton-xmath-big-float-rndn-value"></a>
+#### <a href="#coalton-xmath-big-float-rndn-value"><code>RNDN</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L126-L128">src</a></sub></sup><a name="coalton-xmath-big-float-rndn-value"></a>
 <code><a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a></code>
 
 RouND to Nearest, with the even rounding rule.
@@ -10430,7 +10487,7 @@ RouND to Nearest, with the even rounding rule.
 
 ***
 
-#### <a href="#coalton-xmath-big-float-rndna-value"><code>RNDNA</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L89-L91">src</a></sub></sup><a name="coalton-xmath-big-float-rndna-value"></a>
+#### <a href="#coalton-xmath-big-float-rndna-value"><code>RNDNA</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L122-L124">src</a></sub></sup><a name="coalton-xmath-big-float-rndna-value"></a>
 <code><a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a></code>
 
 RouND to Nearest Away.
@@ -10439,7 +10496,7 @@ RouND to Nearest Away.
 
 ***
 
-#### <a href="#coalton-xmath-big-float-rndu-value"><code>RNDU</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L101-L103">src</a></sub></sup><a name="coalton-xmath-big-float-rndu-value"></a>
+#### <a href="#coalton-xmath-big-float-rndu-value"><code>RNDU</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L134-L136">src</a></sub></sup><a name="coalton-xmath-big-float-rndu-value"></a>
 <code><a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a></code>
 
 RouND Up, toward positive infinity.
@@ -10448,7 +10505,7 @@ RouND Up, toward positive infinity.
 
 ***
 
-#### <a href="#coalton-xmath-big-float-rndz-value"><code>RNDZ</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L97-L99">src</a></sub></sup><a name="coalton-xmath-big-float-rndz-value"></a>
+#### <a href="#coalton-xmath-big-float-rndz-value"><code>RNDZ</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L130-L132">src</a></sub></sup><a name="coalton-xmath-big-float-rndz-value"></a>
 <code><a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a></code>
 
 RouND toward Zero.
