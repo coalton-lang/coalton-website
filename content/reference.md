@@ -65,7 +65,6 @@ layout: two-pane
 - <a href="#coalton-system-package"><code>COALTON/SYSTEM</code></a>
 - <a href="#coalton-tuple-package"><code>COALTON/TUPLE</code></a>
 - <a href="#coalton-types-package"><code>COALTON/TYPES</code></a>
-- <a href="#coalton-utils-package"><code>COALTON/UTILS</code></a>
 - <a href="#coalton-vector-package"><code>COALTON/VECTOR</code></a>
 - <a href="#coalton-xmath-big-float-package"><code>COALTON/XMATH/BIG-FLOAT</code></a>
 - <a href="#coalton-xmath-computable-reals-package"><code>COALTON/XMATH/COMPUTABLE-REALS</code></a>
@@ -1933,7 +1932,7 @@ Represents something that may have failed.
 
 ### Structs
 
-#### <a href="#coalton-classes-tuple-type"><code>Tuple #&lt;COALTON-IMPL/TYPECHECKER/TYPES:TYVAR :A&gt; #&lt;COALTON-IMPL/TYPECHECKER/TYPES:TYVAR :B&gt;</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L78-L81">src</a></sub></sup><a name="coalton-classes-tuple-type"></a>
+#### <a href="#coalton-classes-tuple-type"><code>Tuple :A :B</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L78-L81">src</a></sub></sup><a name="coalton-classes-tuple-type"></a>
 
 A heterogeneous collection of items.
 
@@ -7046,7 +7045,7 @@ Exponentiate BASE to a signed POWER.
 
 ### Structs
 
-#### <a href="#coalton-math-real-quantization-type"><code>Quantization #&lt;COALTON-IMPL/TYPECHECKER/TYPES:TYVAR :A&gt;</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L227-L238">src</a></sub></sup><a name="coalton-math-real-quantization-type"></a>
+#### <a href="#coalton-math-real-quantization-type"><code>Quantization :A</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L227-L238">src</a></sub></sup><a name="coalton-math-real-quantization-type"></a>
 
 Represents an integer quantization of `:a`.
 
@@ -9395,7 +9394,7 @@ Condition for lisp error handling. Uses `cl:condition`.
 
 ### Structs
 
-#### <a href="#coalton-system-meteredresult-type"><code>MeteredResult #&lt;COALTON-IMPL/TYPECHECKER/TYPES:TYVAR :A&gt;</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/system.ct#L147-L154">src</a></sub></sup><a name="coalton-system-meteredresult-type"></a>
+#### <a href="#coalton-system-meteredresult-type"><code>MeteredResult :A</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/system.ct#L147-L154">src</a></sub></sup><a name="coalton-system-meteredresult-type"></a>
 
 Function output with space and timing metedata.
 
@@ -9617,10 +9616,10 @@ The number of internal time units per second. This is implementation specific.
 
 ### Structs
 
-#### <a href="#coalton-tuple-tuple3-type"><code>Tuple3 #&lt;COALTON-IMPL/TYPECHECKER/TYPES:TYVAR :A&gt; #&lt;COALTON-IMPL/TYPECHECKER/TYPES:TYVAR :B&gt; #&lt;COALTON-IMPL/TYPECHECKER/TYPES:TYVAR :C&gt;</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.ct#L54-L57">src</a></sub></sup><a name="coalton-tuple-tuple3-type"></a>
-- <code>FIRST :: #<COALTON-IMPL/TYPECHECKER/TYPES:TYVAR :A></code>
-- <code>SECOND :: #<COALTON-IMPL/TYPECHECKER/TYPES:TYVAR :B></code>
-- <code>THIRD :: #<COALTON-IMPL/TYPECHECKER/TYPES:TYVAR :C></code>
+#### <a href="#coalton-tuple-tuple3-type"><code>Tuple3 :A :B :C</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.ct#L54-L57">src</a></sub></sup><a name="coalton-tuple-tuple3-type"></a>
+- <code>FIRST :: :A</code>
+- <code>SECOND :: :B</code>
+- <code>THIRD :: :C</code>
 <details>
 <summary>Instances</summary>
 
@@ -9635,11 +9634,11 @@ The number of internal time units per second. This is implementation specific.
 
 ***
 
-#### <a href="#coalton-tuple-tuple4-type"><code>Tuple4 #&lt;COALTON-IMPL/TYPECHECKER/TYPES:TYVAR :A&gt; #&lt;COALTON-IMPL/TYPECHECKER/TYPES:TYVAR :B&gt; #&lt;COALTON-IMPL/TYPECHECKER/TYPES:TYVAR :C&gt; #&lt;COALTON-IMPL/TYPECHECKER/TYPES:TYVAR :D&gt;</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.ct#L72-L76">src</a></sub></sup><a name="coalton-tuple-tuple4-type"></a>
-- <code>FIRST :: #<COALTON-IMPL/TYPECHECKER/TYPES:TYVAR :A></code>
-- <code>SECOND :: #<COALTON-IMPL/TYPECHECKER/TYPES:TYVAR :B></code>
-- <code>THIRD :: #<COALTON-IMPL/TYPECHECKER/TYPES:TYVAR :C></code>
-- <code>FOURTH :: #<COALTON-IMPL/TYPECHECKER/TYPES:TYVAR :D></code>
+#### <a href="#coalton-tuple-tuple4-type"><code>Tuple4 :A :B :C :D</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.ct#L72-L76">src</a></sub></sup><a name="coalton-tuple-tuple4-type"></a>
+- <code>FIRST :: :A</code>
+- <code>SECOND :: :B</code>
+- <code>THIRD :: :C</code>
+- <code>FOURTH :: :D</code>
 <details>
 <summary>Instances</summary>
 
@@ -9654,12 +9653,12 @@ The number of internal time units per second. This is implementation specific.
 
 ***
 
-#### <a href="#coalton-tuple-tuple5-type"><code>Tuple5 #&lt;COALTON-IMPL/TYPECHECKER/TYPES:TYVAR :A&gt; #&lt;COALTON-IMPL/TYPECHECKER/TYPES:TYVAR :B&gt; #&lt;COALTON-IMPL/TYPECHECKER/TYPES:TYVAR :C&gt; #&lt;COALTON-IMPL/TYPECHECKER/TYPES:TYVAR :D&gt; #&lt;COALTON-IMPL/TYPECHECKER/TYPES:TYVAR :E&gt;</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.ct#L92-L97">src</a></sub></sup><a name="coalton-tuple-tuple5-type"></a>
-- <code>FIRST :: #<COALTON-IMPL/TYPECHECKER/TYPES:TYVAR :A></code>
-- <code>SECOND :: #<COALTON-IMPL/TYPECHECKER/TYPES:TYVAR :B></code>
-- <code>THIRD :: #<COALTON-IMPL/TYPECHECKER/TYPES:TYVAR :C></code>
-- <code>FOURTH :: #<COALTON-IMPL/TYPECHECKER/TYPES:TYVAR :D></code>
-- <code>FIFTH :: #<COALTON-IMPL/TYPECHECKER/TYPES:TYVAR :E></code>
+#### <a href="#coalton-tuple-tuple5-type"><code>Tuple5 :A :B :C :D :E</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.ct#L92-L97">src</a></sub></sup><a name="coalton-tuple-tuple5-type"></a>
+- <code>FIRST :: :A</code>
+- <code>SECOND :: :B</code>
+- <code>THIRD :: :C</code>
+- <code>FOURTH :: :D</code>
+- <code>FIFTH :: :E</code>
 <details>
 <summary>Instances</summary>
 
@@ -9928,16 +9927,6 @@ Returns a Proxy containing the type of the parameter.
 
 Returns the runtime representation of the type of the given value.
 
-
-
-***
-
-# Package `COALTON/UTILS`<a name="coalton-utils-package"></a>
-
-### Values
-
-#### <a href="#coalton-utils-concat-string-value"><code>(CONCAT-STRING A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/utils.ct#L53-L55">src</a></sub></sup><a name="coalton-utils-concat-string-value"></a>
-<code><a href="#coalton-string-type">String</a> * <a href="#coalton-string-type">String</a> &rarr; <a href="#coalton-string-type">String</a></code>
 
 
 ***
@@ -10707,7 +10696,7 @@ References:
 
 ### Structs
 
-#### <a href="#coalton-xmath-dual-dual-type"><code>Dual #&lt;COALTON-IMPL/TYPECHECKER/TYPES:TYVAR :T&gt;</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/dual.ct#L82-L90">src</a></sub></sup><a name="coalton-xmath-dual-dual-type"></a>
+#### <a href="#coalton-xmath-dual-dual-type"><code>Dual :T</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/dual.ct#L82-L90">src</a></sub></sup><a name="coalton-xmath-dual-dual-type"></a>
 
 Representation of a dual number in the form $a + b\varepsilon$ where
 $a$ and $b$ are real numbers and $\varepsilon$ satisfies
@@ -11146,7 +11135,7 @@ The following list of identities describe the theory of hyperdual numbers.
 
 ### Structs
 
-#### <a href="#coalton-xmath-hyperdual-hyperdual-type"><code>Hyperdual #&lt;COALTON-IMPL/TYPECHECKER/TYPES:TYVAR :T&gt;</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/hyperdual.ct#L138-L145">src</a></sub></sup><a name="coalton-xmath-hyperdual-hyperdual-type"></a>
+#### <a href="#coalton-xmath-hyperdual-hyperdual-type"><code>Hyperdual :T</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/hyperdual.ct#L138-L145">src</a></sub></sup><a name="coalton-xmath-hyperdual-hyperdual-type"></a>
 
 Representation of a hyperdual number in the form `a + bε₁ + cε₂ + dε₁ε₂` where `a`, `b`, `c`, and `d` are real numbers and `ε₁` and `ε₂` satisfy `εᵢ² = 0` and `ε₁ε₂ != 0`.
 
