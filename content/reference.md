@@ -193,6 +193,7 @@ A character represented by a Common Lisp `cl:character`.
 - <code><a href="#coalton-iterator-fromiterator-class">FromIterator</a> <a href="#coalton-string-type">String</a> <a href="#coalton-char-type">Char</a></code>
 - <code><a href="#coalton-classes-hash-class">Hash</a> <a href="#coalton-char-type">Char</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-char-type">Char</a> <a href="#coalton-string-type">String</a></code>
+- <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-char-type">Char</a>) <a href="#coalton-char-type">Char</a></code>
 - <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> <a href="#coalton-string-type">String</a> <a href="#coalton-char-type">Char</a></code>
 - <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-char-type">Char</a></code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-char-type">Char</a></code>
@@ -391,6 +392,7 @@ Signed 16-bit integer capable of storing values in `[-32768, 32767]`. Uses `(sig
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i16-type">I16</a> <a href="#coalton-string-type">String</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-i16-type">I16</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-i16-type">I16</a></code>
+- <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-i16-type">I16</a>) <a href="#coalton-i16-type">I16</a></code>
 - <code><a href="#coalton-classes-num-class">Num</a> <a href="#coalton-i16-type">I16</a></code>
 - <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-i16-type">I16</a></code>
 - <code><a href="#coalton-math-integral-remainder-class">Remainder</a> <a href="#coalton-i16-type">I16</a></code>
@@ -447,6 +449,7 @@ Signed 32-bit integer capable of storing values in `[-2147483648, 2147483647]`. 
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-i32-type">I32</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-i32-type">I32</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-i32-type">I32</a></code>
+- <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-i32-type">I32</a>) <a href="#coalton-i32-type">I32</a></code>
 - <code><a href="#coalton-classes-num-class">Num</a> <a href="#coalton-i32-type">I32</a></code>
 - <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-i32-type">I32</a></code>
 - <code><a href="#coalton-math-real-quantizable-class">Quantizable</a> <a href="#coalton-i32-type">I32</a></code>
@@ -507,6 +510,7 @@ Signed 64-bit integer capable of storing values in `[-9223372036854775808, 92233
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-i64-type">I64</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-i64-type">I64</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-i64-type">I64</a></code>
+- <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-i64-type">I64</a>) <a href="#coalton-i64-type">I64</a></code>
 - <code><a href="#coalton-classes-num-class">Num</a> <a href="#coalton-i64-type">I64</a></code>
 - <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-i64-type">I64</a></code>
 - <code><a href="#coalton-math-real-quantizable-class">Quantizable</a> <a href="#coalton-i64-type">I64</a></code>
@@ -564,6 +568,7 @@ Signed 8-bit integer capable of storing values in `[-128, 127]`. Uses `(signed-b
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-ifix-type">IFix</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-integer-type">Integer</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-string-type">String</a></code>
+- <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-i8-type">I8</a>) <a href="#coalton-i8-type">I8</a></code>
 - <code><a href="#coalton-classes-num-class">Num</a> <a href="#coalton-i8-type">I8</a></code>
 - <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-i8-type">I8</a></code>
 - <code><a href="#coalton-math-real-quantizable-class">Quantizable</a> <a href="#coalton-i8-type">I8</a></code>
@@ -625,6 +630,7 @@ Non-allocating tagged integer; range is platform-dependent. Does not error on ov
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-ifix-type">IFix</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-ifix-type">IFix</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-ifix-type">IFix</a></code>
+- <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-ifix-type">IFix</a>) <a href="#coalton-ifix-type">IFix</a></code>
 - <code><a href="#coalton-classes-num-class">Num</a> <a href="#coalton-ifix-type">IFix</a></code>
 - <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-ifix-type">IFix</a></code>
 - <code><a href="#coalton-math-real-quantizable-class">Quantizable</a> <a href="#coalton-ifix-type">IFix</a></code>
@@ -899,6 +905,7 @@ Unsigned 16-bit integer capable of storing values in `[0, 65535]`. Uses `(unsign
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-u64-type">U64</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u16-type">U16</a> <a href="#coalton-ufix-type">UFix</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-u16-type">U16</a></code>
+- <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-u16-type">U16</a>) <a href="#coalton-u16-type">U16</a></code>
 - <code><a href="#coalton-classes-num-class">Num</a> <a href="#coalton-u16-type">U16</a></code>
 - <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-u16-type">U16</a></code>
 - <code><a href="#coalton-math-integral-remainder-class">Remainder</a> <a href="#coalton-u16-type">U16</a></code>
@@ -954,6 +961,7 @@ Unsigned 32-bit integer capable of storing values in `[0, 4294967295]`. Uses `(u
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-u64-type">U64</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u32-type">U32</a> <a href="#coalton-ufix-type">UFix</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-u32-type">U32</a></code>
+- <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-u32-type">U32</a>) <a href="#coalton-u32-type">U32</a></code>
 - <code><a href="#coalton-classes-num-class">Num</a> <a href="#coalton-u32-type">U32</a></code>
 - <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-u32-type">U32</a></code>
 - <code><a href="#coalton-math-real-quantizable-class">Quantizable</a> <a href="#coalton-u32-type">U32</a></code>
@@ -1011,6 +1019,7 @@ Unsigned 64-bit integer capable of storing values in `[0, 18446744073709551615]`
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u64-type">U64</a> <a href="#coalton-string-type">String</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-u64-type">U64</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-u64-type">U64</a></code>
+- <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-u64-type">U64</a>) <a href="#coalton-u64-type">U64</a></code>
 - <code><a href="#coalton-classes-num-class">Num</a> <a href="#coalton-u64-type">U64</a></code>
 - <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-u64-type">U64</a></code>
 - <code><a href="#coalton-math-real-quantizable-class">Quantizable</a> <a href="#coalton-u64-type">U64</a></code>
@@ -1077,6 +1086,7 @@ Unsigned 8-bit integer capable of storing values in `[0, 255]`. Uses `(unsigned-
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-u32-type">U32</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-u64-type">U64</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-ufix-type">UFix</a></code>
+- <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-u8-type">U8</a>) <a href="#coalton-u8-type">U8</a></code>
 - <code><a href="#coalton-classes-num-class">Num</a> <a href="#coalton-u8-type">U8</a></code>
 - <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-u8-type">U8</a></code>
 - <code><a href="#coalton-math-real-quantizable-class">Quantizable</a> <a href="#coalton-u8-type">U8</a></code>
@@ -1133,6 +1143,7 @@ Non-allocating tagged non-negative integer; range is platform-dependent. Uses `(
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-integer-type">Integer</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-string-type">String</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-u64-type">U64</a></code>
+- <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-ufix-type">UFix</a>) <a href="#coalton-ufix-type">UFix</a></code>
 - <code><a href="#coalton-classes-num-class">Num</a> <a href="#coalton-ufix-type">UFix</a></code>
 - <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-ufix-type">UFix</a></code>
 - <code><a href="#coalton-math-real-quantizable-class">Quantizable</a> <a href="#coalton-ufix-type">UFix</a></code>
@@ -3854,6 +3865,17 @@ Represents a file stream, using `cl:file-stream`.
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-char-type">Char</a>) <a href="#coalton-char-type">Char</a></code>
+- <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-i16-type">I16</a>) <a href="#coalton-i16-type">I16</a></code>
+- <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-i32-type">I32</a>) <a href="#coalton-i32-type">I32</a></code>
+- <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-i64-type">I64</a>) <a href="#coalton-i64-type">I64</a></code>
+- <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-i8-type">I8</a>) <a href="#coalton-i8-type">I8</a></code>
+- <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-ifix-type">IFix</a>) <a href="#coalton-ifix-type">IFix</a></code>
+- <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-u16-type">U16</a>) <a href="#coalton-u16-type">U16</a></code>
+- <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-u32-type">U32</a>) <a href="#coalton-u32-type">U32</a></code>
+- <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-u64-type">U64</a>) <a href="#coalton-u64-type">U64</a></code>
+- <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-u8-type">U8</a>) <a href="#coalton-u8-type">U8</a></code>
+- <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-ufix-type">UFix</a>) <a href="#coalton-ufix-type">UFix</a></code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-file-filestream-type">FileStream</a> :|0|)</code>
 
 </details>
@@ -3964,7 +3986,7 @@ Closes a FileStream and aborts all operations..
 
 ***
 
-#### <a href="#coalton-file-append-to-file!-value"><code>(APPEND-TO-FILE! PATH DATA)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L738-L744">src</a></sub></sup><a name="coalton-file-append-to-file!-value"></a>
+#### <a href="#coalton-file-append-to-file!-value"><code>(APPEND-TO-FILE! PATH DATA)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L755-L761">src</a></sub></sup><a name="coalton-file-append-to-file!-value"></a>
 <code>&forall; :P :A. (<a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> :A) (<a href="#coalton-classes-into-class">Into</a> :P <a href="#coalton-file-pathname-type">Pathname</a>) (<a href="#coalton-file-file-class">File</a> :A) &rArr; :P * <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-file-fileerror-type">FileError</a> <a href="#coalton-unit-type">Unit</a></code>
 
 Opens and appends a file with data of type :a.
@@ -4000,7 +4022,7 @@ This is equivalent to `mkdir -p`. Creates a directory and its parents. The pathn
 
 ***
 
-#### <a href="#coalton-file-create-temp-directory!-value"><code>(CREATE-TEMP-DIRECTORY!)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L690-L692">src</a></sub></sup><a name="coalton-file-create-temp-directory!-value"></a>
+#### <a href="#coalton-file-create-temp-directory!-value"><code>(CREATE-TEMP-DIRECTORY!)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L707-L709">src</a></sub></sup><a name="coalton-file-create-temp-directory!-value"></a>
 <code>Void &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-file-fileerror-type">FileError</a> <a href="#coalton-file-pathname-type">Pathname</a></code>
 
 This configures a default temporary directory for use.
@@ -4009,7 +4031,7 @@ This configures a default temporary directory for use.
 
 ***
 
-#### <a href="#coalton-file-create-temp-file!-value"><code>(CREATE-TEMP-FILE!)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L695-L701">src</a></sub></sup><a name="coalton-file-create-temp-file!-value"></a>
+#### <a href="#coalton-file-create-temp-file!-value"><code>(CREATE-TEMP-FILE!)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L712-L718">src</a></sub></sup><a name="coalton-file-create-temp-file!-value"></a>
 <code>&key (:extension <a href="#coalton-string-type">String</a>) &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-file-fileerror-type">FileError</a> <a href="#coalton-file-pathname-type">Pathname</a></code>
 
 Create a temporary file path, optionally ending in EXTENSION.
@@ -4126,7 +4148,7 @@ Reads a character from an FileStream.
 
 ***
 
-#### <a href="#coalton-file-read-file-lines-value"><code>(READ-FILE-LINES PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L770-L774">src</a></sub></sup><a name="coalton-file-read-file-lines-value"></a>
+#### <a href="#coalton-file-read-file-lines-value"><code>(READ-FILE-LINES PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L787-L791">src</a></sub></sup><a name="coalton-file-read-file-lines-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-into-class">Into</a> :A <a href="#coalton-file-pathname-type">Pathname</a> &rArr; :A &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-file-fileerror-type">FileError</a> (<a href="#coalton-list-type">List</a> <a href="#coalton-string-type">String</a>)</code>
 
 Reads a file into lines, given a pathname or string.
@@ -4135,7 +4157,7 @@ Reads a file into lines, given a pathname or string.
 
 ***
 
-#### <a href="#coalton-file-read-file-to-string-value"><code>(READ-FILE-TO-STRING PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L763-L767">src</a></sub></sup><a name="coalton-file-read-file-to-string-value"></a>
+#### <a href="#coalton-file-read-file-to-string-value"><code>(READ-FILE-TO-STRING PATH)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L780-L784">src</a></sub></sup><a name="coalton-file-read-file-to-string-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-into-class">Into</a> :A <a href="#coalton-file-pathname-type">Pathname</a> &rArr; :A &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-file-fileerror-type">FileError</a> <a href="#coalton-string-type">String</a></code>
 
 Reads a file into a string, given a pathname string.
@@ -4144,7 +4166,7 @@ Reads a file into a string, given a pathname string.
 
 ***
 
-#### <a href="#coalton-file-read-file-to-vector-value"><code>(READ-FILE-TO-VECTOR STREAM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L616-L625">src</a></sub></sup><a name="coalton-file-read-file-to-vector-value"></a>
+#### <a href="#coalton-file-read-file-to-vector-value"><code>(READ-FILE-TO-VECTOR STREAM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L633-L642">src</a></sub></sup><a name="coalton-file-read-file-to-vector-value"></a>
 <code>&forall; :A. <a href="#coalton-file-file-class">File</a> :A &rArr; <a href="#coalton-file-filestream-type">FileStream</a> :A &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-file-fileerror-type">FileError</a> (<a href="#coalton-vector-vector-type">Vector</a> :A)</code>
 
 Reads a file into a vector of type `:a`.
@@ -4162,7 +4184,7 @@ Reads a line of characters from a FileStream.
 
 ***
 
-#### <a href="#coalton-file-read-vector-value"><code>(READ-VECTOR STREAM CHUNK-SIZE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L602-L610">src</a></sub></sup><a name="coalton-file-read-vector-value"></a>
+#### <a href="#coalton-file-read-vector-value"><code>(READ-VECTOR STREAM CHUNK-SIZE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L619-L627">src</a></sub></sup><a name="coalton-file-read-vector-value"></a>
 <code>&forall; :A. <a href="#coalton-file-file-class">File</a> :A &rArr; <a href="#coalton-file-filestream-type">FileStream</a> :A * <a href="#coalton-ufix-type">UFix</a> &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-file-fileerror-type">FileError</a> (<a href="#coalton-vector-vector-type">Vector</a> :A)</code>
 
 Reads a chunk of a file into a vector of type `:a`.
@@ -4216,7 +4238,7 @@ Generates a system-relative-pathname for a given filename or path. This is a wra
 
 ***
 
-#### <a href="#coalton-file-with-open-file-value"><code>(WITH-OPEN-FILE PATH THUNK)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L591-L595">src</a></sub></sup><a name="coalton-file-with-open-file-value"></a>
+#### <a href="#coalton-file-with-open-file-value"><code>(WITH-OPEN-FILE PATH THUNK)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L608-L612">src</a></sub></sup><a name="coalton-file-with-open-file-value"></a>
 <code>&forall; :PATH :A :B. (<a href="#coalton-file-file-class">File</a> :A) (<a href="#coalton-classes-into-class">Into</a> :PATH <a href="#coalton-file-pathname-type">Pathname</a>) &rArr; :PATH * (<a href="#coalton-file-filestream-type">FileStream</a> :A &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-file-fileerror-type">FileError</a> :B) &key (:direction <a href="#coalton-file-opendirection-type">OpenDirection</a>) (:if-exists <a href="#coalton-file-ifexists-type">IfExists</a>) &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-file-fileerror-type">FileError</a> :B</code>
 
 Open PATH, run THUNK on the stream, and then close it.
@@ -4225,7 +4247,7 @@ Open PATH, run THUNK on the stream, and then close it.
 
 ***
 
-#### <a href="#coalton-file-with-temp-directory-value"><code>(WITH-TEMP-DIRECTORY THUNK)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L719-L724">src</a></sub></sup><a name="coalton-file-with-temp-directory-value"></a>
+#### <a href="#coalton-file-with-temp-directory-value"><code>(WITH-TEMP-DIRECTORY THUNK)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L736-L741">src</a></sub></sup><a name="coalton-file-with-temp-directory-value"></a>
 <code>&forall; :A. (<a href="#coalton-file-pathname-type">Pathname</a> &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-file-fileerror-type">FileError</a> :A) &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-file-fileerror-type">FileError</a> :A</code>
 
 Performs an operation `thunk` inside a temporary directory.
@@ -4234,7 +4256,7 @@ Performs an operation `thunk` inside a temporary directory.
 
 ***
 
-#### <a href="#coalton-file-with-temp-file-value"><code>(WITH-TEMP-FILE THUNK)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L709-L716">src</a></sub></sup><a name="coalton-file-with-temp-file-value"></a>
+#### <a href="#coalton-file-with-temp-file-value"><code>(WITH-TEMP-FILE THUNK)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L726-L733">src</a></sub></sup><a name="coalton-file-with-temp-file-value"></a>
 <code>&forall; :A :B. <a href="#coalton-file-file-class">File</a> :A &rArr; (<a href="#coalton-file-filestream-type">FileStream</a> :A &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-file-fileerror-type">FileError</a> :B) &key (:extension <a href="#coalton-string-type">String</a>) &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-file-fileerror-type">FileError</a> :B</code>
 
 Perform THUNK on a temporary file, optionally ending in EXTENSION.
@@ -4252,7 +4274,7 @@ Writes a `Char` to the stream.
 
 ***
 
-#### <a href="#coalton-file-write-line-value"><code>(WRITE-LINE STREAM S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L643-L646">src</a></sub></sup><a name="coalton-file-write-line-value"></a>
+#### <a href="#coalton-file-write-line-value"><code>(WRITE-LINE STREAM S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L660-L663">src</a></sub></sup><a name="coalton-file-write-line-value"></a>
 <code><a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-char-type">Char</a> * <a href="#coalton-string-type">String</a> &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-file-fileerror-type">FileError</a> <a href="#coalton-unit-type">Unit</a></code>
 
 Writes a string with an appended newline to a filestream of type Char.
@@ -4261,7 +4283,7 @@ Writes a string with an appended newline to a filestream of type Char.
 
 ***
 
-#### <a href="#coalton-file-write-string-value"><code>(WRITE-STRING FS S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L638-L640">src</a></sub></sup><a name="coalton-file-write-string-value"></a>
+#### <a href="#coalton-file-write-string-value"><code>(WRITE-STRING FS S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L655-L657">src</a></sub></sup><a name="coalton-file-write-string-value"></a>
 <code><a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-char-type">Char</a> * <a href="#coalton-string-type">String</a> &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-file-fileerror-type">FileError</a> <a href="#coalton-unit-type">Unit</a></code>
 
 Writes a `string` to a FileStream of type Char.
@@ -4270,7 +4292,7 @@ Writes a `string` to a FileStream of type Char.
 
 ***
 
-#### <a href="#coalton-file-write-to-file!-value"><code>(WRITE-TO-FILE! PATH DATA)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L754-L760">src</a></sub></sup><a name="coalton-file-write-to-file!-value"></a>
+#### <a href="#coalton-file-write-to-file!-value"><code>(WRITE-TO-FILE! PATH DATA)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L771-L777">src</a></sub></sup><a name="coalton-file-write-to-file!-value"></a>
 <code>&forall; :P :A. (<a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> :A) (<a href="#coalton-classes-into-class">Into</a> :P <a href="#coalton-file-pathname-type">Pathname</a>) (<a href="#coalton-file-file-class">File</a> :A) &rArr; :P * <a href="#coalton-vector-vector-type">Vector</a> :A &key (:if-exists <a href="#coalton-file-ifexists-type">IfExists</a>) &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-file-fileerror-type">FileError</a> <a href="#coalton-unit-type">Unit</a></code>
 
 Open PATH and write DATA using the requested IF-EXISTS policy.
@@ -4279,7 +4301,7 @@ Open PATH and write DATA using the requested IF-EXISTS policy.
 
 ***
 
-#### <a href="#coalton-file-write-vector-value"><code>(WRITE-VECTOR STREAM V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L631-L635">src</a></sub></sup><a name="coalton-file-write-vector-value"></a>
+#### <a href="#coalton-file-write-vector-value"><code>(WRITE-VECTOR STREAM V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/file.ct#L648-L652">src</a></sub></sup><a name="coalton-file-write-vector-value"></a>
 <code>&forall; :A. (<a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> :A) (<a href="#coalton-file-file-class">File</a> :A) &rArr; <a href="#coalton-file-filestream-type">FileStream</a> :A * <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-classes-result-type">Result</a> <a href="#coalton-file-fileerror-type">FileError</a> <a href="#coalton-unit-type">Unit</a></code>
 
 Writes elements of an vector of type `:a` to a stream of type `:a`.
@@ -5020,6 +5042,17 @@ Methods:
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-u64-type">U64</a>) <a href="#coalton-u64-type">U64</a></code>
+- <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-i64-type">I64</a>) <a href="#coalton-i64-type">I64</a></code>
+- <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-u32-type">U32</a>) <a href="#coalton-u32-type">U32</a></code>
+- <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-i32-type">I32</a>) <a href="#coalton-i32-type">I32</a></code>
+- <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-u16-type">U16</a>) <a href="#coalton-u16-type">U16</a></code>
+- <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-i16-type">I16</a>) <a href="#coalton-i16-type">I16</a></code>
+- <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-u8-type">U8</a>) <a href="#coalton-u8-type">U8</a></code>
+- <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-i8-type">I8</a>) <a href="#coalton-i8-type">I8</a></code>
+- <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-ufix-type">UFix</a>) <a href="#coalton-ufix-type">UFix</a></code>
+- <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-ifix-type">IFix</a>) <a href="#coalton-ifix-type">IFix</a></code>
+- <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-file-filestream-type">FileStream</a> <a href="#coalton-char-type">Char</a>) <a href="#coalton-char-type">Char</a></code>
 - <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-seq-seq-type">Seq</a> :A) :A</code>
 - <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE) (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE)</code>
 - <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-ordtree-ordtree-type">OrdTree</a> :ELT) :ELT</code>
