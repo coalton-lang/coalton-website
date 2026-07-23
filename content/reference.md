@@ -792,6 +792,7 @@ A type that allows indicating the presence or absence of a value. The underlying
 - <code><a href="#coalton-classes-applicative-class">Applicative</a> <a href="#coalton-optional-type">Optional</a></code>
 - <code><a href="#coalton-classes-default-class">Default</a> (<a href="#coalton-optional-type">Optional</a> :A)</code>
 - <code><a href="#coalton-classes-eq-class">Eq</a> :A &rArr; <a href="#coalton-classes-eq-class">Eq</a> (<a href="#coalton-optional-type">Optional</a> :A)</code>
+- <code><a href="#coalton-classes-foldable-class">Foldable</a> <a href="#coalton-optional-type">Optional</a></code>
 - <code><a href="#coalton-iterator-fromiterator-class">FromIterator</a> :CONTAINER :ELT &rArr; <a href="#coalton-iterator-fromiterator-class">FromIterator</a> (<a href="#coalton-optional-type">Optional</a> :CONTAINER) (<a href="#coalton-optional-type">Optional</a> :ELT)</code>
 - <code><a href="#coalton-classes-functor-class">Functor</a> <a href="#coalton-optional-type">Optional</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> (<a href="#coalton-optional-type">Optional</a> :A) (<a href="#coalton-list-type">List</a> :A)</code>
@@ -1920,6 +1921,7 @@ Represents something that may have failed.
 - <code>(<a href="#coalton-classes-ord-class">Ord</a> :A) (<a href="#coalton-classes-ord-class">Ord</a> :B) &rArr; <a href="#coalton-classes-ord-class">Ord</a> (<a href="#coalton-classes-result-type">Result</a> :A :B)</code>
 - <code><a href="#coalton-classes-applicative-class">Applicative</a> (<a href="#coalton-classes-result-type">Result</a> :A)</code>
 - <code><a href="#coalton-classes-bifunctor-class">Bifunctor</a> <a href="#coalton-classes-result-type">Result</a></code>
+- <code><a href="#coalton-classes-foldable-class">Foldable</a> (<a href="#coalton-classes-result-type">Result</a> :A)</code>
 - <code><a href="#coalton-iterator-fromiterator-class">FromIterator</a> :CONTAINER :ELT &rArr; <a href="#coalton-iterator-fromiterator-class">FromIterator</a> (<a href="#coalton-classes-result-type">Result</a> :ERR :CONTAINER) (<a href="#coalton-classes-result-type">Result</a> :ERR :ELT)</code>
 - <code><a href="#coalton-classes-functor-class">Functor</a> (<a href="#coalton-classes-result-type">Result</a> :A)</code>
 - <code><a href="#coalton-classes-into-class">Into</a> (<a href="#coalton-optional-type">Optional</a> :B) (<a href="#coalton-classes-result-type">Result</a> <a href="#coalton-unit-type">Unit</a> :B)</code>
@@ -2190,6 +2192,8 @@ Methods:
 - <code><a href="#coalton-classes-foldable-class">Foldable</a> <a href="#coalton-vector-vector-type">Vector</a></code>
 - <code><a href="#coalton-classes-foldable-class">Foldable</a> <a href="#coalton-list-type">List</a></code>
 - <code><a href="#coalton-classes-foldable-class">Foldable</a> <a href="#coalton-lisparray-lisparray-type">LispArray</a></code>
+- <code><a href="#coalton-classes-foldable-class">Foldable</a> (<a href="#coalton-classes-result-type">Result</a> :A)</code>
+- <code><a href="#coalton-classes-foldable-class">Foldable</a> <a href="#coalton-optional-type">Optional</a></code>
 
 </details>
 
@@ -8779,7 +8783,7 @@ Rotate the elements at indices `index1` and `index2` of the random-access storag
 
 ### Values
 
-#### <a href="#coalton-result-err-if-value"><code>(ERR-IF FAILED? FAILURE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.ct#L32-L36">src</a></sub></sup><a name="coalton-result-err-if-value"></a>
+#### <a href="#coalton-result-err-if-value"><code>(ERR-IF FAILED? FAILURE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.ct#L33-L37">src</a></sub></sup><a name="coalton-result-err-if-value"></a>
 <code>&forall; :ERR. <a href="#coalton-boolean-type">Boolean</a> * :ERR &rarr; <a href="#coalton-classes-result-type">Result</a> :ERR <a href="#coalton-unit-type">Unit</a></code>
 
 Fail with FAILURE value if FAILED? is True.
@@ -8788,7 +8792,7 @@ Fail with FAILURE value if FAILED? is True.
 
 ***
 
-#### <a href="#coalton-result-err?-value"><code>(ERR? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.ct#L53-L57">src</a></sub></sup><a name="coalton-result-err?-value"></a>
+#### <a href="#coalton-result-err?-value"><code>(ERR? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.ct#L57-L61">src</a></sub></sup><a name="coalton-result-err?-value"></a>
 <code>&forall; :A :B. <a href="#coalton-classes-result-type">Result</a> :A :B &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Returns TRUE if X is ERR
@@ -8797,13 +8801,13 @@ Returns TRUE if X is ERR
 
 ***
 
-#### <a href="#coalton-result-flatten-value"><code>(FLATTEN X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.ct#L80-L83">src</a></sub></sup><a name="coalton-result-flatten-value"></a>
+#### <a href="#coalton-result-flatten-value"><code>(FLATTEN X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.ct#L87-L90">src</a></sub></sup><a name="coalton-result-flatten-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-result-type">Result</a> :A :A &rarr; :A</code>
 
 
 ***
 
-#### <a href="#coalton-result-map-err-value"><code>(MAP-ERR F X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.ct#L66-L70">src</a></sub></sup><a name="coalton-result-map-err-value"></a>
+#### <a href="#coalton-result-map-err-value"><code>(MAP-ERR F X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.ct#L71-L75">src</a></sub></sup><a name="coalton-result-map-err-value"></a>
 <code>&forall; :A :B :C. (:A &rarr; :B) * <a href="#coalton-classes-result-type">Result</a> :A :C &rarr; <a href="#coalton-classes-result-type">Result</a> :B :C</code>
 
 Map over the ERR case
@@ -8812,7 +8816,7 @@ Map over the ERR case
 
 ***
 
-#### <a href="#coalton-result-ok-or-def-value"><code>(OK-OR-DEF DEF RES)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.ct#L73-L77">src</a></sub></sup><a name="coalton-result-ok-or-def-value"></a>
+#### <a href="#coalton-result-ok-or-def-value"><code>(OK-OR-DEF DEF RES)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.ct#L79-L83">src</a></sub></sup><a name="coalton-result-ok-or-def-value"></a>
 <code>&forall; :A :ERR. :A * <a href="#coalton-classes-result-type">Result</a> :ERR :A &rarr; :A</code>
 
 Take value in RES if it is OK, or DEF if it is ERR.
@@ -8821,13 +8825,13 @@ Take value in RES if it is OK, or DEF if it is ERR.
 
 ***
 
-#### <a href="#coalton-result-ok-or-error-value"><code>(OK-OR-ERROR RES)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.ct#L86-L89">src</a></sub></sup><a name="coalton-result-ok-or-error-value"></a>
+#### <a href="#coalton-result-ok-or-error-value"><code>(OK-OR-ERROR RES)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.ct#L94-L97">src</a></sub></sup><a name="coalton-result-ok-or-error-value"></a>
 <code>&forall; :ERR :A. <a href="#coalton-classes-signalable-class">Signalable</a> :ERR &rArr; <a href="#coalton-classes-result-type">Result</a> :ERR :A &rarr; :A</code>
 
 
 ***
 
-#### <a href="#coalton-result-ok?-value"><code>(OK? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.ct#L46-L50">src</a></sub></sup><a name="coalton-result-ok?-value"></a>
+#### <a href="#coalton-result-ok?-value"><code>(OK? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.ct#L49-L53">src</a></sub></sup><a name="coalton-result-ok?-value"></a>
 <code>&forall; :A :B. <a href="#coalton-classes-result-type">Result</a> :A :B &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Returns TRUE if X is OK
@@ -8836,7 +8840,7 @@ Returns TRUE if X is OK
 
 ***
 
-#### <a href="#coalton-result-okm-value"><code>(OKM F-A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.ct#L61-L63">src</a></sub></sup><a name="coalton-result-okm-value"></a>
+#### <a href="#coalton-result-okm-value"><code>(OKM F-A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.ct#L65-L67">src</a></sub></sup><a name="coalton-result-okm-value"></a>
 <code>&forall; :F :A :E. <a href="#coalton-classes-functor-class">Functor</a> :F &rArr; :F :A &rarr; :F (<a href="#coalton-classes-result-type">Result</a> :E :A)</code>
 
 Wrap a value inside F-A inside of 'Ok'.
@@ -8845,7 +8849,7 @@ Wrap a value inside F-A inside of 'Ok'.
 
 ***
 
-#### <a href="#coalton-result-opt->result-value"><code>(OPT-&gt;RESULT FAILURE OPT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.ct#L39-L43">src</a></sub></sup><a name="coalton-result-opt->result-value"></a>
+#### <a href="#coalton-result-opt->result-value"><code>(OPT-&gt;RESULT FAILURE OPT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/result.ct#L41-L45">src</a></sub></sup><a name="coalton-result-opt->result-value"></a>
 <code>&forall; :ERR :A. :ERR * <a href="#coalton-optional-type">Optional</a> :A &rarr; <a href="#coalton-classes-result-type">Result</a> :ERR :A</code>
 
 Convert OPT to a Result, using FAILURE value if None.
