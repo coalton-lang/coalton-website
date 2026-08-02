@@ -188,6 +188,7 @@ A character represented by a Common Lisp `cl:character`.
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#coalton-classes-default-class">Default</a> <a href="#coalton-char-type">Char</a></code>
 - <code><a href="#coalton-classes-eq-class">Eq</a> <a href="#coalton-char-type">Char</a></code>
 - <code><a href="#coalton-file-file-class">File</a> <a href="#coalton-char-type">Char</a></code>
 - <code><a href="#coalton-iterator-fromiterator-class">FromIterator</a> <a href="#coalton-string-type">String</a> <a href="#coalton-char-type">Char</a></code>
@@ -1734,7 +1735,7 @@ value.
 
 ### Values
 
-#### <a href="#coalton-char-alpha?-value"><code>(ALPHA? C)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/char.ct#L71-L74">src</a></sub></sup><a name="coalton-char-alpha?-value"></a>
+#### <a href="#coalton-char-alpha?-value"><code>(ALPHA? C)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/char.ct#L89-L92">src</a></sub></sup><a name="coalton-char-alpha?-value"></a>
 <code><a href="#coalton-char-type">Char</a> &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is `c` an alphabetic character?
@@ -1743,7 +1744,7 @@ Is `c` an alphabetic character?
 
 ***
 
-#### <a href="#coalton-char-ascii-alpha?-value"><code>(ASCII-ALPHA? C)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/char.ct#L77-L82">src</a></sub></sup><a name="coalton-char-ascii-alpha?-value"></a>
+#### <a href="#coalton-char-ascii-alpha?-value"><code>(ASCII-ALPHA? C)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/char.ct#L96-L101">src</a></sub></sup><a name="coalton-char-ascii-alpha?-value"></a>
 <code><a href="#coalton-char-type">Char</a> &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is `c` an ASCII alphabetic character?
@@ -1752,7 +1753,7 @@ Is `c` an ASCII alphabetic character?
 
 ***
 
-#### <a href="#coalton-char-ascii-alphanumeric?-value"><code>(ASCII-ALPHANUMERIC? C)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/char.ct#L97-L100">src</a></sub></sup><a name="coalton-char-ascii-alphanumeric?-value"></a>
+#### <a href="#coalton-char-ascii-alphanumeric?-value"><code>(ASCII-ALPHANUMERIC? C)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/char.ct#L129-L132">src</a></sub></sup><a name="coalton-char-ascii-alphanumeric?-value"></a>
 <code><a href="#coalton-char-type">Char</a> &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is `c` an ASCII alphanumeric character?
@@ -1761,7 +1762,7 @@ Is `c` an ASCII alphanumeric character?
 
 ***
 
-#### <a href="#coalton-char-ascii-digit?-value"><code>(ASCII-DIGIT? C)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/char.ct#L91-L94">src</a></sub></sup><a name="coalton-char-ascii-digit?-value"></a>
+#### <a href="#coalton-char-ascii-digit?-value"><code>(ASCII-DIGIT? C)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/char.ct#L122-L125">src</a></sub></sup><a name="coalton-char-ascii-digit?-value"></a>
 <code><a href="#coalton-char-type">Char</a> &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is `c` an ASCII digit character?
@@ -1770,7 +1771,7 @@ Is `c` an ASCII digit character?
 
 ***
 
-#### <a href="#coalton-char-ascii-lowercase?-value"><code>(ASCII-LOWERCASE? C)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/char.ct#L122-L126">src</a></sub></sup><a name="coalton-char-ascii-lowercase?-value"></a>
+#### <a href="#coalton-char-ascii-lowercase?-value"><code>(ASCII-LOWERCASE? C)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/char.ct#L158-L162">src</a></sub></sup><a name="coalton-char-ascii-lowercase?-value"></a>
 <code><a href="#coalton-char-type">Char</a> &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is `c` an ASCII lowercase character?
@@ -1779,7 +1780,7 @@ Is `c` an ASCII lowercase character?
 
 ***
 
-#### <a href="#coalton-char-ascii-uppercase?-value"><code>(ASCII-UPPERCASE? C)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/char.ct#L109-L113">src</a></sub></sup><a name="coalton-char-ascii-uppercase?-value"></a>
+#### <a href="#coalton-char-ascii-uppercase?-value"><code>(ASCII-UPPERCASE? C)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/char.ct#L143-L147">src</a></sub></sup><a name="coalton-char-ascii-uppercase?-value"></a>
 <code><a href="#coalton-char-type">Char</a> &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is `c` an ASCII uppercase character?
@@ -1788,7 +1789,7 @@ Is `c` an ASCII uppercase character?
 
 ***
 
-#### <a href="#coalton-char-char-code-value"><code>(CHAR-CODE CHAR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/char.ct#L36-L39">src</a></sub></sup><a name="coalton-char-char-code-value"></a>
+#### <a href="#coalton-char-char-code-value"><code>(CHAR-CODE CHAR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/char.ct#L44-L47">src</a></sub></sup><a name="coalton-char-char-code-value"></a>
 <code><a href="#coalton-char-type">Char</a> &rarr; <a href="#coalton-ufix-type">UFix</a></code>
 
 Convert a character to its ASCII representation.
@@ -1797,7 +1798,7 @@ Convert a character to its ASCII representation.
 
 ***
 
-#### <a href="#coalton-char-code-char-value"><code>(CODE-CHAR CODE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/char.ct#L48-L55">src</a></sub></sup><a name="coalton-char-code-char-value"></a>
+#### <a href="#coalton-char-code-char-value"><code>(CODE-CHAR CODE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/char.ct#L58-L65">src</a></sub></sup><a name="coalton-char-code-char-value"></a>
 <code><a href="#coalton-ufix-type">UFix</a> &rarr; <a href="#coalton-optional-type">Optional</a> <a href="#coalton-char-type">Char</a></code>
 
 Convert a number to its ASCII character, returning None on failure.
@@ -1806,7 +1807,16 @@ Convert a number to its ASCII character, returning None on failure.
 
 ***
 
-#### <a href="#coalton-char-digit?-value"><code>(DIGIT? C)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/char.ct#L85-L88">src</a></sub></sup><a name="coalton-char-digit?-value"></a>
+#### <a href="#coalton-char-digit->ufix-value"><code>(DIGIT-&gt;UFIX C)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/char.ct#L112-L118">src</a></sub></sup><a name="coalton-char-digit->ufix-value"></a>
+<code><a href="#coalton-char-type">Char</a> &rarr; <a href="#coalton-optional-type">Optional</a> <a href="#coalton-ufix-type">UFix</a></code>
+
+Attempt to convert digit `c` to its integer value.
+
+
+
+***
+
+#### <a href="#coalton-char-digit?-value"><code>(DIGIT? C)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/char.ct#L105-L108">src</a></sub></sup><a name="coalton-char-digit?-value"></a>
 <code><a href="#coalton-char-type">Char</a> &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is `c` a digit character?
@@ -1815,7 +1825,7 @@ Is `c` a digit character?
 
 ***
 
-#### <a href="#coalton-char-downcase-value"><code>(DOWNCASE C)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/char.ct#L135-L138">src</a></sub></sup><a name="coalton-char-downcase-value"></a>
+#### <a href="#coalton-char-downcase-value"><code>(DOWNCASE C)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/char.ct#L173-L176">src</a></sub></sup><a name="coalton-char-downcase-value"></a>
 <code><a href="#coalton-char-type">Char</a> &rarr; <a href="#coalton-char-type">Char</a></code>
 
 Returns the downcased version of `c`, returning `c` when there is none.
@@ -1824,7 +1834,7 @@ Returns the downcased version of `c`, returning `c` when there is none.
 
 ***
 
-#### <a href="#coalton-char-lowercase?-value"><code>(LOWERCASE? C)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/char.ct#L116-L119">src</a></sub></sup><a name="coalton-char-lowercase?-value"></a>
+#### <a href="#coalton-char-lowercase?-value"><code>(LOWERCASE? C)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/char.ct#L151-L154">src</a></sub></sup><a name="coalton-char-lowercase?-value"></a>
 <code><a href="#coalton-char-type">Char</a> &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is `c` a lowercase character?
@@ -1833,7 +1843,7 @@ Is `c` a lowercase character?
 
 ***
 
-#### <a href="#coalton-char-range-value"><code>(RANGE START END)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/char.ct#L141-L148">src</a></sub></sup><a name="coalton-char-range-value"></a>
+#### <a href="#coalton-char-range-value"><code>(RANGE START END)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/char.ct#L180-L187">src</a></sub></sup><a name="coalton-char-range-value"></a>
 <code><a href="#coalton-char-type">Char</a> * <a href="#coalton-char-type">Char</a> &rarr; <a href="#coalton-iterator-iterator-type">Iterator</a> <a href="#coalton-char-type">Char</a></code>
 
 An inclusive range of characters from `start` to `end` by `char-code`.
@@ -1842,7 +1852,7 @@ An inclusive range of characters from `start` to `end` by `char-code`.
 
 ***
 
-#### <a href="#coalton-char-upcase-value"><code>(UPCASE C)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/char.ct#L129-L132">src</a></sub></sup><a name="coalton-char-upcase-value"></a>
+#### <a href="#coalton-char-upcase-value"><code>(UPCASE C)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/char.ct#L166-L169">src</a></sub></sup><a name="coalton-char-upcase-value"></a>
 <code><a href="#coalton-char-type">Char</a> &rarr; <a href="#coalton-char-type">Char</a></code>
 
 Returns the upcased version of `c`, returning `c` when there is none.
@@ -1851,7 +1861,7 @@ Returns the upcased version of `c`, returning `c` when there is none.
 
 ***
 
-#### <a href="#coalton-char-uppercase?-value"><code>(UPPERCASE? C)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/char.ct#L103-L106">src</a></sub></sup><a name="coalton-char-uppercase?-value"></a>
+#### <a href="#coalton-char-uppercase?-value"><code>(UPPERCASE? C)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/char.ct#L136-L139">src</a></sub></sup><a name="coalton-char-uppercase?-value"></a>
 <code><a href="#coalton-char-type">Char</a> &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is `c` an uppercase character?
@@ -2072,6 +2082,7 @@ Methods:
 - <code><a href="#coalton-classes-default-class">Default</a> (<a href="#coalton-queue-queue-type">Queue</a> :A)</code>
 - <code><a href="#coalton-classes-hash-class">Hash</a> :KEY &rArr; <a href="#coalton-classes-default-class">Default</a> (<a href="#coalton-hashtable-hashtable-type">HashTable</a> :KEY :VALUE)</code>
 - <code><a href="#coalton-classes-default-class">Default</a> <a href="#coalton-string-type">String</a></code>
+- <code><a href="#coalton-classes-default-class">Default</a> <a href="#coalton-char-type">Char</a></code>
 - <code><a href="#coalton-classes-default-class">Default</a> (<a href="#coalton-vector-vector-type">Vector</a> :A)</code>
 - <code><a href="#coalton-classes-default-class">Default</a> (<a href="#coalton-list-type">List</a> :A)</code>
 - <code><a href="#coalton-classes-default-class">Default</a> (<a href="#coalton-optional-type">Optional</a> :A)</code>
