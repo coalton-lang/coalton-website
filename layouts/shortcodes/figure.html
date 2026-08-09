@@ -1,0 +1,15 @@
+{{ $src := .Get "src" }}
+{{ $title := .Get "title" }}
+{{ $width := default "50%" (.Get "width") }}
+
+<div>
+  <img class="img-responsive img-thumbnail
+              center-block "
+       width="{{ $width }}"
+       src="{{ $src }}"
+       alt="{{ $title }}"
+       decoding="async"/>
+  <p>
+    <small>{{ $title }}</small>
+  </p>
+</div>
