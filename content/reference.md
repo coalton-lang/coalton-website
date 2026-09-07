@@ -7155,7 +7155,7 @@ Exponentiate BASE to a signed POWER.
 
 ### Structs
 
-#### <a href="#coalton-math-real-quantization-type"><code>Quantization :A</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L227-L238">src</a></sub></sup><a name="coalton-math-real-quantization-type"></a>
+#### <a href="#coalton-math-real-quantization-type"><code>Quantization :A</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L229-L240">src</a></sub></sup><a name="coalton-math-real-quantization-type"></a>
 
 Represents an integer quantization of `:a`.
 
@@ -7306,7 +7306,7 @@ Methods:
 
 ### Values
 
-#### <a href="#coalton-math-real-ceiling/-value"><code>(CEILING/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L288-L290">src</a></sub></sup><a name="coalton-math-real-ceiling/-value"></a>
+#### <a href="#coalton-math-real-ceiling/-value"><code>(CEILING/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L290-L292">src</a></sub></sup><a name="coalton-math-real-ceiling/-value"></a>
 <code><a href="#coalton-integer-type">Integer</a> * <a href="#coalton-integer-type">Integer</a> &rarr; <a href="#coalton-integer-type">Integer</a></code>
 
 Divide two integers and compute the ceiling of the quotient.
@@ -7315,7 +7315,7 @@ Divide two integers and compute the ceiling of the quotient.
 
 ***
 
-#### <a href="#coalton-math-real-exact/-value"><code>(EXACT/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L270-L272">src</a></sub></sup><a name="coalton-math-real-exact/-value"></a>
+#### <a href="#coalton-math-real-exact/-value"><code>(EXACT/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L272-L274">src</a></sub></sup><a name="coalton-math-real-exact/-value"></a>
 <code><a href="#coalton-integer-type">Integer</a> * <a href="#coalton-integer-type">Integer</a> &rarr; <a href="#coalton-fraction-type">Fraction</a></code>
 
 Exactly divide two integers and produce a fraction.
@@ -7324,7 +7324,7 @@ Exactly divide two integers and produce a fraction.
 
 ***
 
-#### <a href="#coalton-math-real-floor/-value"><code>(FLOOR/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L283-L285">src</a></sub></sup><a name="coalton-math-real-floor/-value"></a>
+#### <a href="#coalton-math-real-floor/-value"><code>(FLOOR/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L285-L287">src</a></sub></sup><a name="coalton-math-real-floor/-value"></a>
 <code><a href="#coalton-integer-type">Integer</a> * <a href="#coalton-integer-type">Integer</a> &rarr; <a href="#coalton-integer-type">Integer</a></code>
 
 Divide two integers and compute the floor of the quotient.
@@ -7333,7 +7333,7 @@ Divide two integers and compute the floor of the quotient.
 
 ***
 
-#### <a href="#coalton-math-real-fromfrac-value"><code>(FROMFRAC Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L298-L304">src</a></sub></sup><a name="coalton-math-real-fromfrac-value"></a>
+#### <a href="#coalton-math-real-fromfrac-value"><code>(FROMFRAC Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L300-L306">src</a></sub></sup><a name="coalton-math-real-fromfrac-value"></a>
 <code>&forall; :A. <a href="#coalton-math-arith-dividable-class">Dividable</a> <a href="#coalton-integer-type">Integer</a> :A &rArr; <a href="#coalton-fraction-type">Fraction</a> &rarr; :A</code>
 
 Converts a fraction to a target type.
@@ -7346,7 +7346,7 @@ This conversion may result in loss of fidelity.
 
 ***
 
-#### <a href="#coalton-math-real-inexact/-value"><code>(INEXACT/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L276-L280">src</a></sub></sup><a name="coalton-math-real-inexact/-value"></a>
+#### <a href="#coalton-math-real-inexact/-value"><code>(INEXACT/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L278-L282">src</a></sub></sup><a name="coalton-math-real-inexact/-value"></a>
 <code><a href="#coalton-integer-type">Integer</a> * <a href="#coalton-integer-type">Integer</a> &rarr; <a href="#coalton-f64-type">F64</a></code>
 
 Compute the quotient of integers as a double-precision float.
@@ -7357,7 +7357,7 @@ Note: This does *not* divide double-float arguments.
 
 ***
 
-#### <a href="#coalton-math-real-quantize-value"><code>(QUANTIZE X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L241-L249">src</a></sub></sup><a name="coalton-math-real-quantize-value"></a>
+#### <a href="#coalton-math-real-quantize-value"><code>(QUANTIZE X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L243-L251">src</a></sub></sup><a name="coalton-math-real-quantize-value"></a>
 <code>&forall; :A. <a href="#coalton-math-real-real-class">Real</a> :A &rArr; :A &rarr; <a href="#coalton-math-real-quantization-type">Quantization</a> :A</code>
 
 Given X, (QUANTIZE X) will return the least integer greater or equal to X,
@@ -7377,7 +7377,7 @@ Return the nearest integer to X, with ties breaking towards even numbers.
 
 ***
 
-#### <a href="#coalton-math-real-round-half-down-value"><code>(ROUND-HALF-DOWN X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L257-L259">src</a></sub></sup><a name="coalton-math-real-round-half-down-value"></a>
+#### <a href="#coalton-math-real-round-half-down-value"><code>(ROUND-HALF-DOWN X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L259-L261">src</a></sub></sup><a name="coalton-math-real-round-half-down-value"></a>
 <code>&forall; :A. (<a href="#coalton-math-real-quantizable-class">Quantizable</a> :A) (<a href="#coalton-classes-num-class">Num</a> :A) &rArr; :A &rarr; <a href="#coalton-integer-type">Integer</a></code>
 
 Return the nearest integer to X, with ties breaking toward positive infinity.
@@ -7386,7 +7386,7 @@ Return the nearest integer to X, with ties breaking toward positive infinity.
 
 ***
 
-#### <a href="#coalton-math-real-round-half-up-value"><code>(ROUND-HALF-UP X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L252-L254">src</a></sub></sup><a name="coalton-math-real-round-half-up-value"></a>
+#### <a href="#coalton-math-real-round-half-up-value"><code>(ROUND-HALF-UP X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L254-L256">src</a></sub></sup><a name="coalton-math-real-round-half-up-value"></a>
 <code>&forall; :A. (<a href="#coalton-math-real-quantizable-class">Quantizable</a> :A) (<a href="#coalton-classes-num-class">Num</a> :A) &rArr; :A &rarr; <a href="#coalton-integer-type">Integer</a></code>
 
 Return the nearest integer to X, with ties breaking toward positive infinity.
@@ -7395,7 +7395,7 @@ Return the nearest integer to X, with ties breaking toward positive infinity.
 
 ***
 
-#### <a href="#coalton-math-real-round/-value"><code>(ROUND/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L293-L295">src</a></sub></sup><a name="coalton-math-real-round/-value"></a>
+#### <a href="#coalton-math-real-round/-value"><code>(ROUND/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L295-L297">src</a></sub></sup><a name="coalton-math-real-round/-value"></a>
 <code><a href="#coalton-integer-type">Integer</a> * <a href="#coalton-integer-type">Integer</a> &rarr; <a href="#coalton-integer-type">Integer</a></code>
 
 Divide two integers and round the quotient.
@@ -7404,7 +7404,7 @@ Divide two integers and round the quotient.
 
 ***
 
-#### <a href="#coalton-math-real-safe/-value"><code>(SAFE/ X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L262-L266">src</a></sub></sup><a name="coalton-math-real-safe/-value"></a>
+#### <a href="#coalton-math-real-safe/-value"><code>(SAFE/ X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L264-L268">src</a></sub></sup><a name="coalton-math-real-safe/-value"></a>
 <code>&forall; :A :B. (<a href="#coalton-classes-num-class">Num</a> :A) (<a href="#coalton-math-arith-dividable-class">Dividable</a> :A :B) &rArr; :A * :A &rarr; <a href="#coalton-optional-type">Optional</a> :B</code>
 
 Safely divide X by Y, returning None if Y is zero.
