@@ -1450,7 +1450,7 @@ Note that this may copy the object or allocate memory.
 
 ### Classes
 
-#### <a href="#coalton-bits-bits-class"><code>Bits</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/bits.ct#L34-L99">src</a></sub></sup><a name="coalton-bits-bits-class"></a>
+#### <a href="#coalton-bits-bits-class"><code>Bits</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/bits.ct#L35-L100">src</a></sub></sup><a name="coalton-bits-bits-class"></a>
 <code><a href="#coalton-classes-eq-class">Eq</a> :INT &rArr; <a href="#coalton-bits-bits-class">Bits</a> :INT</code>
 
 
@@ -1538,7 +1538,7 @@ Methods:
 
 ***
 
-#### <a href="#coalton-bits-reversebits-class"><code>ReverseBits</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/bits.ct#L143-L164">src</a></sub></sup><a name="coalton-bits-reversebits-class"></a>
+#### <a href="#coalton-bits-reversebits-class"><code>ReverseBits</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/bits.ct#L104-L125">src</a></sub></sup><a name="coalton-bits-reversebits-class"></a>
 <code><a href="#coalton-bits-reversebits-class">ReverseBits</a> :T</code>
 
 
@@ -1578,7 +1578,7 @@ Methods:
 
 ### Values
 
-#### <a href="#coalton-bits-dpb-value"><code>(DPB NEW SIZE POSITION X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/bits.ct#L118-L139">src</a></sub></sup><a name="coalton-bits-dpb-value"></a>
+#### <a href="#coalton-bits-dpb-value"><code>(DPB NEW SIZE POSITION X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/bits-fields.ct#L31-L53">src</a></sub></sup><a name="coalton-bits-dpb-value"></a>
 <code>&forall; :A. <a href="#coalton-bits-bits-class">Bits</a> :A &rArr; :A * <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-ufix-type">UFix</a> * :A &rarr; :A</code>
 
 Replace the `size`-bit field of `x` that starts at bit `position` with the low `size` bits of `new`:
@@ -1602,7 +1602,7 @@ width of the type:
 
 ***
 
-#### <a href="#coalton-bits-ldb-value"><code>(LDB SIZE POSITION X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/bits.ct#L103-L114">src</a></sub></sup><a name="coalton-bits-ldb-value"></a>
+#### <a href="#coalton-bits-ldb-value"><code>(LDB SIZE POSITION X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/bits-fields.ct#L16-L27">src</a></sub></sup><a name="coalton-bits-ldb-value"></a>
 <code>&forall; :A. <a href="#coalton-bits-bits-class">Bits</a> :A &rArr; <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-ufix-type">UFix</a> * :A &rarr; :A</code>
 
 Extract the `size`-bit field of `x` that starts at bit `position`:
