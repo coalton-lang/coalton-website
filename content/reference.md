@@ -1450,18 +1450,72 @@ Note that this may copy the object or allocate memory.
 
 ### Classes
 
-#### <a href="#coalton-bits-bits-class"><code>Bits</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/bits.ct#L34-L45">src</a></sub></sup><a name="coalton-bits-bits-class"></a>
-<code><a href="#coalton-classes-num-class">Num</a> :INT &rArr; <a href="#coalton-bits-bits-class">Bits</a> :INT</code>
+#### <a href="#coalton-bits-bits-class"><code>Bits</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/bits.ct#L34-L99">src</a></sub></sup><a name="coalton-bits-bits-class"></a>
+<code><a href="#coalton-classes-eq-class">Eq</a> :INT &rArr; <a href="#coalton-bits-bits-class">Bits</a> :INT</code>
 
 
-Operations on the bits of twos-complement integers
+Bitwise operations on integers viewed as two's-complement bit strings.
+
+Each instance type has a width `w`, the number of bits in its
+representation: for example 8 for `U8` and `I8`, and unbounded for
+`Integer`. Bits are numbered from 0, the least significant. In a value
+of an unsigned type, every bit from `w` up is 0. In a value of a signed
+type, every bit from `w` up is a copy of the sign bit `w - 1`, which is
+the usual reading of an integer as an infinitely sign-extended
+two's-complement bit string.
+
+Let `wrap` send an integer to the unique value of the instance type
+that is congruent to it modulo `2^w`. For example, in `U8` it sends 256
+to 0 and -1 to 255, and in `I8` it sends 128 to -128. For `Integer` it
+is the identity. Each method computes the corresponding Common Lisp
+operation on unbounded integers and then applies `wrap`:
+
+```
+(and a b)   = wrap (logand a b)
+(or a b)    = wrap (logior a b)
+(xor a b)   = wrap (logxor a b)
+(not a)     = wrap (lognot a)
+(shift k a) = wrap (ash a k)    ; = wrap (floor (* a (expt 2 k)))
+```
+
+So every method returns a valid value of its type and never signals
+an error. On fixed-width types, the cost of `shift` does not depend on
+`k`. A left shift discards the bits moved past bit `w - 1`, so in a
+signed type it can change the sign. A right shift fills with copies of
+the sign bit in signed types and with zeros in unsigned types. Shifting
+left by `w` or more bits gives 0. Shifting right by `w` or more bits
+gives 0 for non-negative values and -1 for negative values.
+
+These laws follow, for all values `a`, `b`, and `c`, all integers `i`,
+and all non-negative integers `j` and `k`, where 0 stands for the value
+with no bits set, which is `(xor a a)`:
+
+```
+(and a b) = (and b a)    (and a (and b c)) = (and (and a b) c)
+(or a b)  = (or b a)     (or a (or b c))   = (or (or a b) c)
+(xor a b) = (xor b a)    (xor a (xor b c)) = (xor (xor a b) c)
+(and a (or b c)) = (or (and a b) (and a c))
+(or a (and b c)) = (and (or a b) (or a c))
+(not (not a)) = a        (not (and a b)) = (or (not a) (not b))
+(and a 0) = 0            (and a (not 0)) = a
+(or a 0) = a             (xor a 0) = a
+(xor a a) = 0            (xor a (not 0)) = (not a)
+(shift 0 a) = a
+(shift j (shift k a)) = (shift (+ j k) a)
+(shift (- j) (shift (- k) a)) = (shift (- (+ j k)) a)
+(shift i (and a b)) = (and (shift i a) (shift i b)), and likewise for `or` and `xor`
+```
+
+In signed types and `Integer`, right shifts also commute with `not`:
+`(shift (- k) (not a)) = (not (shift (- k) a))`. In unsigned types they
+do not, because the zeros shifted in become ones under `not`.
 
 Methods:
-- <code>AND :: :INT * :INT &rarr; :INT</code><br/>The bitwise logical `and` of two integers
-- <code>OR :: :INT * :INT &rarr; :INT</code><br/>The bitwise logical `or` of two integers
-- <code>XOR :: :INT * :INT &rarr; :INT</code><br/>The bitwise logical exclusive `or` of two integers
-- <code>NOT :: :INT &rarr; :INT</code><br/>The bitwise logical `not` of two integers
-- <code>SHIFT :: <a href="#coalton-integer-type">Integer</a> * :INT &rarr; :INT</code><br/>The arithmetic left-shift of an integer by an integer number of bits
+- <code>AND :: :INT * :INT &rarr; :INT</code><br/>The bitwise AND of two values.
+- <code>OR :: :INT * :INT &rarr; :INT</code><br/>The bitwise inclusive OR of two values.
+- <code>XOR :: :INT * :INT &rarr; :INT</code><br/>The bitwise exclusive OR of two values.
+- <code>NOT :: :INT &rarr; :INT</code><br/>The bitwise complement of a value.
+- <code>SHIFT :: <a href="#coalton-integer-type">Integer</a> * :INT &rarr; :INT</code><br/>Shift a value left by `k` bits, or right by `-k` bits when `k` is negative. See `Bits` for how the result fits the width.
 <details>
 <summary>Instances</summary>
 
@@ -1484,15 +1538,29 @@ Methods:
 
 ***
 
-#### <a href="#coalton-bits-reversebits-class"><code>ReverseBits</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/bits.ct#L61-L68">src</a></sub></sup><a name="coalton-bits-reversebits-class"></a>
+#### <a href="#coalton-bits-reversebits-class"><code>ReverseBits</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/bits.ct#L143-L164">src</a></sub></sup><a name="coalton-bits-reversebits-class"></a>
 <code><a href="#coalton-bits-reversebits-class">ReverseBits</a> :T</code>
 
 
-A type class for number types that support bit reversal.
+Bit reversal for fixed-width unsigned integer types.
+
+For a type of width `w`, bit `i` of `(reverse-bits x)` is bit
+`w - 1 - i` of `x`, for every `i` below `w`. The function
+`reverse-n-bits` reverses only the low `n` bits of its argument:
+
+```
+(reverse-bits (reverse-bits x)) = x
+(reverse-n-bits n x) = (shift (- n w) (reverse-bits x))
+```
+
+where `shift` is the `Bits` method. In particular,
+`(reverse-n-bits w x) = (reverse-bits x)` and
+`(reverse-n-bits 0 x) = 0`. When `n` is less than `w`, the result holds
+the low `n` bits of `x` in reverse order, with zeros above them.
 
 Methods:
-- <code>REVERSE-BITS :: :T &rarr; :T</code><br/>Reverse the bits of `x`.
-- <code>REVERSE-N-BITS :: <a href="#coalton-ufix-type">UFix</a> * :T &rarr; :T</code><br/>Reverse the first `n` bits of `x` and set the rest to 0.
+- <code>REVERSE-BITS :: :T &rarr; :T</code><br/>Reverse the order of all the bits of `x`.
+- <code>REVERSE-N-BITS :: <a href="#coalton-ufix-type">UFix</a> * :T &rarr; :T</code><br/>Reverse the low `n` bits of `x`, clearing the bits above them. See `ReverseBits`.
 <details>
 <summary>Instances</summary>
 
@@ -1510,19 +1578,42 @@ Methods:
 
 ### Values
 
-#### <a href="#coalton-bits-dpb-value"><code>(DPB NEWBYTE SIZE POSITION BITSTRING)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/bits.ct#L48-L51">src</a></sub></sup><a name="coalton-bits-dpb-value"></a>
+#### <a href="#coalton-bits-dpb-value"><code>(DPB NEW SIZE POSITION X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/bits.ct#L118-L139">src</a></sub></sup><a name="coalton-bits-dpb-value"></a>
 <code>&forall; :A. <a href="#coalton-bits-bits-class">Bits</a> :A &rArr; :A * <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-ufix-type">UFix</a> * :A &rarr; :A</code>
 
-Deposits a byte `newbyte` of size `size` into a bitstring `bitstring` at a position `position`.
+Replace the `size`-bit field of `x` that starts at bit `position` with the low `size` bits of `new`:
+
+```
+(dpb new size position x) = wrap (dpb new (byte size position) x)
+```
+
+where the right-hand side is the Common Lisp `dpb` and `wrap` is as in
+`Bits`. Together with `ldb`, it satisfies the following laws for all
+values `a`, `n`, and `m`, sizes `s`, and positions `p`, where `w` is the
+width of the type:
+
+```
+(dpb (ldb s p a) s p a) = a
+(dpb m s p (dpb n s p a)) = (dpb m s p a)
+(ldb s p (dpb n s p a)) = (ldb s 0 n)    ; when s + p <= w
+```
 
 
 
 ***
 
-#### <a href="#coalton-bits-ldb-value"><code>(LDB SIZE POSITION BITSTRING)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/bits.ct#L54-L57">src</a></sub></sup><a name="coalton-bits-ldb-value"></a>
+#### <a href="#coalton-bits-ldb-value"><code>(LDB SIZE POSITION X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/bits.ct#L103-L114">src</a></sub></sup><a name="coalton-bits-ldb-value"></a>
 <code>&forall; :A. <a href="#coalton-bits-bits-class">Bits</a> :A &rArr; <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-ufix-type">UFix</a> * :A &rarr; :A</code>
 
-Deposits a byte of size `size` into a bitstring at a position `position`.
+Extract the `size`-bit field of `x` that starts at bit `position`:
+
+```
+(ldb size position x) = wrap (ldb (byte size position) x)
+```
+
+where the right-hand side is the Common Lisp `ldb` and `wrap` is as in
+`Bits`. A field that is narrower than the type and lies within its
+width is returned as a non-negative value.
 
 
 
@@ -7095,7 +7186,7 @@ The least common multiple of A and B.
 #### <a href="#coalton-math-integral-lsh-value"><code>(LSH X N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L76-L78">src</a></sub></sup><a name="coalton-math-integral-lsh-value"></a>
 <code>&forall; :B :N. (<a href="#coalton-math-integral-integral-class">Integral</a> :N) (<a href="#coalton-bits-bits-class">Bits</a> :B) &rArr; :B * :N &rarr; :B</code>
 
-Left shift X by N
+Shift `x` left by `n` bits, or right by `-n` bits when `n` is negative. This is `(bits:shift (toInteger n) x)`, so on fixed-width types the result fits the width as described for `bits:Bits`.
 
 
 
@@ -7113,7 +7204,7 @@ Is N odd?
 #### <a href="#coalton-math-integral-rsh-value"><code>(RSH X N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L71-L73">src</a></sub></sup><a name="coalton-math-integral-rsh-value"></a>
 <code>&forall; :B :N. (<a href="#coalton-math-integral-integral-class">Integral</a> :N) (<a href="#coalton-bits-bits-class">Bits</a> :B) &rArr; :B * :N &rarr; :B</code>
 
-Right shift X by N
+Shift `x` right by `n` bits, or left by `-n` bits when `n` is negative. This is `(bits:shift (negate (toInteger n)) x)`, so on fixed-width types the result fits the width as described for `bits:Bits`.
 
 
 
