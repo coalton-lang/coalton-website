@@ -64,6 +64,13 @@ layout: two-pane
 - <a href="#coalton-string-package"><code>COALTON/STRING</code></a>
 - <a href="#coalton-symbol-package"><code>COALTON/SYMBOL</code></a>
 - <a href="#coalton-system-package"><code>COALTON/SYSTEM</code></a>
+- <a href="#coalton-threads-atomic-package"><code>COALTON/THREADS/ATOMIC</code></a>
+- <a href="#coalton-threads-channel-package"><code>COALTON/THREADS/CHANNEL</code></a>
+- <a href="#coalton-threads-condition-variable-package"><code>COALTON/THREADS/CONDITION-VARIABLE</code></a>
+- <a href="#coalton-threads-mutex-package"><code>COALTON/THREADS/MUTEX</code></a>
+- <a href="#coalton-threads-parallel-package"><code>COALTON/THREADS/PARALLEL</code></a>
+- <a href="#coalton-threads-semaphore-package"><code>COALTON/THREADS/SEMAPHORE</code></a>
+- <a href="#coalton-threads-thread-package"><code>COALTON/THREADS/THREAD</code></a>
 - <a href="#coalton-tuple-package"><code>COALTON/TUPLE</code></a>
 - <a href="#coalton-types-package"><code>COALTON/TYPES</code></a>
 - <a href="#coalton-vector-package"><code>COALTON/VECTOR</code></a>
@@ -764,6 +771,7 @@ Homogeneous list of objects. Represented as a typical Common Lisp chain of `cl:c
 - <code><a href="#coalton-classes-monad-class">Monad</a> <a href="#coalton-list-type">List</a></code>
 - <code><a href="#coalton-classes-monoid-class">Monoid</a> (<a href="#coalton-list-type">List</a> :A)</code>
 - <code><a href="#coalton-classes-ord-class">Ord</a> :ELT &rArr; <a href="#coalton-classes-ord-class">Ord</a> (<a href="#coalton-list-type">List</a> :ELT)</code>
+- <code><a href="#coalton-threads-parallel-parallelmap-class">ParallelMap</a> <a href="#coalton-list-type">List</a></code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-list-type">List</a> :A)</code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> :T &rArr; <a href="#coalton-classes-into-class">Into</a> (<a href="#coalton-list-type">List</a> :T) (<a href="#coalton-lisparray-lisparray-type">LispArray</a> :T)</code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> :T &rArr; <a href="#coalton-classes-iso-class">Iso</a> (<a href="#coalton-lisparray-lisparray-type">LispArray</a> :T) (<a href="#coalton-list-type">List</a> :T)</code>
@@ -2196,7 +2204,7 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#coalton-classes-default-class">Default</a> (<a href="#coalton-seq-seq-type">Seq</a> :A)</code>
+- <code><a href="#coalton-classes-default-class">Default</a> (<a href="#coalton-seq-seq-type">Seq</a> :A)</code>
 - <code><a href="#coalton-classes-default-class">Default</a> (<a href="#coalton-queue-queue-type">Queue</a> :A)</code>
 - <code><a href="#coalton-classes-hash-class">Hash</a> :KEY &rArr; <a href="#coalton-classes-default-class">Default</a> (<a href="#coalton-hashtable-hashtable-type">HashTable</a> :KEY :VALUE)</code>
 - <code><a href="#coalton-classes-default-class">Default</a> <a href="#coalton-string-type">String</a></code>
@@ -2312,6 +2320,8 @@ Methods:
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#coalton-classes-exception-class">Exception</a> <a href="#coalton-threads-parallel-taskaborted-type">TaskAborted</a></code>
+- <code><a href="#coalton-classes-exception-class">Exception</a> <a href="#coalton-threads-thread-threadaborted-type">ThreadAborted</a></code>
 - <code><a href="#coalton-classes-exception-class">Exception</a> <a href="#coalton-exception-storagecondition-type">StorageCondition</a></code>
 - <code><a href="#coalton-classes-exception-class">Exception</a> <a href="#coalton-exception-lispfileerror-type">LispFileError</a></code>
 - <code><a href="#coalton-classes-exception-class">Exception</a> <a href="#coalton-exception-endoffile-type">EndOfFile</a></code>
@@ -2407,7 +2417,7 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE) &rArr; <a href="#coalton-classes-fromassociationcomprehension-class">FromAssociationComprehension</a> (<a href="#coalton-seq-seq-type">Seq</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE)) :KEY :VALUE (<a href="#coalton-seq-seq-type">Seq</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE))</code>
+- <code><a href="#coalton-classes-fromassociationcomprehension-class">FromAssociationComprehension</a> (<a href="#coalton-seq-seq-type">Seq</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE)) :KEY :VALUE (<a href="#coalton-vector-vector-type">Vector</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE))</code>
 - <code><a href="#coalton-classes-ord-class">Ord</a> :KEY &rArr; <a href="#coalton-classes-fromassociationcomprehension-class">FromAssociationComprehension</a> (<a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE) :KEY :VALUE (<a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE)</code>
 - <code><a href="#coalton-classes-hash-class">Hash</a> :KEY &rArr; <a href="#coalton-classes-fromassociationcomprehension-class">FromAssociationComprehension</a> (<a href="#coalton-hashmap-hashmap-type">HashMap</a> :KEY :VALUE) :KEY :VALUE (<a href="#coalton-hashmap-hashmap-type">HashMap</a> :KEY :VALUE)</code>
 - <code><a href="#coalton-classes-hash-class">Hash</a> :KEY &rArr; <a href="#coalton-classes-fromassociationcomprehension-class">FromAssociationComprehension</a> (<a href="#coalton-hashtable-hashtable-type">HashTable</a> :KEY :VALUE) :KEY :VALUE (<a href="#coalton-hashtable-hashtable-type">HashTable</a> :KEY :VALUE)</code>
@@ -2444,7 +2454,7 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#coalton-classes-fromcollectioncomprehension-class">FromCollectionComprehension</a> (<a href="#coalton-seq-seq-type">Seq</a> :A) :A (<a href="#coalton-seq-seq-type">Seq</a> :A)</code>
+- <code><a href="#coalton-classes-fromcollectioncomprehension-class">FromCollectionComprehension</a> (<a href="#coalton-seq-seq-type">Seq</a> :A) :A (<a href="#coalton-vector-vector-type">Vector</a> :A)</code>
 - <code><a href="#coalton-classes-fromcollectioncomprehension-class">FromCollectionComprehension</a> (<a href="#coalton-queue-queue-type">Queue</a> :A) :A (<a href="#coalton-queue-queue-type">Queue</a> :A)</code>
 - <code><a href="#coalton-classes-fromcollectioncomprehension-class">FromCollectionComprehension</a> (<a href="#coalton-vector-vector-type">Vector</a> :A) :A (<a href="#coalton-vector-vector-type">Vector</a> :A)</code>
 - <code><a href="#coalton-classes-fromcollectioncomprehension-class">FromCollectionComprehension</a> (<a href="#coalton-list-type">List</a> :ELT) :ELT (<a href="#coalton-list-type">List</a> :ELT)</code>
@@ -2485,7 +2495,7 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE) &rArr; <a href="#coalton-classes-fromitemizedassociation-class">FromItemizedAssociation</a> (<a href="#coalton-seq-seq-type">Seq</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE)) :KEY :VALUE (<a href="#coalton-seq-seq-type">Seq</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE))</code>
+- <code><a href="#coalton-classes-fromitemizedassociation-class">FromItemizedAssociation</a> (<a href="#coalton-seq-seq-type">Seq</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE)) :KEY :VALUE (<a href="#coalton-vector-vector-type">Vector</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE))</code>
 - <code><a href="#coalton-classes-ord-class">Ord</a> :KEY &rArr; <a href="#coalton-classes-fromitemizedassociation-class">FromItemizedAssociation</a> (<a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE) :KEY :VALUE (<a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE)</code>
 - <code><a href="#coalton-classes-hash-class">Hash</a> :KEY &rArr; <a href="#coalton-classes-fromitemizedassociation-class">FromItemizedAssociation</a> (<a href="#coalton-hashmap-hashmap-type">HashMap</a> :KEY :VALUE) :KEY :VALUE (<a href="#coalton-hashmap-hashmap-type">HashMap</a> :KEY :VALUE)</code>
 - <code><a href="#coalton-classes-hash-class">Hash</a> :KEY &rArr; <a href="#coalton-classes-fromitemizedassociation-class">FromItemizedAssociation</a> (<a href="#coalton-hashtable-hashtable-type">HashTable</a> :KEY :VALUE) :KEY :VALUE (<a href="#coalton-hashtable-hashtable-type">HashTable</a> :KEY :VALUE)</code>
@@ -2525,7 +2535,7 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#coalton-classes-fromitemizedcollection-class">FromItemizedCollection</a> (<a href="#coalton-seq-seq-type">Seq</a> :A) :A (<a href="#coalton-seq-seq-type">Seq</a> :A)</code>
+- <code><a href="#coalton-classes-fromitemizedcollection-class">FromItemizedCollection</a> (<a href="#coalton-seq-seq-type">Seq</a> :A) :A (<a href="#coalton-vector-vector-type">Vector</a> :A)</code>
 - <code><a href="#coalton-classes-fromitemizedcollection-class">FromItemizedCollection</a> (<a href="#coalton-queue-queue-type">Queue</a> :A) :A (<a href="#coalton-queue-queue-type">Queue</a> :A)</code>
 - <code><a href="#coalton-classes-fromitemizedcollection-class">FromItemizedCollection</a> (<a href="#coalton-vector-vector-type">Vector</a> :A) :A (<a href="#coalton-vector-vector-type">Vector</a> :A)</code>
 - <code><a href="#coalton-classes-fromitemizedcollection-class">FromItemizedCollection</a> (<a href="#coalton-list-type">List</a> :ELT) :ELT (<a href="#coalton-list-type">List</a> :ELT)</code>
@@ -2658,9 +2668,9 @@ instance authors:
         (Into (:f :a) (Seq :a) => :f :a -> Seq :a))
       (define (to-seq xs) (into xs))
 
-  `Foldable :f` and `RuntimeRepr :a` alone are insufficient here.
-  They describe one candidate instance's requirements; a caller may select a
-  more-specific instance with different requirements.
+  `Foldable :f` alone is insufficient here. It describes one candidate
+  instance's requirements; a caller may select a more-specific instance with
+  different requirements.
 
 - New instances can overlap the identity instance whenever their source and
   destination types can become equal. Every distinct instance participating
@@ -2741,7 +2751,7 @@ style="display:inline-flex;align-items:center;margin-left:8px;padding:2px 7px;bo
 - <code><a href="#coalton-classes-into-class">Into</a> (<a href="#coalton-seq-seq-type">Seq</a> :A) (<a href="#coalton-seq-seq-type">Seq</a> :A)</code><a class=instance-overlap-badge href="/manual/operators/overlap/"
 title="Declared with (overlap); permits overlap with other marked instances."
 style="display:inline-flex;align-items:center;margin-left:8px;padding:2px 7px;border:1px solid #bccbea;border-radius:999px;background:#eef3ff;color:#355184;font:600 11px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;vertical-align:baseline;white-space:nowrap;text-decoration:none">overlap</a>
-- <code>(<a href="#coalton-classes-foldable-class">Foldable</a> :F) (<a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> :A) &rArr; <a href="#coalton-classes-into-class">Into</a> (:F :A) (<a href="#coalton-seq-seq-type">Seq</a> :A)</code><a class=instance-overlap-badge href="/manual/operators/overlap/"
+- <code><a href="#coalton-classes-foldable-class">Foldable</a> :F &rArr; <a href="#coalton-classes-into-class">Into</a> (:F :A) (<a href="#coalton-seq-seq-type">Seq</a> :A)</code><a class=instance-overlap-badge href="/manual/operators/overlap/"
 title="Declared with (overlap); permits overlap with other marked instances."
 style="display:inline-flex;align-items:center;margin-left:8px;padding:2px 7px;border:1px solid #bccbea;border-radius:999px;background:#eef3ff;color:#355184;font:600 11px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;vertical-align:baseline;white-space:nowrap;text-decoration:none">overlap</a>
 - <code><a href="#coalton-classes-into-class">Into</a> (<a href="#coalton-vector-vector-type">Vector</a> :A) (<a href="#coalton-slice-slice-type">Slice</a> :A)</code>
@@ -2968,7 +2978,7 @@ Methods:
 <summary>Instances</summary>
 
 - <code><a href="#coalton-classes-monoid-class">Monoid</a> <a href="#coalton-file-pathname-type">Pathname</a></code>
-- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#coalton-classes-monoid-class">Monoid</a> (<a href="#coalton-seq-seq-type">Seq</a> :A)</code>
+- <code><a href="#coalton-classes-monoid-class">Monoid</a> (<a href="#coalton-seq-seq-type">Seq</a> :A)</code>
 - <code><a href="#coalton-classes-ord-class">Ord</a> :KEY &rArr; <a href="#coalton-classes-monoid-class">Monoid</a> (<a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE)</code>
 - <code><a href="#coalton-classes-hash-class">Hash</a> :K &rArr; <a href="#coalton-classes-monoid-class">Monoid</a> (<a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V)</code>
 - <code><a href="#coalton-classes-monoid-class">Monoid</a> <a href="#coalton-string-type">String</a></code>
@@ -3104,7 +3114,7 @@ Methods:
 <summary>Instances</summary>
 
 - <code><a href="#coalton-classes-semigroup-class">Semigroup</a> <a href="#coalton-file-pathname-type">Pathname</a></code>
-- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#coalton-classes-semigroup-class">Semigroup</a> (<a href="#coalton-seq-seq-type">Seq</a> :A)</code>
+- <code><a href="#coalton-classes-semigroup-class">Semigroup</a> (<a href="#coalton-seq-seq-type">Seq</a> :A)</code>
 - <code><a href="#coalton-classes-ord-class">Ord</a> :KEY &rArr; <a href="#coalton-classes-semigroup-class">Semigroup</a> (<a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE)</code>
 - <code><a href="#coalton-classes-semigroup-class">Semigroup</a> (<a href="#coalton-queue-queue-type">Queue</a> :A)</code>
 - <code><a href="#coalton-classes-hash-class">Hash</a> :K &rArr; <a href="#coalton-classes-semigroup-class">Semigroup</a> (<a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V)</code>
@@ -5456,7 +5466,7 @@ Methods:
 <details>
 <summary>Instances</summary>
 
-- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#coalton-iterator-fromiterator-class">FromIterator</a> (<a href="#coalton-seq-seq-type">Seq</a> :A) :A</code>
+- <code><a href="#coalton-iterator-fromiterator-class">FromIterator</a> (<a href="#coalton-seq-seq-type">Seq</a> :A) :A</code>
 - <code><a href="#coalton-classes-ord-class">Ord</a> :KEY &rArr; <a href="#coalton-iterator-fromiterator-class">FromIterator</a> (<a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE) (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE)</code>
 - <code><a href="#coalton-classes-ord-class">Ord</a> :ELT &rArr; <a href="#coalton-iterator-fromiterator-class">FromIterator</a> (<a href="#coalton-ordtree-ordtree-type">OrdTree</a> :ELT) :ELT</code>
 - <code><a href="#coalton-iterator-fromiterator-class">FromIterator</a> (<a href="#coalton-queue-queue-type">Queue</a> :A) :A</code>
@@ -9333,15 +9343,21 @@ Persistent sequences based on relaxed radix balanced trees.
 
 ### Types
 
-#### <a href="#coalton-seq-seq-type"><code>Seq</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L58-L64">src</a></sub></sup><a name="coalton-seq-seq-type"></a>
+#### <a href="#coalton-seq-seq-type"><code>Seq</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L52-L58">src</a></sub></sup><a name="coalton-seq-seq-type"></a>
 <details>
 <summary>Instances</summary>
 
-- <code>(<a href="#coalton-classes-foldable-class">Foldable</a> :F) (<a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> :A) &rArr; <a href="#coalton-classes-into-class">Into</a> (:F :A) (<a href="#coalton-seq-seq-type">Seq</a> :A)</code><a class=instance-overlap-badge href="/manual/operators/overlap/"
+- <code><a href="#coalton-classes-default-class">Default</a> (<a href="#coalton-seq-seq-type">Seq</a> :A)</code>
+- <code><a href="#coalton-classes-eq-class">Eq</a> :A &rArr; <a href="#coalton-classes-eq-class">Eq</a> (<a href="#coalton-seq-seq-type">Seq</a> :A)</code>
+- <code><a href="#coalton-classes-foldable-class">Foldable</a> :F &rArr; <a href="#coalton-classes-into-class">Into</a> (:F :A) (<a href="#coalton-seq-seq-type">Seq</a> :A)</code><a class=instance-overlap-badge href="/manual/operators/overlap/"
 title="Declared with (overlap); permits overlap with other marked instances."
 style="display:inline-flex;align-items:center;margin-left:8px;padding:2px 7px;border:1px solid #bccbea;border-radius:999px;background:#eef3ff;color:#355184;font:600 11px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;vertical-align:baseline;white-space:nowrap;text-decoration:none">overlap</a>
-- <code><a href="#coalton-classes-eq-class">Eq</a> :A &rArr; <a href="#coalton-classes-eq-class">Eq</a> (<a href="#coalton-seq-seq-type">Seq</a> :A)</code>
 - <code><a href="#coalton-classes-foldable-class">Foldable</a> <a href="#coalton-seq-seq-type">Seq</a></code>
+- <code><a href="#coalton-classes-fromassociationcomprehension-class">FromAssociationComprehension</a> (<a href="#coalton-seq-seq-type">Seq</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE)) :KEY :VALUE (<a href="#coalton-vector-vector-type">Vector</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE))</code>
+- <code><a href="#coalton-classes-fromcollectioncomprehension-class">FromCollectionComprehension</a> (<a href="#coalton-seq-seq-type">Seq</a> :A) :A (<a href="#coalton-vector-vector-type">Vector</a> :A)</code>
+- <code><a href="#coalton-classes-fromitemizedassociation-class">FromItemizedAssociation</a> (<a href="#coalton-seq-seq-type">Seq</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE)) :KEY :VALUE (<a href="#coalton-vector-vector-type">Vector</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE))</code>
+- <code><a href="#coalton-classes-fromitemizedcollection-class">FromItemizedCollection</a> (<a href="#coalton-seq-seq-type">Seq</a> :A) :A (<a href="#coalton-vector-vector-type">Vector</a> :A)</code>
+- <code><a href="#coalton-iterator-fromiterator-class">FromIterator</a> (<a href="#coalton-seq-seq-type">Seq</a> :A) :A</code>
 - <code><a href="#coalton-classes-functor-class">Functor</a> <a href="#coalton-seq-seq-type">Seq</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> (<a href="#coalton-seq-seq-type">Seq</a> :A) (<a href="#coalton-list-type">List</a> :A)</code>
 - <code><a href="#coalton-classes-into-class">Into</a> (<a href="#coalton-seq-seq-type">Seq</a> :A) (<a href="#coalton-seq-seq-type">Seq</a> :A)</code><a class=instance-overlap-badge href="/manual/operators/overlap/"
@@ -9349,15 +9365,13 @@ title="Declared with (overlap); permits overlap with other marked instances."
 style="display:inline-flex;align-items:center;margin-left:8px;padding:2px 7px;border:1px solid #bccbea;border-radius:999px;background:#eef3ff;color:#355184;font:600 11px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;vertical-align:baseline;white-space:nowrap;text-decoration:none">overlap</a>
 - <code><a href="#coalton-classes-into-class">Into</a> (<a href="#coalton-seq-seq-type">Seq</a> :A) (<a href="#coalton-vector-vector-type">Vector</a> :A)</code>
 - <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-seq-seq-type">Seq</a> :A) :A</code>
+- <code><a href="#coalton-classes-monoid-class">Monoid</a> (<a href="#coalton-seq-seq-type">Seq</a> :A)</code>
+- <code><a href="#coalton-threads-parallel-parallelfoldable-class">ParallelFoldable</a> (<a href="#coalton-seq-seq-type">Seq</a> :A) :A</code><a class=instance-overlap-badge href="/manual/operators/overlap/"
+title="Declared with (overlap); permits overlap with other marked instances."
+style="display:inline-flex;align-items:center;margin-left:8px;padding:2px 7px;border:1px solid #bccbea;border-radius:999px;background:#eef3ff;color:#355184;font:600 11px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;vertical-align:baseline;white-space:nowrap;text-decoration:none">overlap</a>
+- <code><a href="#coalton-threads-parallel-parallelmap-class">ParallelMap</a> <a href="#coalton-seq-seq-type">Seq</a></code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-seq-seq-type">Seq</a> :|0|)</code>
-- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE) &rArr; <a href="#coalton-classes-fromassociationcomprehension-class">FromAssociationComprehension</a> (<a href="#coalton-seq-seq-type">Seq</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE)) :KEY :VALUE (<a href="#coalton-seq-seq-type">Seq</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE))</code>
-- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE) &rArr; <a href="#coalton-classes-fromitemizedassociation-class">FromItemizedAssociation</a> (<a href="#coalton-seq-seq-type">Seq</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE)) :KEY :VALUE (<a href="#coalton-seq-seq-type">Seq</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE))</code>
-- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#coalton-classes-default-class">Default</a> (<a href="#coalton-seq-seq-type">Seq</a> :A)</code>
-- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#coalton-classes-fromcollectioncomprehension-class">FromCollectionComprehension</a> (<a href="#coalton-seq-seq-type">Seq</a> :A) :A (<a href="#coalton-seq-seq-type">Seq</a> :A)</code>
-- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#coalton-classes-fromitemizedcollection-class">FromItemizedCollection</a> (<a href="#coalton-seq-seq-type">Seq</a> :A) :A (<a href="#coalton-seq-seq-type">Seq</a> :A)</code>
-- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#coalton-iterator-fromiterator-class">FromIterator</a> (<a href="#coalton-seq-seq-type">Seq</a> :A) :A</code>
-- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#coalton-classes-monoid-class">Monoid</a> (<a href="#coalton-seq-seq-type">Seq</a> :A)</code>
-- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#coalton-classes-semigroup-class">Semigroup</a> (<a href="#coalton-seq-seq-type">Seq</a> :A)</code>
+- <code><a href="#coalton-classes-semigroup-class">Semigroup</a> (<a href="#coalton-seq-seq-type">Seq</a> :A)</code>
 - <code><a href="#coalton-show-show-class">Show</a> :A &rArr; <a href="#coalton-show-show-class">Show</a> (<a href="#coalton-seq-seq-type">Seq</a> :A)</code>
 
 </details>
@@ -9368,8 +9382,8 @@ style="display:inline-flex;align-items:center;margin-left:8px;padding:2px 7px;bo
 
 ### Values
 
-#### <a href="#coalton-seq-conc-value"><code>(CONC LEFT RIGHT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L171-L212">src</a></sub></sup><a name="coalton-seq-conc-value"></a>
-<code>&forall; :A. <a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> :A &rArr; <a href="#coalton-seq-seq-type">Seq</a> :A * <a href="#coalton-seq-seq-type">Seq</a> :A &rarr; <a href="#coalton-seq-seq-type">Seq</a> :A</code>
+#### <a href="#coalton-seq-conc-value"><code>(CONC LEFT RIGHT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L133-L168">src</a></sub></sup><a name="coalton-seq-conc-value"></a>
+<code>&forall; :A. <a href="#coalton-seq-seq-type">Seq</a> :A * <a href="#coalton-seq-seq-type">Seq</a> :A &rarr; <a href="#coalton-seq-seq-type">Seq</a> :A</code>
 
 Concatenate two `Seq`s
 
@@ -9377,24 +9391,60 @@ Concatenate two `Seq`s
 
 ***
 
-#### <a href="#coalton-seq-empty?-value"><code>(EMPTY? SEQ)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L79-L80">src</a></sub></sup><a name="coalton-seq-empty?-value"></a>
+#### <a href="#coalton-seq-empty?-value"><code>(EMPTY? SEQ)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L73-L74">src</a></sub></sup><a name="coalton-seq-empty?-value"></a>
 <code>&forall; :A. <a href="#coalton-seq-seq-type">Seq</a> :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 
 ***
 
-#### <a href="#coalton-seq-get-value"><code>(GET SEQ IDX)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L83-L95">src</a></sub></sup><a name="coalton-seq-get-value"></a>
-<code>&forall; :A. <a href="#coalton-seq-seq-type">Seq</a> :A * <a href="#coalton-ufix-type">UFix</a> &rarr; <a href="#coalton-optional-type">Optional</a> :A</code>
+#### <a href="#coalton-seq-fold-range-value"><code>(FOLD-RANGE F INIT SEQ START END)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L175-L184">src</a></sub></sup><a name="coalton-seq-fold-range-value"></a>
+<code>&forall; :B :A. (:B * :A &rarr; :B) * :B * <a href="#coalton-seq-seq-type">Seq</a> :A * <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-ufix-type">UFix</a> &rarr; :B</code>
 
-Get the member of `seq` at index `idx`, or `None` if `idx` is larger
-than `(size seq)`
+Fold `f` over the elements of `seq` at indices from `start` (inclusive)
+to `end` (exclusive), in order, starting with `init`, as `fold` does over
+all of the elements. Indices from `(size seq)` on are ignored. This takes
+time proportional to the number of elements folded, plus the height of
+`seq`.
 
 
 
 ***
 
-#### <a href="#coalton-seq-new-value"><code>(NEW)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L67-L69">src</a></sub></sup><a name="coalton-seq-new-value"></a>
-<code>&forall; :A. <a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> :A &rArr; Void &rarr; <a href="#coalton-seq-seq-type">Seq</a> :A</code>
+#### <a href="#coalton-seq-get-value"><code>(GET SEQ IDX)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L77-L89">src</a></sub></sup><a name="coalton-seq-get-value"></a>
+<code>&forall; :A. <a href="#coalton-seq-seq-type">Seq</a> :A * <a href="#coalton-ufix-type">UFix</a> &rarr; <a href="#coalton-optional-type">Optional</a> :A</code>
+
+Get the member of `seq` at index `idx`, or `None` if `idx` is at least
+`(size seq)`.
+
+
+
+***
+
+#### <a href="#coalton-seq-map-with-value"><code>(MAP-WITH FOR-CHUNKS F SEQ)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L188-L221">src</a></sub></sup><a name="coalton-seq-map-with-value"></a>
+<code>&forall; :A :B. (<a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-ufix-type">UFix</a> * (<a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-ufix-type">UFix</a> &rarr; Void) &rarr; Void) * (:A &rarr; :B) * <a href="#coalton-seq-seq-type">Seq</a> :A &rarr; <a href="#coalton-seq-seq-type">Seq</a> :B</code>
+
+Apply `f` to every element of `seq`, as `map` does, using `for-chunks`
+to divide the work.
+
+Unless `seq` is empty, `for-chunks` is called once, with the indices 0
+and `(size seq)` and a function of two indices. It must call that
+function on disjoint, nonempty chunks of indices, each given by its
+first index and the index after its last, that together cover the
+indices from its first argument to its second, and return once all of
+these calls have returned. The calls may happen in any order, and at the
+same time, so `for-chunks` can make them in parallel, as
+`coalton/threads/parallel:for-chunks!` does. `f` is only called within
+these calls.
+
+The result has the same structure as `seq`. Each leaf of the tree is
+mapped by the call on the chunk containing its first index.
+
+
+
+***
+
+#### <a href="#coalton-seq-new-value"><code>(NEW)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L61-L63">src</a></sub></sup><a name="coalton-seq-new-value"></a>
+<code>&forall; :A. Void &rarr; <a href="#coalton-seq-seq-type">Seq</a> :A</code>
 
 Create a new empty `Seq`.
 
@@ -9402,7 +9452,7 @@ Create a new empty `Seq`.
 
 ***
 
-#### <a href="#coalton-seq-pop-value"><code>(POP SEQ)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L131-L168">src</a></sub></sup><a name="coalton-seq-pop-value"></a>
+#### <a href="#coalton-seq-pop-value"><code>(POP SEQ)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L125-L130">src</a></sub></sup><a name="coalton-seq-pop-value"></a>
 <code>&forall; :A. <a href="#coalton-seq-seq-type">Seq</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :A (<a href="#coalton-seq-seq-type">Seq</a> :A))</code>
 
 If `seq` is empty, return `None`. Otherwise, the last member of `seq` and
@@ -9412,7 +9462,7 @@ a new `Seq` instance.
 
 ***
 
-#### <a href="#coalton-seq-push-value"><code>(PUSH SEQ A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L120-L128">src</a></sub></sup><a name="coalton-seq-push-value"></a>
+#### <a href="#coalton-seq-push-value"><code>(PUSH SEQ A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L114-L122">src</a></sub></sup><a name="coalton-seq-push-value"></a>
 <code>&forall; :A. <a href="#coalton-seq-seq-type">Seq</a> :A * :A &rarr; <a href="#coalton-seq-seq-type">Seq</a> :A</code>
 
 Push `a` onto the end of `seq`, returning a new `Seq` instance.
@@ -9421,7 +9471,7 @@ Push `a` onto the end of `seq`, returning a new `Seq` instance.
 
 ***
 
-#### <a href="#coalton-seq-put-value"><code>(PUT SEQ IDX A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L98-L117">src</a></sub></sup><a name="coalton-seq-put-value"></a>
+#### <a href="#coalton-seq-put-value"><code>(PUT SEQ IDX A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L92-L111">src</a></sub></sup><a name="coalton-seq-put-value"></a>
 <code>&forall; :A. <a href="#coalton-seq-seq-type">Seq</a> :A * <a href="#coalton-ufix-type">UFix</a> * :A &rarr; <a href="#coalton-optional-type">Optional</a> (<a href="#coalton-seq-seq-type">Seq</a> :A)</code>
 
 If `idx` is less than `(size seq)`, Return a new `seq` whose `idx` position
@@ -9431,7 +9481,7 @@ contains `a`.
 
 ***
 
-#### <a href="#coalton-seq-size-value"><code>(SIZE SEQ)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L72-L76">src</a></sub></sup><a name="coalton-seq-size-value"></a>
+#### <a href="#coalton-seq-size-value"><code>(SIZE SEQ)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L66-L70">src</a></sub></sup><a name="coalton-seq-size-value"></a>
 <code>&forall; :A. <a href="#coalton-seq-seq-type">Seq</a> :A &rarr; <a href="#coalton-ufix-type">UFix</a></code>
 
 Return the number of elements in the `seq`.
@@ -10104,6 +10154,956 @@ The number of internal time units per second. This is implementation specific.
 
 ***
 
+# Package `COALTON/THREADS/ATOMIC`<a name="coalton-threads-atomic-package"></a>
+
+
+Atomic references.
+
+An `Atomic :a` is a mutable cell, like `Cell :a`, whose operations are
+atomic: concurrent updates from several threads are never lost or
+interleaved. Every operation is sequentially consistent.
+
+`compare-and-swap!` compares values by identity (like Lisp's `EQ`), not
+with `==`. Two equal numbers or strings need not be identical, so the
+expected value should be one previously read from the cell. `update!`
+and the operations built on it follow this rule internally, and are
+correct for values of any type.
+
+### Types
+
+#### <a href="#coalton-threads-atomic-atomic-type"><code>Atomic</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/atomic.ct#L58-L59">src</a></sub></sup><a name="coalton-threads-atomic-atomic-type"></a>
+
+A mutable cell whose operations are atomic.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-threads-atomic-atomic-type">Atomic</a> :|0|)</code>
+
+</details>
+
+
+
+***
+
+### Values
+
+#### <a href="#coalton-threads-atomic-compare-and-swap!-value"><code>(COMPARE-AND-SWAP! ATOM EXPECTED REPLACEMENT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/atomic.ct#L92-L95">src</a></sub></sup><a name="coalton-threads-atomic-compare-and-swap!-value"></a>
+<code>&forall; :A. <a href="#coalton-threads-atomic-atomic-type">Atomic</a> :A * :A * :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
+
+If the value of `atom` is identical to `expected`, replace it with `replacement` and return `True`. Otherwise return `False` without changing `atom`. Values are compared by identity, not with `==`.
+
+
+
+***
+
+#### <a href="#coalton-threads-atomic-decrement!-value"><code>(DECREMENT! ATOM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/atomic.ct#L143-L145">src</a></sub></sup><a name="coalton-threads-atomic-decrement!-value"></a>
+<code>&forall; :COUNTER. <a href="#coalton-classes-num-class">Num</a> :COUNTER &rArr; <a href="#coalton-threads-atomic-atomic-type">Atomic</a> :COUNTER &rarr; :COUNTER</code>
+
+Atomically subtract one from the value of `atom`, returning the new value.
+
+
+
+***
+
+#### <a href="#coalton-threads-atomic-increment!-value"><code>(INCREMENT! ATOM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/atomic.ct#L138-L140">src</a></sub></sup><a name="coalton-threads-atomic-increment!-value"></a>
+<code>&forall; :COUNTER. <a href="#coalton-classes-num-class">Num</a> :COUNTER &rArr; <a href="#coalton-threads-atomic-atomic-type">Atomic</a> :COUNTER &rarr; :COUNTER</code>
+
+Atomically add one to the value of `atom`, returning the new value.
+
+
+
+***
+
+#### <a href="#coalton-threads-atomic-new-value"><code>(NEW DATA)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/atomic.ct#L63-L66">src</a></sub></sup><a name="coalton-threads-atomic-new-value"></a>
+<code>&forall; :A. :A &rarr; <a href="#coalton-threads-atomic-atomic-type">Atomic</a> :A</code>
+
+Create an atomic cell containing `data`.
+
+
+
+***
+
+#### <a href="#coalton-threads-atomic-pop!-value"><code>(POP! ATOM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/atomic.ct#L127-L135">src</a></sub></sup><a name="coalton-threads-atomic-pop!-value"></a>
+<code>&forall; :ELT. <a href="#coalton-threads-atomic-atomic-type">Atomic</a> (<a href="#coalton-list-type">List</a> :ELT) &rarr; <a href="#coalton-optional-type">Optional</a> :ELT</code>
+
+Atomically remove and return the first element of the list in `atom`, or return `None` if the list is empty.
+
+
+
+***
+
+#### <a href="#coalton-threads-atomic-push!-value"><code>(PUSH! ATOM ELT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/atomic.ct#L122-L124">src</a></sub></sup><a name="coalton-threads-atomic-push!-value"></a>
+<code>&forall; :ELT. <a href="#coalton-threads-atomic-atomic-type">Atomic</a> (<a href="#coalton-list-type">List</a> :ELT) * :ELT &rarr; <a href="#coalton-list-type">List</a> :ELT</code>
+
+Atomically push `elt` onto the front of the list in `atom`, returning the new list.
+
+
+
+***
+
+#### <a href="#coalton-threads-atomic-read-value"><code>(READ ATOM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/atomic.ct#L70-L74">src</a></sub></sup><a name="coalton-threads-atomic-read-value"></a>
+<code>&forall; :A. <a href="#coalton-threads-atomic-atomic-type">Atomic</a> :A &rarr; :A</code>
+
+Read the value of `atom`.
+
+
+
+***
+
+#### <a href="#coalton-threads-atomic-swap!-value"><code>(SWAP! ATOM DATA)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/atomic.ct#L77-L83">src</a></sub></sup><a name="coalton-threads-atomic-swap!-value"></a>
+<code>&forall; :A. <a href="#coalton-threads-atomic-atomic-type">Atomic</a> :A * :A &rarr; :A</code>
+
+Replace the value of `atom` with `data`, returning the old value.
+
+
+
+***
+
+#### <a href="#coalton-threads-atomic-update!-value"><code>(UPDATE! F ATOM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/atomic.ct#L110-L119">src</a></sub></sup><a name="coalton-threads-atomic-update!-value"></a>
+<code>&forall; :A. (:A &rarr; :A) * <a href="#coalton-threads-atomic-atomic-type">Atomic</a> :A &rarr; :A</code>
+
+Replace the value of `atom` with the result of applying `f` to it, atomically, and return the new value. If other threads update `atom` concurrently, `f` may be called more than once, so it should not have side effects.
+
+
+
+***
+
+#### <a href="#coalton-threads-atomic-update-swap!-value"><code>(UPDATE-SWAP! F ATOM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/atomic.ct#L98-L107">src</a></sub></sup><a name="coalton-threads-atomic-update-swap!-value"></a>
+<code>&forall; :A. (:A &rarr; :A) * <a href="#coalton-threads-atomic-atomic-type">Atomic</a> :A &rarr; :A</code>
+
+Replace the value of `atom` with the result of applying `f` to it, atomically, and return the old value. If other threads update `atom` concurrently, `f` may be called more than once, so it should not have side effects.
+
+
+
+***
+
+#### <a href="#coalton-threads-atomic-write!-value"><code>(WRITE! ATOM DATA)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/atomic.ct#L86-L89">src</a></sub></sup><a name="coalton-threads-atomic-write!-value"></a>
+<code>&forall; :A. <a href="#coalton-threads-atomic-atomic-type">Atomic</a> :A * :A &rarr; :A</code>
+
+Set the value of `atom` to `data`, returning `data`.
+
+
+
+***
+
+# Package `COALTON/THREADS/CHANNEL`<a name="coalton-threads-channel-package"></a>
+
+
+Unbounded channels for passing values between threads.
+
+A `Channel :a` is a first-in, first-out queue that any number of
+threads may send to and receive from. Sending never blocks; receiving
+waits until a value is available. On SBCL, the implementation is
+lock-free.
+
+### Types
+
+#### <a href="#coalton-threads-channel-channel-type"><code>Channel</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/channel.ct#L37-L38">src</a></sub></sup><a name="coalton-threads-channel-channel-type"></a>
+
+An unbounded first-in, first-out channel of values of type `:a`.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-threads-channel-channel-type">Channel</a> :|0|)</code>
+
+</details>
+
+
+
+***
+
+### Values
+
+#### <a href="#coalton-threads-channel-empty?-value"><code>(EMPTY? CHANNEL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/channel.ct#L90-L93">src</a></sub></sup><a name="coalton-threads-channel-empty?-value"></a>
+<code>&forall; :A. <a href="#coalton-threads-channel-channel-type">Channel</a> :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
+
+Is `channel` empty? Other threads may change this at any time.
+
+
+
+***
+
+#### <a href="#coalton-threads-channel-length-value"><code>(LENGTH CHANNEL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/channel.ct#L84-L87">src</a></sub></sup><a name="coalton-threads-channel-length-value"></a>
+<code>&forall; :A. <a href="#coalton-threads-channel-channel-type">Channel</a> :A &rarr; <a href="#coalton-ufix-type">UFix</a></code>
+
+The number of values waiting in `channel`. Other threads may change it at any time.
+
+
+
+***
+
+#### <a href="#coalton-threads-channel-new-value"><code>(NEW)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/channel.ct#L41-L44">src</a></sub></sup><a name="coalton-threads-channel-new-value"></a>
+<code>&forall; :A. &key (:name <a href="#coalton-string-type">String</a>) &rarr; <a href="#coalton-threads-channel-channel-type">Channel</a> :A</code>
+
+Create an empty channel. The `name` shows up in debugging tools.
+
+
+
+***
+
+#### <a href="#coalton-threads-channel-recv!-value"><code>(RECV! CHANNEL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/channel.ct#L53-L56">src</a></sub></sup><a name="coalton-threads-channel-recv!-value"></a>
+<code>&forall; :A. <a href="#coalton-threads-channel-channel-type">Channel</a> :A &rarr; :A</code>
+
+Remove and return the oldest value in `channel`, waiting until there is one.
+
+
+
+***
+
+#### <a href="#coalton-threads-channel-recv-timeout!-value"><code>(RECV-TIMEOUT! CHANNEL SECONDS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/channel.ct#L73-L81">src</a></sub></sup><a name="coalton-threads-channel-recv-timeout!-value"></a>
+<code>&forall; :A :B. <a href="#coalton-math-real-rational-class">Rational</a> :B &rArr; <a href="#coalton-threads-channel-channel-type">Channel</a> :A * :B &rarr; <a href="#coalton-optional-type">Optional</a> :A</code>
+
+Like `recv!`, but stop waiting after `seconds`, returning `None` if no value arrived in time.
+
+
+
+***
+
+#### <a href="#coalton-threads-channel-send!-value"><code>(SEND! CHANNEL VALUE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/channel.ct#L47-L50">src</a></sub></sup><a name="coalton-threads-channel-send!-value"></a>
+<code>&forall; :A. <a href="#coalton-threads-channel-channel-type">Channel</a> :A * :A &rarr; Void</code>
+
+Send `value` to `channel`.
+
+
+
+***
+
+#### <a href="#coalton-threads-channel-try-recv!-value"><code>(TRY-RECV! CHANNEL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/channel.ct#L63-L70">src</a></sub></sup><a name="coalton-threads-channel-try-recv!-value"></a>
+<code>&forall; :A. <a href="#coalton-threads-channel-channel-type">Channel</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> :A</code>
+
+Remove and return the oldest value in `channel`, or return `None` immediately if it is empty.
+
+
+
+***
+
+# Package `COALTON/THREADS/CONDITION-VARIABLE`<a name="coalton-threads-condition-variable-package"></a>
+
+
+Condition variables.
+
+A `ConditionVariable` lets threads sleep until another thread announces
+a change to some state protected by a `Mutex`. A waiting thread must
+hold the mutex, and must check the state it waits for in a loop around
+`wait!`, because waiting may end spuriously:
+
+```lisp
+(mutex:with-lock lock
+  (fn ()
+    (for ()
+      :while (not (ready?))
+      (cv:wait! cv lock))
+    (consume!)))
+```
+
+A thread that changes the state should do so, and call `notify!` or
+`broadcast!`, while holding the same mutex.
+
+### Types
+
+#### <a href="#coalton-threads-condition-variable-conditionvariable-type"><code>ConditionVariable</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/condition-variable.ct#L48-L49">src</a></sub></sup><a name="coalton-threads-condition-variable-conditionvariable-type"></a>
+
+A condition variable, used with a `Mutex` to wait for changes to shared state.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-threads-condition-variable-conditionvariable-type">ConditionVariable</a></code>
+
+</details>
+
+
+
+***
+
+### Values
+
+#### <a href="#coalton-threads-condition-variable-broadcast!-value"><code>(BROADCAST! CV)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/condition-variable.ct#L77-L80">src</a></sub></sup><a name="coalton-threads-condition-variable-broadcast!-value"></a>
+<code><a href="#coalton-threads-condition-variable-conditionvariable-type">ConditionVariable</a> &rarr; Void</code>
+
+Wake every thread waiting on `cv`. The calling thread should hold the mutex used by the waiters.
+
+
+
+***
+
+#### <a href="#coalton-threads-condition-variable-new-value"><code>(NEW)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/condition-variable.ct#L52-L55">src</a></sub></sup><a name="coalton-threads-condition-variable-new-value"></a>
+<code>&key (:name <a href="#coalton-string-type">String</a>) &rarr; <a href="#coalton-threads-condition-variable-conditionvariable-type">ConditionVariable</a></code>
+
+Create a condition variable. The `name` shows up in debugging tools.
+
+
+
+***
+
+#### <a href="#coalton-threads-condition-variable-notify!-value"><code>(NOTIFY! CV)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/condition-variable.ct#L71-L74">src</a></sub></sup><a name="coalton-threads-condition-variable-notify!-value"></a>
+<code><a href="#coalton-threads-condition-variable-conditionvariable-type">ConditionVariable</a> &rarr; Void</code>
+
+Wake one thread waiting on `cv`, if any. The calling thread should hold the mutex used by the waiters.
+
+
+
+***
+
+#### <a href="#coalton-threads-condition-variable-wait!-value"><code>(WAIT! CV MUTEX)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/condition-variable.ct#L58-L61">src</a></sub></sup><a name="coalton-threads-condition-variable-wait!-value"></a>
+<code><a href="#coalton-threads-condition-variable-conditionvariable-type">ConditionVariable</a> * <a href="#coalton-threads-mutex-mutex-type">Mutex</a> &rarr; Void</code>
+
+Atomically release `mutex`, which the calling thread must hold, and sleep until `cv` is notified; then acquire `mutex` again. The sleep may also end spuriously.
+
+
+
+***
+
+#### <a href="#coalton-threads-condition-variable-wait-timeout!-value"><code>(WAIT-TIMEOUT! CV MUTEX SECONDS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/condition-variable.ct#L64-L68">src</a></sub></sup><a name="coalton-threads-condition-variable-wait-timeout!-value"></a>
+<code>&forall; :A. <a href="#coalton-math-real-rational-class">Rational</a> :A &rArr; <a href="#coalton-threads-condition-variable-conditionvariable-type">ConditionVariable</a> * <a href="#coalton-threads-mutex-mutex-type">Mutex</a> * :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
+
+Like `wait!`, but stop waiting after `seconds`. Returns `False` if the time ran out. The calling thread holds `mutex` again when this returns, whether or not the time ran out.
+
+
+
+***
+
+# Package `COALTON/THREADS/MUTEX`<a name="coalton-threads-mutex-package"></a>
+
+
+Mutual exclusion locks.
+
+A `Mutex` can be held by at most one thread at a time. Prefer
+`with-lock`, which releases the mutex however its function exits, to
+pairing `lock!` with `unlock!`. Mutexes are not reentrant: a thread
+must not lock a mutex that it already holds.
+
+### Types
+
+#### <a href="#coalton-threads-mutex-mutex-type"><code>Mutex</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/mutex.ct#L34-L35">src</a></sub></sup><a name="coalton-threads-mutex-mutex-type"></a>
+
+A lock that at most one thread can hold at a time.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-threads-mutex-mutex-type">Mutex</a></code>
+
+</details>
+
+
+
+***
+
+### Values
+
+#### <a href="#coalton-threads-mutex-lock!-value"><code>(LOCK! MUTEX)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/mutex.ct#L44-L47">src</a></sub></sup><a name="coalton-threads-mutex-lock!-value"></a>
+<code><a href="#coalton-threads-mutex-mutex-type">Mutex</a> &rarr; Void</code>
+
+Acquire `mutex`, waiting for as long as another thread holds it.
+
+
+
+***
+
+#### <a href="#coalton-threads-mutex-new-value"><code>(NEW)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/mutex.ct#L38-L41">src</a></sub></sup><a name="coalton-threads-mutex-new-value"></a>
+<code>&key (:name <a href="#coalton-string-type">String</a>) &rarr; <a href="#coalton-threads-mutex-mutex-type">Mutex</a></code>
+
+Create a mutex that no thread holds. The `name` shows up in debugging tools.
+
+
+
+***
+
+#### <a href="#coalton-threads-mutex-try-lock!-value"><code>(TRY-LOCK! MUTEX)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/mutex.ct#L56-L59">src</a></sub></sup><a name="coalton-threads-mutex-try-lock!-value"></a>
+<code><a href="#coalton-threads-mutex-mutex-type">Mutex</a> &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
+
+Acquire `mutex` and return `True` if no thread holds it; otherwise return `False` immediately.
+
+
+
+***
+
+#### <a href="#coalton-threads-mutex-unlock!-value"><code>(UNLOCK! MUTEX)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/mutex.ct#L50-L53">src</a></sub></sup><a name="coalton-threads-mutex-unlock!-value"></a>
+<code><a href="#coalton-threads-mutex-mutex-type">Mutex</a> &rarr; Void</code>
+
+Release `mutex`, which the calling thread must hold.
+
+
+
+***
+
+#### <a href="#coalton-threads-mutex-with-lock-value"><code>(WITH-LOCK MUTEX THUNK)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/mutex.ct#L62-L66">src</a></sub></sup><a name="coalton-threads-mutex-with-lock-value"></a>
+<code>&forall; (:RESULT Values). <a href="#coalton-threads-mutex-mutex-type">Mutex</a> * (Void &rarr; :RESULT) &rarr; :RESULT</code>
+
+Call `thunk` while holding `mutex`, and return its values. The mutex is released however `thunk` exits.
+
+
+
+***
+
+# Package `COALTON/THREADS/PARALLEL`<a name="coalton-threads-parallel-package"></a>
+
+
+Task and data parallelism.
+
+Parallel work runs on a pool of worker threads, one per processor by
+default (see `set-worker-count!` and the `COALTON_NUM_THREADS`
+environment variable), started on first use. Each worker keeps a deque
+of tasks, and idle workers steal tasks from busy ones, so that work
+spreads to where processors are free.
+
+- `join` evaluates two functions, potentially in parallel. It is the
+  basic tool for divide-and-conquer algorithms, and is cheap enough to
+  use at fine granularity.
+- `scope` and `spawn` run any number of tasks for their effects, and
+  wait for all of them.
+- `async` and `await` compute values with futures.
+- `for-range!`, `map-reduce-range`, `fold-map-range`, `for-each!`,
+  `map-into!`, `map-reduce`, `fold-map`, `map` and `sort!` operate on
+  ranges and on collections, such as vectors and `Seq`s. They split work
+  adaptively: large chunks when all workers are busy, and more
+  parallelism where workers are idle.
+- `for-chunks!` and `map-reduce-chunks` hand whole chunks of a range
+  to a function, which can then process them with a tight sequential
+  loop. They are the most efficient way to parallelize loops whose
+  individual iterations are cheap.
+
+The functions passed to these operations may run on any worker thread.
+Parallel tasks must not modify the same data at the same time; for
+example, distinct tasks may set distinct elements of a vector, but not
+push onto the same vector. The elements of a `LispArray Bit` are
+packed into machine words, so tasks must not set elements in the same
+block of 64 at the same time; `map-into!` takes care of this. Use the
+operations in `coalton/threads/atomic` or `coalton/threads/mutex` to
+share mutable state. A task that blocks waiting for another task, other
+than with `join`, `await` or the end of a `scope`, may deadlock. Do not
+hold a mutex while calling a parallel operation: a worker waiting inside
+one runs other tasks meanwhile, which could try to acquire the same
+mutex.
+
+An exception thrown in a task, like any other error that it signals, is
+signaled again by the operation that waits for the task, so it can be
+caught with `catch` or `try` around that operation. A task may run on
+another worker thread, where it does not see the dynamic bindings,
+`handle` branches and resumptions established around the operation; a
+`handle` around the operation then sees the error only after the task
+has unwound, so it cannot resume the task. Handle errors that should
+resume a task within the task itself. A task that is unwound before it
+finishes, for example because its worker thread is interrupted, makes
+the operation signal `TaskAborted`.
+
+### Types
+
+#### <a href="#coalton-threads-parallel-future-type"><code>Future</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/parallel.ct#L188-L189">src</a></sub></sup><a name="coalton-threads-parallel-future-type"></a>
+
+The eventual value of a parallel computation started with `async`.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-threads-parallel-future-type">Future</a> :|0|)</code>
+
+</details>
+
+
+
+***
+
+#### <a href="#coalton-threads-parallel-scope-type"><code>Scope</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/parallel.ct#L170-L171">src</a></sub></sup><a name="coalton-threads-parallel-scope-type"></a>
+
+A scope in which tasks can be spawned with `spawn`. See `scope`.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-threads-parallel-scope-type">Scope</a></code>
+
+</details>
+
+
+
+***
+
+#### <a href="#coalton-threads-parallel-taskaborted-type"><code>TaskAborted</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/parallel.ct#L147-L148">src</a></sub></sup><a name="coalton-threads-parallel-taskaborted-type"></a>
+
+Signaled by an operation waiting for a task that was unwound before it finished, for example because its worker thread was interrupted.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#coalton-classes-exception-class">Exception</a> <a href="#coalton-threads-parallel-taskaborted-type">TaskAborted</a></code>
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-threads-parallel-taskaborted-type">TaskAborted</a></code>
+
+</details>
+
+
+
+***
+
+### Classes
+
+#### <a href="#coalton-threads-parallel-parallelfoldable-class"><code>ParallelFoldable</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/parallel.ct#L269-L278">src</a></sub></sup><a name="coalton-threads-parallel-parallelfoldable-class"></a>
+<code><a href="#coalton-threads-parallel-parallelfoldable-class">ParallelFoldable</a> :F :A</code>
+
+
+Collections whose elements `for-each!`, `map-reduce` and `fold-map` can process in parallel. These operations divide the indices of the elements of a collection into chunks, as `for-chunks!` does, and process each chunk with `fold-elements`.
+
+Every `RandomAccess` collection, such as `Vector` or `LispArray`, is an instance, and so is `Seq`. Since the instance for `RandomAccess` collections overlaps with every other instance, other instances must be marked with `(overlap)`.
+
+Methods:
+- <code>ELEMENT-COUNT :: :F &rarr; <a href="#coalton-ufix-type">UFix</a></code><br/>The number of elements of a collection.
+- <code>FOLD-ELEMENTS :: (:B * :A &rarr; :B) * :B * :F * <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-ufix-type">UFix</a> &rarr; :B</code><br/>`(fold-elements f init collection start end)` folds `f` over the elements of `collection` at the indices from `start` (inclusive) to `end` (exclusive), in order, starting with `init`, where `start &lt;= end &lt;= (element-count collection)`.
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#coalton-threads-parallel-parallelfoldable-class">ParallelFoldable</a> (<a href="#coalton-seq-seq-type">Seq</a> :A) :A</code><a class=instance-overlap-badge href="/manual/operators/overlap/"
+title="Declared with (overlap); permits overlap with other marked instances."
+style="display:inline-flex;align-items:center;margin-left:8px;padding:2px 7px;border:1px solid #bccbea;border-radius:999px;background:#eef3ff;color:#355184;font:600 11px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;vertical-align:baseline;white-space:nowrap;text-decoration:none">overlap</a>
+- <code><a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :F :A &rArr; <a href="#coalton-threads-parallel-parallelfoldable-class">ParallelFoldable</a> :F :A</code><a class=instance-overlap-badge href="/manual/operators/overlap/"
+title="Declared with (overlap); permits overlap with other marked instances."
+style="display:inline-flex;align-items:center;margin-left:8px;padding:2px 7px;border:1px solid #bccbea;border-radius:999px;background:#eef3ff;color:#355184;font:600 11px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;vertical-align:baseline;white-space:nowrap;text-decoration:none">overlap</a>
+
+</details>
+
+
+
+***
+
+#### <a href="#coalton-threads-parallel-parallelmap-class"><code>ParallelMap</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/parallel.ct#L349-L351">src</a></sub></sup><a name="coalton-threads-parallel-parallelmap-class"></a>
+<code><a href="#coalton-threads-parallel-parallelmap-class">ParallelMap</a> :F</code>
+
+
+Containers that can be mapped over in parallel, such as `List`, `Vector` and `Seq`. `map` applies a function to every element of a container, in parallel, returning a new container of the results.
+
+Methods:
+- <code>MAP :: (:A &rarr; :B) * :F :A &rarr; :F :B</code>
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#coalton-threads-parallel-parallelmap-class">ParallelMap</a> <a href="#coalton-seq-seq-type">Seq</a></code>
+- <code><a href="#coalton-threads-parallel-parallelmap-class">ParallelMap</a> <a href="#coalton-list-type">List</a></code>
+- <code><a href="#coalton-threads-parallel-parallelmap-class">ParallelMap</a> <a href="#coalton-vector-vector-type">Vector</a></code>
+
+</details>
+
+
+
+***
+
+### Values
+
+#### <a href="#coalton-threads-parallel-async-value"><code>(ASYNC THUNK)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/parallel.ct#L192-L195">src</a></sub></sup><a name="coalton-threads-parallel-async-value"></a>
+<code>&forall; :A. (Void &rarr; :A) &rarr; <a href="#coalton-threads-parallel-future-type">Future</a> :A</code>
+
+Start computing `thunk` in parallel, returning a future for its value.
+
+
+
+***
+
+#### <a href="#coalton-threads-parallel-await-value"><code>(AWAIT FUTURE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/parallel.ct#L198-L203">src</a></sub></sup><a name="coalton-threads-parallel-await-value"></a>
+<code>&forall; :A. <a href="#coalton-threads-parallel-future-type">Future</a> :A &rarr; :A</code>
+
+Wait for `future` and return its value. If its computation signaled an error, signal it again. A future may be awaited any number of times, from any thread.
+
+A worker awaiting a computation that has not started runs it itself; a worker awaiting a computation in progress runs other tasks of its own computation in the meantime.
+
+
+
+***
+
+#### <a href="#coalton-threads-parallel-done?-value"><code>(DONE? FUTURE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/parallel.ct#L206-L209">src</a></sub></sup><a name="coalton-threads-parallel-done?-value"></a>
+<code>&forall; :A. <a href="#coalton-threads-parallel-future-type">Future</a> :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
+
+Has the computation of `future` finished?
+
+
+
+***
+
+#### <a href="#coalton-threads-parallel-fold-map-value"><code>(FOLD-MAP F COLLECTION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/parallel.ct#L345-L347">src</a></sub></sup><a name="coalton-threads-parallel-fold-map-value"></a>
+<code>&forall; :A :M :F. (<a href="#coalton-classes-monoid-class">Monoid</a> :M) (<a href="#coalton-threads-parallel-parallelfoldable-class">ParallelFoldable</a> :F :A) &rArr; (:A &rarr; :M) * :F &key (:grain <a href="#coalton-ufix-type">UFix</a>) &rarr; :M</code>
+
+Combine the values of `f` on the elements of `collection` with `<>`, in parallel. See `map-reduce-range`.
+
+
+
+***
+
+#### <a href="#coalton-threads-parallel-fold-map-range-value"><code>(FOLD-MAP-RANGE START END F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/parallel.ct#L235-L237">src</a></sub></sup><a name="coalton-threads-parallel-fold-map-range-value"></a>
+<code>&forall; :M. <a href="#coalton-classes-monoid-class">Monoid</a> :M &rArr; <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-ufix-type">UFix</a> * (<a href="#coalton-ufix-type">UFix</a> &rarr; :M) &key (:grain <a href="#coalton-ufix-type">UFix</a>) &rarr; :M</code>
+
+Combine the values of `f` on the integers from `start` (inclusive) to `end` (exclusive) with `<>`, in parallel. See `map-reduce-range`.
+
+
+
+***
+
+#### <a href="#coalton-threads-parallel-for-chunks!-value"><code>(FOR-CHUNKS! START END F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/parallel.ct#L240-L245">src</a></sub></sup><a name="coalton-threads-parallel-for-chunks!-value"></a>
+<code><a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-ufix-type">UFix</a> * (<a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-ufix-type">UFix</a> &rarr; Void) &key (:grain <a href="#coalton-ufix-type">UFix</a>) &rarr; Void</code>
+
+Call `f` on disjoint chunks of consecutive integers that together cover the integers from `start` (inclusive) to `end` (exclusive), in parallel. A chunk is passed as two integers `lo` and `hi`, and contains the integers from `lo` (inclusive) to `hi` (exclusive); it is never empty.
+
+Because `f` processes a whole chunk at a time, it can use an efficient sequential loop. By default the chunks are chosen adaptively; a positive `grain` makes them at most `grain` long.
+
+
+
+***
+
+#### <a href="#coalton-threads-parallel-for-each!-value"><code>(FOR-EACH! F COLLECTION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/parallel.ct#L303-L309">src</a></sub></sup><a name="coalton-threads-parallel-for-each!-value"></a>
+<code>&forall; :A :F. <a href="#coalton-threads-parallel-parallelfoldable-class">ParallelFoldable</a> :F :A &rArr; (:A &rarr; Void) * :F &key (:grain <a href="#coalton-ufix-type">UFix</a>) &rarr; Void</code>
+
+Call `f` on every element of `collection`, in parallel. See `for-range!` for `grain`.
+
+
+
+***
+
+#### <a href="#coalton-threads-parallel-for-range!-value"><code>(FOR-RANGE! START END F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/parallel.ct#L218-L223">src</a></sub></sup><a name="coalton-threads-parallel-for-range!-value"></a>
+<code><a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-ufix-type">UFix</a> * (<a href="#coalton-ufix-type">UFix</a> &rarr; Void) &key (:grain <a href="#coalton-ufix-type">UFix</a>) &rarr; Void</code>
+
+Call `f` on every integer from `start` (inclusive) to `end` (exclusive), in parallel.
+
+By default the range is split adaptively. A positive `grain` instead splits it into chunks of at most `grain` consecutive integers, each processed sequentially.
+
+
+
+***
+
+#### <a href="#coalton-threads-parallel-join-value"><code>(JOIN LEFT RIGHT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/parallel.ct#L151-L167">src</a></sub></sup><a name="coalton-threads-parallel-join-value"></a>
+<code>&forall; :A :B. (Void &rarr; :A) * (Void &rarr; :B) &rarr; :A * :B</code>
+
+Call `left` and `right`, potentially in parallel, and return both of their values.
+
+When called from a task, `left` runs on the calling worker, while `right` is offered to other workers, and runs on the calling worker after `left` if no other worker took it. When called from a thread outside the pool, `join` runs both on worker threads, and the calling thread waits. `join` returns only when both have finished, however they exit. If `left` signals an error, the error propagates once `right` has finished or been cancelled. If only `right` signals an error, `join` signals it again.
+
+For example, a parallel Fibonacci function:
+
+```lisp
+(define (fib n)
+  (if (< n 25)
+      (sequential-fib n)
+      (let (values a b) = (par:join (fn () (fib (- n 1)))
+                                    (fn () (fib (- n 2)))))
+      (+ a b)))
+```
+
+
+
+***
+
+#### <a href="#coalton-threads-parallel-map-into!-value"><code>(MAP-INTO! F SOURCE DESTINATION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/parallel.ct#L314-L327">src</a></sub></sup><a name="coalton-threads-parallel-map-into!-value"></a>
+<code>&forall; :A :B :F :G. (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :F :A) (<a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :G :B) &rArr; (:A &rarr; :B) * :F * :G &key (:grain <a href="#coalton-ufix-type">UFix</a>) &rarr; Void</code>
+
+Store the value of `f` on each element of `source` at the same index of `destination`, in parallel. `destination` must be at least as long as `source`. See `for-range!` for `grain`, which is rounded up to a multiple of 64.
+
+The elements are stored in blocks of 64 consecutive indices, starting at multiples of 64, so that a `LispArray Bit` may be the destination: different tasks never store into the same machine word.
+
+
+
+***
+
+#### <a href="#coalton-threads-parallel-map-reduce-value"><code>(MAP-REDUCE F COMBINE IDENTITY COLLECTION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/parallel.ct#L332-L340">src</a></sub></sup><a name="coalton-threads-parallel-map-reduce-value"></a>
+<code>&forall; :A :B :F. <a href="#coalton-threads-parallel-parallelfoldable-class">ParallelFoldable</a> :F :A &rArr; (:A &rarr; :B) * (:B * :B &rarr; :B) * :B * :F &key (:grain <a href="#coalton-ufix-type">UFix</a>) &rarr; :B</code>
+
+Combine the values of `f` on the elements of `collection` with `combine`, in parallel, or return `identity` if `collection` is empty. See `map-reduce-range`.
+
+
+
+***
+
+#### <a href="#coalton-threads-parallel-map-reduce-chunks-value"><code>(MAP-REDUCE-CHUNKS START END F COMBINE IDENTITY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/parallel.ct#L249-L267">src</a></sub></sup><a name="coalton-threads-parallel-map-reduce-chunks-value"></a>
+<code>&forall; :A. <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-ufix-type">UFix</a> * (<a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-ufix-type">UFix</a> &rarr; :A) * (:A * :A &rarr; :A) * :A &key (:grain <a href="#coalton-ufix-type">UFix</a>) &rarr; :A</code>
+
+Compute a value with `f` for each of a set of disjoint chunks that together cover the integers from `start` (inclusive) to `end` (exclusive), as in `for-chunks!`, and combine the values with `combine` in the order of the chunks, in parallel. Returns `identity` if the range is empty.
+
+For example, to sum a function over a range with an unboxed accumulator in each chunk:
+
+```lisp
+(par:map-reduce-chunks 0 n
+  (fn (lo hi)
+    (for ((declare i UFix) (declare acc F64)
+          (i lo (1+ i)) (acc 0d0 (+ acc (f i))))
+      :returns acc
+      :repeat (- hi lo)
+      Unit))
+  + 0d0)
+```
+
+`combine` must be associative, and `identity` an identity for it. See `map-reduce-range` regarding `grain`.
+
+
+
+***
+
+#### <a href="#coalton-threads-parallel-map-reduce-range-value"><code>(MAP-REDUCE-RANGE START END F COMBINE IDENTITY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/parallel.ct#L226-L231">src</a></sub></sup><a name="coalton-threads-parallel-map-reduce-range-value"></a>
+<code>&forall; :A. <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-ufix-type">UFix</a> * (<a href="#coalton-ufix-type">UFix</a> &rarr; :A) * (:A * :A &rarr; :A) * :A &key (:grain <a href="#coalton-ufix-type">UFix</a>) &rarr; :A</code>
+
+Combine the values of `f` on the integers from `start` (inclusive) to `end` (exclusive) with `combine`, in parallel, or return `identity` if the range is empty.
+
+`combine` must be associative, and `identity` must be an identity for it. The values are combined in the order of the integers, but how they are grouped depends on how the range is split. By default the range is split adaptively, so the grouping may vary from run to run, which matters for operations that are only approximately associative, such as floating-point addition. A positive `grain` splits the range into chunks of at most `grain` integers in a fixed way, making the result reproducible.
+
+
+
+***
+
+#### <a href="#coalton-threads-parallel-scope-value"><code>(SCOPE F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/parallel.ct#L174-L179">src</a></sub></sup><a name="coalton-threads-parallel-scope-value"></a>
+<code>&forall; (:RESULT Values). (<a href="#coalton-threads-parallel-scope-type">Scope</a> &rarr; :RESULT) &rarr; :RESULT</code>
+
+Call `f` with a new scope, then wait for every task spawned in the scope, and return the values of `f`. Tasks may spawn more tasks in the same scope.
+
+If a task signals an error, `scope` signals it again once all tasks have finished (if several did, which one is unspecified). If `f` itself exits non-locally, or the waiting thread is unwound, for example by an interrupt, the tasks are still awaited, and their errors are discarded. Interrupting that wait abandons the tasks, which keep running.
+
+
+
+***
+
+#### <a href="#coalton-threads-parallel-set-worker-count!-value"><code>(SET-WORKER-COUNT! COUNT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/parallel.ct#L120-L123">src</a></sub></sup><a name="coalton-threads-parallel-set-worker-count!-value"></a>
+<code><a href="#coalton-ufix-type">UFix</a> &rarr; Void</code>
+
+Use `count` worker threads, which must be positive, for parallel tasks from now on. This stops the current workers, if any, after they finish all submitted work. It must not be called from a task, nor while other threads are running parallel operations.
+
+
+
+***
+
+#### <a href="#coalton-threads-parallel-shutdown!-value"><code>(SHUTDOWN!)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/parallel.ct#L126-L129">src</a></sub></sup><a name="coalton-threads-parallel-shutdown!-value"></a>
+<code>Void &rarr; Void</code>
+
+Stop the worker threads after they finish all submitted work. The next parallel operation starts them again. This must not be called from a task, nor while other threads are running parallel operations.
+
+
+
+***
+
+#### <a href="#coalton-threads-parallel-sort!-value"><code>(SORT! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/parallel.ct#L375-L377">src</a></sub></sup><a name="coalton-threads-parallel-sort!-value"></a>
+<code>&forall; :A. <a href="#coalton-classes-ord-class">Ord</a> :A &rArr; <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; Void</code>
+
+Sort `v` in place in ascending order, in parallel. The sort is stable.
+
+
+
+***
+
+#### <a href="#coalton-threads-parallel-sort-by!-value"><code>(SORT-BY! LESS? V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/parallel.ct#L368-L371">src</a></sub></sup><a name="coalton-threads-parallel-sort-by!-value"></a>
+<code>&forall; :A. (:A * :A &rarr; <a href="#coalton-boolean-type">Boolean</a>) * <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; Void</code>
+
+Sort `v` in place, in parallel, ordering elements by `less?`, which must be a strict less-than relation. The sort is stable. If `less?` signals an error, `v` is left unchanged.
+
+
+
+***
+
+#### <a href="#coalton-threads-parallel-spawn-value"><code>(SPAWN S TASK)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/parallel.ct#L182-L185">src</a></sub></sup><a name="coalton-threads-parallel-spawn-value"></a>
+<code><a href="#coalton-threads-parallel-scope-type">Scope</a> * (Void &rarr; Void) &rarr; Void</code>
+
+Run `task` in parallel, as part of the scope `s`. Any thread may spawn tasks in a scope until the scope finishes; after that, `spawn` signals an error.
+
+
+
+***
+
+#### <a href="#coalton-threads-parallel-worker-count-value"><code>(WORKER-COUNT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/parallel.ct#L114-L117">src</a></sub></sup><a name="coalton-threads-parallel-worker-count-value"></a>
+<code>Void &rarr; <a href="#coalton-ufix-type">UFix</a></code>
+
+The number of worker threads that run parallel tasks.
+
+
+
+***
+
+#### <a href="#coalton-threads-parallel-worker-index-value"><code>(WORKER-INDEX)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/parallel.ct#L132-L138">src</a></sub></sup><a name="coalton-threads-parallel-worker-index-value"></a>
+<code>Void &rarr; <a href="#coalton-optional-type">Optional</a> <a href="#coalton-ufix-type">UFix</a></code>
+
+The index, between 0 and `(worker-count)` exclusive, of the worker thread calling this function, or `None` if it is called from another thread. This can be used to give each worker its own scratch space.
+
+
+
+***
+
+# Package `COALTON/THREADS/SEMAPHORE`<a name="coalton-threads-semaphore-package"></a>
+
+
+Counting semaphores.
+
+A `Semaphore` holds a count of available permits. `wait!` takes a
+permit, sleeping until one is available, and `signal!` returns
+permits.
+
+### Types
+
+#### <a href="#coalton-threads-semaphore-semaphore-type"><code>Semaphore</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/semaphore.ct#L35-L36">src</a></sub></sup><a name="coalton-threads-semaphore-semaphore-type"></a>
+
+A counting semaphore.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-threads-semaphore-semaphore-type">Semaphore</a></code>
+
+</details>
+
+
+
+***
+
+### Values
+
+#### <a href="#coalton-threads-semaphore-count-value"><code>(COUNT SEMAPHORE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/semaphore.ct#L73-L77">src</a></sub></sup><a name="coalton-threads-semaphore-count-value"></a>
+<code><a href="#coalton-threads-semaphore-semaphore-type">Semaphore</a> &rarr; <a href="#coalton-ufix-type">UFix</a></code>
+
+The number of permits currently available in `semaphore`.
+
+
+
+***
+
+#### <a href="#coalton-threads-semaphore-new-value"><code>(NEW PERMITS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/semaphore.ct#L39-L42">src</a></sub></sup><a name="coalton-threads-semaphore-new-value"></a>
+<code><a href="#coalton-ufix-type">UFix</a> &key (:name <a href="#coalton-string-type">String</a>) &rarr; <a href="#coalton-threads-semaphore-semaphore-type">Semaphore</a></code>
+
+Create a semaphore holding `permits` permits. The `name` shows up in debugging tools.
+
+
+
+***
+
+#### <a href="#coalton-threads-semaphore-signal!-value"><code>(SIGNAL! SEMAPHORE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/semaphore.ct#L45-L51">src</a></sub></sup><a name="coalton-threads-semaphore-signal!-value"></a>
+<code><a href="#coalton-threads-semaphore-semaphore-type">Semaphore</a> &key (:count <a href="#coalton-ufix-type">UFix</a>) &rarr; Void</code>
+
+Add `count` permits to `semaphore`, waking threads waiting for them.
+
+
+
+***
+
+#### <a href="#coalton-threads-semaphore-try-wait!-value"><code>(TRY-WAIT! SEMAPHORE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/semaphore.ct#L60-L63">src</a></sub></sup><a name="coalton-threads-semaphore-try-wait!-value"></a>
+<code><a href="#coalton-threads-semaphore-semaphore-type">Semaphore</a> &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
+
+Take a permit from `semaphore` and return `True` if one is available; otherwise return `False` immediately.
+
+
+
+***
+
+#### <a href="#coalton-threads-semaphore-wait!-value"><code>(WAIT! SEMAPHORE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/semaphore.ct#L54-L57">src</a></sub></sup><a name="coalton-threads-semaphore-wait!-value"></a>
+<code><a href="#coalton-threads-semaphore-semaphore-type">Semaphore</a> &rarr; Void</code>
+
+Take a permit from `semaphore`, sleeping until one is available.
+
+
+
+***
+
+#### <a href="#coalton-threads-semaphore-wait-timeout!-value"><code>(WAIT-TIMEOUT! SEMAPHORE SECONDS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/semaphore.ct#L66-L70">src</a></sub></sup><a name="coalton-threads-semaphore-wait-timeout!-value"></a>
+<code>&forall; :A. <a href="#coalton-math-real-rational-class">Rational</a> :A &rArr; <a href="#coalton-threads-semaphore-semaphore-type">Semaphore</a> * :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
+
+Like `wait!`, but stop waiting after `seconds`. Returns `False`, without taking a permit, if the time ran out.
+
+
+
+***
+
+# Package `COALTON/THREADS/THREAD`<a name="coalton-threads-thread-package"></a>
+
+
+Operating-system threads.
+
+`spawn` starts a thread that calls a function of no arguments, and
+`join` waits for the thread to end and returns the function's value. If
+the function signals an error, the thread ends and `join` signals the
+same error, so it can be handled with `catch` in the joining thread.
+
+Threads are relatively expensive to create. To compute results in
+parallel, prefer `coalton/threads/parallel`, which runs lightweight
+tasks on a pool of worker threads.
+
+### Types
+
+#### <a href="#coalton-threads-thread-thread-type"><code>Thread</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/thread.ct#L43-L44">src</a></sub></sup><a name="coalton-threads-thread-thread-type"></a>
+
+A handle to a thread that computes a value of type `:a`.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-threads-thread-thread-type">Thread</a> :|0|)</code>
+
+</details>
+
+
+
+***
+
+#### <a href="#coalton-threads-thread-threadaborted-type"><code>ThreadAborted</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/thread.ct#L47-L48">src</a></sub></sup><a name="coalton-threads-thread-threadaborted-type"></a>
+
+Signaled by `join` for a thread that ended without returning a value or signaling an error, for example because it was terminated.
+
+<details>
+<summary>Instances</summary>
+
+- <code><a href="#coalton-classes-exception-class">Exception</a> <a href="#coalton-threads-thread-threadaborted-type">ThreadAborted</a></code>
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-threads-thread-threadaborted-type">ThreadAborted</a></code>
+
+</details>
+
+
+
+***
+
+### Values
+
+#### <a href="#coalton-threads-thread-alive?-value"><code>(ALIVE? THREAD)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/thread.ct#L66-L69">src</a></sub></sup><a name="coalton-threads-thread-alive?-value"></a>
+<code>&forall; :A. <a href="#coalton-threads-thread-thread-type">Thread</a> :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
+
+Is `thread` still running?
+
+
+
+***
+
+#### <a href="#coalton-threads-thread-current-name-value"><code>(CURRENT-NAME)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/thread.ct#L84-L87">src</a></sub></sup><a name="coalton-threads-thread-current-name-value"></a>
+<code>Void &rarr; <a href="#coalton-string-type">String</a></code>
+
+The name of the calling thread.
+
+
+
+***
+
+#### <a href="#coalton-threads-thread-join-value"><code>(JOIN THREAD)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/thread.ct#L60-L63">src</a></sub></sup><a name="coalton-threads-thread-join-value"></a>
+<code>&forall; :A. <a href="#coalton-threads-thread-thread-type">Thread</a> :A &rarr; :A</code>
+
+Wait for `thread` to end and return the value of its function. If the function signaled an error, signal it again in the calling thread; if the thread ended without returning, for example because it was terminated, signal `ThreadAborted`. A thread may be joined any number of times.
+
+
+
+***
+
+#### <a href="#coalton-threads-thread-name-value"><code>(NAME THREAD)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/thread.ct#L72-L75">src</a></sub></sup><a name="coalton-threads-thread-name-value"></a>
+<code>&forall; :A. <a href="#coalton-threads-thread-thread-type">Thread</a> :A &rarr; <a href="#coalton-string-type">String</a></code>
+
+The name of `thread`.
+
+
+
+***
+
+#### <a href="#coalton-threads-thread-spawn-value"><code>(SPAWN THUNK)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/thread.ct#L51-L57">src</a></sub></sup><a name="coalton-threads-thread-spawn-value"></a>
+<code>&forall; :A. (Void &rarr; :A) &key (:name <a href="#coalton-string-type">String</a>) &rarr; <a href="#coalton-threads-thread-thread-type">Thread</a> :A</code>
+
+Start a thread, named `name`, that calls `thunk`. Output from the new thread goes to the output streams of the calling thread.
+
+
+
+***
+
+#### <a href="#coalton-threads-thread-yield!-value"><code>(YIELD!)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/thread.ct#L78-L81">src</a></sub></sup><a name="coalton-threads-thread-yield!-value"></a>
+<code>Void &rarr; Void</code>
+
+Offer the processor running the calling thread to other threads.
+
+
+
+***
+
 # Package `COALTON/TUPLE`<a name="coalton-tuple-package"></a>
 
 ### Structs
@@ -10302,6 +11302,16 @@ Methods:
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-threads-parallel-future-type">Future</a> :|0|)</code>
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-threads-parallel-scope-type">Scope</a></code>
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-threads-parallel-taskaborted-type">TaskAborted</a></code>
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-threads-channel-channel-type">Channel</a> :|0|)</code>
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-threads-atomic-atomic-type">Atomic</a> :|0|)</code>
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-threads-semaphore-semaphore-type">Semaphore</a></code>
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-threads-condition-variable-conditionvariable-type">ConditionVariable</a></code>
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-threads-mutex-mutex-type">Mutex</a></code>
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-threads-thread-threadaborted-type">ThreadAborted</a></code>
+- <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-threads-thread-thread-type">Thread</a> :|0|)</code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a></code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
@@ -10438,7 +11448,11 @@ Resizable mutable vectors with efficient indexed access and amortized end update
 - <code><a href="#coalton-classes-default-class">Default</a> (<a href="#coalton-vector-vector-type">Vector</a> :A)</code>
 - <code><a href="#coalton-classes-eq-class">Eq</a> :A &rArr; <a href="#coalton-classes-eq-class">Eq</a> (<a href="#coalton-vector-vector-type">Vector</a> :A)</code>
 - <code><a href="#coalton-classes-foldable-class">Foldable</a> <a href="#coalton-vector-vector-type">Vector</a></code>
+- <code><a href="#coalton-classes-fromassociationcomprehension-class">FromAssociationComprehension</a> (<a href="#coalton-seq-seq-type">Seq</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE)) :KEY :VALUE (<a href="#coalton-vector-vector-type">Vector</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE))</code>
+- <code><a href="#coalton-classes-fromcollectioncomprehension-class">FromCollectionComprehension</a> (<a href="#coalton-seq-seq-type">Seq</a> :A) :A (<a href="#coalton-vector-vector-type">Vector</a> :A)</code>
 - <code><a href="#coalton-classes-fromcollectioncomprehension-class">FromCollectionComprehension</a> (<a href="#coalton-vector-vector-type">Vector</a> :A) :A (<a href="#coalton-vector-vector-type">Vector</a> :A)</code>
+- <code><a href="#coalton-classes-fromitemizedassociation-class">FromItemizedAssociation</a> (<a href="#coalton-seq-seq-type">Seq</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE)) :KEY :VALUE (<a href="#coalton-vector-vector-type">Vector</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE))</code>
+- <code><a href="#coalton-classes-fromitemizedcollection-class">FromItemizedCollection</a> (<a href="#coalton-seq-seq-type">Seq</a> :A) :A (<a href="#coalton-vector-vector-type">Vector</a> :A)</code>
 - <code><a href="#coalton-classes-fromitemizedcollection-class">FromItemizedCollection</a> (<a href="#coalton-vector-vector-type">Vector</a> :A) :A (<a href="#coalton-vector-vector-type">Vector</a> :A)</code>
 - <code><a href="#coalton-iterator-fromiterator-class">FromIterator</a> (<a href="#coalton-vector-vector-type">Vector</a> :A) :A</code>
 - <code><a href="#coalton-classes-functor-class">Functor</a> <a href="#coalton-vector-vector-type">Vector</a></code>
@@ -10453,6 +11467,7 @@ Resizable mutable vectors with efficient indexed access and amortized end update
 - <code><a href="#coalton-classes-iso-class">Iso</a> (<a href="#coalton-slice-slice-type">Slice</a> :A) (<a href="#coalton-vector-vector-type">Vector</a> :A)</code>
 - <code><a href="#coalton-classes-iso-class">Iso</a> (<a href="#coalton-vector-vector-type">Vector</a> :A) (<a href="#coalton-list-type">List</a> :A)</code>
 - <code><a href="#coalton-classes-monoid-class">Monoid</a> (<a href="#coalton-vector-vector-type">Vector</a> :A)</code>
+- <code><a href="#coalton-threads-parallel-parallelmap-class">ParallelMap</a> <a href="#coalton-vector-vector-type">Vector</a></code>
 - <code><a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> (<a href="#coalton-vector-vector-type">Vector</a> :T) :T</code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> (<a href="#coalton-vector-vector-type">Vector</a> :|0|)</code>
 - <code><a href="#coalton-classes-semigroup-class">Semigroup</a> (<a href="#coalton-vector-vector-type">Vector</a> :A)</code>
@@ -10467,7 +11482,7 @@ Resizable mutable vectors with efficient indexed access and amortized end update
 
 ### Values
 
-#### <a href="#coalton-vector-append-value"><code>(APPEND V1 V2)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L253-L258">src</a></sub></sup><a name="coalton-vector-append-value"></a>
+#### <a href="#coalton-vector-append-value"><code>(APPEND V1 V2)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L256-L261">src</a></sub></sup><a name="coalton-vector-append-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A * <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-vector-vector-type">Vector</a> :A</code>
 
 Create a new vector containing the elements of `v1` followed by the elements of `v2`.
@@ -10476,7 +11491,7 @@ Create a new vector containing the elements of `v1` followed by the elements of 
 
 ***
 
-#### <a href="#coalton-vector-capacity-value"><code>(CAPACITY V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L113-L116">src</a></sub></sup><a name="coalton-vector-capacity-value"></a>
+#### <a href="#coalton-vector-capacity-value"><code>(CAPACITY V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L115-L118">src</a></sub></sup><a name="coalton-vector-capacity-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-ufix-type">UFix</a></code>
 
 Returns the number of elements that `v` can store without resizing.
@@ -10485,7 +11500,7 @@ Returns the number of elements that `v` can store without resizing.
 
 ***
 
-#### <a href="#coalton-vector-clear!-value"><code>(CLEAR! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L165-L167">src</a></sub></sup><a name="coalton-vector-clear!-value"></a>
+#### <a href="#coalton-vector-clear!-value"><code>(CLEAR! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L168-L170">src</a></sub></sup><a name="coalton-vector-clear!-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; Void</code>
 
 Set the capacity of `v` to `0`.
@@ -10494,7 +11509,7 @@ Set the capacity of `v` to `0`.
 
 ***
 
-#### <a href="#coalton-vector-copy-value"><code>(COPY V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L132-L137">src</a></sub></sup><a name="coalton-vector-copy-value"></a>
+#### <a href="#coalton-vector-copy-value"><code>(COPY V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L134-L139">src</a></sub></sup><a name="coalton-vector-copy-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-vector-vector-type">Vector</a> :A</code>
 
 Return a new vector containing the same elements as `v`.
@@ -10503,7 +11518,7 @@ Return a new vector containing the same elements as `v`.
 
 ***
 
-#### <a href="#coalton-vector-empty?-value"><code>(EMPTY? V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L120-L122">src</a></sub></sup><a name="coalton-vector-empty?-value"></a>
+#### <a href="#coalton-vector-empty?-value"><code>(EMPTY? V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L122-L124">src</a></sub></sup><a name="coalton-vector-empty?-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is `v` empty?
@@ -10512,7 +11527,7 @@ Is `v` empty?
 
 ***
 
-#### <a href="#coalton-vector-extend!-value"><code>(EXTEND! VEC ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L310-L328">src</a></sub></sup><a name="coalton-vector-extend!-value"></a>
+#### <a href="#coalton-vector-extend!-value"><code>(EXTEND! VEC ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L313-L331">src</a></sub></sup><a name="coalton-vector-extend!-value"></a>
 <code>&forall; :ELT :CONTAINER. <a href="#coalton-iterator-intoiterator-class">IntoIterator</a> :CONTAINER :ELT &rArr; <a href="#coalton-vector-vector-type">Vector</a> :ELT * :CONTAINER &rarr; Void</code>
 
 Push every element in `iter` to the end of `vec`.
@@ -10521,7 +11536,7 @@ Push every element in `iter` to the end of `vec`.
 
 ***
 
-#### <a href="#coalton-vector-find-elem-value"><code>(FIND-ELEM E V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L238-L250">src</a></sub></sup><a name="coalton-vector-find-elem-value"></a>
+#### <a href="#coalton-vector-find-elem-value"><code>(FIND-ELEM E V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L241-L253">src</a></sub></sup><a name="coalton-vector-find-elem-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-eq-class">Eq</a> :A &rArr; :A * <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> <a href="#coalton-ufix-type">UFix</a></code>
 
 Find the index of element `e` in `v`.
@@ -10530,7 +11545,7 @@ Find the index of element `e` in `v`.
 
 ***
 
-#### <a href="#coalton-vector-head-value"><code>(HEAD V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L215-L217">src</a></sub></sup><a name="coalton-vector-head-value"></a>
+#### <a href="#coalton-vector-head-value"><code>(HEAD V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L218-L220">src</a></sub></sup><a name="coalton-vector-head-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> :A</code>
 
 Return the first item of `v`.
@@ -10539,7 +11554,7 @@ Return the first item of `v`.
 
 ***
 
-#### <a href="#coalton-vector-head-unsafe-value"><code>(HEAD-UNSAFE V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L221-L223">src</a></sub></sup><a name="coalton-vector-head-unsafe-value"></a>
+#### <a href="#coalton-vector-head-unsafe-value"><code>(HEAD-UNSAFE V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L224-L226">src</a></sub></sup><a name="coalton-vector-head-unsafe-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; :A</code>
 
 Return the first item of `v` without first checking if `v` is empty.
@@ -10548,7 +11563,7 @@ Return the first item of `v` without first checking if `v` is empty.
 
 ***
 
-#### <a href="#coalton-vector-index-value"><code>(INDEX INDEX V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L191-L195">src</a></sub></sup><a name="coalton-vector-index-value"></a>
+#### <a href="#coalton-vector-index-value"><code>(INDEX INDEX V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L194-L198">src</a></sub></sup><a name="coalton-vector-index-value"></a>
 <code>&forall; :A. <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> :A</code>
 
 Return the `index`th element of `v`.
@@ -10557,7 +11572,7 @@ Return the `index`th element of `v`.
 
 ***
 
-#### <a href="#coalton-vector-index-unsafe-value"><code>(INDEX-UNSAFE IDX V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L199-L202">src</a></sub></sup><a name="coalton-vector-index-unsafe-value"></a>
+#### <a href="#coalton-vector-index-unsafe-value"><code>(INDEX-UNSAFE IDX V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L202-L205">src</a></sub></sup><a name="coalton-vector-index-unsafe-value"></a>
 <code>&forall; :A. <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; :A</code>
 
 Return the `idx`th element of `v` without checking if the element exists.
@@ -10566,7 +11581,7 @@ Return the `idx`th element of `v` without checking if the element exists.
 
 ***
 
-#### <a href="#coalton-vector-last-value"><code>(LAST V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L226-L230">src</a></sub></sup><a name="coalton-vector-last-value"></a>
+#### <a href="#coalton-vector-last-value"><code>(LAST V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L229-L233">src</a></sub></sup><a name="coalton-vector-last-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> :A</code>
 
 Return the last element of `v`.
@@ -10575,7 +11590,7 @@ Return the last element of `v`.
 
 ***
 
-#### <a href="#coalton-vector-last-unsafe-value"><code>(LAST-UNSAFE V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L233-L235">src</a></sub></sup><a name="coalton-vector-last-unsafe-value"></a>
+#### <a href="#coalton-vector-last-unsafe-value"><code>(LAST-UNSAFE V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L236-L238">src</a></sub></sup><a name="coalton-vector-last-unsafe-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; :A</code>
 
 Return the last element of `v` without first checking if `v` is empty.
@@ -10602,7 +11617,7 @@ Create a new empty vector
 
 ***
 
-#### <a href="#coalton-vector-pop!-value"><code>(POP! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L177-L181">src</a></sub></sup><a name="coalton-vector-pop!-value"></a>
+#### <a href="#coalton-vector-pop!-value"><code>(POP! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L180-L184">src</a></sub></sup><a name="coalton-vector-pop!-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> :A</code>
 
 Remove and return the last item of `v`.
@@ -10611,7 +11626,7 @@ Remove and return the last item of `v`.
 
 ***
 
-#### <a href="#coalton-vector-pop-unsafe!-value"><code>(POP-UNSAFE! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L185-L188">src</a></sub></sup><a name="coalton-vector-pop-unsafe!-value"></a>
+#### <a href="#coalton-vector-pop-unsafe!-value"><code>(POP-UNSAFE! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L188-L191">src</a></sub></sup><a name="coalton-vector-pop-unsafe!-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; :A</code>
 
 Remove and return the last item of `v` without checking if the vector is empty.
@@ -10620,7 +11635,7 @@ Remove and return the last item of `v` without checking if the vector is empty.
 
 ***
 
-#### <a href="#coalton-vector-push!-value"><code>(PUSH! ITEM V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L171-L174">src</a></sub></sup><a name="coalton-vector-push!-value"></a>
+#### <a href="#coalton-vector-push!-value"><code>(PUSH! ITEM V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L174-L177">src</a></sub></sup><a name="coalton-vector-push!-value"></a>
 <code>&forall; :A. :A * <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-ufix-type">UFix</a></code>
 
 Append `item` to `v` and resize `v` if necessary, returning the index of the new item.
@@ -10629,18 +11644,19 @@ Append `item` to `v` and resize `v` if necessary, returning the index of the new
 
 ***
 
-#### <a href="#coalton-vector-resect!-value"><code>(RESECT! V START END)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L152-L161">src</a></sub></sup><a name="coalton-vector-resect!-value"></a>
+#### <a href="#coalton-vector-resect!-value"><code>(RESECT! V START END)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L154-L164">src</a></sub></sup><a name="coalton-vector-resect!-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A * <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-ufix-type">UFix</a> &rarr; Void</code>
 
 Destructively kills a subsequence in a vector bounded by given indices.
 
-`start` index is inclusive and `end` index is exclusive.
+`start` index is inclusive and `end` index is exclusive. Indices beyond the
+length of `v` are ignored.
 
 
 
 ***
 
-#### <a href="#coalton-vector-reverse-value"><code>(REVERSE V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L267-L273">src</a></sub></sup><a name="coalton-vector-reverse-value"></a>
+#### <a href="#coalton-vector-reverse-value"><code>(REVERSE V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L270-L276">src</a></sub></sup><a name="coalton-vector-reverse-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-vector-vector-type">Vector</a> :A</code>
 
 Returns a fresh vector with the elements of vector `v` in reverse order.  The original vector isn't modified.
@@ -10649,7 +11665,7 @@ Returns a fresh vector with the elements of vector `v` in reverse order.  The or
 
 ***
 
-#### <a href="#coalton-vector-reverse!-value"><code>(REVERSE! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L261-L264">src</a></sub></sup><a name="coalton-vector-reverse!-value"></a>
+#### <a href="#coalton-vector-reverse!-value"><code>(REVERSE! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L264-L267">src</a></sub></sup><a name="coalton-vector-reverse!-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-vector-vector-type">Vector</a> :A</code>
 
 Returns a vector with the elements of vector `v` in reverse order.  The original vector may be destroyed to produce the result.
@@ -10658,7 +11674,7 @@ Returns a vector with the elements of vector `v` in reverse order.  The original
 
 ***
 
-#### <a href="#coalton-vector-set!-value"><code>(SET! IDX ITEM V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L206-L211">src</a></sub></sup><a name="coalton-vector-set!-value"></a>
+#### <a href="#coalton-vector-set!-value"><code>(SET! IDX ITEM V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L209-L214">src</a></sub></sup><a name="coalton-vector-set!-value"></a>
 <code>&forall; :A. <a href="#coalton-ufix-type">UFix</a> * :A * <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; Void</code>
 
 Set the `idx`th element of `v` to `item`. This function left intentionally unsafe because it does not have a return value to check.
@@ -10667,7 +11683,7 @@ Set the `idx`th element of `v` to `item`. This function left intentionally unsaf
 
 ***
 
-#### <a href="#coalton-vector-set-capacity!-value"><code>(SET-CAPACITY! NEW-CAPACITY V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L140-L148">src</a></sub></sup><a name="coalton-vector-set-capacity!-value"></a>
+#### <a href="#coalton-vector-set-capacity!-value"><code>(SET-CAPACITY! NEW-CAPACITY V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L142-L150">src</a></sub></sup><a name="coalton-vector-set-capacity!-value"></a>
 <code>&forall; :A. <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; Void</code>
 
 Set the capacity of `v` to `new-capacity`. Setting the capacity to lower then the length will remove elements from the end.
@@ -10685,7 +11701,7 @@ Create a new vector with a single element equal to `x`
 
 ***
 
-#### <a href="#coalton-vector-singleton?-value"><code>(SINGLETON? V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L126-L128">src</a></sub></sup><a name="coalton-vector-singleton?-value"></a>
+#### <a href="#coalton-vector-singleton?-value"><code>(SINGLETON? V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L128-L130">src</a></sub></sup><a name="coalton-vector-singleton?-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is `v` a singleton?
@@ -10694,7 +11710,7 @@ Is `v` a singleton?
 
 ***
 
-#### <a href="#coalton-vector-sort!-value"><code>(SORT! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L305-L307">src</a></sub></sup><a name="coalton-vector-sort!-value"></a>
+#### <a href="#coalton-vector-sort!-value"><code>(SORT! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L308-L310">src</a></sub></sup><a name="coalton-vector-sort!-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-ord-class">Ord</a> :A &rArr; <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; Void</code>
 
 Sort a vector in-place in ascending order.
@@ -10703,7 +11719,7 @@ Sort a vector in-place in ascending order.
 
 ***
 
-#### <a href="#coalton-vector-sort-by!-value"><code>(SORT-BY! F V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L293-L301">src</a></sub></sup><a name="coalton-vector-sort-by!-value"></a>
+#### <a href="#coalton-vector-sort-by!-value"><code>(SORT-BY! F V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L296-L304">src</a></sub></sup><a name="coalton-vector-sort-by!-value"></a>
 <code>&forall; :A. (:A * :A &rarr; <a href="#coalton-boolean-type">Boolean</a>) * <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; Void</code>
 
 Sort a vector in-place with predicate function `f`.
@@ -10712,18 +11728,19 @@ Sort a vector in-place with predicate function `f`.
 
 ***
 
-#### <a href="#coalton-vector-subseq-value"><code>(SUBSEQ V START END)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L101-L109">src</a></sub></sup><a name="coalton-vector-subseq-value"></a>
+#### <a href="#coalton-vector-subseq-value"><code>(SUBSEQ V START END)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L101-L111">src</a></sub></sup><a name="coalton-vector-subseq-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A * <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-ufix-type">UFix</a> &rarr; <a href="#coalton-vector-vector-type">Vector</a> :A</code>
 
 Compute a subseq of a vector bounded by given indices.
 
-`start` index is inclusive and `end` index is exclusive.
+`start` index is inclusive and `end` index is exclusive. Indices beyond the
+length of `v` are ignored.
 
 
 
 ***
 
-#### <a href="#coalton-vector-swap-remove!-value"><code>(SWAP-REMOVE! IDX VEC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L276-L280">src</a></sub></sup><a name="coalton-vector-swap-remove!-value"></a>
+#### <a href="#coalton-vector-swap-remove!-value"><code>(SWAP-REMOVE! IDX VEC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L279-L283">src</a></sub></sup><a name="coalton-vector-swap-remove!-value"></a>
 <code>&forall; :A. <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> :A</code>
 
 Remove the element `idx` from `vec` and replace it with the last element in `vec`. Then return the removed element.
@@ -10732,7 +11749,7 @@ Remove the element `idx` from `vec` and replace it with the last element in `vec
 
 ***
 
-#### <a href="#coalton-vector-swap-remove-unsafe!-value"><code>(SWAP-REMOVE-UNSAFE! IDX VEC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L283-L290">src</a></sub></sup><a name="coalton-vector-swap-remove-unsafe!-value"></a>
+#### <a href="#coalton-vector-swap-remove-unsafe!-value"><code>(SWAP-REMOVE-UNSAFE! IDX VEC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L286-L293">src</a></sub></sup><a name="coalton-vector-swap-remove-unsafe!-value"></a>
 <code>&forall; :A. <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; :A</code>
 
 Remove the element `idx` from `vec` and replace it with the last element in `vec` without bounds checking. Then return the removed element.
