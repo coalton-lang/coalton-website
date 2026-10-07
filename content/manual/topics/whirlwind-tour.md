@@ -1646,6 +1646,22 @@ Function definitions create an implicit `progn` block
     (<> x_ y_)))
 ```
 
+The values of all but the last form of a `progn` block are discarded. Discarding a `Result` would silently ignore the error it may hold, so Coalton warns about it. To ignore the error on purpose, bind the `Result` to `_`:
+
+```lisp
+(coalton-toplevel
+  (declare check (Integer -> (Result String Unit)))
+  (define (check x)
+    (if (> x 0) (Ok Unit) (Err "not positive")))
+
+  (define (f x)
+    (check x)            ; warning: Discarded Result
+    (let _ = (check x))  ; no warning
+    x))
+```
+
+The same applies to the last form of a `when` or `unless` body or of a loop body, whose value is also discarded.
+
 ## Dynamic Variables
 
 Coalton also supports dynamically scoped variables, similar to Common Lisp
@@ -1761,6 +1777,17 @@ Functions can be returned from early with `return`.
       (return "buzz"))
 
     (into n)))
+```
+
+`need` returns early when a `Result` or `Optional` holds a failure. It takes the value of an `Ok` or `Some`, and otherwise returns the `Err` or `None` from the enclosing function, much like Rust's `?` operator:
+
+```lisp
+(coalton-toplevel
+  (declare add-parsed (String * String -> (Result String Integer)))
+  (define (add-parsed a b)
+    (let x = (need (parse-number a)))
+    (let y = (need (parse-number b)))
+    (Ok (+ x y))))
 ```
 
 ## Type Classes
@@ -2016,6 +2043,8 @@ A class `C` can be given a functional dependency `(:a -> :b)` like so:
 
 If the instance `(C String Integer)` was defined, then it would be invalid to define `(C String Char)` because there are multiple values of `:b` for the same value of `:a`.
 
+An instance must also agree with its own context. The instance `(C :a :b => C :a (List :b))` is invalid: whenever it provides `C :a (List :b)`, it requires `C :a :b`, so the same `:a` would determine both `:b` and `(List :b)`.
+
 Classes can have multiple functional dependencies, each dependency can list multiple class variables on each side `(:a :b -> :c :d :e)`, and dependencies can be recursive `(:a -> :b) (:b -> :a)`.
 
 ## Specialization
@@ -2093,7 +2122,8 @@ Briefly, the relevant syntactic forms are:
 
 - `define-exception`: Defines an exception type. Other than its name, the syntax is identical to `define-type`
 - `define-resumption`: Defines a named resumption type. 
-- `catch`: An expression for catching and handling exceptions. Handlers pattern match on exception constructors.
+- `catch`: An expression for catching and handling exceptions. Handlers pattern match on exception constructors and run after unwinding to the `catch`.
+- `handle`: Like `catch`, but handlers run where the exception was thrown, before unwinding, so they can resume.
 - `throw`: Signals an exception.
 - `resumable`: An expression that intercepts and handles a possible resumption. Again, resumption cases are executed by pattern matching on intercepted resumption constructors.
 - `resume-to`: An expression that takes a resumption instance.  Transfers control to a `resumable` block that includes a handler for the indicated resumption.
@@ -2145,10 +2175,75 @@ More generally
     ((UnCracked _) (Err (UnCracked egg)))))
 ```
 
+A branch written `(the T var)` catches every exception of type `T` and binds it, so `crack-safely` can also be written without listing constructors:
+
+```lisp
+(declare crack-safely (Egg -> (Result BadEgg Egg)))
+(define (crack-safely egg)
+  (catch (Ok (crack egg))
+    ((the BadEgg e) (Err e))))
+```
+
+A bound exception can be rethrown unchanged with `(throw e)`.
+
+The functions `coalton/result:try` and `coalton/result:ok-or-throw` convert between exceptions and `Result` values, so the same function can also be written as:
+
+```lisp
+(declare crack-safely (Egg -> (Result BadEgg Egg)))
+(define (crack-safely egg)
+  (result:try (fn () (crack egg))))
+```
+
+#### Panics
+
+Functions such as `error`, `unwrap`, `expect`, `unreachable`, and `undefined`, as well as failed `assert`s, signal a `Panic`. A panic indicates a bug rather than an expected failure. Panics are exceptions like any other: a wildcard `_` branch catches them along with all other Lisp errors, and a `(the Panic p)` branch catches only them. From Lisp, they are conditions of type `coalton/classes:panic`.
+
+#### Catching Lisp Conditions
+
+An existing Lisp condition type can be used as an exception type by giving `define-exception` a `(repr :native ...)` attribute and no constructors. The Lisp type must be a subtype of `cl:serious-condition`.
+
+```lisp
+(repr :native cl:division-by-zero)
+(define-exception DivisionByZero)
+
+(declare divide-or-zero (Integer * Integer -> Fraction))
+(define (divide-or-zero r m)
+  (catch (lisp (-> Fraction) (r m) (cl:/ r m))
+    ((the DivisionByZero _) 0)))
+```
+
+Unlike the wildcard branch above, this catches only division by zero.
+
+The `coalton/exception` package defines exception types for common standard Lisp conditions, so such definitions are often unnecessary:
+
+```lisp
+(declare checked-divide (Integer * Integer -> (Result String Fraction)))
+(define (checked-divide r m)
+  (catch (Ok (lisp (-> Fraction) (r m) (cl:/ r m)))
+    ((the exception:ArithmeticError e) (Err (exception:message e)))))
+```
+
+`exception:LispError` covers every Lisp `error`, so a `(the exception:LispError e)` branch is a wildcard branch that binds what it catches. `exception:message` returns an exception's Lisp report, and `exception:cast` converts an exception to a more specific type when it has one, such as an `ArithmeticError` to a `DivisionByZero`. See the [Lisp interoperation guide](/manual/topics/lisp-interop/) for more.
+
+#### Cleaning Up
+
+`protect` runs cleanup forms however control leaves an expression, whether it returns, throws, or exits with `return` or `break`:
+
+```lisp
+(define (process-file path)
+  (let stream = (need (file:open path)))
+  (protect (process stream)
+    (let _ = (file:close stream))
+    Unit))
+```
+
+The values of the cleanup forms are discarded, so the `Result` returned by `file:close` is discarded explicitly.
+
 #### Defining, Invoking, and Handling Resumptions 
 
-Resumptions allow the coalton programmer to recover from an error
-without unwinding the call stack.
+Resumptions let the code that handles an error choose how the code
+that threw it should recover, without first unwinding the call stack
+to the handler.
 
 The `define-resumption` form accepts a single "Constructor". The name
 of the constructor is also the name of the type of the resumption.
@@ -2175,7 +2270,9 @@ The following example, building on the above, should elucidate
     ((SkipEgg) None)))
 ```
 
-Now define a function that makes breakfast for `n` people.  It tries to cook each egg, but if it errors by encountering a deadly egg, it resumes `make-breakfast` by skipping that egg. 
+Now define a function that makes breakfast for `n` people.  It tries to cook each egg, but if it errors by encountering a deadly egg, it resumes `make-breakfast-with` by skipping that egg. 
+
+The resumption is established inside the expression being handled, so the handler must run before unwinding. That is what `handle` does; a `catch` branch would only run after `make-breakfast-with` had been unwound.
 
 ```lisp 
 (declare make-breakfast-for (UFix -> (Vector Egg)))
@@ -2186,7 +2283,7 @@ Now define a function that makes breakfast for `n` people.  It tries to cook eac
       :repeat n
       (let egg = (if (== 0 (mod i 5)) Xenomorph (Goose False False)))
       (do
-       (cooked <- (catch (make-breakfast-with egg)
+       (cooked <- (handle (make-breakfast-with egg)
                     ((DeadlyEgg _)    (resume-to skip))))
        (pure (vector:push! cooked eggs))))
     eggs))
@@ -2205,7 +2302,7 @@ make-breakfast-for
 ```
 
 But `cook` signals a `DeadlyEgg` error on `Xenomorph`
-eggs. `make-breakfast-for` catches that error and resumes to
+eggs. `make-breakfast-for` handles that error and resumes to
 `SkipEgg`, where `make-breakfast-with` receives that resumption and
 handles it.
 
@@ -2214,28 +2311,23 @@ handles it.
 
 For the time being, the following caveats apply;
 
-1. No support for polymorphism for `throw` or `resume-to`
-   expressions. E.g. the following will not compile without type
-   annotation:
-   - `(define (th a) (throw a))` 
-   - `(define (res a) (resume-to a))`
-
-2. No way to `catch` a Lisp condition and bind it to a variable in a
-   `catch` handler case. However Lisp conditions can be caught using a
-   wildcard pattern. In particular, this means that you cannot rethrow
-   a Lisp exception.  Furthermore, you may only rethrow an exception by
-   re-constructing one.  E.g.
-   - `(catch (bad-thing) (_ Unit))` 
-   - `(catch (bad-thing) ((MyBad x) (trace "my bad") (throw (MyBad x))))`
+1. A wildcard `_` branch catches every Lisp `error` but cannot bind
+   it. To bind a Lisp condition, catch it with a `(the T var)` branch
+   for a native exception type, such as `exception:LispError` or a
+   type defined with `(repr :native ...)`. Native exceptions have no
+   constructors, so their contents must be read with `lisp` forms,
+   and since Coalton has no subtyping, a condition caught as
+   `ArithmeticError` must be converted with `exception:cast` before
+   it can be used where a `DivisionByZero` is expected.
    
-3. `resumable` branches are even more restrictive. You cannot match
+2. `resumable` branches are even more restrictive. You cannot match
    against anything _other_ than a resumption constructor pattern.
 
-4. No type class is associated with exception-signaling forms. We are
-   pursuing different approaches to static checking of forms that
-   might hop the call stack. In the end, a type class approach may win
-   out. Whatever we do, we will endeavor to make it compatible with
-   the existing syntax and semantics.
+3. The `Exception` class identifies the types that can be thrown,
+   but a function's type does not say which exceptions it may throw.
+   We are pursuing different approaches to static checking of forms
+   that might hop the call stack. Whatever we do, we will endeavor to
+   make it compatible with the existing syntax and semantics.
 
 
    
