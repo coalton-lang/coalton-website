@@ -19,7 +19,7 @@ weight: 70
 - Toplevel form to define a new struct-like data type.
 - Structs are useful when named fields are clearer than positional fields of `define-type`.
 - A field named `f` is accessed with the operator `.f`.
-- A struct name is conventionally written in CamelCase.
+- A struct name is conventionally written in PascalCase.
 
 In release mode, the compiler can eliminate a locally constructed struct used
 only for field access. Field initializers still run once, in order. Passing,
