@@ -11089,7 +11089,7 @@ Offer the processor running the calling thread to other threads.
 
 ### Structs
 
-#### <a href="#coalton-tuple-tuple3-type"><code>Tuple3 :A :B :C</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.ct#L55-L58">src</a></sub></sup><a name="coalton-tuple-tuple3-type"></a>
+#### <a href="#coalton-tuple-tuple3-type"><code>Tuple3 :A :B :C</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.ct#L57-L60">src</a></sub></sup><a name="coalton-tuple-tuple3-type"></a>
 - <code>FIRST :: :A</code>
 - <code>SECOND :: :B</code>
 - <code>THIRD :: :C</code>
@@ -11107,7 +11107,7 @@ Offer the processor running the calling thread to other threads.
 
 ***
 
-#### <a href="#coalton-tuple-tuple4-type"><code>Tuple4 :A :B :C :D</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.ct#L73-L77">src</a></sub></sup><a name="coalton-tuple-tuple4-type"></a>
+#### <a href="#coalton-tuple-tuple4-type"><code>Tuple4 :A :B :C :D</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.ct#L75-L79">src</a></sub></sup><a name="coalton-tuple-tuple4-type"></a>
 - <code>FIRST :: :A</code>
 - <code>SECOND :: :B</code>
 - <code>THIRD :: :C</code>
@@ -11126,7 +11126,7 @@ Offer the processor running the calling thread to other threads.
 
 ***
 
-#### <a href="#coalton-tuple-tuple5-type"><code>Tuple5 :A :B :C :D :E</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.ct#L93-L98">src</a></sub></sup><a name="coalton-tuple-tuple5-type"></a>
+#### <a href="#coalton-tuple-tuple5-type"><code>Tuple5 :A :B :C :D :E</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.ct#L95-L100">src</a></sub></sup><a name="coalton-tuple-tuple5-type"></a>
 - <code>FIRST :: :A</code>
 - <code>SECOND :: :B</code>
 - <code>THIRD :: :C</code>
@@ -11148,7 +11148,7 @@ Offer the processor running the calling thread to other threads.
 
 ### Values
 
-#### <a href="#coalton-tuple-fst-value"><code>(FST (TUPLE A _))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.ct#L36-L38">src</a></sub></sup><a name="coalton-tuple-fst-value"></a>
+#### <a href="#coalton-tuple-fst-value"><code>(FST (TUPLE A _))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.ct#L37-L39">src</a></sub></sup><a name="coalton-tuple-fst-value"></a>
 <code>&forall; :A :B. <a href="#coalton-classes-tuple-type">Tuple</a> :A :B &rarr; :A</code>
 
 Get the first element of a tuple.
@@ -11157,7 +11157,7 @@ Get the first element of a tuple.
 
 ***
 
-#### <a href="#coalton-tuple-sequence-tuple-value"><code>(SEQUENCE-TUPLE (TUPLE A? B?))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.ct#L46-L52">src</a></sub></sup><a name="coalton-tuple-sequence-tuple-value"></a>
+#### <a href="#coalton-tuple-sequence-tuple-value"><code>(SEQUENCE-TUPLE (TUPLE A? B?))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.ct#L48-L54">src</a></sub></sup><a name="coalton-tuple-sequence-tuple-value"></a>
 <code>&forall; (:M (Type &rarr; Type)) :A :B. <a href="#coalton-classes-monad-class">Monad</a> :M &rArr; <a href="#coalton-classes-tuple-type">Tuple</a> (:M :A) (:M :B) &rarr; :M (<a href="#coalton-classes-tuple-type">Tuple</a> :A :B)</code>
 
 Flatten a Tuple of wrapped-values. Particularly useful for types like
@@ -11167,7 +11167,7 @@ Flatten a Tuple of wrapped-values. Particularly useful for types like
 
 ***
 
-#### <a href="#coalton-tuple-sequence-tuple3-value"><code>(SEQUENCE-TUPLE3 (TUPLE3 A? B? C?))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.ct#L63-L70">src</a></sub></sup><a name="coalton-tuple-sequence-tuple3-value"></a>
+#### <a href="#coalton-tuple-sequence-tuple3-value"><code>(SEQUENCE-TUPLE3 (TUPLE3 A? B? C?))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.ct#L65-L72">src</a></sub></sup><a name="coalton-tuple-sequence-tuple3-value"></a>
 <code>&forall; (:M (Type &rarr; Type)) :A :B :C. <a href="#coalton-classes-monad-class">Monad</a> :M &rArr; <a href="#coalton-tuple-tuple3-type">Tuple3</a> (:M :A) (:M :B) (:M :C) &rarr; :M (<a href="#coalton-tuple-tuple3-type">Tuple3</a> :A :B :C)</code>
 
 Flatten a Tuple of wrapped-values. Particularly useful for types like
@@ -11177,7 +11177,7 @@ Flatten a Tuple of wrapped-values. Particularly useful for types like
 
 ***
 
-#### <a href="#coalton-tuple-sequence-tuple4-value"><code>(SEQUENCE-TUPLE4 (TUPLE4 A? B? C? D?))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.ct#L82-L90">src</a></sub></sup><a name="coalton-tuple-sequence-tuple4-value"></a>
+#### <a href="#coalton-tuple-sequence-tuple4-value"><code>(SEQUENCE-TUPLE4 (TUPLE4 A? B? C? D?))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.ct#L84-L92">src</a></sub></sup><a name="coalton-tuple-sequence-tuple4-value"></a>
 <code>&forall; (:M (Type &rarr; Type)) :A :B :C :D. <a href="#coalton-classes-monad-class">Monad</a> :M &rArr; <a href="#coalton-tuple-tuple4-type">Tuple4</a> (:M :A) (:M :B) (:M :C) (:M :D) &rarr; :M (<a href="#coalton-tuple-tuple4-type">Tuple4</a> :A :B :C :D)</code>
 
 Flatten a Tuple of wrapped-values. Particularly useful for types like
@@ -11187,7 +11187,7 @@ Flatten a Tuple of wrapped-values. Particularly useful for types like
 
 ***
 
-#### <a href="#coalton-tuple-sequence-tuple5-value"><code>(SEQUENCE-TUPLE5 (TUPLE5 A? B? C? D? E?))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.ct#L103-L112">src</a></sub></sup><a name="coalton-tuple-sequence-tuple5-value"></a>
+#### <a href="#coalton-tuple-sequence-tuple5-value"><code>(SEQUENCE-TUPLE5 (TUPLE5 A? B? C? D? E?))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.ct#L105-L114">src</a></sub></sup><a name="coalton-tuple-sequence-tuple5-value"></a>
 <code>&forall; (:M (Type &rarr; Type)) :A :B :C :D :E. <a href="#coalton-classes-monad-class">Monad</a> :M &rArr; <a href="#coalton-tuple-tuple5-type">Tuple5</a> (:M :A) (:M :B) (:M :C) (:M :D) (:M :E) &rarr; :M (<a href="#coalton-tuple-tuple5-type">Tuple5</a> :A :B :C :D :E)</code>
 
 Flatten a Tuple of wrapped-values. Particularly useful for types like
@@ -11197,7 +11197,7 @@ Flatten a Tuple of wrapped-values. Particularly useful for types like
 
 ***
 
-#### <a href="#coalton-tuple-snd-value"><code>(SND (TUPLE _ B))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.ct#L41-L43">src</a></sub></sup><a name="coalton-tuple-snd-value"></a>
+#### <a href="#coalton-tuple-snd-value"><code>(SND (TUPLE _ B))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.ct#L43-L45">src</a></sub></sup><a name="coalton-tuple-snd-value"></a>
 <code>&forall; :A :B. <a href="#coalton-classes-tuple-type">Tuple</a> :A :B &rarr; :B</code>
 
 Get the second element of a tuple.
@@ -11206,7 +11206,7 @@ Get the second element of a tuple.
 
 ***
 
-#### <a href="#coalton-tuple-swap-value"><code>(SWAP (TUPLE A B))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.ct#L133-L135">src</a></sub></sup><a name="coalton-tuple-swap-value"></a>
+#### <a href="#coalton-tuple-swap-value"><code>(SWAP (TUPLE A B))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.ct#L136-L138">src</a></sub></sup><a name="coalton-tuple-swap-value"></a>
 <code>&forall; :A :B. <a href="#coalton-classes-tuple-type">Tuple</a> :A :B &rarr; <a href="#coalton-classes-tuple-type">Tuple</a> :B :A</code>
 
 Exchange the two elements of a tuple.
