@@ -1727,9 +1727,16 @@ Signal a `Panic` whose message is the result of applying the CL format string DA
 
 ### Types
 
-#### <a href="#coalton-cell-cell-type"><code>Cell</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.ct#L39-L40">src</a></sub></sup><a name="coalton-cell-cell-type"></a>
+#### <a href="#coalton-cell-cell-type"><code>Cell</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.ct#L39-L47">src</a></sub></sup><a name="coalton-cell-cell-type"></a>
 
-Internally mutable cell
+Internally mutable cell.
+
+In release mode, a locally bound `Cell :a` created with `new` that does not
+escape its lexical scope (i.e., is used only with `read`, `write!`, `swap!`, and
+operations that inline to them such as `update!`, `update-swap!`, `increment!`,
+`decrement!`, `push!`, and `pop!`, including inside `for` loops, `match`/`if`
+branches, and non-escaping local functions) is unboxed into a typed mutable
+lexical variable with no heap allocation.
 
 <details>
 <summary>Instances</summary>
@@ -1751,7 +1758,7 @@ Internally mutable cell
 
 ### Values
 
-#### <a href="#coalton-cell-decrement!-value"><code>(DECREMENT! CEL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.ct#L109-L112">src</a></sub></sup><a name="coalton-cell-decrement!-value"></a>
+#### <a href="#coalton-cell-decrement!-value"><code>(DECREMENT! CEL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.ct#L124-L127">src</a></sub></sup><a name="coalton-cell-decrement!-value"></a>
 <code>&forall; :COUNTER. <a href="#coalton-classes-num-class">Num</a> :COUNTER &rArr; <a href="#coalton-cell-cell-type">Cell</a> :COUNTER &rarr; :COUNTER</code>
 
 Subtract one from the contents of `cel`, storing and returning the new
@@ -1761,7 +1768,7 @@ value.
 
 ***
 
-#### <a href="#coalton-cell-increment!-value"><code>(INCREMENT! CEL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.ct#L103-L105">src</a></sub></sup><a name="coalton-cell-increment!-value"></a>
+#### <a href="#coalton-cell-increment!-value"><code>(INCREMENT! CEL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.ct#L118-L120">src</a></sub></sup><a name="coalton-cell-increment!-value"></a>
 <code>&forall; :COUNTER. <a href="#coalton-classes-num-class">Num</a> :COUNTER &rArr; <a href="#coalton-cell-cell-type">Cell</a> :COUNTER &rarr; :COUNTER</code>
 
 Add one to the contents of `cel`, storing and returning the new value.
@@ -1770,16 +1777,20 @@ Add one to the contents of `cel`, storing and returning the new value.
 
 ***
 
-#### <a href="#coalton-cell-new-value"><code>(NEW DATA)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.ct#L44-L47">src</a></sub></sup><a name="coalton-cell-new-value"></a>
+#### <a href="#coalton-cell-new-value"><code>(NEW DATA)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.ct#L51-L58">src</a></sub></sup><a name="coalton-cell-new-value"></a>
 <code>&forall; :A. :A &rarr; <a href="#coalton-cell-cell-type">Cell</a> :A</code>
 
 Create a new mutable cell containing `data`.
+
+In release mode, if the resulting `Cell` is bound locally and never escapes, the
+compiler eliminates the `cell-internal` allocation and stores `data` in a typed
+local lexical variable.
 
 
 
 ***
 
-#### <a href="#coalton-cell-pop!-value"><code>(POP! CEL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.ct#L92-L98">src</a></sub></sup><a name="coalton-cell-pop!-value"></a>
+#### <a href="#coalton-cell-pop!-value"><code>(POP! CEL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.ct#L107-L113">src</a></sub></sup><a name="coalton-cell-pop!-value"></a>
 <code>&forall; :ELT. <a href="#coalton-cell-cell-type">Cell</a> (<a href="#coalton-list-type">List</a> :ELT) &rarr; <a href="#coalton-optional-type">Optional</a> :ELT</code>
 
 Remove and return the first element of the list in `cel`.
@@ -1788,7 +1799,7 @@ Remove and return the first element of the list in `cel`.
 
 ***
 
-#### <a href="#coalton-cell-push!-value"><code>(PUSH! CEL NEW-ELT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.ct#L87-L89">src</a></sub></sup><a name="coalton-cell-push!-value"></a>
+#### <a href="#coalton-cell-push!-value"><code>(PUSH! CEL NEW-ELT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.ct#L101-L103">src</a></sub></sup><a name="coalton-cell-push!-value"></a>
 <code>&forall; :ELT. <a href="#coalton-cell-cell-type">Cell</a> (<a href="#coalton-list-type">List</a> :ELT) * :ELT &rarr; <a href="#coalton-list-type">List</a> :ELT</code>
 
 Push `new-elt` onto the start of the list in `cel`.
@@ -1797,7 +1808,7 @@ Push `new-elt` onto the start of the list in `cel`.
 
 ***
 
-#### <a href="#coalton-cell-read-value"><code>(READ CEL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.ct#L51-L54">src</a></sub></sup><a name="coalton-cell-read-value"></a>
+#### <a href="#coalton-cell-read-value"><code>(READ CEL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.ct#L62-L65">src</a></sub></sup><a name="coalton-cell-read-value"></a>
 <code>&forall; :A. <a href="#coalton-cell-cell-type">Cell</a> :A &rarr; :A</code>
 
 Read the value of a mutable cell `cel`.
@@ -1806,7 +1817,7 @@ Read the value of a mutable cell `cel`.
 
 ***
 
-#### <a href="#coalton-cell-swap!-value"><code>(SWAP! CEL DATA)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.ct#L57-L63">src</a></sub></sup><a name="coalton-cell-swap!-value"></a>
+#### <a href="#coalton-cell-swap!-value"><code>(SWAP! CEL DATA)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.ct#L69-L75">src</a></sub></sup><a name="coalton-cell-swap!-value"></a>
 <code>&forall; :A. <a href="#coalton-cell-cell-type">Cell</a> :A * :A &rarr; :A</code>
 
 Replace the value of a mutable cell `cel` with a new value `data`,
@@ -1816,7 +1827,7 @@ then return the old value.
 
 ***
 
-#### <a href="#coalton-cell-update!-value"><code>(UPDATE! F CEL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.ct#L75-L77">src</a></sub></sup><a name="coalton-cell-update!-value"></a>
+#### <a href="#coalton-cell-update!-value"><code>(UPDATE! F CEL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.ct#L87-L89">src</a></sub></sup><a name="coalton-cell-update!-value"></a>
 <code>&forall; :A. (:A &rarr; :A) * <a href="#coalton-cell-cell-type">Cell</a> :A &rarr; :A</code>
 
 Apply `f` to the contents of `cel`, storing and returning the result.
@@ -1825,7 +1836,7 @@ Apply `f` to the contents of `cel`, storing and returning the result.
 
 ***
 
-#### <a href="#coalton-cell-update-swap!-value"><code>(UPDATE-SWAP! F CEL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.ct#L80-L83">src</a></sub></sup><a name="coalton-cell-update-swap!-value"></a>
+#### <a href="#coalton-cell-update-swap!-value"><code>(UPDATE-SWAP! F CEL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.ct#L93-L96">src</a></sub></sup><a name="coalton-cell-update-swap!-value"></a>
 <code>&forall; :A. (:A &rarr; :A) * <a href="#coalton-cell-cell-type">Cell</a> :A &rarr; :A</code>
 
 Apply `f` to the contents of `cel`, swapping the result for the old
@@ -1835,7 +1846,7 @@ value.
 
 ***
 
-#### <a href="#coalton-cell-write!-value"><code>(WRITE! CEL DATA)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.ct#L67-L71">src</a></sub></sup><a name="coalton-cell-write!-value"></a>
+#### <a href="#coalton-cell-write!-value"><code>(WRITE! CEL DATA)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/cell.ct#L79-L83">src</a></sub></sup><a name="coalton-cell-write!-value"></a>
 <code>&forall; :A. <a href="#coalton-cell-cell-type">Cell</a> :A * :A &rarr; :A</code>
 
 Set the value of a mutable cell `cel` to `data`, returning the new
