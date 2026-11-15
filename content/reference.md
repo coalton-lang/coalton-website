@@ -5456,7 +5456,7 @@ A forward-moving pointer into an ordered sequence of :ELTs
 
 ### Classes
 
-#### <a href="#coalton-iterator-fromiterator-class"><code>FromIterator</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L659-L660">src</a></sub></sup><a name="coalton-iterator-fromiterator-class"></a>
+#### <a href="#coalton-iterator-fromiterator-class"><code>FromIterator</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L679-L680">src</a></sub></sup><a name="coalton-iterator-fromiterator-class"></a>
 <code><a href="#coalton-iterator-fromiterator-class">FromIterator</a> :CONTAINER :ELT</code>
 
 Methods:
@@ -5529,7 +5529,7 @@ Methods:
 
 ### Values
 
-#### <a href="#coalton-iterator-and!-value"><code>(AND! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L481-L492">src</a></sub></sup><a name="coalton-iterator-and!-value"></a>
+#### <a href="#coalton-iterator-and!-value"><code>(AND! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L501-L512">src</a></sub></sup><a name="coalton-iterator-and!-value"></a>
 <code><a href="#coalton-iterator-iterator-type">Iterator</a> <a href="#coalton-boolean-type">Boolean</a> &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Returns True if all iterator elements are True. May not consume the entire iterator. Returns True on an empty iterator.
@@ -5538,7 +5538,7 @@ Returns True if all iterator elements are True. May not consume the entire itera
 
 ***
 
-#### <a href="#coalton-iterator-any!-value"><code>(ANY! GOOD? ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L615-L621">src</a></sub></sup><a name="coalton-iterator-any!-value"></a>
+#### <a href="#coalton-iterator-any!-value"><code>(ANY! GOOD? ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L635-L641">src</a></sub></sup><a name="coalton-iterator-any!-value"></a>
 <code>&forall; :ELT. (:ELT &rarr; <a href="#coalton-boolean-type">Boolean</a>) * <a href="#coalton-iterator-iterator-type">Iterator</a> :ELT &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Return `True` as soon as any element of ITER is GOOD?, or `False` if none of them are.
@@ -5549,7 +5549,7 @@ Returns `False` if ITER is empty.
 
 ***
 
-#### <a href="#coalton-iterator-chain!-value"><code>(CHAIN! ITER1 ITER2)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L420-L431">src</a></sub></sup><a name="coalton-iterator-chain!-value"></a>
+#### <a href="#coalton-iterator-chain!-value"><code>(CHAIN! ITER1 ITER2)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L440-L451">src</a></sub></sup><a name="coalton-iterator-chain!-value"></a>
 <code>&forall; :ELT. <a href="#coalton-iterator-iterator-type">Iterator</a> :ELT * <a href="#coalton-iterator-iterator-type">Iterator</a> :ELT &rarr; <a href="#coalton-iterator-iterator-type">Iterator</a> :ELT</code>
 
 Yield all the elements of ITER1 followed by all the elements from ITER2.
@@ -5558,7 +5558,7 @@ Yield all the elements of ITER1 followed by all the elements from ITER2.
 
 ***
 
-#### <a href="#coalton-iterator-count!-value"><code>(COUNT! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L513-L517">src</a></sub></sup><a name="coalton-iterator-count!-value"></a>
+#### <a href="#coalton-iterator-count!-value"><code>(COUNT! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L533-L537">src</a></sub></sup><a name="coalton-iterator-count!-value"></a>
 <code>&forall; :ELT. <a href="#coalton-iterator-iterator-type">Iterator</a> :ELT &rarr; <a href="#coalton-ufix-type">UFix</a></code>
 
 Return the number of elements in ITER.
@@ -5587,7 +5587,7 @@ An iterator which begins below the provided limit and counts down through and in
 
 ***
 
-#### <a href="#coalton-iterator-elementwise-hash!-value"><code>(ELEMENTWISE-HASH! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L644-L653">src</a></sub></sup><a name="coalton-iterator-elementwise-hash!-value"></a>
+#### <a href="#coalton-iterator-elementwise-hash!-value"><code>(ELEMENTWISE-HASH! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L664-L673">src</a></sub></sup><a name="coalton-iterator-elementwise-hash!-value"></a>
 <code>&forall; :ELT. <a href="#coalton-classes-hash-class">Hash</a> :ELT &rArr; <a href="#coalton-iterator-iterator-type">Iterator</a> :ELT &rarr; <a href="#coalton-classes-hash-type">Hash</a></code>
 
 Hash an iterator by combining the hashes of all its elements.
@@ -5598,7 +5598,7 @@ The empty iterator will hash as 0.
 
 ***
 
-#### <a href="#coalton-iterator-elementwise-match!-value"><code>(ELEMENTWISE-MATCH! SAME? LEFT RIGHT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L624-L633">src</a></sub></sup><a name="coalton-iterator-elementwise-match!-value"></a>
+#### <a href="#coalton-iterator-elementwise-match!-value"><code>(ELEMENTWISE-MATCH! SAME? LEFT RIGHT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L644-L653">src</a></sub></sup><a name="coalton-iterator-elementwise-match!-value"></a>
 <code>&forall; :ELT. (:ELT * :ELT &rarr; <a href="#coalton-boolean-type">Boolean</a>) * <a href="#coalton-iterator-iterator-type">Iterator</a> :ELT * <a href="#coalton-iterator-iterator-type">Iterator</a> :ELT &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Are LEFT and RIGHT elementwise-identical under SAME?
@@ -5610,7 +5610,7 @@ same length.
 
 ***
 
-#### <a href="#coalton-iterator-elementwise==!-value"><code>(ELEMENTWISE==! LEFT RIGHT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L636-L641">src</a></sub></sup><a name="coalton-iterator-elementwise==!-value"></a>
+#### <a href="#coalton-iterator-elementwise==!-value"><code>(ELEMENTWISE==! LEFT RIGHT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L656-L661">src</a></sub></sup><a name="coalton-iterator-elementwise==!-value"></a>
 <code>&forall; :ELT. <a href="#coalton-classes-eq-class">Eq</a> :ELT &rArr; <a href="#coalton-iterator-iterator-type">Iterator</a> :ELT * <a href="#coalton-iterator-iterator-type">Iterator</a> :ELT &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is every element of the first iterator `==' to the corresponding element of the second?
@@ -5622,7 +5622,7 @@ the Nth element of the second iterator.
 
 ***
 
-#### <a href="#coalton-iterator-enumerate!-value"><code>(ENUMERATE! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L347-L349">src</a></sub></sup><a name="coalton-iterator-enumerate!-value"></a>
+#### <a href="#coalton-iterator-enumerate!-value"><code>(ENUMERATE! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L355-L357">src</a></sub></sup><a name="coalton-iterator-enumerate!-value"></a>
 <code>&forall; :ELT. <a href="#coalton-iterator-iterator-type">Iterator</a> :ELT &rarr; <a href="#coalton-iterator-iterator-type">Iterator</a> (<a href="#coalton-classes-tuple-type">Tuple</a> <a href="#coalton-ufix-type">UFix</a> :ELT)</code>
 
 Pair successive zero-based incides with elements from ITER
@@ -5631,7 +5631,7 @@ Pair successive zero-based incides with elements from ITER
 
 ***
 
-#### <a href="#coalton-iterator-every!-value"><code>(EVERY! GOOD? ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L606-L612">src</a></sub></sup><a name="coalton-iterator-every!-value"></a>
+#### <a href="#coalton-iterator-every!-value"><code>(EVERY! GOOD? ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L626-L632">src</a></sub></sup><a name="coalton-iterator-every!-value"></a>
 <code>&forall; :ELT. (:ELT &rarr; <a href="#coalton-boolean-type">Boolean</a>) * <a href="#coalton-iterator-iterator-type">Iterator</a> :ELT &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Return `True` if every element of ITER is GOOD?, or `False` as soon as any element is not GOOD?.
@@ -5642,7 +5642,7 @@ Returns `True` if ITER is empty.
 
 ***
 
-#### <a href="#coalton-iterator-filter!-value"><code>(FILTER! KEEP? ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L352-L360">src</a></sub></sup><a name="coalton-iterator-filter!-value"></a>
+#### <a href="#coalton-iterator-filter!-value"><code>(FILTER! KEEP? ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L360-L368">src</a></sub></sup><a name="coalton-iterator-filter!-value"></a>
 <code>&forall; :ELT. (:ELT &rarr; <a href="#coalton-boolean-type">Boolean</a>) * <a href="#coalton-iterator-iterator-type">Iterator</a> :ELT &rarr; <a href="#coalton-iterator-iterator-type">Iterator</a> :ELT</code>
 
 Return an iterator over the elements from ITER for which KEEP? returns true.
@@ -5651,7 +5651,7 @@ Return an iterator over the elements from ITER for which KEEP? returns true.
 
 ***
 
-#### <a href="#coalton-iterator-filter-map!-value"><code>(FILTER-MAP! F ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L363-L376">src</a></sub></sup><a name="coalton-iterator-filter-map!-value"></a>
+#### <a href="#coalton-iterator-filter-map!-value"><code>(FILTER-MAP! F ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L371-L384">src</a></sub></sup><a name="coalton-iterator-filter-map!-value"></a>
 <code>&forall; :A :B. (:A &rarr; <a href="#coalton-optional-type">Optional</a> :B) * <a href="#coalton-iterator-iterator-type">Iterator</a> :A &rarr; <a href="#coalton-iterator-iterator-type">Iterator</a> :B</code>
 
 Map an iterator, retaining only the elements where F returns SOME.
@@ -5660,7 +5660,7 @@ Map an iterator, retaining only the elements where F returns SOME.
 
 ***
 
-#### <a href="#coalton-iterator-find!-value"><code>(FIND! THIS? ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L532-L538">src</a></sub></sup><a name="coalton-iterator-find!-value"></a>
+#### <a href="#coalton-iterator-find!-value"><code>(FIND! THIS? ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L552-L558">src</a></sub></sup><a name="coalton-iterator-find!-value"></a>
 <code>&forall; :ELT. (:ELT &rarr; <a href="#coalton-boolean-type">Boolean</a>) * <a href="#coalton-iterator-iterator-type">Iterator</a> :ELT &rarr; <a href="#coalton-optional-type">Optional</a> :ELT</code>
 
 Return the first element of ITER for which THIS? returns `True`, or `None` if no element matches.
@@ -5669,7 +5669,7 @@ Return the first element of ITER for which THIS? returns `True`, or `None` if no
 
 ***
 
-#### <a href="#coalton-iterator-find-map!-value"><code>(FIND-MAP! F ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L541-L543">src</a></sub></sup><a name="coalton-iterator-find-map!-value"></a>
+#### <a href="#coalton-iterator-find-map!-value"><code>(FIND-MAP! F ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L561-L563">src</a></sub></sup><a name="coalton-iterator-find-map!-value"></a>
 <code>&forall; :A :B. (:A &rarr; <a href="#coalton-optional-type">Optional</a> :B) * <a href="#coalton-iterator-iterator-type">Iterator</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> :B</code>
 
 Return the first element of (map F ITER) for which F returns `Some`.
@@ -5678,7 +5678,7 @@ Return the first element of (map F ITER) for which F returns `Some`.
 
 ***
 
-#### <a href="#coalton-iterator-flat-map!-value"><code>(FLAT-MAP! FUNC ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L451-L453">src</a></sub></sup><a name="coalton-iterator-flat-map!-value"></a>
+#### <a href="#coalton-iterator-flat-map!-value"><code>(FLAT-MAP! FUNC ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L471-L473">src</a></sub></sup><a name="coalton-iterator-flat-map!-value"></a>
 <code>&forall; :A :B. (:A &rarr; <a href="#coalton-iterator-iterator-type">Iterator</a> :B) * <a href="#coalton-iterator-iterator-type">Iterator</a> :A &rarr; <a href="#coalton-iterator-iterator-type">Iterator</a> :B</code>
 
 Flatten! wrapped around map.
@@ -5687,7 +5687,7 @@ Flatten! wrapped around map.
 
 ***
 
-#### <a href="#coalton-iterator-flatten!-value"><code>(FLATTEN! ITERS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L434-L448">src</a></sub></sup><a name="coalton-iterator-flatten!-value"></a>
+#### <a href="#coalton-iterator-flatten!-value"><code>(FLATTEN! ITERS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L454-L468">src</a></sub></sup><a name="coalton-iterator-flatten!-value"></a>
 <code>&forall; :ELT. <a href="#coalton-iterator-iterator-type">Iterator</a> (<a href="#coalton-iterator-iterator-type">Iterator</a> :ELT) &rarr; <a href="#coalton-iterator-iterator-type">Iterator</a> :ELT</code>
 
 Yield all the elements from each of the ITERS in order.
@@ -5708,7 +5708,7 @@ STATE, using INIT as the first STATE.
 
 ***
 
-#### <a href="#coalton-iterator-for-each!-value"><code>(FOR-EACH! THUNK ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L521-L529">src</a></sub></sup><a name="coalton-iterator-for-each!-value"></a>
+#### <a href="#coalton-iterator-for-each!-value"><code>(FOR-EACH! THUNK ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L541-L549">src</a></sub></sup><a name="coalton-iterator-for-each!-value"></a>
 <code>&forall; :ELT. (:ELT &rarr; Void) * <a href="#coalton-iterator-iterator-type">Iterator</a> :ELT &rarr; Void</code>
 
 Call THUNK on each element of ITER in order for side effects.
@@ -5718,7 +5718,7 @@ Discard values returned by THUNK.
 
 ***
 
-#### <a href="#coalton-iterator-index-of!-value"><code>(INDEX-OF! THIS? ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L546-L552">src</a></sub></sup><a name="coalton-iterator-index-of!-value"></a>
+#### <a href="#coalton-iterator-index-of!-value"><code>(INDEX-OF! THIS? ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L566-L572">src</a></sub></sup><a name="coalton-iterator-index-of!-value"></a>
 <code>&forall; :ELT. (:ELT &rarr; <a href="#coalton-boolean-type">Boolean</a>) * <a href="#coalton-iterator-iterator-type">Iterator</a> :ELT &rarr; <a href="#coalton-optional-type">Optional</a> <a href="#coalton-ufix-type">UFix</a></code>
 
 Return the zero-based index of the first element of ITER for which THIS? is `True`, or `None` if no element matches.
@@ -5727,7 +5727,7 @@ Return the zero-based index of the first element of ITER for which THIS? is `Tru
 
 ***
 
-#### <a href="#coalton-iterator-interleave!-value"><code>(INTERLEAVE! LEFT RIGHT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L306-L325">src</a></sub></sup><a name="coalton-iterator-interleave!-value"></a>
+#### <a href="#coalton-iterator-interleave!-value"><code>(INTERLEAVE! LEFT RIGHT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L314-L333">src</a></sub></sup><a name="coalton-iterator-interleave!-value"></a>
 <code>&forall; :A. <a href="#coalton-iterator-iterator-type">Iterator</a> :A * <a href="#coalton-iterator-iterator-type">Iterator</a> :A &rarr; <a href="#coalton-iterator-iterator-type">Iterator</a> :A</code>
 
 Return an iterator of interleaved elements from LEFT and RIGHT which terminates as soon as both LEFT and RIGHT do.
@@ -5739,7 +5739,7 @@ interleaving. (interleave empty ITER) is equivalent to (id ITER).
 
 ***
 
-#### <a href="#coalton-iterator-last!-value"><code>(LAST! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L476-L478">src</a></sub></sup><a name="coalton-iterator-last!-value"></a>
+#### <a href="#coalton-iterator-last!-value"><code>(LAST! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L496-L498">src</a></sub></sup><a name="coalton-iterator-last!-value"></a>
 <code>&forall; :A. <a href="#coalton-iterator-iterator-type">Iterator</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> :A</code>
 
 Yields the last element of ITER, completely consuming it.
@@ -5748,7 +5748,7 @@ Yields the last element of ITER, completely consuming it.
 
 ***
 
-#### <a href="#coalton-iterator-map-while!-value"><code>(MAP-WHILE! F ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L379-L399">src</a></sub></sup><a name="coalton-iterator-map-while!-value"></a>
+#### <a href="#coalton-iterator-map-while!-value"><code>(MAP-WHILE! F ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L387-L407">src</a></sub></sup><a name="coalton-iterator-map-while!-value"></a>
 <code>&forall; :A :B. (:A &rarr; <a href="#coalton-optional-type">Optional</a> :B) * <a href="#coalton-iterator-iterator-type">Iterator</a> :A &rarr; <a href="#coalton-iterator-iterator-type">Iterator</a> :B</code>
 
 Map an iterator, stopping early if F returns NONE.
@@ -5757,7 +5757,7 @@ Map an iterator, stopping early if F returns NONE.
 
 ***
 
-#### <a href="#coalton-iterator-max!-value"><code>(MAX! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L569-L571">src</a></sub></sup><a name="coalton-iterator-max!-value"></a>
+#### <a href="#coalton-iterator-max!-value"><code>(MAX! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L589-L591">src</a></sub></sup><a name="coalton-iterator-max!-value"></a>
 <code>&forall; :NUM. <a href="#coalton-classes-ord-class">Ord</a> :NUM &rArr; <a href="#coalton-iterator-iterator-type">Iterator</a> :NUM &rarr; <a href="#coalton-optional-type">Optional</a> :NUM</code>
 
 Return the most-positive element of ITER, or `None` if ITER is empty.
@@ -5766,7 +5766,7 @@ Return the most-positive element of ITER, or `None` if ITER is empty.
 
 ***
 
-#### <a href="#coalton-iterator-maximize-by!-value"><code>(MAXIMIZE-BY! F ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L592-L596">src</a></sub></sup><a name="coalton-iterator-maximize-by!-value"></a>
+#### <a href="#coalton-iterator-maximize-by!-value"><code>(MAXIMIZE-BY! F ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L612-L616">src</a></sub></sup><a name="coalton-iterator-maximize-by!-value"></a>
 <code>&forall; :ELT :A. <a href="#coalton-classes-ord-class">Ord</a> :A &rArr; (:ELT &rarr; :A) * <a href="#coalton-iterator-iterator-type">Iterator</a> :ELT &rarr; <a href="#coalton-optional-type">Optional</a> :ELT</code>
 
 For a function F, which maps the iterator, return the element of ITER where (F ELT) is the most-positive.
@@ -5777,7 +5777,7 @@ Return `None' if ITER is empty.
 
 ***
 
-#### <a href="#coalton-iterator-mconcat!-value"><code>(MCONCAT! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L456-L458">src</a></sub></sup><a name="coalton-iterator-mconcat!-value"></a>
+#### <a href="#coalton-iterator-mconcat!-value"><code>(MCONCAT! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L476-L478">src</a></sub></sup><a name="coalton-iterator-mconcat!-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-monoid-class">Monoid</a> :A &rArr; <a href="#coalton-iterator-iterator-type">Iterator</a> :A &rarr; :A</code>
 
 Fold an iterator of monoids into a single element.
@@ -5786,7 +5786,7 @@ Fold an iterator of monoids into a single element.
 
 ***
 
-#### <a href="#coalton-iterator-mconcatmap!-value"><code>(MCONCATMAP! FUNC ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L461-L463">src</a></sub></sup><a name="coalton-iterator-mconcatmap!-value"></a>
+#### <a href="#coalton-iterator-mconcatmap!-value"><code>(MCONCATMAP! FUNC ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L481-L483">src</a></sub></sup><a name="coalton-iterator-mconcatmap!-value"></a>
 <code>&forall; :B :A. <a href="#coalton-classes-monoid-class">Monoid</a> :A &rArr; (:B &rarr; :A) * <a href="#coalton-iterator-iterator-type">Iterator</a> :B &rarr; :A</code>
 
 Map an iterator to an iterator of monoids, and then fold that iterator into a single element.
@@ -5795,7 +5795,7 @@ Map an iterator to an iterator of monoids, and then fold that iterator into a si
 
 ***
 
-#### <a href="#coalton-iterator-min!-value"><code>(MIN! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L574-L576">src</a></sub></sup><a name="coalton-iterator-min!-value"></a>
+#### <a href="#coalton-iterator-min!-value"><code>(MIN! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L594-L596">src</a></sub></sup><a name="coalton-iterator-min!-value"></a>
 <code>&forall; :NUM. <a href="#coalton-classes-ord-class">Ord</a> :NUM &rArr; <a href="#coalton-iterator-iterator-type">Iterator</a> :NUM &rarr; <a href="#coalton-optional-type">Optional</a> :NUM</code>
 
 Return the most-negative element of ITER, or `None` if ITER is empty.
@@ -5804,7 +5804,7 @@ Return the most-negative element of ITER, or `None` if ITER is empty.
 
 ***
 
-#### <a href="#coalton-iterator-minimize-by!-value"><code>(MINIMIZE-BY! F ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L599-L603">src</a></sub></sup><a name="coalton-iterator-minimize-by!-value"></a>
+#### <a href="#coalton-iterator-minimize-by!-value"><code>(MINIMIZE-BY! F ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L619-L623">src</a></sub></sup><a name="coalton-iterator-minimize-by!-value"></a>
 <code>&forall; :ELT :A. <a href="#coalton-classes-ord-class">Ord</a> :A &rArr; (:ELT &rarr; :A) * <a href="#coalton-iterator-iterator-type">Iterator</a> :ELT &rarr; <a href="#coalton-optional-type">Optional</a> :ELT</code>
 
 For a function F, which maps the iterator, return the element of ITER where (F ELT) is the most-negative.
@@ -5836,7 +5836,7 @@ most of the operators defined on iterators call `next!` internally, or create ne
 
 ***
 
-#### <a href="#coalton-iterator-once-value"><code>(ONCE ITEM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L268-L277">src</a></sub></sup><a name="coalton-iterator-once-value"></a>
+#### <a href="#coalton-iterator-once-value"><code>(ONCE ITEM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L276-L285">src</a></sub></sup><a name="coalton-iterator-once-value"></a>
 <code>&forall; :ITEM. :ITEM &rarr; <a href="#coalton-iterator-iterator-type">Iterator</a> :ITEM</code>
 
 Yield `item` once.
@@ -5845,7 +5845,7 @@ Yield `item` once.
 
 ***
 
-#### <a href="#coalton-iterator-optimize!-value"><code>(OPTIMIZE! BETTER? ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L555-L566">src</a></sub></sup><a name="coalton-iterator-optimize!-value"></a>
+#### <a href="#coalton-iterator-optimize!-value"><code>(OPTIMIZE! BETTER? ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L575-L586">src</a></sub></sup><a name="coalton-iterator-optimize!-value"></a>
 <code>&forall; :ELT. (:ELT * :ELT &rarr; <a href="#coalton-boolean-type">Boolean</a>) * <a href="#coalton-iterator-iterator-type">Iterator</a> :ELT &rarr; <a href="#coalton-optional-type">Optional</a> :ELT</code>
 
 For an order BETTER? which returns `True` if its first argument is better than its second argument, return the best element of ITER.
@@ -5856,7 +5856,7 @@ Return `None` if ITER is empty.
 
 ***
 
-#### <a href="#coalton-iterator-optimize-by!-value"><code>(OPTIMIZE-BY! BETTER? F ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L582-L589">src</a></sub></sup><a name="coalton-iterator-optimize-by!-value"></a>
+#### <a href="#coalton-iterator-optimize-by!-value"><code>(OPTIMIZE-BY! BETTER? F ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L602-L609">src</a></sub></sup><a name="coalton-iterator-optimize-by!-value"></a>
 <code>&forall; :B :A. (:B * :B &rarr; <a href="#coalton-boolean-type">Boolean</a>) * (:A &rarr; :B) * <a href="#coalton-iterator-iterator-type">Iterator</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> :A</code>
 
 For an order BETTER? which returns `True` if its first argument is better than its second argument, return the element of ITER where (F ELT) is the best.
@@ -5867,7 +5867,7 @@ Return `None` if ITER is empty.
 
 ***
 
-#### <a href="#coalton-iterator-or!-value"><code>(OR! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L495-L505">src</a></sub></sup><a name="coalton-iterator-or!-value"></a>
+#### <a href="#coalton-iterator-or!-value"><code>(OR! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L515-L525">src</a></sub></sup><a name="coalton-iterator-or!-value"></a>
 <code><a href="#coalton-iterator-iterator-type">Iterator</a> <a href="#coalton-boolean-type">Boolean</a> &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Returns True if any iterator elements are True. May not consume the entire iterator. Returns False on an empty iterator.
@@ -5876,7 +5876,7 @@ Returns True if any iterator elements are True. May not consume the entire itera
 
 ***
 
-#### <a href="#coalton-iterator-pair-with!-value"><code>(PAIR-WITH! FUNC KEYS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L466-L469">src</a></sub></sup><a name="coalton-iterator-pair-with!-value"></a>
+#### <a href="#coalton-iterator-pair-with!-value"><code>(PAIR-WITH! FUNC KEYS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L486-L489">src</a></sub></sup><a name="coalton-iterator-pair-with!-value"></a>
 <code>&forall; :KEY :VALUE. (:KEY &rarr; :VALUE) * <a href="#coalton-iterator-iterator-type">Iterator</a> :KEY &rarr; <a href="#coalton-iterator-iterator-type">Iterator</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE)</code>
 
 Returns an iterator over tuples whose FSTs are elements from KEYS, and whose SNDs are the results of applying FUNC to those KEYS.
@@ -5935,7 +5935,7 @@ Yield ITEM over and over, infinitely.
 
 ***
 
-#### <a href="#coalton-iterator-repeat-for-value"><code>(REPEAT-FOR ITEM COUNT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L263-L265">src</a></sub></sup><a name="coalton-iterator-repeat-for-value"></a>
+#### <a href="#coalton-iterator-repeat-for-value"><code>(REPEAT-FOR ITEM COUNT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L263-L273">src</a></sub></sup><a name="coalton-iterator-repeat-for-value"></a>
 <code>&forall; :ITEM. :ITEM * <a href="#coalton-ufix-type">UFix</a> &rarr; <a href="#coalton-iterator-iterator-type">Iterator</a> :ITEM</code>
 
 Yield ITEM COUNT times, then stop.
@@ -5950,7 +5950,7 @@ Yield ITEM COUNT times, then stop.
 
 ***
 
-#### <a href="#coalton-iterator-sum!-value"><code>(SUM! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L508-L510">src</a></sub></sup><a name="coalton-iterator-sum!-value"></a>
+#### <a href="#coalton-iterator-sum!-value"><code>(SUM! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L528-L530">src</a></sub></sup><a name="coalton-iterator-sum!-value"></a>
 <code>&forall; :NUM. <a href="#coalton-classes-num-class">Num</a> :NUM &rArr; <a href="#coalton-iterator-iterator-type">Iterator</a> :NUM &rarr; :NUM</code>
 
 Add together all the elements of ITER.
@@ -5959,7 +5959,7 @@ Add together all the elements of ITER.
 
 ***
 
-#### <a href="#coalton-iterator-take!-value"><code>(TAKE! COUNT ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L413-L417">src</a></sub></sup><a name="coalton-iterator-take!-value"></a>
+#### <a href="#coalton-iterator-take!-value"><code>(TAKE! COUNT ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L421-L437">src</a></sub></sup><a name="coalton-iterator-take!-value"></a>
 <code>&forall; :ELT. <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-iterator-iterator-type">Iterator</a> :ELT &rarr; <a href="#coalton-iterator-iterator-type">Iterator</a> :ELT</code>
 
 An `Iterator` which yields at most COUNT elements from ITER.
@@ -5968,7 +5968,7 @@ An `Iterator` which yields at most COUNT elements from ITER.
 
 ***
 
-#### <a href="#coalton-iterator-unwrapped!-value"><code>(UNWRAPPED! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L402-L410">src</a></sub></sup><a name="coalton-iterator-unwrapped!-value"></a>
+#### <a href="#coalton-iterator-unwrapped!-value"><code>(UNWRAPPED! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L410-L418">src</a></sub></sup><a name="coalton-iterator-unwrapped!-value"></a>
 <code>&forall; (:WRAPPER (Type &rarr; Type)) :ELT. <a href="#coalton-classes-unwrappable-class">Unwrappable</a> :WRAPPER &rArr; <a href="#coalton-iterator-iterator-type">Iterator</a> (:WRAPPER :ELT) &rarr; <a href="#coalton-iterator-iterator-type">Iterator</a> :ELT</code>
 
 
@@ -5998,7 +5998,7 @@ An iterator which begins at zero and counts up to, but not including, LIMIT.
 
 ***
 
-#### <a href="#coalton-iterator-zip!-value"><code>(ZIP! LEFT RIGHT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L342-L344">src</a></sub></sup><a name="coalton-iterator-zip!-value"></a>
+#### <a href="#coalton-iterator-zip!-value"><code>(ZIP! LEFT RIGHT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L350-L352">src</a></sub></sup><a name="coalton-iterator-zip!-value"></a>
 <code>&forall; :LEFT :RIGHT. <a href="#coalton-iterator-iterator-type">Iterator</a> :LEFT * <a href="#coalton-iterator-iterator-type">Iterator</a> :RIGHT &rarr; <a href="#coalton-iterator-iterator-type">Iterator</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :LEFT :RIGHT)</code>
 
 Return an iterator of tuples contining elements from two iterators.
@@ -6007,7 +6007,7 @@ Return an iterator of tuples contining elements from two iterators.
 
 ***
 
-#### <a href="#coalton-iterator-zip-with!-value"><code>(ZIP-WITH! F LEFT RIGHT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L328-L339">src</a></sub></sup><a name="coalton-iterator-zip-with!-value"></a>
+#### <a href="#coalton-iterator-zip-with!-value"><code>(ZIP-WITH! F LEFT RIGHT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/iterator.ct#L336-L347">src</a></sub></sup><a name="coalton-iterator-zip-with!-value"></a>
 <code>&forall; :LEFT :RIGHT :OUT. (:LEFT * :RIGHT &rarr; :OUT) * <a href="#coalton-iterator-iterator-type">Iterator</a> :LEFT * <a href="#coalton-iterator-iterator-type">Iterator</a> :RIGHT &rarr; <a href="#coalton-iterator-iterator-type">Iterator</a> :OUT</code>
 
 Return an iterator of elements from LEFT and RIGHT which terminates as soon as either LEFT or RIGHT does.
@@ -11474,7 +11474,7 @@ Resizable mutable vectors with efficient indexed access and amortized end update
 
 ### Values
 
-#### <a href="#coalton-vector-append-value"><code>(APPEND V1 V2)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L256-L261">src</a></sub></sup><a name="coalton-vector-append-value"></a>
+#### <a href="#coalton-vector-append-value"><code>(APPEND V1 V2)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L262-L275">src</a></sub></sup><a name="coalton-vector-append-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A * <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-vector-vector-type">Vector</a> :A</code>
 
 Create a new vector containing the elements of `v1` followed by the elements of `v2`.
@@ -11483,7 +11483,7 @@ Create a new vector containing the elements of `v1` followed by the elements of 
 
 ***
 
-#### <a href="#coalton-vector-capacity-value"><code>(CAPACITY V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L115-L118">src</a></sub></sup><a name="coalton-vector-capacity-value"></a>
+#### <a href="#coalton-vector-capacity-value"><code>(CAPACITY V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L121-L124">src</a></sub></sup><a name="coalton-vector-capacity-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-ufix-type">UFix</a></code>
 
 Returns the number of elements that `v` can store without resizing.
@@ -11492,7 +11492,7 @@ Returns the number of elements that `v` can store without resizing.
 
 ***
 
-#### <a href="#coalton-vector-clear!-value"><code>(CLEAR! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L168-L170">src</a></sub></sup><a name="coalton-vector-clear!-value"></a>
+#### <a href="#coalton-vector-clear!-value"><code>(CLEAR! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L174-L176">src</a></sub></sup><a name="coalton-vector-clear!-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; Void</code>
 
 Set the capacity of `v` to `0`.
@@ -11501,7 +11501,7 @@ Set the capacity of `v` to `0`.
 
 ***
 
-#### <a href="#coalton-vector-copy-value"><code>(COPY V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L134-L139">src</a></sub></sup><a name="coalton-vector-copy-value"></a>
+#### <a href="#coalton-vector-copy-value"><code>(COPY V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L140-L145">src</a></sub></sup><a name="coalton-vector-copy-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-vector-vector-type">Vector</a> :A</code>
 
 Return a new vector containing the same elements as `v`.
@@ -11510,7 +11510,7 @@ Return a new vector containing the same elements as `v`.
 
 ***
 
-#### <a href="#coalton-vector-empty?-value"><code>(EMPTY? V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L122-L124">src</a></sub></sup><a name="coalton-vector-empty?-value"></a>
+#### <a href="#coalton-vector-empty?-value"><code>(EMPTY? V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L128-L130">src</a></sub></sup><a name="coalton-vector-empty?-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is `v` empty?
@@ -11519,7 +11519,7 @@ Is `v` empty?
 
 ***
 
-#### <a href="#coalton-vector-extend!-value"><code>(EXTEND! VEC ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L313-L331">src</a></sub></sup><a name="coalton-vector-extend!-value"></a>
+#### <a href="#coalton-vector-extend!-value"><code>(EXTEND! VEC ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L327-L346">src</a></sub></sup><a name="coalton-vector-extend!-value"></a>
 <code>&forall; :ELT :CONTAINER. <a href="#coalton-iterator-intoiterator-class">IntoIterator</a> :CONTAINER :ELT &rArr; <a href="#coalton-vector-vector-type">Vector</a> :ELT * :CONTAINER &rarr; Void</code>
 
 Push every element in `iter` to the end of `vec`.
@@ -11528,7 +11528,7 @@ Push every element in `iter` to the end of `vec`.
 
 ***
 
-#### <a href="#coalton-vector-find-elem-value"><code>(FIND-ELEM E V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L241-L253">src</a></sub></sup><a name="coalton-vector-find-elem-value"></a>
+#### <a href="#coalton-vector-find-elem-value"><code>(FIND-ELEM E V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L247-L259">src</a></sub></sup><a name="coalton-vector-find-elem-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-eq-class">Eq</a> :A &rArr; :A * <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> <a href="#coalton-ufix-type">UFix</a></code>
 
 Find the index of element `e` in `v`.
@@ -11537,7 +11537,7 @@ Find the index of element `e` in `v`.
 
 ***
 
-#### <a href="#coalton-vector-head-value"><code>(HEAD V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L218-L220">src</a></sub></sup><a name="coalton-vector-head-value"></a>
+#### <a href="#coalton-vector-head-value"><code>(HEAD V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L224-L226">src</a></sub></sup><a name="coalton-vector-head-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> :A</code>
 
 Return the first item of `v`.
@@ -11546,7 +11546,7 @@ Return the first item of `v`.
 
 ***
 
-#### <a href="#coalton-vector-head-unsafe-value"><code>(HEAD-UNSAFE V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L224-L226">src</a></sub></sup><a name="coalton-vector-head-unsafe-value"></a>
+#### <a href="#coalton-vector-head-unsafe-value"><code>(HEAD-UNSAFE V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L230-L232">src</a></sub></sup><a name="coalton-vector-head-unsafe-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; :A</code>
 
 Return the first item of `v` without first checking if `v` is empty.
@@ -11555,7 +11555,7 @@ Return the first item of `v` without first checking if `v` is empty.
 
 ***
 
-#### <a href="#coalton-vector-index-value"><code>(INDEX INDEX V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L194-L198">src</a></sub></sup><a name="coalton-vector-index-value"></a>
+#### <a href="#coalton-vector-index-value"><code>(INDEX INDEX V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L200-L204">src</a></sub></sup><a name="coalton-vector-index-value"></a>
 <code>&forall; :A. <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> :A</code>
 
 Return the `index`th element of `v`.
@@ -11564,7 +11564,7 @@ Return the `index`th element of `v`.
 
 ***
 
-#### <a href="#coalton-vector-index-unsafe-value"><code>(INDEX-UNSAFE IDX V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L202-L205">src</a></sub></sup><a name="coalton-vector-index-unsafe-value"></a>
+#### <a href="#coalton-vector-index-unsafe-value"><code>(INDEX-UNSAFE IDX V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L208-L211">src</a></sub></sup><a name="coalton-vector-index-unsafe-value"></a>
 <code>&forall; :A. <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; :A</code>
 
 Return the `idx`th element of `v` without checking if the element exists.
@@ -11573,7 +11573,7 @@ Return the `idx`th element of `v` without checking if the element exists.
 
 ***
 
-#### <a href="#coalton-vector-last-value"><code>(LAST V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L229-L233">src</a></sub></sup><a name="coalton-vector-last-value"></a>
+#### <a href="#coalton-vector-last-value"><code>(LAST V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L235-L239">src</a></sub></sup><a name="coalton-vector-last-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> :A</code>
 
 Return the last element of `v`.
@@ -11582,7 +11582,7 @@ Return the last element of `v`.
 
 ***
 
-#### <a href="#coalton-vector-last-unsafe-value"><code>(LAST-UNSAFE V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L236-L238">src</a></sub></sup><a name="coalton-vector-last-unsafe-value"></a>
+#### <a href="#coalton-vector-last-unsafe-value"><code>(LAST-UNSAFE V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L242-L244">src</a></sub></sup><a name="coalton-vector-last-unsafe-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; :A</code>
 
 Return the last element of `v` without first checking if `v` is empty.
@@ -11591,7 +11591,7 @@ Return the last element of `v` without first checking if `v` is empty.
 
 ***
 
-#### <a href="#coalton-vector-length-value"><code>(LENGTH V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L94-L97">src</a></sub></sup><a name="coalton-vector-length-value"></a>
+#### <a href="#coalton-vector-length-value"><code>(LENGTH V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L100-L103">src</a></sub></sup><a name="coalton-vector-length-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-ufix-type">UFix</a></code>
 
 Returns the length of `v`.
@@ -11609,7 +11609,7 @@ Create a new empty vector
 
 ***
 
-#### <a href="#coalton-vector-pop!-value"><code>(POP! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L180-L184">src</a></sub></sup><a name="coalton-vector-pop!-value"></a>
+#### <a href="#coalton-vector-pop!-value"><code>(POP! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L186-L190">src</a></sub></sup><a name="coalton-vector-pop!-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> :A</code>
 
 Remove and return the last item of `v`.
@@ -11618,7 +11618,7 @@ Remove and return the last item of `v`.
 
 ***
 
-#### <a href="#coalton-vector-pop-unsafe!-value"><code>(POP-UNSAFE! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L188-L191">src</a></sub></sup><a name="coalton-vector-pop-unsafe!-value"></a>
+#### <a href="#coalton-vector-pop-unsafe!-value"><code>(POP-UNSAFE! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L194-L197">src</a></sub></sup><a name="coalton-vector-pop-unsafe!-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; :A</code>
 
 Remove and return the last item of `v` without checking if the vector is empty.
@@ -11627,7 +11627,7 @@ Remove and return the last item of `v` without checking if the vector is empty.
 
 ***
 
-#### <a href="#coalton-vector-push!-value"><code>(PUSH! ITEM V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L174-L177">src</a></sub></sup><a name="coalton-vector-push!-value"></a>
+#### <a href="#coalton-vector-push!-value"><code>(PUSH! ITEM V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L180-L183">src</a></sub></sup><a name="coalton-vector-push!-value"></a>
 <code>&forall; :A. :A * <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-ufix-type">UFix</a></code>
 
 Append `item` to `v` and resize `v` if necessary, returning the index of the new item.
@@ -11636,7 +11636,7 @@ Append `item` to `v` and resize `v` if necessary, returning the index of the new
 
 ***
 
-#### <a href="#coalton-vector-resect!-value"><code>(RESECT! V START END)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L154-L164">src</a></sub></sup><a name="coalton-vector-resect!-value"></a>
+#### <a href="#coalton-vector-resect!-value"><code>(RESECT! V START END)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L160-L170">src</a></sub></sup><a name="coalton-vector-resect!-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A * <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-ufix-type">UFix</a> &rarr; Void</code>
 
 Destructively kills a subsequence in a vector bounded by given indices.
@@ -11648,7 +11648,7 @@ length of `v` are ignored.
 
 ***
 
-#### <a href="#coalton-vector-reverse-value"><code>(REVERSE V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L270-L276">src</a></sub></sup><a name="coalton-vector-reverse-value"></a>
+#### <a href="#coalton-vector-reverse-value"><code>(REVERSE V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L284-L290">src</a></sub></sup><a name="coalton-vector-reverse-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-vector-vector-type">Vector</a> :A</code>
 
 Returns a fresh vector with the elements of vector `v` in reverse order.  The original vector isn't modified.
@@ -11657,7 +11657,7 @@ Returns a fresh vector with the elements of vector `v` in reverse order.  The or
 
 ***
 
-#### <a href="#coalton-vector-reverse!-value"><code>(REVERSE! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L264-L267">src</a></sub></sup><a name="coalton-vector-reverse!-value"></a>
+#### <a href="#coalton-vector-reverse!-value"><code>(REVERSE! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L278-L281">src</a></sub></sup><a name="coalton-vector-reverse!-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-vector-vector-type">Vector</a> :A</code>
 
 Returns a vector with the elements of vector `v` in reverse order.  The original vector may be destroyed to produce the result.
@@ -11666,7 +11666,7 @@ Returns a vector with the elements of vector `v` in reverse order.  The original
 
 ***
 
-#### <a href="#coalton-vector-set!-value"><code>(SET! IDX ITEM V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L209-L214">src</a></sub></sup><a name="coalton-vector-set!-value"></a>
+#### <a href="#coalton-vector-set!-value"><code>(SET! IDX ITEM V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L215-L220">src</a></sub></sup><a name="coalton-vector-set!-value"></a>
 <code>&forall; :A. <a href="#coalton-ufix-type">UFix</a> * :A * <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; Void</code>
 
 Set the `idx`th element of `v` to `item`. This function left intentionally unsafe because it does not have a return value to check.
@@ -11675,7 +11675,7 @@ Set the `idx`th element of `v` to `item`. This function left intentionally unsaf
 
 ***
 
-#### <a href="#coalton-vector-set-capacity!-value"><code>(SET-CAPACITY! NEW-CAPACITY V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L142-L150">src</a></sub></sup><a name="coalton-vector-set-capacity!-value"></a>
+#### <a href="#coalton-vector-set-capacity!-value"><code>(SET-CAPACITY! NEW-CAPACITY V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L148-L156">src</a></sub></sup><a name="coalton-vector-set-capacity!-value"></a>
 <code>&forall; :A. <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; Void</code>
 
 Set the capacity of `v` to `new-capacity`. Setting the capacity to lower then the length will remove elements from the end.
@@ -11684,7 +11684,7 @@ Set the capacity of `v` to `new-capacity`. Setting the capacity to lower then th
 
 ***
 
-#### <a href="#coalton-vector-singleton-value"><code>(SINGLETON X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L88-L90">src</a></sub></sup><a name="coalton-vector-singleton-value"></a>
+#### <a href="#coalton-vector-singleton-value"><code>(SINGLETON X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L94-L96">src</a></sub></sup><a name="coalton-vector-singleton-value"></a>
 <code>&forall; :A. :A &rarr; <a href="#coalton-vector-vector-type">Vector</a> :A</code>
 
 Create a new vector with a single element equal to `x`
@@ -11693,7 +11693,7 @@ Create a new vector with a single element equal to `x`
 
 ***
 
-#### <a href="#coalton-vector-singleton?-value"><code>(SINGLETON? V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L128-L130">src</a></sub></sup><a name="coalton-vector-singleton?-value"></a>
+#### <a href="#coalton-vector-singleton?-value"><code>(SINGLETON? V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L134-L136">src</a></sub></sup><a name="coalton-vector-singleton?-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is `v` a singleton?
@@ -11702,7 +11702,7 @@ Is `v` a singleton?
 
 ***
 
-#### <a href="#coalton-vector-sort!-value"><code>(SORT! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L308-L310">src</a></sub></sup><a name="coalton-vector-sort!-value"></a>
+#### <a href="#coalton-vector-sort!-value"><code>(SORT! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L322-L324">src</a></sub></sup><a name="coalton-vector-sort!-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-ord-class">Ord</a> :A &rArr; <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; Void</code>
 
 Sort a vector in-place in ascending order.
@@ -11711,7 +11711,7 @@ Sort a vector in-place in ascending order.
 
 ***
 
-#### <a href="#coalton-vector-sort-by!-value"><code>(SORT-BY! F V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L296-L304">src</a></sub></sup><a name="coalton-vector-sort-by!-value"></a>
+#### <a href="#coalton-vector-sort-by!-value"><code>(SORT-BY! F V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L310-L318">src</a></sub></sup><a name="coalton-vector-sort-by!-value"></a>
 <code>&forall; :A. (:A * :A &rarr; <a href="#coalton-boolean-type">Boolean</a>) * <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; Void</code>
 
 Sort a vector in-place with predicate function `f`.
@@ -11720,7 +11720,7 @@ Sort a vector in-place with predicate function `f`.
 
 ***
 
-#### <a href="#coalton-vector-subseq-value"><code>(SUBSEQ V START END)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L101-L111">src</a></sub></sup><a name="coalton-vector-subseq-value"></a>
+#### <a href="#coalton-vector-subseq-value"><code>(SUBSEQ V START END)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L107-L117">src</a></sub></sup><a name="coalton-vector-subseq-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A * <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-ufix-type">UFix</a> &rarr; <a href="#coalton-vector-vector-type">Vector</a> :A</code>
 
 Compute a subseq of a vector bounded by given indices.
@@ -11732,7 +11732,7 @@ length of `v` are ignored.
 
 ***
 
-#### <a href="#coalton-vector-swap-remove!-value"><code>(SWAP-REMOVE! IDX VEC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L279-L283">src</a></sub></sup><a name="coalton-vector-swap-remove!-value"></a>
+#### <a href="#coalton-vector-swap-remove!-value"><code>(SWAP-REMOVE! IDX VEC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L293-L297">src</a></sub></sup><a name="coalton-vector-swap-remove!-value"></a>
 <code>&forall; :A. <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> :A</code>
 
 Remove the element `idx` from `vec` and replace it with the last element in `vec`. Then return the removed element.
@@ -11741,7 +11741,7 @@ Remove the element `idx` from `vec` and replace it with the last element in `vec
 
 ***
 
-#### <a href="#coalton-vector-swap-remove-unsafe!-value"><code>(SWAP-REMOVE-UNSAFE! IDX VEC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L286-L293">src</a></sub></sup><a name="coalton-vector-swap-remove-unsafe!-value"></a>
+#### <a href="#coalton-vector-swap-remove-unsafe!-value"><code>(SWAP-REMOVE-UNSAFE! IDX VEC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L300-L307">src</a></sub></sup><a name="coalton-vector-swap-remove-unsafe!-value"></a>
 <code>&forall; :A. <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; :A</code>
 
 Remove the element `idx` from `vec` and replace it with the last element in `vec` without bounds checking. Then return the removed element.
@@ -11759,7 +11759,7 @@ Create a new vector with `n` elements preallocated.
 
 ***
 
-#### <a href="#coalton-vector-with-initial-element-value"><code>(WITH-INITIAL-ELEMENT N X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L80-L84">src</a></sub></sup><a name="coalton-vector-with-initial-element-value"></a>
+#### <a href="#coalton-vector-with-initial-element-value"><code>(WITH-INITIAL-ELEMENT N X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L81-L90">src</a></sub></sup><a name="coalton-vector-with-initial-element-value"></a>
 <code>&forall; :A. <a href="#coalton-ufix-type">UFix</a> * :A &rarr; <a href="#coalton-vector-vector-type">Vector</a> :A</code>
 
 Create a new vector with `n` elements equal to `x`.
