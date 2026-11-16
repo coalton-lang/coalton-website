@@ -2265,6 +2265,7 @@ Methods:
 - <code><a href="#coalton-classes-eq-class">Eq</a> <a href="#coalton-xmath-realalgebraic-realalgebraic-type">RealAlgebraic</a></code>
 - <code><a href="#coalton-classes-eq-class">Eq</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a></code>
 - <code><a href="#coalton-classes-eq-class">Eq</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-eq-class">Eq</a> <a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a></code>
 - <code><a href="#coalton-classes-eq-class">Eq</a> :T &rArr; <a href="#coalton-classes-eq-class">Eq</a> (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
 - <code><a href="#coalton-classes-eq-class">Eq</a> :T &rArr; <a href="#coalton-classes-eq-class">Eq</a> (<a href="#coalton-xmath-dual-dual-type">Dual</a> :T)</code>  
 Note: Eq only compares the primal component.
@@ -2735,6 +2736,7 @@ style="display:inline-flex;align-items:center;margin-left:8px;padding:2px 7px;bo
 - <code>(<a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> :A) (<a href="#coalton-classes-into-class">Into</a> :A <a href="#coalton-xmath-computable-reals-creal-type">CReal</a>) &rArr; <a href="#coalton-classes-into-class">Into</a> (<a href="#coalton-math-complex-complex-type">Complex</a> :A) (<a href="#coalton-math-complex-complex-type">Complex</a> <a href="#coalton-xmath-computable-reals-creal-type">CReal</a>)</code><a class=instance-overlap-badge href="/manual/operators/overlap/"
 title="Declared with (overlap); permits overlap with other marked instances."
 style="display:inline-flex;align-items:center;margin-left:8px;padding:2px 7px;border:1px solid #bccbea;border-radius:999px;background:#eef3ff;color:#355184;font:600 11px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;vertical-align:baseline;white-space:nowrap;text-decoration:none">overlap</a>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ifix-type">IFix</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-ufix-type">UFix</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i64-type">I64</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
@@ -2746,10 +2748,9 @@ style="display:inline-flex;align-items:center;margin-left:8px;padding:2px 7px;bo
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-i8-type">I8</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-u8-type">U8</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-bit-type">Bit</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
+- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f64-type">F64</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-f32-type">F32</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-fraction-type">Fraction</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
-- <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 - <code>(<a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> :T) (<a href="#coalton-classes-into-class">Into</a> :T (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)) &rArr; <a href="#coalton-classes-into-class">Into</a> (<a href="#coalton-math-complex-complex-type">Complex</a> :T) (<a href="#coalton-math-complex-complex-type">Complex</a> (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T))</code>
 - <code><a href="#coalton-classes-num-class">Num</a> :T &rArr; <a href="#coalton-classes-into-class">Into</a> :T (<a href="#coalton-xmath-hyperdual-hyperdual-type">Hyperdual</a> :T)</code>
 - <code><a href="#coalton-classes-into-class">Into</a> <a href="#coalton-integer-type">Integer</a> <a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a></code>
@@ -11782,10 +11783,7 @@ Construct a `Vector' containing the ELEMENTS, in the order listed.
 
 ### Types
 
-#### <a href="#coalton-xmath-big-float-big-float-type"><code>Big-Float</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L205-L206">src</a></sub></sup><a name="coalton-xmath-big-float-big-float-type"></a>
-
-An arbitrary (but fixed) precision floating point number.
-
+#### <a href="#coalton-xmath-big-float-big-float-type"><code>Big-Float</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-default.ct#L213-L219">src</a></sub></sup><a name="coalton-xmath-big-float-big-float-type"></a>
 <details>
 <summary>Instances</summary>
 
@@ -11829,10 +11827,11 @@ An arbitrary (but fixed) precision floating point number.
 
 ***
 
-#### <a href="#coalton-xmath-big-float-roundingmode-type"><code>RoundingMode</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L119-L119">src</a></sub></sup><a name="coalton-xmath-big-float-roundingmode-type"></a>
+#### <a href="#coalton-xmath-big-float-roundingmode-type"><code>RoundingMode</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-default.ct#L14-L22">src</a></sub></sup><a name="coalton-xmath-big-float-roundingmode-type"></a>
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#coalton-classes-eq-class">Eq</a> <a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a></code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a></code>
 
 </details>
@@ -11843,7 +11842,7 @@ An arbitrary (but fixed) precision floating point number.
 
 ### Values
 
-#### <a href="#coalton-xmath-big-float-bf-ee-value"><code>(BF-EE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L366-L369">src</a></sub></sup><a name="coalton-xmath-big-float-bf-ee-value"></a>
+#### <a href="#coalton-xmath-big-float-bf-ee-value"><code>(BF-EE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-default.ct#L1464-L1467">src</a></sub></sup><a name="coalton-xmath-big-float-bf-ee-value"></a>
 <code>Void &rarr; <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 
 Return the value of ee = exp(1) to the currently set precision.
@@ -11852,7 +11851,7 @@ Return the value of ee = exp(1) to the currently set precision.
 
 ***
 
-#### <a href="#coalton-xmath-big-float-bf-pi-value"><code>(BF-PI)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L336-L339">src</a></sub></sup><a name="coalton-xmath-big-float-bf-pi-value"></a>
+#### <a href="#coalton-xmath-big-float-bf-pi-value"><code>(BF-PI)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-default.ct#L906-L909">src</a></sub></sup><a name="coalton-xmath-big-float-bf-pi-value"></a>
 <code>Void &rarr; <a href="#coalton-xmath-big-float-big-float-type">Big-Float</a></code>
 
 Return the value of pi to the currently set precision.
@@ -11861,16 +11860,16 @@ Return the value of pi to the currently set precision.
 
 ***
 
-#### <a href="#coalton-xmath-big-float-get-precision-value"><code>(GET-PRECISION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L170-L173">src</a></sub></sup><a name="coalton-xmath-big-float-get-precision-value"></a>
+#### <a href="#coalton-xmath-big-float-get-precision-value"><code>(GET-PRECISION)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-default.ct#L77-L79">src</a></sub></sup><a name="coalton-xmath-big-float-get-precision-value"></a>
 <code>Void &rarr; <a href="#coalton-ufix-type">UFix</a></code>
 
-Get the current precision of Big-Float arithmetic.
+Get the current global precision of Big-Float arithmetic
 
 
 
 ***
 
-#### <a href="#coalton-xmath-big-float-get-rounding-mode-value"><code>(GET-ROUNDING-MODE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L176-L179">src</a></sub></sup><a name="coalton-xmath-big-float-get-rounding-mode-value"></a>
+#### <a href="#coalton-xmath-big-float-get-rounding-mode-value"><code>(GET-ROUNDING-MODE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-default.ct#L82-L85">src</a></sub></sup><a name="coalton-xmath-big-float-get-rounding-mode-value"></a>
 <code>Void &rarr; <a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a></code>
 
 Get the current rounding-mode of Big-Float arithmetic.
@@ -11879,7 +11878,7 @@ Get the current rounding-mode of Big-Float arithmetic.
 
 ***
 
-#### <a href="#coalton-xmath-big-float-round-to-f32-value"><code>(ROUND-TO-F32 A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L274-L274">src</a></sub></sup><a name="coalton-xmath-big-float-round-to-f32-value"></a>
+#### <a href="#coalton-xmath-big-float-round-to-f32-value"><code>(ROUND-TO-F32 A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-default.ct#L591-L593">src</a></sub></sup><a name="coalton-xmath-big-float-round-to-f32-value"></a>
 <code><a href="#coalton-xmath-big-float-big-float-type">Big-Float</a> &rarr; <a href="#coalton-f32-type">F32</a></code>
 
 Round a Big-Float to the nearest representable native float, with ties to even.
@@ -11888,7 +11887,7 @@ Round a Big-Float to the nearest representable native float, with ties to even.
 
 ***
 
-#### <a href="#coalton-xmath-big-float-round-to-f64-value"><code>(ROUND-TO-F64 A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L275-L275">src</a></sub></sup><a name="coalton-xmath-big-float-round-to-f64-value"></a>
+#### <a href="#coalton-xmath-big-float-round-to-f64-value"><code>(ROUND-TO-F64 A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-default.ct#L594-L596">src</a></sub></sup><a name="coalton-xmath-big-float-round-to-f64-value"></a>
 <code><a href="#coalton-xmath-big-float-big-float-type">Big-Float</a> &rarr; <a href="#coalton-f64-type">F64</a></code>
 
 Round a Big-Float to the nearest representable native float, with ties to even.
@@ -11897,7 +11896,7 @@ Round a Big-Float to the nearest representable native float, with ties to even.
 
 ***
 
-#### <a href="#coalton-xmath-big-float-set-precision!-value"><code>(SET-PRECISION! PREC-BITS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L152-L159">src</a></sub></sup><a name="coalton-xmath-big-float-set-precision!-value"></a>
+#### <a href="#coalton-xmath-big-float-set-precision!-value"><code>(SET-PRECISION! PREC-BITS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-default.ct#L59-L66">src</a></sub></sup><a name="coalton-xmath-big-float-set-precision!-value"></a>
 <code><a href="#coalton-ufix-type">UFix</a> &rarr; Void</code>
 
 Set the precision of Big-Float arithmetic to PREC-BITS bits.
@@ -11906,7 +11905,7 @@ Set the precision of Big-Float arithmetic to PREC-BITS bits.
 
 ***
 
-#### <a href="#coalton-xmath-big-float-set-rounding-mode!-value"><code>(SET-ROUNDING-MODE! R)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L162-L167">src</a></sub></sup><a name="coalton-xmath-big-float-set-rounding-mode!-value"></a>
+#### <a href="#coalton-xmath-big-float-set-rounding-mode!-value"><code>(SET-ROUNDING-MODE! R)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-default.ct#L69-L74">src</a></sub></sup><a name="coalton-xmath-big-float-set-rounding-mode!-value"></a>
 <code><a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a> &rarr; Void</code>
 
 Set the global rounding mode for Big-Float operations.
@@ -11915,7 +11914,7 @@ Set the global rounding mode for Big-Float operations.
 
 ***
 
-#### <a href="#coalton-xmath-big-float-with-precision-value"><code>(WITH-PRECISION F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L193-L195">src</a></sub></sup><a name="coalton-xmath-big-float-with-precision-value"></a>
+#### <a href="#coalton-xmath-big-float-with-precision-value"><code>(WITH-PRECISION F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-default.ct#L101-L103">src</a></sub></sup><a name="coalton-xmath-big-float-with-precision-value"></a>
 <code>&forall; (:A Values). (Void &rarr; :A) &key (:precision <a href="#coalton-ufix-type">UFix</a>) &rarr; :A</code>
 
 Call F with a temporary Big-Float PRECISION.
@@ -11924,7 +11923,7 @@ Call F with a temporary Big-Float PRECISION.
 
 ***
 
-#### <a href="#coalton-xmath-big-float-with-precision-rounding-value"><code>(WITH-PRECISION-ROUNDING F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L184-L189">src</a></sub></sup><a name="coalton-xmath-big-float-with-precision-rounding-value"></a>
+#### <a href="#coalton-xmath-big-float-with-precision-rounding-value"><code>(WITH-PRECISION-ROUNDING F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-default.ct#L90-L97">src</a></sub></sup><a name="coalton-xmath-big-float-with-precision-rounding-value"></a>
 <code>&forall; (:A Values). (Void &rarr; :A) &key (:precision <a href="#coalton-ufix-type">UFix</a>) (:rounding <a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a>) &rarr; :A</code>
 
 Call F with a temporary Big-Float PRECISION and ROUNDING mode.
@@ -11933,7 +11932,7 @@ Call F with a temporary Big-Float PRECISION and ROUNDING mode.
 
 ***
 
-#### <a href="#coalton-xmath-big-float-with-rounding-value"><code>(WITH-ROUNDING F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L199-L201">src</a></sub></sup><a name="coalton-xmath-big-float-with-rounding-value"></a>
+#### <a href="#coalton-xmath-big-float-with-rounding-value"><code>(WITH-ROUNDING F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-default.ct#L107-L109">src</a></sub></sup><a name="coalton-xmath-big-float-with-rounding-value"></a>
 <code>&forall; (:A Values). (Void &rarr; :A) &key (:rounding <a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a>) &rarr; :A</code>
 
 Call F with a temporary Big-Float ROUNDING mode.
@@ -11942,7 +11941,7 @@ Call F with a temporary Big-Float ROUNDING mode.
 
 ***
 
-#### <a href="#coalton-xmath-big-float-rnda-value"><code>RNDA</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L142-L144">src</a></sub></sup><a name="coalton-xmath-big-float-rnda-value"></a>
+#### <a href="#coalton-xmath-big-float-rnda-value"><code>RNDA</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-default.ct#L50-L52">src</a></sub></sup><a name="coalton-xmath-big-float-rnda-value"></a>
 <code><a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a></code>
 
 RouND Away from zero.
@@ -11951,7 +11950,7 @@ RouND Away from zero.
 
 ***
 
-#### <a href="#coalton-xmath-big-float-rndd-value"><code>RNDD</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L138-L140">src</a></sub></sup><a name="coalton-xmath-big-float-rndd-value"></a>
+#### <a href="#coalton-xmath-big-float-rndd-value"><code>RNDD</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-default.ct#L46-L48">src</a></sub></sup><a name="coalton-xmath-big-float-rndd-value"></a>
 <code><a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a></code>
 
 RouND Down, toward negative infinity.
@@ -11960,7 +11959,7 @@ RouND Down, toward negative infinity.
 
 ***
 
-#### <a href="#coalton-xmath-big-float-rndf-value"><code>RNDF</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L146-L148">src</a></sub></sup><a name="coalton-xmath-big-float-rndf-value"></a>
+#### <a href="#coalton-xmath-big-float-rndf-value"><code>RNDF</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-default.ct#L54-L56">src</a></sub></sup><a name="coalton-xmath-big-float-rndf-value"></a>
 <code><a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a></code>
 
 Faithful rounding (experimental).
@@ -11969,7 +11968,7 @@ Faithful rounding (experimental).
 
 ***
 
-#### <a href="#coalton-xmath-big-float-rndn-value"><code>RNDN</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L126-L128">src</a></sub></sup><a name="coalton-xmath-big-float-rndn-value"></a>
+#### <a href="#coalton-xmath-big-float-rndn-value"><code>RNDN</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-default.ct#L34-L36">src</a></sub></sup><a name="coalton-xmath-big-float-rndn-value"></a>
 <code><a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a></code>
 
 RouND to Nearest, with the even rounding rule.
@@ -11978,7 +11977,7 @@ RouND to Nearest, with the even rounding rule.
 
 ***
 
-#### <a href="#coalton-xmath-big-float-rndna-value"><code>RNDNA</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L122-L124">src</a></sub></sup><a name="coalton-xmath-big-float-rndna-value"></a>
+#### <a href="#coalton-xmath-big-float-rndna-value"><code>RNDNA</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-default.ct#L30-L32">src</a></sub></sup><a name="coalton-xmath-big-float-rndna-value"></a>
 <code><a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a></code>
 
 RouND to Nearest Away.
@@ -11987,7 +11986,7 @@ RouND to Nearest Away.
 
 ***
 
-#### <a href="#coalton-xmath-big-float-rndu-value"><code>RNDU</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L134-L136">src</a></sub></sup><a name="coalton-xmath-big-float-rndu-value"></a>
+#### <a href="#coalton-xmath-big-float-rndu-value"><code>RNDU</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-default.ct#L42-L44">src</a></sub></sup><a name="coalton-xmath-big-float-rndu-value"></a>
 <code><a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a></code>
 
 RouND Up, toward positive infinity.
@@ -11996,7 +11995,7 @@ RouND Up, toward positive infinity.
 
 ***
 
-#### <a href="#coalton-xmath-big-float-rndz-value"><code>RNDZ</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-sbcl.ct#L130-L132">src</a></sub></sup><a name="coalton-xmath-big-float-rndz-value"></a>
+#### <a href="#coalton-xmath-big-float-rndz-value"><code>RNDZ</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/big-float/impl-default.ct#L38-L40">src</a></sub></sup><a name="coalton-xmath-big-float-rndz-value"></a>
 <code><a href="#coalton-xmath-big-float-roundingmode-type">RoundingMode</a></code>
 
 RouND toward Zero.
@@ -12279,7 +12278,7 @@ The primal (i.e., real) part of a dual number.
 
 ### Values
 
-#### <a href="#coalton-xmath-dyadic-scale-value"><code>(SCALE X J)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/dyadic.ct#L165-L168">src</a></sub></sup><a name="coalton-xmath-dyadic-scale-value"></a>
+#### <a href="#coalton-xmath-dyadic-scale-value"><code>(SCALE X J)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/dyadic.ct#L237-L243">src</a></sub></sup><a name="coalton-xmath-dyadic-scale-value"></a>
 <code><a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a> * <a href="#coalton-integer-type">Integer</a> &rarr; <a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a></code>
 
 Scales a dyadic `x` by $2^{\mathtt{k}}$.
@@ -12288,7 +12287,7 @@ Scales a dyadic `x` by $2^{\mathtt{k}}$.
 
 ***
 
-#### <a href="#coalton-xmath-dyadic-shift-value"><code>(SHIFT K A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/dyadic.ct#L171-L180">src</a></sub></sup><a name="coalton-xmath-dyadic-shift-value"></a>
+#### <a href="#coalton-xmath-dyadic-shift-value"><code>(SHIFT K A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/dyadic.ct#L246-L256">src</a></sub></sup><a name="coalton-xmath-dyadic-shift-value"></a>
 <code><a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a> &rarr; <a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a></code>
 
 Shift dyadic `a` to its floor with $\mathtt{k}+1$ bits of precision.
@@ -12297,7 +12296,7 @@ Shift dyadic `a` to its floor with $\mathtt{k}+1$ bits of precision.
 
 ***
 
-#### <a href="#coalton-xmath-dyadic-simplify-value"><code>(SIMPLIFY D)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/dyadic.ct#L108-L112">src</a></sub></sup><a name="coalton-xmath-dyadic-simplify-value"></a>
+#### <a href="#coalton-xmath-dyadic-simplify-value"><code>(SIMPLIFY D)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/dyadic.ct#L134-L142">src</a></sub></sup><a name="coalton-xmath-dyadic-simplify-value"></a>
 <code><a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a> &rarr; <a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a></code>
 
 Simplifies a dyadic by maximizing the absolute value of the exponent.
@@ -12306,7 +12305,7 @@ Simplifies a dyadic by maximizing the absolute value of the exponent.
 
 ***
 
-#### <a href="#coalton-xmath-dyadic-simplify-integer-value"><code>(SIMPLIFY-INTEGER N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/dyadic.ct#L96-L105">src</a></sub></sup><a name="coalton-xmath-dyadic-simplify-integer-value"></a>
+#### <a href="#coalton-xmath-dyadic-simplify-integer-value"><code>(SIMPLIFY-INTEGER N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/xmath/dyadic.ct#L125-L131">src</a></sub></sup><a name="coalton-xmath-dyadic-simplify-integer-value"></a>
 <code><a href="#coalton-integer-type">Integer</a> &rarr; <a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a></code>
 
 Finds the simplest dyadic given an integer.
