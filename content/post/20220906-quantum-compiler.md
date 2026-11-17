@@ -6,7 +6,7 @@ math: true
 
 By [Elias Lawson-Fox](https://github.com/eliaslfox), [Aidan Nyquist](https://github.com/aijony), and [Robert Smith](https://twitter.com/stylewarning)
 
-*Updated July 1, 2025 by Robert Smith.*
+*Updated November 16, 2026 by Robert Smith.*
 
 {{< toc >}}
 
@@ -228,14 +228,14 @@ These algebraic numbers can be implemented as a new type in Coalton, which we'll
     (Alg Integer Integer))
 ```
 
-The `Alg` type can implement the `Eq` type class (which demands we implement equality) and the `Num` type class (which demands we implement addition, subtraction, multiplication, and some way to convert an integer into our new type).
+The `Alg` type can implement the `Eq` type class (which demands we implement equality) and the `Num` type class hierarchy via `define-num` (which demands we implement addition, subtraction, multiplication, and some way to convert an integer into our new type).
 
 ```lisp
   (define-instance (Eq Alg)
     (define (== (Alg a1 a2) (Alg b1 b2))
       (and (== a1 b1) (== a2 b2))))
 
-  (define-instance (Num Alg)
+  (define-num Alg
     (define (+ (Alg a1 a2) (Alg b1 b2))
       (Alg (+ a1 b1) (+ a2 b2)))
     (define (- (Alg a1 a2) (Alg b1 b2))
@@ -243,7 +243,7 @@ The `Alg` type can implement the `Eq` type class (which demands we implement equ
     (define (* (Alg a1 a2) (Alg b1 b2))
       (Alg (+ (* a1 b1) (* 2 (* a2 b2)))
               (+ (* a1 b2) (* a2 b1))))
-    (define (fromInt n)
+    (define (from-int n)
       (Alg n 0)))
 ```
 
@@ -261,12 +261,12 @@ How would we compute $2(-\sqrt{2})$? One way is to write $2$ explicitly as $2+0\
 #.(ALG 0 -2)
 ```
 
-Coalton however provides us a shorthand for `Num`-typed values. When Coalton sees a plain integer like `2` in the source syntax, it will actually interpret it as `(fromInt 2)`. One of two things are possible:
+Coalton however provides us a shorthand for `Ring`- and `Num`-typed values. When Coalton sees a plain integer like `2` in the source syntax, it will actually interpret it as `(from-int 2)`. One of two things are possible:
 
-1. From type inference, Coalton concludes that `(fromInt 2)` should result in a value of a specific type, such as `Alg`. In this case, it will use `(Num Alg)`'s `fromInt` method.
-2. Otherwise, Coalton concludes that the type of `(fromInt 2)` is ambiguous---we just know it must be a `Num` type and nothing else---in which case it assumes it is an `Integer`.
+1. From type inference, Coalton concludes that `(from-int 2)` should result in a value of a specific type, such as `Alg`. In this case, it will use `(Ring Alg)`'s `from-int` method.
+2. Otherwise, Coalton concludes that the type of `(from-int 2)` is ambiguous---we just know it must be a `Ring` type and nothing else---in which case it assumes it is an `Integer`.
 
-Since `Alg` implements `fromInt`, the integer syntax $n$ in a place where `Alg` is expected will automatically be interpreted as $n+0\sqrt{2}$. So we can rewrite the previous prompt more simply as:
+Since `Alg` implements `from-int`, the integer syntax $n$ in a place where `Alg` is expected will automatically be interpreted as $n+0\sqrt{2}$. So we can rewrite the previous prompt more simply as:
 
 ```lisp
 > (coalton (* 2 (Alg 0 -1)))
@@ -277,46 +277,46 @@ As is to be expected at this point, functions on `Alg` are inferred appropriatel
 
 ```lisp
 (define (algebraic-conjugate (Alg a b))
-  (Alg a (negate b)))
+  (Alg a (neg b)))
 ```
 
 We can see that Coalton has properly inferred the type:
 
 ```lisp
-> (type-of 'algebraic-conjugate)
-(ALG → ALG)
+> (describe-type-of 'algebraic-conjugate)
+ALG → ALG
 ```
 
-Modeling these algebras works out quite well, especially when we have more of them, matrices of them, vectors of them, polynomials of them, and so on. They _compose_ well. We can even make our own `Ring` class so that we can write code that is generic on _any_ ring.
+Modeling these algebras works out quite well, especially when we have more of them, matrices of them, vectors of them, polynomials of them, and so on. They _compose_ well. Coalton's standard library builds its algebraic hierarchy (`Additive`, `AdditiveGroup`, `Multiplicative`, `Semiring`, `Ring`, `Module`, `VectorSpace`, `InnerSpace`, etc.) on the same idea:
 
 ```lisp
-(define-class (Ring :t)
-  (add-id (:t))              ; additive identity
-  (mul-id (:t))              ; multiplicative identity
-  (ring-+ (:t -> :t -> :t))
-  (ring-* (:t -> :t -> :t)))
+(define-class (CustomRing :t)
+  (add-id :t)              ; additive identity
+  (mul-id :t)              ; multiplicative identity
+  (ring-+ (:t * :t -> :t))
+  (ring-* (:t * :t -> :t)))
 ```
 
 One can imagine how we could do the same for vector spaces, inner product spaces, and so on. These concepts aren't just theoretical benefits, they're actually routinely used in practice.
 
-We've implemented one number system, but we can endow Coalton further with an understanding of how to convert out of this representation. As a simple example, we can instruct Coalton on how to convert, when possible, an `Alg` into a `Double-Float`:
+We've implemented one number system, but we can endow Coalton further with an understanding of how to convert out of this representation. As a simple example, we can instruct Coalton on how to convert, when possible, an `Alg` into a `F64`:
 
 ```lisp
-(define-instance (TryInto Alg Double-Float String)
-  (define (tryInto (Alg a b))
-    (match (Tuple (tryInto a) (tryInto b))
-      ((Tuple (Ok a) (Ok b))
-       (Ok (+ a (* b (math:sqrt 2.0d0)))))
-      (_ (Err "Can't represent an Alg as a Double-Float")))))
+(define-instance (TryInto Alg F64)
+  (define (try-into (Alg a b))
+    (match (Tuple (try-into a) (try-into b))
+      ((Tuple (Some a) (Some b))
+       (Some (+ a (* b (math:sqrt 2.0d0)))))
+      (_ None))))
 ```
 
-Whenever we need a double-float, we can safely get one by calling `tryInto` on our `Alg` object, and matching the `Ok` case if it succeeded, or the `Err` case if it failed. In this first example, we successfully convert $1+2\sqrt{2}$ into a float $3.828\ldots$ without otherwise being explicit about the conversion. (It figured it out since the other branch returns a `Double-Float`-related value, and both branches must have types that unify.)
+Whenever we need a double-float, we can safely get one by calling `try-into` on our `Alg` object, and matching the `Some` case if it succeeded, or the `None` case if it failed. In this first example, we successfully convert $1+2\sqrt{2}$ into a float $3.828\ldots$ without otherwise being explicit about the conversion. (It figured it out since the other branch returns a `F64`-related value, and both branches must have types that unify.)
 
 ```lisp
 COALTON-USER> (coalton
-                (match (tryInto (Alg 1 2))
-                  ((Ok f) f)
-                  ((Err _) (the Double-Float math:nan))))
+                (match (try-into (Alg 1 2))
+                  ((Some f) f)
+                  ((None) (the F64 math:nan))))
 3.8284271247461903d0
 ```
 
@@ -324,9 +324,9 @@ Contrast with this example, where $1+10^{1000}\sqrt{2}$ has no cogent representa
 
 ```lisp
 COALTON-USER> (coalton
-                 (match (tryInto (Alg 1 (^ 10 1000)))
-                   ((Ok f) f)
-                   ((Err _) (the Double-Float math:nan))))
+                 (match (try-into (Alg 1 (^ 10 1000)))
+                   ((Some f) f)
+                   ((None) (the F64 math:nan))))
 #<DOUBLE-FLOAT quiet NaN>
 ```
 

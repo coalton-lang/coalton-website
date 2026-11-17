@@ -6,6 +6,8 @@ math: false
 
 By [Robert Smith](https://twitter.com/stylewarning)
 
+*Updated November 16, 2026 by Robert Smith.*
+
 
 *We discuss how we can make an efficient, type-safe interface to existing libraries written in Common Lisp so that they can be used in Coalton code.*
 
@@ -25,21 +27,21 @@ CL-USER> (split-sequence:split-sequence #\, "Doe,John,S")
 10
 ```
 
-The first step should be to check whether the language has something built in already. To do this, we go to the [Reference](https://coalton-lang.github.io/reference/) and type a reasonable sounding function name in the search bar. If we search `split`, we see two results. Clicking the one in the `coalton-library/list` package seems to be the one we want.
+The first step should be to check whether the language has something built in already. To do this, we go to the [Reference](https://coalton-lang.github.io/reference/) and type a reasonable sounding function name in the search bar. If we search `split`, we see results in `coalton/string` and `coalton/list`.
 
 ```
-COALTON-USER> (coalton (coalton-library/list:split #\, "Doe,John,S"))
-("Doe" "John" "S")
+COALTON-USER> (coalton (coalton/string:split #\, "Doe,John,S"))
+#.(CONS "Doe" #.(CONS "John" #.(CONS "S" NIL)))
 ```
 
 In our program, we might make a local nickname for this package by adding this to our `defpackage` definition:
 
 ```
 (:local-nicknames
- (#:list #:coalton-library/list))
+ (#:str #:coalton/string))
 ```
 
-so that we may simply type `list:split`.
+so that we may simply type `str:split`.
 
 ## Find a library and create a package
 
@@ -136,7 +138,7 @@ In order to finish the binding for this type, we need plain ways of accessing an
 ```
 (declare day-of (TimeStamp -> Integer))
 (define (day-of ts)
-  (lisp Integer (ts)
+  (lisp (-> Integer) (ts)
     (lt:day-of ts)))
 ```
 
@@ -148,7 +150,7 @@ Internally, Coalton is going to make _new_ functions that wrap the Lisp code. Si
 (inline)
 (declare day-of (TimeStamp -> Integer))
 (define (day-of ts)
-  (lisp Integer (ts)
+  (lisp (-> Integer) (ts)
     (lt:day-of ts)))
 ```
 
@@ -160,9 +162,9 @@ The last thing we want is a direct constructor for a timestamp. We have a small 
 make-timestamp (&key day sec nsec)
 ```
 
-Coalton doesn't have keyword arguments, so we must decide what to do. In this case, it's probably simplest to create a function that takes all three arguments. If we want more restricted functions, like `make-timestamp-from-day`, we can always define such.
+In this case, it's simplest to create a function that takes all three arguments. If we want more restricted functions, like `make-timestamp-from-day`, we can always define such.
 
-Another issue is that our `make-timestamp` function will need to take some integer values. Can we safely pass those into Lisp? Coalton has [an interop guide](https://github.com/coalton-lang/coalton/blob/main/docs/coalton-lisp-interop.md) which tells us what Coalton does and does not promise about Coalton-Lisp interop. In the section called ["Promises of Data and Basic Data Types"](https://github.com/coalton-lang/coalton/blob/main/docs/coalton-lisp-interop.md#promises-of-data-and-basic-data-types), it says
+Another issue is that our `make-timestamp` function will need to take some integer values. Can we safely pass those into Lisp? Coalton has [an interop guide](/manual/topics/lisp-interop/) which tells us what Coalton does and does not promise about Coalton-Lisp interop. In the section called ["Promises of Data and Basic Data Types"](/manual/topics/lisp-interop/#promises-of-data-and-basic-data-types), it says
 
 > PROMISE: Coalton's Symbol, Integer, IFix, UFix, Char, String, F32, and F64 values correspond to their Lisp counterparts.
 
@@ -172,9 +174,9 @@ With those facts under our belt, we can write our constructor.
 
 ```
 (inline)
-(declare make-timestamp (Integer -> Integer -> Integer -> TimeStamp))
+(declare make-timestamp (Integer * Integer * Integer -> TimeStamp))
 (define (make-timestamp day sec nsec)
-  (lisp TimeStamp (day sec nsec)
+  (lisp (-> TimeStamp) (day sec nsec)
     (lt:make-timestamp :day day :sec sec :nsec nsec)))
 ```
 
@@ -189,37 +191,28 @@ COALTON-TIME> (coalton (make-timestamp 0 0 0))
 
 Now we can move on to some more functions from the API beyond the essentials. The functions `lt:now` and `lt:today` are pretty straightforward, except for one thing... neither of them have an input argument!
 
-In Coalton, all functions take _exactly one input_ and produce _exactly one output_. For functions that don't have a _meaningful_ input or output, we use `Unit`. `Unit` is a special data type that only has one member, which is also called `Unit`, and the only thing special about it is that it equals itself.
-
-Since it's so common to not need to take an argument as input (or, really, to take `Unit` as input), Coalton provides a shorthand for it, like so:
+In Coalton, a function that takes zero arguments has input type `Void`:
 
 ```
 (inline)
-(declare now (Unit -> TimeStamp))
+(declare now (Void -> TimeStamp))
 (define (now)
-  (lisp TimeStamp ()
+  (lisp (-> TimeStamp) ()
     (lt:now)))
 ```
-
-Notice how the type says `Unit` is the input, but the function definition doesn't show any arguments. The argument is there, it's just not required to write it when defining or calling the function, because it's (by definition) useless.
 
 ```
 COALTON-TIME> (coalton (now))
 @2025-08-12T01:15:31.926707-04:00
-
-COALTON-TIME> (coalton (now Unit))
-@2025-08-12T01:15:38.080910-04:00
 ```
-
-Both syntaxes work equally well.
 
 We can also bind `lt:today` in exactly the same way.
 
 ```
 (inline)
-(declare today (Unit -> TimeStamp))
+(declare today (Void -> TimeStamp))
 (define (today)
-  (lisp TimeStamp ()
+  (lisp (-> TimeStamp) ()
     (lt:today)))
 ```
 
@@ -243,14 +236,14 @@ In order to make our own type work with these, we need to have it participate in
 
 Let's start with `Eq`. If we look at [`Eq`'s documentation](https://coalton-lang.github.io/reference/), we see we just need to implement `==`. To do this, we define what is called an _instance_. It is very easy; it's almost like defining a Common Lisp method on a generic function.
 
-If we want to bind `==` to the library function `lt:timestamp=`, we must know precisely what the library function returns. We _presume_ it returns a boolean, but when we look in the documentation, it doesn't say. The problem is, if we get this wrong, we can get a type error—something we are trying to avoid altogether with Coalton! I think it's safe to assume it returns a _generalized_ boolean, but we should force it to be an ordinary boolean of `cl:t` or `cl:nil`. Coalton helpfully provides the function `to-boolean` to force its argument to be a boolean.
+If we want to bind `==` to the library function `lt:timestamp=`, we must know precisely what the library function returns. We _presume_ it returns a boolean, but when we look in the documentation, it doesn't say. The problem is, if we get this wrong, we can get a type error—something we are trying to avoid altogether with Coalton! I think it's safe to assume it returns a _generalized_ boolean, so we can coerce it to a strict `cl:boolean` (`cl:t` or `cl:nil`) with `(cl:and ... cl:t)`:
 
 ```
 (define-instance (Eq TimeStamp)
   (inline)
   (define (== t1 t2)
-    (lisp Boolean (t1 t2)
-      (to-boolean (lt:timestamp= t1 t2)))))
+    (lisp (-> Boolean) (t1 t2)
+      (cl:and (lt:timestamp= t1 t2) cl:t))))
 ```
 
 Again, we inline, because we are essentially just calling the function.
@@ -278,16 +271,7 @@ Another fact we can see here about Coalton is that it's an impure language. The 
 
 The other functions of interest are the comparison functions: `<`, `<=`, `>`, and `>=`. Since we have `==`, theoretically we only need one of these functions to implement all the others.
 
-In Coalton, the type class in charge of this is called `Ord`. Popping over to the [`Ord` documentation](https://coalton-lang.github.io/reference/#ord-class), we see we need to implement a function called `<=>` which takes two objects and returns an `Ord`.
-
-Huh? `Ord` and `Ord`?
-
-There are two things called `Ord`.
-
-1. There is a _type class_ called `Ord`, which has a method called `<=>` which does comparisons.
-2. There is a _type_[^rename] called `Ord` whose members are `LT`, `EQ`, and `GT` which indicate a "Less-Than", "EQual", or "Greater-Than" result. The method `<=>` returns an `Ord`.
-
-[^rename]: The Coalton developers have been contemplating renaming the _type_ from `Ord` to `OrdResult`.
+In Coalton, the type class in charge of this is called `Ord`. Popping over to the [`Ord` documentation](https://coalton-lang.github.io/reference/#ord-class), we see we need to implement a function called `<=>` which takes two objects and returns an `Ordering` (`LT`, `EQ`, or `GT`, indicating "Less-Than", "EQual", or "Greater-Than").
 
 So we need to write a method on `<=>` for our `TimeStamp` so that:
 
@@ -300,7 +284,7 @@ Now that we understand `<=>`, it's easy enough to implement.
 ```
 (define-instance (Ord TimeStamp)
   (define (<=> t1 t2)
-    (lisp Ord (t1 t2)
+    (lisp (-> Ordering) (t1 t2)
       (cl:cond
         ((lt:timestamp< t1 t2) LT)
         ((lt:timestamp> t1 t2) GT)
@@ -322,7 +306,7 @@ _This section is an aside and can be skipped._
 
 Why didn't we inline `<=>`? It's because the implementation is no longer just a direct call to a function. It has some compound logic. We _could_ inline it if we wanted to—it's not illegal—but it may not provide much benefit.
 
-But doesn't that mean that all of our comparison functions will be costly? The answer is basically yes. When we call `<`, internally `<=>` will get called, which will call a couple of the `lt:timestamp{>,<}` comparison functions, which will produce an `Ord`, which will then get converted to `True` if it's `LT`.
+But doesn't that mean that all of our comparison functions will be costly? The answer is basically yes. When we call `<`, internally `<=>` will get called, which will call a couple of the `lt:timestamp{>,<}` comparison functions, which will produce an `Ordering`, which will then get converted to `True` if it's `LT`.
 
 Whew. All that for just a single less-than comparison?
 
@@ -330,16 +314,16 @@ Coalton gives you an option to shortcut all of that. We can make any individual 
 
 ```
 (inline)
-(declare efficient-timestamp< (TimeStamp -> TimeStamp -> Boolean))
+(declare efficient-timestamp< (TimeStamp * TimeStamp -> Boolean))
 (define (efficient-timestamp< t1 t2)
-  (lisp Boolean (t1 t2)
-    (to-boolean (lt:timestamp< t1 t2))))
+  (lisp (-> Boolean) (t1 t2)
+    (cl:and (lt:timestamp< t1 t2) cl:t)))
 ```
 
 Of course, we don't want to have to call this function manually, but it _is_ more efficient than the rigamarole of `<=>`. We can tell Coalton to use it when circumstances permit by adding a `specialize` directive.
 
 ```
-(specialize < efficient-timestamp< (TimeStamp -> TimeStamp -> Boolean))
+(specialize < efficient-timestamp< (TimeStamp * TimeStamp -> Boolean))
 ```
 
 This says:
@@ -414,10 +398,10 @@ _These are things we should absolutely double check! If we get it wrong, our pro
 
 By looking at the source, this all seems correct. As such, our biggest challenge is going to be that _unit_ argument.
 
-Coalton doesn't have symbol literals or keyword literals. But it _does_ have a `Symbol` data type in the `coalton-library/symbol` package and a way to make keywords using the `make-keyword` function. As such, let's add
+Coalton doesn't have symbol literals or keyword literals. But it _does_ have a `Symbol` data type in the `coalton/symbol` package and a way to make keywords using the `make-keyword` function. As such, let's add
 
 ```
-(#:sym #:coalton-library/symbol)
+(#:sym #:coalton/symbol)
 ```
 
 to our package's local nicknames. It is already loaded as a part of Coalton, so we just want to give it a nickname for easy access. From here, we can define all of our units:
@@ -472,10 +456,10 @@ COALTON-TIME> (coalton (the sym:Symbol (into Minute)))
 Now that we have a data type for the time units, we can define a nice API function.
 
 ```
-(declare offset (TimeUnit -> Integer -> TimeStamp -> TimeStamp))
+(declare offset (TimeUnit * Integer * TimeStamp -> TimeStamp))
 (define (offset tu amount ts)
   (let ((kw (the sym:Symbol (into tu))))
-    (lisp TimeStamp (kw amount ts)
+    (lisp (-> TimeStamp) (kw amount ts)
       (lt:timestamp+ ts amount kw))))
 ```
 
@@ -495,25 +479,17 @@ It looks like it took me a whole 11 seconds to type that second command. :)
 
 _This section is an aside and can be skipped._
 
-The `lt:timestamp+` function has the argument order timestamp-amount-unit but the Coalton function has the order unit-amount-timestamp. What gives?
-
-Either argument order would work fine in Coalton, but _good Coalton functions should put the arguments that are least likely to change from call to call first_. In the case of this function, the time unit is by far the most important argument that will probably change least, the amount of offset comes second, and the timestamp itself comes last. If we follow this rule of thumb, Coalton's currying can make for some very elegant functions. For example, we can make an `hour-offset` function simply by providing just one argument to `offset`:
+The `lt:timestamp+` function has the argument order timestamp-amount-unit, while our `offset` function has the order unit-amount-timestamp. Either argument order works fine in Coalton, and we can easily specialize helpers with `fn` (or `ƒ`):
 
 ```
-(define hour-offset (offset Hour))
+(define (hour-offset amount ts)
+  (offset Hour amount ts))
+
+(define (increment-hour ts)
+  (offset Hour 1 ts))
 ```
 
-We can go further; we can make an hour increment function by specifying an additional argument:
-
-```
-(define increment-hour (hour-offset 1))
-
-;; or
-
-(define increment-hour (offset Hour 1))
-```
-
-We don't need to actually explicitly define these functions. In code, if we have a list of timestamps `tx`, we could increment each one by an hour by writing `(map (offset Hour 1) tx)`.
+In code, if we have a list of timestamps `tx`, we can increment each one by an hour by writing `(map (fn (ts) (offset Hour 1 ts)) tx)`.
 
 ## Wrapping it up
 
@@ -524,7 +500,7 @@ The only thing left to do is export our useful functions. In this case, our fina
   (:use #:coalton #:coalton-prelude)
   (:local-nicknames
    (#:lt #:local-time)
-   (#:sym #:coalton-library/symbol))
+   (#:sym #:coalton/symbol))
   (:export
    #:TimeStamp
    #:day-of
@@ -555,7 +531,7 @@ With this, we have the beginnings of a nice and efficient "Direct Style" API to 
 
 There are many topics we didn't discuss that show up in more advanced library usages. To throw a bone, here's how we might deal with various concepts.
 
-- **Functions with multiple values**: We can either ignore values that aren't of interest, or put them in a `Tuple`. It is important we handle multiple values, because returning more values than Coalton expects can lead to type errors. When it doubt, wrap your returned expression in `(cl:values ...)` to ensure only one value gets returned.
+- **Functions with multiple values**: We can return multiple values directly with `(lisp (-> Type1 * Type2) ...)` and bind them with `(let (values a b) = ...)`, or put them in a `Tuple`.
 - **Functions with multiple input types**: If multiple argument types are allowed, generally we split those into separate functions.
 - **Functions with multiple output types**: If multiple output types are possible, we either try to normalize the type, or define an algebraic data type to capture the union of the different types.
 - **Generic functions**: Type classes and type class instances can be used to bind (and emulate) generic functions, so long as the generic functions are not too complicated. If they are very complicated, then some work needs to be done to simplify their interface, possibly by creating several Coalton functions.
@@ -571,7 +547,7 @@ Are you having trouble figuring out how to use a Common Lisp library from Coalto
   (:use #:coalton #:coalton-prelude)
   (:local-nicknames
    (#:lt #:local-time)
-   (#:sym #:coalton-library/symbol))
+   (#:sym #:coalton/symbol))
   (:export
    #:TimeStamp
    #:day-of
@@ -604,48 +580,48 @@ Are you having trouble figuring out how to use a Common Lisp library from Coalto
 
   (declare day-of (TimeStamp -> Integer))
   (define (day-of ts)
-    (lisp Integer (ts)
+    (lisp (-> Integer) (ts)
       (lt:day-of ts)))
 
   (declare sec-of (TimeStamp -> Integer))
   (define (sec-of ts)
-    (lisp Integer (ts)
+    (lisp (-> Integer) (ts)
       (lt:sec-of ts)))
 
   (declare nsec-of (TimeStamp -> Integer))
   (define (nsec-of ts)
-    (lisp Integer (ts)
+    (lisp (-> Integer) (ts)
       (lt:nsec-of ts)))
 
   ;; Constructors
   (inline)
-  (declare make-timestamp (Integer -> Integer -> Integer -> TimeStamp))
+  (declare make-timestamp (Integer * Integer * Integer -> TimeStamp))
   (define (make-timestamp day sec nsec)
-    (lisp TimeStamp (day sec nsec)
+    (lisp (-> TimeStamp) (day sec nsec)
       (lt:make-timestamp :day day :sec sec :nsec nsec)))
 
   (inline)
-  (declare now (Unit -> TimeStamp))
+  (declare now (Void -> TimeStamp))
   (define (now)
-    (lisp TimeStamp ()
+    (lisp (-> TimeStamp) ()
       (lt:now)))
 
   (inline)
-  (declare today (Unit -> TimeStamp))
+  (declare today (Void -> TimeStamp))
   (define (today)
-    (lisp TimeStamp ()
+    (lisp (-> TimeStamp) ()
       (lt:today)))
 
   ;; Comparison
   (define-instance (Eq TimeStamp)
     (inline)
     (define (== t1 t2)
-      (lisp Boolean (t1 t2)
-        (to-boolean (lt:timestamp= t1 t2)))))
+      (lisp (-> Boolean) (t1 t2)
+        (cl:and (lt:timestamp= t1 t2) cl:t))))
 
   (define-instance (Ord TimeStamp)
     (define (<=> t1 t2)
-      (lisp Ord (t1 t2)
+      (lisp (-> Ordering) (t1 t2)
         (cl:cond
           ((lt:timestamp< t1 t2) LT)
           ((lt:timestamp> t1 t2) GT)
@@ -653,36 +629,36 @@ Are you having trouble figuring out how to use a Common Lisp library from Coalto
 
   ;; Efficient Comparison
   (inline)
-  (declare efficient-timestamp< (TimeStamp -> TimeStamp -> Boolean))
+  (declare efficient-timestamp< (TimeStamp * TimeStamp -> Boolean))
   (define (efficient-timestamp< t1 t2)
-    (lisp Boolean (t1 t2)
-      (to-boolean (lt:timestamp< t1 t2))))
+    (lisp (-> Boolean) (t1 t2)
+      (cl:and (lt:timestamp< t1 t2) cl:t)))
 
-  (specialize < efficient-timestamp< (TimeStamp -> TimeStamp -> Boolean))
+  (specialize < efficient-timestamp< (TimeStamp * TimeStamp -> Boolean))
 
   (inline)
-  (declare efficient-timestamp<= (TimeStamp -> TimeStamp -> Boolean))
+  (declare efficient-timestamp<= (TimeStamp * TimeStamp -> Boolean))
   (define (efficient-timestamp<= t1 t2)
-    (lisp Boolean (t1 t2)
-      (to-boolean (lt:timestamp<= t1 t2))))
+    (lisp (-> Boolean) (t1 t2)
+      (cl:and (lt:timestamp<= t1 t2) cl:t)))
 
-  (specialize <= efficient-timestamp<= (TimeStamp -> TimeStamp -> Boolean))
+  (specialize <= efficient-timestamp<= (TimeStamp * TimeStamp -> Boolean))
 
   (inline)
-  (declare efficient-timestamp> (TimeStamp -> TimeStamp -> Boolean))
+  (declare efficient-timestamp> (TimeStamp * TimeStamp -> Boolean))
   (define (efficient-timestamp> t1 t2)
-    (lisp Boolean (t1 t2)
-      (to-boolean (lt:timestamp> t1 t2))))
+    (lisp (-> Boolean) (t1 t2)
+      (cl:and (lt:timestamp> t1 t2) cl:t)))
 
-  (specialize > efficient-timestamp> (TimeStamp -> TimeStamp -> Boolean))
+  (specialize > efficient-timestamp> (TimeStamp * TimeStamp -> Boolean))
 
   (inline)
-  (declare efficient-timestamp>= (TimeStamp -> TimeStamp -> Boolean))
+  (declare efficient-timestamp>= (TimeStamp * TimeStamp -> Boolean))
   (define (efficient-timestamp>= t1 t2)
-    (lisp Boolean (t1 t2)
-      (to-boolean (lt:timestamp>= t1 t2))))
+    (lisp (-> Boolean) (t1 t2)
+      (cl:and (lt:timestamp>= t1 t2) cl:t)))
 
-  (specialize >= efficient-timestamp>= (TimeStamp -> TimeStamp -> Boolean))
+  (specialize >= efficient-timestamp>= (TimeStamp * TimeStamp -> Boolean))
 
   (repr :enum)
   (define-type TimeUnit
@@ -705,10 +681,10 @@ Are you having trouble figuring out how to use a Common Lisp library from Coalto
         ((Month)  (sym:make-keyword "MONTH"))
         ((Year)   (sym:make-keyword "YEAR")))))
 
-  (declare offset (TimeUnit -> Integer -> TimeStamp -> TimeStamp))
+  (declare offset (TimeUnit * Integer * TimeStamp -> TimeStamp))
   (define (offset tu amount ts)
     (let ((kw (the sym:Symbol (into tu))))
-      (lisp TimeStamp (kw amount ts)
+      (lisp (-> TimeStamp) (kw amount ts)
         (lt:timestamp+ ts amount kw))))
 )                                       ; coalton-toplevel
 ```

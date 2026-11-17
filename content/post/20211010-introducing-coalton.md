@@ -5,7 +5,7 @@ date: 2021-09-10
 
 By [Robert Smith](https://twitter.com/stylewarning), [Elias Lawson-Fox](https://github.com/eliaslfox), [Cole Scott](https://github.com/colescott)
 
-*Updated July 1, 2025 by Robert Smith.*
+*Updated November 16, 2026 by Robert Smith.*
 
 ## Introduction
 
@@ -21,7 +21,7 @@ This is Coalton computing Fibonacci numbers by exponentiating *functions* (not n
 
 ```lisp
 (coalton-toplevel
-  (declare function-power (Integer -> (:t -> :t) -> (:t -> :t)))
+  (declare function-power (Integer * (:t -> :t) -> (:t -> :t)))
   (define (function-power n f)
     (if (<= n 0)
         id
@@ -42,7 +42,7 @@ This is Coalton greeting you by making native use of Common Lisp functions:
 (coalton-toplevel
   (declare out (String -> Unit))
   (define (out s)
-    (lisp Unit (s)
+    (lisp (-> Unit) (s)
       (cl:write-string s) ; <-- These lines are Common Lisp
       Unit))              ; <--
 
@@ -108,9 +108,9 @@ Though the core of Coalton's power is defined in the packages `#:coalton` and `#
 ```
 (cl:defpackage #:coalton-intro
   (:use #:coalton #:coalton-prelude)
-  (:local-nicknames (#:math #:coalton-library/math)
-                    (#:str #:coalton-library/string)
-                    (#:list #:coalton-library/list)))
+  (:local-nicknames (#:math #:coalton/math)
+                    (#:str #:coalton/string)
+                    (#:list #:coalton/list)))
 ```
 
 In fact, we will use this package definition for the rest of this post.
@@ -173,11 +173,11 @@ In terms of its type system, Coalton's closest cousin is Haskell. Coalton's comp
   (coalton-toplevel
 
     ;; Note: Coalton has a built-in compose function
-    (declare my-compose ((:b -> :c) -> (:a -> :b) -> (:a -> :c))) 
+    (declare my-compose ((:b -> :c) * (:a -> :b) * :a -> :c))
     (define (my-compose f g x) 
       (f (g x)))
 
-    ;; Note: #:coalton-library/list contains its own length function
+    ;; Note: #:coalton/list contains its own length function
     (declare my-length (List :t -> UFix))
     (define (my-length l)
       (match l
@@ -218,7 +218,7 @@ In terms of its type system, Coalton's closest cousin is Haskell. Coalton's comp
           ((Mul e1 e2) (* (eval e1) (eval e2))))))
   
     ;; Num is a built-in type class. 
-    (declare line ((Num :t) => (:t -> :t -> :t -> :t)))
+    (declare line ((Num :t) => (:t * :t * :t -> :t)))
     (define (line slope y-intercept x)
       (+ y-intercept (* slope x))))
 ```
@@ -229,10 +229,10 @@ In terms of its type system, Coalton's closest cousin is Haskell. Coalton's comp
   (coalton-toplevel
   
     ;; Note: Coalton features its own built-in Functor class
-    (define-class (MyFunctor :F)
-      (map1 ((:a -> :b) -> (:F :a) -> (:F :b))))
+    (define-class (MyFunctor :f)
+      (map1 ((:a -> :b) * (:f :a) -> (:f :b))))
     
-    (define-instance (MyFunctor Binary-Tree)
+    (define-instance (MyFunctor BinaryTree)
       (define (map1 f t)
         (match t
           ((Node v t1 t2) (Node (f v) (map1 f t1) (map1 f t2)))
@@ -249,8 +249,8 @@ In terms of its type system, Coalton's closest cousin is Haskell. Coalton's comp
             (+ y z))))
   ; No value
 
-  > (type-of 'f)
-  ∀ :A. (NUM :A) (ORD :A) ⇒ (:A → :A → :A → :A)
+  > (describe-type-of 'f)
+  ∀ :A. (ADDITIVE :A) (ORD :A) ⇒ (:A * :A * :A → :A)
 ```
 
   We've been writing out the types of functions with the `declare` operator, but unless disambiguation or type-specialization is needed, declaring types is not necessary due to Coalton's type inference capabilities.
@@ -272,13 +272,13 @@ We describe the Coalton-Lisp interop in the following way: the *Coalton-calls-Li
 The Coalton-calls-Lisp bridge is pretty simple. Coalton has a special operator called `lisp` that allows arbitrary Lisp code to be embedded into Coalton. A lot of Coalton's standard library is written this way. For instance, the string library's `concat` function is written:
 
 ```lisp
-(in-package #:coalton-library/string)
+(in-package #:coalton/string)
 
 (coalton-toplevel
 
-  (declare concat (String -> String -> String))
+  (declare concat (String * String -> String))
   (define (concat str1 str2)
-    (lisp String (str1 str2)
+    (lisp (-> String) (str1 str2)
       (cl:concatenate 'cl:string str1 str2))))
 ```
 
@@ -298,20 +298,20 @@ As a result, `StringMap` objects in Coalton are always of the Common Lisp type `
 
   (declare make-table (Integer -> StringMap))
   (define (make-table size)
-    (lisp StringMap (size)
+    (lisp (-> StringMap) (size)
       (cl:make-hash-table :test 'cl:equal
                           :size size)))
   
-  (declare table-set (StringMap -> String -> String -> StringMap))
+  (declare table-set (StringMap * String * String -> StringMap))
   (define (table-set tbl k v)
-    (lisp StringMap (k v tbl)
+    (lisp (-> StringMap) (k v tbl)
       (cl:let ((table tbl))
         (cl:setf (cl:gethash k table) v)
         tbl)))
   
-  (declare table-get (StringMap -> String -> (Optional String)))
+  (declare table-get (StringMap * String -> (Optional String)))
   (define (table-get tbl k)
-    (lisp (Optional String) (tbl k)
+    (lisp (-> (Optional String)) (tbl k)
       (cl:let* ((table tbl)
                 (val   (cl:gethash k table)))
         (cl:if (cl:null val)
@@ -376,19 +376,17 @@ Because a functional style of programming is expected with Coalton, several feat
 
 **Single Namespace:** Coalton only has a single function/value namespace. Some Lispers might call this a "Lisp-1". There is no need for `#'` or the like within Coalton.
 
-**Curried Functions:** All functions are curried. Another way to say this is: Functions take exactly one argument. *However*, syntactically, we can write function applications in the usual ways expected by Lispers:
+**First-Class Functions:** Functions have fixed arity and can be constructed inline with `fn` (or `ƒ`):
 
 ```lisp
 (coalton-toplevel
   (define (f a b c)
     (+ a (+ b c)))
   
-  (define x (f 1 2 3))      ; ok!
-  (define y ((f 1 2) 3))    ; ok too!
-  (define z (((f 1) 2) 3))) ; ok three!
+  (define x (f 1 2 3))
+  (define add10 (fn (b c) (f 10 b c)))
+  (define y (add10 2 3)))
 ```
-
-Here, `x`, `y`, and `z` are all equal to `6`. As an optimization, Coalton compiles fully-saturated curried functions into non-closure-consing Lisp code if possible.
 
 **Pattern Matching:** There is a `match` operator in Coalton that works as you'd expect, including `_` for wildcard matches. See the `eval` example above.
 
@@ -407,10 +405,10 @@ Here's a little REPL example to compute the difference between the maximal and m
         (pure (- max min)))))
 LIST-WIDTH
 
-> (list-width (make-list 1 5 2))
+> (list-width [1 5 2])
 #.(SOME 4)
 
-> (list-width (make-list))
+> (list-width Nil)
 #.NONE
 ```
 

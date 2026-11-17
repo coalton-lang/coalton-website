@@ -6,6 +6,8 @@ math: true
 
 By [Robert Smith](https://twitter.com/stylewarning)
 
+*Updated November 16, 2026 by Robert Smith.*
+
 ***
 
 *In this post, we explore one way that typeclasses are useful. We do so by first painting ourselves into a corner while building a toy Common Lisp program, and then seeing how Coalton's typeclasses can ameliorate the issues.*
@@ -349,15 +351,15 @@ We can define a new data type in Coalton with `define-type`.
 ;;                   BOA constructors
 ;;           type names   |||||          slots
 ;;           vvvvvvvvvvv  vvvvv vvvvvvvvvvvvvvvvvvvvvvvvv
-(define-type Point       (Pt    Single-Float Single-Float))
-(define-type Translation (Trans Single-Float Single-Float))
-(define-type Rotation    (Rot   Single-Float))
-(define-type Dilation    (Dil   Single-Float))
+(define-type Point       (Pt    F32 F32))
+(define-type Translation (Trans F32 F32))
+(define-type Rotation    (Rot   F32))
+(define-type Dilation    (Dil   F32))
 ```
 
 These should be read as follows:
 
-> "A `Point` is a type that is constructed by calling `Pt` on two `Single-Float` values. A `Translation` is a type that is constructed by calling `Trans` on two `Single-Float` values. A `Rotation` is a type that is constructed by calling `Rot` on one `Single-Float` value. A `Dilation` is a type that is constructed by calling `Dil` on one `Single-Float` value."
+> "A `Point` is a type that is constructed by calling `Pt` on two `F32` values. A `Translation` is a type that is constructed by calling `Trans` on two `F32` values. A `Rotation` is a type that is constructed by calling `Rot` on one `F32` value. A `Dilation` is a type that is constructed by calling `Dil` on one `F32` value."
 
 If that was boring to read, that was intentional. These `define-type`s are extremely simple; they try to be as minimal as possible, without requiring slot names, getters, initargs, or any of that to be specified.
 
@@ -380,10 +382,10 @@ This doesn't do any computation, just pulls the innards of a `Point` out, by usi
 A little more complicated, let's write a function that calculates the distance that a `Translation` travels.
 
 ```lisp
-(declare distance (Translation -> Single-Float))
+(declare distance (Translation -> F32))
 (define (distance t)
   (match t
-    ((Translation dx dy) (sqrt (+ (* dx dx) (* dy dy))))))
+    ((Trans dx dy) (sqrt (+ (* dx dx) (* dy dy))))))
 ```
 
 This is similar to the last example, but we are actually computing something with the innards. In this case, and indeed almost all cases, the `declare` is totally optional, and is automatically inferred by the Coalton compiler.
@@ -396,10 +398,10 @@ A typeclass is like a protocol where we have to specify our protocol functions u
 
 ```lisp
 (define-class (Transformation :t)
-  (transform (:t -> Point -> Point))
+  (transform (:t * Point -> Point))
   (inverse   (:t -> :t))
-  (combine   (:t -> :t -> :t))
-  (identity  (:t)))
+  (combine   (:t * :t -> :t))
+  (identity  :t))
 ```
 
 How do we read this?
@@ -409,19 +411,19 @@ How do we read this?
 In addition, as can be seen, the precise types of each of these are spelled out. The syntax
 
 ```lisp
-(:t -> :t -> :t)
+(:t * :t -> :t)
 ```
 
-should be read[^types] as "a function that needs two `:t`'s to produce a `:t`." Similarly,
+should be read as "a function that needs two `:t`'s to produce a `:t`." Similarly,
 
 ```lisp
-(:t -> Point -> Point)
+(:t * Point -> Point)
 ```
 
 should be read as "a function that takes a `:t` and a `Point` and produces a `Point`. Simplest of all,
 
 ```lisp
-(:t)
+:t
 ```
 
 reads "an element of type `:t`."
@@ -461,7 +463,7 @@ surely we should be able to write `conjugate` and `n-fold`? Let's start with wha
 
 ```lisp
 (declare conjugate ((Transformation :s) (Transformation :t)
-                    => :s -> :t -> Point -> Point))
+                    => :s * :t * Point -> Point))
 ```
 
 Everything before the `=>` are *constraints*. They tell us what has to be true about type variables like `:s` and `:t`. Everything after `=>` is the ordinary type. So in this case, we read
@@ -471,16 +473,16 @@ Everything before the `=>` are *constraints*. They tell us what has to be true a
 The type of `n-fold` is even easier.
 
 ```lisp
-(declare n-fold ((Transformation :t) => Integer -> :t -> :t))
+(declare n-fold ((Transformation :t) => Integer * :t -> :t))
 ```
 
 It reads similarly. What are the implementations then?
 
 ```lisp
 (define (conjugate F A p)
-  (pipe p (transform F)
-          (transform A)
-          (transform (inverse F))))
+  (transform (inverse F)
+             (transform A
+                        (transform F p))))
 
 (define (n-fold n xform)
   (if (== n 0)
@@ -510,7 +512,7 @@ We can specialize `draw` to work with *any* combination of object and medium cla
 
 ```lisp
 (define-class (Drawable :obj-type :med-type)
-  (draw (:obj-type -> :med-type -> Unit)))
+  (draw (:obj-type * :med-type -> Unit)))
 ```
 
 `Drawable` is a way to specify a relationship between an `:obj-type` and a `:med-type`, and we can program in as many of them as we want.
@@ -523,22 +525,23 @@ More importantly, though, and where Lisp falls short, is that typeclasses can es
 (define-class (Convertible :from :to)
   (convert (:from -> :to)))
 
-(define-instance (Convertible Boolean Integer)
+(define-instance (Convertible Boolean UFix)
   (define (convert b) (if b 1 0)))
 ```
 
 This typeclass says that a type `:from` can be converted to a type `:to` via the `convert` function. Critically, though, we don't have to specify what `:to` must be anywhere we actually call or use `convert`, _even as a high-order function_.
 
-Here, we give a concrete example of converting `Boolean` to `Integer`. The function `middle` is used to get the middle value of a list. We index at half the length. Due to zero-based indexing, this overshoots by one element when it's even, so we subtract one in that case. In the following code, `convert` will _automatically_ select the right output type _based on the context of the call_.
+Here, we give a concrete example of converting `Boolean` to `UFix`. The function `middle` is used to get the middle value of a list. We index at half the length. Due to zero-based indexing, this overshoots by one element when it's even, so we subtract one in that case. In the following code, `convert` will _automatically_ select the right output type _based on the context of the call_.
 
 ```lisp
 (define (middle xs)
   (let ((len (length xs)))
-    (index xs (- (floor/ len 2)
-                 (convert (even len))))))
+    (list:index (- (math:div len 2)
+                   (convert (even? len)))
+                xs)))
 ```
 
-Here, it is deduced that `convert` _must_ return an `Integer`, and also that `even` returns a `Boolean`, so it selects the right instance of `Convertible` to convert the Boolean value into an integer one. At no point did we or do we or will we need to be explicit about that, as it's something that can be inferred.
+Here, it is deduced that `convert` _must_ return a `UFix`, and also that `even?` returns a `Boolean`, so it selects the right instance of `Convertible` to convert the Boolean value into a `UFix` one. At no point did we or do we or will we need to be explicit about that, as it's something that can be inferred.
 
 There is no equivalent concept in Common Lisp, because all types are dynamic. The closest we have in Common Lisp is using `eql` specializers or similar:
 
