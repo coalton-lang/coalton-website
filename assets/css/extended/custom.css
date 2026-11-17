@@ -114,6 +114,70 @@ html {
   text-decoration: underline;
 }
 
+/*
+ * GitHub-style blockquote alert callouts
+ */
+
+.post-content blockquote.callout {
+  margin: 20px 0;
+  padding: 12px 16px;
+  border-inline-start: 4px solid var(--callout-color, var(--primary));
+  background: var(--code-bg);
+  border-radius: 4px;
+}
+
+.post-content blockquote.callout > :last-child {
+  margin-bottom: 0;
+}
+
+.post-content blockquote.callout .callout-title {
+  margin: 0 0 6px 0;
+  font-weight: 600;
+  font-size: 0.9em;
+  letter-spacing: 0.02em;
+  color: var(--callout-color, var(--primary));
+}
+
+.post-content blockquote.callout-note {
+  --callout-color: #0969da;
+}
+
+.post-content blockquote.callout-tip {
+  --callout-color: #1a7f37;
+}
+
+.post-content blockquote.callout-important {
+  --callout-color: #8250df;
+}
+
+.post-content blockquote.callout-warning {
+  --callout-color: #9a6700;
+}
+
+.post-content blockquote.callout-caution {
+  --callout-color: #cf222e;
+}
+
+.dark .post-content blockquote.callout-note {
+  --callout-color: #4493f8;
+}
+
+.dark .post-content blockquote.callout-tip {
+  --callout-color: #3fb950;
+}
+
+.dark .post-content blockquote.callout-important {
+  --callout-color: #ab7df8;
+}
+
+.dark .post-content blockquote.callout-warning {
+  --callout-color: #d29922;
+}
+
+.dark .post-content blockquote.callout-caution {
+  --callout-color: #f85149;
+}
+
 @media only screen and (max-width: 1250px) {
   :root {
     --main-width: 1000px;
