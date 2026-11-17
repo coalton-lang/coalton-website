@@ -3068,6 +3068,7 @@ Methods:
 Note: Ord only compares the primal component.
 - <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-xmath-dyadic-dyadic-type">Dyadic</a></code>
 - <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-file-pathname-type">Pathname</a></code>
+- <code><a href="#coalton-classes-ord-class">Ord</a> :A &rArr; <a href="#coalton-classes-ord-class">Ord</a> (<a href="#coalton-seq-seq-type">Seq</a> :A)</code>
 - <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-string-type">String</a></code>
 - <code><a href="#coalton-classes-ord-class">Ord</a> <a href="#coalton-char-type">Char</a></code>
 - <code><a href="#coalton-classes-ord-class">Ord</a> :ELT &rArr; <a href="#coalton-classes-ord-class">Ord</a> (<a href="#coalton-list-type">List</a> :ELT)</code>
@@ -9336,7 +9337,7 @@ Persistent sequences based on relaxed radix balanced trees.
 
 ### Types
 
-#### <a href="#coalton-seq-seq-type"><code>Seq</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L52-L58">src</a></sub></sup><a name="coalton-seq-seq-type"></a>
+#### <a href="#coalton-seq-seq-type"><code>Seq</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L70-L76">src</a></sub></sup><a name="coalton-seq-seq-type"></a>
 <details>
 <summary>Instances</summary>
 
@@ -9359,6 +9360,7 @@ style="display:inline-flex;align-items:center;margin-left:8px;padding:2px 7px;bo
 - <code><a href="#coalton-classes-into-class">Into</a> (<a href="#coalton-seq-seq-type">Seq</a> :A) (<a href="#coalton-vector-vector-type">Vector</a> :A)</code>
 - <code><a href="#coalton-iterator-intoiterator-class">IntoIterator</a> (<a href="#coalton-seq-seq-type">Seq</a> :A) :A</code>
 - <code><a href="#coalton-classes-monoid-class">Monoid</a> (<a href="#coalton-seq-seq-type">Seq</a> :A)</code>
+- <code><a href="#coalton-classes-ord-class">Ord</a> :A &rArr; <a href="#coalton-classes-ord-class">Ord</a> (<a href="#coalton-seq-seq-type">Seq</a> :A)</code>
 - <code><a href="#coalton-threads-parallel-parallelfoldable-class">ParallelFoldable</a> (<a href="#coalton-seq-seq-type">Seq</a> :A) :A</code><a class=instance-overlap-badge href="/manual/operators/overlap/"
 title="Declared with (overlap); permits overlap with other marked instances."
 style="display:inline-flex;align-items:center;margin-left:8px;padding:2px 7px;border:1px solid #bccbea;border-radius:999px;background:#eef3ff;color:#355184;font:600 11px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;vertical-align:baseline;white-space:nowrap;text-decoration:none">overlap</a>
@@ -9375,7 +9377,7 @@ style="display:inline-flex;align-items:center;margin-left:8px;padding:2px 7px;bo
 
 ### Values
 
-#### <a href="#coalton-seq-conc-value"><code>(CONC LEFT RIGHT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L133-L168">src</a></sub></sup><a name="coalton-seq-conc-value"></a>
+#### <a href="#coalton-seq-conc-value"><code>(CONC LEFT RIGHT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L373-L408">src</a></sub></sup><a name="coalton-seq-conc-value"></a>
 <code>&forall; :A. <a href="#coalton-seq-seq-type">Seq</a> :A * <a href="#coalton-seq-seq-type">Seq</a> :A &rarr; <a href="#coalton-seq-seq-type">Seq</a> :A</code>
 
 Concatenate two `Seq`s
@@ -9384,13 +9386,43 @@ Concatenate two `Seq`s
 
 ***
 
-#### <a href="#coalton-seq-empty?-value"><code>(EMPTY? SEQ)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L73-L74">src</a></sub></sup><a name="coalton-seq-empty?-value"></a>
+#### <a href="#coalton-seq-drop-value"><code>(DROP SEQ N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L257-L276">src</a></sub></sup><a name="coalton-seq-drop-value"></a>
+<code>&forall; :A. <a href="#coalton-seq-seq-type">Seq</a> :A * <a href="#coalton-ufix-type">UFix</a> &rarr; <a href="#coalton-seq-seq-type">Seq</a> :A</code>
+
+Return a `Seq` of the elements of `seq` after the first `n`, or an empty
+`Seq` if `n` is at least `(size seq)`.
+
+
+
+***
+
+#### <a href="#coalton-seq-drop-last-value"><code>(DROP-LAST SEQ N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L288-L294">src</a></sub></sup><a name="coalton-seq-drop-last-value"></a>
+<code>&forall; :A. <a href="#coalton-seq-seq-type">Seq</a> :A * <a href="#coalton-ufix-type">UFix</a> &rarr; <a href="#coalton-seq-seq-type">Seq</a> :A</code>
+
+Return a `Seq` of the elements of `seq` without the last `n`, or an empty
+`Seq` if `n` is at least `(size seq)`.
+
+
+
+***
+
+#### <a href="#coalton-seq-empty?-value"><code>(EMPTY? SEQ)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L96-L97">src</a></sub></sup><a name="coalton-seq-empty?-value"></a>
 <code>&forall; :A. <a href="#coalton-seq-seq-type">Seq</a> :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 
 ***
 
-#### <a href="#coalton-seq-fold-range-value"><code>(FOLD-RANGE F INIT SEQ START END)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L175-L184">src</a></sub></sup><a name="coalton-seq-fold-range-value"></a>
+#### <a href="#coalton-seq-filter-value"><code>(FILTER PRED SEQ)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L360-L370">src</a></sub></sup><a name="coalton-seq-filter-value"></a>
+<code>&forall; :A. (:A &rarr; <a href="#coalton-boolean-type">Boolean</a>) * <a href="#coalton-seq-seq-type">Seq</a> :A &rarr; <a href="#coalton-seq-seq-type">Seq</a> :A</code>
+
+Return a new `Seq` containing the elements of `seq` that satisfy `pred`,
+in order.
+
+
+
+***
+
+#### <a href="#coalton-seq-fold-range-value"><code>(FOLD-RANGE F INIT SEQ START END)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L415-L424">src</a></sub></sup><a name="coalton-seq-fold-range-value"></a>
 <code>&forall; :B :A. (:B * :A &rarr; :B) * :B * <a href="#coalton-seq-seq-type">Seq</a> :A * <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-ufix-type">UFix</a> &rarr; :B</code>
 
 Fold `f` over the elements of `seq` at indices from `start` (inclusive)
@@ -9403,7 +9435,7 @@ time proportional to the number of elements folded, plus the height of
 
 ***
 
-#### <a href="#coalton-seq-get-value"><code>(GET SEQ IDX)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L77-L89">src</a></sub></sup><a name="coalton-seq-get-value"></a>
+#### <a href="#coalton-seq-get-value"><code>(GET SEQ IDX)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L119-L131">src</a></sub></sup><a name="coalton-seq-get-value"></a>
 <code>&forall; :A. <a href="#coalton-seq-seq-type">Seq</a> :A * <a href="#coalton-ufix-type">UFix</a> &rarr; <a href="#coalton-optional-type">Optional</a> :A</code>
 
 Get the member of `seq` at index `idx`, or `None` if `idx` is at least
@@ -9413,7 +9445,35 @@ Get the member of `seq` at index `idx`, or `None` if `idx` is at least
 
 ***
 
-#### <a href="#coalton-seq-map-with-value"><code>(MAP-WITH FOR-CHUNKS F SEQ)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L188-L221">src</a></sub></sup><a name="coalton-seq-map-with-value"></a>
+#### <a href="#coalton-seq-head-value"><code>(HEAD SEQ)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L105-L109">src</a></sub></sup><a name="coalton-seq-head-value"></a>
+<code>&forall; :A. <a href="#coalton-seq-seq-type">Seq</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> :A</code>
+
+Return the first element of `seq`, or `None` if `seq` is empty.
+
+
+
+***
+
+#### <a href="#coalton-seq-insert-value"><code>(INSERT SEQ IDX A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L178-L190">src</a></sub></sup><a name="coalton-seq-insert-value"></a>
+<code>&forall; :A. <a href="#coalton-seq-seq-type">Seq</a> :A * <a href="#coalton-ufix-type">UFix</a> * :A &rarr; <a href="#coalton-optional-type">Optional</a> (<a href="#coalton-seq-seq-type">Seq</a> :A)</code>
+
+If `idx` is at most `(size seq)`, return a new `Seq` with `a` inserted at
+index `idx`.
+
+
+
+***
+
+#### <a href="#coalton-seq-last-value"><code>(LAST SEQ)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L112-L116">src</a></sub></sup><a name="coalton-seq-last-value"></a>
+<code>&forall; :A. <a href="#coalton-seq-seq-type">Seq</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> :A</code>
+
+Return the last element of `seq`, or `None` if `seq` is empty.
+
+
+
+***
+
+#### <a href="#coalton-seq-map-with-value"><code>(MAP-WITH FOR-CHUNKS F SEQ)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L428-L461">src</a></sub></sup><a name="coalton-seq-map-with-value"></a>
 <code>&forall; :A :B. (<a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-ufix-type">UFix</a> * (<a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-ufix-type">UFix</a> &rarr; Void) &rarr; Void) * (:A &rarr; :B) * <a href="#coalton-seq-seq-type">Seq</a> :A &rarr; <a href="#coalton-seq-seq-type">Seq</a> :B</code>
 
 Apply `f` to every element of `seq`, as `map` does, using `for-chunks`
@@ -9436,7 +9496,17 @@ mapped by the call on the chunk containing its first index.
 
 ***
 
-#### <a href="#coalton-seq-new-value"><code>(NEW)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L61-L63">src</a></sub></sup><a name="coalton-seq-new-value"></a>
+#### <a href="#coalton-seq-modify-value"><code>(MODIFY SEQ IDX F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L156-L175">src</a></sub></sup><a name="coalton-seq-modify-value"></a>
+<code>&forall; :A. <a href="#coalton-seq-seq-type">Seq</a> :A * <a href="#coalton-ufix-type">UFix</a> * (:A &rarr; :A) &rarr; <a href="#coalton-optional-type">Optional</a> (<a href="#coalton-seq-seq-type">Seq</a> :A)</code>
+
+If `idx` is less than `(size seq)`, return a new `Seq` whose `idx`
+position contains the result of applying `f` to the element at `idx`.
+
+
+
+***
+
+#### <a href="#coalton-seq-new-value"><code>(NEW)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L79-L81">src</a></sub></sup><a name="coalton-seq-new-value"></a>
 <code>&forall; :A. Void &rarr; <a href="#coalton-seq-seq-type">Seq</a> :A</code>
 
 Create a new empty `Seq`.
@@ -9445,7 +9515,7 @@ Create a new empty `Seq`.
 
 ***
 
-#### <a href="#coalton-seq-pop-value"><code>(POP SEQ)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L125-L130">src</a></sub></sup><a name="coalton-seq-pop-value"></a>
+#### <a href="#coalton-seq-pop-value"><code>(POP SEQ)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L212-L217">src</a></sub></sup><a name="coalton-seq-pop-value"></a>
 <code>&forall; :A. <a href="#coalton-seq-seq-type">Seq</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :A (<a href="#coalton-seq-seq-type">Seq</a> :A))</code>
 
 If `seq` is empty, return `None`. Otherwise, the last member of `seq` and
@@ -9455,7 +9525,17 @@ a new `Seq` instance.
 
 ***
 
-#### <a href="#coalton-seq-push-value"><code>(PUSH SEQ A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L114-L122">src</a></sub></sup><a name="coalton-seq-push-value"></a>
+#### <a href="#coalton-seq-pop-front-value"><code>(POP-FRONT SEQ)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L227-L233">src</a></sub></sup><a name="coalton-seq-pop-front-value"></a>
+<code>&forall; :A. <a href="#coalton-seq-seq-type">Seq</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :A (<a href="#coalton-seq-seq-type">Seq</a> :A))</code>
+
+If `seq` is empty, return `None`. Otherwise, the first member of `seq` and
+a new `Seq` instance.
+
+
+
+***
+
+#### <a href="#coalton-seq-push-value"><code>(PUSH SEQ A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L201-L209">src</a></sub></sup><a name="coalton-seq-push-value"></a>
 <code>&forall; :A. <a href="#coalton-seq-seq-type">Seq</a> :A * :A &rarr; <a href="#coalton-seq-seq-type">Seq</a> :A</code>
 
 Push `a` onto the end of `seq`, returning a new `Seq` instance.
@@ -9464,7 +9544,16 @@ Push `a` onto the end of `seq`, returning a new `Seq` instance.
 
 ***
 
-#### <a href="#coalton-seq-put-value"><code>(PUT SEQ IDX A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L92-L111">src</a></sub></sup><a name="coalton-seq-put-value"></a>
+#### <a href="#coalton-seq-push-front-value"><code>(PUSH-FRONT SEQ A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L220-L224">src</a></sub></sup><a name="coalton-seq-push-front-value"></a>
+<code>&forall; :A. <a href="#coalton-seq-seq-type">Seq</a> :A * :A &rarr; <a href="#coalton-seq-seq-type">Seq</a> :A</code>
+
+Push `a` onto the front of `seq`, returning a new `Seq` instance.
+
+
+
+***
+
+#### <a href="#coalton-seq-put-value"><code>(PUT SEQ IDX A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L134-L153">src</a></sub></sup><a name="coalton-seq-put-value"></a>
 <code>&forall; :A. <a href="#coalton-seq-seq-type">Seq</a> :A * <a href="#coalton-ufix-type">UFix</a> * :A &rarr; <a href="#coalton-optional-type">Optional</a> (<a href="#coalton-seq-seq-type">Seq</a> :A)</code>
 
 If `idx` is less than `(size seq)`, Return a new `seq` whose `idx` position
@@ -9474,10 +9563,101 @@ contains `a`.
 
 ***
 
-#### <a href="#coalton-seq-size-value"><code>(SIZE SEQ)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L66-L70">src</a></sub></sup><a name="coalton-seq-size-value"></a>
+#### <a href="#coalton-seq-remove-value"><code>(REMOVE SEQ IDX)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L193-L198">src</a></sub></sup><a name="coalton-seq-remove-value"></a>
+<code>&forall; :A. <a href="#coalton-seq-seq-type">Seq</a> :A * <a href="#coalton-ufix-type">UFix</a> &rarr; <a href="#coalton-optional-type">Optional</a> (<a href="#coalton-seq-seq-type">Seq</a> :A)</code>
+
+If `idx` is less than `(size seq)`, return a new `Seq` without the member
+at index `idx`.
+
+
+
+***
+
+#### <a href="#coalton-seq-resect-value"><code>(RESECT SEQ START END)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L338-L347">src</a></sub></sup><a name="coalton-seq-resect-value"></a>
+<code>&forall; :A. <a href="#coalton-seq-seq-type">Seq</a> :A * <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-ufix-type">UFix</a> &rarr; <a href="#coalton-seq-seq-type">Seq</a> :A</code>
+
+Return a new `Seq` without the subsequence bounded by given indices.
+
+`start` index is inclusive and `end` index is exclusive. Indices beyond the
+size of `seq` are ignored.
+
+
+
+***
+
+#### <a href="#coalton-seq-reverse-value"><code>(REVERSE SEQ)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L350-L357">src</a></sub></sup><a name="coalton-seq-reverse-value"></a>
+<code>&forall; :A. <a href="#coalton-seq-seq-type">Seq</a> :A &rarr; <a href="#coalton-seq-seq-type">Seq</a> :A</code>
+
+Return a new `Seq` with the elements of `seq` in reverse order.
+
+
+
+***
+
+#### <a href="#coalton-seq-singleton-value"><code>(SINGLETON A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L84-L86">src</a></sub></sup><a name="coalton-seq-singleton-value"></a>
+<code>&forall; :A. :A &rarr; <a href="#coalton-seq-seq-type">Seq</a> :A</code>
+
+Create a new `Seq` containing a single element `a`.
+
+
+
+***
+
+#### <a href="#coalton-seq-singleton?-value"><code>(SINGLETON? SEQ)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L100-L102">src</a></sub></sup><a name="coalton-seq-singleton?-value"></a>
+<code>&forall; :A. <a href="#coalton-seq-seq-type">Seq</a> :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
+
+Is `seq` a singleton?
+
+
+
+***
+
+#### <a href="#coalton-seq-size-value"><code>(SIZE SEQ)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L89-L93">src</a></sub></sup><a name="coalton-seq-size-value"></a>
 <code>&forall; :A. <a href="#coalton-seq-seq-type">Seq</a> :A &rarr; <a href="#coalton-ufix-type">UFix</a></code>
 
 Return the number of elements in the `seq`.
+
+
+
+***
+
+#### <a href="#coalton-seq-split-at-value"><code>(SPLIT-AT SEQ N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L297-L325">src</a></sub></sup><a name="coalton-seq-split-at-value"></a>
+<code>&forall; :A. <a href="#coalton-seq-seq-type">Seq</a> :A * <a href="#coalton-ufix-type">UFix</a> &rarr; <a href="#coalton-seq-seq-type">Seq</a> :A * <a href="#coalton-seq-seq-type">Seq</a> :A</code>
+
+Split `seq` at index `n`, returning the first `n` elements and the
+remaining elements.
+
+
+
+***
+
+#### <a href="#coalton-seq-subseq-value"><code>(SUBSEQ SEQ START END)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L328-L335">src</a></sub></sup><a name="coalton-seq-subseq-value"></a>
+<code>&forall; :A. <a href="#coalton-seq-seq-type">Seq</a> :A * <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-ufix-type">UFix</a> &rarr; <a href="#coalton-seq-seq-type">Seq</a> :A</code>
+
+Compute a subsequence of `seq` bounded by given indices.
+
+`start` index is inclusive and `end` index is exclusive. Indices beyond the
+size of `seq` are ignored.
+
+
+
+***
+
+#### <a href="#coalton-seq-take-value"><code>(TAKE SEQ N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L236-L254">src</a></sub></sup><a name="coalton-seq-take-value"></a>
+<code>&forall; :A. <a href="#coalton-seq-seq-type">Seq</a> :A * <a href="#coalton-ufix-type">UFix</a> &rarr; <a href="#coalton-seq-seq-type">Seq</a> :A</code>
+
+Return a `Seq` of the first `n` elements of `seq`, or all of `seq` if `n`
+is at least `(size seq)`.
+
+
+
+***
+
+#### <a href="#coalton-seq-take-last-value"><code>(TAKE-LAST SEQ N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/seq.ct#L279-L285">src</a></sub></sup><a name="coalton-seq-take-last-value"></a>
+<code>&forall; :A. <a href="#coalton-seq-seq-type">Seq</a> :A * <a href="#coalton-ufix-type">UFix</a> &rarr; <a href="#coalton-seq-seq-type">Seq</a> :A</code>
+
+Return a `Seq` of the last `n` elements of `seq`, or all of `seq` if `n`
+is at least `(size seq)`.
 
 
 
