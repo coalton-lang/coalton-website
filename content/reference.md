@@ -4785,13 +4785,13 @@ Writes elements of an vector of type `:a` to a stream of type `:a`.
 
 ### Values
 
-#### <a href="#coalton-format-out-value"><code>OUT</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/format.ct#L1144-L1146">src</a></sub></sup><a name="coalton-format-out-value"></a>
+#### <a href="#coalton-format-out-value"><code>OUT</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/format.ct#L1165-L1167">src</a></sub></sup><a name="coalton-format-out-value"></a>
 <code><a href="#coalton-symbol-symbol-type">Symbol</a></code>
 
 
 ***
 
-#### <a href="#coalton-format-str-value"><code>STR</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/format.ct#L1140-L1142">src</a></sub></sup><a name="coalton-format-str-value"></a>
+#### <a href="#coalton-format-str-value"><code>STR</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/format.ct#L1161-L1163">src</a></sub></sup><a name="coalton-format-str-value"></a>
 <code><a href="#coalton-symbol-symbol-type">Symbol</a></code>
 
 
@@ -4844,6 +4844,9 @@ The following directives are supported with the given argument requirements:
 | `~*` | Jump arguments inside of iteration | No Argument |
 | `~(` | Start case conversion | No Argument |
 | `~)` | End case conversion | No Argument |
+
+`~A` prints strings and characters without their readable syntax,
+matching Common Lisp's aesthetic output. Other types use `Show`.
 
 Native integer types are:
   - `Integer`
