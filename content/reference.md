@@ -2333,6 +2333,7 @@ Methods:
 
 - <code><a href="#coalton-classes-exception-class">Exception</a> <a href="#coalton-threads-parallel-taskaborted-type">TaskAborted</a></code>
 - <code><a href="#coalton-classes-exception-class">Exception</a> <a href="#coalton-threads-thread-threadaborted-type">ThreadAborted</a></code>
+- <code><a href="#coalton-classes-exception-class">Exception</a> <a href="#coalton-file-fileerror-type">FileError</a></code>
 - <code><a href="#coalton-classes-exception-class">Exception</a> <a href="#coalton-exception-storagecondition-type">StorageCondition</a></code>
 - <code><a href="#coalton-classes-exception-class">Exception</a> <a href="#coalton-exception-lispfileerror-type">LispFileError</a></code>
 - <code><a href="#coalton-classes-exception-class">Exception</a> <a href="#coalton-exception-endoffile-type">EndOfFile</a></code>
@@ -4312,11 +4313,12 @@ trailing slash.
 - <code>(LispError <a href="#coalton-exception-lisperror-type">LispError</a>)</code>
 - <code>(PathError <a href="#coalton-string-type">String</a> <a href="#coalton-file-pathname-type">Pathname</a>)</code>
 
-Errors for file functions.
+File functions return these errors in `Err`. Use `coalton/result:ok-or-throw` to throw a returned error instead.
 
 <details>
 <summary>Instances</summary>
 
+- <code><a href="#coalton-classes-exception-class">Exception</a> <a href="#coalton-file-fileerror-type">FileError</a></code>
 - <code><a href="#coalton-types-runtimerepr-class">RuntimeRepr</a> <a href="#coalton-file-fileerror-type">FileError</a></code>
 
 </details>
