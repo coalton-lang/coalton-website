@@ -27,7 +27,7 @@ Naturally, you want to add two vectors with `(+ u v)`, subtract them with `(- u 
 In previous versions of Coalton, `+`, `-`, and `*` all lived in a single type class called `Num`, which we copied almost verbatim from Haskell:
 
 ```lisp
-;; The old Num class
+;; The old Num interface, using today's spelling of from-int
 (define-class (Eq :a => Num :a)
   (+ (:a * :a -> :a))
   (- (:a * :a -> :a))
@@ -51,8 +51,8 @@ So in practice, you gave up on `+` and wrote `vec2-add`, `vec2-sub`, `vec2-neg`,
 `Vec2` wasn't an isolated annoyance. Everywhere we wrote non-trivial numerical code, `Num` got in the way:
 
 - **Multiplying a vector by a number:** In that same physics simulation, you want to scale a velocity vector `v` by a timestep `dt`. That's an operation of type `F64 * Vec2 -> Vec2`. Because `*` only multiplies two values of the *same* type (`:a * :a -> :a`), every library in Coalton invented its own incompatible scaling function.
-- **Raising a matrix to a power:** Suppose you have a $2\times 2$ matrix `M` and want to compute $M^{10}$ with `(^ M 10)`. Computing $M^{10}$ by repeated squaring only needs matrix multiplication `*` and the identity matrix `one`. Yet `^` required `Num`, which meant matrices couldn't use `^` unless they also faked `from-int`.
-- **Our own FFT library had to reinvent `+` and `*`:** The most damning indictment of `Num` was sitting right inside Coalton's own extended math library. When the author of `coalton/xmath/fft` wrote the Fast Fourier Transform, `Num` was too restrictive for the butterfly operations—so `fft.ct` literally defined three private type classes (`FFTGroup`, `FFTRing`, and `FFTField`) that duplicated `+`, `-`, `*`, and `/` under different names!
+- **Raising a matrix to a power:** Repeated squaring needs multiplication and an identity, not a conversion from every integer. Yet `^` used to require `Num`. Matrices expose a second problem: if you read a square matrix from a file, its zeroth power is an identity of the *size you just read*. Knowing the type `Matrix Integer` doesn't tell you that size.
+- **Our own FFT library had to reinvent `+` and `*`:** The most damning indictment of `Num` was sitting right inside Coalton's own extended math library. When the author of `coalton/xmath/fft` wrote the Fast Fourier Transform, `Num` was too restrictive for the butterfly operations—so `fft.ct` defined its own arithmetic classes (`FFTGroup`, `FFTRing`, and `FFTField`) that duplicated `+`, `-`, `*`, and `/` under different names!
 - **`gcd` demanded `<`:** If you wanted to reduce a fraction of two polynomials like $\frac{x^2 - 1}{x^2 + 2x + 1}$ to $\frac{x - 1}{x + 1}$, or reduce a fraction of complex integers, the algorithm is the exact same Euclidean algorithm used for ordinary integers: divide numerator and denominator by their `gcd`. But Coalton's division and `gcd` classes required `Ord` (`<`), which complex numbers and polynomials don't have.
 
 When your own standard library authors are writing shadow arithmetic classes to route around `Num`, the abstraction isn't pulling its weight.
@@ -77,6 +77,8 @@ Instead of building a taxonomy of every algebraic structure known to mathematics
 
 ```mermaid
 graph TD
+    HasAdd --> Additive
+    HasMul --> Multiplicative
     Additive --> AdditiveGroup
     Additive --> Semiring
     Multiplicative --> Semiring
@@ -86,30 +88,24 @@ graph TD
     Ring --> Num
     Ring --> ConjugateRing
     Ring --> Reciprocable
-    Ring --> GcdDomain
-    GcdDomain --> EuclideanDomain
-    EuclideanDomain --> Remainder
-    Remainder --> Integral
-    Num --> Integral
-    Ord --> Integral
-    Ord --> Bounded
-    Ord --> Quantizable
-    Ring --> Quantizable
-    Transfinite --> IEEEFloat
+    Reciprocable --> DivisionRing
+    Ring --> CommutativeRing
+    CommutativeRing --> GcdDomain
+    GcdDomain --> Field
+    DivisionRing --> Field
 ```
 
 Here is what that means in practice:
 
-- **`Additive` (`+`, `zero`) and `AdditiveGroup` (`-`, `neg`):**
-  This is what `Vec2` implements. Because `zero` is its own constant instead of `(from-int 0)`, `(list:sum forces)` works on `Vec2` out of the box. You never have to touch `*` or `from-int`.
-- **`Multiplicative` (`*`, `one`):**
-  This is all you need for `(list:product xs)` and `(^ x n)`. A matrix or 2D transform implements `Multiplicative` and immediately gets binary exponentiation `(^ M 10)`.
+- **`HasAdd` (`+`) and `HasMul` (`*`):** If all a function does is add two values, `HasAdd` is enough. It doesn't promise a zero or permission to rearrange the arithmetic. Runtime-sized matrices support both operators: `+` checks that the shapes match, and `*` checks that the inner dimensions match. `==` compares rows, columns, and entries; even a zero-by-two matrix and a zero-by-three matrix are different.
+- **`Additive` adds `zero`; `AdditiveGroup` adds `-` and `neg`.** A `Vec2` has a perfectly good zero vector. Giving it an `Additive` instance makes `(list:sum forces)` work even when `forces` is empty, without defining vector multiplication or converting every integer into a vector.
+- **`Multiplicative` adds `one`.** That lets `list:product` return an identity for an empty list, and `^` return it for exponent zero. A runtime-sized `Matrix` has neither a bare `one` nor a bare `zero`. Use `(mat:identity-matrix n)` or `(mat:zero-matrix rows cols)` when starting from a shape. When you already have a square matrix `m`, `(mat:mat-pow m 10)` gets the order from `m` itself.
 - **`Semiring` and `Ring`:**
   Combine addition and multiplication (`Ring` adds `from-int` for integer literals, without requiring `Eq` for types like computable reals or infinite series where exact equality isn't decidable).
 - **`Num` is still `Num`:**
   `Num :a` is simply a `Ring` with `==` (`Eq`). In everyday functions that take numbers, you still write `Num :a => ...`, just like before.
 - **`define-num` keeps instance definitions to one block:**
-  When you define a new number type, you don't write six `define-instance` blocks. You write a single `define-num` form with `+`, `-`, `*`, and `from-int`, and it generates all the underlying instances for you (even filling in `zero`, `one`, and `neg` automatically if you leave them out):
+  If your number type already has equality, a single `define-num` form with `+`, `-`, `*`, and `from-int` generates its arithmetic instances. It even fills in `zero`, `one`, and `neg` if you leave them out:
 
 ```lisp
 (coalton-toplevel
@@ -117,16 +113,21 @@ Here is what that means in practice:
   (repr :transparent)
   (define-type Mod7 (Mod7 Integer))
 
-  (define (mod7 n) (Mod7 (coalton/math:mod n 7)))
+  (declare make-mod7 (Integer -> Mod7))
+  (define (make-mod7 n) (Mod7 (coalton/math:mod n 7)))
 
   (define-num Mod7
-    (define (+ (Mod7 a) (Mod7 b)) (mod7 (+ a b)))
-    (define (- (Mod7 a) (Mod7 b)) (mod7 (- a b)))
-    (define (* (Mod7 a) (Mod7 b)) (mod7 (* a b)))
-    (define (from-int n)           (mod7 n))))
+    (define (+ (Mod7 a) (Mod7 b)) (make-mod7 (+ a b)))
+    (define (- (Mod7 a) (Mod7 b)) (make-mod7 (- a b)))
+    (define (* (Mod7 a) (Mod7 b)) (make-mod7 (* a b)))
+    (define (from-int n)           (make-mod7 n))))
 ```
 
-We also added a small set of classes in `coalton/math` for scaling and vector spaces (`Scale`, `Module`, `VectorSpace`, `InnerSpace`, and `ConjugateRing` so dot products work uniformly for both real and complex vectors), untangled `gcd` and `quotrem` (`GcdDomain` and `EuclideanDomain`) from `Ord`, separated `Transfinite` (`infinity`, `finite?`, `infinite?`) from `IEEEFloat` (`nan`, `nan?`), and replaced ad-hoc rational conversion classes with `Approximable :a :b` (`(approx bits x)`, `rational-approx`, and `simplest-fraction`), which approximates numbers—and composite structures like `Complex`, `Dual`, `Polynomial`, and `Matrix`—to within $2^{-\mathtt{bits}}$ in any target representation (`Fraction`, `BigFloat`, `Dyadic`, `F64`).
+The same distinction matters for division. `Reciprocable` gives you `/`; it doesn't say that every nonzero element has an exact inverse. `Fraction` is a `Field`, `Quaternion Fraction` is a `DivisionRing` whose multiplication doesn't commute, and `F64` is neither. `QuotRem` lets machine integers divide with remainder without claiming they are exact Euclidean domains.
+
+Approximation has its own contract. When `(approx bits x)` succeeds, the absolute error is at most $2^{-\mathtt{bits}}$ per component; a fixed-precision target can be too coarse. `rational-approx` asks for that bound in `Fraction`. Finding the *simplest* fraction in the interval also requires deciding what happens at its endpoints, so `simplest-fraction` belongs to `Rationalizable`, not `Approximable`.
+
+Back in our physics example, scaling a velocity and taking its dot product don't require pretending that `F64` is an exact field:
 
 ```mermaid
 graph TD
@@ -134,18 +135,22 @@ graph TD
     Ring["Ring :r"] --> Module
     AdditiveGroup["AdditiveGroup :m"] --> Module
     Module --> VectorSpace["VectorSpace :k :v"]
-    Reciprocable["Reciprocable :k"] --> VectorSpace
+    DivisionRing["DivisionRing :k"] --> VectorSpace
+    Module --> HermitianForm["HermitianForm :k :v"]
+    ConjugateRing["ConjugateRing :k"] --> HermitianForm
     VectorSpace --> InnerSpace["InnerSpace :k :v"]
-    ConjugateRing["ConjugateRing :k"] --> InnerSpace
+    HermitianForm --> InnerSpace
 ```
 
-With that in place, our `Vec2` from the beginning of the post is twenty lines of straightforward code—and `+`, `-`, `neg`, `list:sum`, `scale`, and `inner-product` all work on it natively:
+Here are the instances for the `Vec2` from the beginning of the post (`math` is a local nickname for `coalton/math`). The dot product is the method of `HermitianForm`; it doesn't require an `InnerSpace` or `VectorSpace` instance:
 
 ```lisp
 (coalton-toplevel
-  (define-instance (Additive Vec2)
+  (define-instance (HasAdd Vec2)
     (define (+ (Vec2 x1 y1) (Vec2 x2 y2))
-      (Vec2 (+ x1 x2) (+ y1 y2)))
+      (Vec2 (+ x1 x2) (+ y1 y2))))
+
+  (define-instance (Additive Vec2)
     (define zero (Vec2 0.0d0 0.0d0)))
 
   (define-instance (AdditiveGroup Vec2)
@@ -159,9 +164,8 @@ With that in place, our `Vec2` from the beginning of the post is twenty lines of
       (Vec2 (* k x) (* k y))))
 
   (define-instance (math:Module F64 Vec2))
-  (define-instance (math:VectorSpace F64 Vec2))
 
-  (define-instance (math:InnerSpace F64 Vec2)
+  (define-instance (math:HermitianForm F64 Vec2)
     (define (math:inner-product (Vec2 x1 y1) (Vec2 x2 y2))
       (+ (* x1 x2) (* y1 y2)))))
 ```
@@ -172,19 +176,25 @@ First, we replaced `FFTGroup`, `FFTRing`, `FFTField`, and `FFTCyclicGroup` in `c
 
 Second, because these algebraic classes compose cleanly, we were able to build a suite of new symbolic, numerical, and geometric modules in `coalton/xmath` that all plug straight into standard operators:
 
-- **Polynomials & Rational Functions (`polynomial`, `ratio`):** Univariate and nested multivariate polynomials over any `Semiring`, `Ring`, or `GcdDomain` (with Sylvester `resultant` and Yun's `square-free-factorization`), and generic reduced fractions `(make-ratio num den)` over any `GcdDomain` (with `partial-fractions`, `hermite-reduce`, and `rothstein-trager-resultant` for symbolic rational integration $\int \frac{P(x)}{Q(x)}\,dx = g(x) + \int \frac{A(x)}{B(x)}\,dx$).
-- **Generic Matrices (`matrix`):** Because `exact-div` lives in `GcdDomain`, fraction-free Bareiss elimination computes exact determinants `det`, adjugates, and characteristic polynomials `charpoly` over `Integer`, `Complex Integer`, or `Polynomial Integer` without fractions; over a field (`Reciprocable`), `solve`, `inv`, `rref`, and `nullspace` work identically on rationals, `RealAlgebraic`, or rational functions; and `gram-schmidt` uses `ConjugateRing` to orthogonalize real and complex vectors alike.
+- **Polynomials and rational functions (`polynomial`, `ratio`):** We can form $R[x]$ and nest it to obtain $R[x][y]$. A GCD domain with decidable equality is enough for polynomial resultants and reduced ratios; algorithms that divide by arbitrary nonzero coefficients ask for more. Yun's square-free factorization, for instance, works over a characteristic-zero field.
+- **Generic matrices (`mat` below is `coalton/xmath/matrix`):** Bareiss elimination computes determinants and characteristic polynomials over an exact `GcdDomain` with equality, without introducing fractions. `rref`, `solve`, `inv`, and `nullspace` require `Eq` and `DivisionRing` on the *entries*, not a `Ring` instance on the whole matrix. For numerical row reduction, `rref-with` takes an explicit pivot zero test; its pivots aren't an exact rank certificate. Hermitian Gram–Schmidt additionally needs scalar conjugation, and `try-gram-schmidt` reports a nonzero vector with zero self-product rather than dividing by it.
+
+  ```lisp
+  (coalton
+    (let ((m (mat:from-rows [[(the Integer 1) 1] [1 0]])))
+      (mat:to-rows (mat:mat-pow m 10))))
+  ;; => ((89 55) (55 34))
+  ```
 - **Differential Algebra & ODE Operators (`differential`):** `DifferentialRing` (`deriv`) and $n \times n$ Wronskian determinants (`wronskian`), plus non-commutative linear differential operators `DiffOp :a` ($A[\partial; \, '\,]$) where `*` is Leibniz operator composition ($\partial x - x\partial = 1$), `diff-op-gcrd` / `diff-op-lclm` factor and combine ODEs, and `solve-ode-series` solves variable-coefficient linear ODE initial value problems (such as Airy's equation $y'' - xy = 0$) directly into lazy `PowerSeries`.
 - **Gröbner Bases (`groebner`):** Sparse multivariate polynomials `MPoly :a` with `Lex`, `GrLex`, and `GRevLex` monomial orders and Buchberger's algorithm (`groebner-basis`, `normal-form`, `ideal-member?`) for solving nonlinear polynomial systems.
 - **Modular Algebra, Recurrences & Gosper's Algorithm (`modular`, `recurrence`):** A single `crt` implementation over any `EuclideanDomain` solves both integer Chinese Remainder problems *and* polynomial Lagrange interpolation (`lagrange-interpolate`), while `recurrence` provides Padé approximants (`pade-approximant`), Berlekamp–Massey (`guess-generating-function`), and Gosper's algorithm (`gosper-solve`) for closed-form hypergeometric summation.
-- **Quaternions & Clifford Algebras (`quaternion`, `clifford-algebra`):** Non-commutative rings where `ConjugateRing` ($\overline{pq} = \bar{q}\,\bar{p}$) and `Reciprocable` enable 3D rotations (`rotate-vector`) and graded multivector products (`wedge`, `left-contract`, `sandwich`) over exact or floating-point scalars.
-- **Lazy Formal Power Series (`power-series`):** Infinite series $a_0 + a_1 x + a_2 x^2 + \cdots$ that implement `+`, `-`, `*`, `/`, `sqrt`, `exp`, `ln`, `sin`, `cos`, `sinh`, and `cosh`. You can write a generating function as an ordinary formula and read off its exact rational coefficients:
+- **Quaternions and Clifford algebras (`quaternion`, `clifford-algebra`):** The same `*` can express a Hamilton product or a geometric product without assuming that factors commute. Unit quaternions rotate vectors; Clifford multivectors also have exterior, contraction, and sandwich products.
+- **Lazy formal power series (`series` below is `coalton/xmath/power-series`):** A generating function can be an ordinary formula whose coefficients are computed on demand. The Catalan series is $2/(1+\sqrt{1-4x})$: its denominator has constant term $2$, which is invertible over the rationals.
 
 ```lisp
-(let x = (the (series:PowerSeries Fraction) series:series-var))
-
-;; Catalan numbers from 2 / (1 + sqrt(1 - 4x))
-(series:series-prefix 7 (/ 2 (+ 1 (sqrt (- 1 (* 4 x))))))
+(coalton
+  (let ((x (the (series:PowerSeries Fraction) series:series-var)))
+    (series:series-prefix 7 (/ 2 (+ 1 (sqrt (- 1 (* 4 x))))))))
 ;; => (1 1 2 5 14 42 132)
 ```
 
