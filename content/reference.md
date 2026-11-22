@@ -8546,7 +8546,7 @@ Immutable maps ordered by key comparison and iterated in ascending key order.
 
 ### Types
 
-#### <a href="#coalton-ordmap-ordmap-type"><code>OrdMap</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L83-L85">src</a></sub></sup><a name="coalton-ordmap-ordmap-type"></a>
+#### <a href="#coalton-ordmap-ordmap-type"><code>OrdMap</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L68-L70">src</a></sub></sup><a name="coalton-ordmap-ordmap-type"></a>
 
 A binary tree which associates each :KEY with a :VALUE, sorted by `<=>' on the keys and unique by `==' on the keys.
 
@@ -8573,7 +8573,7 @@ A binary tree which associates each :KEY with a :VALUE, sorted by `<=>' on the k
 
 ### Values
 
-#### <a href="#coalton-ordmap-adjoin-value"><code>(ADJOIN MP K V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L147-L152">src</a></sub></sup><a name="coalton-ordmap-adjoin-value"></a>
+#### <a href="#coalton-ordmap-adjoin-value"><code>(ADJOIN MP K V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L127-L132">src</a></sub></sup><a name="coalton-ordmap-adjoin-value"></a>
 <code>&forall; :KEY :VALUE. <a href="#coalton-classes-ord-class">Ord</a> :KEY &rArr; <a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE * :KEY * :VALUE &rarr; <a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE</code>
 
 Returns an OrdMap in which the key `k` is associated with `v` added
@@ -8584,7 +8584,7 @@ If `mp` already contains an association with `k`, `mp` is returned as is.
 
 ***
 
-#### <a href="#coalton-ordmap-collect-value"><code>(COLLECT COLL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L237-L246">src</a></sub></sup><a name="coalton-ordmap-collect-value"></a>
+#### <a href="#coalton-ordmap-collect-value"><code>(COLLECT COLL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L202-L211">src</a></sub></sup><a name="coalton-ordmap-collect-value"></a>
 <code>&forall; (:COLLECTION (Type &rarr; Type)) :KEY :VALUE. (<a href="#coalton-classes-ord-class">Ord</a> :KEY) (<a href="#coalton-classes-foldable-class">Foldable</a> :COLLECTION) &rArr; :COLLECTION (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE) &rarr; <a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE</code>
 
 Construct a `OrdMap` containing all the `(key value)` pairs in `coll`.
@@ -8595,7 +8595,7 @@ If `coll` contains duplicate keys, later values will overwrite earlier values.
 
 ***
 
-#### <a href="#coalton-ordmap-collect!-value"><code>(COLLECT! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L225-L234">src</a></sub></sup><a name="coalton-ordmap-collect!-value"></a>
+#### <a href="#coalton-ordmap-collect!-value"><code>(COLLECT! ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L190-L199">src</a></sub></sup><a name="coalton-ordmap-collect!-value"></a>
 <code>&forall; :KEY :VALUE. <a href="#coalton-classes-ord-class">Ord</a> :KEY &rArr; <a href="#coalton-iterator-iterator-type">Iterator</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE) &rarr; <a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE</code>
 
 Construct a `OrdMap` containing all the `(key value)` pairs in `iter`.
@@ -8606,7 +8606,7 @@ If `iter` contains duplicate keys, later values will overwrite earlier values.
 
 ***
 
-#### <a href="#coalton-ordmap-difference-value"><code>(DIFFERENCE A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L337-L341">src</a></sub></sup><a name="coalton-ordmap-difference-value"></a>
+#### <a href="#coalton-ordmap-difference-value"><code>(DIFFERENCE A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L294-L298">src</a></sub></sup><a name="coalton-ordmap-difference-value"></a>
 <code>&forall; :KEY :VALUE. <a href="#coalton-classes-ord-class">Ord</a> :KEY &rArr; <a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE * <a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE &rarr; <a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE</code>
 
 Returns an OrdMap that contains mappings in `a` but not in `b`.
@@ -8615,7 +8615,7 @@ Returns an OrdMap that contains mappings in `a` but not in `b`.
 
 ***
 
-#### <a href="#coalton-ordmap-empty?-value"><code>(EMPTY? M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L94-L97">src</a></sub></sup><a name="coalton-ordmap-empty?-value"></a>
+#### <a href="#coalton-ordmap-empty?-value"><code>(EMPTY? M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L79-L82">src</a></sub></sup><a name="coalton-ordmap-empty?-value"></a>
 <code>&forall; :KEY :VALUE. <a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Returns True iff the given OrdMap is empty.
@@ -8624,7 +8624,7 @@ Returns True iff the given OrdMap is empty.
 
 ***
 
-#### <a href="#coalton-ordmap-entries-value"><code>(ENTRIES MP)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L172-L175">src</a></sub></sup><a name="coalton-ordmap-entries-value"></a>
+#### <a href="#coalton-ordmap-entries-value"><code>(ENTRIES MP)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L152-L155">src</a></sub></sup><a name="coalton-ordmap-entries-value"></a>
 <code>&forall; :KEY :VALUE. <a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE &rarr; <a href="#coalton-iterator-iterator-type">Iterator</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE)</code>
 
 Iterate over the (key value) pairs in MP, sorted by the keys in least-to-greatest order.
@@ -8633,7 +8633,7 @@ Iterate over the (key value) pairs in MP, sorted by the keys in least-to-greates
 
 ***
 
-#### <a href="#coalton-ordmap-insert-value"><code>(INSERT MP K V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L139-L143">src</a></sub></sup><a name="coalton-ordmap-insert-value"></a>
+#### <a href="#coalton-ordmap-insert-value"><code>(INSERT MP K V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L119-L123">src</a></sub></sup><a name="coalton-ordmap-insert-value"></a>
 <code>&forall; :KEY :VALUE. <a href="#coalton-classes-ord-class">Ord</a> :KEY &rArr; <a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE * :KEY * :VALUE &rarr; <a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE</code>
 
 Returns an OrdMap in which the key `k` is associated with `v` added
@@ -8643,7 +8643,7 @@ to the `mp`.  If `mp` already contains mapping for `k`, it is replaced.
 
 ***
 
-#### <a href="#coalton-ordmap-intersection-value"><code>(INTERSECTION A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L329-L334">src</a></sub></sup><a name="coalton-ordmap-intersection-value"></a>
+#### <a href="#coalton-ordmap-intersection-value"><code>(INTERSECTION A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L286-L291">src</a></sub></sup><a name="coalton-ordmap-intersection-value"></a>
 <code>&forall; :KEY :VALUE. <a href="#coalton-classes-ord-class">Ord</a> :KEY &rArr; <a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE * <a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE &rarr; <a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE</code>
 
 Construct an OrdMap contaning elements whose key appears in both `a` and `b`.
@@ -8653,7 +8653,7 @@ The resulting values are from `a`.
 
 ***
 
-#### <a href="#coalton-ordmap-keys-value"><code>(KEYS MP)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L182-L185">src</a></sub></sup><a name="coalton-ordmap-keys-value"></a>
+#### <a href="#coalton-ordmap-keys-value"><code>(KEYS MP)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L162-L165">src</a></sub></sup><a name="coalton-ordmap-keys-value"></a>
 <code>&forall; :KEY :VALUE. <a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE &rarr; <a href="#coalton-iterator-iterator-type">Iterator</a> :KEY</code>
 
 Iterate over the keys in MP, sorted least-to-greatest.
@@ -8662,7 +8662,7 @@ Iterate over the keys in MP, sorted least-to-greatest.
 
 ***
 
-#### <a href="#coalton-ordmap-lookup-value"><code>(LOOKUP MP K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L101-L104">src</a></sub></sup><a name="coalton-ordmap-lookup-value"></a>
+#### <a href="#coalton-ordmap-lookup-value"><code>(LOOKUP MP K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L86-L89">src</a></sub></sup><a name="coalton-ordmap-lookup-value"></a>
 <code>&forall; :KEY :VALUE. <a href="#coalton-classes-ord-class">Ord</a> :KEY &rArr; <a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE * :KEY &rarr; <a href="#coalton-optional-type">Optional</a> :VALUE</code>
 
 Retrieve the value associated with K in MP, or None if MP does not contain K.
@@ -8671,7 +8671,7 @@ Retrieve the value associated with K in MP, or None if MP does not contain K.
 
 ***
 
-#### <a href="#coalton-ordmap-lookup-neighbors-value"><code>(LOOKUP-NEIGHBORS MP K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L122-L135">src</a></sub></sup><a name="coalton-ordmap-lookup-neighbors-value"></a>
+#### <a href="#coalton-ordmap-lookup-neighbors-value"><code>(LOOKUP-NEIGHBORS MP K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L107-L115">src</a></sub></sup><a name="coalton-ordmap-lookup-neighbors-value"></a>
 <code>&forall; :KEY :VALUE. <a href="#coalton-classes-ord-class">Ord</a> :KEY &rArr; <a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE * :KEY &rarr; <a href="#coalton-tuple-tuple3-type">Tuple3</a> (<a href="#coalton-optional-type">Optional</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE)) (<a href="#coalton-optional-type">Optional</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE)) (<a href="#coalton-optional-type">Optional</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE))</code>
 
 Returns elements LO, ON, and HI, such that LO has the closest
@@ -8683,7 +8683,7 @@ Any of these values can be None if there's no such entry.
 
 ***
 
-#### <a href="#coalton-ordmap-max-key-entry-value"><code>(MAX-KEY-ENTRY MP)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L107-L110">src</a></sub></sup><a name="coalton-ordmap-max-key-entry-value"></a>
+#### <a href="#coalton-ordmap-max-key-entry-value"><code>(MAX-KEY-ENTRY MP)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L92-L95">src</a></sub></sup><a name="coalton-ordmap-max-key-entry-value"></a>
 <code>&forall; :KEY :VALUE. <a href="#coalton-classes-ord-class">Ord</a> :KEY &rArr; <a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE &rarr; <a href="#coalton-optional-type">Optional</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE)</code>
 
 Returns the entry (Tuple :key :value) with the maximum key in the map `mp`. If the map is empty, None is returned.
@@ -8692,7 +8692,7 @@ Returns the entry (Tuple :key :value) with the maximum key in the map `mp`. If t
 
 ***
 
-#### <a href="#coalton-ordmap-min-key-entry-value"><code>(MIN-KEY-ENTRY MP)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L113-L116">src</a></sub></sup><a name="coalton-ordmap-min-key-entry-value"></a>
+#### <a href="#coalton-ordmap-min-key-entry-value"><code>(MIN-KEY-ENTRY MP)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L98-L101">src</a></sub></sup><a name="coalton-ordmap-min-key-entry-value"></a>
 <code>&forall; :KEY :VALUE. <a href="#coalton-classes-ord-class">Ord</a> :KEY &rArr; <a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE &rarr; <a href="#coalton-optional-type">Optional</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :KEY :VALUE)</code>
 
 Returns the entry (Tuple :key :value) with the minimum key in the map `mp`. If the map is empty, None is returned.
@@ -8701,7 +8701,7 @@ Returns the entry (Tuple :key :value) with the minimum key in the map `mp`. If t
 
 ***
 
-#### <a href="#coalton-ordmap-remove-value"><code>(REMOVE MP K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L165-L169">src</a></sub></sup><a name="coalton-ordmap-remove-value"></a>
+#### <a href="#coalton-ordmap-remove-value"><code>(REMOVE MP K)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L145-L149">src</a></sub></sup><a name="coalton-ordmap-remove-value"></a>
 <code>&forall; :KEY :VALUE. <a href="#coalton-classes-ord-class">Ord</a> :KEY &rArr; <a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE * :KEY &rarr; <a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE</code>
 
 Returns an OrdMap in which the association with key 'k' is removed from
@@ -8711,7 +8711,7 @@ Returns an OrdMap in which the association with key 'k' is removed from
 
 ***
 
-#### <a href="#coalton-ordmap-replace-value"><code>(REPLACE MP K V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L156-L161">src</a></sub></sup><a name="coalton-ordmap-replace-value"></a>
+#### <a href="#coalton-ordmap-replace-value"><code>(REPLACE MP K V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L136-L141">src</a></sub></sup><a name="coalton-ordmap-replace-value"></a>
 <code>&forall; :KEY :VALUE. <a href="#coalton-classes-ord-class">Ord</a> :KEY &rArr; <a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE * :KEY * :VALUE &rarr; <a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE</code>
 
 Returns an OrdMap in which the key `k` is associated with `v` replaced
@@ -8722,7 +8722,7 @@ If `mp` doesn't has an association with `k`, `mp` is returned as is.
 
 ***
 
-#### <a href="#coalton-ordmap-union-value"><code>(UNION A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L318-L326">src</a></sub></sup><a name="coalton-ordmap-union-value"></a>
+#### <a href="#coalton-ordmap-union-value"><code>(UNION A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L275-L283">src</a></sub></sup><a name="coalton-ordmap-union-value"></a>
 <code>&forall; :KEY :VALUE. <a href="#coalton-classes-ord-class">Ord</a> :KEY &rArr; <a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE * <a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE &rarr; <a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE</code>
 
 Construct an OrdMap containing all the mappings of both A and B.
@@ -8735,7 +8735,7 @@ The operation is associative, but not commutative.
 
 ***
 
-#### <a href="#coalton-ordmap-update-value"><code>(UPDATE MP K F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L281-L314">src</a></sub></sup><a name="coalton-ordmap-update-value"></a>
+#### <a href="#coalton-ordmap-update-value"><code>(UPDATE MP K F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L246-L271">src</a></sub></sup><a name="coalton-ordmap-update-value"></a>
 <code>&forall; :KEY :VALUE :A. <a href="#coalton-classes-ord-class">Ord</a> :KEY &rArr; <a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE * :KEY * (<a href="#coalton-optional-type">Optional</a> :VALUE &rarr; <a href="#coalton-optional-type">Optional</a> :VALUE * :A) &rarr; <a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE * :A</code>
 
 Lookup an association with `k` in `mp`.  If there's an entry, call `f`
@@ -8761,7 +8761,7 @@ result, where v' is the previous value associated with k.
 
 ***
 
-#### <a href="#coalton-ordmap-values-iter-value"><code>(VALUES-ITER MP)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L188-L191">src</a></sub></sup><a name="coalton-ordmap-values-iter-value"></a>
+#### <a href="#coalton-ordmap-values-iter-value"><code>(VALUES-ITER MP)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L168-L171">src</a></sub></sup><a name="coalton-ordmap-values-iter-value"></a>
 <code>&forall; :KEY :VALUE. <a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE &rarr; <a href="#coalton-iterator-iterator-type">Iterator</a> :VALUE</code>
 
 Iterate over the values in MP, sorted by their corresponding keys in least-to-greatest order.
@@ -8770,7 +8770,7 @@ Iterate over the values in MP, sorted by their corresponding keys in least-to-gr
 
 ***
 
-#### <a href="#coalton-ordmap-xor-value"><code>(XOR A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L344-L349">src</a></sub></sup><a name="coalton-ordmap-xor-value"></a>
+#### <a href="#coalton-ordmap-xor-value"><code>(XOR A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L301-L306">src</a></sub></sup><a name="coalton-ordmap-xor-value"></a>
 <code>&forall; :KEY :VALUE. <a href="#coalton-classes-ord-class">Ord</a> :KEY &rArr; <a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE * <a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE &rarr; <a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE</code>
 
 Returns an OrdMap that contains mappings either in `a` or in `b`,
@@ -8780,7 +8780,7 @@ but not in both.
 
 ***
 
-#### <a href="#coalton-ordmap-empty-value"><code>EMPTY</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L89-L91">src</a></sub></sup><a name="coalton-ordmap-empty-value"></a>
+#### <a href="#coalton-ordmap-empty-value"><code>EMPTY</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordmap.ct#L74-L76">src</a></sub></sup><a name="coalton-ordmap-empty-value"></a>
 <code>&forall; :KEY :VALUE. <a href="#coalton-ordmap-ordmap-type">OrdMap</a> :KEY :VALUE</code>
 
 A OrdMap containing no mappings.
@@ -8817,7 +8817,7 @@ A 1-2 brother tree, sorted by `<=>` and unique by `==`.
 
 ### Values
 
-#### <a href="#coalton-ordtree-adjoin-value"><code>(ADJOIN T A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.ct#L239-L252">src</a></sub></sup><a name="coalton-ordtree-adjoin-value"></a>
+#### <a href="#coalton-ordtree-adjoin-value"><code>(ADJOIN T A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.ct#L246-L259">src</a></sub></sup><a name="coalton-ordtree-adjoin-value"></a>
 <code>&forall; :ELT. <a href="#coalton-classes-ord-class">Ord</a> :ELT &rArr; <a href="#coalton-ordtree-ordtree-type">OrdTree</a> :ELT * :ELT &rarr; <a href="#coalton-ordtree-ordtree-type">OrdTree</a> :ELT</code>
 
 Returns an ordtree that has a new entry `a`.  If `t` already has an entry
@@ -8827,7 +8827,7 @@ which is `==` to `a`, however, the original `t` is returned as is.
 
 ***
 
-#### <a href="#coalton-ordtree-decreasing-order-value"><code>(DECREASING-ORDER TRE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.ct#L411-L426">src</a></sub></sup><a name="coalton-ordtree-decreasing-order-value"></a>
+#### <a href="#coalton-ordtree-decreasing-order-value"><code>(DECREASING-ORDER TRE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.ct#L431-L446">src</a></sub></sup><a name="coalton-ordtree-decreasing-order-value"></a>
 <code>&forall; :ELT. <a href="#coalton-ordtree-ordtree-type">OrdTree</a> :ELT &rarr; <a href="#coalton-iterator-iterator-type">Iterator</a> :ELT</code>
 
 Returns an iterator that traverses elements in `tre` in decreasing order.
@@ -8836,7 +8836,7 @@ Returns an iterator that traverses elements in `tre` in decreasing order.
 
 ***
 
-#### <a href="#coalton-ordtree-difference-value"><code>(DIFFERENCE A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.ct#L513-L515">src</a></sub></sup><a name="coalton-ordtree-difference-value"></a>
+#### <a href="#coalton-ordtree-difference-value"><code>(DIFFERENCE A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.ct#L547-L549">src</a></sub></sup><a name="coalton-ordtree-difference-value"></a>
 <code>&forall; :ELT. <a href="#coalton-classes-ord-class">Ord</a> :ELT &rArr; <a href="#coalton-ordtree-ordtree-type">OrdTree</a> :ELT * <a href="#coalton-ordtree-ordtree-type">OrdTree</a> :ELT &rarr; <a href="#coalton-ordtree-ordtree-type">OrdTree</a> :ELT</code>
 
 Returns an OrdTree that contains elements in `a` but not in `b`.
@@ -8851,7 +8851,7 @@ Returns an OrdTree that contains elements in `a` but not in `b`.
 
 ***
 
-#### <a href="#coalton-ordtree-increasing-order-value"><code>(INCREASING-ORDER TRE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.ct#L392-L408">src</a></sub></sup><a name="coalton-ordtree-increasing-order-value"></a>
+#### <a href="#coalton-ordtree-increasing-order-value"><code>(INCREASING-ORDER TRE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.ct#L412-L428">src</a></sub></sup><a name="coalton-ordtree-increasing-order-value"></a>
 <code>&forall; :ELT. <a href="#coalton-ordtree-ordtree-type">OrdTree</a> :ELT &rarr; <a href="#coalton-iterator-iterator-type">Iterator</a> :ELT</code>
 
 Returns an iterator that traverses elements in `tre` in increasing order.
@@ -8861,7 +8861,7 @@ This is same as (iter:into-iter tre).
 
 ***
 
-#### <a href="#coalton-ordtree-insert-value"><code>(INSERT T A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.ct#L221-L235">src</a></sub></sup><a name="coalton-ordtree-insert-value"></a>
+#### <a href="#coalton-ordtree-insert-value"><code>(INSERT T A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.ct#L228-L242">src</a></sub></sup><a name="coalton-ordtree-insert-value"></a>
 <code>&forall; :ELT. <a href="#coalton-classes-ord-class">Ord</a> :ELT &rArr; <a href="#coalton-ordtree-ordtree-type">OrdTree</a> :ELT * :ELT &rarr; <a href="#coalton-ordtree-ordtree-type">OrdTree</a> :ELT</code>
 
 Returns an ordtree that has an new entry `a` added to `t`.  If `t` already
@@ -8872,7 +8872,7 @@ existing entry.
 
 ***
 
-#### <a href="#coalton-ordtree-intersection-value"><code>(INTERSECTION A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.ct#L501-L510">src</a></sub></sup><a name="coalton-ordtree-intersection-value"></a>
+#### <a href="#coalton-ordtree-intersection-value"><code>(INTERSECTION A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.ct#L535-L544">src</a></sub></sup><a name="coalton-ordtree-intersection-value"></a>
 <code>&forall; :ELT. <a href="#coalton-classes-ord-class">Ord</a> :ELT &rArr; <a href="#coalton-ordtree-ordtree-type">OrdTree</a> :ELT * <a href="#coalton-ordtree-ordtree-type">OrdTree</a> :ELT &rarr; <a href="#coalton-ordtree-ordtree-type">OrdTree</a> :ELT</code>
 
 Returns an OrdTree that contains elements that appear in both `a` and `b`.
@@ -8882,7 +8882,7 @@ The resulting elements are from `a`.
 
 ***
 
-#### <a href="#coalton-ordtree-lookup-value"><code>(LOOKUP HAYSTACK NEEDLE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.ct#L104-L116">src</a></sub></sup><a name="coalton-ordtree-lookup-value"></a>
+#### <a href="#coalton-ordtree-lookup-value"><code>(LOOKUP HAYSTACK NEEDLE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.ct#L104-L106">src</a></sub></sup><a name="coalton-ordtree-lookup-value"></a>
 <code>&forall; :ELT. <a href="#coalton-classes-ord-class">Ord</a> :ELT &rArr; <a href="#coalton-ordtree-ordtree-type">OrdTree</a> :ELT * :ELT &rarr; <a href="#coalton-optional-type">Optional</a> :ELT</code>
 
 If HAYSTACK contains an element `==` to NEEDLE, return it.
@@ -8891,7 +8891,7 @@ If HAYSTACK contains an element `==` to NEEDLE, return it.
 
 ***
 
-#### <a href="#coalton-ordtree-lookup-neighbors-value"><code>(LOOKUP-NEIGHBORS HAYSTACK NEEDLE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.ct#L463-L486">src</a></sub></sup><a name="coalton-ordtree-lookup-neighbors-value"></a>
+#### <a href="#coalton-ordtree-lookup-neighbors-value"><code>(LOOKUP-NEIGHBORS HAYSTACK NEEDLE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.ct#L491-L497">src</a></sub></sup><a name="coalton-ordtree-lookup-neighbors-value"></a>
 <code>&forall; :ELT. <a href="#coalton-classes-ord-class">Ord</a> :ELT &rArr; <a href="#coalton-ordtree-ordtree-type">OrdTree</a> :ELT * :ELT &rarr; <a href="#coalton-tuple-tuple3-type">Tuple3</a> (<a href="#coalton-optional-type">Optional</a> :ELT) (<a href="#coalton-optional-type">Optional</a> :ELT) (<a href="#coalton-optional-type">Optional</a> :ELT)</code>
 
 Returns elements LO, ON, and HI, such that LO is the closest
@@ -8904,7 +8904,7 @@ if there's no such element.
 
 ***
 
-#### <a href="#coalton-ordtree-max-element-value"><code>(MAX-ELEMENT TRE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.ct#L436-L444">src</a></sub></sup><a name="coalton-ordtree-max-element-value"></a>
+#### <a href="#coalton-ordtree-max-element-value"><code>(MAX-ELEMENT TRE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.ct#L456-L458">src</a></sub></sup><a name="coalton-ordtree-max-element-value"></a>
 <code>&forall; :ELT. <a href="#coalton-classes-ord-class">Ord</a> :ELT &rArr; <a href="#coalton-ordtree-ordtree-type">OrdTree</a> :ELT &rarr; <a href="#coalton-optional-type">Optional</a> :ELT</code>
 
 Returns the maximum element in the tree, or None if the tree is empty.
@@ -8913,7 +8913,7 @@ Returns the maximum element in the tree, or None if the tree is empty.
 
 ***
 
-#### <a href="#coalton-ordtree-min-element-value"><code>(MIN-ELEMENT TRE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.ct#L448-L456">src</a></sub></sup><a name="coalton-ordtree-min-element-value"></a>
+#### <a href="#coalton-ordtree-min-element-value"><code>(MIN-ELEMENT TRE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.ct#L472-L474">src</a></sub></sup><a name="coalton-ordtree-min-element-value"></a>
 <code>&forall; :ELT. <a href="#coalton-classes-ord-class">Ord</a> :ELT &rArr; <a href="#coalton-ordtree-ordtree-type">OrdTree</a> :ELT &rarr; <a href="#coalton-optional-type">Optional</a> :ELT</code>
 
 Returns the minimum element in the tree, or None if the tree is empty.
@@ -8922,7 +8922,7 @@ Returns the minimum element in the tree, or None if the tree is empty.
 
 ***
 
-#### <a href="#coalton-ordtree-remove-value"><code>(REMOVE T A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.ct#L274-L290">src</a></sub></sup><a name="coalton-ordtree-remove-value"></a>
+#### <a href="#coalton-ordtree-remove-value"><code>(REMOVE T A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.ct#L281-L285">src</a></sub></sup><a name="coalton-ordtree-remove-value"></a>
 <code>&forall; :ELT. <a href="#coalton-classes-ord-class">Ord</a> :ELT &rArr; <a href="#coalton-ordtree-ordtree-type">OrdTree</a> :ELT * :ELT &rarr; <a href="#coalton-ordtree-ordtree-type">OrdTree</a> :ELT</code>
 
 Returns an ordtree that is the same as `t` except that the entry
@@ -8933,7 +8933,7 @@ which is `==` to `a` is removed.  If `t` does not have such an entry,
 
 ***
 
-#### <a href="#coalton-ordtree-replace-value"><code>(REPLACE T A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.ct#L256-L270">src</a></sub></sup><a name="coalton-ordtree-replace-value"></a>
+#### <a href="#coalton-ordtree-replace-value"><code>(REPLACE T A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.ct#L263-L277">src</a></sub></sup><a name="coalton-ordtree-replace-value"></a>
 <code>&forall; :ELT. <a href="#coalton-classes-ord-class">Ord</a> :ELT &rArr; <a href="#coalton-ordtree-ordtree-type">OrdTree</a> :ELT * :ELT &rarr; <a href="#coalton-ordtree-ordtree-type">OrdTree</a> :ELT</code>
 
 Returns an ordtree that has an entry `a` only if `t` already has an
@@ -8944,7 +8944,7 @@ entry which is `==` to `a`.  The original entry is replaced with the given
 
 ***
 
-#### <a href="#coalton-ordtree-transform-elements-value"><code>(TRANSFORM-ELEMENTS F TRE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.ct#L375-L388">src</a></sub></sup><a name="coalton-ordtree-transform-elements-value"></a>
+#### <a href="#coalton-ordtree-transform-elements-value"><code>(TRANSFORM-ELEMENTS F TRE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.ct#L395-L408">src</a></sub></sup><a name="coalton-ordtree-transform-elements-value"></a>
 <code>&forall; :A :B. (:A &rarr; :B) * <a href="#coalton-ordtree-ordtree-type">OrdTree</a> :A &rarr; <a href="#coalton-ordtree-ordtree-type">OrdTree</a> :B</code>
 
 Returns a tree whose element consists of the result of `f` applied to
@@ -8960,7 +8960,7 @@ We do not name this `map` because of this restriction.
 
 ***
 
-#### <a href="#coalton-ordtree-union-value"><code>(UNION A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.ct#L495-L498">src</a></sub></sup><a name="coalton-ordtree-union-value"></a>
+#### <a href="#coalton-ordtree-union-value"><code>(UNION A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.ct#L529-L532">src</a></sub></sup><a name="coalton-ordtree-union-value"></a>
 <code>&forall; :ELT. <a href="#coalton-classes-ord-class">Ord</a> :ELT &rArr; <a href="#coalton-ordtree-ordtree-type">OrdTree</a> :ELT * <a href="#coalton-ordtree-ordtree-type">OrdTree</a> :ELT &rarr; <a href="#coalton-ordtree-ordtree-type">OrdTree</a> :ELT</code>
 
 Returns an OrdTree that contains all the elements from `a` and `b`.
@@ -8970,7 +8970,7 @@ If both OrdTrees has the same (`==`) element, the one from `a` is taken.
 
 ***
 
-#### <a href="#coalton-ordtree-update-value"><code>(UPDATE T A F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.ct#L309-L372">src</a></sub></sup><a name="coalton-ordtree-update-value"></a>
+#### <a href="#coalton-ordtree-update-value"><code>(UPDATE T A F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.ct#L321-L338">src</a></sub></sup><a name="coalton-ordtree-update-value"></a>
 <code>&forall; :ELT :A. <a href="#coalton-classes-ord-class">Ord</a> :ELT &rArr; <a href="#coalton-ordtree-ordtree-type">OrdTree</a> :ELT * :ELT * (<a href="#coalton-optional-type">Optional</a> :ELT &rarr; <a href="#coalton-optional-type">Optional</a> :ELT * :A) &rarr; <a href="#coalton-ordtree-ordtree-type">OrdTree</a> :ELT * :A</code>
 
 Generic update.  Look for the element `a` in `t`.  If there's an entry,
@@ -8994,7 +8994,7 @@ carries extra info, though; see OrdMap implementation.
 
 ***
 
-#### <a href="#coalton-ordtree-xor-value"><code>(XOR A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.ct#L518-L530">src</a></sub></sup><a name="coalton-ordtree-xor-value"></a>
+#### <a href="#coalton-ordtree-xor-value"><code>(XOR A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/ordtree.ct#L552-L564">src</a></sub></sup><a name="coalton-ordtree-xor-value"></a>
 <code>&forall; :ELT. <a href="#coalton-classes-ord-class">Ord</a> :ELT &rArr; <a href="#coalton-ordtree-ordtree-type">OrdTree</a> :ELT * <a href="#coalton-ordtree-ordtree-type">OrdTree</a> :ELT &rarr; <a href="#coalton-ordtree-ordtree-type">OrdTree</a> :ELT</code>
 
 Rdturns an OrdTree that contains elements either in `a` or in `b`,
@@ -9753,7 +9753,7 @@ Make a string builder and extractor. Return two values:
 
 ***
 
-#### <a href="#coalton-show-show-value"><code>(SHOW X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/show.ct#L94-L99">src</a></sub></sup><a name="coalton-show-show-value"></a>
+#### <a href="#coalton-show-show-value"><code>(SHOW X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/show.ct#L123-L128">src</a></sub></sup><a name="coalton-show-show-value"></a>
 <code>&forall; :A. <a href="#coalton-show-show-class">Show</a> :A &rArr; :A &rarr; Void</code>
 
 Display `x` to the show stream and flush immediately.
@@ -9762,7 +9762,7 @@ Display `x` to the show stream and flush immediately.
 
 ***
 
-#### <a href="#coalton-show-show-as-string-value"><code>(SHOW-AS-STRING X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/show.ct#L85-L91">src</a></sub></sup><a name="coalton-show-show-as-string-value"></a>
+#### <a href="#coalton-show-show-as-string-value"><code>(SHOW-AS-STRING X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/show.ct#L114-L120">src</a></sub></sup><a name="coalton-show-show-as-string-value"></a>
 <code>&forall; :A. <a href="#coalton-show-show-class">Show</a> :A &rArr; :A &rarr; <a href="#coalton-string-type">String</a></code>
 
 Display `x` as a string.
