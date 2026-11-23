@@ -172,12 +172,22 @@ Here are the instances for the `Vec2` from the beginning of the post (`math` is 
 
 ## What This Unlocked in `coalton/xmath`
 
-First, we replaced `FFTGroup`, `FFTRing`, `FFTField`, and `FFTCyclicGroup` in `coalton/xmath/fft` with a single `RootsOfUnity` class (`root-of-unity`)—the FFT library now uses standard `+`, `-`, `*`, and `recip` directly—and simplified `Hyperdual :t` into a type alias `(Dual (Dual :t))`, since `Dual`'s polymorphic instances automatically compute second derivatives by the chain rule.
+The FFT now uses the standard `+`, `-`, `*`, and `recip`. The only FFT-specific class it needs is `RootsOfUnity`, for the rotation factors in a butterfly.
 
-Second, because these algebraic classes compose cleanly, we were able to build a suite of new symbolic, numerical, and geometric modules in `coalton/xmath` that all plug straight into standard operators:
+Dual numbers show why the *meaning* of an instance matters, too. In algebra, the infinitesimal $\varepsilon$ is nonzero even though $\varepsilon^2=0$: comparing both coefficients keeps a polynomial from throwing away a term proportional to $\varepsilon$. In forward-mode differentiation, a comparison inside the function should follow its input's **primal** value. `AD` is a transparent view of `Dual` with that comparison rule and the same arithmetic. `Hyperdual` nests `AD` to propagate second derivatives.
+
+The function being differentiated needn't return just one number. With `dual` as a local nickname for `coalton/xmath/dual`, one evaluation gives both derivatives of $x \mapsto [x^2,x^3]$ at $x=3$. `d-x-map` maps tangent extraction over the result, so the same interface also works for `Optional` and other functors:
+
+```lisp
+(coalton (the (List Integer)
+           (dual:d-x-map (fn (x) [(* x x) (* x (* x x))]) 3)))
+;; => (6 27)
+```
+
+Here are a few other places where the choice of constraints changes what we can compute:
 
 - **Polynomials and rational functions (`polynomial`, `ratio`):** We can form $R[x]$ and nest it to obtain $R[x][y]$. A GCD domain with decidable equality is enough for polynomial resultants and reduced ratios; algorithms that divide by arbitrary nonzero coefficients ask for more. Yun's square-free factorization, for instance, works over a characteristic-zero field.
-- **Generic matrices (`mat` below is `coalton/xmath/matrix`):** Bareiss elimination computes determinants and characteristic polynomials over an exact `GcdDomain` with equality, without introducing fractions. `rref`, `solve`, `inv`, and `nullspace` require `Eq` and `DivisionRing` on the *entries*, not a `Ring` instance on the whole matrix. For numerical row reduction, `rref-with` takes an explicit pivot zero test; its pivots aren't an exact rank certificate. Hermitian Gram–Schmidt additionally needs scalar conjugation, and `try-gram-schmidt` reports a nonzero vector with zero self-product rather than dividing by it.
+- **Generic matrices (`mat` below is `coalton/xmath/matrix`):** Bareiss elimination computes determinants and characteristic polynomials over an exact `GcdDomain` with equality, without introducing fractions. `rref`, `solve`, `inv`, and `nullspace` require `Eq` and `DivisionRing` on the *entries*, not a `Ring` instance on the whole matrix. For a square `F64` system, `solve-pivoted` instead selects pivots after scaling the rows and returns both the solution and the largest absolute entry of its residual. A small residual says how well the computed solution satisfies the original equations; it isn't a guarantee that the solution is accurate.
 
   ```lisp
   (coalton
@@ -188,13 +198,13 @@ Second, because these algebraic classes compose cleanly, we were able to build a
 - **Differential Algebra & ODE Operators (`differential`):** `DifferentialRing` (`deriv`) and $n \times n$ Wronskian determinants (`wronskian`), plus non-commutative linear differential operators `DiffOp :a` ($A[\partial; \, '\,]$) where `*` is Leibniz operator composition ($\partial x - x\partial = 1$), `diff-op-gcrd` / `diff-op-lclm` factor and combine ODEs, and `solve-ode-series` solves variable-coefficient linear ODE initial value problems (such as Airy's equation $y'' - xy = 0$) directly into lazy `PowerSeries`.
 - **Gröbner Bases (`groebner`):** Sparse multivariate polynomials `MPoly :a` with `Lex`, `GrLex`, and `GRevLex` monomial orders and Buchberger's algorithm (`groebner-basis`, `normal-form`, `ideal-member?`) for solving nonlinear polynomial systems.
 - **Modular Algebra, Recurrences & Gosper's Algorithm (`modular`, `recurrence`):** A single `crt` implementation over any `EuclideanDomain` solves both integer Chinese Remainder problems *and* polynomial Lagrange interpolation (`lagrange-interpolate`), while `recurrence` provides Padé approximants (`pade-approximant`), Berlekamp–Massey (`guess-generating-function`), and Gosper's algorithm (`gosper-solve`) for closed-form hypergeometric summation.
-- **Quaternions and Clifford algebras (`quaternion`, `clifford-algebra`):** The same `*` can express a Hamilton product or a geometric product without assuming that factors commute. Unit quaternions rotate vectors; Clifford multivectors also have exterior, contraction, and sandwich products.
-- **Lazy formal power series (`series` below is `coalton/xmath/power-series`):** A generating function can be an ordinary formula whose coefficients are computed on demand. The Catalan series is $2/(1+\sqrt{1-4x})$: its denominator has constant term $2$, which is invertible over the rationals.
+- **Quaternions and Clifford algebras (`quaternion`, `clifford-algebra`):** The same `*` can express a Hamilton product or a geometric product without assuming the factors commute. For `Clifford :sig :a`, the tag `:sig` determines what a basis vector squares to. Bare `Multivector` coordinates have a metric-independent wedge product; use `geometric-product-with` to supply a metric chosen at runtime.
+- **Lazy formal power series (`series` below is `coalton/xmath/power-series`):** The Catalan series is $2/(1+\sqrt{1-4x})$. The denominator has invertible constant term $2$, so ordinary `/` works. The formal square root has constant term one: `series-sqrt` computes its rational coefficients without requiring a square root for every rational number. Infinite series have no `==`; ask for the prefix you want to inspect or compare.
 
 ```lisp
 (coalton
   (let ((x (the (series:PowerSeries Fraction) series:series-var)))
-    (series:series-prefix 7 (/ 2 (+ 1 (sqrt (- 1 (* 4 x))))))))
+    (series:series-prefix 7 (/ 2 (+ 1 (series:series-sqrt (- 1 (* 4 x))))))))
 ;; => (1 1 2 5 14 42 132)
 ```
 
