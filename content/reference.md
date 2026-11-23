@@ -1999,7 +1999,7 @@ Is `c` an uppercase character?
 
 ### Types
 
-#### <a href="#coalton-classes-hash-type"><code>Hash</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L168-L169">src</a></sub></sup><a name="coalton-classes-hash-type"></a>
+#### <a href="#coalton-classes-hash-type"><code>Hash</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L170-L171">src</a></sub></sup><a name="coalton-classes-hash-type"></a>
 
 Implementation dependent hash code.
 
@@ -2020,7 +2020,7 @@ Implementation dependent hash code.
 
 ***
 
-#### <a href="#coalton-classes-ordering-type"><code>Ordering</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L182-L186">src</a></sub></sup><a name="coalton-classes-ordering-type"></a>
+#### <a href="#coalton-classes-ordering-type"><code>Ordering</code></a> <sup><sub>[TYPE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L184-L188">src</a></sub></sup><a name="coalton-classes-ordering-type"></a>
 - <code>EQ</code> 
   - Equal to
 - <code>GT</code> 
@@ -2126,7 +2126,7 @@ A heterogeneous collection of items.
 
 ### Classes
 
-#### <a href="#coalton-classes-alternative-class"><code>Alternative</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L325-L328">src</a></sub></sup><a name="coalton-classes-alternative-class"></a>
+#### <a href="#coalton-classes-alternative-class"><code>Alternative</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L330-L333">src</a></sub></sup><a name="coalton-classes-alternative-class"></a>
 <code><a href="#coalton-classes-applicative-class">Applicative</a> :F &rArr; <a href="#coalton-classes-alternative-class">Alternative</a> :F</code>
 
 
@@ -2148,7 +2148,7 @@ Methods:
 
 ***
 
-#### <a href="#coalton-classes-applicative-class"><code>Applicative</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L278-L281">src</a></sub></sup><a name="coalton-classes-applicative-class"></a>
+#### <a href="#coalton-classes-applicative-class"><code>Applicative</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L281-L284">src</a></sub></sup><a name="coalton-classes-applicative-class"></a>
 <code><a href="#coalton-classes-functor-class">Functor</a> :F &rArr; <a href="#coalton-classes-applicative-class">Applicative</a> :F</code>
 
 
@@ -2182,7 +2182,7 @@ Methods:
 
 ***
 
-#### <a href="#coalton-classes-bifunctor-class"><code>Bifunctor</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L362-L364">src</a></sub></sup><a name="coalton-classes-bifunctor-class"></a>
+#### <a href="#coalton-classes-bifunctor-class"><code>Bifunctor</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L370-L372">src</a></sub></sup><a name="coalton-classes-bifunctor-class"></a>
 <code><a href="#coalton-classes-bifunctor-class">Bifunctor</a> :F</code>
 
 
@@ -2203,7 +2203,7 @@ Methods:
 
 ***
 
-#### <a href="#coalton-classes-default-class"><code>Default</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L656-L658">src</a></sub></sup><a name="coalton-classes-default-class"></a>
+#### <a href="#coalton-classes-default-class"><code>Default</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L673-L675">src</a></sub></sup><a name="coalton-classes-default-class"></a>
 <code><a href="#coalton-classes-default-class">Default</a> :A</code>
 
 
@@ -2353,7 +2353,7 @@ Methods:
 
 ***
 
-#### <a href="#coalton-classes-fallible-class"><code>Fallible</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L646-L650">src</a></sub></sup><a name="coalton-classes-fallible-class"></a>
+#### <a href="#coalton-classes-fallible-class"><code>Fallible</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L663-L667">src</a></sub></sup><a name="coalton-classes-fallible-class"></a>
 <code><a href="#coalton-classes-fallible-class">Fallible</a> :F</code>
 
 
@@ -2373,7 +2373,7 @@ Methods:
 
 ***
 
-#### <a href="#coalton-classes-foldable-class"><code>Foldable</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L330-L333">src</a></sub></sup><a name="coalton-classes-foldable-class"></a>
+#### <a href="#coalton-classes-foldable-class"><code>Foldable</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L335-L338">src</a></sub></sup><a name="coalton-classes-foldable-class"></a>
 <code><a href="#coalton-classes-foldable-class">Foldable</a> :CONTAINER</code>
 
 
@@ -2402,7 +2402,7 @@ Methods:
 
 ***
 
-#### <a href="#coalton-classes-fromassociationcomprehension-class"><code>FromAssociationComprehension</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L459-L484">src</a></sub></sup><a name="coalton-classes-fromassociationcomprehension-class"></a>
+#### <a href="#coalton-classes-fromassociationcomprehension-class"><code>FromAssociationComprehension</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L469-L494">src</a></sub></sup><a name="coalton-classes-fromassociationcomprehension-class"></a>
 <code><a href="#coalton-classes-fromassociationcomprehension-class">FromAssociationComprehension</a> :ASSOCIATION :KEY :VALUE :BUILDER</code>
 
 
@@ -2441,7 +2441,7 @@ Methods:
 
 ***
 
-#### <a href="#coalton-classes-fromcollectioncomprehension-class"><code>FromCollectionComprehension</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L434-L457">src</a></sub></sup><a name="coalton-classes-fromcollectioncomprehension-class"></a>
+#### <a href="#coalton-classes-fromcollectioncomprehension-class"><code>FromCollectionComprehension</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L444-L467">src</a></sub></sup><a name="coalton-classes-fromcollectioncomprehension-class"></a>
 <code><a href="#coalton-classes-fromcollectioncomprehension-class">FromCollectionComprehension</a> :COLLECTION :ELEMENT :BUILDER</code>
 
 
@@ -2477,7 +2477,7 @@ Methods:
 
 ***
 
-#### <a href="#coalton-classes-fromitemizedassociation-class"><code>FromItemizedAssociation</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L404-L432">src</a></sub></sup><a name="coalton-classes-fromitemizedassociation-class"></a>
+#### <a href="#coalton-classes-fromitemizedassociation-class"><code>FromItemizedAssociation</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L414-L442">src</a></sub></sup><a name="coalton-classes-fromitemizedassociation-class"></a>
 <code><a href="#coalton-classes-fromitemizedassociation-class">FromItemizedAssociation</a> :ASSOCIATION :KEY :VALUE :BUILDER</code>
 
 
@@ -2519,7 +2519,7 @@ Methods:
 
 ***
 
-#### <a href="#coalton-classes-fromitemizedcollection-class"><code>FromItemizedCollection</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L376-L402">src</a></sub></sup><a name="coalton-classes-fromitemizedcollection-class"></a>
+#### <a href="#coalton-classes-fromitemizedcollection-class"><code>FromItemizedCollection</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L386-L412">src</a></sub></sup><a name="coalton-classes-fromitemizedcollection-class"></a>
 <code><a href="#coalton-classes-fromitemizedcollection-class">FromItemizedCollection</a> :COLLECTION :ELEMENT :BUILDER</code>
 
 
@@ -2559,7 +2559,7 @@ Methods:
 
 ***
 
-#### <a href="#coalton-classes-functor-class"><code>Functor</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L267-L269">src</a></sub></sup><a name="coalton-classes-functor-class"></a>
+#### <a href="#coalton-classes-functor-class"><code>Functor</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L269-L271">src</a></sub></sup><a name="coalton-classes-functor-class"></a>
 <code><a href="#coalton-classes-functor-class">Functor</a> :F</code>
 
 
@@ -2599,7 +2599,7 @@ Methods:
 
 ***
 
-#### <a href="#coalton-classes-hash-class"><code>Hash</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L171-L175">src</a></sub></sup><a name="coalton-classes-hash-class"></a>
+#### <a href="#coalton-classes-hash-class"><code>Hash</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L173-L177">src</a></sub></sup><a name="coalton-classes-hash-class"></a>
 <code><a href="#coalton-classes-eq-class">Eq</a> :A &rArr; <a href="#coalton-classes-hash-class">Hash</a> :A</code>
 
 
@@ -2649,7 +2649,7 @@ Note: Hash only considers the primal component in order to be consistent with Eq
 
 ***
 
-#### <a href="#coalton-classes-into-class"><code>Into</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L490-L547">src</a></sub></sup><a name="coalton-classes-into-class"></a>
+#### <a href="#coalton-classes-into-class"><code>Into</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L500-L557">src</a></sub></sup><a name="coalton-classes-into-class"></a>
 <code><a href="#coalton-classes-into-class">Into</a> :A :B</code>
 
 
@@ -2882,7 +2882,7 @@ style="display:inline-flex;align-items:center;margin-left:8px;padding:2px 7px;bo
 
 ***
 
-#### <a href="#coalton-classes-iso-class"><code>Iso</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L549-L550">src</a></sub></sup><a name="coalton-classes-iso-class"></a>
+#### <a href="#coalton-classes-iso-class"><code>Iso</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L559-L560">src</a></sub></sup><a name="coalton-classes-iso-class"></a>
 <code>(<a href="#coalton-classes-into-class">Into</a> :A :B) (<a href="#coalton-classes-into-class">Into</a> :B :A) &rArr; <a href="#coalton-classes-iso-class">Iso</a> :A :B</code>
 
 
@@ -2905,7 +2905,7 @@ Methods:
 
 ***
 
-#### <a href="#coalton-classes-monad-class"><code>Monad</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L303-L305">src</a></sub></sup><a name="coalton-classes-monad-class"></a>
+#### <a href="#coalton-classes-monad-class"><code>Monad</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L306-L308">src</a></sub></sup><a name="coalton-classes-monad-class"></a>
 <code><a href="#coalton-classes-applicative-class">Applicative</a> :M &rArr; <a href="#coalton-classes-monad-class">Monad</a> :M</code>
 
 
@@ -2937,7 +2937,7 @@ Methods:
 
 ***
 
-#### <a href="#coalton-classes-monadfail-class"><code>MonadFail</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L322-L323">src</a></sub></sup><a name="coalton-classes-monadfail-class"></a>
+#### <a href="#coalton-classes-monadfail-class"><code>MonadFail</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L327-L328">src</a></sub></sup><a name="coalton-classes-monadfail-class"></a>
 <code><a href="#coalton-classes-monad-class">Monad</a> :M &rArr; <a href="#coalton-classes-monadfail-class">MonadFail</a> :M</code>
 
 Methods:
@@ -2953,7 +2953,7 @@ Methods:
 
 ***
 
-#### <a href="#coalton-classes-monadtransformer-class"><code>MonadTransformer</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L307-L310">src</a></sub></sup><a name="coalton-classes-monadtransformer-class"></a>
+#### <a href="#coalton-classes-monadtransformer-class"><code>MonadTransformer</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L310-L313">src</a></sub></sup><a name="coalton-classes-monadtransformer-class"></a>
 <code><a href="#coalton-classes-monadtransformer-class">MonadTransformer</a> :T</code>
 
 
@@ -2978,7 +2978,7 @@ Methods:
 
 ***
 
-#### <a href="#coalton-classes-monoid-class"><code>Monoid</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L263-L265">src</a></sub></sup><a name="coalton-classes-monoid-class"></a>
+#### <a href="#coalton-classes-monoid-class"><code>Monoid</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L265-L267">src</a></sub></sup><a name="coalton-classes-monoid-class"></a>
 <code><a href="#coalton-classes-semigroup-class">Semigroup</a> :A &rArr; <a href="#coalton-classes-monoid-class">Monoid</a> :A</code>
 
 
@@ -3006,7 +3006,7 @@ Methods:
 
 ***
 
-#### <a href="#coalton-classes-num-class"><code>Num</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L138-L143">src</a></sub></sup><a name="coalton-classes-num-class"></a>
+#### <a href="#coalton-classes-num-class"><code>Num</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L139-L144">src</a></sub></sup><a name="coalton-classes-num-class"></a>
 <code><a href="#coalton-classes-eq-class">Eq</a> :A &rArr; <a href="#coalton-classes-num-class">Num</a> :A</code>
 
 
@@ -3050,7 +3050,7 @@ Methods:
 
 ***
 
-#### <a href="#coalton-classes-ord-class"><code>Ord</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L209-L213">src</a></sub></sup><a name="coalton-classes-ord-class"></a>
+#### <a href="#coalton-classes-ord-class"><code>Ord</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L211-L215">src</a></sub></sup><a name="coalton-classes-ord-class"></a>
 <code><a href="#coalton-classes-eq-class">Eq</a> :A &rArr; <a href="#coalton-classes-ord-class">Ord</a> :A</code>
 
 
@@ -3118,7 +3118,7 @@ Methods:
 
 ***
 
-#### <a href="#coalton-classes-semigroup-class"><code>Semigroup</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L259-L261">src</a></sub></sup><a name="coalton-classes-semigroup-class"></a>
+#### <a href="#coalton-classes-semigroup-class"><code>Semigroup</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L261-L263">src</a></sub></sup><a name="coalton-classes-semigroup-class"></a>
 <code><a href="#coalton-classes-semigroup-class">Semigroup</a> :A</code>
 
 
@@ -3148,7 +3148,7 @@ Methods:
 
 ***
 
-#### <a href="#coalton-classes-traversable-class"><code>Traversable</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L355-L356">src</a></sub></sup><a name="coalton-classes-traversable-class"></a>
+#### <a href="#coalton-classes-traversable-class"><code>Traversable</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L362-L363">src</a></sub></sup><a name="coalton-classes-traversable-class"></a>
 <code><a href="#coalton-classes-traversable-class">Traversable</a> :T</code>
 
 Methods:
@@ -3170,7 +3170,7 @@ Methods:
 
 ***
 
-#### <a href="#coalton-classes-tryinto-class"><code>TryInto</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L558-L560">src</a></sub></sup><a name="coalton-classes-tryinto-class"></a>
+#### <a href="#coalton-classes-tryinto-class"><code>TryInto</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L569-L571">src</a></sub></sup><a name="coalton-classes-tryinto-class"></a>
 <code><a href="#coalton-classes-tryinto-class">TryInto</a> :A :B</code>
 
 
@@ -3286,7 +3286,7 @@ Methods:
 
 ***
 
-#### <a href="#coalton-classes-unwrappable-class"><code>Unwrappable</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L566-L584">src</a></sub></sup><a name="coalton-classes-unwrappable-class"></a>
+#### <a href="#coalton-classes-unwrappable-class"><code>Unwrappable</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L577-L595">src</a></sub></sup><a name="coalton-classes-unwrappable-class"></a>
 <code><a href="#coalton-classes-unwrappable-class">Unwrappable</a> :CONTAINER</code>
 
 
@@ -3319,7 +3319,7 @@ Methods:
 
 ### Values
 
-#### <a href="#coalton-classes-<-value"><code>(&lt; X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L221-L223">src</a></sub></sup><a name="coalton-classes-<-value"></a>
+#### <a href="#coalton-classes-<-value"><code>(&lt; X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L223-L225">src</a></sub></sup><a name="coalton-classes-<-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-ord-class">Ord</a> :A &rArr; :A * :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is `x` less than `y`?
@@ -3328,7 +3328,7 @@ Is `x` less than `y`?
 
 ***
 
-#### <a href="#coalton-classes-<=-value"><code>(&lt;= X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L234-L239">src</a></sub></sup><a name="coalton-classes-<=-value"></a>
+#### <a href="#coalton-classes-<=-value"><code>(&lt;= X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L236-L241">src</a></sub></sup><a name="coalton-classes-<=-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-ord-class">Ord</a> :A &rArr; :A * :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is `x` less than or equal to `y`?
@@ -3337,7 +3337,7 @@ Is `x` less than or equal to `y`?
 
 ***
 
-#### <a href="#coalton-classes->-value"><code>(&gt; X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L216-L218">src</a></sub></sup><a name="coalton-classes->-value"></a>
+#### <a href="#coalton-classes->-value"><code>(&gt; X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L218-L220">src</a></sub></sup><a name="coalton-classes->-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-ord-class">Ord</a> :A &rArr; :A * :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is `x` greater than `y`?
@@ -3346,7 +3346,7 @@ Is `x` greater than `y`?
 
 ***
 
-#### <a href="#coalton-classes->=-value"><code>(&gt;= X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L226-L231">src</a></sub></sup><a name="coalton-classes->=-value"></a>
+#### <a href="#coalton-classes->=-value"><code>(&gt;= X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L228-L233">src</a></sub></sup><a name="coalton-classes->=-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-ord-class">Ord</a> :A &rArr; :A * :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is `x` greater than or equal to `y`?
@@ -3355,7 +3355,7 @@ Is `x` greater than or equal to `y`?
 
 ***
 
-#### <a href="#coalton-classes->>-value"><code>(&gt;&gt; A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L313-L315">src</a></sub></sup><a name="coalton-classes->>-value"></a>
+#### <a href="#coalton-classes->>-value"><code>(&gt;&gt; A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L317-L319">src</a></sub></sup><a name="coalton-classes->>-value"></a>
 <code>&forall; (:M (Type &rarr; Type)) :A :B. <a href="#coalton-classes-monad-class">Monad</a> :M &rArr; :M :A * :M :B &rarr; :M :B</code>
 
 Equivalent to `(>>= a (fn (_) b))`.
@@ -3364,7 +3364,7 @@ Equivalent to `(>>= a (fn (_) b))`.
 
 ***
 
-#### <a href="#coalton-classes-as-optional-value"><code>(AS-OPTIONAL CONTAINER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L635-L639">src</a></sub></sup><a name="coalton-classes-as-optional-value"></a>
+#### <a href="#coalton-classes-as-optional-value"><code>(AS-OPTIONAL CONTAINER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L652-L656">src</a></sub></sup><a name="coalton-classes-as-optional-value"></a>
 <code>&forall; (:CONTAINER (Type &rarr; Type)) :ELT. <a href="#coalton-classes-unwrappable-class">Unwrappable</a> :CONTAINER &rArr; :CONTAINER :ELT &rarr; <a href="#coalton-optional-type">Optional</a> :ELT</code>
 
 Convert any Unwrappable container into an `Optional`, constructing Some on a successful unwrap and None on a failed unwrap.
@@ -3373,7 +3373,7 @@ Convert any Unwrappable container into an `Optional`, constructing Some on a suc
 
 ***
 
-#### <a href="#coalton-classes-default?-value"><code>(DEFAULT? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L669-L671">src</a></sub></sup><a name="coalton-classes-default?-value"></a>
+#### <a href="#coalton-classes-default?-value"><code>(DEFAULT? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L688-L690">src</a></sub></sup><a name="coalton-classes-default?-value"></a>
 <code>&forall; :A. (<a href="#coalton-classes-default-class">Default</a> :A) (<a href="#coalton-classes-eq-class">Eq</a> :A) &rArr; :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is `x` the default item of its type?
@@ -3382,7 +3382,7 @@ Is `x` the default item of its type?
 
 ***
 
-#### <a href="#coalton-classes-defaulting-unwrap-value"><code>(DEFAULTING-UNWRAP CONTAINER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L662-L666">src</a></sub></sup><a name="coalton-classes-defaulting-unwrap-value"></a>
+#### <a href="#coalton-classes-defaulting-unwrap-value"><code>(DEFAULTING-UNWRAP CONTAINER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L680-L684">src</a></sub></sup><a name="coalton-classes-defaulting-unwrap-value"></a>
 <code>&forall; (:CONTAINER (Type &rarr; Type)) :ELEMENT. (<a href="#coalton-classes-unwrappable-class">Unwrappable</a> :CONTAINER) (<a href="#coalton-classes-default-class">Default</a> :ELEMENT) &rArr; :CONTAINER :ELEMENT &rarr; :ELEMENT</code>
 
 Unwrap an `unwrappable`, returning `(default)` of the wrapped type on failure.
@@ -3402,7 +3402,7 @@ To signal an exception that a program is expected to handle, use `throw`.
 
 ***
 
-#### <a href="#coalton-classes-expect-value"><code>(EXPECT REASON CONTAINER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L602-L606">src</a></sub></sup><a name="coalton-classes-expect-value"></a>
+#### <a href="#coalton-classes-expect-value"><code>(EXPECT REASON CONTAINER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L616-L620">src</a></sub></sup><a name="coalton-classes-expect-value"></a>
 <code>&forall; (:CONTAINER (Type &rarr; Type)) :ELEMENT. <a href="#coalton-classes-unwrappable-class">Unwrappable</a> :CONTAINER &rArr; <a href="#coalton-string-type">String</a> * :CONTAINER :ELEMENT &rarr; :ELEMENT</code>
 
 Unwrap `container`, signaling an error with the description `reason` on failure.
@@ -3411,7 +3411,7 @@ Unwrap `container`, signaling an error with the description `reason` on failure.
 
 ***
 
-#### <a href="#coalton-classes-fmap-value"><code>(FMAP F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L272-L276">src</a></sub></sup><a name="coalton-classes-fmap-value"></a>
+#### <a href="#coalton-classes-fmap-value"><code>(FMAP F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L275-L279">src</a></sub></sup><a name="coalton-classes-fmap-value"></a>
 <code>&forall; :A :B (:F (Type &rarr; Type)). <a href="#coalton-classes-functor-class">Functor</a> :F &rArr; (:A &rarr; :B) &rarr; :F :A &rarr; :F :B</code>
 
 A "curried" version of `map`. Lift a function into a Functor, converting `:a -> :b` to `:f :a -> :f :b`.
@@ -3422,7 +3422,7 @@ The name `fmap` comes from Haskell.
 
 ***
 
-#### <a href="#coalton-classes-join-value"><code>(JOIN M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L318-L320">src</a></sub></sup><a name="coalton-classes-join-value"></a>
+#### <a href="#coalton-classes-join-value"><code>(JOIN M)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L323-L325">src</a></sub></sup><a name="coalton-classes-join-value"></a>
 <code>&forall; (:M (Type &rarr; Type)) :A. <a href="#coalton-classes-monad-class">Monad</a> :M &rArr; :M (:M :A) &rarr; :M :A</code>
 
 Equivalent to `(>>= m id)`.
@@ -3431,7 +3431,7 @@ Equivalent to `(>>= m id)`.
 
 ***
 
-#### <a href="#coalton-classes-map-fst-value"><code>(MAP-FST F B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L367-L369">src</a></sub></sup><a name="coalton-classes-map-fst-value"></a>
+#### <a href="#coalton-classes-map-fst-value"><code>(MAP-FST F B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L376-L378">src</a></sub></sup><a name="coalton-classes-map-fst-value"></a>
 <code>&forall; :A :B (:F (Type &rarr; Type &rarr; Type)) :C. <a href="#coalton-classes-bifunctor-class">Bifunctor</a> :F &rArr; (:A &rarr; :B) * :F :A :C &rarr; :F :B :C</code>
 
 Map over the first argument of a `Bifunctor`.
@@ -3440,7 +3440,7 @@ Map over the first argument of a `Bifunctor`.
 
 ***
 
-#### <a href="#coalton-classes-map-snd-value"><code>(MAP-SND F B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L372-L374">src</a></sub></sup><a name="coalton-classes-map-snd-value"></a>
+#### <a href="#coalton-classes-map-snd-value"><code>(MAP-SND F B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L382-L384">src</a></sub></sup><a name="coalton-classes-map-snd-value"></a>
 <code>&forall; :B :C (:F (Type &rarr; Type &rarr; Type)) :A. <a href="#coalton-classes-bifunctor-class">Bifunctor</a> :F &rArr; (:B &rarr; :C) * :F :A :B &rarr; :F :A :C</code>
 
 Map over the second argument of a `Bifunctor`.
@@ -3449,7 +3449,7 @@ Map over the second argument of a `Bifunctor`.
 
 ***
 
-#### <a href="#coalton-classes-max-value"><code>(MAX X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L242-L246">src</a></sub></sup><a name="coalton-classes-max-value"></a>
+#### <a href="#coalton-classes-max-value"><code>(MAX X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L244-L248">src</a></sub></sup><a name="coalton-classes-max-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-ord-class">Ord</a> :A &rArr; :A * :A &rarr; :A</code>
 
 Returns the greater element of `x` and `y`.
@@ -3458,7 +3458,7 @@ Returns the greater element of `x` and `y`.
 
 ***
 
-#### <a href="#coalton-classes-mcommute?-value"><code>(MCOMMUTE? A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L351-L353">src</a></sub></sup><a name="coalton-classes-mcommute?-value"></a>
+#### <a href="#coalton-classes-mcommute?-value"><code>(MCOMMUTE? A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L358-L360">src</a></sub></sup><a name="coalton-classes-mcommute?-value"></a>
 <code>&forall; :A. (<a href="#coalton-classes-eq-class">Eq</a> :A) (<a href="#coalton-classes-semigroup-class">Semigroup</a> :A) &rArr; :A * :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Does `a <> b` equal `b <> a`?
@@ -3467,7 +3467,7 @@ Does `a <> b` equal `b <> a`?
 
 ***
 
-#### <a href="#coalton-classes-mconcat-value"><code>(MCONCAT A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L341-L343">src</a></sub></sup><a name="coalton-classes-mconcat-value"></a>
+#### <a href="#coalton-classes-mconcat-value"><code>(MCONCAT A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L347-L349">src</a></sub></sup><a name="coalton-classes-mconcat-value"></a>
 <code>&forall; (:F (Type &rarr; Type)) :A. (<a href="#coalton-classes-foldable-class">Foldable</a> :F) (<a href="#coalton-classes-monoid-class">Monoid</a> :A) &rArr; :F :A &rarr; :A</code>
 
 Fold a container of monoids into a single element.
@@ -3476,7 +3476,7 @@ Fold a container of monoids into a single element.
 
 ***
 
-#### <a href="#coalton-classes-mconcatmap-value"><code>(MCONCATMAP F A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L346-L348">src</a></sub></sup><a name="coalton-classes-mconcatmap-value"></a>
+#### <a href="#coalton-classes-mconcatmap-value"><code>(MCONCATMAP F A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L352-L354">src</a></sub></sup><a name="coalton-classes-mconcatmap-value"></a>
 <code>&forall; :B :A (:F (Type &rarr; Type)). (<a href="#coalton-classes-foldable-class">Foldable</a> :F) (<a href="#coalton-classes-monoid-class">Monoid</a> :A) &rArr; (:B &rarr; :A) * :F :B &rarr; :A</code>
 
 Map a container to a container of monoids, and then fold that container into a single element.
@@ -3485,7 +3485,7 @@ Map a container to a container of monoids, and then fold that container into a s
 
 ***
 
-#### <a href="#coalton-classes-mempty?-value"><code>(MEMPTY? A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L336-L338">src</a></sub></sup><a name="coalton-classes-mempty?-value"></a>
+#### <a href="#coalton-classes-mempty?-value"><code>(MEMPTY? A)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L342-L344">src</a></sub></sup><a name="coalton-classes-mempty?-value"></a>
 <code>&forall; :A. (<a href="#coalton-classes-eq-class">Eq</a> :A) (<a href="#coalton-classes-monoid-class">Monoid</a> :A) &rArr; :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Does `a` equal `(the Type mempty)`?
@@ -3494,7 +3494,7 @@ Does `a` equal `(the Type mempty)`?
 
 ***
 
-#### <a href="#coalton-classes-min-value"><code>(MIN X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L249-L253">src</a></sub></sup><a name="coalton-classes-min-value"></a>
+#### <a href="#coalton-classes-min-value"><code>(MIN X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L251-L255">src</a></sub></sup><a name="coalton-classes-min-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-ord-class">Ord</a> :A &rArr; :A * :A &rarr; :A</code>
 
 Returns the lesser element of `x` and `y`.
@@ -3503,13 +3503,13 @@ Returns the lesser element of `x` and `y`.
 
 ***
 
-#### <a href="#coalton-classes-sequence-value"><code>(SEQUENCE X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L359-L360">src</a></sub></sup><a name="coalton-classes-sequence-value"></a>
+#### <a href="#coalton-classes-sequence-value"><code>(SEQUENCE X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L367-L368">src</a></sub></sup><a name="coalton-classes-sequence-value"></a>
 <code>&forall; (:T (Type &rarr; Type)) (:F (Type &rarr; Type)) :B. (<a href="#coalton-classes-traversable-class">Traversable</a> :T) (<a href="#coalton-classes-applicative-class">Applicative</a> :F) &rArr; :T (:F :B) &rarr; :F (:T :B)</code>
 
 
 ***
 
-#### <a href="#coalton-classes-take-left-value"><code>(TAKE-LEFT FA FB)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L285-L291">src</a></sub></sup><a name="coalton-classes-take-left-value"></a>
+#### <a href="#coalton-classes-take-left-value"><code>(TAKE-LEFT FA FB)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L288-L294">src</a></sub></sup><a name="coalton-classes-take-left-value"></a>
 <code>&forall; (:F (Type &rarr; Type)) :A :B. <a href="#coalton-classes-applicative-class">Applicative</a> :F &rArr; :F :A * :F :B &rarr; :F :A</code>
 
 Evaluate two applicatives, and take the value returned by the left one.
@@ -3522,7 +3522,7 @@ Equivalent of Haskell's `<*`
 
 ***
 
-#### <a href="#coalton-classes-take-right-value"><code>(TAKE-RIGHT FA FB)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L295-L301">src</a></sub></sup><a name="coalton-classes-take-right-value"></a>
+#### <a href="#coalton-classes-take-right-value"><code>(TAKE-RIGHT FA FB)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L298-L304">src</a></sub></sup><a name="coalton-classes-take-right-value"></a>
 <code>&forall; (:F (Type &rarr; Type)) :A :B. <a href="#coalton-classes-applicative-class">Applicative</a> :F &rArr; :F :A * :F :B &rarr; :F :B</code>
 
 Evaluate two applicatives, and take the value returned by the right one.
@@ -3535,7 +3535,7 @@ Equivalent of Haskell's `*>`
 
 ***
 
-#### <a href="#coalton-classes-unwrap-value"><code>(UNWRAP CONTAINER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L611-L617">src</a></sub></sup><a name="coalton-classes-unwrap-value"></a>
+#### <a href="#coalton-classes-unwrap-value"><code>(UNWRAP CONTAINER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L625-L631">src</a></sub></sup><a name="coalton-classes-unwrap-value"></a>
 <code>&forall; (:CONTAINER (Type &rarr; Type)) :ELEMENT. <a href="#coalton-classes-unwrappable-class">Unwrappable</a> :CONTAINER &rArr; :CONTAINER :ELEMENT &rarr; :ELEMENT</code>
 
 Unwrap `container`, signaling an error on failure.
@@ -3544,7 +3544,7 @@ Unwrap `container`, signaling an error on failure.
 
 ***
 
-#### <a href="#coalton-classes-unwrap-into-value"><code>(UNWRAP-INTO X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L620-L622">src</a></sub></sup><a name="coalton-classes-unwrap-into-value"></a>
+#### <a href="#coalton-classes-unwrap-into-value"><code>(UNWRAP-INTO X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L635-L637">src</a></sub></sup><a name="coalton-classes-unwrap-into-value"></a>
 <code>&forall; :A :B. <a href="#coalton-classes-tryinto-class">TryInto</a> :A :B &rArr; :A &rarr; :B</code>
 
 Same as `tryInto` followed by `unwrap`.
@@ -3553,7 +3553,7 @@ Same as `tryInto` followed by `unwrap`.
 
 ***
 
-#### <a href="#coalton-classes-with-default-value"><code>(WITH-DEFAULT DEFAULT CONTAINER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L628-L632">src</a></sub></sup><a name="coalton-classes-with-default-value"></a>
+#### <a href="#coalton-classes-with-default-value"><code>(WITH-DEFAULT DEFAULT CONTAINER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/classes.ct#L644-L648">src</a></sub></sup><a name="coalton-classes-with-default-value"></a>
 <code>&forall; :ELEMENT (:CONTAINER (Type &rarr; Type)). <a href="#coalton-classes-unwrappable-class">Unwrappable</a> :CONTAINER &rArr; :ELEMENT * :CONTAINER :ELEMENT &rarr; :ELEMENT</code>
 
 Unwrap `container`, returning `default` on failure.
@@ -4881,7 +4881,7 @@ The following directives are not supported:
 
 ### Values
 
-#### <a href="#coalton-functions-/=-value"><code>(/= A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.ct#L201-L203">src</a></sub></sup><a name="coalton-functions-/=-value"></a>
+#### <a href="#coalton-functions-/=-value"><code>(/= A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.ct#L202-L204">src</a></sub></sup><a name="coalton-functions-/=-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-eq-class">Eq</a> :A &rArr; :A * :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is `a` not equal to `b`?
@@ -4890,7 +4890,7 @@ Is `a` not equal to `b`?
 
 ***
 
-#### <a href="#coalton-functions-asum-value"><code>(ASUM XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.ct#L195-L197">src</a></sub></sup><a name="coalton-functions-asum-value"></a>
+#### <a href="#coalton-functions-asum-value"><code>(ASUM XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.ct#L196-L198">src</a></sub></sup><a name="coalton-functions-asum-value"></a>
 <code>&forall; (:T (Type &rarr; Type)) (:F (Type &rarr; Type)) :A. (<a href="#coalton-classes-alternative-class">Alternative</a> :F) (<a href="#coalton-classes-foldable-class">Foldable</a> :T) &rArr; :T (:F :A) &rarr; :F :A</code>
 
 Fold over a list using `alt`.
@@ -4987,7 +4987,7 @@ A function that always returns its argument.
 
 ***
 
-#### <a href="#coalton-functions-msum-value"><code>(MSUM XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.ct#L189-L191">src</a></sub></sup><a name="coalton-functions-msum-value"></a>
+#### <a href="#coalton-functions-msum-value"><code>(MSUM XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.ct#L190-L192">src</a></sub></sup><a name="coalton-functions-msum-value"></a>
 <code>&forall; (:T (Type &rarr; Type)) :A. (<a href="#coalton-classes-monoid-class">Monoid</a> :A) (<a href="#coalton-classes-foldable-class">Foldable</a> :T) &rArr; :T :A &rarr; :A</code>
 
 Fold over a list using `<>`.
@@ -4996,7 +4996,7 @@ Fold over a list using `<>`.
 
 ***
 
-#### <a href="#coalton-functions-pair-with-value"><code>(PAIR-WITH FUNC LEFT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.ct#L179-L181">src</a></sub></sup><a name="coalton-functions-pair-with-value"></a>
+#### <a href="#coalton-functions-pair-with-value"><code>(PAIR-WITH FUNC LEFT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.ct#L180-L182">src</a></sub></sup><a name="coalton-functions-pair-with-value"></a>
 <code>&forall; :LEFT :RIGHT. (:LEFT &rarr; :RIGHT) * :LEFT &rarr; <a href="#coalton-classes-tuple-type">Tuple</a> :LEFT :RIGHT</code>
 
 Create a `Tuple` of the form `(Tuple left (func left))`.
@@ -5045,7 +5045,7 @@ Print a line to `cl:*standard-output*` in the form "{STR}: {ITEM}".
 
 ***
 
-#### <a href="#coalton-functions-uncurry-value"><code>(UNCURRY FUNC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.ct#L170-L175">src</a></sub></sup><a name="coalton-functions-uncurry-value"></a>
+#### <a href="#coalton-functions-uncurry-value"><code>(UNCURRY FUNC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/functions.ct#L171-L176">src</a></sub></sup><a name="coalton-functions-uncurry-value"></a>
 <code>&forall; :LEFT :RIGHT (:RESULT Values). (:LEFT * :RIGHT &rarr; :RESULT) &rarr; <a href="#coalton-classes-tuple-type">Tuple</a> :LEFT :RIGHT &rarr; :RESULT</code>
 
 Adapt a two-argument function into one that accepts a single `Tuple`.
@@ -5094,13 +5094,13 @@ For example, the following expressions are equivalent.
 
 ### Values
 
-#### <a href="#coalton-hash-combine-hashes-value"><code>(COMBINE-HASHES LHS RHS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hash.ct#L39-L41">src</a></sub></sup><a name="coalton-hash-combine-hashes-value"></a>
+#### <a href="#coalton-hash-combine-hashes-value"><code>(COMBINE-HASHES LHS RHS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hash.ct#L40-L42">src</a></sub></sup><a name="coalton-hash-combine-hashes-value"></a>
 <code><a href="#coalton-classes-hash-type">Hash</a> * <a href="#coalton-classes-hash-type">Hash</a> &rarr; <a href="#coalton-classes-hash-type">Hash</a></code>
 
 
 ***
 
-#### <a href="#coalton-hash-combine-hashes-order-independent-value"><code>(COMBINE-HASHES-ORDER-INDEPENDENT LHS RHS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hash.ct#L44-L46">src</a></sub></sup><a name="coalton-hash-combine-hashes-order-independent-value"></a>
+#### <a href="#coalton-hash-combine-hashes-order-independent-value"><code>(COMBINE-HASHES-ORDER-INDEPENDENT LHS RHS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hash.ct#L46-L48">src</a></sub></sup><a name="coalton-hash-combine-hashes-order-independent-value"></a>
 <code><a href="#coalton-classes-hash-type">Hash</a> * <a href="#coalton-classes-hash-type">Hash</a> &rarr; <a href="#coalton-classes-hash-type">Hash</a></code>
 
 
@@ -5141,7 +5141,7 @@ Immutable map (also known as a dictionary or dict) using hashes. Implemented as 
 
 ### Values
 
-#### <a href="#coalton-hashmap-adjoin-value"><code>(ADJOIN HM KEY VAL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L472-L475">src</a></sub></sup><a name="coalton-hashmap-adjoin-value"></a>
+#### <a href="#coalton-hashmap-adjoin-value"><code>(ADJOIN HM KEY VAL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L481-L484">src</a></sub></sup><a name="coalton-hashmap-adjoin-value"></a>
 <code>&forall; :K :V. <a href="#coalton-classes-hash-class">Hash</a> :K &rArr; <a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V * :K * :V &rarr; <a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V</code>
 
 Returns a hashmap that has a new entry of (`key`, `val`) added to `hm`.
@@ -5151,7 +5151,7 @@ If `hm` alreay contains an entry with `key`, however, `hm` is returned as is.
 
 ***
 
-#### <a href="#coalton-hashmap-count-value"><code>(COUNT HM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L332-L341">src</a></sub></sup><a name="coalton-hashmap-count-value"></a>
+#### <a href="#coalton-hashmap-count-value"><code>(COUNT HM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L341-L350">src</a></sub></sup><a name="coalton-hashmap-count-value"></a>
 <code>&forall; :K :V. <a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V &rarr; <a href="#coalton-integer-type">Integer</a></code>
 
 Returns the number of entries in HM.
@@ -5160,7 +5160,7 @@ Returns the number of entries in HM.
 
 ***
 
-#### <a href="#coalton-hashmap-difference-value"><code>(DIFFERENCE A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L783-L785">src</a></sub></sup><a name="coalton-hashmap-difference-value"></a>
+#### <a href="#coalton-hashmap-difference-value"><code>(DIFFERENCE A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L792-L794">src</a></sub></sup><a name="coalton-hashmap-difference-value"></a>
 <code>&forall; :K :V. <a href="#coalton-classes-hash-class">Hash</a> :K &rArr; <a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V * <a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V &rarr; <a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V</code>
 
 Returns a HashMap that contains mappings in `a` but not in `b`.
@@ -5169,7 +5169,7 @@ Returns a HashMap that contains mappings in `a` but not in `b`.
 
 ***
 
-#### <a href="#coalton-hashmap-empty?-value"><code>(EMPTY? HM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L322-L326">src</a></sub></sup><a name="coalton-hashmap-empty?-value"></a>
+#### <a href="#coalton-hashmap-empty?-value"><code>(EMPTY? HM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L331-L335">src</a></sub></sup><a name="coalton-hashmap-empty?-value"></a>
 <code>&forall; :K :V. <a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Returns True if a hashmap HM is empty, False if not.
@@ -5178,7 +5178,7 @@ Returns True if a hashmap HM is empty, False if not.
 
 ***
 
-#### <a href="#coalton-hashmap-entries-value"><code>(ENTRIES HM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L699-L701">src</a></sub></sup><a name="coalton-hashmap-entries-value"></a>
+#### <a href="#coalton-hashmap-entries-value"><code>(ENTRIES HM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L708-L710">src</a></sub></sup><a name="coalton-hashmap-entries-value"></a>
 <code>&forall; :K :V. <a href="#coalton-classes-hash-class">Hash</a> :K &rArr; <a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V &rarr; <a href="#coalton-iterator-iterator-type">Iterator</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :K :V)</code>
 
 Returns an iterator over all entries in hashmap hm.
@@ -5187,7 +5187,7 @@ Returns an iterator over all entries in hashmap hm.
 
 ***
 
-#### <a href="#coalton-hashmap-insert-value"><code>(INSERT HM KEY VAL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L464-L467">src</a></sub></sup><a name="coalton-hashmap-insert-value"></a>
+#### <a href="#coalton-hashmap-insert-value"><code>(INSERT HM KEY VAL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L473-L476">src</a></sub></sup><a name="coalton-hashmap-insert-value"></a>
 <code>&forall; :K :V. <a href="#coalton-classes-hash-class">Hash</a> :K &rArr; <a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V * :K * :V &rarr; <a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V</code>
 
 Returns a hashmap that has a new entry of (KEY, VAL) added to HM.  If HM
@@ -5197,7 +5197,7 @@ contains an entry with KEY, the new hashmap replaces it for the new entry.
 
 ***
 
-#### <a href="#coalton-hashmap-intersection-value"><code>(INTERSECTION A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L770-L780">src</a></sub></sup><a name="coalton-hashmap-intersection-value"></a>
+#### <a href="#coalton-hashmap-intersection-value"><code>(INTERSECTION A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L779-L789">src</a></sub></sup><a name="coalton-hashmap-intersection-value"></a>
 <code>&forall; :K :V. <a href="#coalton-classes-hash-class">Hash</a> :K &rArr; <a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V * <a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V &rarr; <a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V</code>
 
 Construct a HashMap containing all the mappings whose key is in both A and B.
@@ -5208,7 +5208,7 @@ The entries from A remains in the result.
 
 ***
 
-#### <a href="#coalton-hashmap-keys-value"><code>(KEYS HM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L687-L689">src</a></sub></sup><a name="coalton-hashmap-keys-value"></a>
+#### <a href="#coalton-hashmap-keys-value"><code>(KEYS HM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L696-L698">src</a></sub></sup><a name="coalton-hashmap-keys-value"></a>
 <code>&forall; :K :V. <a href="#coalton-classes-hash-class">Hash</a> :K &rArr; <a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V &rarr; <a href="#coalton-iterator-iterator-type">Iterator</a> :K</code>
 
 Returns an iterator over all the keys in a hashmap hm.
@@ -5217,7 +5217,7 @@ Returns an iterator over all the keys in a hashmap hm.
 
 ***
 
-#### <a href="#coalton-hashmap-lookup-value"><code>(LOOKUP HM KEY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L345-L366">src</a></sub></sup><a name="coalton-hashmap-lookup-value"></a>
+#### <a href="#coalton-hashmap-lookup-value"><code>(LOOKUP HM KEY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L354-L375">src</a></sub></sup><a name="coalton-hashmap-lookup-value"></a>
 <code>&forall; :K :V. <a href="#coalton-classes-hash-class">Hash</a> :K &rArr; <a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V * :K &rarr; <a href="#coalton-optional-type">Optional</a> :V</code>
 
 Returns a value associated with KEY in the hashmap HM.
@@ -5226,7 +5226,7 @@ Returns a value associated with KEY in the hashmap HM.
 
 ***
 
-#### <a href="#coalton-hashmap-modify-value"><code>(MODIFY HM KEY F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L615-L618">src</a></sub></sup><a name="coalton-hashmap-modify-value"></a>
+#### <a href="#coalton-hashmap-modify-value"><code>(MODIFY HM KEY F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L624-L627">src</a></sub></sup><a name="coalton-hashmap-modify-value"></a>
 <code>&forall; :K :V. <a href="#coalton-classes-hash-class">Hash</a> :K &rArr; <a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V * :K * (:V &rarr; :V) &rarr; <a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V</code>
 
 Modify the value at KEY with F. Returns the modified `HashMap`.
@@ -5235,7 +5235,7 @@ Modify the value at KEY with F. Returns the modified `HashMap`.
 
 ***
 
-#### <a href="#coalton-hashmap-modify-get-value"><code>(MODIFY-GET HM KEY F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L602-L611">src</a></sub></sup><a name="coalton-hashmap-modify-get-value"></a>
+#### <a href="#coalton-hashmap-modify-get-value"><code>(MODIFY-GET HM KEY F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L611-L620">src</a></sub></sup><a name="coalton-hashmap-modify-get-value"></a>
 <code>&forall; :K :V. <a href="#coalton-classes-hash-class">Hash</a> :K &rArr; <a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V * :K * (:V &rarr; :V) &rarr; <a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V * <a href="#coalton-optional-type">Optional</a> :V</code>
 
 Modify the value at KEY with F. Returns the modified `HashMap` and the
@@ -5245,7 +5245,7 @@ new value, if the key was found.
 
 ***
 
-#### <a href="#coalton-hashmap-remove-value"><code>(REMOVE HM KEY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L489-L499">src</a></sub></sup><a name="coalton-hashmap-remove-value"></a>
+#### <a href="#coalton-hashmap-remove-value"><code>(REMOVE HM KEY)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L498-L508">src</a></sub></sup><a name="coalton-hashmap-remove-value"></a>
 <code>&forall; :K :V. <a href="#coalton-classes-hash-class">Hash</a> :K &rArr; <a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V * :K &rarr; <a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V</code>
 
 Returns a hashmap that is identical to HM except the entry with KEY is
@@ -5255,7 +5255,7 @@ removed.  If HM does not contain an entry with KEY, HM is returned as is.
 
 ***
 
-#### <a href="#coalton-hashmap-replace-value"><code>(REPLACE HM KEY VAL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L480-L484">src</a></sub></sup><a name="coalton-hashmap-replace-value"></a>
+#### <a href="#coalton-hashmap-replace-value"><code>(REPLACE HM KEY VAL)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L489-L493">src</a></sub></sup><a name="coalton-hashmap-replace-value"></a>
 <code>&forall; :K :V. <a href="#coalton-classes-hash-class">Hash</a> :K &rArr; <a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V * :K * :V &rarr; <a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V</code>
 
 Returns a hashmap where the value associated with `key` is replaced
@@ -5266,7 +5266,7 @@ with `val`.  If `hm` does not contain an entry with `key`, `hm` is
 
 ***
 
-#### <a href="#coalton-hashmap-union-value"><code>(UNION A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L761-L767">src</a></sub></sup><a name="coalton-hashmap-union-value"></a>
+#### <a href="#coalton-hashmap-union-value"><code>(UNION A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L770-L776">src</a></sub></sup><a name="coalton-hashmap-union-value"></a>
 <code>&forall; :K :V. <a href="#coalton-classes-hash-class">Hash</a> :K &rArr; <a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V * <a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V &rarr; <a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V</code>
 
 Construct a HashMap containing all the mappings from A and B.
@@ -5279,7 +5279,7 @@ The operation is associative, but not commutative.
 
 ***
 
-#### <a href="#coalton-hashmap-update-value"><code>(UPDATE HM KEY F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L506-L598">src</a></sub></sup><a name="coalton-hashmap-update-value"></a>
+#### <a href="#coalton-hashmap-update-value"><code>(UPDATE HM KEY F)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L515-L607">src</a></sub></sup><a name="coalton-hashmap-update-value"></a>
 <code>&forall; :K :V :A. <a href="#coalton-classes-hash-class">Hash</a> :K &rArr; <a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V * :K * (<a href="#coalton-optional-type">Optional</a> :V &rarr; <a href="#coalton-optional-type">Optional</a> :V * :A) &rarr; <a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V * :A</code>
 
 Generic update/filter function. Takes a KEY and a F. F is passed
@@ -5293,7 +5293,7 @@ value, `:a`, is returned from `update` along with the modified `HashMap`.
 
 ***
 
-#### <a href="#coalton-hashmap-values-iter-value"><code>(VALUES-ITER HM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L693-L695">src</a></sub></sup><a name="coalton-hashmap-values-iter-value"></a>
+#### <a href="#coalton-hashmap-values-iter-value"><code>(VALUES-ITER HM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L702-L704">src</a></sub></sup><a name="coalton-hashmap-values-iter-value"></a>
 <code>&forall; :K :V. <a href="#coalton-classes-hash-class">Hash</a> :K &rArr; <a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V &rarr; <a href="#coalton-iterator-iterator-type">Iterator</a> :V</code>
 
 Returns an iterator over all the values in a hashmap hm.
@@ -5302,7 +5302,7 @@ Returns an iterator over all the values in a hashmap hm.
 
 ***
 
-#### <a href="#coalton-hashmap-xor-value"><code>(XOR A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L788-L800">src</a></sub></sup><a name="coalton-hashmap-xor-value"></a>
+#### <a href="#coalton-hashmap-xor-value"><code>(XOR A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L797-L809">src</a></sub></sup><a name="coalton-hashmap-xor-value"></a>
 <code>&forall; :K :V. <a href="#coalton-classes-hash-class">Hash</a> :K &rArr; <a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V * <a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V &rarr; <a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V</code>
 
 Returns a HashMap that contains mappings either in `a` or in `b`,
@@ -5312,7 +5312,7 @@ but not in both.
 
 ***
 
-#### <a href="#coalton-hashmap-empty-value"><code>EMPTY</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L316-L318">src</a></sub></sup><a name="coalton-hashmap-empty-value"></a>
+#### <a href="#coalton-hashmap-empty-value"><code>EMPTY</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/hashmap.ct#L325-L327">src</a></sub></sup><a name="coalton-hashmap-empty-value"></a>
 <code>&forall; :K :V. <a href="#coalton-hashmap-hashmap-type">HashMap</a> :K :V</code>
 
 An empty HashMap
@@ -6137,7 +6137,7 @@ Immutable singly linked lists and list-processing utilities.
 
 ### Values
 
-#### <a href="#coalton-list-all-value"><code>(ALL F? XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L644-L651">src</a></sub></sup><a name="coalton-list-all-value"></a>
+#### <a href="#coalton-list-all-value"><code>(ALL F? XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L668-L675">src</a></sub></sup><a name="coalton-list-all-value"></a>
 <code>&forall; :A. (:A &rarr; <a href="#coalton-boolean-type">Boolean</a>) * <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Returns `True` if every element in `xs` matches `f?`.
@@ -6146,7 +6146,7 @@ Returns `True` if every element in `xs` matches `f?`.
 
 ***
 
-#### <a href="#coalton-list-any-value"><code>(ANY F? L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L654-L661">src</a></sub></sup><a name="coalton-list-any-value"></a>
+#### <a href="#coalton-list-any-value"><code>(ANY F? L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L678-L685">src</a></sub></sup><a name="coalton-list-any-value"></a>
 <code>&forall; :A. (:A &rarr; <a href="#coalton-boolean-type">Boolean</a>) * <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Returns `True` if at least one element in `xs` matches `f?`.
@@ -6155,7 +6155,7 @@ Returns `True` if at least one element in `xs` matches `f?`.
 
 ***
 
-#### <a href="#coalton-list-append-value"><code>(APPEND XS YS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L330-L332">src</a></sub></sup><a name="coalton-list-append-value"></a>
+#### <a href="#coalton-list-append-value"><code>(APPEND XS YS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L340-L342">src</a></sub></sup><a name="coalton-list-append-value"></a>
 <code>&forall; :A. <a href="#coalton-list-type">List</a> :A * <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-list-type">List</a> :A</code>
 
 Appends two lists together and returns a new list.
@@ -6164,7 +6164,7 @@ Appends two lists together and returns a new list.
 
 ***
 
-#### <a href="#coalton-list-car-value"><code>(CAR X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L111-L115">src</a></sub></sup><a name="coalton-list-car-value"></a>
+#### <a href="#coalton-list-car-value"><code>(CAR X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L112-L116">src</a></sub></sup><a name="coalton-list-car-value"></a>
 <code>&forall; :A. <a href="#coalton-list-type">List</a> :A &rarr; :A</code>
 
 Return the traditional car of a list. This function is partial.
@@ -6173,7 +6173,7 @@ Return the traditional car of a list. This function is partial.
 
 ***
 
-#### <a href="#coalton-list-cdr-value"><code>(CDR XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L119-L123">src</a></sub></sup><a name="coalton-list-cdr-value"></a>
+#### <a href="#coalton-list-cdr-value"><code>(CDR XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L120-L124">src</a></sub></sup><a name="coalton-list-cdr-value"></a>
 <code>&forall; :A. <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-list-type">List</a> :A</code>
 
 Return the traditional cdr of a list.
@@ -6182,7 +6182,7 @@ Return the traditional cdr of a list.
 
 ***
 
-#### <a href="#coalton-list-combs-value"><code>(COMBS L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L672-L680">src</a></sub></sup><a name="coalton-list-combs-value"></a>
+#### <a href="#coalton-list-combs-value"><code>(COMBS L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L696-L704">src</a></sub></sup><a name="coalton-list-combs-value"></a>
 <code>&forall; :A. <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-list-type">List</a> (<a href="#coalton-list-type">List</a> :A)</code>
 
 Compute a list of all combinations of elements of `l`. This function sometimes goes by the name "power set" or "subsets".
@@ -6193,7 +6193,7 @@ The ordering of elements of `l` is preserved in the ordering of elements in each
 
 ***
 
-#### <a href="#coalton-list-combsof-value"><code>(COMBSOF N L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L683-L697">src</a></sub></sup><a name="coalton-list-combsof-value"></a>
+#### <a href="#coalton-list-combsof-value"><code>(COMBSOF N L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L707-L721">src</a></sub></sup><a name="coalton-list-combsof-value"></a>
 <code>&forall; :A. <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-list-type">List</a> (<a href="#coalton-list-type">List</a> :A)</code>
 
 Produce a list of size-N subsets of `l`.
@@ -6206,7 +6206,7 @@ This function is equivalent to all size-`n` elements of `(combs l)`.
 
 ***
 
-#### <a href="#coalton-list-concat-value"><code>(CONCAT XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L336-L338">src</a></sub></sup><a name="coalton-list-concat-value"></a>
+#### <a href="#coalton-list-concat-value"><code>(CONCAT XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L347-L349">src</a></sub></sup><a name="coalton-list-concat-value"></a>
 <code>&forall; :A. <a href="#coalton-list-type">List</a> (<a href="#coalton-list-type">List</a> :A) &rarr; <a href="#coalton-list-type">List</a> :A</code>
 
 Appends a list of lists together into a single new list.
@@ -6215,7 +6215,7 @@ Appends a list of lists together into a single new list.
 
 ***
 
-#### <a href="#coalton-list-concatmap-value"><code>(CONCATMAP F XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L342-L344">src</a></sub></sup><a name="coalton-list-concatmap-value"></a>
+#### <a href="#coalton-list-concatmap-value"><code>(CONCATMAP F XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L353-L355">src</a></sub></sup><a name="coalton-list-concatmap-value"></a>
 <code>&forall; :A :B. (:A &rarr; <a href="#coalton-list-type">List</a> :B) * <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-list-type">List</a> :B</code>
 
 Apply F to each element in XS and concatenate the results.
@@ -6224,7 +6224,7 @@ Apply F to each element in XS and concatenate the results.
 
 ***
 
-#### <a href="#coalton-list-cons?-value"><code>(CONS? XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L148-L152">src</a></sub></sup><a name="coalton-list-cons?-value"></a>
+#### <a href="#coalton-list-cons?-value"><code>(CONS? XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L151-L155">src</a></sub></sup><a name="coalton-list-cons?-value"></a>
 <code>&forall; :A. <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Returns TRUE if XS is a non-empty list.
@@ -6233,7 +6233,7 @@ Returns TRUE if XS is a non-empty list.
 
 ***
 
-#### <a href="#coalton-list-countby-value"><code>(COUNTBY F THINGS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L494-L501">src</a></sub></sup><a name="coalton-list-countby-value"></a>
+#### <a href="#coalton-list-countby-value"><code>(COUNTBY F THINGS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L510-L517">src</a></sub></sup><a name="coalton-list-countby-value"></a>
 <code>&forall; :A. (:A &rarr; <a href="#coalton-boolean-type">Boolean</a>) * <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-ufix-type">UFix</a></code>
 
 Count the number of items in THINGS that satisfy the predicate F.
@@ -6242,7 +6242,7 @@ Count the number of items in THINGS that satisfy the predicate F.
 
 ***
 
-#### <a href="#coalton-list-difference-value"><code>(DIFFERENCE XS YS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L430-L432">src</a></sub></sup><a name="coalton-list-difference-value"></a>
+#### <a href="#coalton-list-difference-value"><code>(DIFFERENCE XS YS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L445-L447">src</a></sub></sup><a name="coalton-list-difference-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-eq-class">Eq</a> :A &rArr; <a href="#coalton-list-type">List</a> :A * <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-list-type">List</a> :A</code>
 
 Returns a new list with the first occurrence of each element in `ys` removed from `xs`.
@@ -6251,7 +6251,7 @@ Returns a new list with the first occurrence of each element in `ys` removed fro
 
 ***
 
-#### <a href="#coalton-list-drop-value"><code>(DROP N XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L194-L201">src</a></sub></sup><a name="coalton-list-drop-value"></a>
+#### <a href="#coalton-list-drop-value"><code>(DROP N XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L201-L208">src</a></sub></sup><a name="coalton-list-drop-value"></a>
 <code>&forall; :A. <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-list-type">List</a> :A</code>
 
 Returns a list with the first N elements removed.
@@ -6260,19 +6260,19 @@ Returns a list with the first N elements removed.
 
 ***
 
-#### <a href="#coalton-list-elemindex-value"><code>(ELEMINDEX X XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L291-L292">src</a></sub></sup><a name="coalton-list-elemindex-value"></a>
+#### <a href="#coalton-list-elemindex-value"><code>(ELEMINDEX X XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L300-L301">src</a></sub></sup><a name="coalton-list-elemindex-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-eq-class">Eq</a> :A &rArr; :A * <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> <a href="#coalton-ufix-type">UFix</a></code>
 
 
 ***
 
-#### <a href="#coalton-list-equivalence-classes-value"><code>(EQUIVALENCE-CLASSES L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L605-L606">src</a></sub></sup><a name="coalton-list-equivalence-classes-value"></a>
+#### <a href="#coalton-list-equivalence-classes-value"><code>(EQUIVALENCE-CLASSES L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L625-L626">src</a></sub></sup><a name="coalton-list-equivalence-classes-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-eq-class">Eq</a> :A &rArr; <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-list-type">List</a> (<a href="#coalton-list-type">List</a> :A)</code>
 
 
 ***
 
-#### <a href="#coalton-list-equivalence-classes-by-value"><code>(EQUIVALENCE-CLASSES-BY F L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L593-L602">src</a></sub></sup><a name="coalton-list-equivalence-classes-by-value"></a>
+#### <a href="#coalton-list-equivalence-classes-by-value"><code>(EQUIVALENCE-CLASSES-BY F L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L612-L621">src</a></sub></sup><a name="coalton-list-equivalence-classes-by-value"></a>
 <code>&forall; :A. (:A * :A &rarr; <a href="#coalton-boolean-type">Boolean</a>) * <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-list-type">List</a> (<a href="#coalton-list-type">List</a> :A)</code>
 
 Break a list into a list of equivalence classes according to an equivalence relation.
@@ -6281,7 +6281,7 @@ Break a list into a list of equivalence classes according to an equivalence rela
 
 ***
 
-#### <a href="#coalton-list-filter-value"><code>(FILTER F XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L246-L255">src</a></sub></sup><a name="coalton-list-filter-value"></a>
+#### <a href="#coalton-list-filter-value"><code>(FILTER F XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L253-L262">src</a></sub></sup><a name="coalton-list-filter-value"></a>
 <code>&forall; :A. (:A &rarr; <a href="#coalton-boolean-type">Boolean</a>) * <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-list-type">List</a> :A</code>
 
 Returns a new list containing every element of XS that matches the predicate function F in the same order.
@@ -6290,7 +6290,7 @@ Returns a new list containing every element of XS that matches the predicate fun
 
 ***
 
-#### <a href="#coalton-list-find-value"><code>(FIND F XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L236-L243">src</a></sub></sup><a name="coalton-list-find-value"></a>
+#### <a href="#coalton-list-find-value"><code>(FIND F XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L243-L250">src</a></sub></sup><a name="coalton-list-find-value"></a>
 <code>&forall; :A. (:A &rarr; <a href="#coalton-boolean-type">Boolean</a>) * <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> :A</code>
 
 Returns the first element in a list matching the predicate function F.
@@ -6299,7 +6299,7 @@ Returns the first element in a list matching the predicate function F.
 
 ***
 
-#### <a href="#coalton-list-findindex-value"><code>(FINDINDEX F XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L295-L304">src</a></sub></sup><a name="coalton-list-findindex-value"></a>
+#### <a href="#coalton-list-findindex-value"><code>(FINDINDEX F XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L304-L313">src</a></sub></sup><a name="coalton-list-findindex-value"></a>
 <code>&forall; :A. (:A &rarr; <a href="#coalton-boolean-type">Boolean</a>) * <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> <a href="#coalton-ufix-type">UFix</a></code>
 
 Returns the index of the first element matching the predicate function F.
@@ -6317,7 +6317,7 @@ Returns the first element of a list.
 
 ***
 
-#### <a href="#coalton-list-index-value"><code>(INDEX I XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L266-L273">src</a></sub></sup><a name="coalton-list-index-value"></a>
+#### <a href="#coalton-list-index-value"><code>(INDEX I XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L273-L280">src</a></sub></sup><a name="coalton-list-index-value"></a>
 <code>&forall; :A. <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> :A</code>
 
 Returns the Ith element of a list.
@@ -6326,7 +6326,7 @@ Returns the Ith element of a list.
 
 ***
 
-#### <a href="#coalton-list-init-value"><code>(INIT L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L134-L137">src</a></sub></sup><a name="coalton-list-init-value"></a>
+#### <a href="#coalton-list-init-value"><code>(INIT L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L136-L139">src</a></sub></sup><a name="coalton-list-init-value"></a>
 <code>&forall; :A. <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-list-type">List</a> :A</code>
 
 Returns every element except the last in a list.
@@ -6335,7 +6335,7 @@ Returns every element except the last in a list.
 
 ***
 
-#### <a href="#coalton-list-insert-value"><code>(INSERT E LS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L504-L506">src</a></sub></sup><a name="coalton-list-insert-value"></a>
+#### <a href="#coalton-list-insert-value"><code>(INSERT E LS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L521-L523">src</a></sub></sup><a name="coalton-list-insert-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-ord-class">Ord</a> :A &rArr; :A * <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-list-type">List</a> :A</code>
 
 Inserts an element into a list at the first place it is less than or equal to the next element.
@@ -6344,7 +6344,7 @@ Inserts an element into a list at the first place it is less than or equal to th
 
 ***
 
-#### <a href="#coalton-list-insertby-value"><code>(INSERTBY CMP X YS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L509-L519">src</a></sub></sup><a name="coalton-list-insertby-value"></a>
+#### <a href="#coalton-list-insertby-value"><code>(INSERTBY CMP X YS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L526-L536">src</a></sub></sup><a name="coalton-list-insertby-value"></a>
 <code>&forall; :A. (:A * :A &rarr; <a href="#coalton-classes-ordering-type">Ordering</a>) * :A * <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-list-type">List</a> :A</code>
 
 Generic version of insert
@@ -6353,7 +6353,7 @@ Generic version of insert
 
 ***
 
-#### <a href="#coalton-list-insertions-value"><code>(INSERTIONS A L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L547-L557">src</a></sub></sup><a name="coalton-list-insertions-value"></a>
+#### <a href="#coalton-list-insertions-value"><code>(INSERTIONS A L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L566-L576">src</a></sub></sup><a name="coalton-list-insertions-value"></a>
 <code>&forall; :A. :A * <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-list-type">List</a> (<a href="#coalton-list-type">List</a> :A)</code>
 
 Produce a list of copies of `l`, each with A inserted at a possible position.
@@ -6366,7 +6366,7 @@ Produce a list of copies of `l`, each with A inserted at a possible position.
 
 ***
 
-#### <a href="#coalton-list-intercalate-value"><code>(INTERCALATE XS XSS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L542-L544">src</a></sub></sup><a name="coalton-list-intercalate-value"></a>
+#### <a href="#coalton-list-intercalate-value"><code>(INTERCALATE XS XSS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L561-L563">src</a></sub></sup><a name="coalton-list-intercalate-value"></a>
 <code>&forall; :A. <a href="#coalton-list-type">List</a> :A * <a href="#coalton-list-type">List</a> (<a href="#coalton-list-type">List</a> :A) &rarr; <a href="#coalton-list-type">List</a> :A</code>
 
 Intersperse `xs` into `xss` and then concatenate the result.
@@ -6375,7 +6375,7 @@ Intersperse `xs` into `xss` and then concatenate the result.
 
 ***
 
-#### <a href="#coalton-list-intersection-value"><code>(INTERSECTION XS YS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L373-L382">src</a></sub></sup><a name="coalton-list-intersection-value"></a>
+#### <a href="#coalton-list-intersection-value"><code>(INTERSECTION XS YS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L384-L393">src</a></sub></sup><a name="coalton-list-intersection-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-eq-class">Eq</a> :A &rArr; <a href="#coalton-list-type">List</a> :A * <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-list-type">List</a> :A</code>
 
 Returns elements which occur in both lists. Does not return duplicates and does not guarantee order.
@@ -6384,7 +6384,7 @@ Returns elements which occur in both lists. Does not return duplicates and does 
 
 ***
 
-#### <a href="#coalton-list-intersperse-value"><code>(INTERSPERSE E XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L535-L539">src</a></sub></sup><a name="coalton-list-intersperse-value"></a>
+#### <a href="#coalton-list-intersperse-value"><code>(INTERSPERSE E XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L553-L557">src</a></sub></sup><a name="coalton-list-intersperse-value"></a>
 <code>&forall; :A. :A * <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-list-type">List</a> :A</code>
 
 Returns a new list by inserting `e` between every element of `xs`.
@@ -6393,7 +6393,7 @@ Returns a new list by inserting `e` between every element of `xs`.
 
 ***
 
-#### <a href="#coalton-list-last-value"><code>(LAST L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L126-L131">src</a></sub></sup><a name="coalton-list-last-value"></a>
+#### <a href="#coalton-list-last-value"><code>(LAST L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L127-L132">src</a></sub></sup><a name="coalton-list-last-value"></a>
 <code>&forall; :A. <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> :A</code>
 
 Returns the last element of a list.
@@ -6402,7 +6402,7 @@ Returns the last element of a list.
 
 ***
 
-#### <a href="#coalton-list-length-value"><code>(LENGTH L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L258-L263">src</a></sub></sup><a name="coalton-list-length-value"></a>
+#### <a href="#coalton-list-length-value"><code>(LENGTH L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L265-L270">src</a></sub></sup><a name="coalton-list-length-value"></a>
 <code>&forall; :A. <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-ufix-type">UFix</a></code>
 
 Returns the length of a list.
@@ -6411,7 +6411,7 @@ Returns the length of a list.
 
 ***
 
-#### <a href="#coalton-list-lookup-value"><code>(LOOKUP E XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L385-L394">src</a></sub></sup><a name="coalton-list-lookup-value"></a>
+#### <a href="#coalton-list-lookup-value"><code>(LOOKUP E XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L396-L405">src</a></sub></sup><a name="coalton-list-lookup-value"></a>
 <code>&forall; :A :B. <a href="#coalton-classes-eq-class">Eq</a> :A &rArr; :A * <a href="#coalton-list-type">List</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :A :B) &rarr; <a href="#coalton-optional-type">Optional</a> :B</code>
 
 Returns the value of the first (key, value) tuple in XS where the key matches E.
@@ -6420,7 +6420,7 @@ Returns the value of the first (key, value) tuple in XS where the key matches E.
 
 ***
 
-#### <a href="#coalton-list-maximum-value"><code>(MAXIMUM L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L624-L626">src</a></sub></sup><a name="coalton-list-maximum-value"></a>
+#### <a href="#coalton-list-maximum-value"><code>(MAXIMUM L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L645-L647">src</a></sub></sup><a name="coalton-list-maximum-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-ord-class">Ord</a> :A &rArr; <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> :A</code>
 
 Returns a greatest element of a list, or `None`.
@@ -6429,7 +6429,7 @@ Returns a greatest element of a list, or `None`.
 
 ***
 
-#### <a href="#coalton-list-member-value"><code>(MEMBER E XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L347-L354">src</a></sub></sup><a name="coalton-list-member-value"></a>
+#### <a href="#coalton-list-member-value"><code>(MEMBER E XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L358-L365">src</a></sub></sup><a name="coalton-list-member-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-eq-class">Eq</a> :A &rArr; :A * <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Returns true if any element of XS is equal to E.
@@ -6438,7 +6438,7 @@ Returns true if any element of XS is equal to E.
 
 ***
 
-#### <a href="#coalton-list-minimum-value"><code>(MINIMUM L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L629-L631">src</a></sub></sup><a name="coalton-list-minimum-value"></a>
+#### <a href="#coalton-list-minimum-value"><code>(MINIMUM L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L651-L653">src</a></sub></sup><a name="coalton-list-minimum-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-ord-class">Ord</a> :A &rArr; <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> :A</code>
 
 Returns a least element of a list, or `None`.
@@ -6447,7 +6447,7 @@ Returns a least element of a list, or `None`.
 
 ***
 
-#### <a href="#coalton-list-nth-value"><code>(NTH N L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L276-L278">src</a></sub></sup><a name="coalton-list-nth-value"></a>
+#### <a href="#coalton-list-nth-value"><code>(NTH N L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L284-L286">src</a></sub></sup><a name="coalton-list-nth-value"></a>
 <code>&forall; :T. <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-list-type">List</a> :T &rarr; :T</code>
 
 Like INDEX, but errors if the index is not found.
@@ -6456,7 +6456,7 @@ Like INDEX, but errors if the index is not found.
 
 ***
 
-#### <a href="#coalton-list-nth-cdr-value"><code>(NTH-CDR N L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L281-L288">src</a></sub></sup><a name="coalton-list-nth-cdr-value"></a>
+#### <a href="#coalton-list-nth-cdr-value"><code>(NTH-CDR N L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L289-L296">src</a></sub></sup><a name="coalton-list-nth-cdr-value"></a>
 <code>&forall; :A. <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-list-type">List</a> :A</code>
 
 Returns the nth-cdr of a list.
@@ -6465,7 +6465,7 @@ Returns the nth-cdr of a list.
 
 ***
 
-#### <a href="#coalton-list-null?-value"><code>(NULL? XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L141-L145">src</a></sub></sup><a name="coalton-list-null?-value"></a>
+#### <a href="#coalton-list-null?-value"><code>(NULL? XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L143-L147">src</a></sub></sup><a name="coalton-list-null?-value"></a>
 <code>&forall; :A. <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Returns TRUE if XS is an empty list.
@@ -6474,7 +6474,7 @@ Returns TRUE if XS is an empty list.
 
 ***
 
-#### <a href="#coalton-list-optimumby-value"><code>(OPTIMUMBY F XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L611-L621">src</a></sub></sup><a name="coalton-list-optimumby-value"></a>
+#### <a href="#coalton-list-optimumby-value"><code>(OPTIMUMBY F XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L631-L641">src</a></sub></sup><a name="coalton-list-optimumby-value"></a>
 <code>&forall; :A. (:A * :A &rarr; <a href="#coalton-boolean-type">Boolean</a>) * <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> :A</code>
 
 Returns an optimum according to a total order.
@@ -6483,7 +6483,7 @@ Returns an optimum according to a total order.
 
 ***
 
-#### <a href="#coalton-list-partition-value"><code>(PARTITION F XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L581-L590">src</a></sub></sup><a name="coalton-list-partition-value"></a>
+#### <a href="#coalton-list-partition-value"><code>(PARTITION F XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L600-L609">src</a></sub></sup><a name="coalton-list-partition-value"></a>
 <code>&forall; :A. (:A &rarr; <a href="#coalton-boolean-type">Boolean</a>) * <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-classes-tuple-type">Tuple</a> (<a href="#coalton-list-type">List</a> :A) (<a href="#coalton-list-type">List</a> :A)</code>
 
 Splits a list into two new lists. The first list contains elements matching predicate F.
@@ -6492,7 +6492,7 @@ Splits a list into two new lists. The first list contains elements matching pred
 
 ***
 
-#### <a href="#coalton-list-perms-value"><code>(PERMS L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L664-L669">src</a></sub></sup><a name="coalton-list-perms-value"></a>
+#### <a href="#coalton-list-perms-value"><code>(PERMS L)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L688-L693">src</a></sub></sup><a name="coalton-list-perms-value"></a>
 <code>&forall; :A. <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-list-type">List</a> (<a href="#coalton-list-type">List</a> :A)</code>
 
 Produce all permutations of the list L.
@@ -6501,7 +6501,7 @@ Produce all permutations of the list L.
 
 ***
 
-#### <a href="#coalton-list-product-value"><code>(PRODUCT XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L639-L641">src</a></sub></sup><a name="coalton-list-product-value"></a>
+#### <a href="#coalton-list-product-value"><code>(PRODUCT XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L663-L665">src</a></sub></sup><a name="coalton-list-product-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-num-class">Num</a> :A &rArr; <a href="#coalton-list-type">List</a> :A &rarr; :A</code>
 
 Returns the product of `xs`.
@@ -6510,7 +6510,7 @@ Returns the product of `xs`.
 
 ***
 
-#### <a href="#coalton-list-range-value"><code>(RANGE START END)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L307-L322">src</a></sub></sup><a name="coalton-list-range-value"></a>
+#### <a href="#coalton-list-range-value"><code>(RANGE START END)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L316-L331">src</a></sub></sup><a name="coalton-list-range-value"></a>
 <code>&forall; :INT. (<a href="#coalton-classes-num-class">Num</a> :INT) (<a href="#coalton-classes-ord-class">Ord</a> :INT) &rArr; :INT * :INT &rarr; <a href="#coalton-list-type">List</a> :INT</code>
 
 Returns a list containing the numbers from START to END inclusive, counting by 1.
@@ -6526,7 +6526,7 @@ Returns a list containing the numbers from START to END inclusive, counting by 1
 
 ***
 
-#### <a href="#coalton-list-remove-value"><code>(REMOVE X YS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L425-L427">src</a></sub></sup><a name="coalton-list-remove-value"></a>
+#### <a href="#coalton-list-remove-value"><code>(REMOVE X YS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L439-L441">src</a></sub></sup><a name="coalton-list-remove-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-eq-class">Eq</a> :A &rArr; :A * <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-list-type">List</a> :A</code>
 
 Return a new list with the first element equal to `x` removed.
@@ -6535,7 +6535,7 @@ Return a new list with the first element equal to `x` removed.
 
 ***
 
-#### <a href="#coalton-list-remove-duplicates-value"><code>(REMOVE-DUPLICATES XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L406-L408">src</a></sub></sup><a name="coalton-list-remove-duplicates-value"></a>
+#### <a href="#coalton-list-remove-duplicates-value"><code>(REMOVE-DUPLICATES XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L418-L420">src</a></sub></sup><a name="coalton-list-remove-duplicates-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-eq-class">Eq</a> :A &rArr; <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-list-type">List</a> :A</code>
 
 Returns a new list without duplicate elements.
@@ -6544,7 +6544,7 @@ Returns a new list without duplicate elements.
 
 ***
 
-#### <a href="#coalton-list-remove-if-value"><code>(REMOVE-IF PRED XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L420-L422">src</a></sub></sup><a name="coalton-list-remove-if-value"></a>
+#### <a href="#coalton-list-remove-if-value"><code>(REMOVE-IF PRED XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L433-L435">src</a></sub></sup><a name="coalton-list-remove-if-value"></a>
 <code>&forall; :A. (:A &rarr; <a href="#coalton-boolean-type">Boolean</a>) * <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-list-type">List</a> :A</code>
 
 Return a new list with the first element for which PRED is `True` is removed.
@@ -6553,7 +6553,7 @@ Return a new list with the first element for which PRED is `True` is removed.
 
 ***
 
-#### <a href="#coalton-list-repeat-value"><code>(REPEAT N X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L167-L173">src</a></sub></sup><a name="coalton-list-repeat-value"></a>
+#### <a href="#coalton-list-repeat-value"><code>(REPEAT N X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L172-L178">src</a></sub></sup><a name="coalton-list-repeat-value"></a>
 <code>&forall; :A. <a href="#coalton-ufix-type">UFix</a> * :A &rarr; <a href="#coalton-list-type">List</a> :A</code>
 
 Returns a list with the same value repeated multiple times.
@@ -6562,7 +6562,7 @@ Returns a list with the same value repeated multiple times.
 
 ***
 
-#### <a href="#coalton-list-reverse-value"><code>(REVERSE XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L181-L184">src</a></sub></sup><a name="coalton-list-reverse-value"></a>
+#### <a href="#coalton-list-reverse-value"><code>(REVERSE XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L187-L190">src</a></sub></sup><a name="coalton-list-reverse-value"></a>
 <code>&forall; :A. <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-list-type">List</a> :A</code>
 
 Returns a new list containing the same elements in reverse order.
@@ -6571,7 +6571,7 @@ Returns a new list containing the same elements in reverse order.
 
 ***
 
-#### <a href="#coalton-list-singleton-value"><code>(SINGLETON X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L155-L157">src</a></sub></sup><a name="coalton-list-singleton-value"></a>
+#### <a href="#coalton-list-singleton-value"><code>(SINGLETON X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L159-L161">src</a></sub></sup><a name="coalton-list-singleton-value"></a>
 <code>&forall; :A. :A &rarr; <a href="#coalton-list-type">List</a> :A</code>
 
 Returns a list containing one element.
@@ -6580,7 +6580,7 @@ Returns a list containing one element.
 
 ***
 
-#### <a href="#coalton-list-singleton?-value"><code>(SINGLETON? XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L160-L164">src</a></sub></sup><a name="coalton-list-singleton?-value"></a>
+#### <a href="#coalton-list-singleton?-value"><code>(SINGLETON? XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L165-L169">src</a></sub></sup><a name="coalton-list-singleton?-value"></a>
 <code>&forall; :A. <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is `xs` a list containing exactly one element?
@@ -6589,7 +6589,7 @@ Is `xs` a list containing exactly one element?
 
 ***
 
-#### <a href="#coalton-list-sort-value"><code>(SORT XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L522-L524">src</a></sub></sup><a name="coalton-list-sort-value"></a>
+#### <a href="#coalton-list-sort-value"><code>(SORT XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L540-L542">src</a></sub></sup><a name="coalton-list-sort-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-ord-class">Ord</a> :A &rArr; <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-list-type">List</a> :A</code>
 
 Sort `xs`.
@@ -6598,7 +6598,7 @@ Sort `xs`.
 
 ***
 
-#### <a href="#coalton-list-sortby-value"><code>(SORTBY CMP XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L527-L532">src</a></sub></sup><a name="coalton-list-sortby-value"></a>
+#### <a href="#coalton-list-sortby-value"><code>(SORTBY CMP XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L545-L550">src</a></sub></sup><a name="coalton-list-sortby-value"></a>
 <code>&forall; :A. (:A * :A &rarr; <a href="#coalton-classes-ordering-type">Ordering</a>) * <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-list-type">List</a> :A</code>
 
 Sort `xs` by a custom comparison function `cmp`.
@@ -6607,7 +6607,7 @@ Sort `xs` by a custom comparison function `cmp`.
 
 ***
 
-#### <a href="#coalton-list-split-around-value"><code>(SPLIT-AROUND N XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L229-L233">src</a></sub></sup><a name="coalton-list-split-around-value"></a>
+#### <a href="#coalton-list-split-around-value"><code>(SPLIT-AROUND N XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L236-L240">src</a></sub></sup><a name="coalton-list-split-around-value"></a>
 <code>&forall; :A. <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-tuple-tuple3-type">Tuple3</a> (<a href="#coalton-list-type">List</a> :A) (<a href="#coalton-optional-type">Optional</a> :A) (<a href="#coalton-list-type">List</a> :A)</code>
 
 Splits a list around N into a Tuple of the first N elements, the element at index N, and a tail of all remaining elements. N must be a valid index.
@@ -6616,7 +6616,7 @@ Splits a list around N into a Tuple of the first N elements, the element at inde
 
 ***
 
-#### <a href="#coalton-list-split-at-value"><code>(SPLIT-AT N XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L217-L226">src</a></sub></sup><a name="coalton-list-split-at-value"></a>
+#### <a href="#coalton-list-split-at-value"><code>(SPLIT-AT N XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L224-L233">src</a></sub></sup><a name="coalton-list-split-at-value"></a>
 <code>&forall; :A. <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-classes-tuple-type">Tuple</a> (<a href="#coalton-list-type">List</a> :A) (<a href="#coalton-list-type">List</a> :A)</code>
 
 Splits a list into a Tuple of the first N elements and all remaining elements. The return value is equivalent to `(Tuple (take n xs) (drop n xs)`.
@@ -6625,7 +6625,7 @@ Splits a list into a Tuple of the first N elements and all remaining elements. T
 
 ***
 
-#### <a href="#coalton-list-sum-value"><code>(SUM XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L634-L636">src</a></sub></sup><a name="coalton-list-sum-value"></a>
+#### <a href="#coalton-list-sum-value"><code>(SUM XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L657-L659">src</a></sub></sup><a name="coalton-list-sum-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-num-class">Num</a> :A &rArr; <a href="#coalton-list-type">List</a> :A &rarr; :A</code>
 
 Returns the sum of `xs`.
@@ -6643,7 +6643,7 @@ Returns every element except the first in a list.
 
 ***
 
-#### <a href="#coalton-list-take-value"><code>(TAKE N XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L204-L214">src</a></sub></sup><a name="coalton-list-take-value"></a>
+#### <a href="#coalton-list-take-value"><code>(TAKE N XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L211-L221">src</a></sub></sup><a name="coalton-list-take-value"></a>
 <code>&forall; :A. <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-list-type">List</a> :A</code>
 
 Returns the first N elements of a list.
@@ -6652,7 +6652,7 @@ Returns the first N elements of a list.
 
 ***
 
-#### <a href="#coalton-list-transpose-value"><code>(TRANSPOSE XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L560-L578">src</a></sub></sup><a name="coalton-list-transpose-value"></a>
+#### <a href="#coalton-list-transpose-value"><code>(TRANSPOSE XS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L579-L597">src</a></sub></sup><a name="coalton-list-transpose-value"></a>
 <code>&forall; :A. <a href="#coalton-list-type">List</a> (<a href="#coalton-list-type">List</a> :A) &rarr; <a href="#coalton-list-type">List</a> (<a href="#coalton-list-type">List</a> :A)</code>
 
 Transposes a matrix represented by a list of lists.
@@ -6661,7 +6661,7 @@ Transposes a matrix represented by a list of lists.
 
 ***
 
-#### <a href="#coalton-list-union-value"><code>(UNION XS YS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L357-L370">src</a></sub></sup><a name="coalton-list-union-value"></a>
+#### <a href="#coalton-list-union-value"><code>(UNION XS YS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L368-L381">src</a></sub></sup><a name="coalton-list-union-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-eq-class">Eq</a> :A &rArr; <a href="#coalton-list-type">List</a> :A * <a href="#coalton-list-type">List</a> :A &rarr; <a href="#coalton-list-type">List</a> :A</code>
 
 Returns a new list with the elements from both XS and YS and without duplicates.
@@ -6670,7 +6670,7 @@ Returns a new list with the elements from both XS and YS and without duplicates.
 
 ***
 
-#### <a href="#coalton-list-zip-value"><code>(ZIP XS YS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L489-L491">src</a></sub></sup><a name="coalton-list-zip-value"></a>
+#### <a href="#coalton-list-zip-value"><code>(ZIP XS YS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L505-L507">src</a></sub></sup><a name="coalton-list-zip-value"></a>
 <code>&forall; :A :B. <a href="#coalton-list-type">List</a> :A * <a href="#coalton-list-type">List</a> :B &rarr; <a href="#coalton-list-type">List</a> (<a href="#coalton-classes-tuple-type">Tuple</a> :A :B)</code>
 
 Builds a list of tuples with the elements of XS and YS.
@@ -6679,7 +6679,7 @@ Builds a list of tuples with the elements of XS and YS.
 
 ***
 
-#### <a href="#coalton-list-zipwith-value"><code>(ZIPWITH F XS YS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L435-L444">src</a></sub></sup><a name="coalton-list-zipwith-value"></a>
+#### <a href="#coalton-list-zipwith-value"><code>(ZIPWITH F XS YS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L450-L459">src</a></sub></sup><a name="coalton-list-zipwith-value"></a>
 <code>&forall; :A :B :C. (:A * :B &rarr; :C) * <a href="#coalton-list-type">List</a> :A * <a href="#coalton-list-type">List</a> :B &rarr; <a href="#coalton-list-type">List</a> :C</code>
 
 Builds a new list by calling `f` with elements of `xs` and `ys`.
@@ -6688,7 +6688,7 @@ Builds a new list by calling `f` with elements of `xs` and `ys`.
 
 ***
 
-#### <a href="#coalton-list-zipwith3-value"><code>(ZIPWITH3 F XS YS ZS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L447-L457">src</a></sub></sup><a name="coalton-list-zipwith3-value"></a>
+#### <a href="#coalton-list-zipwith3-value"><code>(ZIPWITH3 F XS YS ZS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L462-L472">src</a></sub></sup><a name="coalton-list-zipwith3-value"></a>
 <code>&forall; :A :B :C :D. (:A * :B * :C &rarr; :D) * <a href="#coalton-list-type">List</a> :A * <a href="#coalton-list-type">List</a> :B * <a href="#coalton-list-type">List</a> :C &rarr; <a href="#coalton-list-type">List</a> :D</code>
 
 Build a new list by calling F with elements of XS, YS and ZS
@@ -6697,7 +6697,7 @@ Build a new list by calling F with elements of XS, YS and ZS
 
 ***
 
-#### <a href="#coalton-list-zipwith4-value"><code>(ZIPWITH4 F AS BS CS DS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L460-L471">src</a></sub></sup><a name="coalton-list-zipwith4-value"></a>
+#### <a href="#coalton-list-zipwith4-value"><code>(ZIPWITH4 F AS BS CS DS)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L475-L486">src</a></sub></sup><a name="coalton-list-zipwith4-value"></a>
 <code>&forall; :A :B :C :D :E. (:A * :B * :C * :D &rarr; :E) * <a href="#coalton-list-type">List</a> :A * <a href="#coalton-list-type">List</a> :B * <a href="#coalton-list-type">List</a> :C * <a href="#coalton-list-type">List</a> :D &rarr; <a href="#coalton-list-type">List</a> :E</code>
 
 Build a new list by calling F with elements of AS, BS, CS and DS
@@ -6706,7 +6706,7 @@ Build a new list by calling F with elements of AS, BS, CS and DS
 
 ***
 
-#### <a href="#coalton-list-zipwith5-value"><code>(ZIPWITH5 F AS BS CS DS ES)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L474-L486">src</a></sub></sup><a name="coalton-list-zipwith5-value"></a>
+#### <a href="#coalton-list-zipwith5-value"><code>(ZIPWITH5 F AS BS CS DS ES)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/list.ct#L489-L501">src</a></sub></sup><a name="coalton-list-zipwith5-value"></a>
 <code>&forall; :A :B :C :D :E :F. (:A * :B * :C * :D * :E &rarr; :F) * <a href="#coalton-list-type">List</a> :A * <a href="#coalton-list-type">List</a> :B * <a href="#coalton-list-type">List</a> :C * <a href="#coalton-list-type">List</a> :D * <a href="#coalton-list-type">List</a> :E &rarr; <a href="#coalton-list-type">List</a> :F</code>
 
 Build a new list by calling F with elements of AS, BS, CS, DS and ES
@@ -6833,7 +6833,7 @@ Methods:
 
 ### Values
 
-#### <a href="#coalton-math-arith-1+-value"><code>(1+ NUM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.ct#L184-L186">src</a></sub></sup><a name="coalton-math-arith-1+-value"></a>
+#### <a href="#coalton-math-arith-1+-value"><code>(1+ NUM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.ct#L185-L187">src</a></sub></sup><a name="coalton-math-arith-1+-value"></a>
 <code>&forall; :NUM. <a href="#coalton-classes-num-class">Num</a> :NUM &rArr; :NUM &rarr; :NUM</code>
 
 Increment `num`.
@@ -6842,7 +6842,7 @@ Increment `num`.
 
 ***
 
-#### <a href="#coalton-math-arith-1--value"><code>(1- NUM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.ct#L190-L192">src</a></sub></sup><a name="coalton-math-arith-1--value"></a>
+#### <a href="#coalton-math-arith-1--value"><code>(1- NUM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.ct#L191-L193">src</a></sub></sup><a name="coalton-math-arith-1--value"></a>
 <code>&forall; :NUM. <a href="#coalton-classes-num-class">Num</a> :NUM &rArr; :NUM &rarr; :NUM</code>
 
 Decrement `num`.
@@ -6851,7 +6851,7 @@ Decrement `num`.
 
 ***
 
-#### <a href="#coalton-math-arith-abs-value"><code>(ABS X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.ct#L160-L164">src</a></sub></sup><a name="coalton-math-arith-abs-value"></a>
+#### <a href="#coalton-math-arith-abs-value"><code>(ABS X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.ct#L161-L165">src</a></sub></sup><a name="coalton-math-arith-abs-value"></a>
 <code>&forall; :A. (<a href="#coalton-classes-ord-class">Ord</a> :A) (<a href="#coalton-classes-num-class">Num</a> :A) &rArr; :A &rarr; :A</code>
 
 Absolute value of `x`.
@@ -6860,7 +6860,7 @@ Absolute value of `x`.
 
 ***
 
-#### <a href="#coalton-math-arith-ash-value"><code>(ASH X N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.ct#L177-L180">src</a></sub></sup><a name="coalton-math-arith-ash-value"></a>
+#### <a href="#coalton-math-arith-ash-value"><code>(ASH X N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.ct#L178-L181">src</a></sub></sup><a name="coalton-math-arith-ash-value"></a>
 <code><a href="#coalton-integer-type">Integer</a> * <a href="#coalton-integer-type">Integer</a> &rarr; <a href="#coalton-integer-type">Integer</a></code>
 
 Compute the "arithmetic shift" of `x` by `n`.
@@ -6869,7 +6869,7 @@ Compute the "arithmetic shift" of `x` by `n`.
 
 ***
 
-#### <a href="#coalton-math-arith-finite?-value"><code>(FINITE? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.ct#L98-L100">src</a></sub></sup><a name="coalton-math-arith-finite?-value"></a>
+#### <a href="#coalton-math-arith-finite?-value"><code>(FINITE? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.ct#L99-L101">src</a></sub></sup><a name="coalton-math-arith-finite?-value"></a>
 <code>&forall; :A. <a href="#coalton-math-arith-transfinite-class">Transfinite</a> :A &rArr; :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Neither infinite or NaN.
@@ -6878,7 +6878,7 @@ Neither infinite or NaN.
 
 ***
 
-#### <a href="#coalton-math-arith-negate-value"><code>(NEGATE X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.ct#L154-L156">src</a></sub></sup><a name="coalton-math-arith-negate-value"></a>
+#### <a href="#coalton-math-arith-negate-value"><code>(NEGATE X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.ct#L155-L157">src</a></sub></sup><a name="coalton-math-arith-negate-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-num-class">Num</a> :A &rArr; :A &rarr; :A</code>
 
 The negation, or additive inverse, of `x`.
@@ -6887,7 +6887,7 @@ The negation, or additive inverse, of `x`.
 
 ***
 
-#### <a href="#coalton-math-arith-negative?-value"><code>(NEGATIVE? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.ct#L202-L204">src</a></sub></sup><a name="coalton-math-arith-negative?-value"></a>
+#### <a href="#coalton-math-arith-negative?-value"><code>(NEGATIVE? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.ct#L203-L205">src</a></sub></sup><a name="coalton-math-arith-negative?-value"></a>
 <code>&forall; :A. (<a href="#coalton-classes-num-class">Num</a> :A) (<a href="#coalton-classes-ord-class">Ord</a> :A) &rArr; :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is `x` negative?
@@ -6896,7 +6896,7 @@ Is `x` negative?
 
 ***
 
-#### <a href="#coalton-math-arith-nonnegative?-value"><code>(NONNEGATIVE? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.ct#L214-L216">src</a></sub></sup><a name="coalton-math-arith-nonnegative?-value"></a>
+#### <a href="#coalton-math-arith-nonnegative?-value"><code>(NONNEGATIVE? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.ct#L215-L217">src</a></sub></sup><a name="coalton-math-arith-nonnegative?-value"></a>
 <code>&forall; :A. (<a href="#coalton-classes-num-class">Num</a> :A) (<a href="#coalton-classes-ord-class">Ord</a> :A) &rArr; :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is `x` not negative?
@@ -6905,7 +6905,7 @@ Is `x` not negative?
 
 ***
 
-#### <a href="#coalton-math-arith-nonpositive?-value"><code>(NONPOSITIVE? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.ct#L208-L210">src</a></sub></sup><a name="coalton-math-arith-nonpositive?-value"></a>
+#### <a href="#coalton-math-arith-nonpositive?-value"><code>(NONPOSITIVE? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.ct#L209-L211">src</a></sub></sup><a name="coalton-math-arith-nonpositive?-value"></a>
 <code>&forall; :A. (<a href="#coalton-classes-num-class">Num</a> :A) (<a href="#coalton-classes-ord-class">Ord</a> :A) &rArr; :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is `x` not positive?
@@ -6914,7 +6914,7 @@ Is `x` not positive?
 
 ***
 
-#### <a href="#coalton-math-arith-nonzero?-value"><code>(NONZERO? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.ct#L226-L228">src</a></sub></sup><a name="coalton-math-arith-nonzero?-value"></a>
+#### <a href="#coalton-math-arith-nonzero?-value"><code>(NONZERO? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.ct#L227-L229">src</a></sub></sup><a name="coalton-math-arith-nonzero?-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-num-class">Num</a> :A &rArr; :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is `x` not zero?
@@ -6923,7 +6923,7 @@ Is `x` not zero?
 
 ***
 
-#### <a href="#coalton-math-arith-positive?-value"><code>(POSITIVE? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.ct#L196-L198">src</a></sub></sup><a name="coalton-math-arith-positive?-value"></a>
+#### <a href="#coalton-math-arith-positive?-value"><code>(POSITIVE? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.ct#L197-L199">src</a></sub></sup><a name="coalton-math-arith-positive?-value"></a>
 <code>&forall; :A. (<a href="#coalton-classes-num-class">Num</a> :A) (<a href="#coalton-classes-ord-class">Ord</a> :A) &rArr; :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is `x` positive?
@@ -6932,7 +6932,7 @@ Is `x` positive?
 
 ***
 
-#### <a href="#coalton-math-arith-sign-value"><code>(SIGN X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.ct#L168-L173">src</a></sub></sup><a name="coalton-math-arith-sign-value"></a>
+#### <a href="#coalton-math-arith-sign-value"><code>(SIGN X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.ct#L169-L174">src</a></sub></sup><a name="coalton-math-arith-sign-value"></a>
 <code>&forall; :A :B. (<a href="#coalton-classes-ord-class">Ord</a> :A) (<a href="#coalton-classes-num-class">Num</a> :A) (<a href="#coalton-classes-num-class">Num</a> :B) &rArr; :A &rarr; :B</code>
 
 The sign of `x`, where `(sign 0) = 0`.
@@ -6941,7 +6941,7 @@ The sign of `x`, where `(sign 0) = 0`.
 
 ***
 
-#### <a href="#coalton-math-arith-zero?-value"><code>(ZERO? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.ct#L220-L222">src</a></sub></sup><a name="coalton-math-arith-zero?-value"></a>
+#### <a href="#coalton-math-arith-zero?-value"><code>(ZERO? X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.ct#L221-L223">src</a></sub></sup><a name="coalton-math-arith-zero?-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-num-class">Num</a> :A &rArr; :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is `x` zero?
@@ -6950,7 +6950,7 @@ Is `x` zero?
 
 ***
 
-#### <a href="#coalton-math-arith-negative-infinity-value"><code>NEGATIVE-INFINITY</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.ct#L103-L104">src</a></sub></sup><a name="coalton-math-arith-negative-infinity-value"></a>
+#### <a href="#coalton-math-arith-negative-infinity-value"><code>NEGATIVE-INFINITY</code></a> <sup><sub>[VALUE] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/arith.ct#L104-L105">src</a></sub></sup><a name="coalton-math-arith-negative-infinity-value"></a>
 <code>&forall; :A. (<a href="#coalton-math-arith-transfinite-class">Transfinite</a> :A) (<a href="#coalton-classes-num-class">Num</a> :A) &rArr; :A</code>
 
 
@@ -7104,7 +7104,7 @@ blackboard-bold 𝕚.)
 
 ### Classes
 
-#### <a href="#coalton-math-elementary-elementary-class"><code>Elementary</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.ct#L123-L127">src</a></sub></sup><a name="coalton-math-elementary-elementary-class"></a>
+#### <a href="#coalton-math-elementary-elementary-class"><code>Elementary</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.ct#L126-L130">src</a></sub></sup><a name="coalton-math-elementary-elementary-class"></a>
 <code>(<a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :A) (<a href="#coalton-math-elementary-polar-class">Polar</a> :A) (<a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> :A) (<a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> :A) (<a href="#coalton-math-elementary-radical-class">Radical</a> :A) &rArr; <a href="#coalton-math-elementary-elementary-class">Elementary</a> :A</code>
 
 
@@ -7125,7 +7125,7 @@ Methods:
 
 ***
 
-#### <a href="#coalton-math-elementary-exponentiable-class"><code>Exponentiable</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.ct#L72-L84">src</a></sub></sup><a name="coalton-math-elementary-exponentiable-class"></a>
+#### <a href="#coalton-math-elementary-exponentiable-class"><code>Exponentiable</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.ct#L73-L85">src</a></sub></sup><a name="coalton-math-elementary-exponentiable-class"></a>
 <code><a href="#coalton-math-elementary-exponentiable-class">Exponentiable</a> :A</code>
 
 
@@ -7160,7 +7160,7 @@ Methods:
 
 ***
 
-#### <a href="#coalton-math-elementary-polar-class"><code>Polar</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.ct#L93-L103">src</a></sub></sup><a name="coalton-math-elementary-polar-class"></a>
+#### <a href="#coalton-math-elementary-polar-class"><code>Polar</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.ct#L94-L104">src</a></sub></sup><a name="coalton-math-elementary-polar-class"></a>
 <code>(<a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> :A) (<a href="#coalton-classes-num-class">Num</a> :A) &rArr; <a href="#coalton-math-elementary-polar-class">Polar</a> :A</code>
 
 
@@ -7190,7 +7190,7 @@ Methods:
 
 ***
 
-#### <a href="#coalton-math-elementary-radical-class"><code>Radical</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.ct#L86-L91">src</a></sub></sup><a name="coalton-math-elementary-radical-class"></a>
+#### <a href="#coalton-math-elementary-radical-class"><code>Radical</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.ct#L87-L92">src</a></sub></sup><a name="coalton-math-elementary-radical-class"></a>
 <code><a href="#coalton-math-elementary-radical-class">Radical</a> :A</code>
 
 
@@ -7252,19 +7252,19 @@ Methods:
 
 ### Values
 
-#### <a href="#coalton-math-elementary-acosh-value"><code>(ACOSH X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.ct#L148-L149">src</a></sub></sup><a name="coalton-math-elementary-acosh-value"></a>
+#### <a href="#coalton-math-elementary-acosh-value"><code>(ACOSH X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.ct#L156-L157">src</a></sub></sup><a name="coalton-math-elementary-acosh-value"></a>
 <code>&forall; :F. <a href="#coalton-math-elementary-elementary-class">Elementary</a> :F &rArr; :F &rarr; :F</code>
 
 
 ***
 
-#### <a href="#coalton-math-elementary-asinh-value"><code>(ASINH X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.ct#L144-L145">src</a></sub></sup><a name="coalton-math-elementary-asinh-value"></a>
+#### <a href="#coalton-math-elementary-asinh-value"><code>(ASINH X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.ct#L151-L152">src</a></sub></sup><a name="coalton-math-elementary-asinh-value"></a>
 <code>&forall; :F. <a href="#coalton-math-elementary-elementary-class">Elementary</a> :F &rArr; :F &rarr; :F</code>
 
 
 ***
 
-#### <a href="#coalton-math-elementary-atan2-value"><code>(ATAN2 Y X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.ct#L60-L70">src</a></sub></sup><a name="coalton-math-elementary-atan2-value"></a>
+#### <a href="#coalton-math-elementary-atan2-value"><code>(ATAN2 Y X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.ct#L61-L71">src</a></sub></sup><a name="coalton-math-elementary-atan2-value"></a>
 <code>&forall; :F. (<a href="#coalton-classes-ord-class">Ord</a> :F) (<a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> :F) (<a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :F) &rArr; :F * :F &rarr; :F</code>
 
 Computes the two-argument arctangent of `y` and `x`, which is roughly the same
@@ -7275,13 +7275,13 @@ the point $(\mathtt{x},\mathtt{y})$.
 
 ***
 
-#### <a href="#coalton-math-elementary-atanh-value"><code>(ATANH X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.ct#L152-L153">src</a></sub></sup><a name="coalton-math-elementary-atanh-value"></a>
+#### <a href="#coalton-math-elementary-atanh-value"><code>(ATANH X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.ct#L161-L162">src</a></sub></sup><a name="coalton-math-elementary-atanh-value"></a>
 <code>&forall; :F. <a href="#coalton-math-elementary-elementary-class">Elementary</a> :F &rArr; :F &rarr; :F</code>
 
 
 ***
 
-#### <a href="#coalton-math-elementary-cis-value"><code>(CIS Z)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.ct#L114-L121">src</a></sub></sup><a name="coalton-math-elementary-cis-value"></a>
+#### <a href="#coalton-math-elementary-cis-value"><code>(CIS Z)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.ct#L117-L124">src</a></sub></sup><a name="coalton-math-elementary-cis-value"></a>
 <code>&forall; :A. (<a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> :A) (<a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> :A) &rArr; :A &rarr; <a href="#coalton-math-complex-complex-type">Complex</a> :A</code>
 
 A point on the complex unit circle:
@@ -7295,13 +7295,13 @@ A point on the complex unit circle:
 
 ***
 
-#### <a href="#coalton-math-elementary-cosh-value"><code>(COSH X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.ct#L136-L137">src</a></sub></sup><a name="coalton-math-elementary-cosh-value"></a>
+#### <a href="#coalton-math-elementary-cosh-value"><code>(COSH X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.ct#L141-L142">src</a></sub></sup><a name="coalton-math-elementary-cosh-value"></a>
 <code>&forall; :F. <a href="#coalton-math-elementary-elementary-class">Elementary</a> :F &rArr; :F &rarr; :F</code>
 
 
 ***
 
-#### <a href="#coalton-math-elementary-magnitude-value"><code>(MAGNITUDE Z)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.ct#L106-L111">src</a></sub></sup><a name="coalton-math-elementary-magnitude-value"></a>
+#### <a href="#coalton-math-elementary-magnitude-value"><code>(MAGNITUDE Z)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.ct#L108-L113">src</a></sub></sup><a name="coalton-math-elementary-magnitude-value"></a>
 <code>&forall; :A. (<a href="#coalton-math-complex-complexcomponent-class">ComplexComponent</a> :A) (<a href="#coalton-math-elementary-radical-class">Radical</a> :A) &rArr; <a href="#coalton-math-complex-complex-type">Complex</a> :A &rarr; :A</code>
 
 The magnitude of a complex number. For `z = x + yi`,
@@ -7313,7 +7313,7 @@ The magnitude of a complex number. For `z = x + yi`,
 
 ***
 
-#### <a href="#coalton-math-elementary-sincos-value"><code>(SINCOS X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.ct#L55-L57">src</a></sub></sup><a name="coalton-math-elementary-sincos-value"></a>
+#### <a href="#coalton-math-elementary-sincos-value"><code>(SINCOS X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.ct#L56-L58">src</a></sub></sup><a name="coalton-math-elementary-sincos-value"></a>
 <code>&forall; :A. <a href="#coalton-math-elementary-trigonometric-class">Trigonometric</a> :A &rArr; :A &rarr; :A * :A</code>
 
 Computes the sine and cosine of X.
@@ -7322,13 +7322,13 @@ Computes the sine and cosine of X.
 
 ***
 
-#### <a href="#coalton-math-elementary-sinh-value"><code>(SINH X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.ct#L132-L133">src</a></sub></sup><a name="coalton-math-elementary-sinh-value"></a>
+#### <a href="#coalton-math-elementary-sinh-value"><code>(SINH X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.ct#L136-L137">src</a></sub></sup><a name="coalton-math-elementary-sinh-value"></a>
 <code>&forall; :F. <a href="#coalton-math-elementary-elementary-class">Elementary</a> :F &rArr; :F &rarr; :F</code>
 
 
 ***
 
-#### <a href="#coalton-math-elementary-tanh-value"><code>(TANH X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.ct#L140-L141">src</a></sub></sup><a name="coalton-math-elementary-tanh-value"></a>
+#### <a href="#coalton-math-elementary-tanh-value"><code>(TANH X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/elementary.ct#L146-L147">src</a></sub></sup><a name="coalton-math-elementary-tanh-value"></a>
 <code>&forall; :F. <a href="#coalton-math-elementary-elementary-class">Elementary</a> :F &rArr; :F &rarr; :F</code>
 
 
@@ -7338,7 +7338,7 @@ Computes the sine and cosine of X.
 
 ### Values
 
-#### <a href="#coalton-math-fraction-denominator-value"><code>(DENOMINATOR Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/fraction.ct#L40-L44">src</a></sub></sup><a name="coalton-math-fraction-denominator-value"></a>
+#### <a href="#coalton-math-fraction-denominator-value"><code>(DENOMINATOR Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/fraction.ct#L43-L47">src</a></sub></sup><a name="coalton-math-fraction-denominator-value"></a>
 <code><a href="#coalton-fraction-type">Fraction</a> &rarr; <a href="#coalton-integer-type">Integer</a></code>
 
 The denominator of a fraction.
@@ -7347,13 +7347,13 @@ The denominator of a fraction.
 
 ***
 
-#### <a href="#coalton-math-fraction-mkfraction-value"><code>(MKFRACTION A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/fraction.ct#L28-L30">src</a></sub></sup><a name="coalton-math-fraction-mkfraction-value"></a>
+#### <a href="#coalton-math-fraction-mkfraction-value"><code>(MKFRACTION A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/fraction.ct#L29-L31">src</a></sub></sup><a name="coalton-math-fraction-mkfraction-value"></a>
 <code><a href="#coalton-integer-type">Integer</a> * <a href="#coalton-integer-type">Integer</a> &rarr; <a href="#coalton-fraction-type">Fraction</a></code>
 
 
 ***
 
-#### <a href="#coalton-math-fraction-numerator-value"><code>(NUMERATOR Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/fraction.ct#L33-L37">src</a></sub></sup><a name="coalton-math-fraction-numerator-value"></a>
+#### <a href="#coalton-math-fraction-numerator-value"><code>(NUMERATOR Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/fraction.ct#L35-L39">src</a></sub></sup><a name="coalton-math-fraction-numerator-value"></a>
 <code><a href="#coalton-fraction-type">Fraction</a> &rarr; <a href="#coalton-integer-type">Integer</a></code>
 
 The numerator of a fraction.
@@ -7443,7 +7443,7 @@ Methods:
 
 ### Values
 
-#### <a href="#coalton-math-integral-even?-value"><code>(EVEN? N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L81-L83">src</a></sub></sup><a name="coalton-math-integral-even?-value"></a>
+#### <a href="#coalton-math-integral-even?-value"><code>(EVEN? N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L83-L85">src</a></sub></sup><a name="coalton-math-integral-even?-value"></a>
 <code>&forall; :A. <a href="#coalton-math-integral-integral-class">Integral</a> :A &rArr; :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is N even?
@@ -7452,7 +7452,7 @@ Is N even?
 
 ***
 
-#### <a href="#coalton-math-integral-gcd-value"><code>(GCD A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L124-L127">src</a></sub></sup><a name="coalton-math-integral-gcd-value"></a>
+#### <a href="#coalton-math-integral-gcd-value"><code>(GCD A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L126-L129">src</a></sub></sup><a name="coalton-math-integral-gcd-value"></a>
 <code>&forall; :A. (<a href="#coalton-math-integral-remainder-class">Remainder</a> :A) (<a href="#coalton-classes-ord-class">Ord</a> :A) &rArr; :A * :A &rarr; :A</code>
 
 The greatest common divisor of A and B.
@@ -7461,7 +7461,7 @@ The greatest common divisor of A and B.
 
 ***
 
-#### <a href="#coalton-math-integral-ilog-value"><code>(ILOG B X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L149-L165">src</a></sub></sup><a name="coalton-math-integral-ilog-value"></a>
+#### <a href="#coalton-math-integral-ilog-value"><code>(ILOG B X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L151-L167">src</a></sub></sup><a name="coalton-math-integral-ilog-value"></a>
 <code>&forall; :INT. <a href="#coalton-math-integral-integral-class">Integral</a> :INT &rArr; :INT * :INT &rarr; :INT</code>
 
 The floor of the logarithm with base B > 1 of X >= 1.
@@ -7479,7 +7479,7 @@ Converts any Integral N into any Num.
 
 ***
 
-#### <a href="#coalton-math-integral-isqrt-value"><code>(ISQRT X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L168-L179">src</a></sub></sup><a name="coalton-math-integral-isqrt-value"></a>
+#### <a href="#coalton-math-integral-isqrt-value"><code>(ISQRT X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L170-L181">src</a></sub></sup><a name="coalton-math-integral-isqrt-value"></a>
 <code>&forall; :INT. <a href="#coalton-math-integral-integral-class">Integral</a> :INT &rArr; :INT &rarr; :INT</code>
 
 The floor of the square root of N > 0.
@@ -7488,7 +7488,7 @@ The floor of the square root of N > 0.
 
 ***
 
-#### <a href="#coalton-math-integral-lcm-value"><code>(LCM A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L130-L134">src</a></sub></sup><a name="coalton-math-integral-lcm-value"></a>
+#### <a href="#coalton-math-integral-lcm-value"><code>(LCM A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L132-L136">src</a></sub></sup><a name="coalton-math-integral-lcm-value"></a>
 <code>&forall; :A. (<a href="#coalton-math-integral-remainder-class">Remainder</a> :A) (<a href="#coalton-classes-ord-class">Ord</a> :A) &rArr; :A * :A &rarr; :A</code>
 
 The least common multiple of A and B.
@@ -7497,7 +7497,7 @@ The least common multiple of A and B.
 
 ***
 
-#### <a href="#coalton-math-integral-lsh-value"><code>(LSH X N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L76-L78">src</a></sub></sup><a name="coalton-math-integral-lsh-value"></a>
+#### <a href="#coalton-math-integral-lsh-value"><code>(LSH X N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L78-L80">src</a></sub></sup><a name="coalton-math-integral-lsh-value"></a>
 <code>&forall; :B :N. (<a href="#coalton-math-integral-integral-class">Integral</a> :N) (<a href="#coalton-bits-bits-class">Bits</a> :B) &rArr; :B * :N &rarr; :B</code>
 
 Shift `x` left by `n` bits, or right by `-n` bits when `n` is negative. This is `(bits:shift (toInteger n) x)`, so on fixed-width types the result fits the width as described for `bits:Bits`.
@@ -7506,7 +7506,7 @@ Shift `x` left by `n` bits, or right by `-n` bits when `n` is negative. This is 
 
 ***
 
-#### <a href="#coalton-math-integral-odd?-value"><code>(ODD? N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L86-L88">src</a></sub></sup><a name="coalton-math-integral-odd?-value"></a>
+#### <a href="#coalton-math-integral-odd?-value"><code>(ODD? N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L88-L90">src</a></sub></sup><a name="coalton-math-integral-odd?-value"></a>
 <code>&forall; :A. <a href="#coalton-math-integral-integral-class">Integral</a> :A &rArr; :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is N odd?
@@ -7515,7 +7515,7 @@ Is N odd?
 
 ***
 
-#### <a href="#coalton-math-integral-rsh-value"><code>(RSH X N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L71-L73">src</a></sub></sup><a name="coalton-math-integral-rsh-value"></a>
+#### <a href="#coalton-math-integral-rsh-value"><code>(RSH X N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L72-L74">src</a></sub></sup><a name="coalton-math-integral-rsh-value"></a>
 <code>&forall; :B :N. (<a href="#coalton-math-integral-integral-class">Integral</a> :N) (<a href="#coalton-bits-bits-class">Bits</a> :B) &rArr; :B * :N &rarr; :B</code>
 
 Shift `x` right by `n` bits, or left by `-n` bits when `n` is negative. This is `(bits:shift (negate (toInteger n)) x)`, so on fixed-width types the result fits the width as described for `bits:Bits`.
@@ -7524,7 +7524,7 @@ Shift `x` right by `n` bits, or left by `-n` bits when `n` is negative. This is 
 
 ***
 
-#### <a href="#coalton-math-integral-^-value"><code>(^ BASE POWER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L91-L114">src</a></sub></sup><a name="coalton-math-integral-^-value"></a>
+#### <a href="#coalton-math-integral-^-value"><code>(^ BASE POWER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L93-L116">src</a></sub></sup><a name="coalton-math-integral-^-value"></a>
 <code>&forall; :A :INT. (<a href="#coalton-classes-num-class">Num</a> :A) (<a href="#coalton-math-integral-integral-class">Integral</a> :INT) &rArr; :A * :INT &rarr; :A</code>
 
 Exponentiate BASE to a non-negative POWER.
@@ -7533,7 +7533,7 @@ Exponentiate BASE to a non-negative POWER.
 
 ***
 
-#### <a href="#coalton-math-integral-^^-value"><code>(^^ BASE POWER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L117-L121">src</a></sub></sup><a name="coalton-math-integral-^^-value"></a>
+#### <a href="#coalton-math-integral-^^-value"><code>(^^ BASE POWER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L119-L123">src</a></sub></sup><a name="coalton-math-integral-^^-value"></a>
 <code>&forall; :A :INT. (<a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :A) (<a href="#coalton-math-integral-integral-class">Integral</a> :INT) &rArr; :A * :INT &rarr; :A</code>
 
 Exponentiate BASE to a signed POWER.
@@ -7546,7 +7546,7 @@ Exponentiate BASE to a signed POWER.
 
 ### Structs
 
-#### <a href="#coalton-math-real-quantization-type"><code>Quantization :A</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L229-L240">src</a></sub></sup><a name="coalton-math-real-quantization-type"></a>
+#### <a href="#coalton-math-real-quantization-type"><code>Quantization :A</code></a> <sup><sub>[STRUCT] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L235-L246">src</a></sub></sup><a name="coalton-math-real-quantization-type"></a>
 
 Represents an integer quantization of `:a`.
 
@@ -7697,7 +7697,7 @@ Methods:
 
 ### Values
 
-#### <a href="#coalton-math-real-ceiling/-value"><code>(CEILING/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L293-L296">src</a></sub></sup><a name="coalton-math-real-ceiling/-value"></a>
+#### <a href="#coalton-math-real-ceiling/-value"><code>(CEILING/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L302-L305">src</a></sub></sup><a name="coalton-math-real-ceiling/-value"></a>
 <code><a href="#coalton-integer-type">Integer</a> * <a href="#coalton-integer-type">Integer</a> &rarr; <a href="#coalton-integer-type">Integer</a></code>
 
 Divide two integers and compute the ceiling of the quotient.
@@ -7706,7 +7706,7 @@ Divide two integers and compute the ceiling of the quotient.
 
 ***
 
-#### <a href="#coalton-math-real-exact/-value"><code>(EXACT/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L272-L274">src</a></sub></sup><a name="coalton-math-real-exact/-value"></a>
+#### <a href="#coalton-math-real-exact/-value"><code>(EXACT/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L281-L283">src</a></sub></sup><a name="coalton-math-real-exact/-value"></a>
 <code><a href="#coalton-integer-type">Integer</a> * <a href="#coalton-integer-type">Integer</a> &rarr; <a href="#coalton-fraction-type">Fraction</a></code>
 
 Exactly divide two integers and produce a fraction.
@@ -7715,7 +7715,7 @@ Exactly divide two integers and produce a fraction.
 
 ***
 
-#### <a href="#coalton-math-real-floor/-value"><code>(FLOOR/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L286-L289">src</a></sub></sup><a name="coalton-math-real-floor/-value"></a>
+#### <a href="#coalton-math-real-floor/-value"><code>(FLOOR/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L295-L298">src</a></sub></sup><a name="coalton-math-real-floor/-value"></a>
 <code><a href="#coalton-integer-type">Integer</a> * <a href="#coalton-integer-type">Integer</a> &rarr; <a href="#coalton-integer-type">Integer</a></code>
 
 Divide two integers and compute the floor of the quotient.
@@ -7724,7 +7724,7 @@ Divide two integers and compute the floor of the quotient.
 
 ***
 
-#### <a href="#coalton-math-real-fromfrac-value"><code>(FROMFRAC Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L304-L310">src</a></sub></sup><a name="coalton-math-real-fromfrac-value"></a>
+#### <a href="#coalton-math-real-fromfrac-value"><code>(FROMFRAC Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L315-L321">src</a></sub></sup><a name="coalton-math-real-fromfrac-value"></a>
 <code>&forall; :A. <a href="#coalton-math-arith-dividable-class">Dividable</a> <a href="#coalton-integer-type">Integer</a> :A &rArr; <a href="#coalton-fraction-type">Fraction</a> &rarr; :A</code>
 
 Converts a fraction to a target type.
@@ -7737,7 +7737,7 @@ This conversion may result in loss of fidelity.
 
 ***
 
-#### <a href="#coalton-math-real-inexact/-value"><code>(INEXACT/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L278-L282">src</a></sub></sup><a name="coalton-math-real-inexact/-value"></a>
+#### <a href="#coalton-math-real-inexact/-value"><code>(INEXACT/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L287-L291">src</a></sub></sup><a name="coalton-math-real-inexact/-value"></a>
 <code><a href="#coalton-integer-type">Integer</a> * <a href="#coalton-integer-type">Integer</a> &rarr; <a href="#coalton-f64-type">F64</a></code>
 
 Compute the quotient of integers as a double-precision float.
@@ -7748,7 +7748,7 @@ Note: This does *not* divide double-float arguments.
 
 ***
 
-#### <a href="#coalton-math-real-quantize-value"><code>(QUANTIZE X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L243-L251">src</a></sub></sup><a name="coalton-math-real-quantize-value"></a>
+#### <a href="#coalton-math-real-quantize-value"><code>(QUANTIZE X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L249-L257">src</a></sub></sup><a name="coalton-math-real-quantize-value"></a>
 <code>&forall; :A. <a href="#coalton-math-real-real-class">Real</a> :A &rArr; :A &rarr; <a href="#coalton-math-real-quantization-type">Quantization</a> :A</code>
 
 Given X, (QUANTIZE X) will return the least integer greater or equal to X,
@@ -7768,7 +7768,7 @@ Return the nearest integer to X, with ties breaking towards even numbers.
 
 ***
 
-#### <a href="#coalton-math-real-round-half-down-value"><code>(ROUND-HALF-DOWN X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L259-L261">src</a></sub></sup><a name="coalton-math-real-round-half-down-value"></a>
+#### <a href="#coalton-math-real-round-half-down-value"><code>(ROUND-HALF-DOWN X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L267-L269">src</a></sub></sup><a name="coalton-math-real-round-half-down-value"></a>
 <code>&forall; :A. (<a href="#coalton-math-real-quantizable-class">Quantizable</a> :A) (<a href="#coalton-classes-num-class">Num</a> :A) &rArr; :A &rarr; <a href="#coalton-integer-type">Integer</a></code>
 
 Return the nearest integer to X, with ties breaking toward positive infinity.
@@ -7777,7 +7777,7 @@ Return the nearest integer to X, with ties breaking toward positive infinity.
 
 ***
 
-#### <a href="#coalton-math-real-round-half-up-value"><code>(ROUND-HALF-UP X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L254-L256">src</a></sub></sup><a name="coalton-math-real-round-half-up-value"></a>
+#### <a href="#coalton-math-real-round-half-up-value"><code>(ROUND-HALF-UP X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L261-L263">src</a></sub></sup><a name="coalton-math-real-round-half-up-value"></a>
 <code>&forall; :A. (<a href="#coalton-math-real-quantizable-class">Quantizable</a> :A) (<a href="#coalton-classes-num-class">Num</a> :A) &rArr; :A &rarr; <a href="#coalton-integer-type">Integer</a></code>
 
 Return the nearest integer to X, with ties breaking toward positive infinity.
@@ -7786,7 +7786,7 @@ Return the nearest integer to X, with ties breaking toward positive infinity.
 
 ***
 
-#### <a href="#coalton-math-real-round/-value"><code>(ROUND/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L299-L301">src</a></sub></sup><a name="coalton-math-real-round/-value"></a>
+#### <a href="#coalton-math-real-round/-value"><code>(ROUND/ A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L309-L311">src</a></sub></sup><a name="coalton-math-real-round/-value"></a>
 <code><a href="#coalton-integer-type">Integer</a> * <a href="#coalton-integer-type">Integer</a> &rarr; <a href="#coalton-integer-type">Integer</a></code>
 
 Divide two integers and round the quotient.
@@ -7795,7 +7795,7 @@ Divide two integers and round the quotient.
 
 ***
 
-#### <a href="#coalton-math-real-safe/-value"><code>(SAFE/ X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L264-L268">src</a></sub></sup><a name="coalton-math-real-safe/-value"></a>
+#### <a href="#coalton-math-real-safe/-value"><code>(SAFE/ X Y)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/real.ct#L273-L277">src</a></sub></sup><a name="coalton-math-real-safe/-value"></a>
 <code>&forall; :A :B. (<a href="#coalton-classes-num-class">Num</a> :A) (<a href="#coalton-math-arith-dividable-class">Dividable</a> :A :B) &rArr; :A * :A &rarr; <a href="#coalton-optional-type">Optional</a> :B</code>
 
 Safely divide X by Y, returning None if Y is zero.
@@ -9038,7 +9038,7 @@ Unbounded FIFO queue implemented with a linked list.
 
 ### Values
 
-#### <a href="#coalton-queue-append-value"><code>(APPEND Q1 Q2)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/queue.ct#L174-L179">src</a></sub></sup><a name="coalton-queue-append-value"></a>
+#### <a href="#coalton-queue-append-value"><code>(APPEND Q1 Q2)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/queue.ct#L184-L189">src</a></sub></sup><a name="coalton-queue-append-value"></a>
 <code>&forall; :A. <a href="#coalton-queue-queue-type">Queue</a> :A * <a href="#coalton-queue-queue-type">Queue</a> :A &rarr; <a href="#coalton-queue-queue-type">Queue</a> :A</code>
 
 Create a new queue containing the elements of `q1` followed by the elements of `q2`.
@@ -9047,7 +9047,7 @@ Create a new queue containing the elements of `q1` followed by the elements of `
 
 ***
 
-#### <a href="#coalton-queue-clear!-value"><code>(CLEAR! Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/queue.ct#L95-L102">src</a></sub></sup><a name="coalton-queue-clear!-value"></a>
+#### <a href="#coalton-queue-clear!-value"><code>(CLEAR! Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/queue.ct#L99-L106">src</a></sub></sup><a name="coalton-queue-clear!-value"></a>
 <code>&forall; :A. <a href="#coalton-queue-queue-type">Queue</a> :A &rarr; Void</code>
 
 Clear all elements from `q`.
@@ -9056,7 +9056,7 @@ Clear all elements from `q`.
 
 ***
 
-#### <a href="#coalton-queue-copy-value"><code>(COPY Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/queue.ct#L76-L92">src</a></sub></sup><a name="coalton-queue-copy-value"></a>
+#### <a href="#coalton-queue-copy-value"><code>(COPY Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/queue.ct#L79-L95">src</a></sub></sup><a name="coalton-queue-copy-value"></a>
 <code>&forall; :A. <a href="#coalton-queue-queue-type">Queue</a> :A &rarr; <a href="#coalton-queue-queue-type">Queue</a> :A</code>
 
 Return a new queue containing the same elements as `q`.
@@ -9065,7 +9065,7 @@ Return a new queue containing the same elements as `q`.
 
 ***
 
-#### <a href="#coalton-queue-empty?-value"><code>(EMPTY? Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/queue.ct#L70-L73">src</a></sub></sup><a name="coalton-queue-empty?-value"></a>
+#### <a href="#coalton-queue-empty?-value"><code>(EMPTY? Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/queue.ct#L73-L76">src</a></sub></sup><a name="coalton-queue-empty?-value"></a>
 <code>&forall; :A. <a href="#coalton-queue-queue-type">Queue</a> :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is `q` empty?
@@ -9074,7 +9074,7 @@ Is `q` empty?
 
 ***
 
-#### <a href="#coalton-queue-extend!-value"><code>(EXTEND! Q ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/queue.ct#L182-L188">src</a></sub></sup><a name="coalton-queue-extend!-value"></a>
+#### <a href="#coalton-queue-extend!-value"><code>(EXTEND! Q ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/queue.ct#L192-L198">src</a></sub></sup><a name="coalton-queue-extend!-value"></a>
 <code>&forall; :ELT :CONTAINER. <a href="#coalton-iterator-intoiterator-class">IntoIterator</a> :CONTAINER :ELT &rArr; <a href="#coalton-queue-queue-type">Queue</a> :ELT * :CONTAINER &rarr; Void</code>
 
 Push every element in `iter` to the end of `q`.
@@ -9083,25 +9083,25 @@ Push every element in `iter` to the end of `q`.
 
 ***
 
-#### <a href="#coalton-queue-index-value"><code>(INDEX INDEX Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/queue.ct#L161-L165">src</a></sub></sup><a name="coalton-queue-index-value"></a>
+#### <a href="#coalton-queue-index-value"><code>(INDEX IDX Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/queue.ct#L170-L174">src</a></sub></sup><a name="coalton-queue-index-value"></a>
 <code>&forall; :A. <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-queue-queue-type">Queue</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> :A</code>
 
-Return the `index`th element of `q`.
+Return the `idx`th element of `q`.
 
 
 
 ***
 
-#### <a href="#coalton-queue-index-unsafe-value"><code>(INDEX-UNSAFE INDEX Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/queue.ct#L168-L171">src</a></sub></sup><a name="coalton-queue-index-unsafe-value"></a>
+#### <a href="#coalton-queue-index-unsafe-value"><code>(INDEX-UNSAFE IDX Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/queue.ct#L178-L181">src</a></sub></sup><a name="coalton-queue-index-unsafe-value"></a>
 <code>&forall; :A. <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-queue-queue-type">Queue</a> :A &rarr; :A</code>
 
-Return the `index`th element of `q` without checking if the element exists.
+Return the `idx`th element of `q` without checking if the element exists.
 
 
 
 ***
 
-#### <a href="#coalton-queue-items!-value"><code>(ITEMS! Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/queue.ct#L191-L196">src</a></sub></sup><a name="coalton-queue-items!-value"></a>
+#### <a href="#coalton-queue-items!-value"><code>(ITEMS! Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/queue.ct#L201-L206">src</a></sub></sup><a name="coalton-queue-items!-value"></a>
 <code>&forall; :A. <a href="#coalton-queue-queue-type">Queue</a> :A &rarr; <a href="#coalton-iterator-iterator-type">Iterator</a> :A</code>
 
 Returns an iterator over the items of `q`, removing items as they are returned.
@@ -9110,7 +9110,7 @@ Returns an iterator over the items of `q`, removing items as they are returned.
 
 ***
 
-#### <a href="#coalton-queue-length-value"><code>(LENGTH Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/queue.ct#L64-L67">src</a></sub></sup><a name="coalton-queue-length-value"></a>
+#### <a href="#coalton-queue-length-value"><code>(LENGTH Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/queue.ct#L66-L69">src</a></sub></sup><a name="coalton-queue-length-value"></a>
 <code>&forall; :A. <a href="#coalton-queue-queue-type">Queue</a> :A &rarr; <a href="#coalton-ufix-type">UFix</a></code>
 
 Returns the length of `q`.
@@ -9119,7 +9119,7 @@ Returns the length of `q`.
 
 ***
 
-#### <a href="#coalton-queue-new-value"><code>(NEW)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/queue.ct#L58-L61">src</a></sub></sup><a name="coalton-queue-new-value"></a>
+#### <a href="#coalton-queue-new-value"><code>(NEW)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/queue.ct#L59-L62">src</a></sub></sup><a name="coalton-queue-new-value"></a>
 <code>&forall; :A. Void &rarr; <a href="#coalton-queue-queue-type">Queue</a> :A</code>
 
 Create a new empty queue.
@@ -9128,7 +9128,7 @@ Create a new empty queue.
 
 ***
 
-#### <a href="#coalton-queue-peek-value"><code>(PEEK Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/queue.ct#L147-L151">src</a></sub></sup><a name="coalton-queue-peek-value"></a>
+#### <a href="#coalton-queue-peek-value"><code>(PEEK Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/queue.ct#L154-L158">src</a></sub></sup><a name="coalton-queue-peek-value"></a>
 <code>&forall; :A. <a href="#coalton-queue-queue-type">Queue</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> :A</code>
 
 Peek at the first item of `q`.
@@ -9137,7 +9137,7 @@ Peek at the first item of `q`.
 
 ***
 
-#### <a href="#coalton-queue-peek-unsafe-value"><code>(PEEK-UNSAFE Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/queue.ct#L154-L158">src</a></sub></sup><a name="coalton-queue-peek-unsafe-value"></a>
+#### <a href="#coalton-queue-peek-unsafe-value"><code>(PEEK-UNSAFE Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/queue.ct#L162-L166">src</a></sub></sup><a name="coalton-queue-peek-unsafe-value"></a>
 <code>&forall; :A. <a href="#coalton-queue-queue-type">Queue</a> :A &rarr; :A</code>
 
 Peek at the first item of `q` without checking if the queue is empty.
@@ -9146,7 +9146,7 @@ Peek at the first item of `q` without checking if the queue is empty.
 
 ***
 
-#### <a href="#coalton-queue-pop!-value"><code>(POP! Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/queue.ct#L131-L135">src</a></sub></sup><a name="coalton-queue-pop!-value"></a>
+#### <a href="#coalton-queue-pop!-value"><code>(POP! Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/queue.ct#L136-L140">src</a></sub></sup><a name="coalton-queue-pop!-value"></a>
 <code>&forall; :A. <a href="#coalton-queue-queue-type">Queue</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> :A</code>
 
 Remove and return the first item of `q`.
@@ -9155,7 +9155,7 @@ Remove and return the first item of `q`.
 
 ***
 
-#### <a href="#coalton-queue-pop-unsafe!-value"><code>(POP-UNSAFE! Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/queue.ct#L138-L144">src</a></sub></sup><a name="coalton-queue-pop-unsafe!-value"></a>
+#### <a href="#coalton-queue-pop-unsafe!-value"><code>(POP-UNSAFE! Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/queue.ct#L144-L150">src</a></sub></sup><a name="coalton-queue-pop-unsafe!-value"></a>
 <code>&forall; :A. <a href="#coalton-queue-queue-type">Queue</a> :A &rarr; :A</code>
 
 Remove and return the first item of `q` without checking if the queue is empty.
@@ -9164,7 +9164,7 @@ Remove and return the first item of `q` without checking if the queue is empty.
 
 ***
 
-#### <a href="#coalton-queue-push!-value"><code>(PUSH! ITEM Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/queue.ct#L105-L128">src</a></sub></sup><a name="coalton-queue-push!-value"></a>
+#### <a href="#coalton-queue-push!-value"><code>(PUSH! ITEM Q)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/queue.ct#L109-L132">src</a></sub></sup><a name="coalton-queue-push!-value"></a>
 <code>&forall; :A. :A * <a href="#coalton-queue-queue-type">Queue</a> :A &rarr; Void</code>
 
 Push `item` onto the end of `q`.
@@ -9207,7 +9207,7 @@ Methods:
 
 ### Values
 
-#### <a href="#coalton-randomaccess-aref-value"><code>(AREF STORAGE INDEX)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/randomaccess.ct#L53-L60">src</a></sub></sup><a name="coalton-randomaccess-aref-value"></a>
+#### <a href="#coalton-randomaccess-aref-value"><code>(AREF STORAGE INDEX)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/randomaccess.ct#L54-L61">src</a></sub></sup><a name="coalton-randomaccess-aref-value"></a>
 <code>&forall; :F :T. <a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :F :T &rArr; :F * <a href="#coalton-ufix-type">UFix</a> &rarr; <a href="#coalton-optional-type">Optional</a> :T</code>
 
 Read the element at `index` of the random-access storage `storage`. Return `None` if the read is out-of-bounds or not permitted.
@@ -9216,7 +9216,7 @@ Read the element at `index` of the random-access storage `storage`. Return `None
 
 ***
 
-#### <a href="#coalton-randomaccess-rotate!-value"><code>(ROTATE! STORAGE INDEX1 INDEX2)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/randomaccess.ct#L84-L96">src</a></sub></sup><a name="coalton-randomaccess-rotate!-value"></a>
+#### <a href="#coalton-randomaccess-rotate!-value"><code>(ROTATE! STORAGE INDEX1 INDEX2)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/randomaccess.ct#L88-L100">src</a></sub></sup><a name="coalton-randomaccess-rotate!-value"></a>
 <code>&forall; :T :F. <a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :F :T &rArr; :F * <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-ufix-type">UFix</a> &rarr; <a href="#coalton-optional-type">Optional</a> <a href="#coalton-unit-type">Unit</a></code>
 
 Rotate the elements at indices `index1` and `index2` of the random-access storage `storage`. Return `None` if the indices are out-of-bounds or if reading from or writing to `storage` is not permitted.
@@ -9225,7 +9225,7 @@ Rotate the elements at indices `index1` and `index2` of the random-access storag
 
 ***
 
-#### <a href="#coalton-randomaccess-set!-value"><code>(SET! STORAGE INDEX VALUE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/randomaccess.ct#L63-L72">src</a></sub></sup><a name="coalton-randomaccess-set!-value"></a>
+#### <a href="#coalton-randomaccess-set!-value"><code>(SET! STORAGE INDEX VALUE)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/randomaccess.ct#L65-L74">src</a></sub></sup><a name="coalton-randomaccess-set!-value"></a>
 <code>&forall; :F :T. <a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :F :T &rArr; :F * <a href="#coalton-ufix-type">UFix</a> * :T &rarr; <a href="#coalton-optional-type">Optional</a> <a href="#coalton-unit-type">Unit</a></code>
 
 Write the element `value` at `index` of the random-access storage `storage`. Return `None` if the write is out-of-bounds or not permitted.
@@ -9234,7 +9234,7 @@ Write the element `value` at `index` of the random-access storage `storage`. Ret
 
 ***
 
-#### <a href="#coalton-randomaccess-unsafe-rotate!-value"><code>(UNSAFE-ROTATE! STORAGE INDEX1 INDEX2)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/randomaccess.ct#L75-L81">src</a></sub></sup><a name="coalton-randomaccess-unsafe-rotate!-value"></a>
+#### <a href="#coalton-randomaccess-unsafe-rotate!-value"><code>(UNSAFE-ROTATE! STORAGE INDEX1 INDEX2)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/randomaccess.ct#L78-L84">src</a></sub></sup><a name="coalton-randomaccess-unsafe-rotate!-value"></a>
 <code>&forall; :T :F. <a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :F :T &rArr; :F * <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-ufix-type">UFix</a> &rarr; Void</code>
 
 Rotate the elements at indices `index1` and `index2` of the random-access storage `storage`.
@@ -9809,7 +9809,7 @@ Show each of the items `items` sequentially.
 
 ### Values
 
-#### <a href="#coalton-slice-index-value"><code>(INDEX IDX S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/slice.ct#L87-L91">src</a></sub></sup><a name="coalton-slice-index-value"></a>
+#### <a href="#coalton-slice-index-value"><code>(INDEX IDX S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/slice.ct#L88-L92">src</a></sub></sup><a name="coalton-slice-index-value"></a>
 <code>&forall; :A. <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-slice-slice-type">Slice</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> :A</code>
 
 Lookup the element at `index` in `s`.
@@ -9818,7 +9818,7 @@ Lookup the element at `index` in `s`.
 
 ***
 
-#### <a href="#coalton-slice-index-unsafe-value"><code>(INDEX-UNSAFE IDX S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/slice.ct#L95-L98">src</a></sub></sup><a name="coalton-slice-index-unsafe-value"></a>
+#### <a href="#coalton-slice-index-unsafe-value"><code>(INDEX-UNSAFE IDX S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/slice.ct#L96-L99">src</a></sub></sup><a name="coalton-slice-index-unsafe-value"></a>
 <code>&forall; :A. <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-slice-slice-type">Slice</a> :A &rarr; :A</code>
 
 Lookup the element at `index` in `s` without bounds checking.
@@ -9827,7 +9827,7 @@ Lookup the element at `index` in `s` without bounds checking.
 
 ***
 
-#### <a href="#coalton-slice-iter-chunked-value"><code>(ITER-CHUNKED SIZE S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/slice.ct#L118-L143">src</a></sub></sup><a name="coalton-slice-iter-chunked-value"></a>
+#### <a href="#coalton-slice-iter-chunked-value"><code>(ITER-CHUNKED SIZE S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/slice.ct#L119-L144">src</a></sub></sup><a name="coalton-slice-iter-chunked-value"></a>
 <code>&forall; (:B (Type &rarr; Type)) :A. <a href="#coalton-slice-sliceable-class">Sliceable</a> (:B :A) &rArr; <a href="#coalton-ufix-type">UFix</a> * :B :A &rarr; <a href="#coalton-iterator-iterator-type">Iterator</a> (<a href="#coalton-slice-slice-type">Slice</a> :A)</code>
 
 Divide `s` into a series of slices of length `size`. Will return a final shorter slice if `s` does not divide evenly.
@@ -9836,7 +9836,7 @@ Divide `s` into a series of slices of length `size`. Will return a final shorter
 
 ***
 
-#### <a href="#coalton-slice-iter-chunked-exact-value"><code>(ITER-CHUNKED-EXACT SIZE S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/slice.ct#L146-L158">src</a></sub></sup><a name="coalton-slice-iter-chunked-exact-value"></a>
+#### <a href="#coalton-slice-iter-chunked-exact-value"><code>(ITER-CHUNKED-EXACT SIZE S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/slice.ct#L147-L159">src</a></sub></sup><a name="coalton-slice-iter-chunked-exact-value"></a>
 <code>&forall; (:B (Type &rarr; Type)) :A. <a href="#coalton-slice-sliceable-class">Sliceable</a> (:B :A) &rArr; <a href="#coalton-ufix-type">UFix</a> * :B :A &rarr; <a href="#coalton-iterator-iterator-type">Iterator</a> (<a href="#coalton-slice-slice-type">Slice</a> :A)</code>
 
 Divide `s` into a series of slices of length `size`. Will skip trailing elements if `s` does not divide evenly.
@@ -9845,7 +9845,7 @@ Divide `s` into a series of slices of length `size`. Will skip trailing elements
 
 ***
 
-#### <a href="#coalton-slice-iter-sliding-value"><code>(ITER-SLIDING SIZE S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/slice.ct#L101-L115">src</a></sub></sup><a name="coalton-slice-iter-sliding-value"></a>
+#### <a href="#coalton-slice-iter-sliding-value"><code>(ITER-SLIDING SIZE S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/slice.ct#L102-L116">src</a></sub></sup><a name="coalton-slice-iter-sliding-value"></a>
 <code>&forall; (:B (Type &rarr; Type)) :A. <a href="#coalton-slice-sliceable-class">Sliceable</a> (:B :A) &rArr; <a href="#coalton-ufix-type">UFix</a> * :B :A &rarr; <a href="#coalton-iterator-iterator-type">Iterator</a> (<a href="#coalton-slice-slice-type">Slice</a> :A)</code>
 
 Returns an iterator that yields a series of overlapping slices of length `size`.
@@ -9885,7 +9885,7 @@ Set the element at index `idx` in `s` to `item`.
 
 ### Values
 
-#### <a href="#coalton-string-chars-value"><code>(CHARS STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.ct#L151-L162">src</a></sub></sup><a name="coalton-string-chars-value"></a>
+#### <a href="#coalton-string-chars-value"><code>(CHARS STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.ct#L158-L169">src</a></sub></sup><a name="coalton-string-chars-value"></a>
 <code><a href="#coalton-string-type">String</a> &rarr; <a href="#coalton-iterator-iterator-type">Iterator</a> <a href="#coalton-char-type">Char</a></code>
 
 Returns an iterator over the characters in `str`.
@@ -9894,7 +9894,7 @@ Returns an iterator over the characters in `str`.
 
 ***
 
-#### <a href="#coalton-string-concat-value"><code>(CONCAT STR1 STR2)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.ct#L53-L56">src</a></sub></sup><a name="coalton-string-concat-value"></a>
+#### <a href="#coalton-string-concat-value"><code>(CONCAT STR1 STR2)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.ct#L54-L57">src</a></sub></sup><a name="coalton-string-concat-value"></a>
 <code><a href="#coalton-string-type">String</a> * <a href="#coalton-string-type">String</a> &rarr; <a href="#coalton-string-type">String</a></code>
 
 Concatenate STR1 and STR2 together, returning a new string.
@@ -9903,7 +9903,7 @@ Concatenate STR1 and STR2 together, returning a new string.
 
 ***
 
-#### <a href="#coalton-string-downcase-value"><code>(DOWNCASE STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.ct#L171-L174">src</a></sub></sup><a name="coalton-string-downcase-value"></a>
+#### <a href="#coalton-string-downcase-value"><code>(DOWNCASE STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.ct#L180-L183">src</a></sub></sup><a name="coalton-string-downcase-value"></a>
 <code><a href="#coalton-string-type">String</a> &rarr; <a href="#coalton-string-type">String</a></code>
 
 Returns a new string with lowercase characters.
@@ -9912,7 +9912,7 @@ Returns a new string with lowercase characters.
 
 ***
 
-#### <a href="#coalton-string-length-value"><code>(LENGTH STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.ct#L64-L67">src</a></sub></sup><a name="coalton-string-length-value"></a>
+#### <a href="#coalton-string-length-value"><code>(LENGTH STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.ct#L67-L70">src</a></sub></sup><a name="coalton-string-length-value"></a>
 <code><a href="#coalton-string-type">String</a> &rarr; <a href="#coalton-ufix-type">UFix</a></code>
 
 The length of a string STR.
@@ -9921,7 +9921,7 @@ The length of a string STR.
 
 ***
 
-#### <a href="#coalton-string-parse-int-value"><code>(PARSE-INT STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.ct#L113-L119">src</a></sub></sup><a name="coalton-string-parse-int-value"></a>
+#### <a href="#coalton-string-parse-int-value"><code>(PARSE-INT STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.ct#L117-L123">src</a></sub></sup><a name="coalton-string-parse-int-value"></a>
 <code><a href="#coalton-string-type">String</a> &rarr; <a href="#coalton-optional-type">Optional</a> <a href="#coalton-integer-type">Integer</a></code>
 
 Parse the integer in string `str`.
@@ -9930,7 +9930,7 @@ Parse the integer in string `str`.
 
 ***
 
-#### <a href="#coalton-string-ref-value"><code>(REF STR IDX)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.ct#L128-L132">src</a></sub></sup><a name="coalton-string-ref-value"></a>
+#### <a href="#coalton-string-ref-value"><code>(REF STR IDX)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.ct#L134-L138">src</a></sub></sup><a name="coalton-string-ref-value"></a>
 <code><a href="#coalton-string-type">String</a> * <a href="#coalton-ufix-type">UFix</a> &rarr; <a href="#coalton-optional-type">Optional</a> <a href="#coalton-char-type">Char</a></code>
 
 Return the `idx`th character of `str`.
@@ -9939,7 +9939,7 @@ Return the `idx`th character of `str`.
 
 ***
 
-#### <a href="#coalton-string-ref-unchecked-value"><code>(REF-UNCHECKED STR IDX)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.ct#L122-L125">src</a></sub></sup><a name="coalton-string-ref-unchecked-value"></a>
+#### <a href="#coalton-string-ref-unchecked-value"><code>(REF-UNCHECKED STR IDX)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.ct#L127-L130">src</a></sub></sup><a name="coalton-string-ref-unchecked-value"></a>
 <code><a href="#coalton-string-type">String</a> * <a href="#coalton-ufix-type">UFix</a> &rarr; <a href="#coalton-char-type">Char</a></code>
 
 Return the `idx`th character of `str`. This function is partial.
@@ -9948,7 +9948,7 @@ Return the `idx`th character of `str`. This function is partial.
 
 ***
 
-#### <a href="#coalton-string-reverse-value"><code>(REVERSE S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.ct#L59-L61">src</a></sub></sup><a name="coalton-string-reverse-value"></a>
+#### <a href="#coalton-string-reverse-value"><code>(REVERSE S)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.ct#L61-L63">src</a></sub></sup><a name="coalton-string-reverse-value"></a>
 <code><a href="#coalton-string-type">String</a> &rarr; <a href="#coalton-string-type">String</a></code>
 
 Reverse a string.
@@ -9957,7 +9957,7 @@ Reverse a string.
 
 ***
 
-#### <a href="#coalton-string-split-value"><code>(SPLIT C STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.ct#L84-L89">src</a></sub></sup><a name="coalton-string-split-value"></a>
+#### <a href="#coalton-string-split-value"><code>(SPLIT C STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.ct#L88-L93">src</a></sub></sup><a name="coalton-string-split-value"></a>
 <code><a href="#coalton-char-type">Char</a> * <a href="#coalton-string-type">String</a> &rarr; <a href="#coalton-list-type">List</a> <a href="#coalton-string-type">String</a></code>
 
 Split a string around the separator character `c`.
@@ -9966,7 +9966,7 @@ Split a string around the separator character `c`.
 
 ***
 
-#### <a href="#coalton-string-split-at-value"><code>(SPLIT-AT N STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.ct#L78-L81">src</a></sub></sup><a name="coalton-string-split-at-value"></a>
+#### <a href="#coalton-string-split-at-value"><code>(SPLIT-AT N STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.ct#L82-L85">src</a></sub></sup><a name="coalton-string-split-at-value"></a>
 <code><a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-string-type">String</a> &rarr; <a href="#coalton-classes-tuple-type">Tuple</a> <a href="#coalton-string-type">String</a> <a href="#coalton-string-type">String</a></code>
 
 Splits a string into a substring of the first N characters and a substring of the remaining characters.
@@ -9975,7 +9975,7 @@ Splits a string into a substring of the first N characters and a substring of th
 
 ***
 
-#### <a href="#coalton-string-strip-prefix-value"><code>(STRIP-PREFIX PREFIX STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.ct#L92-L99">src</a></sub></sup><a name="coalton-string-strip-prefix-value"></a>
+#### <a href="#coalton-string-strip-prefix-value"><code>(STRIP-PREFIX PREFIX STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.ct#L96-L103">src</a></sub></sup><a name="coalton-string-strip-prefix-value"></a>
 <code><a href="#coalton-string-type">String</a> * <a href="#coalton-string-type">String</a> &rarr; <a href="#coalton-optional-type">Optional</a> <a href="#coalton-string-type">String</a></code>
 
 Returns a string without a give prefix, or `None` if the string
@@ -9985,7 +9985,7 @@ does not have that suffix.
 
 ***
 
-#### <a href="#coalton-string-strip-suffix-value"><code>(STRIP-SUFFIX SUFFIX STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.ct#L102-L110">src</a></sub></sup><a name="coalton-string-strip-suffix-value"></a>
+#### <a href="#coalton-string-strip-suffix-value"><code>(STRIP-SUFFIX SUFFIX STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.ct#L106-L114">src</a></sub></sup><a name="coalton-string-strip-suffix-value"></a>
 <code><a href="#coalton-string-type">String</a> * <a href="#coalton-string-type">String</a> &rarr; <a href="#coalton-optional-type">Optional</a> <a href="#coalton-string-type">String</a></code>
 
 Returns a string without a give suffix, or `None` if the string
@@ -9995,7 +9995,7 @@ does not have that suffix.
 
 ***
 
-#### <a href="#coalton-string-substring-value"><code>(SUBSTRING STR START END)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.ct#L70-L75">src</a></sub></sup><a name="coalton-string-substring-value"></a>
+#### <a href="#coalton-string-substring-value"><code>(SUBSTRING STR START END)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.ct#L73-L78">src</a></sub></sup><a name="coalton-string-substring-value"></a>
 <code><a href="#coalton-string-type">String</a> * <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-ufix-type">UFix</a> &rarr; <a href="#coalton-string-type">String</a></code>
 
 Compute a substring of a string bounded by given indices.
@@ -10004,7 +10004,7 @@ Compute a substring of a string bounded by given indices.
 
 ***
 
-#### <a href="#coalton-string-substring-index-value"><code>(SUBSTRING-INDEX SMALL BIG)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.ct#L135-L140">src</a></sub></sup><a name="coalton-string-substring-index-value"></a>
+#### <a href="#coalton-string-substring-index-value"><code>(SUBSTRING-INDEX SMALL BIG)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.ct#L141-L146">src</a></sub></sup><a name="coalton-string-substring-index-value"></a>
 <code><a href="#coalton-string-type">String</a> * <a href="#coalton-string-type">String</a> &rarr; <a href="#coalton-optional-type">Optional</a> <a href="#coalton-ufix-type">UFix</a></code>
 
 If the first argument appears as a substring within the second argument, return the starting index into the second argument.
@@ -10013,7 +10013,7 @@ If the first argument appears as a substring within the second argument, return 
 
 ***
 
-#### <a href="#coalton-string-substring?-value"><code>(SUBSTRING? SMALL BIG)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.ct#L143-L148">src</a></sub></sup><a name="coalton-string-substring?-value"></a>
+#### <a href="#coalton-string-substring?-value"><code>(SUBSTRING? SMALL BIG)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.ct#L150-L155">src</a></sub></sup><a name="coalton-string-substring?-value"></a>
 <code><a href="#coalton-string-type">String</a> * <a href="#coalton-string-type">String</a> &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Return true if the first argument appears as a substring within the second argument.
@@ -10022,7 +10022,7 @@ Return true if the first argument appears as a substring within the second argum
 
 ***
 
-#### <a href="#coalton-string-upcase-value"><code>(UPCASE STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.ct#L165-L168">src</a></sub></sup><a name="coalton-string-upcase-value"></a>
+#### <a href="#coalton-string-upcase-value"><code>(UPCASE STR)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/string.ct#L173-L176">src</a></sub></sup><a name="coalton-string-upcase-value"></a>
 <code><a href="#coalton-string-type">String</a> &rarr; <a href="#coalton-string-type">String</a></code>
 
 Returns a new string with uppercase characters.
@@ -11409,7 +11409,7 @@ Get the second element of a tuple.
 
 ***
 
-#### <a href="#coalton-tuple-swap-value"><code>(SWAP (TUPLE A B))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.ct#L136-L138">src</a></sub></sup><a name="coalton-tuple-swap-value"></a>
+#### <a href="#coalton-tuple-swap-value"><code>(SWAP (TUPLE A B))</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/tuple.ct#L137-L139">src</a></sub></sup><a name="coalton-tuple-swap-value"></a>
 <code>&forall; :A :B. <a href="#coalton-classes-tuple-type">Tuple</a> :A :B &rarr; <a href="#coalton-classes-tuple-type">Tuple</a> :B :A</code>
 
 Exchange the two elements of a tuple.
@@ -11666,7 +11666,7 @@ Resizable mutable vectors with efficient indexed access and amortized end update
 
 ### Values
 
-#### <a href="#coalton-vector-append-value"><code>(APPEND V1 V2)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L262-L275">src</a></sub></sup><a name="coalton-vector-append-value"></a>
+#### <a href="#coalton-vector-append-value"><code>(APPEND V1 V2)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L266-L279">src</a></sub></sup><a name="coalton-vector-append-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A * <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-vector-vector-type">Vector</a> :A</code>
 
 Create a new vector containing the elements of `v1` followed by the elements of `v2`.
@@ -11711,7 +11711,7 @@ Is `v` empty?
 
 ***
 
-#### <a href="#coalton-vector-extend!-value"><code>(EXTEND! VEC ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L327-L346">src</a></sub></sup><a name="coalton-vector-extend!-value"></a>
+#### <a href="#coalton-vector-extend!-value"><code>(EXTEND! VEC ITER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L333-L352">src</a></sub></sup><a name="coalton-vector-extend!-value"></a>
 <code>&forall; :ELT :CONTAINER. <a href="#coalton-iterator-intoiterator-class">IntoIterator</a> :CONTAINER :ELT &rArr; <a href="#coalton-vector-vector-type">Vector</a> :ELT * :CONTAINER &rarr; Void</code>
 
 Push every element in `iter` to the end of `vec`.
@@ -11720,7 +11720,7 @@ Push every element in `iter` to the end of `vec`.
 
 ***
 
-#### <a href="#coalton-vector-find-elem-value"><code>(FIND-ELEM E V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L247-L259">src</a></sub></sup><a name="coalton-vector-find-elem-value"></a>
+#### <a href="#coalton-vector-find-elem-value"><code>(FIND-ELEM E V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L251-L263">src</a></sub></sup><a name="coalton-vector-find-elem-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-eq-class">Eq</a> :A &rArr; :A * <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> <a href="#coalton-ufix-type">UFix</a></code>
 
 Find the index of element `e` in `v`.
@@ -11729,7 +11729,7 @@ Find the index of element `e` in `v`.
 
 ***
 
-#### <a href="#coalton-vector-head-value"><code>(HEAD V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L224-L226">src</a></sub></sup><a name="coalton-vector-head-value"></a>
+#### <a href="#coalton-vector-head-value"><code>(HEAD V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L226-L228">src</a></sub></sup><a name="coalton-vector-head-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> :A</code>
 
 Return the first item of `v`.
@@ -11738,7 +11738,7 @@ Return the first item of `v`.
 
 ***
 
-#### <a href="#coalton-vector-head-unsafe-value"><code>(HEAD-UNSAFE V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L230-L232">src</a></sub></sup><a name="coalton-vector-head-unsafe-value"></a>
+#### <a href="#coalton-vector-head-unsafe-value"><code>(HEAD-UNSAFE V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L232-L234">src</a></sub></sup><a name="coalton-vector-head-unsafe-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; :A</code>
 
 Return the first item of `v` without first checking if `v` is empty.
@@ -11747,16 +11747,16 @@ Return the first item of `v` without first checking if `v` is empty.
 
 ***
 
-#### <a href="#coalton-vector-index-value"><code>(INDEX INDEX V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L200-L204">src</a></sub></sup><a name="coalton-vector-index-value"></a>
+#### <a href="#coalton-vector-index-value"><code>(INDEX IDX V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L202-L206">src</a></sub></sup><a name="coalton-vector-index-value"></a>
 <code>&forall; :A. <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> :A</code>
 
-Return the `index`th element of `v`.
+Return the `idx`th element of `v`.
 
 
 
 ***
 
-#### <a href="#coalton-vector-index-unsafe-value"><code>(INDEX-UNSAFE IDX V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L208-L211">src</a></sub></sup><a name="coalton-vector-index-unsafe-value"></a>
+#### <a href="#coalton-vector-index-unsafe-value"><code>(INDEX-UNSAFE IDX V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L210-L213">src</a></sub></sup><a name="coalton-vector-index-unsafe-value"></a>
 <code>&forall; :A. <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; :A</code>
 
 Return the `idx`th element of `v` without checking if the element exists.
@@ -11765,7 +11765,7 @@ Return the `idx`th element of `v` without checking if the element exists.
 
 ***
 
-#### <a href="#coalton-vector-last-value"><code>(LAST V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L235-L239">src</a></sub></sup><a name="coalton-vector-last-value"></a>
+#### <a href="#coalton-vector-last-value"><code>(LAST V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L238-L242">src</a></sub></sup><a name="coalton-vector-last-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> :A</code>
 
 Return the last element of `v`.
@@ -11774,7 +11774,7 @@ Return the last element of `v`.
 
 ***
 
-#### <a href="#coalton-vector-last-unsafe-value"><code>(LAST-UNSAFE V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L242-L244">src</a></sub></sup><a name="coalton-vector-last-unsafe-value"></a>
+#### <a href="#coalton-vector-last-unsafe-value"><code>(LAST-UNSAFE V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L246-L248">src</a></sub></sup><a name="coalton-vector-last-unsafe-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; :A</code>
 
 Return the last element of `v` without first checking if `v` is empty.
@@ -11801,7 +11801,7 @@ Create a new empty vector
 
 ***
 
-#### <a href="#coalton-vector-pop!-value"><code>(POP! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L186-L190">src</a></sub></sup><a name="coalton-vector-pop!-value"></a>
+#### <a href="#coalton-vector-pop!-value"><code>(POP! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L187-L191">src</a></sub></sup><a name="coalton-vector-pop!-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> :A</code>
 
 Remove and return the last item of `v`.
@@ -11810,7 +11810,7 @@ Remove and return the last item of `v`.
 
 ***
 
-#### <a href="#coalton-vector-pop-unsafe!-value"><code>(POP-UNSAFE! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L194-L197">src</a></sub></sup><a name="coalton-vector-pop-unsafe!-value"></a>
+#### <a href="#coalton-vector-pop-unsafe!-value"><code>(POP-UNSAFE! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L195-L198">src</a></sub></sup><a name="coalton-vector-pop-unsafe!-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; :A</code>
 
 Remove and return the last item of `v` without checking if the vector is empty.
@@ -11840,7 +11840,7 @@ length of `v` are ignored.
 
 ***
 
-#### <a href="#coalton-vector-reverse-value"><code>(REVERSE V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L284-L290">src</a></sub></sup><a name="coalton-vector-reverse-value"></a>
+#### <a href="#coalton-vector-reverse-value"><code>(REVERSE V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L289-L295">src</a></sub></sup><a name="coalton-vector-reverse-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-vector-vector-type">Vector</a> :A</code>
 
 Returns a fresh vector with the elements of vector `v` in reverse order.  The original vector isn't modified.
@@ -11849,7 +11849,7 @@ Returns a fresh vector with the elements of vector `v` in reverse order.  The or
 
 ***
 
-#### <a href="#coalton-vector-reverse!-value"><code>(REVERSE! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L278-L281">src</a></sub></sup><a name="coalton-vector-reverse!-value"></a>
+#### <a href="#coalton-vector-reverse!-value"><code>(REVERSE! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L283-L286">src</a></sub></sup><a name="coalton-vector-reverse!-value"></a>
 <code>&forall; :A. <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-vector-vector-type">Vector</a> :A</code>
 
 Returns a vector with the elements of vector `v` in reverse order.  The original vector may be destroyed to produce the result.
@@ -11858,7 +11858,7 @@ Returns a vector with the elements of vector `v` in reverse order.  The original
 
 ***
 
-#### <a href="#coalton-vector-set!-value"><code>(SET! IDX ITEM V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L215-L220">src</a></sub></sup><a name="coalton-vector-set!-value"></a>
+#### <a href="#coalton-vector-set!-value"><code>(SET! IDX ITEM V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L217-L222">src</a></sub></sup><a name="coalton-vector-set!-value"></a>
 <code>&forall; :A. <a href="#coalton-ufix-type">UFix</a> * :A * <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; Void</code>
 
 Set the `idx`th element of `v` to `item`. This function left intentionally unsafe because it does not have a return value to check.
@@ -11894,7 +11894,7 @@ Is `v` a singleton?
 
 ***
 
-#### <a href="#coalton-vector-sort!-value"><code>(SORT! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L322-L324">src</a></sub></sup><a name="coalton-vector-sort!-value"></a>
+#### <a href="#coalton-vector-sort!-value"><code>(SORT! V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L328-L330">src</a></sub></sup><a name="coalton-vector-sort!-value"></a>
 <code>&forall; :A. <a href="#coalton-classes-ord-class">Ord</a> :A &rArr; <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; Void</code>
 
 Sort a vector in-place in ascending order.
@@ -11903,7 +11903,7 @@ Sort a vector in-place in ascending order.
 
 ***
 
-#### <a href="#coalton-vector-sort-by!-value"><code>(SORT-BY! F V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L310-L318">src</a></sub></sup><a name="coalton-vector-sort-by!-value"></a>
+#### <a href="#coalton-vector-sort-by!-value"><code>(SORT-BY! F V)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L316-L324">src</a></sub></sup><a name="coalton-vector-sort-by!-value"></a>
 <code>&forall; :A. (:A * :A &rarr; <a href="#coalton-boolean-type">Boolean</a>) * <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; Void</code>
 
 Sort a vector in-place with predicate function `f`.
@@ -11924,7 +11924,7 @@ length of `v` are ignored.
 
 ***
 
-#### <a href="#coalton-vector-swap-remove!-value"><code>(SWAP-REMOVE! IDX VEC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L293-L297">src</a></sub></sup><a name="coalton-vector-swap-remove!-value"></a>
+#### <a href="#coalton-vector-swap-remove!-value"><code>(SWAP-REMOVE! IDX VEC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L299-L303">src</a></sub></sup><a name="coalton-vector-swap-remove!-value"></a>
 <code>&forall; :A. <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; <a href="#coalton-optional-type">Optional</a> :A</code>
 
 Remove the element `idx` from `vec` and replace it with the last element in `vec`. Then return the removed element.
@@ -11933,7 +11933,7 @@ Remove the element `idx` from `vec` and replace it with the last element in `vec
 
 ***
 
-#### <a href="#coalton-vector-swap-remove-unsafe!-value"><code>(SWAP-REMOVE-UNSAFE! IDX VEC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L300-L307">src</a></sub></sup><a name="coalton-vector-swap-remove-unsafe!-value"></a>
+#### <a href="#coalton-vector-swap-remove-unsafe!-value"><code>(SWAP-REMOVE-UNSAFE! IDX VEC)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/vector.ct#L306-L313">src</a></sub></sup><a name="coalton-vector-swap-remove-unsafe!-value"></a>
 <code>&forall; :A. <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-vector-vector-type">Vector</a> :A &rarr; :A</code>
 
 Remove the element `idx` from `vec` and replace it with the last element in `vec` without bounds checking. Then return the removed element.
