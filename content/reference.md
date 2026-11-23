@@ -10827,7 +10827,7 @@ Signaled by an operation waiting for a task that was unwound before it finished,
 
 Collections whose elements `for-each!`, `map-reduce` and `fold-map` can process in parallel. These operations divide the indices of the elements of a collection into chunks, as `for-chunks!` does, and process each chunk with `fold-elements`.
 
-Every `RandomAccess` collection, such as `Vector` or `LispArray`, is an instance, and so is `Seq`. Since the instance for `RandomAccess` collections overlaps with every other instance, other instances must be marked with `(overlap)`.
+A `RandomAccess` collection of type `(:f :a)` with element type `:a`, such as `(Vector :a)` or `(LispArray :a)`, is an instance, and so is `(Seq :a)`. Instances that overlap with this general instance must be marked with `(overlap)`.
 
 Methods:
 - <code>ELEMENT-COUNT :: :F &rarr; <a href="#coalton-ufix-type">UFix</a></code><br/>The number of elements of a collection.
@@ -10838,7 +10838,7 @@ Methods:
 - <code><a href="#coalton-threads-parallel-parallelfoldable-class">ParallelFoldable</a> (<a href="#coalton-seq-seq-type">Seq</a> :A) :A</code><a class=instance-overlap-badge href="/manual/operators/overlap/"
 title="Declared with (overlap); permits overlap with other marked instances."
 style="display:inline-flex;align-items:center;margin-left:8px;padding:2px 7px;border:1px solid #bccbea;border-radius:999px;background:#eef3ff;color:#355184;font:600 11px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;vertical-align:baseline;white-space:nowrap;text-decoration:none">overlap</a>
-- <code><a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> :F :A &rArr; <a href="#coalton-threads-parallel-parallelfoldable-class">ParallelFoldable</a> :F :A</code><a class=instance-overlap-badge href="/manual/operators/overlap/"
+- <code><a href="#coalton-randomaccess-randomaccess-class">RandomAccess</a> (:F :A) :A &rArr; <a href="#coalton-threads-parallel-parallelfoldable-class">ParallelFoldable</a> (:F :A) :A</code><a class=instance-overlap-badge href="/manual/operators/overlap/"
 title="Declared with (overlap); permits overlap with other marked instances."
 style="display:inline-flex;align-items:center;margin-left:8px;padding:2px 7px;border:1px solid #bccbea;border-radius:999px;background:#eef3ff;color:#355184;font:600 11px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;vertical-align:baseline;white-space:nowrap;text-decoration:none">overlap</a>
 
