@@ -1477,7 +1477,7 @@ Note that this may copy the object or allocate memory.
 
 ### Classes
 
-#### <a href="#coalton-bits-bits-class"><code>Bits</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/bits.ct#L35-L100">src</a></sub></sup><a name="coalton-bits-bits-class"></a>
+#### <a href="#coalton-bits-bits-class"><code>Bits</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/bits.ct#L36-L101">src</a></sub></sup><a name="coalton-bits-bits-class"></a>
 <code><a href="#coalton-classes-eq-class">Eq</a> :INT &rArr; <a href="#coalton-bits-bits-class">Bits</a> :INT</code>
 
 
@@ -1565,7 +1565,7 @@ Methods:
 
 ***
 
-#### <a href="#coalton-bits-reversebits-class"><code>ReverseBits</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/bits.ct#L104-L125">src</a></sub></sup><a name="coalton-bits-reversebits-class"></a>
+#### <a href="#coalton-bits-reversebits-class"><code>ReverseBits</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/bits.ct#L105-L126">src</a></sub></sup><a name="coalton-bits-reversebits-class"></a>
 <code><a href="#coalton-bits-reversebits-class">ReverseBits</a> :T</code>
 
 
@@ -1604,6 +1604,21 @@ Methods:
 ***
 
 ### Values
+
+#### <a href="#coalton-bits-bit-length-value"><code>(BIT-LENGTH X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/bits-fields.ct#L57-L68">src</a></sub></sup><a name="coalton-bits-bit-length-value"></a>
+<code>&forall; :A. <a href="#coalton-math-integral-integral-class">Integral</a> :A &rArr; :A &rarr; <a href="#coalton-ufix-type">UFix</a></code>
+
+The number of bits needed to represent `x` in two's complement without its sign bit:
+
+```
+(bit-length x) = (cl:integer-length (toInteger x))
+```
+
+For $x \ge 0$, this is the smallest non-negative integer $k$ such that $x < 2^k$, so `(bit-length 0) = 0` and `(bit-length x) = 1 + (ilog 2 x)` for $x > 0$. For $x < 0$, `(bit-length x) = (bit-length (not x))`.
+
+
+
+***
 
 #### <a href="#coalton-bits-dpb-value"><code>(DPB NEW SIZE POSITION X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/bits-fields.ct#L31-L53">src</a></sub></sup><a name="coalton-bits-dpb-value"></a>
 <code>&forall; :A. <a href="#coalton-bits-bits-class">Bits</a> :A &rArr; :A * <a href="#coalton-ufix-type">UFix</a> * <a href="#coalton-ufix-type">UFix</a> * :A &rarr; :A</code>
@@ -7366,7 +7381,7 @@ The numerator of a fraction.
 
 ### Classes
 
-#### <a href="#coalton-math-integral-integral-class"><code>Integral</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L59-L62">src</a></sub></sup><a name="coalton-math-integral-integral-class"></a>
+#### <a href="#coalton-math-integral-integral-class"><code>Integral</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L64-L67">src</a></sub></sup><a name="coalton-math-integral-integral-class"></a>
 <code>(<a href="#coalton-math-integral-remainder-class">Remainder</a> :INT) (<a href="#coalton-classes-ord-class">Ord</a> :INT) &rArr; <a href="#coalton-math-integral-integral-class">Integral</a> :INT</code>
 
 
@@ -7397,7 +7412,7 @@ Methods:
 
 ***
 
-#### <a href="#coalton-math-integral-remainder-class"><code>Remainder</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L44-L57">src</a></sub></sup><a name="coalton-math-integral-remainder-class"></a>
+#### <a href="#coalton-math-integral-remainder-class"><code>Remainder</code></a> <sup><sub>[CLASS] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L49-L62">src</a></sub></sup><a name="coalton-math-integral-remainder-class"></a>
 <code><a href="#coalton-classes-num-class">Num</a> :A &rArr; <a href="#coalton-math-integral-remainder-class">Remainder</a> :A</code>
 
 
@@ -7443,7 +7458,7 @@ Methods:
 
 ### Values
 
-#### <a href="#coalton-math-integral-even?-value"><code>(EVEN? N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L83-L85">src</a></sub></sup><a name="coalton-math-integral-even?-value"></a>
+#### <a href="#coalton-math-integral-even?-value"><code>(EVEN? N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L88-L90">src</a></sub></sup><a name="coalton-math-integral-even?-value"></a>
 <code>&forall; :A. <a href="#coalton-math-integral-integral-class">Integral</a> :A &rArr; :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is N even?
@@ -7452,7 +7467,7 @@ Is N even?
 
 ***
 
-#### <a href="#coalton-math-integral-gcd-value"><code>(GCD A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L126-L129">src</a></sub></sup><a name="coalton-math-integral-gcd-value"></a>
+#### <a href="#coalton-math-integral-gcd-value"><code>(GCD A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L131-L134">src</a></sub></sup><a name="coalton-math-integral-gcd-value"></a>
 <code>&forall; :A. (<a href="#coalton-math-integral-remainder-class">Remainder</a> :A) (<a href="#coalton-classes-ord-class">Ord</a> :A) &rArr; :A * :A &rarr; :A</code>
 
 The greatest common divisor of A and B.
@@ -7461,7 +7476,7 @@ The greatest common divisor of A and B.
 
 ***
 
-#### <a href="#coalton-math-integral-ilog-value"><code>(ILOG B X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L151-L167">src</a></sub></sup><a name="coalton-math-integral-ilog-value"></a>
+#### <a href="#coalton-math-integral-ilog-value"><code>(ILOG B X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L156-L172">src</a></sub></sup><a name="coalton-math-integral-ilog-value"></a>
 <code>&forall; :INT. <a href="#coalton-math-integral-integral-class">Integral</a> :INT &rArr; :INT * :INT &rarr; :INT</code>
 
 The floor of the logarithm with base B > 1 of X >= 1.
@@ -7470,7 +7485,7 @@ The floor of the logarithm with base B > 1 of X >= 1.
 
 ***
 
-#### <a href="#coalton-math-integral-integral->num-value"><code>(INTEGRAL-&gt;NUM N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L66-L68">src</a></sub></sup><a name="coalton-math-integral-integral->num-value"></a>
+#### <a href="#coalton-math-integral-integral->num-value"><code>(INTEGRAL-&gt;NUM N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L71-L73">src</a></sub></sup><a name="coalton-math-integral-integral->num-value"></a>
 <code>&forall; :A :B. (<a href="#coalton-math-integral-integral-class">Integral</a> :A) (<a href="#coalton-classes-num-class">Num</a> :B) &rArr; :A &rarr; :B</code>
 
 Converts any Integral N into any Num.
@@ -7479,7 +7494,7 @@ Converts any Integral N into any Num.
 
 ***
 
-#### <a href="#coalton-math-integral-isqrt-value"><code>(ISQRT X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L170-L181">src</a></sub></sup><a name="coalton-math-integral-isqrt-value"></a>
+#### <a href="#coalton-math-integral-isqrt-value"><code>(ISQRT X)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L175-L186">src</a></sub></sup><a name="coalton-math-integral-isqrt-value"></a>
 <code>&forall; :INT. <a href="#coalton-math-integral-integral-class">Integral</a> :INT &rArr; :INT &rarr; :INT</code>
 
 The floor of the square root of N > 0.
@@ -7488,7 +7503,7 @@ The floor of the square root of N > 0.
 
 ***
 
-#### <a href="#coalton-math-integral-lcm-value"><code>(LCM A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L132-L136">src</a></sub></sup><a name="coalton-math-integral-lcm-value"></a>
+#### <a href="#coalton-math-integral-lcm-value"><code>(LCM A B)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L137-L141">src</a></sub></sup><a name="coalton-math-integral-lcm-value"></a>
 <code>&forall; :A. (<a href="#coalton-math-integral-remainder-class">Remainder</a> :A) (<a href="#coalton-classes-ord-class">Ord</a> :A) &rArr; :A * :A &rarr; :A</code>
 
 The least common multiple of A and B.
@@ -7497,7 +7512,7 @@ The least common multiple of A and B.
 
 ***
 
-#### <a href="#coalton-math-integral-lsh-value"><code>(LSH X N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L78-L80">src</a></sub></sup><a name="coalton-math-integral-lsh-value"></a>
+#### <a href="#coalton-math-integral-lsh-value"><code>(LSH X N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L83-L85">src</a></sub></sup><a name="coalton-math-integral-lsh-value"></a>
 <code>&forall; :B :N. (<a href="#coalton-math-integral-integral-class">Integral</a> :N) (<a href="#coalton-bits-bits-class">Bits</a> :B) &rArr; :B * :N &rarr; :B</code>
 
 Shift `x` left by `n` bits, or right by `-n` bits when `n` is negative. This is `(bits:shift (toInteger n) x)`, so on fixed-width types the result fits the width as described for `bits:Bits`.
@@ -7506,7 +7521,7 @@ Shift `x` left by `n` bits, or right by `-n` bits when `n` is negative. This is 
 
 ***
 
-#### <a href="#coalton-math-integral-odd?-value"><code>(ODD? N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L88-L90">src</a></sub></sup><a name="coalton-math-integral-odd?-value"></a>
+#### <a href="#coalton-math-integral-odd?-value"><code>(ODD? N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L93-L95">src</a></sub></sup><a name="coalton-math-integral-odd?-value"></a>
 <code>&forall; :A. <a href="#coalton-math-integral-integral-class">Integral</a> :A &rArr; :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Is N odd?
@@ -7515,7 +7530,7 @@ Is N odd?
 
 ***
 
-#### <a href="#coalton-math-integral-rsh-value"><code>(RSH X N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L72-L74">src</a></sub></sup><a name="coalton-math-integral-rsh-value"></a>
+#### <a href="#coalton-math-integral-rsh-value"><code>(RSH X N)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L77-L79">src</a></sub></sup><a name="coalton-math-integral-rsh-value"></a>
 <code>&forall; :B :N. (<a href="#coalton-math-integral-integral-class">Integral</a> :N) (<a href="#coalton-bits-bits-class">Bits</a> :B) &rArr; :B * :N &rarr; :B</code>
 
 Shift `x` right by `n` bits, or left by `-n` bits when `n` is negative. This is `(bits:shift (negate (toInteger n)) x)`, so on fixed-width types the result fits the width as described for `bits:Bits`.
@@ -7524,7 +7539,7 @@ Shift `x` right by `n` bits, or left by `-n` bits when `n` is negative. This is 
 
 ***
 
-#### <a href="#coalton-math-integral-^-value"><code>(^ BASE POWER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L93-L116">src</a></sub></sup><a name="coalton-math-integral-^-value"></a>
+#### <a href="#coalton-math-integral-^-value"><code>(^ BASE POWER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L98-L121">src</a></sub></sup><a name="coalton-math-integral-^-value"></a>
 <code>&forall; :A :INT. (<a href="#coalton-classes-num-class">Num</a> :A) (<a href="#coalton-math-integral-integral-class">Integral</a> :INT) &rArr; :A * :INT &rarr; :A</code>
 
 Exponentiate BASE to a non-negative POWER.
@@ -7533,7 +7548,7 @@ Exponentiate BASE to a non-negative POWER.
 
 ***
 
-#### <a href="#coalton-math-integral-^^-value"><code>(^^ BASE POWER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L119-L123">src</a></sub></sup><a name="coalton-math-integral-^^-value"></a>
+#### <a href="#coalton-math-integral-^^-value"><code>(^^ BASE POWER)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/library/math/integral.ct#L124-L128">src</a></sub></sup><a name="coalton-math-integral-^^-value"></a>
 <code>&forall; :A :INT. (<a href="#coalton-math-arith-reciprocable-class">Reciprocable</a> :A) (<a href="#coalton-math-integral-integral-class">Integral</a> :INT) &rArr; :A * :INT &rarr; :A</code>
 
 Exponentiate BASE to a signed POWER.
@@ -10369,7 +10384,7 @@ A mutable cell whose operations are atomic.
 
 ### Values
 
-#### <a href="#coalton-threads-atomic-compare-and-swap!-value"><code>(COMPARE-AND-SWAP! ATOM EXPECTED REPLACEMENT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/atomic.ct#L92-L95">src</a></sub></sup><a name="coalton-threads-atomic-compare-and-swap!-value"></a>
+#### <a href="#coalton-threads-atomic-compare-and-swap!-value"><code>(COMPARE-AND-SWAP! ATOM EXPECTED REPLACEMENT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/atomic.ct#L95-L98">src</a></sub></sup><a name="coalton-threads-atomic-compare-and-swap!-value"></a>
 <code>&forall; :A. <a href="#coalton-threads-atomic-atomic-type">Atomic</a> :A * :A * :A &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 If the value of `atom` is identical to `expected`, replace it with `replacement` and return `True`. Otherwise return `False` without changing `atom`. Values are compared by identity, not with `==`.
@@ -10378,7 +10393,7 @@ If the value of `atom` is identical to `expected`, replace it with `replacement`
 
 ***
 
-#### <a href="#coalton-threads-atomic-decrement!-value"><code>(DECREMENT! ATOM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/atomic.ct#L143-L145">src</a></sub></sup><a name="coalton-threads-atomic-decrement!-value"></a>
+#### <a href="#coalton-threads-atomic-decrement!-value"><code>(DECREMENT! ATOM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/atomic.ct#L152-L154">src</a></sub></sup><a name="coalton-threads-atomic-decrement!-value"></a>
 <code>&forall; :COUNTER. <a href="#coalton-classes-num-class">Num</a> :COUNTER &rArr; <a href="#coalton-threads-atomic-atomic-type">Atomic</a> :COUNTER &rarr; :COUNTER</code>
 
 Atomically subtract one from the value of `atom`, returning the new value.
@@ -10387,7 +10402,7 @@ Atomically subtract one from the value of `atom`, returning the new value.
 
 ***
 
-#### <a href="#coalton-threads-atomic-increment!-value"><code>(INCREMENT! ATOM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/atomic.ct#L138-L140">src</a></sub></sup><a name="coalton-threads-atomic-increment!-value"></a>
+#### <a href="#coalton-threads-atomic-increment!-value"><code>(INCREMENT! ATOM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/atomic.ct#L146-L148">src</a></sub></sup><a name="coalton-threads-atomic-increment!-value"></a>
 <code>&forall; :COUNTER. <a href="#coalton-classes-num-class">Num</a> :COUNTER &rArr; <a href="#coalton-threads-atomic-atomic-type">Atomic</a> :COUNTER &rarr; :COUNTER</code>
 
 Atomically add one to the value of `atom`, returning the new value.
@@ -10405,7 +10420,7 @@ Create an atomic cell containing `data`.
 
 ***
 
-#### <a href="#coalton-threads-atomic-pop!-value"><code>(POP! ATOM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/atomic.ct#L127-L135">src</a></sub></sup><a name="coalton-threads-atomic-pop!-value"></a>
+#### <a href="#coalton-threads-atomic-pop!-value"><code>(POP! ATOM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/atomic.ct#L134-L142">src</a></sub></sup><a name="coalton-threads-atomic-pop!-value"></a>
 <code>&forall; :ELT. <a href="#coalton-threads-atomic-atomic-type">Atomic</a> (<a href="#coalton-list-type">List</a> :ELT) &rarr; <a href="#coalton-optional-type">Optional</a> :ELT</code>
 
 Atomically remove and return the first element of the list in `atom`, or return `None` if the list is empty.
@@ -10414,7 +10429,7 @@ Atomically remove and return the first element of the list in `atom`, or return 
 
 ***
 
-#### <a href="#coalton-threads-atomic-push!-value"><code>(PUSH! ATOM ELT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/atomic.ct#L122-L124">src</a></sub></sup><a name="coalton-threads-atomic-push!-value"></a>
+#### <a href="#coalton-threads-atomic-push!-value"><code>(PUSH! ATOM ELT)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/atomic.ct#L128-L130">src</a></sub></sup><a name="coalton-threads-atomic-push!-value"></a>
 <code>&forall; :ELT. <a href="#coalton-threads-atomic-atomic-type">Atomic</a> (<a href="#coalton-list-type">List</a> :ELT) * :ELT &rarr; <a href="#coalton-list-type">List</a> :ELT</code>
 
 Atomically push `elt` onto the front of the list in `atom`, returning the new list.
@@ -10432,7 +10447,7 @@ Read the value of `atom`.
 
 ***
 
-#### <a href="#coalton-threads-atomic-swap!-value"><code>(SWAP! ATOM DATA)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/atomic.ct#L77-L83">src</a></sub></sup><a name="coalton-threads-atomic-swap!-value"></a>
+#### <a href="#coalton-threads-atomic-swap!-value"><code>(SWAP! ATOM DATA)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/atomic.ct#L78-L84">src</a></sub></sup><a name="coalton-threads-atomic-swap!-value"></a>
 <code>&forall; :A. <a href="#coalton-threads-atomic-atomic-type">Atomic</a> :A * :A &rarr; :A</code>
 
 Replace the value of `atom` with `data`, returning the old value.
@@ -10441,7 +10456,7 @@ Replace the value of `atom` with `data`, returning the old value.
 
 ***
 
-#### <a href="#coalton-threads-atomic-update!-value"><code>(UPDATE! F ATOM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/atomic.ct#L110-L119">src</a></sub></sup><a name="coalton-threads-atomic-update!-value"></a>
+#### <a href="#coalton-threads-atomic-update!-value"><code>(UPDATE! F ATOM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/atomic.ct#L115-L124">src</a></sub></sup><a name="coalton-threads-atomic-update!-value"></a>
 <code>&forall; :A. (:A &rarr; :A) * <a href="#coalton-threads-atomic-atomic-type">Atomic</a> :A &rarr; :A</code>
 
 Replace the value of `atom` with the result of applying `f` to it, atomically, and return the new value. If other threads update `atom` concurrently, `f` may be called more than once, so it should not have side effects.
@@ -10450,7 +10465,7 @@ Replace the value of `atom` with the result of applying `f` to it, atomically, a
 
 ***
 
-#### <a href="#coalton-threads-atomic-update-swap!-value"><code>(UPDATE-SWAP! F ATOM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/atomic.ct#L98-L107">src</a></sub></sup><a name="coalton-threads-atomic-update-swap!-value"></a>
+#### <a href="#coalton-threads-atomic-update-swap!-value"><code>(UPDATE-SWAP! F ATOM)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/atomic.ct#L102-L111">src</a></sub></sup><a name="coalton-threads-atomic-update-swap!-value"></a>
 <code>&forall; :A. (:A &rarr; :A) * <a href="#coalton-threads-atomic-atomic-type">Atomic</a> :A &rarr; :A</code>
 
 Replace the value of `atom` with the result of applying `f` to it, atomically, and return the old value. If other threads update `atom` concurrently, `f` may be called more than once, so it should not have side effects.
@@ -10459,7 +10474,7 @@ Replace the value of `atom` with the result of applying `f` to it, atomically, a
 
 ***
 
-#### <a href="#coalton-threads-atomic-write!-value"><code>(WRITE! ATOM DATA)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/atomic.ct#L86-L89">src</a></sub></sup><a name="coalton-threads-atomic-write!-value"></a>
+#### <a href="#coalton-threads-atomic-write!-value"><code>(WRITE! ATOM DATA)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/atomic.ct#L88-L91">src</a></sub></sup><a name="coalton-threads-atomic-write!-value"></a>
 <code>&forall; :A. <a href="#coalton-threads-atomic-atomic-type">Atomic</a> :A * :A &rarr; :A</code>
 
 Set the value of `atom` to `data`, returning `data`.
@@ -10675,7 +10690,7 @@ A lock that at most one thread can hold at a time.
 
 ### Values
 
-#### <a href="#coalton-threads-mutex-lock!-value"><code>(LOCK! MUTEX)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/mutex.ct#L44-L47">src</a></sub></sup><a name="coalton-threads-mutex-lock!-value"></a>
+#### <a href="#coalton-threads-mutex-lock!-value"><code>(LOCK! MUTEX)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/mutex.ct#L46-L49">src</a></sub></sup><a name="coalton-threads-mutex-lock!-value"></a>
 <code><a href="#coalton-threads-mutex-mutex-type">Mutex</a> &rarr; Void</code>
 
 Acquire `mutex`, waiting for as long as another thread holds it.
@@ -10684,7 +10699,7 @@ Acquire `mutex`, waiting for as long as another thread holds it.
 
 ***
 
-#### <a href="#coalton-threads-mutex-new-value"><code>(NEW)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/mutex.ct#L38-L41">src</a></sub></sup><a name="coalton-threads-mutex-new-value"></a>
+#### <a href="#coalton-threads-mutex-new-value"><code>(NEW)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/mutex.ct#L39-L42">src</a></sub></sup><a name="coalton-threads-mutex-new-value"></a>
 <code>&key (:name <a href="#coalton-string-type">String</a>) &rarr; <a href="#coalton-threads-mutex-mutex-type">Mutex</a></code>
 
 Create a mutex that no thread holds. The `name` shows up in debugging tools.
@@ -10693,7 +10708,7 @@ Create a mutex that no thread holds. The `name` shows up in debugging tools.
 
 ***
 
-#### <a href="#coalton-threads-mutex-try-lock!-value"><code>(TRY-LOCK! MUTEX)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/mutex.ct#L56-L59">src</a></sub></sup><a name="coalton-threads-mutex-try-lock!-value"></a>
+#### <a href="#coalton-threads-mutex-try-lock!-value"><code>(TRY-LOCK! MUTEX)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/mutex.ct#L60-L63">src</a></sub></sup><a name="coalton-threads-mutex-try-lock!-value"></a>
 <code><a href="#coalton-threads-mutex-mutex-type">Mutex</a> &rarr; <a href="#coalton-boolean-type">Boolean</a></code>
 
 Acquire `mutex` and return `True` if no thread holds it; otherwise return `False` immediately.
@@ -10702,7 +10717,7 @@ Acquire `mutex` and return `True` if no thread holds it; otherwise return `False
 
 ***
 
-#### <a href="#coalton-threads-mutex-unlock!-value"><code>(UNLOCK! MUTEX)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/mutex.ct#L50-L53">src</a></sub></sup><a name="coalton-threads-mutex-unlock!-value"></a>
+#### <a href="#coalton-threads-mutex-unlock!-value"><code>(UNLOCK! MUTEX)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/mutex.ct#L53-L56">src</a></sub></sup><a name="coalton-threads-mutex-unlock!-value"></a>
 <code><a href="#coalton-threads-mutex-mutex-type">Mutex</a> &rarr; Void</code>
 
 Release `mutex`, which the calling thread must hold.
@@ -10711,7 +10726,7 @@ Release `mutex`, which the calling thread must hold.
 
 ***
 
-#### <a href="#coalton-threads-mutex-with-lock-value"><code>(WITH-LOCK MUTEX THUNK)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/mutex.ct#L62-L66">src</a></sub></sup><a name="coalton-threads-mutex-with-lock-value"></a>
+#### <a href="#coalton-threads-mutex-with-lock-value"><code>(WITH-LOCK MUTEX THUNK)</code></a> <sup><sub>[FUNCTION] · <a href="https://github.com/coalton-lang/coalton/tree/main/threads/mutex.ct#L67-L71">src</a></sub></sup><a name="coalton-threads-mutex-with-lock-value"></a>
 <code>&forall; (:RESULT Values). <a href="#coalton-threads-mutex-mutex-type">Mutex</a> * (Void &rarr; :RESULT) &rarr; :RESULT</code>
 
 Call `thunk` while holding `mutex`, and return its values. The mutex is released however `thunk` exits.
